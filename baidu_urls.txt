@@ -1,1 +1,1 @@
-http://www.icalculate.website/2023/03/16/Python-script-for-Keithley-2450-current-sweep/
+http://www.icalculate.website/2023/03/17/Python-script-for-Keithley-2400-current-sweep/
