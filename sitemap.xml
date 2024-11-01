@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.icalculate.website/about/index.html</loc>
+    
+    <lastmod>2024-11-01T15:18:52.344Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.icalculate.website/2024/04/11/Science-Communication/</loc>
     
     <lastmod>2024-04-11T01:06:44.670Z</lastmod>
@@ -194,13 +201,6 @@
     <loc>http://www.icalculate.website/2020/03/26/The-Configuration-to-the-Deep-Network/</loc>
     
     <lastmod>2020-03-26T02:46:41.647Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.icalculate.website/about/index.html</loc>
-    
-    <lastmod>2020-03-20T07:24:04.984Z</lastmod>
     
   </url>
   
