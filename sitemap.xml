@@ -556,20 +556,6 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Anaconda/</loc>
-    <lastmod>2025-07-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.icalculate.website/tags/Python/</loc>
-    <lastmod>2025-07-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://www.icalculate.website/tags/Literature/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -584,14 +570,21 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Knowledge-Point/</loc>
+    <loc>http://www.icalculate.website/tags/Anaconda/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Electrochemical/</loc>
+    <loc>http://www.icalculate.website/tags/Python/</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.icalculate.website/tags/Knowledge-Point/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -626,6 +619,13 @@
   </url>
   
   <url>
+    <loc>http://www.icalculate.website/tags/Backup/</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.icalculate.website/tags/Theory/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -633,7 +633,7 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Backup/</loc>
+    <loc>http://www.icalculate.website/tags/Electrochemical/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -654,13 +654,6 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Website/</loc>
-    <lastmod>2025-07-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://www.icalculate.website/tags/Battery/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -668,7 +661,7 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Origin/</loc>
+    <loc>http://www.icalculate.website/tags/Website/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -682,7 +675,7 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/COVID-19/</loc>
+    <loc>http://www.icalculate.website/tags/Origin/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -704,6 +697,13 @@
   
   <url>
     <loc>http://www.icalculate.website/tags/Semiconductor-Physics/</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.icalculate.website/tags/COVID-19/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -752,14 +752,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Technology/</loc>
+    <loc>http://www.icalculate.website/tags/Movie/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Movie/</loc>
+    <loc>http://www.icalculate.website/tags/Technology/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -817,14 +817,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Perspective/</loc>
+    <loc>http://www.icalculate.website/categories/Research-Notes/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Research-Notes/</loc>
+    <loc>http://www.icalculate.website/categories/Perspective/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
