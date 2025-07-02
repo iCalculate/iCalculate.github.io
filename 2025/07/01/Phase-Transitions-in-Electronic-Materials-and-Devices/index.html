@@ -438,10 +438,10 @@ height:50vh;
 <h2 id="1-Thermodynamic-Perspective-on-Phase-Transitions"><a href="#1-Thermodynamic-Perspective-on-Phase-Transitions" class="headerlink" title="1. Thermodynamic Perspective on Phase Transitions"></a>1. Thermodynamic Perspective on Phase Transitions</h2><h3 id="1-1-First-order-and-Second-order-Transitions"><a href="#1-1-First-order-and-Second-order-Transitions" class="headerlink" title="1.1 First-order and Second-order Transitions"></a>1.1 First-order and Second-order Transitions</h3><p>In statistical physics, a phase transition is said to be of the <em>first order</em> if the first derivative of the free energy with respect to an external parameter (such as temperature or field) is discontinuous. Conversely, a <em>second-order</em> (or continuous) phase transition has continuous first derivatives but discontinuous or divergent second derivatives.</p>
 <p>Using Landau theory, the free energy of a system near a transition point can be expanded as:</p>
 <p>$$<br>F(\psi) &#x3D; F_0 + a(T) \psi^2 + b \psi^4 + c \psi^6 + \dots<br>$$</p>
-<p>Here, $\psi$ is the order parameter, and $a(T)$ varies with temperature. The nature of the transition depends on the sign of $b$:</p>
+<p>Here, $ \psi $ is the order parameter, and $ a(T) $ varies with temperature. The nature of the transition depends on the sign of $ b $:</p>
 <ul>
-<li>If $a(T_c) &#x3D; 0$ and $b &gt; 0$, the system undergoes a <strong>second-order transition</strong>, with $\psi$ changing continuously from zero.</li>
-<li>If $b &lt; 0$ and $c &gt; 0$, the free energy develops a double-well structure, leading to a <strong>first-order transition</strong> with a discontinuous jump in $\psi$.</li>
+<li>If $ a(T_c) &#x3D; 0 $ and $ b &gt; 0 $, the system undergoes a <strong>second-order transition</strong>, with $ \psi $ changing continuously from zero.</li>
+<li>If $ b &lt; 0 $ and $ c &gt; 0 $, the free energy develops a double-well structure, leading to a <strong>first-order transition</strong> with a discontinuous jump in $ \psi $.</li>
 </ul>
 <table>
 <thead>
@@ -477,20 +477,20 @@ height:50vh;
 <li><strong>Superconducting transitions</strong> in FeSe&#x2F;SrTiO$_3$ interfaces or doped MoS$_2$.</li>
 <li><strong>Topological phase transitions</strong> under gating in WTe$_2$ or Bi bilayers.</li>
 </ul>
-<p>These transitions can often be mapped using a free energy landscape similar to Landau theory, with gate voltage $V_{GS}$ serving as a tunable parameter.</p>
+<p>These transitions can often be mapped using a free energy landscape similar to Landau theory, with gate voltage $ V_{GS} $ serving as a tunable parameter.</p>
 <h3 id="2-2-Mapping-Transitions-via-Carrier-Density"><a href="#2-2-Mapping-Transitions-via-Carrier-Density" class="headerlink" title="2.2 Mapping Transitions via Carrier Density"></a>2.2 Mapping Transitions via Carrier Density</h3><p>In analogy to thermal phase transitions, one can define a carrier-density-dependent free energy:</p>
 <p>$$<br>F(n) &#x3D; F_0 + \alpha(n - n_c)^2 + \beta(n - n_c)^4 + \dots<br>$$</p>
 <p>Such a model predicts instabilities, bistability, and even hysteresis in electrical characteristics as observed in resistive switching, CDW sliding, or Wigner crystal formation.</p>
 <hr>
 <h2 id="3-Landau-Theory-and-Negative-Capacitance"><a href="#3-Landau-Theory-and-Negative-Capacitance" class="headerlink" title="3. Landau Theory and Negative Capacitance"></a>3. Landau Theory and Negative Capacitance</h2><h3 id="3-1-Free-Energy-of-a-Ferroelectric-System"><a href="#3-1-Free-Energy-of-a-Ferroelectric-System" class="headerlink" title="3.1 Free Energy of a Ferroelectric System"></a>3.1 Free Energy of a Ferroelectric System</h3><p>A ferroelectric material near its Curie temperature can be modeled using the LGD expansion:</p>
 <p>$$<br>G(P) &#x3D; \frac{\alpha}{2} P^2 + \frac{\beta}{4} P^4 + \frac{\gamma}{6} P^6 - E P<br>$$</p>
-<p>Here, $P$ is the polarization, $E$ is the electric field, and $\alpha$, $\beta$, $\gamma$ are material-specific coefficients. For $\alpha &lt; 0$, the free energy exhibits a double-well shape, indicating spontaneous symmetry breaking. The region between the wells has:</p>
+<p>Here, $ P $ is the polarization, $ E $ is the electric field, and $ \alpha $, $ \beta $, $ \gamma $ are material-specific coefficients. For $ \alpha &lt; 0 $, the free energy exhibits a double-well shape, indicating spontaneous symmetry breaking. The region between the wells has:</p>
 <p>$$<br>\frac{d^2G}{dP^2} &lt; 0 \Rightarrow C_{FE} &lt; 0<br>$$</p>
 <p>which corresponds to <em>negative differential capacitance</em>. However, this region is thermodynamically unstable unless stabilized by an external circuit.</p>
 <p><img src="/Phase-Transitions-in-Electronic-Materials-and-Devices/free_energy.png" alt="Free Energy Landscape"></p>
 <h3 id="3-2-Stabilization-via-Capacitance-Matching"><a href="#3-2-Stabilization-via-Capacitance-Matching" class="headerlink" title="3.2 Stabilization via Capacitance Matching"></a>3.2 Stabilization via Capacitance Matching</h3><p>In a typical NC-FET structure, the ferroelectric layer is placed in series with the gate oxide and semiconductor channel. The effective capacitance becomes:</p>
 <p>$$<br>\frac{1}{C_{total}} &#x3D; \frac{1}{C_{FE}} + \frac{1}{C_{MOS}}<br>$$</p>
-<p>When $C_{FE} &lt; 0$ and $|C_{FE}| \approx C_{MOS}$, the total capacitance $C_{total}$ increases, leading to an amplified surface potential:</p>
+<p>When $ C_{FE} &lt; 0 $ and $ |C_{FE}| \approx C_{MOS} $, the total capacitance $ C_{total} $ increases, leading to an amplified surface potential:</p>
 <p>$$<br>\frac{d\phi_s}{dV_{GS}} &gt; 1 \Rightarrow SS &lt; 60~\text{mV&#x2F;dec}<br>$$</p>
 <p>However, achieving this condition in practice is nontrivial due to the constraints of stability, material defects, and domain dynamics.</p>
 <hr>
@@ -508,7 +508,7 @@ height:50vh;
 <li><strong>Can negative capacitance be stabilized under quasi-static operation?</strong></li>
 <li><strong>Do domain dynamics and energy dissipation obscure equilibrium interpretation?</strong></li>
 <li><strong>Is the Landau framework sufficient, or is a microscopic model (e.g., DFT + polarization dynamics) needed?</strong></li>
-<li><strong>What are the impacts of film thickness, interface states, and non-idealities on $C_{FE}$?</strong></li>
+<li><strong>What are the impacts of film thickness, interface states, and non-idealities on $ C_{FE} $?</strong></li>
 </ul>
 <hr>
 <h2 id="6-Outlook-and-Phase-Based-Device-Engineering"><a href="#6-Outlook-and-Phase-Based-Device-Engineering" class="headerlink" title="6. Outlook and Phase-Based Device Engineering"></a>6. Outlook and Phase-Based Device Engineering</h2><p>Despite challenges, the concept of harnessing phase transitions for electronic functionality is powerful and forward-looking. Emerging directions include:</p>
@@ -535,7 +535,7 @@ height:50vh;
             <p>Author：<a href="http://www.iCalculate.website">Du Xinchuan</a>
             <p>原文链接：<a href="http://www.icalculate.website/2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/">http://www.icalculate.website/2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/</a>
             <p>发表日期：<a href="http://www.icalculate.website/2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/">July 1st 2025, 4:17:28 pm</a>
-            <p>更新日期：<a href="http://www.icalculate.website/2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/">July 1st 2025, 4:36:38 pm</a>
+            <p>更新日期：<a href="http://www.icalculate.website/2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/">July 2nd 2025, 8:36:14 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -1781,11 +1781,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
-    
         <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+        <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
@@ -1793,13 +1791,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
-        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
     
-        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
+        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+    
+        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
         <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
     
         <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+    
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
     
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
@@ -1809,25 +1811,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
     
-        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
         <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
-    
         <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
-    
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
     
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
     
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+    
         <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
     
         <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
-    
-        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
@@ -1839,21 +1837,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Semiconductor Physics"><span class="iconfont-archer">&#xe606;</span>Semiconductor Physics</span>
     
+        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
+    
+        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
+    
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
         <span class="sidebar-tag-name" data-tags="Condense Physics"><span class="iconfont-archer">&#xe606;</span>Condense Physics</span>
     
-        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
+        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
         <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
     
         <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
-    
-        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1888,9 +1888,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
-    
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
@@ -1898,23 +1898,23 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
-    
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
-    
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
-        <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
