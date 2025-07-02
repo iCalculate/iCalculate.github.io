@@ -481,94 +481,60 @@ height:50vh;
 </ul>
 <div id="quantum-vis"></div>
 
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<script>
+window.addEventListener('load', function() {
+  const kB = 8.617e-5;
+  const mu = 0.0;
+  const E = Array.from({length: 1000}, (_, i) => -0.5 + i * (1.0 / 999));
 
-<body>
-  <h2>Landauer Transport Visualization with Temperature Slider</h2>
-  <div id="plot" style="width:90%;max-width:1200px;height:800px;"></div>
-  <label for="temperature">Temperature (K):</label>
-  <input type="range" id="temperature" name="temperature" min="1" max="300" value="50" step="1">
-  <span id="tempValue">50</span> K
-
-  <script>
-    const kB = 8.617e-5;
-    const mu = 0.0;
-    const E = Array.from({length: 1000}, (_, i) => -0.5 + i * (1.0 / 999));
-
-    function fermi(E, mu, T) {
-      return E.map(e => 1.0 / (1.0 + Math.exp((e - mu) / (kB * T))));
-    }
-    
-    function dfermi(E, mu, T) {
-      return E.map(e => {
-        let expVal = Math.exp((e - mu) / (kB * T));
-        return expVal / Math.pow(1 + expVal, 2) / (kB * T);
-      });
-    }
-    
-    function updatePlot(T) {
-      const fL = fermi(E, mu + 0.5 * 0.05, T);
-      const fR = fermi(E, mu - 0.5 * 0.05, T);
-      const dF = dfermi(E, mu, T);
-    
-      const data = [
-        {
-          x: E,
-          y: fL,
-          type: 'scatter',
-          name: 'f_L(E)',
-          xaxis: 'x1',
-          yaxis: 'y1'
-        },
-        {
-          x: E,
-          y: fR,
-          type: 'scatter',
-          name: 'f_R(E)',
-          xaxis: 'x1',
-          yaxis: 'y1'
-        },
-        {
-          x: E,
-          y: fL.map((v, i) => v - fR[i]),
-          type: 'scatter',
-          name: 'f_L - f_R',
-          xaxis: 'x1',
-          yaxis: 'y1'
-        },
-        {
-          x: E,
-          y: dF,
-          type: 'scatter',
-          name: '-df/dE',
-          xaxis: 'x2',
-          yaxis: 'y2'
-        },
-      ];
-    
-      const layout = {
-        grid: { rows: 2, columns: 1, pattern: 'independent' },
-        title: `Landauer Transport Quantities at T = ${T} K`,
-        xaxis: { title: 'Energy (E)' },
-        yaxis: { title: 'f_L, f_R, f_L - f_R' },
-        xaxis2: { title: 'Energy (E)' },
-        yaxis2: { title: '-df/dE' },
-        legend: { orientation: "h" }
-      };
-    
-      Plotly.newPlot('plot', data, layout);
-    }
-    
-    document.getElementById("temperature").addEventListener("input", function(e) {
-      let T = parseFloat(e.target.value);
-      document.getElementById("tempValue").innerText = T;
-      updatePlot(T);
+  function fermi(E, mu, T) {
+    return E.map(e => 1.0 / (1.0 + Math.exp((e - mu) / (kB * T))));
+  }
+  function dfermi(E, mu, T) {
+    return E.map(e => {
+      let expVal = Math.exp((e - mu) / (kB * T));
+      return expVal / Math.pow(1 + expVal, 2) / (kB * T);
     });
-    
-    // Initial plot
-    updatePlot(50);
-  </script>
-
+  }
+  function updatePlot(T) {
+    const fL = fermi(E, mu + 0.5 * 0.05, T);
+    const fR = fermi(E, mu - 0.5 * 0.05, T);
+    const dF = dfermi(E, mu, T);
+    const data = [
+      { x: E, y: fL, type: 'scatter', name: 'f_L(E)', xaxis: 'x1', yaxis: 'y1' },
+      { x: E, y: fR, type: 'scatter', name: 'f_R(E)', xaxis: 'x1', yaxis: 'y1' },
+      { x: E, y: fL.map((v, i) => v - fR[i]), type: 'scatter', name: 'f_L - f_R', xaxis: 'x1', yaxis: 'y1' },
+      { x: E, y: dF, type: 'scatter', name: '-df/dE', xaxis: 'x2', yaxis: 'y2' },
+    ];
+    const layout = {
+      grid: { rows: 2, columns: 1, pattern: 'independent' },
+      title: `Landauer Transport Quantities at T = ${T} K`,
+      xaxis: { title: 'Energy (E)' },
+      yaxis: { title: 'f_L, f_R, f_L - f_R' },
+      xaxis2: { title: 'Energy (E)' },
+      yaxis2: { title: '-df/dE' },
+      legend: { orientation: "h" }
+    };
+    Plotly.newPlot('plot', data, layout);
+  }
+  // 创建控件
+  const container = document.getElementById('quantum-vis');
+  container.innerHTML = `
+    <h2>Landauer Transport Visualization with Temperature Slider</h2>
+    <div id="plot" style="width:90%;max-width:1200px;height:800px;"></div>
+    <label for="temperature">Temperature (K):</label>
+    <input type="range" id="temperature" name="temperature" min="1" max="300" value="50" step="1" />
+    <span id="tempValue">50</span> K
+  `;
+  document.getElementById("temperature").addEventListener("input", function(e) {
+    let T = parseFloat(e.target.value);
+    document.getElementById("tempValue").innerText = T;
+    updatePlot(T);
+  });
+  updatePlot(50);
+});
+</script>
 
 
 <p>This visualization helps connect formal equations to intuitive physical pictures — useful for both students and researchers.</p>
@@ -602,7 +568,7 @@ height:50vh;
 <hr>
 <h2 id="✨-Summary-and-Outlook"><a href="#✨-Summary-and-Outlook" class="headerlink" title="✨ Summary and Outlook"></a>✨ Summary and Outlook</h2><p>The quantum of conductance, once viewed as a curiosity of low-temperature physics, has become a critical concept for modern nanoelectronics. As our ability to manipulate matter at the atomic scale improves, <strong>engineering quantum transport</strong> — not just observing it — will be central to designing future quantum devices, energy-efficient systems, and novel computing architectures.</p>
 <p>The interplay between transmission, thermal distribution, and quantum coherence offers a rich playground where physics meets engineering, and where theory becomes experiment.</p>
-</body>
+
     </article>
     <!-- license  -->
     
@@ -610,7 +576,7 @@ height:50vh;
             <p>Author：<a href="http://www.iCalculate.website">Du Xinchuan</a>
             <p>原文链接：<a href="http://www.icalculate.website/2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/">http://www.icalculate.website/2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/</a>
             <p>发表日期：<a href="http://www.icalculate.website/2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/">July 2nd 2025, 12:22:05 pm</a>
-            <p>更新日期：<a href="http://www.icalculate.website/2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/">July 2nd 2025, 8:34:27 pm</a>
+            <p>更新日期：<a href="http://www.icalculate.website/2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/">July 2nd 2025, 9:59:00 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -757,7 +723,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#🌉-What-is-the-Quantum-of-Conductance"><span class="toc-number">1.</span> <span class="toc-text">🌉 What is the Quantum of Conductance?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#🧠-From-Fermi-Distributions-to-the-Landauer-Formula"><span class="toc-number">2.</span> <span class="toc-text">🧠 From Fermi Distributions to the Landauer Formula</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#❄️-Zero-Temperature-Limit-and-Linear-Conductance"><span class="toc-number">3.</span> <span class="toc-text">❄️ Zero Temperature Limit and Linear Conductance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#📊-Interactive-Visualization"><span class="toc-number">4.</span> <span class="toc-text">📊 Interactive Visualization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">5.</span> <span class="toc-text">Landauer Transport Visualization with Temperature Slider</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#🚀-Beyond-the-Basics-Toward-Programmable-Quantum-Transport"><span class="toc-number">6.</span> <span class="toc-text">🚀 Beyond the Basics: Toward Programmable Quantum Transport</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Energy-Selective-and-Programmable-Transmission"><span class="toc-number">6.1.</span> <span class="toc-text">1. Energy-Selective and Programmable Transmission</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Beyond-Linear-Response-Finite-Bias-and-Non-Equilibrium-Effects"><span class="toc-number">6.2.</span> <span class="toc-text">2. Beyond Linear Response: Finite Bias and Non-Equilibrium Effects</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Thermal-Window-Engineering-and-Quantum-Thermodynamics"><span class="toc-number">6.3.</span> <span class="toc-text">3. Thermal Window Engineering and Quantum Thermodynamics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Beyond-Fermi-Dirac-Statistics"><span class="toc-number">6.4.</span> <span class="toc-text">4. Beyond Fermi-Dirac Statistics</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#✨-Summary-and-Outlook"><span class="toc-number">7.</span> <span class="toc-text">✨ Summary and Outlook</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#🌉-What-is-the-Quantum-of-Conductance"><span class="toc-number">1.</span> <span class="toc-text">🌉 What is the Quantum of Conductance?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#🧠-From-Fermi-Distributions-to-the-Landauer-Formula"><span class="toc-number">2.</span> <span class="toc-text">🧠 From Fermi Distributions to the Landauer Formula</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#❄️-Zero-Temperature-Limit-and-Linear-Conductance"><span class="toc-number">3.</span> <span class="toc-text">❄️ Zero Temperature Limit and Linear Conductance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#📊-Interactive-Visualization"><span class="toc-number">4.</span> <span class="toc-text">📊 Interactive Visualization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#🚀-Beyond-the-Basics-Toward-Programmable-Quantum-Transport"><span class="toc-number">5.</span> <span class="toc-text">🚀 Beyond the Basics: Toward Programmable Quantum Transport</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Energy-Selective-and-Programmable-Transmission"><span class="toc-number">5.1.</span> <span class="toc-text">1. Energy-Selective and Programmable Transmission</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Beyond-Linear-Response-Finite-Bias-and-Non-Equilibrium-Effects"><span class="toc-number">5.2.</span> <span class="toc-text">2. Beyond Linear Response: Finite Bias and Non-Equilibrium Effects</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Thermal-Window-Engineering-and-Quantum-Thermodynamics"><span class="toc-number">5.3.</span> <span class="toc-text">3. Thermal Window Engineering and Quantum Thermodynamics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Beyond-Fermi-Dirac-Statistics"><span class="toc-number">5.4.</span> <span class="toc-text">4. Beyond Fermi-Dirac Statistics</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#✨-Summary-and-Outlook"><span class="toc-number">6.</span> <span class="toc-text">✨ Summary and Outlook</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1851,11 +1817,11 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
         <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
-    
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
     
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
@@ -1867,6 +1833,8 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
+        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
+    
         <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
     
         <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
@@ -1877,25 +1845,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
     
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
-    
-        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
-    
-        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
-    
         <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
     
         <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
+        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
+    
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
     
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
     
         <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
     
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
-    
         <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
     
         <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
@@ -1915,13 +1881,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
-    
         <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
     
         <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
         <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
@@ -1958,11 +1924,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+    
         <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
     
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
-    
-        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
