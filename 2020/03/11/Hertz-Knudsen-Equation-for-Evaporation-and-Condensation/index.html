@@ -307,7 +307,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">512</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">517</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -437,21 +437,18 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <p>对于非解离蒸发过程，描述非平衡相界面蒸发过程中质量流非常经典的Hertz-Knudsen-Schrage equation适用:</p>
-<p><img src="https://www.zhihu.com/equation?tex=+j%3D%5Cfrac%7B2%7D%7B2%E2%88%92%5Ckappa_C%7D+%5Cfrac%7B1%7D+%7B%E2%88%9A2%CF%80%7D%28+%5Ckappa_E%5Cfrac%7Bp_%7Bsat%7D+%28T_l%29%7D+%7B%5Csqrt%7BRT_l%7D%7D+%E2%88%92+%5Ckappa_C%5Cfrac%7Bp_v%7D+%7B%5Csqrt%7BRT_v%7D%7D+%29" alt="[公式]"></p>
-<p><img src="https://www.zhihu.com/equation?tex=+Denotation%3A+j-massflux%2C+l-liquid%2C+v-vapor%2C+p_%7Bsat%7D%28T%29-+" alt="[公式]"><strong>T</strong>温度下的饱和蒸汽压。</p>
+<p><img src="https://www.zhihu.com/equation?tex=+j=%5Cfrac%7B2%7D%7B2%E2%88%92%5Ckappa_C%7D+%5Cfrac%7B1%7D+%7B%E2%88%9A2%CF%80%7D(+%5Ckappa_E%5Cfrac%7Bp_%7Bsat%7D+(T_l)%7D+%7B%5Csqrt%7BRT_l%7D%7D+%E2%88%92+%5Ckappa_C%5Cfrac%7Bp_v%7D+%7B%5Csqrt%7BRT_v%7D%7D+)" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=+Denotation:+j-massflux,+l-liquid,+v-vapor,+p_%7Bsat%7D(T)-+" alt="[公式]"><strong>T</strong>温度下的饱和蒸汽压。</p>
 <p><img src="https://www.zhihu.com/equation?tex=%5Ckappa_E" alt="[公式]"> 和 <img src="https://www.zhihu.com/equation?tex=%5Ckappa_C" alt="[公式]"> 是两个经验参数，分别称为<strong>蒸发系数</strong>和<strong>凝聚系数</strong>，也是对于一种特定溶剂实际测量的系数。对这两个系数物理含义的直观理解是离开原有相并在相界面处缓慢迁移的分子中，气相分子和液相分子中各占的比例。</p>
 <p>对于如何确定<img src="https://www.zhihu.com/equation?tex=%5Ckappa_E" alt="[公式]">  和 <img src="https://www.zhihu.com/equation?tex=%5Ckappa_C" alt="[公式]">有基于速率分布律的导出公式(Tsuruta and Nagayama 1999)，也有不少MD模拟和实验研究。</p>
 <p>除了经典的非平衡热力学方法之外，经典速率理论通过考虑压强非恒定界面处的粒子速率分布，也得出了类似的表达式(Schrage 1953, Barrett and Clement 1992)。这些方法的共性是都包含并未显式定义的蒸发系数和凝聚系数，而近年有人通过statistical rate theory (<strong>SRT</strong>)建立了依赖于界面熵 <img src="https://www.zhihu.com/equation?tex=%5CDelta+S_%7BLV%7D" alt="[公式]"> 和饱和蒸汽压的方程(Ward and Fang 1999)：</p>
-<p><img src="https://www.zhihu.com/equation?tex=j%3D%5Cfrac%7B%5Ceta+p_%7Bsat%7D%28T_L%29%7D+%7B2%5Cpi+mkT_L%7D+%28+exp+%28%5CDelta+S_%7BLV%7D%2Fk%29+-+exp+%28-%5CDelta+S_%7BLV%7D%2Fk%29%29" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=j=%5Cfrac%7B%5Ceta+p_%7Bsat%7D(T_L)%7D+%7B2%5Cpi+mkT_L%7D+(+exp+(%5CDelta+S_%7BLV%7D/k)+-+exp+(-%5CDelta+S_%7BLV%7D/k))" alt="[公式]"></p>
 <p><img src="https://www.zhihu.com/equation?tex=%5CDelta+S_%7BLV%7D" alt="[公式]">在理论上可以通过展开两相的配分函数得到。这个方法得到的结果和实验吻合较好（图片来自P Rahimi 2005）：</p>
 <p><img src="https://pic2.zhimg.com/50/v2-ca321536331dc3de190591a49a35ccb0_hd.jpg" alt="img"></p>
 <p>Figure 5. Pressure in the vapor predicted by the SRT expression using measured values of temperature at the interface in the vapor and the liquid and the curvature of the interface at the measured rate of evaporation.</p>
 <p>这些方法的共同点是假设相界面的过渡层，再通过分析两相热力学状态对这个过渡层中粒子的组成和速率分布的影响，进而积分得到质量流函数，也就是反应纯溶剂的挥发速率。</p>
 <p>相关文献和参考资料：</p>
-<p><a href="http://www.lorentzcenter.nl/lc/web/2011/465/presentations/Henning%20Struchtrup.pdfwww.lorentzcenter.nl" target="_blank" rel="noopener">http://www.lorentzcenter.nl/lc/web/2011/465/presentations/Henning Struchtrup.pdfwww.lorentzcenter.nl</a><br>
-<a href="https://link.zhihu.com/target=http%3A//www.lorentzcenter.nl/lc/web/2011/465/presentations/Henning%20Struchtrup.pdf">https://link.zhihu.com/target=http%3A//www.lorentzcenter.nl/lc/web/2011/465/presentations/Henning Struchtrup.pdf</a><br>
-<a href="https://link.zhihu.com/?target=https%3A//link.springer.com/article/10.1007%2Fs10891-014-1006-4https://link.zh">https://link.zhihu.com/?target=https%3A//link.springer.com/article/10.1007%2Fs10891-014-1006-4https://link.zh</a><br>
-<a href="http://ihu.com/?target=http%3A//dergipark.ulakbim.gov.tr/eoguijt/article/view/1034000142">ihu.com/?target=http%3A//dergipark.ulakbim.gov.tr/eoguijt/article/view/1034000142</a></p>
+<p><a href="http://www.lorentzcenter.nl/lc/web/2011/465/presentations/Henning%20Struchtrup.pdfwww.lorentzcenter.nl" target="_blank" rel="noopener">http://www.lorentzcenter.nl/lc/web/2011/465/presentations/Henning%20Struchtrup.pdfwww.lorentzcenter.nl</a><br><a href="https://link.zhihu.com/target=http%3A//www.lorentzcenter.nl/lc/web/2011/465/presentations/Henning%20Struchtrup.pdf">https://link.zhihu.com/target=http%3A//www.lorentzcenter.nl/lc/web/2011/465/presentations/Henning%20Struchtrup.pdf</a><br><a href="https://link.zhihu.com/?target=https://link.springer.com/article/10.1007/s10891-014-1006-4https://link.zh">https://link.zhihu.com/?target=https%3A//link.springer.com/article/10.1007%2Fs10891-014-1006-4https://link.zh</a><br>ihu.com&#x2F;?target&#x3D;http%3A&#x2F;&#x2F;dergipark.ulakbim.gov.tr&#x2F;eoguijt&#x2F;article&#x2F;view&#x2F;1034000142</p>
 
     </article>
     <!-- license  -->
@@ -1726,11 +1723,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
-    
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
-    
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
+    
+        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
     
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
@@ -1738,13 +1733,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
-        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
     
         <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
-    
-        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
-    
-        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
     
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
@@ -1752,21 +1743,31 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
     
+        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+    
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
     
         <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
     
         <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
-        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
+    
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
     
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
     
         <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
     
-        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
-    
         <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -1776,17 +1777,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
     
-        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
+        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
-    
-        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
-    
-        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
     
         <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
@@ -1796,13 +1793,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
     
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
+    
         <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
     
         <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
         <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
@@ -1839,21 +1836,21 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
-    
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
-    
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
@@ -1863,11 +1860,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
-    
-        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
