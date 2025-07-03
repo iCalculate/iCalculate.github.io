@@ -440,19 +440,26 @@ height:50vh;
     <article class="article-entry">
         <p>When electrons travel through nanoscale devices, their behavior is governed not by classical Ohm’s law but by quantum mechanics and statistical distributions. This article introduces the physical foundation of the <strong>quantum of conductance</strong>, derives the <strong>Landauer formula</strong> step-by-step, and embeds an <strong>interactive visualization</strong> to show how temperature, energy, and electron distribution interplay in quantum transport.</p>
 <a id="more"></a>
-
-<h2 id="🌉-What-is-the-Quantum-of-Conductance"><a href="#🌉-What-is-the-Quantum-of-Conductance" class="headerlink" title="🌉 What is the Quantum of Conductance?"></a>🌉 What is the Quantum of Conductance?</h2><p>In classical circuits, resistance arises from scattering, and conductance is assumed to be a continuous function of material properties and geometry. However, at the nanoscale, where phase coherence is preserved and scattering becomes quantized, conductance is no longer continuous.</p>
+<h2 id="🌉-What-is-the-Quantum-of-Conductance">🌉 What is the Quantum of Conductance?</h2>
+<p>In classical circuits, resistance arises from scattering, and conductance is assumed to be a continuous function of material properties and geometry. However, at the nanoscale, where phase coherence is preserved and scattering becomes quantized, conductance is no longer continuous.</p>
 <blockquote>
 <p><em>“Every quantum channel carries the imprint of the wave nature of electrons.”</em></p>
 </blockquote>
 <p>In one-dimensional or quasi-one-dimensional systems, such as quantum point contacts (QPCs), carbon nanotubes, and graphene nanoribbons, conductance increases in discrete steps of</p>
-<p>$$<br>G_0 &#x3D; \frac{2q^2}{h} \approx 77.5\ \mu\text{S}<br>$$</p>
+<p>$$<br>
+G_0 = \frac{2q^2}{h} \approx 77.5\ \mu\text{S}<br>
+$$</p>
 <p>This quantization reflects the number of available transmission modes (or channels) at the Fermi level. Each fully open channel contributes precisely one quantum unit of conductance, regardless of its length or scattering details — as long as the channel is ballistic.</p>
 <hr>
-<h2 id="🧠-From-Fermi-Distributions-to-the-Landauer-Formula"><a href="#🧠-From-Fermi-Distributions-to-the-Landauer-Formula" class="headerlink" title="🧠 From Fermi Distributions to the Landauer Formula"></a>🧠 From Fermi Distributions to the Landauer Formula</h2><p>To understand the origin of this quantization, we begin with the Landauer framework. Consider a two-terminal conductor connected to large reservoirs with chemical potentials $ \mu_L $ and $ \mu_R $. A small voltage bias $V$ is applied between the reservoirs:</p>
-<p>$$<br>\mu_L &#x3D; \mu + qV&#x2F;2, \quad \mu_R &#x3D; \mu - qV&#x2F;2<br>$$</p>
+<h2 id="🧠-From-Fermi-Distributions-to-the-Landauer-Formula">🧠 From Fermi Distributions to the Landauer Formula</h2>
+<p>To understand the origin of this quantization, we begin with the Landauer framework. Consider a two-terminal conductor connected to large reservoirs with chemical potentials $ \mu_L $ and $ \mu_R $. A small voltage bias $V$ is applied between the reservoirs:</p>
+<p>$$<br>
+\mu_L = \mu + qV/2, \quad \mu_R = \mu - qV/2<br>
+$$</p>
 <p>Electrons at different energies have different probabilities of being transmitted through the device. The net current is given by the difference in occupation (described by Fermi-Dirac statistics) weighted by the transmission probability $T(E)$:</p>
-<p>$$<br>I &#x3D; \frac{2q}{h} \int T(E) [f_L(E) - f_R(E)] , dE<br>$$</p>
+<p>$$<br>
+I = \frac{2q}{h} \int T(E) [f_L(E) - f_R(E)] , dE<br>
+$$</p>
 <p>This elegant expression encapsulates several physical principles:</p>
 <ul>
 <li><strong>Quantum wave mechanics</strong>: $T(E)$ arises from solving the Schrödinger equation for the potential profile;</li>
@@ -461,22 +468,34 @@ height:50vh;
 </ul>
 <p>The factor of 2 accounts for spin degeneracy.</p>
 <hr>
-<h2 id="❄️-Zero-Temperature-Limit-and-Linear-Conductance"><a href="#❄️-Zero-Temperature-Limit-and-Linear-Conductance" class="headerlink" title="❄️ Zero Temperature Limit and Linear Conductance"></a>❄️ Zero Temperature Limit and Linear Conductance</h2><p>At absolute zero temperature ($T \to 0$), Fermi distributions become step functions:</p>
-<p>$$<br>f(E, \mu) &#x3D; \begin{cases} 1, &amp; E &lt; \mu \ 0, &amp; E &gt; \mu \end{cases}<br>$$</p>
+<h2 id="❄️-Zero-Temperature-Limit-and-Linear-Conductance">❄️ Zero Temperature Limit and Linear Conductance</h2>
+<p>At absolute zero temperature ($T \to 0$), Fermi distributions become step functions:</p>
+<p>$$<br>
+f(E, \mu) = \begin{cases} 1, &amp; E &lt; \mu \ 0, &amp; E &gt; \mu \end{cases}<br>
+$$</p>
 <p>Their difference $f_L - f_R$ becomes a rectangle centered at $\mu$ with width $qV$, and its derivative becomes a Dirac delta:</p>
-<p>$$<br>-\frac{df}{dE} \to \delta(E - \mu)<br>$$</p>
+<p>$$<br>
+-\frac{df}{dE} \to \delta(E - \mu)<br>
+$$</p>
 <p>In the <strong>linear response limit</strong> (small $V$), we expand $f_{L,R}$ via Taylor series:</p>
-<p>$$<br>f_L(E) - f_R(E) \approx qV \cdot \left(-\frac{df}{dE}\right)<br>$$</p>
+<p>$$<br>
+f_L(E) - f_R(E) \approx qV \cdot \left(-\frac{df}{dE}\right)<br>
+$$</p>
 <p>Substituting into the current expression yields:</p>
-<p>$$<br>I \approx \frac{2q^2}{h} V \int T(E) \left(-\frac{df}{dE}\right) , dE<br>$$</p>
+<p>$$<br>
+I \approx \frac{2q^2}{h} V \int T(E) \left(-\frac{df}{dE}\right) , dE<br>
+$$</p>
 <p>Thus, the <strong>differential conductance</strong> becomes:</p>
-<p>$$<br>G &#x3D; \left.\frac{dI}{dV}\right|_{V&#x3D;0} &#x3D; \frac{2q^2}{h} T(E &#x3D; \mu)<br>$$</p>
+<p>$$<br>
+G = \left.\frac{dI}{dV}\right|_{V=0} = \frac{2q^2}{h} T(E = \mu)<br>
+$$</p>
 <p>This formula emphasizes that <strong>only the transmission at the Fermi level matters</strong> when determining conductance at low temperatures and voltages.</p>
 <hr>
-<h2 id="📊-Interactive-Visualization"><a href="#📊-Interactive-Visualization" class="headerlink" title="📊 Interactive Visualization"></a>📊 Interactive Visualization</h2><p>To provide deeper intuition, we created an interactive plot that illustrates how temperature affects transport:</p>
+<h2 id="📊-Interactive-Visualization">📊 Interactive Visualization</h2>
+<p>To provide deeper intuition, we created an interactive plot that illustrates how temperature affects transport:</p>
 <ul>
 <li>At low $T$, $f_L - f_R$ resembles a sharp rectangular window;</li>
-<li>$-df&#x2F;dE$ becomes sharply peaked — resembling a sampling function;</li>
+<li>$-df/dE$ becomes sharply peaked — resembling a sampling function;</li>
 <li>As $T$ increases, both broaden, revealing how thermal smearing affects conductance.</li>
 </ul>
 <div id="quantum-vis"></div>
@@ -536,37 +555,42 @@ window.addEventListener('load', function() {
 });
 </script>
 
-
 <p>This visualization helps connect formal equations to intuitive physical pictures — useful for both students and researchers.</p>
 <hr>
-<h2 id="🚀-Beyond-the-Basics-Toward-Programmable-Quantum-Transport"><a href="#🚀-Beyond-the-Basics-Toward-Programmable-Quantum-Transport" class="headerlink" title="🚀 Beyond the Basics: Toward Programmable Quantum Transport"></a>🚀 Beyond the Basics: Toward Programmable Quantum Transport</h2><p>The Landauer formalism has matured from a conceptual model of 1D ballistic conduction into a versatile framework for analyzing quantum transport across diverse platforms. In recent years, several cutting-edge research avenues have extended this framework to new physical regimes and engineered functionalities.</p>
-<h3 id="1-Energy-Selective-and-Programmable-Transmission"><a href="#1-Energy-Selective-and-Programmable-Transmission" class="headerlink" title="1. Energy-Selective and Programmable Transmission"></a>1. <strong>Energy-Selective and Programmable Transmission</strong></h3><p>By designing potential landscapes or band structures, it is now possible to shape the transmission function $ T(E) $ to act as an <strong>electron energy filter</strong>. For instance:</p>
+<h2 id="🚀-Beyond-the-Basics-Toward-Programmable-Quantum-Transport">🚀 Beyond the Basics: Toward Programmable Quantum Transport</h2>
+<p>The Landauer formalism has matured from a conceptual model of 1D ballistic conduction into a versatile framework for analyzing quantum transport across diverse platforms. In recent years, several cutting-edge research avenues have extended this framework to new physical regimes and engineered functionalities.</p>
+<h3 id="1-Energy-Selective-and-Programmable-Transmission">1. <strong>Energy-Selective and Programmable Transmission</strong></h3>
+<p>By designing potential landscapes or band structures, it is now possible to shape the transmission function $ T(E) $ to act as an <strong>electron energy filter</strong>. For instance:</p>
 <ul>
 <li>In <strong>graphene p–n junctions</strong>, angular collimation and tunable Klein tunneling profiles allow $ T(E) $ to be sharply peaked around specific energies;</li>
 <li><strong>Twisted bilayer graphene (TBG)</strong> and <strong>moiré superlattices</strong> introduce flat bands and correlated gaps that enable highly nontrivial $T(E)$ profiles;</li>
 <li>In <strong>quantum dot arrays</strong> or <strong>quantum point contacts</strong>, electrostatic gating provides a knob to turn transmission channels on and off discretely.</li>
 </ul>
 <p>These developments bring us closer to <strong>programmable transport</strong>, where logic and functionality are embedded not in the material alone, but in the structure of $T(E)$.</p>
-<h3 id="2-Beyond-Linear-Response-Finite-Bias-and-Non-Equilibrium-Effects"><a href="#2-Beyond-Linear-Response-Finite-Bias-and-Non-Equilibrium-Effects" class="headerlink" title="2. Beyond Linear Response: Finite Bias and Non-Equilibrium Effects"></a>2. <strong>Beyond Linear Response: Finite Bias and Non-Equilibrium Effects</strong></h3><p>While the linear conductance formula samples $T(E)$ at a single energy point ($E &#x3D; \mu$), finite bias extends the transport window, making the full shape of $T(E)$ and its interaction with broadened Fermi distributions essential. This is crucial for:</p>
+<h3 id="2-Beyond-Linear-Response-Finite-Bias-and-Non-Equilibrium-Effects">2. <strong>Beyond Linear Response: Finite Bias and Non-Equilibrium Effects</strong></h3>
+<p>While the linear conductance formula samples $T(E)$ at a single energy point ($E = \mu$), finite bias extends the transport window, making the full shape of $T(E)$ and its interaction with broadened Fermi distributions essential. This is crucial for:</p>
 <ul>
 <li><strong>Nonlinear thermoelectric effects</strong>, where asymmetric $T(E)$ is harnessed to separate hot and cold carriers;</li>
 <li><strong>Strongly correlated systems</strong>, where Coulomb blockade and Kondo resonances appear as sharp peaks in $T(E)$;</li>
 <li><strong>Molecular junctions</strong> and <strong>single-electron transistors</strong>, where bias-dependent level alignment modifies transport dramatically.</li>
 </ul>
-<h3 id="3-Thermal-Window-Engineering-and-Quantum-Thermodynamics"><a href="#3-Thermal-Window-Engineering-and-Quantum-Thermodynamics" class="headerlink" title="3. Thermal Window Engineering and Quantum Thermodynamics"></a>3. <strong>Thermal Window Engineering and Quantum Thermodynamics</strong></h3><p>The derivative $-df&#x2F;dE$ defines the <strong>thermal window</strong> that weights the contribution of each energy level to the net current. At finite temperature, this window acts like a “soft filter” centered at the chemical potential:</p>
+<h3 id="3-Thermal-Window-Engineering-and-Quantum-Thermodynamics">3. <strong>Thermal Window Engineering and Quantum Thermodynamics</strong></h3>
+<p>The derivative $-df/dE$ defines the <strong>thermal window</strong> that weights the contribution of each energy level to the net current. At finite temperature, this window acts like a “soft filter” centered at the chemical potential:</p>
 <ul>
 <li>Recent proposals explore the engineering of <strong>temperature gradients</strong> and <strong>energy-harvesting protocols</strong> using sharply tuned $T(E)$ and asymmetric contacts;</li>
-<li>In <strong>quantum heat engines</strong>, the interplay between $T(E)$ and $-df&#x2F;dE$ directly controls energy conversion efficiency and entropy flow;</li>
+<li>In <strong>quantum heat engines</strong>, the interplay between $T(E)$ and $-df/dE$ directly controls energy conversion efficiency and entropy flow;</li>
 <li>Extensions to <strong>Floquet systems</strong> allow time-periodic modulations of $T(E,t)$, yielding dynamically tunable thermal responses.</li>
 </ul>
-<h3 id="4-Beyond-Fermi-Dirac-Statistics"><a href="#4-Beyond-Fermi-Dirac-Statistics" class="headerlink" title="4. Beyond Fermi-Dirac Statistics"></a>4. <strong>Beyond Fermi-Dirac Statistics</strong></h3><p>The Landauer approach assumes electrons are non-interacting fermions. However, generalizations now explore:</p>
+<h3 id="4-Beyond-Fermi-Dirac-Statistics">4. <strong>Beyond Fermi-Dirac Statistics</strong></h3>
+<p>The Landauer approach assumes electrons are non-interacting fermions. However, generalizations now explore:</p>
 <ul>
 <li><strong>Bosonic transport</strong> in phonon-mediated systems and superconducting devices;</li>
 <li><strong>Anyons</strong> and fractionalized quasiparticles in topological matter;</li>
 <li><strong>Inelastic scattering and decoherence</strong>, integrated via non-equilibrium Green’s function (NEGF) techniques, add statistical weightings beyond simple Fermi functions.</li>
 </ul>
 <hr>
-<h2 id="✨-Summary-and-Outlook"><a href="#✨-Summary-and-Outlook" class="headerlink" title="✨ Summary and Outlook"></a>✨ Summary and Outlook</h2><p>The quantum of conductance, once viewed as a curiosity of low-temperature physics, has become a critical concept for modern nanoelectronics. As our ability to manipulate matter at the atomic scale improves, <strong>engineering quantum transport</strong> — not just observing it — will be central to designing future quantum devices, energy-efficient systems, and novel computing architectures.</p>
+<h2 id="✨-Summary-and-Outlook">✨ Summary and Outlook</h2>
+<p>The quantum of conductance, once viewed as a curiosity of low-temperature physics, has become a critical concept for modern nanoelectronics. As our ability to manipulate matter at the atomic scale improves, <strong>engineering quantum transport</strong> — not just observing it — will be central to designing future quantum devices, energy-efficient systems, and novel computing architectures.</p>
 <p>The interplay between transmission, thermal distribution, and quantum coherence offers a rich playground where physics meets engineering, and where theory becomes experiment.</p>
 
     </article>
@@ -585,8 +609,8 @@ window.addEventListener('load', function() {
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2025/07/03/MOSFET-Quantum-Transport-Simulation/" title= "MOSFET-Quantum-Transport-Simulation">
-                    <div class="nextTitle">MOSFET-Quantum-Transport-Simulation</div>
+                <a href= "/2025/07/03/MOSFET-Quantum-Transport-Simulation/" title= "MOSFET Quantum Transport Simulation">
+                    <div class="nextTitle">MOSFET Quantum Transport Simulation</div>
                 </a>
             
         </li>
@@ -1523,7 +1547,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET-Quantum-Transport-Simulation</a>
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET Quantum Transport Simulation</a>
         </li>
     
     
@@ -1844,19 +1868,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
     
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
-    
         <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
-        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
-    
         <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+    
+        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
         <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
     
@@ -1870,19 +1894,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
-        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
-    
         <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
     
         <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
+        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
+    
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
     
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
     
         <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
     
-        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -1892,19 +1916,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
-    
         <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
-        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
-    
         <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
     
         <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
+    
+        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
@@ -1957,29 +1981,29 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
-    
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
-        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
-    
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
     

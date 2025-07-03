@@ -34,7 +34,7 @@ Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sen
 ">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>MOSFET-Quantum-Transport-Simulation · Xinchuan Du | Researcher in 2D Materials &amp; Optoelectronics</title>
+    <title>MOSFET Quantum Transport Simulation · Xinchuan Du | Researcher in 2D Materials &amp; Optoelectronics</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -252,7 +252,7 @@ Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sen
                 <a href="/" >iCalculate’s Studio</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">MOSFET-Quantum-Transport-Simulation</a>
+                <a href="#" class="post-name">MOSFET Quantum Transport Simulation</a>
             </div>
     </div>
     
@@ -282,7 +282,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            MOSFET-Quantum-Transport-Simulation
+            MOSFET Quantum Transport Simulation
             <!-- 404 -->
             
         </h1>
@@ -444,8 +444,8 @@ height:50vh;
     <article class="article-entry">
         <p>The Metal-Oxide-Semiconductor Field-Effect Transistor (MOSFET) represents one of the most fundamental building blocks of modern electronics. As device dimensions shrink into the nanoscale regime, quantum mechanical effects become increasingly important, fundamentally altering the transport characteristics. This article presents an <strong>interactive simulation</strong> that bridges classical and quantum transport regimes, incorporating realistic effects such as contact barriers, gate leakage, and quantum noise.</p>
 <a id="more"></a>
-
-<h2 id="🌊-Classical-vs-Quantum-Transport-in-MOSFETs"><a href="#🌊-Classical-vs-Quantum-Transport-in-MOSFETs" class="headerlink" title="🌊 Classical vs Quantum Transport in MOSFETs"></a>🌊 Classical vs Quantum Transport in MOSFETs</h2><p>In classical MOSFET theory, current flow is described by the drift-diffusion model, where electrons move under the influence of electric fields and experience scattering events. However, as channel lengths approach the mean free path of electrons (typically 10-100 nm in silicon), transport becomes <strong>ballistic</strong> or <strong>quasi-ballistic</strong>.</p>
+<h2 id="🌊-Classical-vs-Quantum-Transport-in-MOSFETs">🌊 Classical vs Quantum Transport in MOSFETs</h2>
+<p>In classical MOSFET theory, current flow is described by the drift-diffusion model, where electrons move under the influence of electric fields and experience scattering events. However, as channel lengths approach the mean free path of electrons (typically 10-100 nm in silicon), transport becomes <strong>ballistic</strong> or <strong>quasi-ballistic</strong>.</p>
 <blockquote>
 <p><em>“When the channel length becomes comparable to the electron’s phase coherence length, quantum interference effects dominate transport.”</em></p>
 </blockquote>
@@ -457,29 +457,38 @@ height:50vh;
 <li><strong>Quantum noise</strong> and <strong>shot noise</strong> effects</li>
 </ol>
 <hr>
-<h2 id="🔬-Physical-Models-in-the-Simulation"><a href="#🔬-Physical-Models-in-the-Simulation" class="headerlink" title="🔬 Physical Models in the Simulation"></a>🔬 Physical Models in the Simulation</h2><p>Our interactive simulation incorporates multiple physical effects that become important in nanoscale MOSFETs:</p>
-<h3 id="1-Contact-Barrier-Effects"><a href="#1-Contact-Barrier-Effects" class="headerlink" title="1. Contact Barrier Effects"></a>1. <strong>Contact Barrier Effects</strong></h3><p>At metal-semiconductor interfaces, a Schottky barrier forms due to the difference in work functions. The barrier height $\Phi_B$ affects:</p>
+<h2 id="🔬-Physical-Models-in-the-Simulation">🔬 Physical Models in the Simulation</h2>
+<p>Our interactive simulation incorporates multiple physical effects that become important in nanoscale MOSFETs:</p>
+<h3 id="1-Contact-Barrier-Effects">1. <strong>Contact Barrier Effects</strong></h3>
+<p>At metal-semiconductor interfaces, a Schottky barrier forms due to the difference in work functions. The barrier height $\Phi_B$ affects:</p>
 <ul>
-<li><strong>Threshold voltage</strong> through the relation: $V_{th} &#x3D; V_{th0} + \Phi_B$</li>
-<li><strong>Contact resistance</strong> via the Richardson-Dushman equation: $R_c &#x3D; \frac{1}{A^* T^2 e^{-q\Phi_B&#x2F;kT}}$</li>
+<li><strong>Threshold voltage</strong> through the relation: $V_{th} = V_{th0} + \Phi_B$</li>
+<li><strong>Contact resistance</strong> via the Richardson-Dushman equation: $R_c = \frac{1}{A^* T^2 e^{-q\Phi_B/kT}}$</li>
 <li><strong>Current injection</strong> efficiency at the source and drain</li>
 </ul>
-<h3 id="2-Gate-Leakage-Current"><a href="#2-Gate-Leakage-Current" class="headerlink" title="2. Gate Leakage Current"></a>2. <strong>Gate Leakage Current</strong></h3><p>As gate oxide thickness decreases, direct tunneling through the oxide becomes significant:</p>
-<p>$$<br>J_g &#x3D; J_0 \exp\left(\frac{E_{ox}}{E_0}\right)<br>$$</p>
-<p>where $E_{ox} &#x3D; V_{gs}&#x2F;t_{ox}$ is the oxide electric field and $E_0$ is a characteristic field strength.</p>
-<h3 id="3-Quantum-Noise-Effects"><a href="#3-Quantum-Noise-Effects" class="headerlink" title="3. Quantum Noise Effects"></a>3. <strong>Quantum Noise Effects</strong></h3><p>In the quantum regime, several noise mechanisms become important:</p>
+<h3 id="2-Gate-Leakage-Current">2. <strong>Gate Leakage Current</strong></h3>
+<p>As gate oxide thickness decreases, direct tunneling through the oxide becomes significant:</p>
+<p>$$<br>
+J_g = J_0 \exp\left(\frac{E_{ox}}{E_0}\right)<br>
+$$</p>
+<p>where $E_{ox} = V_{gs}/t_{ox}$ is the oxide electric field and $E_0$ is a characteristic field strength.</p>
+<h3 id="3-Quantum-Noise-Effects">3. <strong>Quantum Noise Effects</strong></h3>
+<p>In the quantum regime, several noise mechanisms become important:</p>
 <ul>
-<li><strong>Shot noise</strong>: $S_I &#x3D; 2qI$ for ballistic transport</li>
-<li><strong>Thermal noise</strong>: $S_I &#x3D; 4k_B T G$ for dissipative transport</li>
+<li><strong>Shot noise</strong>: $S_I = 2qI$ for ballistic transport</li>
+<li><strong>Thermal noise</strong>: $S_I = 4k_B T G$ for dissipative transport</li>
 <li><strong>Quantum noise</strong>: Additional fluctuations due to quantum uncertainty</li>
 </ul>
-<h3 id="4-Subthreshold-Transport"><a href="#4-Subthreshold-Transport" class="headerlink" title="4. Subthreshold Transport"></a>4. <strong>Subthreshold Transport</strong></h3><p>Below threshold, current follows an exponential relationship:</p>
-<p>$$<br>I_d &#x3D; I_0 \exp\left(\frac{q(V_{gs} - V_{th})}{nk_B T}\right)<br>$$</p>
+<h3 id="4-Subthreshold-Transport">4. <strong>Subthreshold Transport</strong></h3>
+<p>Below threshold, current follows an exponential relationship:</p>
+<p>$$<br>
+I_d = I_0 \exp\left(\frac{q(V_{gs} - V_{th})}{nk_B T}\right)<br>
+$$</p>
 <p>where $n$ is the subthreshold slope factor.</p>
 <hr>
-<h2 id="📊-Interactive-MOSFET-Simulation"><a href="#📊-Interactive-MOSFET-Simulation" class="headerlink" title="📊 Interactive MOSFET Simulation"></a>📊 Interactive MOSFET Simulation</h2><p>The following interactive simulation allows you to explore how various parameters affect MOSFET characteristics in both classical and quantum regimes:</p>
+<h2 id="📊-Interactive-MOSFET-Simulation">📊 Interactive MOSFET Simulation</h2>
+<p>The following interactive simulation allows you to explore how various parameters affect MOSFET characteristics in both classical and quantum regimes:</p>
 <div id="mosfet-simulation"></div>
-
 
 <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 <script>
@@ -843,7 +852,6 @@ window.addEventListener('load', function() {
 });
 </script>
 
-
 <p>This interactive simulation demonstrates several key quantum transport effects:</p>
 <ol>
 <li><strong>Contact Barrier Effects</strong>: Adjust the Schottky barrier height to see how it affects threshold voltage and contact resistance</li>
@@ -852,21 +860,30 @@ window.addEventListener('load', function() {
 <li><strong>Subthreshold Transport</strong>: Explore the exponential relationship below threshold</li>
 </ol>
 <hr>
-<h2 id="🚀-Quantum-Transport-Regimes"><a href="#🚀-Quantum-Transport-Regimes" class="headerlink" title="🚀 Quantum Transport Regimes"></a>🚀 Quantum Transport Regimes</h2><p>As MOSFET dimensions continue to shrink, several quantum transport regimes emerge:</p>
-<h3 id="1-Ballistic-Transport"><a href="#1-Ballistic-Transport" class="headerlink" title="1. Ballistic Transport"></a>1. <strong>Ballistic Transport</strong></h3><p>When the channel length $L$ becomes shorter than the mean free path $\lambda$, electrons traverse the channel without scattering:</p>
-<p>$$<br>G &#x3D; \frac{2q^2}{h} \sum_n T_n<br>$$</p>
+<h2 id="🚀-Quantum-Transport-Regimes">🚀 Quantum Transport Regimes</h2>
+<p>As MOSFET dimensions continue to shrink, several quantum transport regimes emerge:</p>
+<h3 id="1-Ballistic-Transport">1. <strong>Ballistic Transport</strong></h3>
+<p>When the channel length $L$ becomes shorter than the mean free path $\lambda$, electrons traverse the channel without scattering:</p>
+<p>$$<br>
+G = \frac{2q^2}{h} \sum_n T_n<br>
+$$</p>
 <p>where $T_n$ is the transmission probability of the $n$-th mode.</p>
-<h3 id="2-Quantum-Interference"><a href="#2-Quantum-Interference" class="headerlink" title="2. Quantum Interference"></a>2. <strong>Quantum Interference</strong></h3><p>In narrow channels, quantum interference effects lead to:</p>
+<h3 id="2-Quantum-Interference">2. <strong>Quantum Interference</strong></h3>
+<p>In narrow channels, quantum interference effects lead to:</p>
 <ul>
-<li><strong>Conductance quantization</strong> in steps of $2q^2&#x2F;h$</li>
+<li><strong>Conductance quantization</strong> in steps of $2q^2/h$</li>
 <li><strong>Aharonov-Bohm oscillations</strong> in ring geometries</li>
 <li><strong>Universal conductance fluctuations</strong> due to impurity configurations</li>
 </ul>
-<h3 id="3-Tunneling-Transport"><a href="#3-Tunneling-Transport" class="headerlink" title="3. Tunneling Transport"></a>3. <strong>Tunneling Transport</strong></h3><p>For very thin gate oxides ($t_{ox} &lt; 3$ nm), direct tunneling dominates:</p>
-<p>$$<br>J_{tunnel} &#x3D; A \left(\frac{V_{ox}}{t_{ox}}\right)^2 \exp\left(-\frac{B t_{ox}}{V_{ox}}\right)<br>$$</p>
+<h3 id="3-Tunneling-Transport">3. <strong>Tunneling Transport</strong></h3>
+<p>For very thin gate oxides ($t_{ox} &lt; 3$ nm), direct tunneling dominates:</p>
+<p>$$<br>
+J_{tunnel} = A \left(\frac{V_{ox}}{t_{ox}}\right)^2 \exp\left(-\frac{B t_{ox}}{V_{ox}}\right)<br>
+$$</p>
 <p>where $A$ and $B$ are material-dependent constants.</p>
 <hr>
-<h2 id="🔬-Experimental-Observations"><a href="#🔬-Experimental-Observations" class="headerlink" title="🔬 Experimental Observations"></a>🔬 Experimental Observations</h2><p>Modern nanoscale MOSFETs exhibit several quantum effects:</p>
+<h2 id="🔬-Experimental-Observations">🔬 Experimental Observations</h2>
+<p>Modern nanoscale MOSFETs exhibit several quantum effects:</p>
 <ol>
 <li><strong>Conductance quantization</strong> in silicon nanowires at low temperatures</li>
 <li><strong>Quantum interference</strong> in graphene nanoribbons</li>
@@ -875,7 +892,8 @@ window.addEventListener('load', function() {
 </ol>
 <p>The simulation above captures many of these effects through realistic physical models.</p>
 <hr>
-<h2 id="✨-Future-Directions"><a href="#✨-Future-Directions" class="headerlink" title="✨ Future Directions"></a>✨ Future Directions</h2><p>The study of quantum transport in MOSFETs opens several exciting research directions:</p>
+<h2 id="✨-Future-Directions">✨ Future Directions</h2>
+<p>The study of quantum transport in MOSFETs opens several exciting research directions:</p>
 <ol>
 <li><strong>Quantum Computing</strong>: Using quantum interference for logic operations</li>
 <li><strong>Energy Harvesting</strong>: Exploiting quantum effects for efficient energy conversion</li>
@@ -884,7 +902,7 @@ window.addEventListener('load', function() {
 </ol>
 <p>As we continue to push the limits of device scaling, understanding and harnessing quantum transport effects will become increasingly important for the next generation of electronic devices.</p>
 <hr>
-<p><em>This interactive simulation bridges the gap between classical device physics and quantum transport, providing an intuitive understanding of how quantum effects manifest in nanoscale MOSFETs.</em> </p>
+<p><em>This interactive simulation bridges the gap between classical device physics and quantum transport, providing an intuitive understanding of how quantum effects manifest in nanoscale MOSFETs.</em></p>
 
     </article>
     <!-- license  -->
@@ -893,7 +911,7 @@ window.addEventListener('load', function() {
             <p>Author：<a href="http://www.iCalculate.website">Du Xinchuan</a>
             <p>原文链接：<a href="http://www.icalculate.website/2025/07/03/MOSFET-Quantum-Transport-Simulation/">http://www.icalculate.website/2025/07/03/MOSFET-Quantum-Transport-Simulation/</a>
             <p>发表日期：<a href="http://www.icalculate.website/2025/07/03/MOSFET-Quantum-Transport-Simulation/">July 3rd 2025, 2:14:27 pm</a>
-            <p>更新日期：<a href="http://www.icalculate.website/2025/07/03/MOSFET-Quantum-Transport-Simulation/">July 3rd 2025, 2:14:55 pm</a>
+            <p>更新日期：<a href="http://www.icalculate.website/2025/07/03/MOSFET-Quantum-Transport-Simulation/">July 3rd 2025, 3:17:52 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -1835,7 +1853,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET-Quantum-Transport-Simulation</a>
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET Quantum Transport Simulation</a>
         </li>
     
     
@@ -2156,19 +2174,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
     
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
-    
         <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
-        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
-    
         <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+    
+        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
         <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
     
@@ -2182,19 +2200,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
-        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
-    
         <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
     
         <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
+        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
+    
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
     
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
     
         <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
     
-        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -2204,19 +2222,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
-    
         <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
-        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
-    
         <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
     
         <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
+    
+        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
@@ -2269,29 +2287,29 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
-    
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
-        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
-    
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
     
