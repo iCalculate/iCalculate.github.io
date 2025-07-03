@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNMSN3C9M8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MNMSN3C9M8');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="Du Xinchuan">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Du Xinchuan">
+    
+    <meta name="keywords" content="Xinchuan Du,Du Xinchuan,2D materials,optoelectronic devices,spectroscopy,semiconductor physics,photodetectors,quantum sensing">
+    
+    <meta name="description" content="Dr. Xinchuan Du's research notes and project documentation. 
+Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sensing.
+">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>MOSFET-Quantum-Transport-Simulation · Xinchuan Du | Researcher in 2D Materials &amp; Optoelectronics</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', '[object Object]', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >iCalculate’s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">MOSFET-Quantum-Transport-Simulation</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>iCalculate’s Studio</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            MOSFET-Quantum-Transport-Simulation
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "MOSFET">MOSFET</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Quantum Transport">Quantum Transport</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Semiconductor Physics">Semiconductor Physics</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Interactive Simulation">Interactive Simulation</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">2k</span>Reading time: <span class="post-count reading-time">11 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2025/07/03</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>The Metal-Oxide-Semiconductor Field-Effect Transistor (MOSFET) represents one of the most fundamental building blocks of modern electronics. As device dimensions shrink into the nanoscale regime, quantum mechanical effects become increasingly important, fundamentally altering the transport characteristics. This article presents an <strong>interactive simulation</strong> that bridges classical and quantum transport regimes, incorporating realistic effects such as contact barriers, gate leakage, and quantum noise.</p>
+<a id="more"></a>
+
+<h2 id="🌊-Classical-vs-Quantum-Transport-in-MOSFETs"><a href="#🌊-Classical-vs-Quantum-Transport-in-MOSFETs" class="headerlink" title="🌊 Classical vs Quantum Transport in MOSFETs"></a>🌊 Classical vs Quantum Transport in MOSFETs</h2><p>In classical MOSFET theory, current flow is described by the drift-diffusion model, where electrons move under the influence of electric fields and experience scattering events. However, as channel lengths approach the mean free path of electrons (typically 10-100 nm in silicon), transport becomes <strong>ballistic</strong> or <strong>quasi-ballistic</strong>.</p>
+<blockquote>
+<p><em>“When the channel length becomes comparable to the electron’s phase coherence length, quantum interference effects dominate transport.”</em></p>
+</blockquote>
+<p>The transition from classical to quantum transport manifests in several ways:</p>
+<ol>
+<li><strong>Quantized conductance steps</strong> in narrow channels</li>
+<li><strong>Quantum interference</strong> and <strong>Aharonov-Bohm oscillations</strong></li>
+<li><strong>Tunneling currents</strong> through thin gate oxides</li>
+<li><strong>Quantum noise</strong> and <strong>shot noise</strong> effects</li>
+</ol>
+<hr>
+<h2 id="🔬-Physical-Models-in-the-Simulation"><a href="#🔬-Physical-Models-in-the-Simulation" class="headerlink" title="🔬 Physical Models in the Simulation"></a>🔬 Physical Models in the Simulation</h2><p>Our interactive simulation incorporates multiple physical effects that become important in nanoscale MOSFETs:</p>
+<h3 id="1-Contact-Barrier-Effects"><a href="#1-Contact-Barrier-Effects" class="headerlink" title="1. Contact Barrier Effects"></a>1. <strong>Contact Barrier Effects</strong></h3><p>At metal-semiconductor interfaces, a Schottky barrier forms due to the difference in work functions. The barrier height $\Phi_B$ affects:</p>
+<ul>
+<li><strong>Threshold voltage</strong> through the relation: $V_{th} &#x3D; V_{th0} + \Phi_B$</li>
+<li><strong>Contact resistance</strong> via the Richardson-Dushman equation: $R_c &#x3D; \frac{1}{A^* T^2 e^{-q\Phi_B&#x2F;kT}}$</li>
+<li><strong>Current injection</strong> efficiency at the source and drain</li>
+</ul>
+<h3 id="2-Gate-Leakage-Current"><a href="#2-Gate-Leakage-Current" class="headerlink" title="2. Gate Leakage Current"></a>2. <strong>Gate Leakage Current</strong></h3><p>As gate oxide thickness decreases, direct tunneling through the oxide becomes significant:</p>
+<p>$$<br>J_g &#x3D; J_0 \exp\left(\frac{E_{ox}}{E_0}\right)<br>$$</p>
+<p>where $E_{ox} &#x3D; V_{gs}&#x2F;t_{ox}$ is the oxide electric field and $E_0$ is a characteristic field strength.</p>
+<h3 id="3-Quantum-Noise-Effects"><a href="#3-Quantum-Noise-Effects" class="headerlink" title="3. Quantum Noise Effects"></a>3. <strong>Quantum Noise Effects</strong></h3><p>In the quantum regime, several noise mechanisms become important:</p>
+<ul>
+<li><strong>Shot noise</strong>: $S_I &#x3D; 2qI$ for ballistic transport</li>
+<li><strong>Thermal noise</strong>: $S_I &#x3D; 4k_B T G$ for dissipative transport</li>
+<li><strong>Quantum noise</strong>: Additional fluctuations due to quantum uncertainty</li>
+</ul>
+<h3 id="4-Subthreshold-Transport"><a href="#4-Subthreshold-Transport" class="headerlink" title="4. Subthreshold Transport"></a>4. <strong>Subthreshold Transport</strong></h3><p>Below threshold, current follows an exponential relationship:</p>
+<p>$$<br>I_d &#x3D; I_0 \exp\left(\frac{q(V_{gs} - V_{th})}{nk_B T}\right)<br>$$</p>
+<p>where $n$ is the subthreshold slope factor.</p>
+<hr>
+<h2 id="📊-Interactive-MOSFET-Simulation"><a href="#📊-Interactive-MOSFET-Simulation" class="headerlink" title="📊 Interactive MOSFET Simulation"></a>📊 Interactive MOSFET Simulation</h2><p>The following interactive simulation allows you to explore how various parameters affect MOSFET characteristics in both classical and quantum regimes:</p>
+<div id="mosfet-simulation"></div>
+
+
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<script>
+window.addEventListener('load', function() {
+  // 物理常数
+  const q = 1.6e-19;
+  const k = 1.38e-23;
+  const eps0 = 8.85e-12;
+  const mu_n = 300e-4;
+  const ni = 1.5e10;
+  const Na = 1e17;
+  const eps_si = 11.7;
+  const h = 6.626e-34;
+  const m_e = 9.109e-31;
+
+  // 参数对象
+  let params = {
+    T: 300,
+    L: 1e-6,
+    W: 10e-6,
+    tox: 5e-9,
+    epsox: 3.9,
+    phiB: 0.6,
+    noiseLevel: 0.02,
+    offCurrentNoise: 0.10,
+    gateLeakageFactor: 1.0,
+    vdsMax: 2.0
+  };
+
+  // 添加噪声函数
+  function addNoise(value, noiseLevel) {
+    const noise = (Math.random() - 0.5) * 2 * noiseLevel * value;
+    return Math.max(0, value + noise);
+  }
+
+  // 添加关态电流噪声（指数分布）
+  function addOffCurrentNoise(baseCurrent, noiseLevel) {
+    const lambda = 1 / (baseCurrent * noiseLevel);
+    const noise = -Math.log(1 - Math.random()) / lambda;
+    return baseCurrent + noise;
+  }
+
+  // 计算栅极漏电流
+  function calculateGateLeakage(Vgs, tox, epsox, T, factor) {
+    const Eox = Math.abs(Vgs) / (tox * 1e9);
+    const J0 = 1e-6 * factor;
+    const Jg = J0 * Math.exp(Eox / 10);
+    const Ig = Jg * params.W * params.L * 1e8;
+    return Ig;
+  }
+
+  // 计算接触电阻
+  function calculateContactResistance(phiB, T) {
+    const A_star = 4 * Math.PI * q * m_e * k * k / (h * h * h);
+    const J0 = A_star * T * T * Math.exp(-q * phiB / (k * T));
+    const Rc = 1 / (J0 * params.W * params.L);
+    return Rc;
+  }
+
+  // 计算转移特性曲线
+  function calculateTransferCurve() {
+    const { T, L, W, tox, epsox, phiB, noiseLevel, offCurrentNoise, gateLeakageFactor } = params;
+
+    const phi_F = (k * T / q) * Math.log(Na / ni);
+    const eps_ox = epsox * eps0;
+    const Cox = eps_ox / tox;
+    const Qdep = Math.sqrt(2 * q * eps_si * eps0 * Na * 2 * phi_F);
+    const Vth = -Qdep / Cox - 2 * phi_F + phiB;
+    const Rc = calculateContactResistance(phiB, T);
+    
+    const Vgs_values = Array.from({length: 200}, (_, i) => -2 + i * 0.05);
+    
+    const Id_values = Vgs_values.map(Vgs => {
+      let Id = 0;
+      const Ig = calculateGateLeakage(Vgs, tox, epsox, T, gateLeakageFactor);
+      
+      if (Vgs > Vth) {
+        Id = 0.5 * mu_n * Cox * W / L * Math.pow(Vgs - Vth, 2);
+        const Vds_sat = Vgs - Vth;
+        const Id_sat = 0.5 * mu_n * Cox * W / L * Math.pow(Vds_sat, 2);
+        const voltageDrop = Id_sat * Rc;
+        
+        if (voltageDrop < Vds_sat) {
+          Id = Id_sat * (1 - voltageDrop / Vds_sat);
+        } else {
+          Id = 0;
+        }
+      } else {
+        const subthresholdSlope = 2.3 * k * T / q;
+        const Id0 = 1e-12;
+        Id = Id0 * Math.exp((Vgs - Vth) / subthresholdSlope);
+        Id = addOffCurrentNoise(Id, offCurrentNoise);
+      }
+      
+      Id += Ig;
+      return addNoise(Id, noiseLevel);
+    });
+    
+    return { Vgs_values, Id_values, Vth };
+  }
+
+  // 计算输运特性曲线
+  function calculateOutputCurve() {
+    const { T, L, W, tox, epsox, phiB, noiseLevel, gateLeakageFactor, vdsMax } = params;
+
+    const phi_F = (k * T / q) * Math.log(Na / ni);
+    const eps_ox = epsox * eps0;
+    const Cox = eps_ox / tox;
+    const Qdep = Math.sqrt(2 * q * eps_si * eps0 * Na * 2 * phi_F);
+    const Vth = -Qdep / Cox - 2 * phi_F + phiB;
+    const Rc = calculateContactResistance(phiB, T);
+    
+    const Vds_values = Array.from({length: 100}, (_, i) => i * vdsMax / 99);
+    const Vgs_values = [Vth + 0.5, Vth + 1.0, Vth + 1.5, Vth + 2.0];
+    
+    const traces = Vgs_values.map((Vgs, index) => {
+      const Id_values = Vds_values.map(Vds => {
+        let Id = 0;
+        const Ig = calculateGateLeakage(Vgs, tox, epsox, T, gateLeakageFactor);
+        
+        if (Vgs > Vth) {
+          if (Vds < Vgs - Vth) {
+            Id = mu_n * Cox * W / L * ((Vgs - Vth) * Vds - 0.5 * Vds * Vds);
+          } else {
+            Id = 0.5 * mu_n * Cox * W / L * Math.pow(Vgs - Vth, 2);
+          }
+          
+          const voltageDrop = Id * Rc;
+          if (voltageDrop < Vds) {
+            Id = Id * (1 - voltageDrop / Vds);
+          } else {
+            Id = 0;
+          }
+        }
+        
+        Id += Ig;
+        return addNoise(Id, noiseLevel);
+      });
+    
+      return {
+        x: Vds_values,
+        y: Id_values.map(i => i * 1e6),
+        mode: 'lines',
+        name: `VGS = ${Vgs.toFixed(1)}V`,
+        line: { width: 2 },
+        hovertemplate: 'VDS: %{x:.2f}V<br>ID: %{y:.2f}μA<extra></extra>'
+      };
+    });
+    
+    return traces;
+  }
+
+  // 更新所有图表
+  function updatePlots() {
+    try {
+      const transferData = calculateTransferCurve();
+      
+      const transferTrace = {
+        x: transferData.Vgs_values,
+        y: transferData.Id_values.map(i => Math.max(1e-3, i * 1e6)),
+        mode: 'lines',
+        name: '转移特性',
+        line: { width: 2, color: '#3498db' },
+        hovertemplate: 'VGS: %{x:.2f}V<br>ID: %{y:.2f}μA<extra></extra>'
+      };
+    
+      const transferLayout = {
+        title: {
+          text: '转移特性曲线 (ID vs VGS)',
+          font: { size: 16, color: '#2c3e50' }
+        },
+        xaxis: { 
+          title: '栅源电压 VGS (V)',
+          gridcolor: '#ecf0f1',
+          zeroline: true
+        },
+        yaxis: { 
+          title: '漏极电流 ID (μA)', 
+          type: 'log',
+          gridcolor: '#ecf0f1',
+          zeroline: false,
+          range: [-3, 3]
+        },
+        plot_bgcolor: 'white',
+        paper_bgcolor: 'white',
+        margin: { t: 50, b: 50, l: 80, r: 30 },
+        showlegend: false,
+        hovermode: 'closest'
+      };
+    
+      Plotly.newPlot('transfer-plot', [transferTrace], transferLayout, {responsive: true});
+    
+      const outputTraces = calculateOutputCurve();
+      
+      const outputLayout = {
+        title: {
+          text: '输运特性曲线 (ID vs VDS)',
+          font: { size: 16, color: '#2c3e50' }
+        },
+        xaxis: { 
+          title: '漏源电压 VDS (V)',
+          gridcolor: '#ecf0f1',
+          zeroline: true
+        },
+        yaxis: { 
+          title: '漏极电流 ID (μA)', 
+          rangemode: 'tozero',
+          gridcolor: '#ecf0f1',
+          zeroline: true
+        },
+        plot_bgcolor: 'white',
+        paper_bgcolor: 'white',
+        margin: { t: 50, b: 50, l: 80, r: 30 },
+        showlegend: true,
+        hovermode: 'closest'
+      };
+    
+      Plotly.newPlot('output-plot', outputTraces, outputLayout, {responsive: true});
+      
+    } catch (error) {
+      console.error('图表更新失败:', error);
+    }
+  }
+
+  // 更新参数
+  function updateParams() {
+    params.T = parseFloat(document.getElementById('T-input').value);
+    params.L = parseFloat(document.getElementById('L-input').value) * 1e-6;
+    params.W = parseFloat(document.getElementById('W-input').value) * 1e-6;
+    params.tox = parseFloat(document.getElementById('tox-input').value) * 1e-9;
+    params.epsox = parseFloat(document.getElementById('epsox-input').value);
+    params.phiB = parseFloat(document.getElementById('phi-b-input').value);
+    params.noiseLevel = parseFloat(document.getElementById('noise-level-input').value) / 100;
+    params.offCurrentNoise = parseFloat(document.getElementById('off-current-noise-input').value) / 100;
+    params.gateLeakageFactor = parseFloat(document.getElementById('gate-leakage-input').value);
+    params.vdsMax = parseFloat(document.getElementById('vds-input').value);
+    
+    updateDisplay();
+    updatePlots();
+  }
+
+  // 更新显示值
+  function updateDisplay() {
+    document.getElementById('T-val').textContent = params.T;
+    document.getElementById('L-val').textContent = (params.L * 1e6).toFixed(1);
+    document.getElementById('W-val').textContent = (params.W * 1e6).toFixed(0);
+    document.getElementById('tox-val').textContent = (params.tox * 1e9).toFixed(0);
+    document.getElementById('epsox-val').textContent = params.epsox.toFixed(1);
+    document.getElementById('phi-b-val').textContent = params.phiB.toFixed(2);
+    document.getElementById('noise-level-val').textContent = (params.noiseLevel * 100).toFixed(1);
+    document.getElementById('off-current-noise-val').textContent = (params.offCurrentNoise * 100).toFixed(0);
+    document.getElementById('gate-leakage-val').textContent = params.gateLeakageFactor.toFixed(1);
+    document.getElementById('vds-val').textContent = params.vdsMax.toFixed(1);
+  }
+
+  // 创建HTML界面
+  const container = document.getElementById('mosfet-simulation');
+  container.innerHTML = `
+    <div style="max-width: 1400px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 15px rgba(0,0,0,0.1);">
+      <h2 style="color: #2c3e50; text-align: center; margin-bottom: 20px;">📈 MOSFET 量子输运模拟器</h2>
+      
+      <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196f3;">
+        <h3 style="margin: 0 0 10px 0; color: #1976d2;">🔬 模拟特性</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+          <div style="font-size: 13px; color: #424242;">• 转移特性曲线 (对数坐标)</div>
+          <div style="font-size: 13px; color: #424242;">• 输运特性曲线 (线性坐标)</div>
+          <div style="font-size: 13px; color: #424242;">• 考虑电极接触势垒</div>
+          <div style="font-size: 13px; color: #424242;">• 包含测试和系统噪声</div>
+          <div style="font-size: 13px; color: #424242;">• 关态电流噪声抖动</div>
+          <div style="font-size: 13px; color: #424242;">• 栅极漏电流效应</div>
+        </div>
+      </div>
+    
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background: #fafafa;">
+          <div style="text-align: center; font-weight: bold; color: #2c3e50; margin-bottom: 10px;">转移特性曲线 (ID vs VGS)</div>
+          <div id="transfer-plot" style="width: 100%; height: 400px;"></div>
+        </div>
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background: #fafafa;">
+          <div style="text-align: center; font-weight: bold; color: #2c3e50; margin-bottom: 10px;">输运特性曲线 (ID vs VDS)</div>
+          <div id="output-plot" style="width: 100%; height: 400px;"></div>
+        </div>
+      </div>
+    
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0;">
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #dee2e6;">
+          <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #495057; font-size: 14px;">温度 T (K)</label>
+          <input type="range" id="T-input" min="200" max="500" value="300" step="1" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;">
+          <div style="margin-top: 8px; font-size: 12px; color: #6c757d;">当前值: <span id="T-val">300</span> K</div>
+        </div>
+    
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #dee2e6;">
+          <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #495057; font-size: 14px;">沟道长度 L (μm)</label>
+          <input type="range" id="L-input" min="0.1" max="5" value="1" step="0.1" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;">
+          <div style="margin-top: 8px; font-size: 12px; color: #6c757d;">当前值: <span id="L-val">1</span> μm</div>
+        </div>
+    
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #dee2e6;">
+          <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #495057; font-size: 14px;">沟道宽度 W (μm)</label>
+          <input type="range" id="W-input" min="1" max="100" value="10" step="1" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;">
+          <div style="margin-top: 8px; font-size: 12px; color: #6c757d;">当前值: <span id="W-val">10</span> μm</div>
+        </div>
+    
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #dee2e6;">
+          <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #495057; font-size: 14px;">栅氧厚度 tox (nm)</label>
+          <input type="range" id="tox-input" min="1" max="20" value="5" step="1" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;">
+          <div style="margin-top: 8px; font-size: 12px; color: #6c757d;">当前值: <span id="tox-val">5</span> nm</div>
+        </div>
+    
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #dee2e6;">
+          <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #495057; font-size: 14px;">氧化层介电常数 εox</label>
+          <input type="range" id="epsox-input" min="2.5" max="10" value="3.9" step="0.1" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;">
+          <div style="margin-top: 8px; font-size: 12px; color: #6c757d;">当前值: <span id="epsox-val">3.9</span></div>
+        </div>
+    
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #dee2e6;">
+          <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #495057; font-size: 14px;">接触势垒 ΦB (eV)</label>
+          <input type="range" id="phi-b-input" min="0.1" max="1.0" value="0.6" step="0.05" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;">
+          <div style="margin-top: 8px; font-size: 12px; color: #6c757d;">当前值: <span id="phi-b-val">0.6</span> eV</div>
+        </div>
+    
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #dee2e6;">
+          <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #495057; font-size: 14px;">噪声水平 (%)</label>
+          <input type="range" id="noise-level-input" min="0" max="10" value="2" step="0.5" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;">
+          <div style="margin-top: 8px; font-size: 12px; color: #6c757d;">当前值: <span id="noise-level-val">2</span> %</div>
+        </div>
+    
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #dee2e6;">
+          <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #495057; font-size: 14px;">关态电流噪声 (%)</label>
+          <input type="range" id="off-current-noise-input" min="0" max="50" value="10" step="1" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;">
+          <div style="margin-top: 8px; font-size: 12px; color: #6c757d;">当前值: <span id="off-current-noise-val">10</span> %</div>
+        </div>
+    
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #dee2e6;">
+          <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #495057; font-size: 14px;">栅极漏电流系数</label>
+          <input type="range" id="gate-leakage-input" min="0" max="5" value="1" step="0.1" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;">
+          <div style="margin-top: 8px; font-size: 12px; color: #6c757d;">当前值: <span id="gate-leakage-val">1</span></div>
+        </div>
+    
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #dee2e6;">
+          <label style="display: block; font-weight: bold; margin-bottom: 8px; color: #495057; font-size: 14px;">输运曲线VDS范围 (V)</label>
+          <input type="range" id="vds-input" min="0.1" max="5" value="2" step="0.1" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;">
+          <div style="margin-top: 8px; font-size: 12px; color: #6c757d;">当前值: <span id="vds-val">2</span> V</div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // 绑定事件监听器
+  const inputs = ['T-input', 'L-input', 'W-input', 'tox-input', 'epsox-input', 
+                  'phi-b-input', 'noise-level-input', 'off-current-noise-input',
+                  'gate-leakage-input', 'vds-input'];
+
+  inputs.forEach(id => {
+    document.getElementById(id).addEventListener('input', updateParams);
+  });
+
+  // 初始化显示和图表
+  updateDisplay();
+  updatePlots();
+});
+</script>
+
+
+<p>This interactive simulation demonstrates several key quantum transport effects:</p>
+<ol>
+<li><strong>Contact Barrier Effects</strong>: Adjust the Schottky barrier height to see how it affects threshold voltage and contact resistance</li>
+<li><strong>Gate Leakage</strong>: Observe how reducing gate oxide thickness increases tunneling current</li>
+<li><strong>Quantum Noise</strong>: See realistic fluctuations in off-state current due to quantum effects</li>
+<li><strong>Subthreshold Transport</strong>: Explore the exponential relationship below threshold</li>
+</ol>
+<hr>
+<h2 id="🚀-Quantum-Transport-Regimes"><a href="#🚀-Quantum-Transport-Regimes" class="headerlink" title="🚀 Quantum Transport Regimes"></a>🚀 Quantum Transport Regimes</h2><p>As MOSFET dimensions continue to shrink, several quantum transport regimes emerge:</p>
+<h3 id="1-Ballistic-Transport"><a href="#1-Ballistic-Transport" class="headerlink" title="1. Ballistic Transport"></a>1. <strong>Ballistic Transport</strong></h3><p>When the channel length $L$ becomes shorter than the mean free path $\lambda$, electrons traverse the channel without scattering:</p>
+<p>$$<br>G &#x3D; \frac{2q^2}{h} \sum_n T_n<br>$$</p>
+<p>where $T_n$ is the transmission probability of the $n$-th mode.</p>
+<h3 id="2-Quantum-Interference"><a href="#2-Quantum-Interference" class="headerlink" title="2. Quantum Interference"></a>2. <strong>Quantum Interference</strong></h3><p>In narrow channels, quantum interference effects lead to:</p>
+<ul>
+<li><strong>Conductance quantization</strong> in steps of $2q^2&#x2F;h$</li>
+<li><strong>Aharonov-Bohm oscillations</strong> in ring geometries</li>
+<li><strong>Universal conductance fluctuations</strong> due to impurity configurations</li>
+</ul>
+<h3 id="3-Tunneling-Transport"><a href="#3-Tunneling-Transport" class="headerlink" title="3. Tunneling Transport"></a>3. <strong>Tunneling Transport</strong></h3><p>For very thin gate oxides ($t_{ox} &lt; 3$ nm), direct tunneling dominates:</p>
+<p>$$<br>J_{tunnel} &#x3D; A \left(\frac{V_{ox}}{t_{ox}}\right)^2 \exp\left(-\frac{B t_{ox}}{V_{ox}}\right)<br>$$</p>
+<p>where $A$ and $B$ are material-dependent constants.</p>
+<hr>
+<h2 id="🔬-Experimental-Observations"><a href="#🔬-Experimental-Observations" class="headerlink" title="🔬 Experimental Observations"></a>🔬 Experimental Observations</h2><p>Modern nanoscale MOSFETs exhibit several quantum effects:</p>
+<ol>
+<li><strong>Conductance quantization</strong> in silicon nanowires at low temperatures</li>
+<li><strong>Quantum interference</strong> in graphene nanoribbons</li>
+<li><strong>Shot noise</strong> measurements revealing ballistic transport</li>
+<li><strong>Universal conductance fluctuations</strong> in disordered systems</li>
+</ol>
+<p>The simulation above captures many of these effects through realistic physical models.</p>
+<hr>
+<h2 id="✨-Future-Directions"><a href="#✨-Future-Directions" class="headerlink" title="✨ Future Directions"></a>✨ Future Directions</h2><p>The study of quantum transport in MOSFETs opens several exciting research directions:</p>
+<ol>
+<li><strong>Quantum Computing</strong>: Using quantum interference for logic operations</li>
+<li><strong>Energy Harvesting</strong>: Exploiting quantum effects for efficient energy conversion</li>
+<li><strong>Sensing</strong>: Ultra-sensitive detection using quantum noise</li>
+<li><strong>Metrology</strong>: Using conductance quantization for resistance standards</li>
+</ol>
+<p>As we continue to push the limits of device scaling, understanding and harnessing quantum transport effects will become increasingly important for the next generation of electronic devices.</p>
+<hr>
+<p><em>This interactive simulation bridges the gap between classical device physics and quantum transport, providing an intuitive understanding of how quantum effects manifest in nanoscale MOSFETs.</em> </p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="http://www.iCalculate.website">Du Xinchuan</a>
+            <p>原文链接：<a href="http://www.icalculate.website/2025/07/03/MOSFET-Quantum-Transport-Simulation/">http://www.icalculate.website/2025/07/03/MOSFET-Quantum-Transport-Simulation/</a>
+            <p>发表日期：<a href="http://www.icalculate.website/2025/07/03/MOSFET-Quantum-Transport-Simulation/">July 3rd 2025, 2:14:27 pm</a>
+            <p>更新日期：<a href="http://www.icalculate.website/2025/07/03/MOSFET-Quantum-Transport-Simulation/">July 3rd 2025, 2:14:55 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/" title= "Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport">
+                    <div class="prevTitle">Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:549174176@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/iCalculate" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/WeChat_QR.jpg" />
+                </span>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title=qq>
+                  
+                  <img class="profile-qr" src="/assets/QQ_QR.jpg" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#🌊-Classical-vs-Quantum-Transport-in-MOSFETs"><span class="toc-number">1.</span> <span class="toc-text">🌊 Classical vs Quantum Transport in MOSFETs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#🔬-Physical-Models-in-the-Simulation"><span class="toc-number">2.</span> <span class="toc-text">🔬 Physical Models in the Simulation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Contact-Barrier-Effects"><span class="toc-number">2.1.</span> <span class="toc-text">1. Contact Barrier Effects</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Gate-Leakage-Current"><span class="toc-number">2.2.</span> <span class="toc-text">2. Gate Leakage Current</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Quantum-Noise-Effects"><span class="toc-number">2.3.</span> <span class="toc-text">3. Quantum Noise Effects</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Subthreshold-Transport"><span class="toc-number">2.4.</span> <span class="toc-text">4. Subthreshold Transport</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#📊-Interactive-MOSFET-Simulation"><span class="toc-number">3.</span> <span class="toc-text">📊 Interactive MOSFET Simulation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#🚀-Quantum-Transport-Regimes"><span class="toc-number">4.</span> <span class="toc-text">🚀 Quantum Transport Regimes</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Ballistic-Transport"><span class="toc-number">4.1.</span> <span class="toc-text">1. Ballistic Transport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Quantum-Interference"><span class="toc-number">4.2.</span> <span class="toc-text">2. Quantum Interference</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Tunneling-Transport"><span class="toc-number">4.3.</span> <span class="toc-text">3. Tunneling Transport</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#🔬-Experimental-Observations"><span class="toc-number">5.</span> <span class="toc-text">🔬 Experimental Observations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#✨-Future-Directions"><span class="toc-number">6.</span> <span class="toc-text">✨ Future Directions</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 56
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2025 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET-Quantum-Transport-Simulation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/" >Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2025/07/02/EBE-Deposition-Operation-Notes/" >EBE Deposition Operation Notes</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/01</span><a class="archive-post-title" href= "/2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/" >Phase Transitions in Electronic Materials and Devices</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/28</span><a class="archive-post-title" href= "/2025/06/28/When-a-Stranger-Becomes-Both-Guest-and-Enemy-Enantiosemy/" >When a Stranger Becomes Both Guest and Enemy: Enantiosemy</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "/2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/" >From Classical Mechanics to Quantum Theory</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2024 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2024/11/17/Deck-of-Doctoral-Dissertation/" >Deck of Doctoral Dissertation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2024/04/11/Science-Communication/" >Science Communication</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2024/04/11/How-to-give-a-talk/" >How to give a talk</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2023 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "/2023/03/27/SR400-photon-counter-delay-scan-demo/" >SR400 photon counter delay scan demo</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/23</span><a class="archive-post-title" href= "/2023/03/23/Python-library-for-SR400-Photon-counter/" >Python library for SR400 Photon counter</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href= "/2023/03/21/COMSOL-script-for-random-object-generation/" >COMSOL script for random object generation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2023/03/18/LakeShore-Model-335-Python-Script/" >LakeShore Model 335 Python控制脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "/2023/03/17/Python-script-for-Keithley-2400-current-sweep/" >Keithley2400源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "/2023/03/16/Python-script-for-Keithley-2450-current-sweep/" >Keithley2450源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "/2023/03/15/Frontiers-in-condensed-matter-physics/" >Frontiers in condensed matter physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "/2023/03/13/HER-auto-test-script/" >HER auto test script</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "/2021/02/15/Cmd%20Markdown%20Editor/" >Cmd Markdown Editor</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2020/11/24/Introduction-for-CHI660e-Macro-Generator/" >Introduction for CHI660e Macro Generator</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/15</span><a class="archive-post-title" href= "/2020/11/15/hello-world/" >Hello World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2020/09/29/Why-movies-appeal-to-me/" >Why movies appeal to me</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/15</span><a class="archive-post-title" href= "/2020/09/15/A-letter-from-the-middle-of-September/" >七月流火 春日迟迟</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "/2020/08/18/Understanding-of-Pseudocapacitance/" >Understanding of Pseudocapacitance</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "/2020/06/18/Perspective-Blaming-China-is-Illegimate-and-Irresponsible/" >Blaming China is Illegimate and Irresponsible</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span><a class="archive-post-title" href= "/2020/05/19/Side-by-Side-Battery-Technologies-with-Lithium%E2%80%90Ion-Based-Batteries/" >Side-by-Side-Battery-Technologies-with-Lithium‐Ion-Based-Batteries</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href= "/2020/05/01/WHAT-IS-ATR-SEIRAS/" >WHAT IS ATR-SEIRAS?</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2020/04/30/Microcell-Electrochemistry-Literature-Review/" >Microcell Electrochemistry Literature Review</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "/2020/04/28/Mass-Transfer-in-Electrochemistry/" >Mass Transfer in Electrochemistry</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "/2020/04/17/Drude-Model-in-Soild-State-Physics/" >Drude Model in Soild State Physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "/2020/04/03/Is-the-World-Virtual/" >Is the World Virtual</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "/2020/03/27/Topological-two-dimensional-polymers/" >Topological two-dimensional polymers</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href= "/2020/03/26/The-Configuration-to-the-Deep-Network/" >The Configuration to the Deep Network</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "/2020/03/17/Artical-Dynamic-stability-of-active-sites-in-hydr(oxy)-oxides-for-the-oxygen-evolution-reaction/" >顶刊精读：动态平衡视角下的OER反应位点</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "/2020/03/17/Literature-research-website/" >Literature research website</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "/2020/03/13/Advantages-of-microelectrode-system-in-electrochemical-science/" >Advantages of microelectrode system in electrochemical science</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/Hertz-Knudsen-Equation-for-Evaporation-and-Condensation/" >Hertz-Knudsen Equation for Evaporation and Condensation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "/2020/03/09/How-to-measure-ECSA/" >How to measure ECSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "/2020/03/09/Li-Battery-Foundation/" >Li Battery Foundation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "/2020/03/03/CDW-and-SDW/" >CDW and SDW</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "/2020/02/27/3Dmax-Draw-Graphene-Grain-Boundaries/" >使用3Dmax绘制石墨烯晶格缺陷</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "/2020/02/26/Anacoda-Introductory-Tutorail/" >Anaconda详细安装及使用教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "/2020/02/25/Origin-Plugins-Density-Filter/" >Origin插件之：散点密度热图（Density Filter）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "/2020/02/25/Origin-Python-Environment-Build-up/" >Origin+Python环境搭建</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "/2020/02/24/Origin-Plugins-Graph-Maker/" >Origin插件之：快速作图（Graph Maker）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "/2020/02/23/Origin-Plugins-Venn-Diagram/" >Origin插件之：韦恩图生成插件（Venn Diagram）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "/2020/02/23/Origin-Plugins-Layer-Stack-Manager/" >Origin插件之：堆叠图小工具（Layer Stack Manager）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "/2020/02/22/Origin-Plugins-Color-Editor/" >Origin插件之：配色编辑器(Color Editor)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "/2020/02/21/Origin-Plugins-Tafel-Extrapolation/" >Origin插件之：LSV数据处理插件(Tafel Extrapolation)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "/2020/02/20/P5-js-new-journal/" >P5.js new journal</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "/2020/02/20/Katex-Test/" >Katex Test</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/Artical-Current-and-future-role-of-Haber-Bosch-ammonia-in-a-carbon-free-energy-landscape/" >催化合成氨未来何去何从</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/4thYearAnniversary/" >写在第四年的Anniversary</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/Group-Meeting/" >Group Meeting Backup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "/2020/02/16/Artical-Precise-Anionic-Regulation-Assisted-by-Electrochemical-Reactions/" >张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "/2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/" >原子轨道耦合帮你分析固氮催化位点活性！</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/Some-Useful-website/" >Some Useful website</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
+    
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
+        <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
+    
+        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
+    
+        <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+    
+        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
+    
+        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
+    
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
+    
+        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
+    
+        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
+    
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+    
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+    
+        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
+        <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
+    
+        <span class="sidebar-tag-name" data-tags="Thin Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin Film Deposition</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
+    
+        <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Semiconductor Physics"><span class="iconfont-archer">&#xe606;</span>Semiconductor Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
+    
+        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
+    
+        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
+    
+        <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
+    
+        <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
+    
+        <span class="sidebar-tag-name" data-tags="Condense Physics"><span class="iconfont-archer">&#xe606;</span>Condense Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
+    
+        <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
+    
+        <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
+    
+        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+    
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Du Xinchuan"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['
+</html>
+
+
+, '
+</html>
+
+
+], ['\\(', '\\)']],
+    displayMath: [['$', '$'], ['\\[', '\\]']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
+
+
