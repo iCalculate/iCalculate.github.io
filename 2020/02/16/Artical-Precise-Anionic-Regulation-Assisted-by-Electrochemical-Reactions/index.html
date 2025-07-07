@@ -38,7 +38,7 @@ Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sen
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
-        src: url("/font/Oswald-Regular.ttf");
+        src: url("../../../../font/Oswald-Regular.ttf");
     }
 
     body {
@@ -87,8 +87,8 @@ Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sen
 
 </style>
 
-    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    <link rel="preload" href= "../../../../css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "../../../../css/mobile.css?v=20180824" media="(max-width: 980px)">
     
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
@@ -199,11 +199,11 @@ Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sen
 }( typeof global !== "undefined" ? global : this ) );
 </script>
 
-    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="icon" href= "../../../../assets/favicon.ico" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
-    <link rel="preload" href="/scripts/main.js" as="script" />
-    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" href="../../../../scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="../../../../font/Oswald-Regular.ttf" crossorigin>
     <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
     
     <!-- fancybox -->
@@ -249,7 +249,7 @@ Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sen
     
     <div class="banner">
             <div class="blog-title">
-                <a href="/" >iCalculate’s Studio</a>
+                <a href="../../../../index.html" >iCalculate’s Studio</a>
             </div>
             <div class="post-title">
                 <a href="#" class="post-name">张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</a>
@@ -276,7 +276,7 @@ height:50vh;
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(../../../../intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
@@ -429,39 +429,46 @@ height:50vh;
   asyncLoadWithFallBack([
     "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
     "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
-    "/lib/webfontloader.min.js"
+    "../../../../lib/webfontloader.min.js"
   ], asyncCb, asyncErr)
 </script>        
-        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <img class="loading" src="../../../../assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
         <p>**清华大学张强课题组发表在Energy &amp; Environmental Science上的文章“Precise Anionic Regulation of NiFe Hydroxysulfide Assisted by Electrochemical Reactions for Efficient Electrocatalysis”**提出了一种电化学辅助可控合成阴离子掺杂LDH的方法，该方法巧妙的借助了Li-S电池中的多硫化锂的电化学循环可控的在NiFe-LDH中掺入了S离子，并且提升了材料的OER以及多硫化锂(LiPS)的氧化还原过程。</p>
 <a id="more"></a>
-
-<h1 id="张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER"><a href="#张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER" class="headerlink" title="张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER"></a>张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</h1><p>[TOC]</p>
-<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>近年来，过渡金属化合物作为具有开发潜力的一类OER催化剂被广泛研究。其中阳离子通常被认为是与含氧底物相互作用的活性位点。因此，阳离子的电子结构对显示高超的电催化活性至关重要。同时，阴离子作为电子供体，通过离子极化可以调节相邻阳离子活性位点的电子结构。因此，理想的阴离子结构对实现过渡金属复合电催化剂的良好电催化活性具有重要意义。通过引入异质离子实现的阴离子调节，可以有效调节阳离子活性位点的极化程度，使其具有良好的电子结构，实现高效的电催化。例如在早先的报道中：通过将Se掺杂到ZnFe-LDH中来获得硒化锌电催化剂，以调节电子性能。<sup>[1]</sup>类似地，通过引入氮、硫、磷等阴离子也实现了不错的效果。<sup>[2-3]</sup>这类阴离子调控策略将电催化剂的种类从单阴离子化合物扩展到多阴离子化合物，为其提供了扩展的选择。因此，阴离子调控策略被认为是实现高性能电催化剂的普遍途径。</p>
+<h1>张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</h1>
+<p>[TOC]</p>
+<h2 id="背景介绍">背景介绍</h2>
+<p>近年来，过渡金属化合物作为具有开发潜力的一类OER催化剂被广泛研究。其中阳离子通常被认为是与含氧底物相互作用的活性位点。因此，阳离子的电子结构对显示高超的电催化活性至关重要。同时，阴离子作为电子供体，通过离子极化可以调节相邻阳离子活性位点的电子结构。因此，理想的阴离子结构对实现过渡金属复合电催化剂的良好电催化活性具有重要意义。通过引入异质离子实现的阴离子调节，可以有效调节阳离子活性位点的极化程度，使其具有良好的电子结构，实现高效的电催化。例如在早先的报道中：通过将Se掺杂到ZnFe-LDH中来获得硒化锌电催化剂，以调节电子性能。<sup>[1]</sup>类似地，通过引入氮、硫、磷等阴离子也实现了不错的效果。<sup>[2-3]</sup>这类阴离子调控策略将电催化剂的种类从单阴离子化合物扩展到多阴离子化合物，为其提供了扩展的选择。因此，阴离子调控策略被认为是实现高性能电催化剂的普遍途径。</p>
 <p>但在具体合成异质阴离子掺杂的催化剂时，由于合成手段（主要是水热或高温热处理掺杂）的不可控性往往会导致掺入的阴离子和金属离子偏析得到金属硫化物、氮化物、磷化物等杂相。<sup>[4-5]</sup>针对这一技术难点，由**清华大学张强课题组发表在Energy &amp; Environmental Science上的文章“Precise Anionic Regulation of NiFe Hydroxysulfide Assisted by Electrochemical Reactions for Efficient Electrocatalysis”**提出了一种电化学辅助可控合成阴离子掺杂LDH的方法，该方法巧妙的借助了Li-S电池中的多硫化锂的电化学循环可控的在NiFe-LDH中掺入了S离子，并且提升了材料的OER以及多硫化锂(LiPS)的氧化还原过程。</p>
-<h2 id="文章亮点"><a href="#文章亮点" class="headerlink" title="文章亮点"></a>文章亮点</h2><ul>
+<h2 id="文章亮点">文章亮点</h2>
+<ul>
 <li>借助锂硫电池中的一种普遍现象(可溶性多硫化锂的形成)，设计了<strong>一种新型电化学辅助异质阴离子结构催化剂的合成策略</strong>。</li>
 <li>通过该方法合成了硫离子掺杂的FeNi-LDH，并展现出了可观的OER活性和稳定性。</li>
 <li><strong>该结构同时具有促进锂的多硫化物氧化还原的催化能力</strong>，这可以使其在Li-S电池正极设计中有所应用空间。</li>
 </ul>
-<h2 id="内容介绍"><a href="#内容介绍" class="headerlink" title="内容介绍"></a>内容介绍</h2><h3 id="合成方法"><a href="#合成方法" class="headerlink" title="合成方法"></a>合成方法</h3><img src="http://photogz.photo.store.qq.com/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBTE8JHFmfPSvatL9JFfy0ZyYk53nd3XAE.ITSGK2C9hFjQjRTwp0P28fbpY*qwnxVQ!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=8wKZAfMCmQERADc!&amp;tl=1&amp;tm=1581865200&amp;sce=0-12-12&amp;rf=viewer_311" alt="Fig1">
-
+<h2 id="内容介绍">内容介绍</h2>
+<h3 id="合成方法">合成方法</h3>
+<img src="http://photogz.photo.store.qq.com/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBTE8JHFmfPSvatL9JFfy0ZyYk53nd3XAE.ITSGK2C9hFjQjRTwp0P28fbpY*qwnxVQ!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=8wKZAfMCmQERADc!&amp;tl=1&amp;tm=1581865200&amp;sce=0-12-12&amp;rf=viewer_311" alt="Fig1">
 <p>图一描述了电化学反应辅助实现的阴离子调节增强电催化活性的原理图。负载有硫的阴极的负极电位下和锂离子结合生成可溶的多硫化锂(Li<sub>2</sub>S<sub>8</sub>和Li<sub>2</sub>S<sub>6</sub>)，可溶性多硫化锂再和LDH在电化学循环过程中形成硫阴离子掺杂的LDH这种异质阴离子结构。</p>
 <img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBV1V7oycVEomRJ0WI81DIMJaHnQSj9Ofj2Z7pWzm.iUsuGDo4UeoyIchymUm8UyH0A!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=6QKbAekCmwERADc!&amp;tl=1&amp;vuin=2142004747&amp;tm=1581865200&amp;sce=50-1-1&amp;rf=viewer_311" alt="Fig2">
-
 <p>图二展示了Li-S电池的循环示意图，循环电压范围选择在2.11-2.35 V可以保证只生成Li<sub>2</sub>S<sub>8</sub>和Li<sub>2</sub>S<sub>6</sub>而不生成不溶的Li<sub>2</sub>S和Li<sub>2</sub>S<sub>2</sub>，随着循环圈数的增加可以发现正极容量在不断衰减，这说明的确发生了硫的溶解并使电解液中富含了Li<sub>2</sub>S<sub>8</sub>和Li<sub>2</sub>S<sub>6</sub>从而促进硫离子的掺入。该工作分别取进行了不同循环圈数的样品进行后续电化学测试。</p>
-<h3 id="成分结构表征"><a href="#成分结构表征" class="headerlink" title="成分结构表征"></a>成分结构表征</h3><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBYBJWjbop0SLaGV6TwVLBlLVNk7OtTEBrRcXnn7ghx1rdd2NSDjR.*S4wbxZHl5GtQ!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=2QKyAtkCsgIRADc!&amp;tl=1&amp;vuin=2142004747&amp;tm=1581865200&amp;sce=50-1-1&amp;rf=viewer_311" alt="Fig3">
-
+<h3 id="成分结构表征">成分结构表征</h3>
+<img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBYBJWjbop0SLaGV6TwVLBlLVNk7OtTEBrRcXnn7ghx1rdd2NSDjR.*S4wbxZHl5GtQ!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=2QKyAtkCsgIRADc!&amp;tl=1&amp;vuin=2142004747&amp;tm=1581865200&amp;sce=50-1-1&amp;rf=viewer_311" alt="Fig3">
 <p>图三主要表征通过电化学辅助合成的材料的结构和成分，通过XRD、XPS、EDS等分析手段可以证明，掺入的硫分布比较均匀，且并未发生和金属离子的偏析，及生成硫化镍或硫化铁的新相，证明了异质阴离子结构的形成。</p>
-<h3 id="电化学性能"><a href="#电化学性能" class="headerlink" title="电化学性能"></a>电化学性能</h3><h4 id="OER性能"><a href="#OER性能" class="headerlink" title="OER性能"></a>OER性能</h4><p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBTlPNt.HjAUvV9hOLRyjKD0GsKssv1jniataSrhOdd3OqP797Nm.OdDuXoUC5jXGLg!!/b&ek=1&kp=1&pt=0&bo=9ALwAPQC8AARADc!&tl=1&vuin=2142004747&tm=1581865200&sce=50-1-1&rf=viewer_311" alt="Fig4"></p>
-<p>图四简单展示了通过电化学辅助合成的异质阴离子催化剂的OER性能，从结果来看过电位η<sub>10</sub>为286 mV，η<sub>20</sub>为312 mV，这比Ir&#x2F;C电极的过电位低117 mV。稳定性方面，6小时持续电解电流相对降低10.8%，并且进行了100小时超长时间电解，其电流损失仅18.4%。</p>
-<h4 id="LiPS-redox性能"><a href="#LiPS-redox性能" class="headerlink" title="LiPS redox性能"></a>LiPS redox性能</h4><p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBY4Cr3yVIzVys3YDx4cV2COJpbZJ5v4tzJRSLwvsJqilA0bjYNNwDhSjwedR8e6k0Q!!/b&ek=1&kp=1&pt=0&bo=GgPtABoD7QARADc!&tl=1&vuin=2142004747&tm=1581865200&sce=50-1-1&rf=viewer_311" alt="Fig5"></p>
+<h3 id="电化学性能">电化学性能</h3>
+<h4 id="OER性能">OER性能</h4>
+<p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBTlPNt.HjAUvV9hOLRyjKD0GsKssv1jniataSrhOdd3OqP797Nm.OdDuXoUC5jXGLg!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=9ALwAPQC8AARADc!&amp;tl=1&amp;vuin=2142004747&amp;tm=1581865200&amp;sce=50-1-1&amp;rf=viewer_311" alt="Fig4"></p>
+<p>图四简单展示了通过电化学辅助合成的异质阴离子催化剂的OER性能，从结果来看过电位η<sub>10</sub>为286 mV，η<sub>20</sub>为312 mV，这比Ir/C电极的过电位低117 mV。稳定性方面，6小时持续电解电流相对降低10.8%，并且进行了100小时超长时间电解，其电流损失仅18.4%。</p>
+<h4 id="LiPS-redox性能">LiPS redox性能</h4>
+<p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBY4Cr3yVIzVys3YDx4cV2COJpbZJ5v4tzJRSLwvsJqilA0bjYNNwDhSjwedR8e6k0Q!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=GgPtABoD7QARADc!&amp;tl=1&amp;vuin=2142004747&amp;tm=1581865200&amp;sce=50-1-1&amp;rf=viewer_311" alt="Fig5"></p>
 <p>除了OER催化新能，作者还测试了其在多硫化锂氧化还原过程中的催化性能，图五a展示了在对称电池中的CV相应，可以发现阴离子掺杂后的材料的确有着更高的电流相应，从一个侧面反应了其催化多硫化物转化的催化性能潜力。b图中为2.05V下的恒压放电曲线，更大的放电电流和提前出现的峰值反应了阴离子调节的羟基硫化物有效地促进了反应动力学增加了硫化锂的成核和沉积能力。最后作者借助这种材料组装了Li-S全电池，实现了1316 mAh g<sub>S</sub><sup>−1</sup>的初始容量。</p>
-<h2 id="扩展思考"><a href="#扩展思考" class="headerlink" title="扩展思考"></a>扩展思考</h2><p>该工作采用新型的电化学辅助策略实现了可控的阴离子调节。该方法保证了目标结构的可控生成，使原子分散的异质阴离子不发生聚集。从而实现了一种新型的异质阴离子调节的阳离子活性位点的。该结构对氧、硫的氧化还原反应具有较好的电催化活性。额外的多硫化物电催化过程测试展示其在锂硫电池中的应用潜力。本工作不仅为实现高效电催化剂的可控阴离子掺杂提供了一种有效的方法，也为新型材料的开发和独特的化学性质的揭示提供了新的思路。</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1]	G. Rajeshkhanna, S. Kandula, K. R. Shrestha, N. H. Kim and J. H. Lee, Small, 2018, 14, 1803638.</p>
+<h2 id="扩展思考">扩展思考</h2>
+<p>该工作采用新型的电化学辅助策略实现了可控的阴离子调节。该方法保证了目标结构的可控生成，使原子分散的异质阴离子不发生聚集。从而实现了一种新型的异质阴离子调节的阳离子活性位点的。该结构对氧、硫的氧化还原反应具有较好的电催化活性。额外的多硫化物电催化过程测试展示其在锂硫电池中的应用潜力。本工作不仅为实现高效电催化剂的可控阴离子掺杂提供了一种有效的方法，也为新型材料的开发和独特的化学性质的揭示提供了新的思路。</p>
+<h2 id="参考文献">参考文献</h2>
+<p>[1]	G. Rajeshkhanna, S. Kandula, K. R. Shrestha, N. H. Kim and J. H. Lee, Small, 2018, 14, 1803638.</p>
 <p>[2]	B. Wang, C. Tang, H.-F. Wang, B.-Q. Li, X. Cui and Q. Zhang, Small Methods, 2018, 2, 1800055</p>
 <p>[3]	Y. Li, K. A. Kuttiyiel, L. Wu, Y. Zhu, E. Fujita, R. R. Adzic and K. Sasaki, ChemSusChem, 2017, 10, 68–73.</p>
 <p>[4]	J. Duan, S. Chen, A. Vasileff and S. Z. Qiao, ACS Nano, 2016, 10, 8738–8745.</p>
@@ -484,7 +491,7 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/02/19/Group-Meeting/" title= "Group Meeting Backup">
+                <a href= "../../19/Group-Meeting/" title= "Group Meeting Backup">
                     <div class="nextTitle">Group Meeting Backup</div>
                 </a>
             
@@ -492,7 +499,7 @@ height:50vh;
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/" title= "原子轨道耦合帮你分析固氮催化位点活性！">
+                <a href= "../../15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/" title= "原子轨道耦合帮你分析固氮催化位点活性！">
                     <div class="prevTitle">原子轨道耦合帮你分析固氮催化位点活性！</div>
                 </a>
             
@@ -530,7 +537,7 @@ height:50vh;
     
         
             
-                <a href="//github.com/iCalculate" class="iconfont-archer github" target="_blank" title=github></a>
+                <a href="/github.com/iCalculate" class="iconfont-archer github" target="_blank" title=github></a>
             
         
     
@@ -562,7 +569,7 @@ height:50vh;
     
         
             
-                <a href="//www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+                <a href="/www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
             
         
     
@@ -580,7 +587,7 @@ height:50vh;
     
         
             
-                <a href="//space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+                <a href="/space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
             
         
     
@@ -627,7 +634,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER"><span class="toc-number">1.</span> <span class="toc-text">张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景介绍"><span class="toc-number">1.1.</span> <span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文章亮点"><span class="toc-number">1.2.</span> <span class="toc-text">文章亮点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内容介绍"><span class="toc-number">1.3.</span> <span class="toc-text">内容介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#合成方法"><span class="toc-number">1.3.1.</span> <span class="toc-text">合成方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#成分结构表征"><span class="toc-number">1.3.2.</span> <span class="toc-text">成分结构表征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#电化学性能"><span class="toc-number">1.3.3.</span> <span class="toc-text">电化学性能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#OER性能"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">OER性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LiPS-redox性能"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">LiPS redox性能</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#扩展思考"><span class="toc-number">1.4.</span> <span class="toc-text">扩展思考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">1.5.</span> <span class="toc-text">参考文献</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景介绍"><span class="toc-number">1.1.</span> <span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文章亮点"><span class="toc-number">1.2.</span> <span class="toc-text">文章亮点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内容介绍"><span class="toc-number">1.3.</span> <span class="toc-text">内容介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#合成方法"><span class="toc-number">1.3.1.</span> <span class="toc-text">合成方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#成分结构表征"><span class="toc-number">1.3.2.</span> <span class="toc-text">成分结构表征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#电化学性能"><span class="toc-number">1.3.3.</span> <span class="toc-text">电化学性能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#OER性能"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">OER性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LiPS-redox性能"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">LiPS redox性能</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#扩展思考"><span class="toc-number">1.4.</span> <span class="toc-text">扩展思考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">1.5.</span> <span class="toc-text">参考文献</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1422,32 +1429,32 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET Quantum Transport Simulation</a>
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET Quantum Transport Simulation</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/" >Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</a>
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/" >Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2025/07/02/EBE-Deposition-Operation-Notes/" >EBE Deposition Operation Notes</a>
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/EBE-Deposition-Operation-Notes/" >EBE Deposition Operation Notes</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/01</span><a class="archive-post-title" href= "/2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/" >Phase Transitions in Electronic Materials and Devices</a>
+            <span class="archive-post-date">07/01</span><a class="archive-post-title" href= "2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/" >Phase Transitions in Electronic Materials and Devices</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/28</span><a class="archive-post-title" href= "/2025/06/28/When-a-Stranger-Becomes-Both-Guest-and-Enemy-Enantiosemy/" >When a Stranger Becomes Both Guest and Enemy: Enantiosemy</a>
+            <span class="archive-post-date">06/28</span><a class="archive-post-title" href= "2025/06/28/When-a-Stranger-Becomes-Both-Guest-and-Enemy-Enantiosemy/" >When a Stranger Becomes Both Guest and Enemy: Enantiosemy</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "/2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/" >From Classical Mechanics to Quantum Theory</a>
+            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/" >From Classical Mechanics to Quantum Theory</a>
         </li>
     
     
@@ -1461,17 +1468,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2024/11/17/Deck-of-Doctoral-Dissertation/" >Deck of Doctoral Dissertation</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "2024/11/17/Deck-of-Doctoral-Dissertation/" >Deck of Doctoral Dissertation</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2024/04/11/Science-Communication/" >Science Communication</a>
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/Science-Communication/" >Science Communication</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2024/04/11/How-to-give-a-talk/" >How to give a talk</a>
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/How-to-give-a-talk/" >How to give a talk</a>
         </li>
     
     
@@ -1485,42 +1492,42 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "/2023/03/27/SR400-photon-counter-delay-scan-demo/" >SR400 photon counter delay scan demo</a>
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2023/03/27/SR400-photon-counter-delay-scan-demo/" >SR400 photon counter delay scan demo</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/23</span><a class="archive-post-title" href= "/2023/03/23/Python-library-for-SR400-Photon-counter/" >Python library for SR400 Photon counter</a>
+            <span class="archive-post-date">03/23</span><a class="archive-post-title" href= "2023/03/23/Python-library-for-SR400-Photon-counter/" >Python library for SR400 Photon counter</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/21</span><a class="archive-post-title" href= "/2023/03/21/COMSOL-script-for-random-object-generation/" >COMSOL script for random object generation</a>
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href= "2023/03/21/COMSOL-script-for-random-object-generation/" >COMSOL script for random object generation</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2023/03/18/LakeShore-Model-335-Python-Script/" >LakeShore Model 335 Python控制脚本</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "2023/03/18/LakeShore-Model-335-Python-Script/" >LakeShore Model 335 Python控制脚本</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "/2023/03/17/Python-script-for-Keithley-2400-current-sweep/" >Keithley2400源表电流扫描Python程序</a>
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2023/03/17/Python-script-for-Keithley-2400-current-sweep/" >Keithley2400源表电流扫描Python程序</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "/2023/03/16/Python-script-for-Keithley-2450-current-sweep/" >Keithley2450源表电流扫描Python程序</a>
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "2023/03/16/Python-script-for-Keithley-2450-current-sweep/" >Keithley2450源表电流扫描Python程序</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "/2023/03/15/Frontiers-in-condensed-matter-physics/" >Frontiers in condensed matter physics</a>
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "2023/03/15/Frontiers-in-condensed-matter-physics/" >Frontiers in condensed matter physics</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "/2023/03/13/HER-auto-test-script/" >HER auto test script</a>
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2023/03/13/HER-auto-test-script/" >HER auto test script</a>
         </li>
     
     
@@ -1534,7 +1541,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "/2021/02/15/Cmd%20Markdown%20Editor/" >Cmd Markdown Editor</a>
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2021/02/15/Cmd%20Markdown%20Editor/" >Cmd Markdown Editor</a>
         </li>
     
     
@@ -1548,192 +1555,192 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2020/11/24/Introduction-for-CHI660e-Macro-Generator/" >Introduction for CHI660e Macro Generator</a>
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "2020/11/24/Introduction-for-CHI660e-Macro-Generator/" >Introduction for CHI660e Macro Generator</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/15</span><a class="archive-post-title" href= "/2020/11/15/hello-world/" >Hello World</a>
+            <span class="archive-post-date">11/15</span><a class="archive-post-title" href= "2020/11/15/hello-world/" >Hello World</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2020/09/29/Why-movies-appeal-to-me/" >Why movies appeal to me</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "2020/09/29/Why-movies-appeal-to-me/" >Why movies appeal to me</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/15</span><a class="archive-post-title" href= "/2020/09/15/A-letter-from-the-middle-of-September/" >七月流火 春日迟迟</a>
+            <span class="archive-post-date">09/15</span><a class="archive-post-title" href= "2020/09/15/A-letter-from-the-middle-of-September/" >七月流火 春日迟迟</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "/2020/08/18/Understanding-of-Pseudocapacitance/" >Understanding of Pseudocapacitance</a>
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2020/08/18/Understanding-of-Pseudocapacitance/" >Understanding of Pseudocapacitance</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "/2020/06/18/Perspective-Blaming-China-is-Illegimate-and-Irresponsible/" >Blaming China is Illegimate and Irresponsible</a>
+            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "2020/06/18/Perspective-Blaming-China-is-Illegimate-and-Irresponsible/" >Blaming China is Illegimate and Irresponsible</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/19</span><a class="archive-post-title" href= "/2020/05/19/Side-by-Side-Battery-Technologies-with-Lithium%E2%80%90Ion-Based-Batteries/" >Side-by-Side-Battery-Technologies-with-Lithium‐Ion-Based-Batteries</a>
+            <span class="archive-post-date">05/19</span><a class="archive-post-title" href= "2020/05/19/Side-by-Side-Battery-Technologies-with-Lithium%E2%80%90Ion-Based-Batteries/" >Side-by-Side-Battery-Technologies-with-Lithium‐Ion-Based-Batteries</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/01</span><a class="archive-post-title" href= "/2020/05/01/WHAT-IS-ATR-SEIRAS/" >WHAT IS ATR-SEIRAS?</a>
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href= "2020/05/01/WHAT-IS-ATR-SEIRAS/" >WHAT IS ATR-SEIRAS?</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2020/04/30/Microcell-Electrochemistry-Literature-Review/" >Microcell Electrochemistry Literature Review</a>
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "2020/04/30/Microcell-Electrochemistry-Literature-Review/" >Microcell Electrochemistry Literature Review</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "/2020/04/28/Mass-Transfer-in-Electrochemistry/" >Mass Transfer in Electrochemistry</a>
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "2020/04/28/Mass-Transfer-in-Electrochemistry/" >Mass Transfer in Electrochemistry</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "/2020/04/17/Drude-Model-in-Soild-State-Physics/" >Drude Model in Soild State Physics</a>
+            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "2020/04/17/Drude-Model-in-Soild-State-Physics/" >Drude Model in Soild State Physics</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "/2020/04/03/Is-the-World-Virtual/" >Is the World Virtual</a>
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "2020/04/03/Is-the-World-Virtual/" >Is the World Virtual</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "/2020/03/27/Topological-two-dimensional-polymers/" >Topological two-dimensional polymers</a>
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2020/03/27/Topological-two-dimensional-polymers/" >Topological two-dimensional polymers</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/26</span><a class="archive-post-title" href= "/2020/03/26/The-Configuration-to-the-Deep-Network/" >The Configuration to the Deep Network</a>
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href= "2020/03/26/The-Configuration-to-the-Deep-Network/" >The Configuration to the Deep Network</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "/2020/03/17/Artical-Dynamic-stability-of-active-sites-in-hydr(oxy)-oxides-for-the-oxygen-evolution-reaction/" >顶刊精读：动态平衡视角下的OER反应位点</a>
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Artical-Dynamic-stability-of-active-sites-in-hydr(oxy)-oxides-for-the-oxygen-evolution-reaction/" >顶刊精读：动态平衡视角下的OER反应位点</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "/2020/03/17/Literature-research-website/" >Literature research website</a>
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Literature-research-website/" >Literature research website</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "/2020/03/13/Advantages-of-microelectrode-system-in-electrochemical-science/" >Advantages of microelectrode system in electrochemical science</a>
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2020/03/13/Advantages-of-microelectrode-system-in-electrochemical-science/" >Advantages of microelectrode system in electrochemical science</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/Hertz-Knudsen-Equation-for-Evaporation-and-Condensation/" >Hertz-Knudsen Equation for Evaporation and Condensation</a>
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "2020/03/11/Hertz-Knudsen-Equation-for-Evaporation-and-Condensation/" >Hertz-Knudsen Equation for Evaporation and Condensation</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "/2020/03/09/How-to-measure-ECSA/" >How to measure ECSA</a>
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/How-to-measure-ECSA/" >How to measure ECSA</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "/2020/03/09/Li-Battery-Foundation/" >Li Battery Foundation</a>
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/Li-Battery-Foundation/" >Li Battery Foundation</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "/2020/03/03/CDW-and-SDW/" >CDW and SDW</a>
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "2020/03/03/CDW-and-SDW/" >CDW and SDW</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "/2020/02/27/3Dmax-Draw-Graphene-Grain-Boundaries/" >使用3Dmax绘制石墨烯晶格缺陷</a>
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "2020/02/27/3Dmax-Draw-Graphene-Grain-Boundaries/" >使用3Dmax绘制石墨烯晶格缺陷</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "/2020/02/26/Anacoda-Introductory-Tutorail/" >Anaconda详细安装及使用教程</a>
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "2020/02/26/Anacoda-Introductory-Tutorail/" >Anaconda详细安装及使用教程</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "/2020/02/25/Origin-Plugins-Density-Filter/" >Origin插件之：散点密度热图（Density Filter）</a>
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Plugins-Density-Filter/" >Origin插件之：散点密度热图（Density Filter）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "/2020/02/25/Origin-Python-Environment-Build-up/" >Origin+Python环境搭建</a>
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Python-Environment-Build-up/" >Origin+Python环境搭建</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "/2020/02/24/Origin-Plugins-Graph-Maker/" >Origin插件之：快速作图（Graph Maker）</a>
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "2020/02/24/Origin-Plugins-Graph-Maker/" >Origin插件之：快速作图（Graph Maker）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "/2020/02/23/Origin-Plugins-Venn-Diagram/" >Origin插件之：韦恩图生成插件（Venn Diagram）</a>
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Venn-Diagram/" >Origin插件之：韦恩图生成插件（Venn Diagram）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "/2020/02/23/Origin-Plugins-Layer-Stack-Manager/" >Origin插件之：堆叠图小工具（Layer Stack Manager）</a>
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Layer-Stack-Manager/" >Origin插件之：堆叠图小工具（Layer Stack Manager）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "/2020/02/22/Origin-Plugins-Color-Editor/" >Origin插件之：配色编辑器(Color Editor)</a>
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "2020/02/22/Origin-Plugins-Color-Editor/" >Origin插件之：配色编辑器(Color Editor)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "/2020/02/21/Origin-Plugins-Tafel-Extrapolation/" >Origin插件之：LSV数据处理插件(Tafel Extrapolation)</a>
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "2020/02/21/Origin-Plugins-Tafel-Extrapolation/" >Origin插件之：LSV数据处理插件(Tafel Extrapolation)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "/2020/02/20/P5-js-new-journal/" >P5.js new journal</a>
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/P5-js-new-journal/" >P5.js new journal</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "/2020/02/20/Katex-Test/" >Katex Test</a>
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/Katex-Test/" >Katex Test</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/Artical-Current-and-future-role-of-Haber-Bosch-ammonia-in-a-carbon-free-energy-landscape/" >催化合成氨未来何去何从</a>
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Artical-Current-and-future-role-of-Haber-Bosch-ammonia-in-a-carbon-free-energy-landscape/" >催化合成氨未来何去何从</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/4thYearAnniversary/" >写在第四年的Anniversary</a>
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/4thYearAnniversary/" >写在第四年的Anniversary</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/Group-Meeting/" >Group Meeting Backup</a>
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Group-Meeting/" >Group Meeting Backup</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "/2020/02/16/Artical-Precise-Anionic-Regulation-Assisted-by-Electrochemical-Reactions/" >张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</a>
+            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "2020/02/16/Artical-Precise-Anionic-Regulation-Assisted-by-Electrochemical-Reactions/" >张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "/2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/" >原子轨道耦合帮你分析固氮催化位点活性！</a>
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/" >原子轨道耦合帮你分析固氮催化位点活性！</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/Some-Useful-website/" >Some Useful website</a>
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "2020/02/14/Some-Useful-website/" >Some Useful website</a>
         </li>
     
     </div>
@@ -1757,35 +1764,31 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
-        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
-    
-        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
-    
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
         <span class="sidebar-tag-name" data-tags="Thin Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin Film Deposition</span>
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
     
-        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
     
-        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
-    
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
     
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
+        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
+    
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+    
+        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
+    
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
     
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
     
         <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
     
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
-    
-        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -1795,29 +1798,33 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
     
-        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
-        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
-    
         <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
+    
+        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
         <span class="sidebar-tag-name" data-tags="Condense Physics"><span class="iconfont-archer">&#xe606;</span>Condense Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
+    
+        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
     
         <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
     
         <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
         <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
@@ -1868,21 +1875,21 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
-    
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
@@ -1904,10 +1911,10 @@ jsonContent:
         if (typeof window.$ === 'undefined')
         {
             console.warn('jquery load from jsdelivr failed, will load local script')
-            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+            document.write('<script src="../../../../lib/jquery.min.js">\x3C/script>')
         }
     </script>
-    <script src="/scripts/main.js"></script>
+    <script src="../../../../scripts/main.js"></script>
     <!-- algolia -->
     
     <!-- busuanzi  -->
@@ -1919,7 +1926,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
     
-        <script src="/scripts/share.js" async></script>    
+        <script src="../../../../scripts/share.js" async></script>    
      
     <script>
 window.MathJax = {

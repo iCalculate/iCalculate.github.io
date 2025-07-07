@@ -38,7 +38,7 @@ Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sen
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
-        src: url("/font/Oswald-Regular.ttf");
+        src: url("../../../../font/Oswald-Regular.ttf");
     }
 
     body {
@@ -87,8 +87,8 @@ Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sen
 
 </style>
 
-    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    <link rel="preload" href= "../../../../css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "../../../../css/mobile.css?v=20180824" media="(max-width: 980px)">
     
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
@@ -199,11 +199,11 @@ Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sen
 }( typeof global !== "undefined" ? global : this ) );
 </script>
 
-    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="icon" href= "../../../../assets/favicon.ico" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
-    <link rel="preload" href="/scripts/main.js" as="script" />
-    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" href="../../../../scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="../../../../font/Oswald-Regular.ttf" crossorigin>
     <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
     
     <!-- fancybox -->
@@ -249,7 +249,7 @@ Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sen
     
     <div class="banner">
             <div class="blog-title">
-                <a href="/" >iCalculate’s Studio</a>
+                <a href="../../../../index.html" >iCalculate’s Studio</a>
             </div>
             <div class="post-title">
                 <a href="#" class="post-name">Keithley2400源表电流扫描Python程序</a>
@@ -276,7 +276,7 @@ height:50vh;
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(../../../../intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
@@ -307,7 +307,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">911</span>Reading time: <span class="post-count reading-time">5 min</span></span>
+                        <span>Word count: <span class="post-count word-count">912</span>Reading time: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -429,17 +429,17 @@ height:50vh;
   asyncLoadWithFallBack([
     "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
     "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
-    "/lib/webfontloader.min.js"
+    "../../../../lib/webfontloader.min.js"
   ], asyncCb, asyncErr)
 </script>        
-        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <img class="loading" src="../../../../assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
         <p>基于pymeasure库开发，控制2400源表进行电流循环扫描，可以实时绘图或扫描完成后进行结果分析。</p>
 <a id="more"></a>
-
-<h1 id="Keithley-2400源表电流扫描Python程序"><a href="#Keithley-2400源表电流扫描Python程序" class="headerlink" title="Keithley 2400源表电流扫描Python程序"></a>Keithley 2400源表电流扫描Python程序</h1><p>基于pymeasure库开发，控制源表进行电流循环扫描，可以实时绘图或扫描完成后进行结果分析。</p>
+<h1>Keithley 2400源表电流扫描Python程序</h1>
+<p>基于pymeasure库开发，控制源表进行电流循环扫描，可以实时绘图或扫描完成后进行结果分析。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Keithley I-V Sweep</span></span><br><span class="line"><span class="string">Demis D. John, October 2014, Univ. of California Santa Barbara</span></span><br><span class="line"><span class="string">Program to sweep voltage &amp; measure current on Keithley SMU</span></span><br><span class="line"><span class="string">Known bugs: With PythonXY, the plot window opens *behind* the current window.</span></span><br><span class="line"><span class="string">Also, file is saved *usually* in same directory as this script - but at one point it kept saving into the PythonXY directory, which was confusing.  Probably need to set the Python working directory to be sure.</span></span><br><span class="line"><span class="string">Edit/Run this file via Python(x,y) (click the 1st button to open the Spyder IDE)</span></span><br><span class="line"><span class="string">Installed PyVISA for GPIB communication.</span></span><br><span class="line"><span class="string">Spyder Editor. </span></span><br><span class="line"><span class="string">Based off Steve Nichols' Script from ~2010, Univ. of California Santa Barbara</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line">SaveFiles = <span class="literal">False</span>   <span class="comment"># Save the plot &amp; data?  Only display if False.</span></span><br><span class="line"></span><br><span class="line">DevName = <span class="string">'I-V Curve 01'</span> <span class="comment"># will be inserted into filename of saved plot</span></span><br><span class="line">Keithley_GPIB_Addr = <span class="number">18</span>  <span class="comment"># Keithley 2400 SourceMeter GPIB address is 16</span></span><br><span class="line">SR400_GPIB_Addr = <span class="number">32</span>  <span class="comment"># Keithley 2400 SourceMeter GPIB address is 16</span></span><br><span class="line"></span><br><span class="line">SweepMode = <span class="string">'Current'</span> <span class="comment"># 'Voltage' for I-V curve, 'Current' for V-I curve</span></span><br><span class="line">VoltageComp = <span class="number">10</span>       <span class="comment"># compliance (max) current</span></span><br><span class="line">CurrentComp = <span class="number">100.0e-3</span>    <span class="comment"># compliance (max) current</span></span><br><span class="line">start = <span class="number">0</span>     <span class="comment"># starting value of Voltage sweep</span></span><br><span class="line">stop = +<span class="number">0.05</span>    <span class="comment"># ending value </span></span><br><span class="line">numpoints = <span class="number">40</span>  <span class="comment"># number of points in sweep</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pyvisa <span class="keyword">as</span> visa          <span class="comment"># PyVISA module, for GPIB comms</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> N    <span class="comment"># enable NumPy numerical analysis</span></span><br><span class="line"><span class="keyword">import</span> time          <span class="comment"># to allow pause between measurements</span></span><br><span class="line"><span class="keyword">import</span> os            <span class="comment"># Filesystem manipulation - mkdir, paths etc.</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt <span class="comment"># for python-style plottting</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Open Visa connections to instruments</span></span><br><span class="line"><span class="comment"># keithley = visa.GpibInstrument(22)     # GPIB addr 22</span></span><br><span class="line">rm = visa.ResourceManager()</span><br><span class="line">keithley = rm.open_resource(<span class="string">'GPIB0::'</span> + str(Keithley_GPIB_Addr) + <span class="string">'::INSTR'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> SweepMode==<span class="string">'Current'</span>:</span><br><span class="line">    <span class="comment"># Setup Keithley for current loop</span></span><br><span class="line">    keithley.write(<span class="string">"*RST"</span>)</span><br><span class="line">    print(<span class="string">"reset the instrument"</span>)</span><br><span class="line">    keithley.write(<span class="string">":SOUR:FUNC:MODE CURR"</span>)  <span class="comment"># current source</span></span><br><span class="line">    keithley.write(<span class="string">":SOURce:CURRent:MODE FIXed"</span>)  <span class="comment">#Select fixed sourcing mode for I-source.</span></span><br><span class="line">    keithley.write(<span class="string">":SOURce:CURRent:RANGe:AUTO 1"</span>)  <span class="comment">#Select I-source range (n = range).</span></span><br><span class="line">    keithley.write(<span class="string">":SENS:FUNC \"VOLT\""</span>)  <span class="comment">#Select measure function (function = “VOLTage” or “CURRent”).</span></span><br><span class="line">    keithley.write(<span class="string">":SENS:VOLT:PROT:LEV "</span> + str(VoltageComp))  <span class="comment"># set voltage compliance</span></span><br><span class="line">    keithley.write(<span class="string">":SENS:VOLT:RANGE:AUTO 1"</span>)   <span class="comment"># set current reading range to auto (boolean)</span></span><br><span class="line">    keithley.write(<span class="string">":OUTP ON"</span>)                             <span class="comment"># turn on output</span></span><br><span class="line">    print(<span class="string">"keithley Current source initialized ..."</span>)</span><br><span class="line"><span class="keyword">elif</span> SweepMode==<span class="string">'Voltage'</span>:</span><br><span class="line">    <span class="comment"># Setup electrodes as voltage source</span></span><br><span class="line">    keithley.write(<span class="string">"*RST"</span>)</span><br><span class="line">    print(<span class="string">"reset the instrument"</span>)</span><br><span class="line">    time.sleep(<span class="number">0.5</span>)    <span class="comment"># add second between</span></span><br><span class="line">    keithley.write(<span class="string">":SOUR:FUNC:MODE VOLT"</span>)</span><br><span class="line">    keithley.write(<span class="string">":SENS:CURR:PROT:LEV "</span> + str(CurrentComp))</span><br><span class="line">    keithley.write(<span class="string">":SENS:CURR:RANGE:AUTO 1"</span>)   <span class="comment"># set current reading range to auto (boolean)</span></span><br><span class="line">    keithley.write(<span class="string">":OUTP ON"</span>)                    <span class="comment"># Output on    </span></span><br><span class="line">    print(<span class="string">"keithley Voltage source initialized ..."</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">raise</span> ValueError(<span class="string">'SweepMode initialization error!'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Loop to sweep voltage</span></span><br><span class="line">Voltage = []</span><br><span class="line">Current = []</span><br><span class="line">Resistent = []</span><br><span class="line">Timestamp = []</span><br><span class="line">Status = []</span><br><span class="line">plt.ion()</span><br><span class="line"><span class="keyword">if</span> SweepMode==<span class="string">'Voltage'</span>:</span><br><span class="line">    <span class="keyword">for</span> V <span class="keyword">in</span> N.linspace(start, stop, num=numpoints, endpoint=<span class="literal">True</span>):</span><br><span class="line">        print(<span class="string">"Voltage set to: "</span> + str(V) + <span class="string">" V"</span> )</span><br><span class="line">        keithley.write(<span class="string">":SOUR:VOLT "</span> + str(V))</span><br><span class="line">        <span class="comment">#time.sleep(0.1)    # add second between</span></span><br><span class="line">        data = keithley.query(<span class="string">":READ?"</span>)   <span class="comment">#returns string with many values (V, I, ...)</span></span><br><span class="line">        answer = data.split(<span class="string">','</span>)    <span class="comment"># remove delimiters, return values into list elements</span></span><br><span class="line">        I = eval( answer.pop(<span class="number">1</span>) ) * <span class="number">1e3</span>     <span class="comment"># convert to number</span></span><br><span class="line">        Current.append( I )</span><br><span class="line">        vread = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Voltage.append(vread)</span><br><span class="line">        resis = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Resistent.append(resis)</span><br><span class="line">        t = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Timestamp.append(t)</span><br><span class="line">        stat = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Status.append(stat)</span><br><span class="line">        plt.clf()</span><br><span class="line">        plt.plot(Current, Voltage, <span class="string">'*-'</span>)</span><br><span class="line">        plt.xlabel(<span class="string">"Current (mA)"</span>)</span><br><span class="line">        plt.ylabel(<span class="string">"Voltage (V)"</span>)</span><br><span class="line">        plt.pause(<span class="number">0.01</span>)</span><br><span class="line">        plt.ioff()</span><br><span class="line">        <span class="comment">#Current.append(  I  )          # read the current</span></span><br><span class="line">        print(<span class="string">"--&gt; Current = "</span> + str(Current[<span class="number">-1</span>]) + <span class="string">' mA'</span>)   <span class="comment"># print last read value</span></span><br><span class="line">    <span class="comment">#end for(V)</span></span><br><span class="line"><span class="keyword">elif</span> SweepMode==<span class="string">'Current'</span>:</span><br><span class="line">    <span class="keyword">for</span> I <span class="keyword">in</span> N.linspace(start, stop, num=numpoints, endpoint=<span class="literal">True</span>):</span><br><span class="line">        print(<span class="string">"Current set to: "</span> + str(I) + <span class="string">" A"</span> )</span><br><span class="line">        keithley.write(<span class="string">":SOUR:CURR "</span> + str(I))</span><br><span class="line">        <span class="comment">#time.sleep(0.1)    # add second between</span></span><br><span class="line">        data = keithley.query(<span class="string">":READ?"</span>)   <span class="comment">#returns string with many values (V, I, ...)</span></span><br><span class="line">        answer = data.split(<span class="string">','</span>)    <span class="comment"># remove delimiters, return values into list elements</span></span><br><span class="line">        I = eval( answer.pop(<span class="number">1</span>) ) * <span class="number">1e3</span>     <span class="comment"># convert to number</span></span><br><span class="line">        Current.append( I )</span><br><span class="line">        vread = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Voltage.append(vread)</span><br><span class="line">        resis = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Resistent.append(resis)</span><br><span class="line">        t = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Timestamp.append(t)</span><br><span class="line">        stat = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Status.append(stat)</span><br><span class="line">        <span class="comment">#Current.append(  I  )          # read the current</span></span><br><span class="line">        print(<span class="string">"--&gt; Voltage = "</span> + str(Voltage[<span class="number">-1</span>]) + <span class="string">' V'</span>)   <span class="comment"># print last read value</span></span><br><span class="line">    <span class="comment">#end for(V)</span></span><br><span class="line"></span><br><span class="line">keithley.write(<span class="string">":OUTP OFF"</span>)     <span class="comment"># turn off</span></span><br><span class="line">keithley.write(<span class="string">":SYSTem:BEEPer 1046, 0.1"</span>)</span><br><span class="line">time.sleep(<span class="number">0.1</span>)</span><br><span class="line">keithley.write(<span class="string">":SYSTem:BEEPer 784, 0.1"</span>)</span><br><span class="line">time.sleep(<span class="number">0.1</span>)</span><br><span class="line">keithley.write(<span class="string">":SYSTem:BEEPer 523, 0.1"</span>)</span><br><span class="line">time.sleep(<span class="number">0.1</span>)</span><br><span class="line">keithley.write(<span class="string">":SYSTem:BEEPer 587, 0.2"</span>)</span><br><span class="line">keithley.write(<span class="string">"SYSTEM:KEY 23"</span>) <span class="comment"># change to local control</span></span><br><span class="line">keithley.close()</span><br><span class="line"></span><br><span class="line"><span class="comment">#plt.plot(Current, Voltage, '*-')</span></span><br><span class="line"><span class="comment">#plt.xlabel("Current (mA)")</span></span><br><span class="line"><span class="comment">#plt.ylabel("Voltage (V)")</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> SaveFiles:</span><br><span class="line">    <span class="comment"># create subfolder if needed:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(DevName): os.mkdir(DevName)</span><br><span class="line">    curtime = time.strftime(<span class="string">'%Y-%M-%d_%H%M.%S'</span>)</span><br><span class="line">    SavePath = os.path.join(DevName, <span class="string">'I-V Curve - '</span> + DevName + <span class="string">' - ['</span> + curtime +<span class="string">']'</span> )</span><br><span class="line">    </span><br><span class="line">    data = np.array(  zip(Current, Voltage)  )</span><br><span class="line">    np.savetxt( SavePath + <span class="string">'.txt'</span>, data, fmt=<span class="string">"%e"</span>, delimiter=<span class="string">"\t"</span>, header=<span class="string">"Current (A)\tVoltage (V)"</span> )</span><br><span class="line">    <span class="comment">#np.array(Voltage).tofile(  os.path.join(DevName, 'I-V Voltage - ' + DevName + ' - [' + curtime +'].txt' )  )</span></span><br><span class="line">    <span class="comment">#np.array(Current).tofile(  os.path.join(DevName, 'I-V Current - ' + DevName + ' - [' + curtime +'].txt' )  )</span></span><br><span class="line"><span class="comment">#end if(SaveFiles)</span></span><br></pre></td></tr></table></figure>
     </article>
     <!-- license  -->
@@ -457,7 +457,7 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2023/03/18/LakeShore-Model-335-Python-Script/" title= "LakeShore Model 335 Python控制脚本">
+                <a href= "../../18/LakeShore-Model-335-Python-Script/" title= "LakeShore Model 335 Python控制脚本">
                     <div class="nextTitle">LakeShore Model 335 Python控制脚本</div>
                 </a>
             
@@ -465,7 +465,7 @@ height:50vh;
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2023/03/16/Python-script-for-Keithley-2450-current-sweep/" title= "Keithley2450源表电流扫描Python程序">
+                <a href= "../../16/Python-script-for-Keithley-2450-current-sweep/" title= "Keithley2450源表电流扫描Python程序">
                     <div class="prevTitle">Keithley2450源表电流扫描Python程序</div>
                 </a>
             
@@ -503,7 +503,7 @@ height:50vh;
     
         
             
-                <a href="//github.com/iCalculate" class="iconfont-archer github" target="_blank" title=github></a>
+                <a href="/github.com/iCalculate" class="iconfont-archer github" target="_blank" title=github></a>
             
         
     
@@ -535,7 +535,7 @@ height:50vh;
     
         
             
-                <a href="//www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+                <a href="/www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
             
         
     
@@ -553,7 +553,7 @@ height:50vh;
     
         
             
-                <a href="//space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+                <a href="/space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
             
         
     
@@ -600,7 +600,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Keithley-2400源表电流扫描Python程序"><span class="toc-number">1.</span> <span class="toc-text">Keithley 2400源表电流扫描Python程序</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">Keithley 2400源表电流扫描Python程序</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1395,32 +1395,32 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET Quantum Transport Simulation</a>
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET Quantum Transport Simulation</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/" >Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</a>
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/" >Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2025/07/02/EBE-Deposition-Operation-Notes/" >EBE Deposition Operation Notes</a>
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/EBE-Deposition-Operation-Notes/" >EBE Deposition Operation Notes</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/01</span><a class="archive-post-title" href= "/2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/" >Phase Transitions in Electronic Materials and Devices</a>
+            <span class="archive-post-date">07/01</span><a class="archive-post-title" href= "2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/" >Phase Transitions in Electronic Materials and Devices</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/28</span><a class="archive-post-title" href= "/2025/06/28/When-a-Stranger-Becomes-Both-Guest-and-Enemy-Enantiosemy/" >When a Stranger Becomes Both Guest and Enemy: Enantiosemy</a>
+            <span class="archive-post-date">06/28</span><a class="archive-post-title" href= "2025/06/28/When-a-Stranger-Becomes-Both-Guest-and-Enemy-Enantiosemy/" >When a Stranger Becomes Both Guest and Enemy: Enantiosemy</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "/2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/" >From Classical Mechanics to Quantum Theory</a>
+            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/" >From Classical Mechanics to Quantum Theory</a>
         </li>
     
     
@@ -1434,17 +1434,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2024/11/17/Deck-of-Doctoral-Dissertation/" >Deck of Doctoral Dissertation</a>
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "2024/11/17/Deck-of-Doctoral-Dissertation/" >Deck of Doctoral Dissertation</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2024/04/11/Science-Communication/" >Science Communication</a>
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/Science-Communication/" >Science Communication</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2024/04/11/How-to-give-a-talk/" >How to give a talk</a>
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/How-to-give-a-talk/" >How to give a talk</a>
         </li>
     
     
@@ -1458,42 +1458,42 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "/2023/03/27/SR400-photon-counter-delay-scan-demo/" >SR400 photon counter delay scan demo</a>
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2023/03/27/SR400-photon-counter-delay-scan-demo/" >SR400 photon counter delay scan demo</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/23</span><a class="archive-post-title" href= "/2023/03/23/Python-library-for-SR400-Photon-counter/" >Python library for SR400 Photon counter</a>
+            <span class="archive-post-date">03/23</span><a class="archive-post-title" href= "2023/03/23/Python-library-for-SR400-Photon-counter/" >Python library for SR400 Photon counter</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/21</span><a class="archive-post-title" href= "/2023/03/21/COMSOL-script-for-random-object-generation/" >COMSOL script for random object generation</a>
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href= "2023/03/21/COMSOL-script-for-random-object-generation/" >COMSOL script for random object generation</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2023/03/18/LakeShore-Model-335-Python-Script/" >LakeShore Model 335 Python控制脚本</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "2023/03/18/LakeShore-Model-335-Python-Script/" >LakeShore Model 335 Python控制脚本</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "/2023/03/17/Python-script-for-Keithley-2400-current-sweep/" >Keithley2400源表电流扫描Python程序</a>
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2023/03/17/Python-script-for-Keithley-2400-current-sweep/" >Keithley2400源表电流扫描Python程序</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "/2023/03/16/Python-script-for-Keithley-2450-current-sweep/" >Keithley2450源表电流扫描Python程序</a>
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "2023/03/16/Python-script-for-Keithley-2450-current-sweep/" >Keithley2450源表电流扫描Python程序</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "/2023/03/15/Frontiers-in-condensed-matter-physics/" >Frontiers in condensed matter physics</a>
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "2023/03/15/Frontiers-in-condensed-matter-physics/" >Frontiers in condensed matter physics</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "/2023/03/13/HER-auto-test-script/" >HER auto test script</a>
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2023/03/13/HER-auto-test-script/" >HER auto test script</a>
         </li>
     
     
@@ -1507,7 +1507,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "/2021/02/15/Cmd%20Markdown%20Editor/" >Cmd Markdown Editor</a>
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2021/02/15/Cmd%20Markdown%20Editor/" >Cmd Markdown Editor</a>
         </li>
     
     
@@ -1521,192 +1521,192 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "/2020/11/24/Introduction-for-CHI660e-Macro-Generator/" >Introduction for CHI660e Macro Generator</a>
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "2020/11/24/Introduction-for-CHI660e-Macro-Generator/" >Introduction for CHI660e Macro Generator</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/15</span><a class="archive-post-title" href= "/2020/11/15/hello-world/" >Hello World</a>
+            <span class="archive-post-date">11/15</span><a class="archive-post-title" href= "2020/11/15/hello-world/" >Hello World</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2020/09/29/Why-movies-appeal-to-me/" >Why movies appeal to me</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "2020/09/29/Why-movies-appeal-to-me/" >Why movies appeal to me</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/15</span><a class="archive-post-title" href= "/2020/09/15/A-letter-from-the-middle-of-September/" >七月流火 春日迟迟</a>
+            <span class="archive-post-date">09/15</span><a class="archive-post-title" href= "2020/09/15/A-letter-from-the-middle-of-September/" >七月流火 春日迟迟</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "/2020/08/18/Understanding-of-Pseudocapacitance/" >Understanding of Pseudocapacitance</a>
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2020/08/18/Understanding-of-Pseudocapacitance/" >Understanding of Pseudocapacitance</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "/2020/06/18/Perspective-Blaming-China-is-Illegimate-and-Irresponsible/" >Blaming China is Illegimate and Irresponsible</a>
+            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "2020/06/18/Perspective-Blaming-China-is-Illegimate-and-Irresponsible/" >Blaming China is Illegimate and Irresponsible</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/19</span><a class="archive-post-title" href= "/2020/05/19/Side-by-Side-Battery-Technologies-with-Lithium%E2%80%90Ion-Based-Batteries/" >Side-by-Side-Battery-Technologies-with-Lithium‐Ion-Based-Batteries</a>
+            <span class="archive-post-date">05/19</span><a class="archive-post-title" href= "2020/05/19/Side-by-Side-Battery-Technologies-with-Lithium%E2%80%90Ion-Based-Batteries/" >Side-by-Side-Battery-Technologies-with-Lithium‐Ion-Based-Batteries</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/01</span><a class="archive-post-title" href= "/2020/05/01/WHAT-IS-ATR-SEIRAS/" >WHAT IS ATR-SEIRAS?</a>
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href= "2020/05/01/WHAT-IS-ATR-SEIRAS/" >WHAT IS ATR-SEIRAS?</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2020/04/30/Microcell-Electrochemistry-Literature-Review/" >Microcell Electrochemistry Literature Review</a>
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "2020/04/30/Microcell-Electrochemistry-Literature-Review/" >Microcell Electrochemistry Literature Review</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "/2020/04/28/Mass-Transfer-in-Electrochemistry/" >Mass Transfer in Electrochemistry</a>
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "2020/04/28/Mass-Transfer-in-Electrochemistry/" >Mass Transfer in Electrochemistry</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "/2020/04/17/Drude-Model-in-Soild-State-Physics/" >Drude Model in Soild State Physics</a>
+            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "2020/04/17/Drude-Model-in-Soild-State-Physics/" >Drude Model in Soild State Physics</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "/2020/04/03/Is-the-World-Virtual/" >Is the World Virtual</a>
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "2020/04/03/Is-the-World-Virtual/" >Is the World Virtual</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "/2020/03/27/Topological-two-dimensional-polymers/" >Topological two-dimensional polymers</a>
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2020/03/27/Topological-two-dimensional-polymers/" >Topological two-dimensional polymers</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/26</span><a class="archive-post-title" href= "/2020/03/26/The-Configuration-to-the-Deep-Network/" >The Configuration to the Deep Network</a>
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href= "2020/03/26/The-Configuration-to-the-Deep-Network/" >The Configuration to the Deep Network</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "/2020/03/17/Artical-Dynamic-stability-of-active-sites-in-hydr(oxy)-oxides-for-the-oxygen-evolution-reaction/" >顶刊精读：动态平衡视角下的OER反应位点</a>
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Artical-Dynamic-stability-of-active-sites-in-hydr(oxy)-oxides-for-the-oxygen-evolution-reaction/" >顶刊精读：动态平衡视角下的OER反应位点</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "/2020/03/17/Literature-research-website/" >Literature research website</a>
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Literature-research-website/" >Literature research website</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "/2020/03/13/Advantages-of-microelectrode-system-in-electrochemical-science/" >Advantages of microelectrode system in electrochemical science</a>
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2020/03/13/Advantages-of-microelectrode-system-in-electrochemical-science/" >Advantages of microelectrode system in electrochemical science</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/Hertz-Knudsen-Equation-for-Evaporation-and-Condensation/" >Hertz-Knudsen Equation for Evaporation and Condensation</a>
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "2020/03/11/Hertz-Knudsen-Equation-for-Evaporation-and-Condensation/" >Hertz-Knudsen Equation for Evaporation and Condensation</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "/2020/03/09/How-to-measure-ECSA/" >How to measure ECSA</a>
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/How-to-measure-ECSA/" >How to measure ECSA</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "/2020/03/09/Li-Battery-Foundation/" >Li Battery Foundation</a>
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/Li-Battery-Foundation/" >Li Battery Foundation</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "/2020/03/03/CDW-and-SDW/" >CDW and SDW</a>
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "2020/03/03/CDW-and-SDW/" >CDW and SDW</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "/2020/02/27/3Dmax-Draw-Graphene-Grain-Boundaries/" >使用3Dmax绘制石墨烯晶格缺陷</a>
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "2020/02/27/3Dmax-Draw-Graphene-Grain-Boundaries/" >使用3Dmax绘制石墨烯晶格缺陷</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "/2020/02/26/Anacoda-Introductory-Tutorail/" >Anaconda详细安装及使用教程</a>
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "2020/02/26/Anacoda-Introductory-Tutorail/" >Anaconda详细安装及使用教程</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "/2020/02/25/Origin-Plugins-Density-Filter/" >Origin插件之：散点密度热图（Density Filter）</a>
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Plugins-Density-Filter/" >Origin插件之：散点密度热图（Density Filter）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "/2020/02/25/Origin-Python-Environment-Build-up/" >Origin+Python环境搭建</a>
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Python-Environment-Build-up/" >Origin+Python环境搭建</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "/2020/02/24/Origin-Plugins-Graph-Maker/" >Origin插件之：快速作图（Graph Maker）</a>
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "2020/02/24/Origin-Plugins-Graph-Maker/" >Origin插件之：快速作图（Graph Maker）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "/2020/02/23/Origin-Plugins-Venn-Diagram/" >Origin插件之：韦恩图生成插件（Venn Diagram）</a>
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Venn-Diagram/" >Origin插件之：韦恩图生成插件（Venn Diagram）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "/2020/02/23/Origin-Plugins-Layer-Stack-Manager/" >Origin插件之：堆叠图小工具（Layer Stack Manager）</a>
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Layer-Stack-Manager/" >Origin插件之：堆叠图小工具（Layer Stack Manager）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "/2020/02/22/Origin-Plugins-Color-Editor/" >Origin插件之：配色编辑器(Color Editor)</a>
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "2020/02/22/Origin-Plugins-Color-Editor/" >Origin插件之：配色编辑器(Color Editor)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "/2020/02/21/Origin-Plugins-Tafel-Extrapolation/" >Origin插件之：LSV数据处理插件(Tafel Extrapolation)</a>
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "2020/02/21/Origin-Plugins-Tafel-Extrapolation/" >Origin插件之：LSV数据处理插件(Tafel Extrapolation)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "/2020/02/20/P5-js-new-journal/" >P5.js new journal</a>
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/P5-js-new-journal/" >P5.js new journal</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "/2020/02/20/Katex-Test/" >Katex Test</a>
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/Katex-Test/" >Katex Test</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/Artical-Current-and-future-role-of-Haber-Bosch-ammonia-in-a-carbon-free-energy-landscape/" >催化合成氨未来何去何从</a>
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Artical-Current-and-future-role-of-Haber-Bosch-ammonia-in-a-carbon-free-energy-landscape/" >催化合成氨未来何去何从</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/4thYearAnniversary/" >写在第四年的Anniversary</a>
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/4thYearAnniversary/" >写在第四年的Anniversary</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "/2020/02/19/Group-Meeting/" >Group Meeting Backup</a>
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Group-Meeting/" >Group Meeting Backup</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "/2020/02/16/Artical-Precise-Anionic-Regulation-Assisted-by-Electrochemical-Reactions/" >张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</a>
+            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "2020/02/16/Artical-Precise-Anionic-Regulation-Assisted-by-Electrochemical-Reactions/" >张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "/2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/" >原子轨道耦合帮你分析固氮催化位点活性！</a>
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/" >原子轨道耦合帮你分析固氮催化位点活性！</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/Some-Useful-website/" >Some Useful website</a>
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "2020/02/14/Some-Useful-website/" >Some Useful website</a>
         </li>
     
     </div>
@@ -1730,35 +1730,31 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
-        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
-    
-        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
-    
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
         <span class="sidebar-tag-name" data-tags="Thin Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin Film Deposition</span>
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
     
-        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
     
-        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
-    
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
     
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
+        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
+    
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+    
+        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
+    
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
     
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
     
         <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
     
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
-    
-        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -1768,29 +1764,33 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
     
-        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
-        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
-    
         <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
+    
+        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
         <span class="sidebar-tag-name" data-tags="Condense Physics"><span class="iconfont-archer">&#xe606;</span>Condense Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
+    
+        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
     
         <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
     
         <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
         <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
@@ -1841,21 +1841,21 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
-    
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
@@ -1877,10 +1877,10 @@ jsonContent:
         if (typeof window.$ === 'undefined')
         {
             console.warn('jquery load from jsdelivr failed, will load local script')
-            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+            document.write('<script src="../../../../lib/jquery.min.js">\x3C/script>')
         }
     </script>
-    <script src="/scripts/main.js"></script>
+    <script src="../../../../scripts/main.js"></script>
     <!-- algolia -->
     
     <!-- busuanzi  -->
@@ -1892,7 +1892,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
     
-        <script src="/scripts/share.js" async></script>    
+        <script src="../../../../scripts/share.js" async></script>    
      
     <script>
 window.MathJax = {
