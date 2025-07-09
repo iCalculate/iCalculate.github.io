@@ -307,7 +307,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">905</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">911</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -438,14 +438,18 @@ height:50vh;
     <article class="article-entry">
         <p>在统计样点在二维空间中的分布情况时常常会使用到<strong>散点密度热图</strong>，我们知道在R语言中有专用的绘图函数smoothScatter()可以实现，在MATLAB中也有可以用plotScat.m的内嵌函数，在Python中可以使用pandas和MatPlotLib中的相应功能，那么在Origin中如何绘制散点密度图呢？</p>
 <a id="more"></a>
-
-<h1 id="Origin插件之：散点密度热图（Density-Filter）"><a href="#Origin插件之：散点密度热图（Density-Filter）" class="headerlink" title="Origin插件之：散点密度热图（Density Filter）"></a>Origin插件之：散点密度热图（Density Filter）</h1><p>原创作者：iCalculate</p>
-<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>在统计样点在二维空间中的分布情况时常常会使用到<strong>散点密度热图</strong>，我们知道在R语言中有专用的绘图函数smoothScatter()可以实现，在MATLAB中也有可以用plotScat.m的内嵌函数，在Python中可以使用pandas和MatPlotLib中的相应功能，那么在Origin中如何绘制散点密度图呢？</p>
-<h2 id="本期插件介绍："><a href="#本期插件介绍：" class="headerlink" title="本期插件介绍："></a>本期插件介绍：</h2><p>本期要介绍的插件是OriginLab官方技术支持团队提供的”<strong>Density Filter</strong>“插件，这个插件用于通过二维散点图数据绘制密度热图。类似的插件有<strong>Kernel Density Plot</strong>用于极坐标系下的散点数据转密度热图，<strong>Gaussian Mixture Models</strong>可以通过高斯混合模型计算二维热力图，这三个插件功能和操作类似，本期以<strong>Density Filter</strong>为例，插件支持的最低Origin版本为Origin2019(9.6)。</p>
+<h1>Origin插件之：散点密度热图（Density Filter）</h1>
+<p>原创作者：iCalculate</p>
+<h2 id="前言：">前言：</h2>
+<p>在统计样点在二维空间中的分布情况时常常会使用到<strong>散点密度热图</strong>，我们知道在R语言中有专用的绘图函数smoothScatter()可以实现，在MATLAB中也有可以用plotScat.m的内嵌函数，在Python中可以使用pandas和MatPlotLib中的相应功能，那么在Origin中如何绘制散点密度图呢？</p>
+<h2 id="本期插件介绍：">本期插件介绍：</h2>
+<p>本期要介绍的插件是OriginLab官方技术支持团队提供的&quot;<strong>Density Filter</strong>&quot;插件，这个插件用于通过二维散点图数据绘制密度热图。类似的插件有<strong>Kernel Density Plot</strong>用于极坐标系下的散点数据转密度热图，<strong>Gaussian Mixture Models</strong>可以通过高斯混合模型计算二维热力图，这三个插件功能和操作类似，本期以<strong>Density Filter</strong>为例，插件支持的最低Origin版本为Origin2019(9.6)。</p>
 <p>插件官方地址：<a href="https://www.originlab.com/fileExchange/details.aspx?fid=464" target="_blank" rel="noopener">https://www.originlab.com/fileExchange/details.aspx?fid=464</a></p>
 <p>插件下载备用：链接：<a href="https://pan.baidu.com/s/1IYvXdABRu_w8E1bdSiE1pw" target="_blank" rel="noopener">https://pan.baidu.com/s/1IYvXdABRu_w8E1bdSiE1pw</a>     提取码：itks</p>
-<h2 id="插件安装："><a href="#插件安装：" class="headerlink" title="插件安装："></a>插件安装：</h2><p>Origin插件下载完成后是后缀为”.opx”的文件，只需先打开Origin软件然后将”.opx”文件拖曳进Origin面板内即可完成安装，安装过程不会有提示出现，在面板右侧Apps窗口中如果有了相应的插件图标（图标灰色并非不可用）即说明安装成功。</p>
-<h2 id="具体介绍："><a href="#具体介绍：" class="headerlink" title="具体介绍："></a>具体介绍：</h2><p>首先我们要准备一组散点数据，这里我使用Origin内嵌的Python环境和Code Builder工具生成了一组沿直线分布的随机点，并将Python中的数据加载进Origin的工作表：</p>
+<h2 id="插件安装：">插件安装：</h2>
+<p>Origin插件下载完成后是后缀为&quot;.opx&quot;的文件，只需先打开Origin软件然后将&quot;.opx&quot;文件拖曳进Origin面板内即可完成安装，安装过程不会有提示出现，在面板右侧Apps窗口中如果有了相应的插件图标（图标灰色并非不可用）即说明安装成功。</p>
+<h2 id="具体介绍：">具体介绍：</h2>
+<p>首先我们要准备一组散点数据，这里我使用Origin内嵌的Python环境和Code Builder工具生成了一组沿直线分布的随机点，并将Python中的数据加载进Origin的工作表：</p>
 <p><img src="/2020/02/25/Origin-Plugins-Density-Filter/Origin-Plugins-Density-Filter%5Cimage-20200225161324837.png" alt="image-20200225161324837"></p>
 <p>在Origin的Command Window运行编辑好的成程序即可在工作区生成一个新的名为“MyData”的表单，在第一页载入了散点数据。（PS：如果大家感兴趣可以出一期Origin+Python环境搭建的教程）</p>
 <p><img src="/2020/02/25/Origin-Plugins-Density-Filter/Origin-Plugins-Density-Filter%5Cimage-20200225161926659.png" alt="image-20200225161926659"></p>
@@ -457,7 +461,8 @@ height:50vh;
 <p><img src="/2020/02/25/Origin-Plugins-Density-Filter/Origin-Plugins-Density-Filter%5Cimage-20200225163147655.png" alt="image-20200225163147655"></p>
 <p>可以在设置对话框修改配色，如果需要使用自定义配色可以参考Color Editor插件的教程生成并保存自定义Palette，当然也可以通过Tool-&gt;Palette Editor生成和保存新的配色。</p>
 <p><img src="/2020/02/25/Origin-Plugins-Density-Filter/Origin-Plugins-Density-Filter%5Cimage-20200225163357978.png" alt="image-20200225163357978"></p>
-<h2 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2><p>绘制散点数据的密度热图如要在原生的Origin环境中较难实现，通过Density Filter插件可以方便的生成，但是这个插件也存在算法单一的问题，如果需要调整热图的计算算法可以尝试Gaussian Mixture Models，该插件有着更灵活的应用范围和更丰富的计算方式。</p>
+<h2 id="小结：">小结：</h2>
+<p>绘制散点数据的密度热图如要在原生的Origin环境中较难实现，通过Density Filter插件可以方便的生成，但是这个插件也存在算法单一的问题，如果需要调整热图的计算算法可以尝试Gaussian Mixture Models，该插件有着更灵活的应用范围和更丰富的计算方式。</p>
 
     </article>
     <!-- license  -->
@@ -630,7 +635,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Origin插件之：散点密度热图（Density-Filter）"><span class="toc-number">1.</span> <span class="toc-text">Origin插件之：散点密度热图（Density Filter）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言："><span class="toc-number">1.1.</span> <span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本期插件介绍："><span class="toc-number">1.2.</span> <span class="toc-text">本期插件介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件安装："><span class="toc-number">1.3.</span> <span class="toc-text">插件安装：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体介绍："><span class="toc-number">1.4.</span> <span class="toc-text">具体介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结："><span class="toc-number">1.5.</span> <span class="toc-text">小结：</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">Origin插件之：散点密度热图（Density Filter）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言："><span class="toc-number">1.1.</span> <span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本期插件介绍："><span class="toc-number">1.2.</span> <span class="toc-text">本期插件介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件安装："><span class="toc-number">1.3.</span> <span class="toc-text">插件安装：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体介绍："><span class="toc-number">1.4.</span> <span class="toc-text">具体介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结："><span class="toc-number">1.5.</span> <span class="toc-text">小结：</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1748,17 +1753,25 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
+        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
+    
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
-    
-        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
-    
         <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
         <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+    
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
+    
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+    
+        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
@@ -1766,21 +1779,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
     
-        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
-    
-        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
-    
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
-    
         <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
-    
-        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
         <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
-        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
-    
         <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
+        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
     
         <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
     
@@ -1798,13 +1803,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
-    
-        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
-    
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
+    
+        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
     
         <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
@@ -1820,9 +1825,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
-    
         <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1865,9 +1870,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
-    
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
@@ -1877,9 +1882,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
-        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
-    
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
