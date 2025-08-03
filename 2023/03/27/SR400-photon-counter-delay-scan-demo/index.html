@@ -307,7 +307,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">523</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">524</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -438,10 +438,9 @@ height:50vh;
     <article class="article-entry">
         <p>基于上一篇中SR400GPIB通信指令编写的控制程序，用于进行外部触发的延迟扫描，其中包含了大部分SR400库文件指令，触发脉冲接入Trigger，鉴别器A采用内部10MHz时钟，扫描触发上升沿后不同延迟下的脉冲个数。</p>
 <a id="more"></a>
-
-<h1 id="SR400光子计数器延迟扫描范例"><a href="#SR400光子计数器延迟扫描范例" class="headerlink" title="SR400光子计数器延迟扫描范例"></a>SR400光子计数器延迟扫描范例</h1><p>基于上一篇中SR400GPIB通信指令编写的控制程序，用于进行外部触发的延迟扫描，其中包含了大部分SR400库文件指令，触发脉冲接入Trigger，鉴别器A采用内部10MHz时钟，扫描触发上升沿后不同延迟下的脉冲个数。</p>
+<h1>SR400光子计数器延迟扫描范例</h1>
+<p>基于上一篇中SR400GPIB通信指令编写的控制程序，用于进行外部触发的延迟扫描，其中包含了大部分SR400库文件指令，触发脉冲接入Trigger，鉴别器A采用内部10MHz时钟，扫描触发上升沿后不同延迟下的脉冲个数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Created on Sun Mar 26 11:43:30 2023</span></span><br><span class="line"><span class="string">@author: Xinchuan Du</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">DevName = <span class="string">'xxx-x-x'</span> <span class="comment"># will be inserted into filename of saved plot</span></span><br><span class="line">Keithley_GPIB_Addr = <span class="number">18</span>  <span class="comment"># Keithley 2400 SourceMeter GPIB address is 16</span></span><br><span class="line">Model335_GPIB_Addr = <span class="number">12</span>  <span class="comment"># LakeShore Model335 Cryogenic Temperature Controller</span></span><br><span class="line">SR400_GPIB_Addr = <span class="number">23</span>  <span class="comment"># Keithley 2400 SourceMeter GPIB address is 16</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> SRS400</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line"><span class="comment">###   GPIB INITIALZATION   ###</span></span><br><span class="line">SR400 = SRS400.sr400(<span class="string">'GPIB0::'</span> + str(SR400_GPIB_Addr) + <span class="string">'::INSTR'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">###   MODE SETTING   ###</span></span><br><span class="line">SR400.count_mode(mode = <span class="string">'independent'</span>)  <span class="comment"># set independent(A,B for T preset) count mode</span></span><br><span class="line">SR400.set_count_input(counter = <span class="string">'A'</span>, source = <span class="string">'10MHz'</span>)  <span class="comment"># mapping internal 10MHz to counter A</span></span><br><span class="line">SR400.dwell_time(dwell = <span class="number">0.1</span>)  <span class="comment"># set dwell time(the interval time between counts)</span></span><br><span class="line">SR400.set_count_preset(channel = <span class="string">'T'</span>, time = <span class="number">0.9</span>)  <span class="comment"># set preset window to control counting duration</span></span><br><span class="line"></span><br><span class="line"><span class="comment">###   SCAN PERIOD SETTING   ###</span></span><br><span class="line">SR400.scan_periods(num = <span class="number">1000</span>)  <span class="comment"># set N PERIOD</span></span><br><span class="line">SR400.scan_end_mode(mode = <span class="string">'STOP'</span>)  <span class="comment"># set scan stop at N-period</span></span><br><span class="line"></span><br><span class="line"><span class="comment">###   GATE SETTING   ###</span></span><br><span class="line">SR400.gate_window(channel = <span class="string">'A'</span>, window = <span class="number">200e-9</span>)  <span class="comment"># set gate window width</span></span><br><span class="line">SR400.gate_mode(channel = <span class="string">'A'</span>, mode = <span class="string">'SCAN'</span>)  <span class="comment"># set gate mode as SCAN(scan the delay)</span></span><br><span class="line">SR400.gate_scan_step(channel = <span class="string">'A'</span>, step = <span class="number">100e-9</span>)  <span class="comment"># set delay step value</span></span><br><span class="line">SR400.gate_delay_set(channel = <span class="string">'A'</span>, delay = <span class="number">0e-9</span>)  <span class="comment"># set initial delay value</span></span><br><span class="line"></span><br><span class="line"><span class="comment">###   TRIGGER SETTING   ###</span></span><br><span class="line">SR400.set_disc_level(channel = <span class="string">'trigger'</span>, level = <span class="number">0.0</span>, slope = <span class="literal">False</span>)  <span class="comment"># set trigger disc. level and edge</span></span><br><span class="line"></span><br><span class="line"><span class="comment">###   DISPLAY SETTING   ###</span></span><br><span class="line">SR400.display_mode(conti = <span class="literal">False</span>)  <span class="comment"># set as hold display mode</span></span><br><span class="line"></span><br><span class="line">buffer_len = SR400.scan_periods()</span><br><span class="line"></span><br><span class="line">start_time_stamp = time.time()</span><br><span class="line">SR400.count_restart()  <span class="comment"># same as double click STOP and then single click START</span></span><br><span class="line">SR400.lcd_message(<span class="string">'Pulse Delay Scanning...'</span>)  <span class="comment"># reset(double click STOP) will erase the custom message</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">not</span> SR400.check_scan_finish()):</span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line">	time.sleep(<span class="number">0.1</span>)</span><br><span class="line">	time_stamp = time.time()-start_time_stamp</span><br><span class="line">	loop = int(SR400.scan_position())</span><br><span class="line">	<span class="keyword">if</span> loop&gt;=<span class="number">2</span>:</span><br><span class="line">		count = SR400.read_buffer_count(channel = <span class="string">'ch1'</span>, bit = loop<span class="number">-1</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		count = <span class="number">-1</span></span><br><span class="line">	print(<span class="string">f'\r[@<span class="subst">&#123;time_stamp:<span class="number">.2</span>f&#125;</span> s] Recent period: <span class="subst">&#123;loop&#125;</span>/<span class="subst">&#123;buffer_len&#125;</span>   Last count = <span class="subst">&#123;count&#125;</span>'</span>, end = <span class="string">" "</span>)</span><br><span class="line"></span><br><span class="line">SR400.count_stop()</span><br><span class="line">print(<span class="string">'\n Scan Finished!'</span>)</span><br><span class="line"></span><br><span class="line">count = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(buffer_len<span class="number">-1</span>):</span><br><span class="line">	count.append(SR400.read_buffer_count(channel = <span class="string">'ch1'</span>, bit = i+<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">SR400.close()  <span class="comment"># Suspends port before program ends</span></span><br><span class="line"></span><br><span class="line">x = range(<span class="number">0</span>,<span class="number">100</span>*(buffer_len<span class="number">-1</span>),<span class="number">100</span>) </span><br><span class="line">fig1 = sns.jointplot(x = <span class="string">"Delay (ns)"</span>, count = <span class="string">"Count"</span>)</span><br><span class="line">fig1.show()</span><br><span class="line"></span><br><span class="line">fig2 = sns.distplot(count, bins = <span class="number">10</span>)</span><br><span class="line">fig2.set_xlabel(<span class="string">"Count"</span>)</span><br><span class="line">fig2.set_ylabel(<span class="string">"Probability"</span>)</span><br><span class="line">fig2.show()</span><br></pre></td></tr></table></figure>
-
 
     </article>
     <!-- license  -->
@@ -614,7 +613,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SR400光子计数器延迟扫描范例"><span class="toc-number">1.</span> <span class="toc-text">SR400光子计数器延迟扫描范例</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">SR400光子计数器延迟扫描范例</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1768,8 +1767,6 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
-    
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
@@ -1779,6 +1776,8 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
     
         <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
+    
+        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
     
         <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
@@ -1794,15 +1793,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
     
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
+    
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
         <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
-    
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
     
         <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
     
@@ -1822,15 +1821,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
-    
-        <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
-    
-        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
-    
         <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
     
         <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
+    
+        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
+    
+        <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
+    
+        <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
         <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
     
@@ -1889,17 +1888,17 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
-    
         <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
-    
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
@@ -1907,13 +1906,13 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+    
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
-    
-        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
