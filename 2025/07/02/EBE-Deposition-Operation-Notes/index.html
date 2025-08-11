@@ -440,9 +440,9 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>本文为电子束蒸发（EBE）沉积操作的标准实验流程笔记，支持中英文切换阅读。<br>
-This post provides a bilingual operation manual for EBE thin-film deposition used in cleanroom microfabrication.</p>
+        <p>本文为电子束蒸发（EBE）沉积操作的标准实验流程笔记，支持中英文切换阅读。<br>This post provides a bilingual operation manual for EBE thin-film deposition used in cleanroom microfabrication.</p>
 <a id="more"></a>
+
 
 <style>
 #lang-toggle-container {
@@ -472,59 +472,61 @@ This post provides a bilingual operation manual for EBE thin-film deposition use
   </div>
 </div>
 
+
 <div id="content-zh">
+
 <p>EBE（电子束蒸发）沉积流程包括以下主要步骤，建议全流程约需 30-40 分钟，根据材料数量及沉积层数可能有所变化。</p>
 <p><img src="/2025/07/02/EBE-Deposition-Operation-Notes/EBE_GanttChart.png" alt="EBE_GanttChart_CN"></p>
 <hr>
-<h3 id="span-style-color-a6cee3-font-weight-bold-1-到场检查-span"><span style="color:#a6cee3;font-weight:bold"> 1. 到场检查</span></h3>
-<ul>
+<h3 id="1-到场检查"><a href="#1-到场检查" class="headerlink" title=" 1. 到场检查"></a><span style="color:#a6cee3;font-weight:bold"> 1. 到场检查</span></h3><ul>
   <li><input type="checkbox"> <em>检查</em>主腔室真空度（优于 1E-7 Torr）</li>
   <li><input type="checkbox"> <em>检查</em>Load Lock 阀门是否关闭（XFER VALVE 按钮应为红色）</li>
   <li><input type="checkbox"> <em>检查</em>Load Lock 真空度（一般应优于 1E-5 Torr）</li>
 </ul>
+
 <hr>
-<h3 id="span-style-color-1f78b4-font-weight-bold-2-LoadLock-装样-span"><span style="color:#1f78b4;font-weight:bold"> 2. LoadLock 装样</span></h3>
-<ol>
+<h3 id="2-LoadLock-装样"><a href="#2-LoadLock-装样" class="headerlink" title=" 2. LoadLock 装样"></a><span style="color:#1f78b4;font-weight:bold"> 2. LoadLock 装样</span></h3><ol>
   <li><input type="checkbox"> 关闭 Load Lock 推杆开关，等待真空回到常压（约 7.5E2 Torr），打开盖子；</li>
   <li><input type="checkbox"> 取出 hold ring，到操作台贴装样品至 dummy wafer；</li>
   <li><input type="checkbox"> 将 dummy wafer 安装至 hold ring，氮气吹洗；</li>
   <li><input type="checkbox"> 整体装入 Load Lock holder；</li>
   <li><input type="checkbox"> 轻压 lid，打开推杆开关抽真空，直至低于 1E-6 Torr。</li>
 </ol>
+
 <hr>
-<h3 id="span-style-color-b2df8a-font-weight-bold-2-a-参数设置-span"><span style="color:#b2df8a;font-weight:bold"> 2-a. 参数设置</span></h3>
-<ul>
+<h3 id="2-a-参数设置"><a href="#2-a-参数设置" class="headerlink" title=" 2-a. 参数设置"></a><span style="color:#b2df8a;font-weight:bold"> 2-a. 参数设置</span></h3><ul>
   <li><input type="checkbox"> <b>E-beam Sweep Controller</b>：根据材料选择对应 beam，设置 Program Number 和 Pocket Number，确认 Pattern 正确；</li>
   <li><input type="checkbox"> <b>Deposition Controller</b>：在Process Menu中旋钮选择材料，退出到主界面，进入 Quick Edit，设置速率和目标厚度，确认并返回主界面。</li>
 </ul>
+
+
 <hr>
-<h3 id="span-style-color-33a02c-font-weight-bold-3-送样进入主腔室-span"><span style="color:#33a02c;font-weight:bold"> 3. 送样进入主腔室</span></h3>
-<ul>
+<h3 id="3-送样进入主腔室"><a href="#3-送样进入主腔室" class="headerlink" title=" 3. 送样进入主腔室"></a><span style="color:#33a02c;font-weight:bold"> 3. 送样进入主腔室</span></h3><ul>
   <li><input type="checkbox"> Motor Control 设为 Local，转速设为 0；</li>
   <li><input type="checkbox"> 摇杆调整 holder claws 角度与高度（对齐 F line 和 Red Line）；</li>
   <li><input type="checkbox"> 打开 XFER VALVE，插入 transfer arm 至顶；</li>
   <li><input type="checkbox"> 提升 claws 超过 Blue Line，拉出 holder，关闭阀门；</li>
   <li><input type="checkbox"> 提升 claws 至顶部，设转速 50 rpm，切换至 Remote 模式，关闭挡板。</li>
 </ul>
+
 <blockquote>
 <p>⚠️ 操作全程需目视避免碰撞，如有阻碍，及时退回调整 claws。</p>
 </blockquote>
 <hr>
-<h3 id="span-style-color-fb9a99-font-weight-bold-4-执行沉积-span"><span style="color:#fb9a99;font-weight:bold"> 4. 执行沉积</span></h3>
-<ul>
+<h3 id="4-执行沉积"><a href="#4-执行沉积" class="headerlink" title=" 4. 执行沉积"></a><span style="color:#fb9a99;font-weight:bold"> 4. 执行沉积</span></h3><ul>
   <li><input type="checkbox"> <em>检查</em> Motor Control 为 Remote Mode；</li>
   <li><input type="checkbox"> 再次确认 beam 设置与 deposition 参数；</li>
   <li><input type="checkbox"> 点击 Run Process，实时监测沉积速率、厚度、功率、电流、电压；</li>
   <li><input type="checkbox"> 程序自动停止。多层材料请重复参数设置与运行步骤。</li>
 </ul>
+
 <hr>
-<h3 id="span-style-color-e31a1c-font-weight-bold-4-a-日志记录-span"><span style="color:#e31a1c;font-weight:bold"> 4-a. 日志记录</span></h3>
-<ul>
+<h3 id="4-a-日志记录"><a href="#4-a-日志记录" class="headerlink" title=" 4-a. 日志记录"></a><span style="color:#e31a1c;font-weight:bold"> 4-a. 日志记录</span></h3><ul>
   <li><input type="checkbox"> 记录沉积速率与 emission current（从 beam 控制器读取），填写至 log book。</li>
 </ul>
+
 <hr>
-<h3 id="span-style-color-fdbf6f-font-weight-bold-5-取样-span"><span style="color:#fdbf6f;font-weight:bold"> 5. 取样</span></h3>
-<ul>
+<h3 id="5-取样"><a href="#5-取样" class="headerlink" title=" 5. 取样"></a><span style="color:#fdbf6f;font-weight:bold"> 5. 取样</span></h3><ul>
   <li><input type="checkbox"> 停转速至 0，切回 Local Mode；</li>
   <li><input type="checkbox"> 打开挡板，降低 claws（不低于 Blue Line），调节角度对齐 F Line；</li>
   <li><input type="checkbox"> 确保 Load Lock 真空低于 1E-6 Torr，打开 XFER VALVE；</li>
@@ -533,67 +535,69 @@ This post provides a bilingual operation manual for EBE thin-film deposition use
   <li><input type="checkbox"> 关闭推杆开关放气，待气压至 7.5E2 Torr；</li>
   <li><input type="checkbox"> 打开盖子，取出 wafer，卸样，归还 holder ring 并重新抽真空。</li>
 </ul>
+
 <hr>
-<h3 id="span-style-color-ff7f00-font-weight-bold-6-收尾步骤-span"><span style="color:#ff7f00;font-weight:bold"> 6. 收尾步骤</span></h3>
-<ul>
+<h3 id="6-收尾步骤"><a href="#6-收尾步骤" class="headerlink" title=" 6. 收尾步骤"></a><span style="color:#ff7f00;font-weight:bold"> 6. 收尾步骤</span></h3><ul>
   <li><input type="checkbox"> 操作台卸样，dummy wafer 归位，样品收纳；</li>
   <li><input type="checkbox"> 待 Load Lock 真空优于 1E-4 Torr；</li>
   <li><input type="checkbox"> 在 log book 记录离开时间，完成操作。</li>
 </ul>
     </div>
+
 <div id="content-en" style="display: none;">
+
 <p>The EBE (Electron Beam Evaporation) process consists of the following sequential steps. The total process typically takes about 30–40 minutes depending on the number of materials and thickness layers.</p>
 <p><img src="/2025/07/02/EBE-Deposition-Operation-Notes/EBE_GanttChart.png" alt="EBE_GanttChart_EN"></p>
 <hr>
-<h3 id="span-style-color-a6cee3-1-Initial-Check-【1-min】-span"><span style="color:#a6cee3">1. Initial Check 【1 min】</span></h3>
-<ul>
+<h3 id="1-Initial-Check-【1-min】"><a href="#1-Initial-Check-【1-min】" class="headerlink" title="1. Initial Check 【1 min】"></a><span style="color:#a6cee3">1. Initial Check 【1 min】</span></h3><ul>
   <li><input type="checkbox"> <em>Check</em> the main chamber vacuum (< 1E-7 Torr)</li>
   <li><input type="checkbox"> <em>Check</em> if the Load Lock valve is closed (XFER VALVE button should be RED)</li>
   <li><input type="checkbox"> <em>Check</em> the Load Lock vacuum level (typically < 1E-5 Torr)</li>
 </ul>
+
 <hr>
-<h3 id="span-style-color-1f78b4-2-Load-Lock-Sample-Loading-【10-min】-span"><span style="color:#1f78b4">2. Load Lock Sample Loading 【10 min】</span></h3>
-<ol>
+<h3 id="2-Load-Lock-Sample-Loading-【10-min】"><a href="#2-Load-Lock-Sample-Loading-【10-min】" class="headerlink" title="2. Load Lock Sample Loading 【10 min】"></a><span style="color:#1f78b4">2. Load Lock Sample Loading 【10 min】</span></h3><ol>
   <li><input type="checkbox"> Turn off the Load Lock pusher, wait for the pressure to rise to ambient (~7.5E2 Torr), then open the lid.</li>
   <li><input type="checkbox"> Remove the hold ring and mount the sample onto the dummy wafer on the workbench.</li>
   <li><input type="checkbox"> Fix the dummy wafer onto the hold ring, blow clean with nitrogen.</li>
   <li><input type="checkbox"> Place the entire assembly onto the Load Lock holder.</li>
   <li><input type="checkbox"> Gently press the lid and turn on the pusher to pump down until pressure < 1E-6 Torr.</li>
 </ol>
+
 <hr>
-<h3 id="span-style-color-b2df8a-2-a-Parameter-Setup-【3-min-in-parallel-during-vacuuming】-span"><span style="color:#b2df8a">2-a. Parameter Setup 【3 min, in parallel during vacuuming】</span></h3>
-<ul>
+<h3 id="2-a-Parameter-Setup-【3-min-in-parallel-during-vacuuming】"><a href="#2-a-Parameter-Setup-【3-min-in-parallel-during-vacuuming】" class="headerlink" title="2-a. Parameter Setup 【3 min, in parallel during vacuuming】"></a><span style="color:#b2df8a">2-a. Parameter Setup 【3 min, in parallel during vacuuming】</span></h3><ul>
   <li><input type="checkbox"> <b>E-beam Sweep Controller</b>: Select the beam and corresponding program and pocket numbers based on material list. Confirm the pattern is correct and ensure the program button is activated.</li>
   <li><input type="checkbox"> <b>Deposition Controller</b>: Find the "Process Menu", select the material by knob. Back to main meuw, find the "Quick Edit" via Next Menu, use the knob set the rate and final thickness, confirm and return to main interface.</li>
 </ul>
+
+
 <hr>
-<h3 id="span-style-color-33a02c-3-Transfer-to-Main-Chamber-【3-min】-span"><span style="color:#33a02c">3. Transfer to Main Chamber 【3 min】</span></h3>
-<ul>
+<h3 id="3-Transfer-to-Main-Chamber-【3-min】"><a href="#3-Transfer-to-Main-Chamber-【3-min】" class="headerlink" title="3. Transfer to Main Chamber 【3 min】"></a><span style="color:#33a02c">3. Transfer to Main Chamber 【3 min】</span></h3><ul>
   <li><input type="checkbox"> Set Motor Control to Local Mode and rotation speed to 0.</li>
   <li><input type="checkbox"> Use joystick to align holder claws angle with F line and height with Red Line.</li>
   <li><input type="checkbox"> Open XFER VALVE, slide in transfer arm to the end, raise claws above Blue Line and extract the holder.</li>
   <li><input type="checkbox"> Close the valve, continue lifting claws to top mark, switch to Remote Mode at 50 rpm, then close the shutter.</li>
 </ul>
+
 <blockquote>
 <p>⚠️ Monitor visually at all times. If collision or obstruction occurs, retract and adjust the claw angle immediately.</p>
 </blockquote>
 <hr>
-<h3 id="span-style-color-fb9a99-4-Deposition-Process-【10-min】-span"><span style="color:#fb9a99">4. Deposition Process 【10 min】</span></h3>
-<ul>
+<h3 id="4-Deposition-Process-【10-min】"><a href="#4-Deposition-Process-【10-min】" class="headerlink" title="4. Deposition Process 【10 min】"></a><span style="color:#fb9a99">4. Deposition Process 【10 min】</span></h3><ul>
   <li><input type="checkbox"> Confirm Motor Control is in Remote Mode.</li>
   <li><input type="checkbox"> Ensure E-beam and deposition settings are correct.</li>
   <li><input type="checkbox"> Click Run Process. Monitor deposition rate, thickness, power, emission current, and voltage in real-time.</li>
   <li><input type="checkbox"> The process stops automatically upon reaching the target thickness.</li>
   <li><input type="checkbox"> For multilayer metals, repeat parameter setup and execution steps.</li>
 </ul>
+
 <hr>
-<h3 id="span-style-color-e31a1c-4-a-Log-Recording-【1-min-in-parallel-during-deposition】-span"><span style="color:#e31a1c">4-a. Log Recording 【1 min, in parallel during deposition】</span></h3>
-<ul>
+<h3 id="4-a-Log-Recording-【1-min-in-parallel-during-deposition】"><a href="#4-a-Log-Recording-【1-min-in-parallel-during-deposition】" class="headerlink" title="4-a. Log Recording 【1 min, in parallel during deposition】"></a><span style="color:#e31a1c">4-a. Log Recording 【1 min, in parallel during deposition】</span></h3><ul>
   <li><input type="checkbox"> Record deposition rate and emission current from the E-beam controller into the log book.</li>
 </ul>
+
 <hr>
-<h3 id="span-style-color-fdbf6f-5-Sample-Retrieval-【4-min】-span"><span style="color:#fdbf6f">5. Sample Retrieval 【4 min】</span></h3>
-<ul>
+<h3 id="5-Sample-Retrieval-【4-min】"><a href="#5-Sample-Retrieval-【4-min】" class="headerlink" title="5. Sample Retrieval 【4 min】"></a><span style="color:#fdbf6f">5. Sample Retrieval 【4 min】</span></h3><ul>
   <li><input type="checkbox"> Reduce rotation speed to 0 and return to Local Mode.</li>
   <li><input type="checkbox"> Open shutter, lower claws (not below Blue Line), align angle to F Line.</li>
   <li><input type="checkbox"> Ensure Load Lock pressure is below 1E-6 Torr, open XFER VALVE.</li>
@@ -602,14 +606,16 @@ This post provides a bilingual operation manual for EBE thin-film deposition use
   <li><input type="checkbox"> Turn off Load Lock pusher to vent, wait until ambient pressure (~7.5E2 Torr).</li>
   <li><input type="checkbox"> Open lid, remove wafer, unmount sample, return holder ring and repump.</li>
 </ul>
+
 <hr>
-<h3 id="span-style-color-ff7f00-6-Final-Steps-【2-min】-span"><span style="color:#ff7f00">6. Final Steps 【2 min】</span></h3>
-<ul>
+<h3 id="6-Final-Steps-【2-min】"><a href="#6-Final-Steps-【2-min】" class="headerlink" title="6. Final Steps 【2 min】"></a><span style="color:#ff7f00">6. Final Steps 【2 min】</span></h3><ul>
   <li><input type="checkbox"> Remove the sample, restore dummy wafer, and store the sample.</li>
   <li><input type="checkbox"> Wait for Load Lock vacuum to drop below 1E-4 Torr.</li>
   <li><input type="checkbox"> Record the end time in the log book and complete the procedure.</li>
 </ul>
+
 </div>
+
 <script>
 function showChinese() {
   document.getElementById('content-zh').style.display = 'block';
@@ -799,7 +805,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-a6cee3-font-weight-bold-1-到场检查-span"><span class="toc-number">1.</span> <span class="toc-text"> 1. 到场检查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-1f78b4-font-weight-bold-2-LoadLock-装样-span"><span class="toc-number">2.</span> <span class="toc-text"> 2. LoadLock 装样</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-b2df8a-font-weight-bold-2-a-参数设置-span"><span class="toc-number">3.</span> <span class="toc-text"> 2-a. 参数设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-33a02c-font-weight-bold-3-送样进入主腔室-span"><span class="toc-number">4.</span> <span class="toc-text"> 3. 送样进入主腔室</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-fb9a99-font-weight-bold-4-执行沉积-span"><span class="toc-number">5.</span> <span class="toc-text"> 4. 执行沉积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-e31a1c-font-weight-bold-4-a-日志记录-span"><span class="toc-number">6.</span> <span class="toc-text"> 4-a. 日志记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-fdbf6f-font-weight-bold-5-取样-span"><span class="toc-number">7.</span> <span class="toc-text"> 5. 取样</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-ff7f00-font-weight-bold-6-收尾步骤-span"><span class="toc-number">8.</span> <span class="toc-text"> 6. 收尾步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-a6cee3-1-Initial-Check-【1-min】-span"><span class="toc-number">9.</span> <span class="toc-text">1. Initial Check 【1 min】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-1f78b4-2-Load-Lock-Sample-Loading-【10-min】-span"><span class="toc-number">10.</span> <span class="toc-text">2. Load Lock Sample Loading 【10 min】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-b2df8a-2-a-Parameter-Setup-【3-min-in-parallel-during-vacuuming】-span"><span class="toc-number">11.</span> <span class="toc-text">2-a. Parameter Setup 【3 min, in parallel during vacuuming】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-33a02c-3-Transfer-to-Main-Chamber-【3-min】-span"><span class="toc-number">12.</span> <span class="toc-text">3. Transfer to Main Chamber 【3 min】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-fb9a99-4-Deposition-Process-【10-min】-span"><span class="toc-number">13.</span> <span class="toc-text">4. Deposition Process 【10 min】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-e31a1c-4-a-Log-Recording-【1-min-in-parallel-during-deposition】-span"><span class="toc-number">14.</span> <span class="toc-text">4-a. Log Recording 【1 min, in parallel during deposition】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-fdbf6f-5-Sample-Retrieval-【4-min】-span"><span class="toc-number">15.</span> <span class="toc-text">5. Sample Retrieval 【4 min】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-style-color-ff7f00-6-Final-Steps-【2-min】-span"><span class="toc-number">16.</span> <span class="toc-text">6. Final Steps 【2 min】</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-到场检查"><span class="toc-number">1.</span> <span class="toc-text"> 1. 到场检查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-LoadLock-装样"><span class="toc-number">2.</span> <span class="toc-text"> 2. LoadLock 装样</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-a-参数设置"><span class="toc-number">3.</span> <span class="toc-text"> 2-a. 参数设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-送样进入主腔室"><span class="toc-number">4.</span> <span class="toc-text"> 3. 送样进入主腔室</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-执行沉积"><span class="toc-number">5.</span> <span class="toc-text"> 4. 执行沉积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-a-日志记录"><span class="toc-number">6.</span> <span class="toc-text"> 4-a. 日志记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-取样"><span class="toc-number">7.</span> <span class="toc-text"> 5. 取样</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-收尾步骤"><span class="toc-number">8.</span> <span class="toc-text"> 6. 收尾步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Initial-Check-【1-min】"><span class="toc-number">9.</span> <span class="toc-text">1. Initial Check 【1 min】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Load-Lock-Sample-Loading-【10-min】"><span class="toc-number">10.</span> <span class="toc-text">2. Load Lock Sample Loading 【10 min】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-a-Parameter-Setup-【3-min-in-parallel-during-vacuuming】"><span class="toc-number">11.</span> <span class="toc-text">2-a. Parameter Setup 【3 min, in parallel during vacuuming】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Transfer-to-Main-Chamber-【3-min】"><span class="toc-number">12.</span> <span class="toc-text">3. Transfer to Main Chamber 【3 min】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Deposition-Process-【10-min】"><span class="toc-number">13.</span> <span class="toc-text">4. Deposition Process 【10 min】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-a-Log-Recording-【1-min-in-parallel-during-deposition】"><span class="toc-number">14.</span> <span class="toc-text">4-a. Log Recording 【1 min, in parallel during deposition】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Sample-Retrieval-【4-min】"><span class="toc-number">15.</span> <span class="toc-text">5. Sample Retrieval 【4 min】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Final-Steps-【2-min】"><span class="toc-number">16.</span> <span class="toc-text">6. Final Steps 【2 min】</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1955,6 +1961,8 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
         <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
     
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
@@ -1963,21 +1971,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
-    
         <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
-    
-        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
-    
-        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
-    
-        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
     
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
         <span class="sidebar-tag-name" data-tags="Thin Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin Film Deposition</span>
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
+    
+        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
+    
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
     
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
@@ -1987,15 +1993,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
     
+        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
+    
         <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
     
-        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
     
         <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
-    
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
@@ -2007,15 +2013,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
-    
-        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
-    
         <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
+    
+        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
@@ -2035,11 +2041,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
     
+        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
+    
         <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
     
         <span class="sidebar-tag-name" data-tags="Avalanche"><span class="iconfont-archer">&#xe606;</span>Avalanche</span>
-    
-        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -2076,29 +2082,29 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
     
-        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
-    
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
-    
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
-        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
