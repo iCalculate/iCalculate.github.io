@@ -307,7 +307,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">1.1k</span>Reading time: <span class="post-count reading-time">4 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1.1k</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -438,35 +438,27 @@ height:50vh;
     <article class="article-entry">
         <p>关于使用Origin绘制数据图，研之成理给出了很多实用的教程，但是值得注意的是Origin不仅有着强大的绘图能力同时也有着强大的数据处理能力，OriginLab官方专门针对其开发了专用的Origin C开发环境，为广大科研工作者提供了设计个性化的插件的平台。在这个系列中将会分享一系列Origin官方以及我个人编写的一些实用插件。</p>
 <a id="more"></a>
-<h1>Origin插件之：LSV数据处理插件(Tafel Extrapolation)</h1>
-<p>原创作者：iCalculate</p>
-<h2 id="前言：">前言：</h2>
-<p>关于使用Origin绘制数据图，研之成理给出了很多实用的教程，但是值得注意的是Origin不仅有着强大的绘图能力同时也有着强大的数据处理能力，OriginLab官方专门针对其开发了专用的Origin C开发环境，为广大科研工作者提供了设计个性化的插件的平台。在这个系列中将会分享一系列Origin官方以及我个人编写的一些实用插件。</p>
-<h2 id="本期插件介绍：">本期插件介绍：</h2>
-<p>本期要介绍的插件是OriginLab官方技术支持团队提供的&quot;<strong>Tafel Extrapolation</strong>&quot;插件，该免费插件主要可用于估算Tafel Extrapolation，并输出相应的参数值(如阳极/阴极曲线函数、腐蚀电位和电流、阳极/阴极曲线斜率和角度)。插件支持的最低Origin版本为Origin2016(9.3)。</p>
+
+<h1 id="Origin插件之：LSV数据处理插件-Tafel-Extrapolation"><a href="#Origin插件之：LSV数据处理插件-Tafel-Extrapolation" class="headerlink" title="Origin插件之：LSV数据处理插件(Tafel Extrapolation)"></a>Origin插件之：LSV数据处理插件(Tafel Extrapolation)</h1><p>原创作者：iCalculate</p>
+<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>关于使用Origin绘制数据图，研之成理给出了很多实用的教程，但是值得注意的是Origin不仅有着强大的绘图能力同时也有着强大的数据处理能力，OriginLab官方专门针对其开发了专用的Origin C开发环境，为广大科研工作者提供了设计个性化的插件的平台。在这个系列中将会分享一系列Origin官方以及我个人编写的一些实用插件。</p>
+<h2 id="本期插件介绍："><a href="#本期插件介绍：" class="headerlink" title="本期插件介绍："></a>本期插件介绍：</h2><p>本期要介绍的插件是OriginLab官方技术支持团队提供的”<strong>Tafel Extrapolation</strong>“插件，该免费插件主要可用于估算Tafel Extrapolation，并输出相应的参数值(如阳极&#x2F;阴极曲线函数、腐蚀电位和电流、阳极&#x2F;阴极曲线斜率和角度)。插件支持的最低Origin版本为Origin2016(9.3)。</p>
 <p>插件官方地址：<a href="https://www.originlab.com/fileExchange/details.aspx?fid=219" target="_blank" rel="noopener">https://www.originlab.com/fileExchange/details.aspx?fid=219</a></p>
 <p>插件下载备用：链接：<a href="https://pan.baidu.com/s/12lpBcLz06RCoBIB0lpkpPg" target="_blank" rel="noopener">https://pan.baidu.com/s/12lpBcLz06RCoBIB0lpkpPg</a>  提取码：h7zf</p>
-<h2 id="插件安装：">插件安装：</h2>
-<p>Origin插件下载完成后是后缀为&quot;.opx&quot;的文件，只需先打开Origin软件然后将&quot;.opx&quot;文件拖曳进Origin面板内即可完成安装，安装过程不会有提示出现，在面板右侧Apps窗口中如果有了相应的插件图标（图标灰色并非不可用）即说明安装成功。</p>
-<p><img src="http://photogz.photo.store.qq.com/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBROrErHZBYnHrYaazR1yPZfeiH4br6XNAihVbcbs5Am9MaWsdk1VlahTtwD5wn5jww!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=KwEZASsBGQERADc!&amp;tl=1&amp;tm=1582279200&amp;sce=0-12-12&amp;rf=viewer_311" alt="image-20200221162332507"></p>
-<h2 id="使用示例：">使用示例：</h2>
-<p>为了简单展示该插件的使用，这里给出一个简单的应用示例：</p>
-<h3 id="STEP-1：导入电极极化曲线数据">STEP 1：导入电极极化曲线数据</h3>
-<p>新建Sheet并将极化曲线输入导入，如下图：</p>
-<p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBX880kJJIjbt*d6BJDPf2aD1ICGC1fF*Yy0melIWUjoqAG214D77eF28bPXcgT*y9w!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=cgM.AnIDPgIRADc!&amp;tl=1&amp;vuin=2142004747&amp;tm=1582279200&amp;sce=50-1-1&amp;rf=viewer_311" alt="image-20200221154413359"></p>
+<h2 id="插件安装："><a href="#插件安装：" class="headerlink" title="插件安装："></a>插件安装：</h2><p>Origin插件下载完成后是后缀为”.opx”的文件，只需先打开Origin软件然后将”.opx”文件拖曳进Origin面板内即可完成安装，安装过程不会有提示出现，在面板右侧Apps窗口中如果有了相应的插件图标（图标灰色并非不可用）即说明安装成功。</p>
+<p><img src="http://photogz.photo.store.qq.com/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBROrErHZBYnHrYaazR1yPZfeiH4br6XNAihVbcbs5Am9MaWsdk1VlahTtwD5wn5jww!!/b&ek=1&kp=1&pt=0&bo=KwEZASsBGQERADc!&tl=1&tm=1582279200&sce=0-12-12&rf=viewer_311" alt="image-20200221162332507"></p>
+<h2 id="使用示例："><a href="#使用示例：" class="headerlink" title="使用示例："></a>使用示例：</h2><p>为了简单展示该插件的使用，这里给出一个简单的应用示例：</p>
+<h3 id="STEP-1：导入电极极化曲线数据"><a href="#STEP-1：导入电极极化曲线数据" class="headerlink" title="STEP 1：导入电极极化曲线数据"></a>STEP 1：导入电极极化曲线数据</h3><p>新建Sheet并将极化曲线输入导入，如下图：</p>
+<p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBX880kJJIjbt*d6BJDPf2aD1ICGC1fF*Yy0melIWUjoqAG214D77eF28bPXcgT*y9w!!/b&ek=1&kp=1&pt=0&bo=cgM.AnIDPgIRADc!&tl=1&vuin=2142004747&tm=1582279200&sce=50-1-1&rf=viewer_311" alt="image-20200221154413359"></p>
 <p>并将计划曲线处理为Tafel曲线（如直接使用电化学工作站采集Tafel曲线可以直接忽略此步），具体操作为，新建两列，第一列为Log电流密度值，第二列为电压值，并将新建的两列中第一列设置为X数据，如下图。</p>
-<p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBYoB3GZuZtwsQuDPaHObTJZb80RY4jeUFwP5N*pjfRov4A30PzazjMUh1O3Kkkjp9w!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=cQNBAnEDQQIRADc!&amp;tl=1&amp;vuin=2142004747&amp;tm=1582279200&amp;sce=50-1-1&amp;rf=viewer_311" alt="image-20200221171420826"></p>
-<h3 id="STEP-2：绘制Tafel图">STEP 2：绘制Tafel图</h3>
-<p>选中C、D两列，并绘制折线图，绘制完成后，在右侧Apps窗口点击Tafel Extrapolation图标会弹出如下对话框：</p>
-<p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBegbSy9nVvUK4rW8V2DjIIaqHqVegL9xI7lw2svidudM4GYq.R00rakfe0DkZtNvXw!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=WQFtAlkBbQIRADc!&amp;tl=1&amp;vuin=2142004747&amp;tm=1582279200&amp;sce=50-1-1&amp;rf=viewer_311" alt="image-20200221164136457"></p>
-<p>有两个标签页，第一个标签页&quot;ROI Box&quot;用于设置需要得到的数据，其中&quot;Show on Graph&quot;包括切点信息(Tangent Point Coordinates)，阳极极Tafel斜率角度电流方程(Anodic Tafel Slope, Angle, Function)，阴极极Tafel斜率角度电流方程(Cathodic Tafel Slope, Angle, Function)，腐蚀电压电流(I<sub>corr</sub>, E<sub>corr</sub>)，以及非对数条件下的腐蚀电流(I<sub>corr</sub> in Nonlogarithmic Form)。&quot;Color Setting&quot;中可以设置数据以及切线的颜色。</p>
-<p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBZRhxgmbAKd9A1MpR8RSSPRvRbdmaegp1vZvIvG.U.Ta3Q.YjQ9Y79K7Bob3lzz*rQ!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=egEIAnoBCAIRADc!&amp;tl=1&amp;vuin=2142004747&amp;tm=1582279200&amp;sce=50-1-1&amp;rf=viewer_311" alt="image-20200221165343615"></p>
+<p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBYoB3GZuZtwsQuDPaHObTJZb80RY4jeUFwP5N*pjfRov4A30PzazjMUh1O3Kkkjp9w!!/b&ek=1&kp=1&pt=0&bo=cQNBAnEDQQIRADc!&tl=1&vuin=2142004747&tm=1582279200&sce=50-1-1&rf=viewer_311" alt="image-20200221171420826"></p>
+<h3 id="STEP-2：绘制Tafel图"><a href="#STEP-2：绘制Tafel图" class="headerlink" title="STEP 2：绘制Tafel图"></a>STEP 2：绘制Tafel图</h3><p>选中C、D两列，并绘制折线图，绘制完成后，在右侧Apps窗口点击Tafel Extrapolation图标会弹出如下对话框：</p>
+<p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBegbSy9nVvUK4rW8V2DjIIaqHqVegL9xI7lw2svidudM4GYq.R00rakfe0DkZtNvXw!!/b&ek=1&kp=1&pt=0&bo=WQFtAlkBbQIRADc!&tl=1&vuin=2142004747&tm=1582279200&sce=50-1-1&rf=viewer_311" alt="image-20200221164136457"></p>
+<p>有两个标签页，第一个标签页”ROI Box”用于设置需要得到的数据，其中”Show on Graph”包括切点信息(Tangent Point Coordinates)，阳极极Tafel斜率角度电流方程(Anodic Tafel Slope, Angle, Function)，阴极极Tafel斜率角度电流方程(Cathodic Tafel Slope, Angle, Function)，腐蚀电压电流(I<sub>corr</sub>, E<sub>corr</sub>)，以及非对数条件下的腐蚀电流(I<sub>corr</sub> in Nonlogarithmic Form)。”Color Setting”中可以设置数据以及切线的颜色。</p>
+<p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBZRhxgmbAKd9A1MpR8RSSPRvRbdmaegp1vZvIvG.U.Ta3Q.YjQ9Y79K7Bob3lzz*rQ!!/b&ek=1&kp=1&pt=0&bo=egEIAnoBCAIRADc!&tl=1&vuin=2142004747&tm=1582279200&sce=50-1-1&rf=viewer_311" alt="image-20200221165343615"></p>
 <p>第二个选项卡中可以设置输出格式，需要在Quantities中的复选框中勾选和ROI中相应的内容，并可选择输出脚本窗口(Script Window)，日志文件(Results Log)，工作表扩展链接(Append to Worksheet)。</p>
-<h3 id="STEP-3：数据显示">STEP 3：数据显示</h3>
-<p>点击确定后绘制好的图片中出现如下信息，调节阳极游标（点击拖动图片下方红色滑块），将其和Tafel曲线的的交点的电流设置在合理的区间。这时红线表示的为阳极部分的切线，黑底红字为切线的表达式，下面为斜率值和切线角度等信息。</p>
-<p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBerHlQATxvUKvXAsvYkhi4.0Lsww9zqciUBkjkwLoM6FgVOqKGVMY7iNMAPnfoE8PQ!!/b&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=cQNAAnEDQAIRADc!&amp;tl=1&amp;vuin=2142004747&amp;tm=1582279200&amp;sce=50-1-1&amp;rf=viewer_311" alt="image-20200221172039753"></p>
-<h2 id="小结：">小结：</h2>
-<p>在HER、OER数据处理过程中使用Origin的Tafel Extrapolation插件可以大大提高数据处理的效率，且对极化曲线的处理过程更直观，相比使用Fitting的方法省去了选择拟合区域和设置拟合参数的过程，但是由于本插件测量斜率的方法是使用切线法，所以和使用拟合得到的结果存在一定偏差，但如果极化曲线动力学控制部分斜率稳定那么输出结果在误差范围内。</p>
+<h3 id="STEP-3：数据显示"><a href="#STEP-3：数据显示" class="headerlink" title="STEP 3：数据显示"></a>STEP 3：数据显示</h3><p>点击确定后绘制好的图片中出现如下信息，调节阳极游标（点击拖动图片下方红色滑块），将其和Tafel曲线的的交点的电流设置在合理的区间。这时红线表示的为阳极部分的切线，黑底红字为切线的表达式，下面为斜率值和切线角度等信息。</p>
+<p><img src="http://a1.qpic.cn/psc?/V10NjlLt3vJzWw/jATfUCBWQtBBaj8LJRaWBerHlQATxvUKvXAsvYkhi4.0Lsww9zqciUBkjkwLoM6FgVOqKGVMY7iNMAPnfoE8PQ!!/b&ek=1&kp=1&pt=0&bo=cQNAAnEDQAIRADc!&tl=1&vuin=2142004747&tm=1582279200&sce=50-1-1&rf=viewer_311" alt="image-20200221172039753"></p>
+<h2 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2><p>在HER、OER数据处理过程中使用Origin的Tafel Extrapolation插件可以大大提高数据处理的效率，且对极化曲线的处理过程更直观，相比使用Fitting的方法省去了选择拟合区域和设置拟合参数的过程，但是由于本插件测量斜率的方法是使用切线法，所以和使用拟合得到的结果存在一定偏差，但如果极化曲线动力学控制部分斜率稳定那么输出结果在误差范围内。</p>
 
     </article>
     <!-- license  -->
@@ -639,7 +631,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">Origin插件之：LSV数据处理插件(Tafel Extrapolation)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言："><span class="toc-number">1.1.</span> <span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本期插件介绍："><span class="toc-number">1.2.</span> <span class="toc-text">本期插件介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件安装："><span class="toc-number">1.3.</span> <span class="toc-text">插件安装：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用示例："><span class="toc-number">1.4.</span> <span class="toc-text">使用示例：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#STEP-1：导入电极极化曲线数据"><span class="toc-number">1.4.1.</span> <span class="toc-text">STEP 1：导入电极极化曲线数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STEP-2：绘制Tafel图"><span class="toc-number">1.4.2.</span> <span class="toc-text">STEP 2：绘制Tafel图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STEP-3：数据显示"><span class="toc-number">1.4.3.</span> <span class="toc-text">STEP 3：数据显示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结："><span class="toc-number">1.5.</span> <span class="toc-text">小结：</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Origin插件之：LSV数据处理插件-Tafel-Extrapolation"><span class="toc-number">1.</span> <span class="toc-text">Origin插件之：LSV数据处理插件(Tafel Extrapolation)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言："><span class="toc-number">1.1.</span> <span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本期插件介绍："><span class="toc-number">1.2.</span> <span class="toc-text">本期插件介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件安装："><span class="toc-number">1.3.</span> <span class="toc-text">插件安装：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用示例："><span class="toc-number">1.4.</span> <span class="toc-text">使用示例：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#STEP-1：导入电极极化曲线数据"><span class="toc-number">1.4.1.</span> <span class="toc-text">STEP 1：导入电极极化曲线数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STEP-2：绘制Tafel图"><span class="toc-number">1.4.2.</span> <span class="toc-text">STEP 2：绘制Tafel图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STEP-3：数据显示"><span class="toc-number">1.4.3.</span> <span class="toc-text">STEP 3：数据显示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结："><span class="toc-number">1.5.</span> <span class="toc-text">小结：</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1797,23 +1789,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
-    
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
-        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
     
         <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
-        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
-    
-        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
-    
-        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
+        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
@@ -1823,19 +1809,27 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
     
-        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
+    
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+    
+        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
         <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
-        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
+        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
     
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
     
         <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
     
+        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
+    
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+    
         <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
     
-        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -1845,17 +1839,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
-    
         <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
-    
-        <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
-    
-        <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
         <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
     
         <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
+    
+        <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
+    
+        <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
         <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
     
@@ -1867,17 +1859,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Nanodevice"><span class="iconfont-archer">&#xe606;</span>Nanodevice</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
-    
-        <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
-    
-        <span class="sidebar-tag-name" data-tags="Avalanche"><span class="iconfont-archer">&#xe606;</span>Avalanche</span>
-    
         <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
     
         <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
+    
+        <span class="sidebar-tag-name" data-tags="Avalanche"><span class="iconfont-archer">&#xe606;</span>Avalanche</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
         <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
@@ -1928,9 +1920,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
