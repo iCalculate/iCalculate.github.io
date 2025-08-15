@@ -307,7 +307,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">857</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">858</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -436,27 +436,32 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="HER自动测试和数据处理脚本"><a href="#HER自动测试和数据处理脚本" class="headerlink" title="HER自动测试和数据处理脚本"></a>HER自动测试和数据处理脚本</h1><p>在HER性能测试中在对批量样品进行测试时我们常常面临测试流程不统一、测试流程复杂需要在测试现场等待等问题，这里我们针对性的设计了HER自动测试和数据处理脚本，在辰华工作站（CHI660E）上实现了脚本控制的自动测试： 先进行CV活化，再进行LSV测试，再进行EIS阻抗测试，再进行基于CV的ECSA系列测试，最后进行IT稳定性测试。整个测试过程无需实验人员值守，测试完成后会自动存储数据。同时我们也设计了针对自动测试后得到的数据的可视化处理脚本，方便实验人员可以在第一时间掌握样品性能信息。</p>
-<h2 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h2><ol>
-<li><p>首先我们的脚本时基于Python编程的，需要下载并安装Python环境，然后再脚本文件夹中找到PackageInstall.bat文件双击运行来安装该脚本运行所需要的库文件，等待自动安装完成即可。</p>
-<p><img src="/2023/03/13/HER-auto-test-script/Users\iCalculate\AppData\Roaming\Typora\typora-user-images\image-20210907100134612.png" alt="image-20210907100134612"></p>
+        <h1>HER自动测试和数据处理脚本</h1>
+<p>在HER性能测试中在对批量样品进行测试时我们常常面临测试流程不统一、测试流程复杂需要在测试现场等待等问题，这里我们针对性的设计了HER自动测试和数据处理脚本，在辰华工作站（CHI660E）上实现了脚本控制的自动测试： 先进行CV活化，再进行LSV测试，再进行EIS阻抗测试，再进行基于CV的ECSA系列测试，最后进行IT稳定性测试。整个测试过程无需实验人员值守，测试完成后会自动存储数据。同时我们也设计了针对自动测试后得到的数据的可视化处理脚本，方便实验人员可以在第一时间掌握样品性能信息。</p>
+<h2 id="应用实例">应用实例</h2>
+<ol>
+<li>
+<p>首先我们的脚本时基于Python编程的，需要下载并安装Python环境，然后再脚本文件夹中找到PackageInstall.bat文件双击运行来安装该脚本运行所需要的库文件，等待自动安装完成即可。</p>
+<p><img src="/2023/03/13/HER-auto-test-script/C:%5CUsers%5CiCalculate%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210907100134612.png" alt="image-20210907100134612"></p>
 </li>
 </ol>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install shapely</span><br><span class="line">pip install pandas</span><br><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
-
 <ol start="2">
-<li><p>然后再文件中找到Macro_Gen_HER.py文件双击运行，即可在根目录下生成两个文件output.txt和output.mcr。之后打开工作站软件，在Control下找到Macro Command并打开，点击Read读取新生成的mcr文件，如下：<br><img src="/2023/03/13/HER-auto-test-script/Users\iCalculate\AppData\Roaming\Typora\typora-user-images\image-20210907095650270.png" alt="image-20210907095650270"></p>
+<li>
+<p>然后再文件中找到Macro_Gen_HER.py文件双击运行，即可在根目录下生成两个文件output.txt和output.mcr。之后打开工作站软件，在Control下找到Macro Command并打开，点击Read读取新生成的mcr文件，如下：<br>
+<img src="/2023/03/13/HER-auto-test-script/C:%5CUsers%5CiCalculate%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210907095650270.png" alt="image-20210907095650270"></p>
 </li>
-<li><p>接下来点击Run Macro即可运行脚本，程序即可自动执行脚本中设置好的测试流程，这里展示核心部分脚本，通过修改其中测试参数即可调整生成运行脚本内容以控制自动测试中的参数：</p>
+<li>
+<p>接下来点击Run Macro即可运行脚本，程序即可自动执行脚本中设置好的测试流程，这里展示核心部分脚本，通过修改其中测试参数即可调整生成运行脚本内容以控制自动测试中的参数：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">chi.init_cv_tech(ei=<span class="number">0</span>, eh=<span class="number">-0.6</span>, el=<span class="number">-0</span>, v=<span class="number">0.05</span>)</span><br><span class="line">chi.run_cv(file, <span class="string">'CV-001'</span>, add_note=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> loop <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>):</span><br><span class="line">	chi.init_lsv_tech(ei=High, ef=Low, v=<span class="number">0.002</span>, si=<span class="number">0.001</span>, qt=<span class="number">2.0</span>, sens=<span class="number">1e-3</span>)</span><br><span class="line">	chi.run_lsv(file, <span class="string">'LSV-'</span> + str(loop), add_note=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">chi.init_imp_tech(ei=<span class="number">-0.25</span>, fl=<span class="number">0.1</span>, fh=<span class="number">1e5</span>, amp=<span class="number">0.005</span>, qt=<span class="number">2.0</span>, sens=<span class="number">1e-3</span>)</span><br><span class="line">chi.run_imp(file, <span class="string">'EIS-001'</span>)</span><br><span class="line"></span><br><span class="line">CycleNum = (<span class="number">0.001</span>, <span class="number">0.002</span>, <span class="number">0.005</span>, <span class="number">0.01</span>, <span class="number">0.02</span>, <span class="number">0.03</span>, <span class="number">0.04</span>, <span class="number">0.05</span>, <span class="number">0.1</span>)</span><br><span class="line"><span class="keyword">for</span> loop <span class="keyword">in</span> CycleNum:</span><br><span class="line">	chi.init_cv_tech(ei=<span class="number">-0.15</span>, eh=<span class="number">-0.25</span>, el=<span class="number">-0.15</span>, v=loop)</span><br><span class="line">	chi.run_cv(file, <span class="string">'ECSA-'</span>+str(int(loop*<span class="number">1000</span>)), add_note=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">chi.init_it_tech(ei=<span class="number">-0.3</span>, si=<span class="number">1</span>, st=<span class="number">7200</span>)</span><br><span class="line">chi.run_it(file, <span class="string">'IT-001'</span>, add_note=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-
 <ol start="4">
 <li>。测试完成后会在根目录下自动保存测试的txt格式数据，只需运行HER_Data_Process.py文件即可实现基本的数据处理和可视化，这里绘制了CV活化数据（第一圈高亮）、LSV首圈和末圈数据（对比稳定性以并标注过电位）、Tafel图（并进行线性回归拟合标注Tafel斜率）、阻抗测试数据、ECSA不同扫速CV数据、ECSA数据散点图（并进行线性拟合求出单位面积电容）以及it稳定性数据。</li>
 </ol>
 </li>
 </ol>
-<p><img src="/2023/03/13/HER-auto-test-script/Users\iCalculate\Desktop\HER-Demo\output.jpg" alt="output"></p>
-<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>本系列脚本仍在不断开发迭代中，旨在针对不同类型的电化学测试流程实现自动化处理，目前已实现了HER、GCH、EIS等测试的自动化实现，目前正在征集广大科研工作者的测试需求以便我们更好的完善脚本功能。如您希望使用此脚本或给我们提出更新建议再或者加入我们开发团队可以联系我们的官方微信或在微信公众号后台咨询。</p>
+<p><img src="/2023/03/13/HER-auto-test-script/C:%5CUsers%5CiCalculate%5CDesktop%5CHER-Demo%5Coutput.jpg" alt="output"></p>
+<h2 id="使用说明">使用说明</h2>
+<p>本系列脚本仍在不断开发迭代中，旨在针对不同类型的电化学测试流程实现自动化处理，目前已实现了HER、GCH、EIS等测试的自动化实现，目前正在征集广大科研工作者的测试需求以便我们更好的完善脚本功能。如您希望使用此脚本或给我们提出更新建议再或者加入我们开发团队可以联系我们的官方微信或在微信公众号后台咨询。</p>
 
     </article>
     <!-- license  -->
@@ -629,7 +634,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HER自动测试和数据处理脚本"><span class="toc-number">1.</span> <span class="toc-text">HER自动测试和数据处理脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#应用实例"><span class="toc-number">1.1.</span> <span class="toc-text">应用实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用说明"><span class="toc-number">1.2.</span> <span class="toc-text">使用说明</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">HER自动测试和数据处理脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#应用实例"><span class="toc-number">1.1.</span> <span class="toc-text">应用实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用说明"><span class="toc-number">1.2.</span> <span class="toc-text">使用说明</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1799,15 +1804,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
+        <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
+    
+        <span class="sidebar-tag-name" data-tags="Thin Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin Film Deposition</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
+    
+        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
+    
         <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
     
         <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
     
-        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
-    
         <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
     
-        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
+        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
         <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
     
@@ -1815,15 +1826,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
     
-        <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
-    
-        <span class="sidebar-tag-name" data-tags="Thin Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin Film Deposition</span>
-    
-        <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
-    
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
     
@@ -1837,11 +1842,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
-    
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
+    
+        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
         <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
     
@@ -1857,17 +1862,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Nanodevice"><span class="iconfont-archer">&#xe606;</span>Nanodevice</span>
     
-        <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
-    
-        <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
-    
-        <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
-    
         <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
         <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
     
         <span class="sidebar-tag-name" data-tags="Avalanche"><span class="iconfont-archer">&#xe606;</span>Avalanche</span>
+    
+        <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
+    
+        <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
+    
+        <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
     
         <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
@@ -1910,31 +1915,31 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
-    
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
-    
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
-    
-        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
-        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
-    
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
+    
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
-    
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
     
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
