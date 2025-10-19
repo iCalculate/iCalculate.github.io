@@ -309,7 +309,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">419</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">420</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -440,26 +440,20 @@ height:50vh;
     <article class="article-entry">
         <p>在Origin中搭建Python环境，可以调用外部Package，实现Origin自带Python Console全功能以及Code Builder程序文件运行和数据导入。</p>
 <a id="more"></a>
-
-<h1 id="Origin-Python环境搭建"><a href="#Origin-Python环境搭建" class="headerlink" title="Origin+Python环境搭建"></a>Origin+Python环境搭建</h1><p>在Origin中开Python Console 查看Python版本，然后在Anaconda中新建同版本环境：</p>
+<h1>Origin+Python环境搭建</h1>
+<p>在Origin中开Python Console 查看Python版本，然后在Anaconda中新建同版本环境：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n Origin_Python_Env python&#x3D;3.5</span><br></pre></td></tr></table></figure>
-
 <p>检查新环境时候安装成功：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br><span class="line">activate Origin_Python_Env</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure>
-
 <p>然后对给新的Python环境安装包</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -n your_env_name [package]</span><br></pre></td></tr></table></figure>
-
 <p>Anaconda下的新环境安装好之后就可以开始配置Origin中的Python环境了，当然在Origin中使用Python的方法有很多，可以参考<a href="https://www.originlab.com/doc/python#Installing_Python_Extensions" target="_blank" rel="noopener">官方教程</a>，我在这里简单介绍我使用内置Code Builder的配置方法，打开Code Builder后在Project文件夹下新建.py文件，用于设置外部Package环境。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"> </span><br><span class="line"><span class="comment"># Replace the value of string variable py_ext_path </span></span><br><span class="line"><span class="comment"># with the actual Python extension installation path in your computer</span></span><br><span class="line"> </span><br><span class="line">py_ext_path = <span class="string">"D:\ProgramData\Anaconda3\envs\Origin_Python_Env\Lib\site-packages"</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> py_ext_path <span class="keyword">not</span> <span class="keyword">in</span> sys.path:</span><br><span class="line">    sys.path.append(py_ext_path)</span><br></pre></td></tr></table></figure>
-
 <p>保存后在Origin界面的Command Window输入指令运行.py文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run -pyp DynamicTest</span><br></pre></td></tr></table></figure>
-
 <p>现在就已经可以应用路径中库中的Package了，如果需要新的Package只需要在环境中用conda或者pip指令添加即可。</p>
 <p>在Code Builder中新建一个.py文件以测试环境是否正常，并测试是否可以导入数据到Origin的工作表单。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> PyOrigin <span class="keyword">as</span> O</span><br><span class="line">wp = O.CreatePage(O.PGTYPE_WKS, <span class="string">"MyData"</span>, <span class="string">"Origin"</span>, <span class="number">1</span>)  <span class="comment"># create a new worksheet</span></span><br><span class="line">wks = wp.Layers(<span class="number">0</span>)  <span class="comment"># select the first worksheet in the workbook</span></span><br><span class="line">x=np.arange(<span class="number">0</span>,<span class="number">2</span>*np.pi,<span class="number">0.01</span>)</span><br><span class="line">y=np.sin(<span class="number">10</span>*x)*np.exp(<span class="number">0.5</span>*x)</span><br><span class="line">pArr = [x,y]</span><br><span class="line">wks.SetData(pArr, <span class="number">0</span>,<span class="number">0</span>)   <span class="comment"># import the data into the worksheet</span></span><br></pre></td></tr></table></figure>
-
 <p>同样在Command Window运行该程序如果成功将生成带有两列数据的新表单。</p>
 
     </article>
@@ -633,7 +627,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Origin-Python环境搭建"><span class="toc-number">1.</span> <span class="toc-text">Origin+Python环境搭建</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">Origin+Python环境搭建</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1807,17 +1801,17 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
-    
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
+        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
+    
         <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
+        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
-        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
         <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
@@ -1827,29 +1821,35 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
     
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
+    
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
         <span class="sidebar-tag-name" data-tags="Thin Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin Film Deposition</span>
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
     
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
-    
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
-    
-        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
-    
-        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
         <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
     
         <span class="sidebar-tag-name" data-tags="Nanodevice"><span class="iconfont-archer">&#xe606;</span>Nanodevice</span>
     
+        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
+    
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
     
         <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
+    
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -1859,27 +1859,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
-    
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
-    
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
-    
-        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
-    
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
+    
+        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
         <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
     
         <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
     
-        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
-    
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
         <span class="sidebar-tag-name" data-tags="Condense Physics"><span class="iconfont-archer">&#xe606;</span>Condense Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
     
         <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
     
@@ -1930,31 +1924,31 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
-    
         <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
-    
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
