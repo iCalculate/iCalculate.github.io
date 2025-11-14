@@ -307,7 +307,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">541</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">542</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -438,11 +438,10 @@ height:50vh;
     <article class="article-entry">
         <p>The comsol geometry generation script developed based on java can generate randomly distributed geometry structures (circles) in two-dimensional geometry space without overlapping each other, and can customize parameters such as generation space, particle size, and particle spacing. Running the script may enter an infinite loop, so you can manually terminate the script.</p>
 <a id="more"></a>
-
-<h1 id="COMSOL-script-for-random-object-generation"><a href="#COMSOL-script-for-random-object-generation" class="headerlink" title="COMSOL script for random object generation"></a>COMSOL script for random object generation</h1><p>The comsol geometry generation script developed based on java can generate randomly distributed geometry structures (circles) in two-dimensional geometry space without overlapping each other, and can customize parameters such as generation space (<em>Xlim</em> &amp; <em>Ylim</em>), particle size (<em>CirR</em>) and number (<em>CirNum</em>), and particle spacing (<em>space</em>). Running the script may enter an infinite loop, so you can manually terminate the script.</p>
+<h1>COMSOL script for random object generation</h1>
+<p>The comsol geometry generation script developed based on java can generate randomly distributed geometry structures (circles) in two-dimensional geometry space without overlapping each other, and can customize parameters such as generation space (<em>Xlim</em> &amp; <em>Ylim</em>), particle size (<em>CirR</em>) and number (<em>CirNum</em>), and particle spacing (<em>space</em>). Running the script may enter an infinite loop, so you can manually terminate the script.</p>
 <p>Create a new method in COMSOL App developer and copy the code to run it:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> CirNum = <span class="number">300</span>;</span><br><span class="line"><span class="keyword">double</span> SimHeight = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">double</span>[] Xlim = &#123;<span class="number">0.0</span>, <span class="number">2.5</span>&#125;;</span><br><span class="line"><span class="keyword">double</span>[] Ylim = &#123;<span class="number">0.0</span>, <span class="number">1.0</span>&#125;;</span><br><span class="line"><span class="keyword">double</span>[] CirR = &#123;<span class="number">0.045</span>/<span class="number">2.0</span>, <span class="number">0.055</span>/<span class="number">2.0</span>&#125;;</span><br><span class="line"><span class="keyword">double</span> space = <span class="number">0.06</span>;</span><br><span class="line"><span class="keyword">double</span>[][] pos_list = <span class="keyword">new</span> <span class="keyword">double</span>[CirNum][<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).feature().clear();</span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).nodeGroup().clear();</span><br><span class="line"></span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).feature().clear();</span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).lengthUnit(<span class="string">"\u00b5m"</span>);</span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).create(<span class="string">"r1"</span>, <span class="string">"Rectangle"</span>);</span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).feature(<span class="string">"r1"</span>).set(<span class="string">"size"</span>, <span class="keyword">new</span> <span class="keyword">double</span>[]&#123;Xlim[<span class="number">1</span>], SimHeight&#125;);</span><br><span class="line"></span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).create(<span class="string">"r2"</span>, <span class="string">"Rectangle"</span>);</span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).feature(<span class="string">"r2"</span>).set(<span class="string">"size"</span>, <span class="keyword">new</span> <span class="keyword">double</span>[]&#123;Xlim[<span class="number">1</span>], Ylim[<span class="number">1</span>]-Ylim[<span class="number">0</span>]&#125;);</span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).feature(<span class="string">"r2"</span>).set(<span class="string">"pos"</span>, <span class="keyword">new</span> <span class="keyword">double</span>[]&#123;<span class="number">0</span>, <span class="number">0</span>&#125;);</span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).run(<span class="string">"r1"</span>);</span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).run(<span class="string">"r2"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> CirR_i = Math.random()*(CirR[<span class="number">1</span>]-CirR[<span class="number">0</span>])+CirR[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">double</span>[] Pos = &#123;<span class="number">0.0</span>, <span class="number">0.0</span>&#125;;</span><br><span class="line">Pos[<span class="number">0</span>] = Math.random()*(Xlim[<span class="number">1</span>]-Xlim[<span class="number">0</span>]);</span><br><span class="line">Pos[<span class="number">1</span>] = Math.random()*(Ylim[<span class="number">1</span>]-Ylim[<span class="number">0</span>]-<span class="number">2</span>*CirR_i-<span class="number">2</span>*space)+Ylim[<span class="number">0</span>]+CirR_i+space;</span><br><span class="line">pos_list[<span class="number">0</span>][<span class="number">0</span>] = Pos[<span class="number">0</span>];</span><br><span class="line">pos_list[<span class="number">0</span>][<span class="number">1</span>] = Pos[<span class="number">1</span>];</span><br><span class="line">pos_list[<span class="number">0</span>][<span class="number">2</span>] = CirR_i;</span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).create(<span class="string">"c"</span>+<span class="number">0</span>, <span class="string">"Circle"</span>);</span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).feature(<span class="string">"c"</span>+<span class="number">0</span>).set(<span class="string">"pos"</span>, Pos);</span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).feature(<span class="string">"c"</span>+<span class="number">0</span>).set(<span class="string">"r"</span>, CirR_i);</span><br><span class="line">model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).run(<span class="string">"c"</span>+<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; CirNum; i++) &#123;</span><br><span class="line">  CirR_i = Math.random()*(CirR[<span class="number">1</span>]-CirR[<span class="number">0</span>])+CirR[<span class="number">0</span>];</span><br><span class="line">  Pos[<span class="number">0</span>] = Math.random()*(Xlim[<span class="number">1</span>]-Xlim[<span class="number">0</span>])+Xlim[<span class="number">0</span>];</span><br><span class="line">  Pos[<span class="number">1</span>] = Math.random()*(Ylim[<span class="number">1</span>]-Ylim[<span class="number">0</span>]-<span class="number">2</span>*CirR_i-<span class="number">2</span>*space)+Ylim[<span class="number">0</span>]+CirR_i+space;</span><br><span class="line">  pos_list[i][<span class="number">0</span>] = Pos[<span class="number">0</span>];</span><br><span class="line">  pos_list[i][<span class="number">1</span>] = Pos[<span class="number">1</span>];</span><br><span class="line">  pos_list[i][<span class="number">2</span>] = CirR_i;</span><br><span class="line">  System.out.print(CirR_i);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">    <span class="keyword">double</span> dist = Math.sqrt((pos_list[i][<span class="number">0</span>]-pos_list[j][<span class="number">0</span>])*(pos_list[i][<span class="number">0</span>]-pos_list[j][<span class="number">0</span>])+</span><br><span class="line">                            (pos_list[i][<span class="number">1</span>]-pos_list[j][<span class="number">1</span>])*(pos_list[i][<span class="number">1</span>]-pos_list[j][<span class="number">1</span>]));</span><br><span class="line">    <span class="keyword">if</span> (dist &lt; (CirR_i+pos_list[j][<span class="number">2</span>]+space)) &#123;</span><br><span class="line">      </span><br><span class="line">      i = i-<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (j+<span class="number">1</span> == i) &#123;</span><br><span class="line">      model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).create(<span class="string">"c"</span>+i, <span class="string">"Circle"</span>);</span><br><span class="line">      model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).feature(<span class="string">"c"</span>+i).set(<span class="string">"pos"</span>, Pos);</span><br><span class="line">      model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).feature(<span class="string">"c"</span>+i).set(<span class="string">"r"</span>, CirR_i);</span><br><span class="line">      model.component(<span class="string">"comp1"</span>).geom(<span class="string">"geom1"</span>).run(<span class="string">"c"</span>+i);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 
     </article>
     <!-- license  -->
@@ -615,7 +614,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#COMSOL-script-for-random-object-generation"><span class="toc-number">1.</span> <span class="toc-text">COMSOL script for random object generation</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">COMSOL script for random object generation</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1793,17 +1792,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
     
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
         <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
-    
-        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
@@ -1811,13 +1810,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
     
-        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
-    
-        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
     
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
+    
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
     
         <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
     
@@ -1831,11 +1830,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
     
-        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
-    
         <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -1845,37 +1844,37 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
-    
-        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
+        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
+    
         <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
     
         <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
-    
-        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
-    
-        <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
         <span class="sidebar-tag-name" data-tags="Condense Physics"><span class="iconfont-archer">&#xe606;</span>Condense Physics</span>
     
+        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
+    
+        <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
+    
         <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
     
         <span class="sidebar-tag-name" data-tags="Avalanche"><span class="iconfont-archer">&#xe606;</span>Avalanche</span>
-    
-        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
         <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
     
         <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
         <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
@@ -1940,9 +1939,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
-    
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
