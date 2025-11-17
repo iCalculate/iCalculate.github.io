@@ -596,6 +596,13 @@
 
   
   <url>
+    <loc>http://www.icalculate.website/tags/3Dmax/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.icalculate.website/tags/Anaconda/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -610,14 +617,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Love/</loc>
+    <loc>http://www.icalculate.website/tags/Note/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/3Dmax/</loc>
+    <loc>http://www.icalculate.website/tags/Love/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -632,20 +639,6 @@
   
   <url>
     <loc>http://www.icalculate.website/tags/Knowledge-Point/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.icalculate.website/tags/Note/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.icalculate.website/tags/COMSOL/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -687,6 +680,13 @@
   </url>
   
   <url>
+    <loc>http://www.icalculate.website/tags/COMSOL/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.icalculate.website/tags/Backup/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -694,7 +694,7 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Electrochemical/</loc>
+    <loc>http://www.icalculate.website/tags/Script/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -708,7 +708,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Test/</loc>
+    <loc>http://www.icalculate.website/tags/Electrochemical/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.icalculate.website/tags/Theory/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -729,14 +736,7 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Theory/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.icalculate.website/tags/Script/</loc>
+    <loc>http://www.icalculate.website/tags/Website/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -750,7 +750,7 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Website/</loc>
+    <loc>http://www.icalculate.website/tags/Test/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -862,14 +862,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Movie/</loc>
+    <loc>http://www.icalculate.website/tags/Vortex/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Technology/</loc>
+    <loc>http://www.icalculate.website/tags/Avalanche/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -897,14 +897,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Vortex/</loc>
+    <loc>http://www.icalculate.website/tags/Technology/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Avalanche/</loc>
+    <loc>http://www.icalculate.website/tags/Movie/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -920,14 +920,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Causerie/</loc>
+    <loc>http://www.icalculate.website/categories/Scientific/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Scientific/</loc>
+    <loc>http://www.icalculate.website/categories/Causerie/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -941,7 +941,7 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Katex/</loc>
+    <loc>http://www.icalculate.website/categories/Coding/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -955,14 +955,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Coding/</loc>
+    <loc>http://www.icalculate.website/categories/Coding/Scientific/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Coding/Scientific/</loc>
+    <loc>http://www.icalculate.website/categories/Katex/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -983,14 +983,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Research-Notes/</loc>
+    <loc>http://www.icalculate.website/categories/Physics/Semiconductor-Devices/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Physics/Semiconductor-Devices/</loc>
+    <loc>http://www.icalculate.website/categories/Research-Notes/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
