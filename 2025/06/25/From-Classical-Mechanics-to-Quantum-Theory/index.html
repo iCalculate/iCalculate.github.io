@@ -307,7 +307,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">776</span>Reading time: <span class="post-count reading-time">4 min</span></span>
+                        <span>Word count: <span class="post-count word-count">801</span>Reading time: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -438,92 +438,59 @@ height:50vh;
     <article class="article-entry">
         <p>Why the derivative of kinetic energy with respect to velocity is momentum</p>
 <a id="more"></a>
+
 <p>One of the most elegant and profound identities in classical physics is the fact that the derivative of kinetic energy with respect to velocity gives the momentum:</p>
-<p>$$<br>
-\frac{d}{dv} \left( \frac{1}{2}mv^2 \right) = mv = p<br>
-$$</p>
+<p>$$<br>\frac{d}{dv} \left( \frac{1}{2}mv^2 \right) &#x3D; mv &#x3D; p<br>$$</p>
 <p>On the surface, this might seem like a mere coincidence—a fortunate mathematical convenience. But as we explore this identity from the perspectives of Newtonian mechanics, Lagrangian mechanics, Hamiltonian formalism, and finally quantum mechanics, we’ll uncover a deep unifying principle in physics. This blog post aims to walk you through this connection with clarity and conceptual rigor.</p>
 <hr>
-<h2 id="1-Newtonian-Mechanics-A-Direct-Calculation">1. Newtonian Mechanics: A Direct Calculation</h2>
-<p>We start with the classical expression for kinetic energy:</p>
-<p>$$<br>
-E_k = \frac{1}{2}mv^2<br>
-$$</p>
+<h2 id="1-Newtonian-Mechanics-A-Direct-Calculation"><a href="#1-Newtonian-Mechanics-A-Direct-Calculation" class="headerlink" title="1. Newtonian Mechanics: A Direct Calculation"></a>1. Newtonian Mechanics: A Direct Calculation</h2><p>We start with the classical expression for kinetic energy:</p>
+<p>$$<br>E_k &#x3D; \frac{1}{2}mv^2<br>$$</p>
 <p>Differentiating with respect to velocity:</p>
-<p>$$<br>
-\frac{dE_k}{dv} = mv = p<br>
-$$</p>
+<p>$$<br>\frac{dE_k}{dv} &#x3D; mv &#x3D; p<br>$$</p>
 <p>This straightforward computation gives the linear momentum of the object. In this view, momentum is simply a measure of how sensitive the kinetic energy is to changes in velocity.</p>
 <p>But this is not just a numerical trick—it hints at a deeper structure in mechanics, where kinetic energy and momentum are dual aspects of motion.</p>
 <hr>
-<h2 id="2-Lagrangian-Mechanics-Momentum-as-a-Fundamental-Definition">2. Lagrangian Mechanics: Momentum as a Fundamental Definition</h2>
-<p>In Lagrangian mechanics, the dynamics of a system are described by the <strong>Lagrangian</strong>:</p>
-<p>$$<br>
-L(q, \dot{q}, t) = T - V = \frac{1}{2}m\dot{q}^2 - V(q)<br>
-$$</p>
+<h2 id="2-Lagrangian-Mechanics-Momentum-as-a-Fundamental-Definition"><a href="#2-Lagrangian-Mechanics-Momentum-as-a-Fundamental-Definition" class="headerlink" title="2. Lagrangian Mechanics: Momentum as a Fundamental Definition"></a>2. Lagrangian Mechanics: Momentum as a Fundamental Definition</h2><p>In Lagrangian mechanics, the dynamics of a system are described by the <strong>Lagrangian</strong>:</p>
+<p>$$<br>L(q, \dot{q}, t) &#x3D; T - V &#x3D; \frac{1}{2}m\dot{q}^2 - V(q)<br>$$</p>
 <p>Here, $ q $ is the generalized coordinate and $$\dot{q}$$ the generalized velocity.</p>
 <p>The <strong>generalized momentum</strong> is defined as:</p>
-<p>$$<br>
-p = \frac{\partial L}{\partial \dot{q}}<br>
-$$</p>
+<p>$$<br>p &#x3D; \frac{\partial L}{\partial \dot{q}}<br>$$</p>
 <p>For our simple system:</p>
-<p>$$<br>
-\frac{\partial L}{\partial \dot{q}} = m\dot{q} = p<br>
-$$</p>
-<p>✅ This means the identity $\frac{dE_k}{dv} = p$ is <strong>built into</strong> the Lagrangian formalism itself—momentum is defined as the rate of change of the Lagrangian (which contains the kinetic energy) with respect to velocity.</p>
+<p>$$<br>\frac{\partial L}{\partial \dot{q}} &#x3D; m\dot{q} &#x3D; p<br>$$</p>
+<p>✅ This means the identity $\frac{dE_k}{dv} &#x3D; p$ is <strong>built into</strong> the Lagrangian formalism itself—momentum is defined as the rate of change of the Lagrangian (which contains the kinetic energy) with respect to velocity.</p>
 <p>Moreover, this definition is not restricted to linear systems or Cartesian coordinates. It applies to <strong>any coordinate system and any type of generalized velocity</strong>.</p>
 <hr>
-<h2 id="3-Hamiltonian-Mechanics-Duality-of-Momentum-and-Velocity">3. Hamiltonian Mechanics: Duality of Momentum and Velocity</h2>
-<p>We move on to Hamiltonian mechanics, where we switch from $(q, \dot{q})$ to $$(q, p)$ as the fundamental variables.</p>
+<h2 id="3-Hamiltonian-Mechanics-Duality-of-Momentum-and-Velocity"><a href="#3-Hamiltonian-Mechanics-Duality-of-Momentum-and-Velocity" class="headerlink" title="3. Hamiltonian Mechanics: Duality of Momentum and Velocity"></a>3. Hamiltonian Mechanics: Duality of Momentum and Velocity</h2><p>We move on to Hamiltonian mechanics, where we switch from $(q, \dot{q})$ to $$(q, p)$ as the fundamental variables.</p>
 <p>The Hamiltonian is defined via a <strong>Legendre transform</strong>:</p>
-<p>$$<br>
-H(q, p, t) = p\dot{q} - L(q, \dot{q}, t)<br>
-$$</p>
+<p>$$<br>H(q, p, t) &#x3D; p\dot{q} - L(q, \dot{q}, t)<br>$$</p>
 <p>For many mechanical systems, $H$ turns out to be the total energy:</p>
-<p>$$<br>
-H = T + V = \frac{p^2}{2m} + V(q)<br>
-$$</p>
+<p>$$<br>H &#x3D; T + V &#x3D; \frac{p^2}{2m} + V(q)<br>$$</p>
 <p>The <strong>Hamilton’s equations</strong> govern time evolution:</p>
-<p>$$<br>
-\dot{q} = \frac{\partial H}{\partial p}, \quad \dot{p} = -\frac{\partial H}{\partial q}<br>
-$$</p>
+<p>$$<br>\dot{q} &#x3D; \frac{\partial H}{\partial p}, \quad \dot{p} &#x3D; -\frac{\partial H}{\partial q}<br>$$</p>
 <p>From the first equation:</p>
-<p>$$<br>
-\dot{q} = \frac{p}{m} \Rightarrow p = m\dot{q}<br>
-$$</p>
+<p>$$<br>\dot{q} &#x3D; \frac{p}{m} \Rightarrow p &#x3D; m\dot{q}<br>$$</p>
 <p>✅ This shows that <strong>velocity is the derivative of energy with respect to momentum</strong>, the dual of the Newtonian and Lagrangian statement.</p>
 <blockquote>
-<p>In Lagrangian mechanics: $ p = \frac{\partial T}{\partial \dot{q}} $<br>
-In Hamiltonian mechanics: $ \dot{q} = \frac{\partial H}{\partial p} $</p>
+<p>In Lagrangian mechanics: $ p &#x3D; \frac{\partial T}{\partial \dot{q}} $<br>In Hamiltonian mechanics: $ \dot{q} &#x3D; \frac{\partial H}{\partial p} $</p>
 </blockquote>
 <p>This duality is a hallmark of symplectic geometry, the mathematical foundation of Hamiltonian mechanics.</p>
 <hr>
-<h2 id="4-Quantum-Mechanics-Momentum-as-a-Generator-of-Translations">4. Quantum Mechanics: Momentum as a Generator of Translations</h2>
-<p>In quantum mechanics, momentum is no longer just $$mv$$. It becomes an operator:</p>
-<p>$$<br>
-\hat{p} = -i\hbar \frac{\partial}{\partial x}<br>
-$$</p>
+<h2 id="4-Quantum-Mechanics-Momentum-as-a-Generator-of-Translations"><a href="#4-Quantum-Mechanics-Momentum-as-a-Generator-of-Translations" class="headerlink" title="4. Quantum Mechanics: Momentum as a Generator of Translations"></a>4. Quantum Mechanics: Momentum as a Generator of Translations</h2><p>In quantum mechanics, momentum is no longer just $$mv$$. It becomes an operator:</p>
+<p>$$<br>\hat{p} &#x3D; -i\hbar \frac{\partial}{\partial x}<br>$$</p>
 <p>This operator generates <strong>translations in space</strong>, just as energy (the Hamiltonian) generates <strong>translations in time</strong>.</p>
 <p>Recall the Schrödinger equation:</p>
-<p>$$<br>
-\hat{H}\psi = i\hbar \frac{\partial \psi}{\partial t}<br>
-$$</p>
-<p>This duality of energy/time and momentum/space echoes the classical ideas:</p>
+<p>$$<br>\hat{H}\psi &#x3D; i\hbar \frac{\partial \psi}{\partial t}<br>$$</p>
+<p>This duality of energy&#x2F;time and momentum&#x2F;space echoes the classical ideas:</p>
 <ul>
-<li>Classical: $ p = \frac{dT}{dv} $</li>
-<li>Quantum: $ \hat{p} = -i\hbar \partial_x $, and acts on wavefunctions</li>
+<li>Classical: $ p &#x3D; \frac{dT}{dv} $</li>
+<li>Quantum: $ \hat{p} &#x3D; -i\hbar \partial_x $, and acts on wavefunctions</li>
 </ul>
 <p>Moreover, the <strong>quantum kinetic energy operator</strong> is:</p>
-<p>$$<br>
-\hat{T} = \frac{\hat{p}^2}{2m} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}<br>
-$$</p>
-<p>So if you apply the operator $\hat{T}$ to a plane wave $\psi(x) = e^{ikx}$, its eigenvalue is $\frac{\hbar^2k^2}{2m}$, and the momentum is $\hbar k$. Again, this reproduces the classical identity in operator form.</p>
+<p>$$<br>\hat{T} &#x3D; \frac{\hat{p}^2}{2m} &#x3D; -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}<br>$$</p>
+<p>So if you apply the operator $\hat{T}$ to a plane wave $\psi(x) &#x3D; e^{ikx}$, its eigenvalue is $\frac{\hbar^2k^2}{2m}$, and the momentum is $\hbar k$. Again, this reproduces the classical identity in operator form.</p>
 <hr>
-<h2 id="5-Final-Reflection-A-Deep-Unity">5. Final Reflection: A Deep Unity</h2>
-<p>This journey—from Newton to Lagrange, Hamilton, and Schrödinger—reveals that the identity:</p>
-<p>$$<br>
-\frac{dT}{dv} = p<br>
-$$</p>
+<h2 id="5-Final-Reflection-A-Deep-Unity"><a href="#5-Final-Reflection-A-Deep-Unity" class="headerlink" title="5. Final Reflection: A Deep Unity"></a>5. Final Reflection: A Deep Unity</h2><p>This journey—from Newton to Lagrange, Hamilton, and Schrödinger—reveals that the identity:</p>
+<p>$$<br>\frac{dT}{dv} &#x3D; p<br>$$</p>
 <p>is far more than a curious derivative. It is a manifestation of the deep connection between energy, motion, and symmetry.</p>
 <ul>
 <li>In Newtonian mechanics, it’s a calculational result.</li>
@@ -533,14 +500,12 @@ $$</p>
 </ul>
 <p>The unity of these views showcases the power of physics: different languages describing the same fundamental truths.</p>
 <hr>
-<h2 id="Bonus-Question-for-Reflection">Bonus Question for Reflection</h2>
-<blockquote>
-<p>In special relativity, does $\frac{dE}{dv} = p$ still hold?</p>
+<h2 id="Bonus-Question-for-Reflection"><a href="#Bonus-Question-for-Reflection" class="headerlink" title="Bonus Question for Reflection"></a>Bonus Question for Reflection</h2><blockquote>
+<p>In special relativity, does $\frac{dE}{dv} &#x3D; p$ still hold?</p>
 </blockquote>
 <p>(Spoiler: No, but it leads to even deeper insights about mass-energy equivalence and relativistic dynamics.)</p>
 <hr>
-<p><strong>Author: Xinchuan Du</strong><br>
-<em>Write at National University of Singapore during FLEPS 2025 conference</em></p>
+<p><strong>Author: Xinchuan Du</strong><br><em>Write at National University of Singapore during FLEPS 2025 conference</em></p>
 
     </article>
     <!-- license  -->
@@ -1891,17 +1856,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
     
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
-    
         <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
+    
+        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
         <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
-        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
+    
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+    
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
     
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
@@ -1909,29 +1880,25 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
     
-        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
-    
-        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
-    
-        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
-    
         <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
-    
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
     
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
     
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
+        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
+    
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+    
         <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
     
         <span class="sidebar-tag-name" data-tags="Nanodevice"><span class="iconfont-archer">&#xe606;</span>Nanodevice</span>
     
-        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
     
         <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
-    
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -1943,17 +1910,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
-        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
-    
-        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
-    
-        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
-    
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
         <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
+    
+        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
     
         <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
     
@@ -1965,11 +1930,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
+        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
+    
         <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
     
         <span class="sidebar-tag-name" data-tags="Avalanche"><span class="iconfont-archer">&#xe606;</span>Avalanche</span>
-    
-        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
         <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
     
@@ -2018,27 +1983,27 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
         <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
-        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
-    
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
     
