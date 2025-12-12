@@ -307,7 +307,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">761</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">767</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -438,14 +438,18 @@ height:50vh;
     <article class="article-entry">
         <p>Origin的绘图已经算是十分的方便，选中数据即可一键绘图，但是如果想切换绘图模式时就显得不太方便，同样在同一副图中调节每个数据点的颜色、大小、形状等也都显得操作繁琐，今天介绍的插件Graph Maker就针对这些问题实现了一键修改快速绘图。</p>
 <a id="more"></a>
-
-<h1 id="Origin插件之：快速作图（Graph-Maker）"><a href="#Origin插件之：快速作图（Graph-Maker）" class="headerlink" title="Origin插件之：快速作图（Graph Maker）"></a>Origin插件之：快速作图（Graph Maker）</h1><p>原创作者：iCalculate</p>
-<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>Origin的绘图已经算是十分的方便，选中数据即可一键绘图，但是如果想切换绘图模式时就显得不太方便，同样在同一副图中调节每个数据点的颜色、大小、形状等也都显得操作繁琐，今天介绍的插件Graph Maker就针对这些问题实现了一键修改快速绘图。</p>
-<h2 id="本期插件介绍："><a href="#本期插件介绍：" class="headerlink" title="本期插件介绍："></a>本期插件介绍：</h2><p>本期要介绍的插件是OriginLab官方技术支持团队提供的”<strong>Graph Maker</strong>“插件，这个插件可以通过直接拖曳数据绘制目标图片。插件支持的最低Origin版本为Origin2019(9.6)。</p>
+<h1>Origin插件之：快速作图（Graph Maker）</h1>
+<p>原创作者：iCalculate</p>
+<h2 id="前言：">前言：</h2>
+<p>Origin的绘图已经算是十分的方便，选中数据即可一键绘图，但是如果想切换绘图模式时就显得不太方便，同样在同一副图中调节每个数据点的颜色、大小、形状等也都显得操作繁琐，今天介绍的插件Graph Maker就针对这些问题实现了一键修改快速绘图。</p>
+<h2 id="本期插件介绍：">本期插件介绍：</h2>
+<p>本期要介绍的插件是OriginLab官方技术支持团队提供的&quot;<strong>Graph Maker</strong>&quot;插件，这个插件可以通过直接拖曳数据绘制目标图片。插件支持的最低Origin版本为Origin2019(9.6)。</p>
 <p>插件官方地址：<a href="https://www.originlab.com/fileExchange/details.aspx?fid=445" target="_blank" rel="noopener">https://www.originlab.com/fileExchange/details.aspx?fid=445</a></p>
-<p>插件下载备用：链接：<a href="https://pan.baidu.com/s/1VkMxz7Lu_5Y9iGDF87oxWQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1VkMxz7Lu_5Y9iGDF87oxWQ</a>  提取码：1pym </p>
-<h2 id="插件安装："><a href="#插件安装：" class="headerlink" title="插件安装："></a>插件安装：</h2><p>Origin插件下载完成后是后缀为”.opx”的文件，只需先打开Origin软件然后将”.opx”文件拖曳进Origin面板内即可完成安装，安装过程不会有提示出现，在面板右侧Apps窗口中如果有了相应的插件图标（图标灰色并非不可用）即说明安装成功。</p>
-<h2 id="具体介绍："><a href="#具体介绍：" class="headerlink" title="具体介绍："></a>具体介绍：</h2><p>首先我们初始化一个工作表单，A(X)类用行数填充作为X轴数据，B(Y)列用随机数创建X数据误差，C列数据用随机数填充作为Y轴数据，D列作为Y数据误差，E、F列分别用行数填充作为数据点的颜色大小数据。G列作为分区标识，前半部分用1填充后半部分用2填充，如下：</p>
+<p>插件下载备用：链接：<a href="https://pan.baidu.com/s/1VkMxz7Lu_5Y9iGDF87oxWQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1VkMxz7Lu_5Y9iGDF87oxWQ</a>  提取码：1pym</p>
+<h2 id="插件安装：">插件安装：</h2>
+<p>Origin插件下载完成后是后缀为&quot;.opx&quot;的文件，只需先打开Origin软件然后将&quot;.opx&quot;文件拖曳进Origin面板内即可完成安装，安装过程不会有提示出现，在面板右侧Apps窗口中如果有了相应的插件图标（图标灰色并非不可用）即说明安装成功。</p>
+<h2 id="具体介绍：">具体介绍：</h2>
+<p>首先我们初始化一个工作表单，A(X)类用行数填充作为X轴数据，B(Y)列用随机数创建X数据误差，C列数据用随机数填充作为Y轴数据，D列作为Y数据误差，E、F列分别用行数填充作为数据点的颜色大小数据。G列作为分区标识，前半部分用1填充后半部分用2填充，如下：</p>
 <p><img src="/2020/02/24/Origin-Plugins-Graph-Maker/Origin-Plugins-Graph-Maker%5Cimage-20200224140721991.png" alt="image-20200224140721991"></p>
 <p>打开Graph Maker插件，选择点线图，拖曳X、Y数据到相应位置即可实时得到图片输出：</p>
 <p><img src="/2020/02/24/Origin-Plugins-Graph-Maker/Origin-Plugins-Graph-Maker%5CG1.gif" alt="G1"></p>
@@ -456,7 +460,8 @@ height:50vh;
 <p>拖曳分区数据即可得到分区绘制的数据图：</p>
 <p><img src="/2020/02/24/Origin-Plugins-Graph-Maker/Origin-Plugins-Graph-Maker%5CG4.gif" alt="G4"></p>
 <p>同理也可以调节样点形状和内部结构，在插件内参数设置完成后即可点击确定生成图片。</p>
-<h2 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2><p>使用Graph Maker插件可以快速绘制简易图片并且方便的切换不同绘制模式，在绘制样点信息复杂（如在二维电线图中可以使样点颜色代表第三维度数据、样点大小代表第四维度数据等）的数据图是有着独特的优势，可以在一定程度上提高绘图效率。</p>
+<h2 id="小结：">小结：</h2>
+<p>使用Graph Maker插件可以快速绘制简易图片并且方便的切换不同绘制模式，在绘制样点信息复杂（如在二维电线图中可以使样点颜色代表第三维度数据、样点大小代表第四维度数据等）的数据图是有着独特的优势，可以在一定程度上提高绘图效率。</p>
 
     </article>
     <!-- license  -->
@@ -528,7 +533,7 @@ height:50vh;
             
                 <span class="iconfont-archer wechat" title=wechat>
                   
-                  <img class="profile-qr" src="/assets/WeChat_QR.jpg" />
+                  <img class="profile-qr" src="" />
                 </span>
             
         
@@ -537,14 +542,14 @@ height:50vh;
             
                 <span class="iconfont-archer qq" title=qq>
                   
-                  <img class="profile-qr" src="/assets/QQ_QR.jpg" />
+                  <img class="profile-qr" src="" />
                 </span>
             
         
     
         
             
-                <a href="https://t.me/chauncy_du" class="iconfont-archer telegram" target="_blank" title=telegram></a>
+                <a href="../../https:/t.me/chauncy_du" class="iconfont-archer telegram" target="_blank" title=telegram></a>
             
         
     
@@ -556,7 +561,7 @@ height:50vh;
     
         
             
-                <a href="https://www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+                <a href="../../https:/www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
             
         
     
@@ -574,19 +579,19 @@ height:50vh;
     
         
             
-                <a href="https://space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+                <a href="../../https:/space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
             
         
     
         
             
-                <a href="https://www.linkedin.com/in/xinchuan-du-a4b0b51bb/" class="iconfont-archer linkedin" target="_blank" title=linkedin></a>
+                <a href="../../https:/www.linkedin.com/in/xinchuan-du-a4b0b51bb/" class="iconfont-archer linkedin" target="_blank" title=linkedin></a>
             
         
     
         
             
-                <a href="https://steamcommunity.com/id/icalculate97/" class="iconfont-archer steam" target="_blank" title=steam></a>
+                <a href="../../https:/steamcommunity.com/id/icalculate97/" class="iconfont-archer steam" target="_blank" title=steam></a>
             
         
     
@@ -629,7 +634,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Origin插件之：快速作图（Graph-Maker）"><span class="toc-number">1.</span> <span class="toc-text">Origin插件之：快速作图（Graph Maker）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言："><span class="toc-number">1.1.</span> <span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本期插件介绍："><span class="toc-number">1.2.</span> <span class="toc-text">本期插件介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件安装："><span class="toc-number">1.3.</span> <span class="toc-text">插件安装：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体介绍："><span class="toc-number">1.4.</span> <span class="toc-text">具体介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结："><span class="toc-number">1.5.</span> <span class="toc-text">小结：</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">Origin插件之：快速作图（Graph Maker）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言："><span class="toc-number">1.1.</span> <span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本期插件介绍："><span class="toc-number">1.2.</span> <span class="toc-text">本期插件介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件安装："><span class="toc-number">1.3.</span> <span class="toc-text">插件安装：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体介绍："><span class="toc-number">1.4.</span> <span class="toc-text">具体介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结："><span class="toc-number">1.5.</span> <span class="toc-text">小结：</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1807,19 +1812,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
-    
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
     
-        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
+        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
         <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
     
         <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+    
+        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
         <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
@@ -1831,23 +1836,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
-        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
     
         <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
     
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
-    
-        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
-    
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
+    
+        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
         <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
     
         <span class="sidebar-tag-name" data-tags="Nanodevice"><span class="iconfont-archer">&#xe606;</span>Nanodevice</span>
     
-        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
     
         <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+    
+        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
     
         <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
@@ -1861,17 +1866,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
+        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
+    
+        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
+    
         <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
-    
-        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
-    
-        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
-    
-        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
@@ -1879,11 +1882,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
     
+        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
+    
         <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
     
         <span class="sidebar-tag-name" data-tags="Avalanche"><span class="iconfont-archer">&#xe606;</span>Avalanche</span>
-    
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
         <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
@@ -1934,11 +1939,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
@@ -1948,11 +1953,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
-        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
@@ -1995,27 +2000,7 @@ jsonContent:
     
         <script src="../../../../scripts/share.js" async></script>    
      
-    <script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['
-</html>
-
-
-, '
-</html>
-
-
-], ['\\(', '\\)']],
-    displayMath: [['$', '$'], ['\\[', '\\]']]
-  },
-  options: {
-    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-  }
-};
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</body>
+    </body>
 </html>
 
 
