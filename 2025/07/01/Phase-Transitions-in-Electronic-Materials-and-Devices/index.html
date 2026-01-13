@@ -442,16 +442,21 @@ height:50vh;
     <article class="article-entry">
         <p>This article explores how first-order and second-order phase transitions manifest in electronic materials and devices. We examine their theoretical foundations and practical implications, with a focus on steep-slope devices such as NC-FETs. Special attention is given to the interplay between ferroelectricity, subthreshold swing, and dynamic stability in 2D and advanced semiconductor systems.</p>
 <a id="more"></a>
-
-<h1 id="Phase-Transitions-in-Electronic-Materials-and-Devices-From-Thermodynamic-Foundations-to-the-Limits-of-Negative-Capacitance-FETs"><a href="#Phase-Transitions-in-Electronic-Materials-and-Devices-From-Thermodynamic-Foundations-to-the-Limits-of-Negative-Capacitance-FETs" class="headerlink" title="Phase Transitions in Electronic Materials and Devices: From Thermodynamic Foundations to the Limits of Negative Capacitance FETs"></a>Phase Transitions in Electronic Materials and Devices: From Thermodynamic Foundations to the Limits of Negative Capacitance FETs</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Phase transitions — whether first-order or second-order — offer a powerful lens through which we can understand complex emergent behaviors in condensed matter systems. In modern electronic devices, especially those employing two-dimensional (2D) materials and strongly correlated electron systems, these transitions govern dramatic changes in transport, dielectric, and structural properties.</p>
+<h1>Phase Transitions in Electronic Materials and Devices: From Thermodynamic Foundations to the Limits of Negative Capacitance FETs</h1>
+<h2 id="Introduction">Introduction</h2>
+<p>Phase transitions — whether first-order or second-order — offer a powerful lens through which we can understand complex emergent behaviors in condensed matter systems. In modern electronic devices, especially those employing two-dimensional (2D) materials and strongly correlated electron systems, these transitions govern dramatic changes in transport, dielectric, and structural properties.</p>
 <p>This article approaches the problem of device behavior from a <strong>thermodynamic phase transition perspective</strong>, starting with fundamental concepts and extending to field-effect transistors (FETs), with a particular focus on the controversial <strong>Negative Capacitance FET (NC-FET)</strong>. We combine theory, analytical modeling, and visualization to build an integrated understanding that is rigorous, detailed, and relevant for both theorists and device engineers.</p>
 <hr>
-<h2 id="1-Thermodynamic-Perspective-on-Phase-Transitions"><a href="#1-Thermodynamic-Perspective-on-Phase-Transitions" class="headerlink" title="1. Thermodynamic Perspective on Phase Transitions"></a>1. Thermodynamic Perspective on Phase Transitions</h2><h3 id="1-1-First-order-and-Second-order-Transitions"><a href="#1-1-First-order-and-Second-order-Transitions" class="headerlink" title="1.1 First-order and Second-order Transitions"></a>1.1 First-order and Second-order Transitions</h3><p>In statistical physics, a phase transition is said to be of the <em>first order</em> if the first derivative of the free energy with respect to an external parameter (such as temperature or field) is discontinuous. Conversely, a <em>second-order</em> (or continuous) phase transition has continuous first derivatives but discontinuous or divergent second derivatives.</p>
+<h2 id="1-Thermodynamic-Perspective-on-Phase-Transitions">1. Thermodynamic Perspective on Phase Transitions</h2>
+<h3 id="1-1-First-order-and-Second-order-Transitions">1.1 First-order and Second-order Transitions</h3>
+<p>In statistical physics, a phase transition is said to be of the <em>first order</em> if the first derivative of the free energy with respect to an external parameter (such as temperature or field) is discontinuous. Conversely, a <em>second-order</em> (or continuous) phase transition has continuous first derivatives but discontinuous or divergent second derivatives.</p>
 <p>Using Landau theory, the free energy of a system near a transition point can be expanded as:</p>
-<p>$$<br>F(\psi) &#x3D; F_0 + a(T) \psi^2 + b \psi^4 + c \psi^6 + \dots<br>$$</p>
+<p>$$<br>
+F(\psi) = F_0 + a(T) \psi^2 + b \psi^4 + c \psi^6 + \dots<br>
+$$</p>
 <p>Here, $ \psi $ is the order parameter, and $ a(T) $ varies with temperature. The nature of the transition depends on the sign of $ b $:</p>
 <ul>
-<li>If $ a(T_c) &#x3D; 0 $ and $ b &gt; 0 $, the system undergoes a <strong>second-order transition</strong>, with $ \psi $ changing continuously from zero.</li>
+<li>If $ a(T_c) = 0 $ and $ b &gt; 0 $, the system undergoes a <strong>second-order transition</strong>, with $ \psi $ changing continuously from zero.</li>
 <li>If $ b &lt; 0 $ and $ c &gt; 0 $, the free energy develops a double-well structure, leading to a <strong>first-order transition</strong> with a discontinuous jump in $ \psi $.</li>
 </ul>
 <table>
@@ -464,7 +469,8 @@ height:50vh;
 <th>Typical Examples</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>First-order</td>
 <td>Discontinuous</td>
 <td>Yes</td>
@@ -478,51 +484,80 @@ height:50vh;
 <td>No</td>
 <td>Superconductivity, Ferromagnetism</td>
 </tr>
-</tbody></table>
-<h3 id="1-2-Stability-Metastability-and-Hysteresis"><a href="#1-2-Stability-Metastability-and-Hysteresis" class="headerlink" title="1.2 Stability, Metastability, and Hysteresis"></a>1.2 Stability, Metastability, and Hysteresis</h3><p>In a first-order transition, the presence of multiple minima in the free energy leads to <em>metastable</em> states. Transitions between these states require nucleation and may exhibit <em>hysteresis</em> — a hallmark of first-order behavior. This is particularly relevant for device operation where field-driven transitions can be used to induce switching.</p>
+</tbody>
+</table>
+<h3 id="1-2-Stability-Metastability-and-Hysteresis">1.2 Stability, Metastability, and Hysteresis</h3>
+<p>In a first-order transition, the presence of multiple minima in the free energy leads to <em>metastable</em> states. Transitions between these states require nucleation and may exhibit <em>hysteresis</em> — a hallmark of first-order behavior. This is particularly relevant for device operation where field-driven transitions can be used to induce switching.</p>
 <hr>
-<h2 id="2-Phase-Transitions-in-Low-Dimensional-and-Quantum-Materials"><a href="#2-Phase-Transitions-in-Low-Dimensional-and-Quantum-Materials" class="headerlink" title="2. Phase Transitions in Low-Dimensional and Quantum Materials"></a>2. Phase Transitions in Low-Dimensional and Quantum Materials</h2><h3 id="2-1-Gate-Tuned-Quantum-Phase-Transitions-in-2D-FETs"><a href="#2-1-Gate-Tuned-Quantum-Phase-Transitions-in-2D-FETs" class="headerlink" title="2.1 Gate-Tuned Quantum Phase Transitions in 2D FETs"></a>2.1 Gate-Tuned Quantum Phase Transitions in 2D FETs</h3><p>Two-dimensional materials offer a platform to probe and control phase transitions via external parameters such as gate voltage, electrostatic doping, or vertical pressure. Examples include:</p>
+<h2 id="2-Phase-Transitions-in-Low-Dimensional-and-Quantum-Materials">2. Phase Transitions in Low-Dimensional and Quantum Materials</h2>
+<h3 id="2-1-Gate-Tuned-Quantum-Phase-Transitions-in-2D-FETs">2.1 Gate-Tuned Quantum Phase Transitions in 2D FETs</h3>
+<p>Two-dimensional materials offer a platform to probe and control phase transitions via external parameters such as gate voltage, electrostatic doping, or vertical pressure. Examples include:</p>
 <ul>
 <li><strong>Mott transitions</strong> in correlated materials like WSe$_2$ or twisted bilayer graphene, where Coulomb repulsion localizes carriers.</li>
 <li><strong>Charge-density-wave (CDW) transitions</strong> in 1T-TaS$_2$ and NbSe$_2$, where periodic lattice distortions emerge.</li>
-<li><strong>Superconducting transitions</strong> in FeSe&#x2F;SrTiO$_3$ interfaces or doped MoS$_2$.</li>
+<li><strong>Superconducting transitions</strong> in FeSe/SrTiO$_3$ interfaces or doped MoS$_2$.</li>
 <li><strong>Topological phase transitions</strong> under gating in WTe$_2$ or Bi bilayers.</li>
 </ul>
 <p>These transitions can often be mapped using a free energy landscape similar to Landau theory, with gate voltage $ V_{GS} $ serving as a tunable parameter.</p>
-<h3 id="2-2-Mapping-Transitions-via-Carrier-Density"><a href="#2-2-Mapping-Transitions-via-Carrier-Density" class="headerlink" title="2.2 Mapping Transitions via Carrier Density"></a>2.2 Mapping Transitions via Carrier Density</h3><p>In analogy to thermal phase transitions, one can define a carrier-density-dependent free energy:</p>
-<p>$$<br>F(n) &#x3D; F_0 + \alpha(n - n_c)^2 + \beta(n - n_c)^4 + \dots<br>$$</p>
+<h3 id="2-2-Mapping-Transitions-via-Carrier-Density">2.2 Mapping Transitions via Carrier Density</h3>
+<p>In analogy to thermal phase transitions, one can define a carrier-density-dependent free energy:</p>
+<p>$$<br>
+F(n) = F_0 + \alpha(n - n_c)^2 + \beta(n - n_c)^4 + \dots<br>
+$$</p>
 <p>Such a model predicts instabilities, bistability, and even hysteresis in electrical characteristics as observed in resistive switching, CDW sliding, or Wigner crystal formation.</p>
 <hr>
-<h2 id="3-Landau-Theory-and-Negative-Capacitance"><a href="#3-Landau-Theory-and-Negative-Capacitance" class="headerlink" title="3. Landau Theory and Negative Capacitance"></a>3. Landau Theory and Negative Capacitance</h2><h3 id="3-1-Free-Energy-of-a-Ferroelectric-System"><a href="#3-1-Free-Energy-of-a-Ferroelectric-System" class="headerlink" title="3.1 Free Energy of a Ferroelectric System"></a>3.1 Free Energy of a Ferroelectric System</h3><p>A ferroelectric material near its Curie temperature can be modeled using the LGD expansion:</p>
-<p>$$<br>G(P) &#x3D; \frac{\alpha}{2} P^2 + \frac{\beta}{4} P^4 + \frac{\gamma}{6} P^6 - E P<br>$$</p>
+<h2 id="3-Landau-Theory-and-Negative-Capacitance">3. Landau Theory and Negative Capacitance</h2>
+<h3 id="3-1-Free-Energy-of-a-Ferroelectric-System">3.1 Free Energy of a Ferroelectric System</h3>
+<p>A ferroelectric material near its Curie temperature can be modeled using the LGD expansion:</p>
+<p>$$<br>
+G(P) = \frac{\alpha}{2} P^2 + \frac{\beta}{4} P^4 + \frac{\gamma}{6} P^6 - E P<br>
+$$</p>
 <p>Here, $ P $ is the polarization, $ E $ is the electric field, and $ \alpha $, $ \beta $, $ \gamma $ are material-specific coefficients. For $ \alpha &lt; 0 $, the free energy exhibits a double-well shape, indicating spontaneous symmetry breaking. The region between the wells has:</p>
-<p>$$<br>\frac{d^2G}{dP^2} &lt; 0 \Rightarrow C_{FE} &lt; 0<br>$$</p>
+<p>$$<br>
+\frac{d^2G}{dP^2} &lt; 0 \Rightarrow C_{FE} &lt; 0<br>
+$$</p>
 <p>which corresponds to <em>negative differential capacitance</em>. However, this region is thermodynamically unstable unless stabilized by an external circuit.</p>
 <p><img src="/2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/free_energy.png" alt="Free Energy Landscape"></p>
-<h3 id="3-2-Stabilization-via-Capacitance-Matching"><a href="#3-2-Stabilization-via-Capacitance-Matching" class="headerlink" title="3.2 Stabilization via Capacitance Matching"></a>3.2 Stabilization via Capacitance Matching</h3><p>In a typical NC-FET structure, the ferroelectric layer is placed in series with the gate oxide and semiconductor channel. The effective capacitance becomes:</p>
-<p>$$<br>\frac{1}{C_{total}} &#x3D; \frac{1}{C_{FE}} + \frac{1}{C_{MOS}}<br>$$</p>
+<h3 id="3-2-Stabilization-via-Capacitance-Matching">3.2 Stabilization via Capacitance Matching</h3>
+<p>In a typical NC-FET structure, the ferroelectric layer is placed in series with the gate oxide and semiconductor channel. The effective capacitance becomes:</p>
+<p>$$<br>
+\frac{1}{C_{total}} = \frac{1}{C_{FE}} + \frac{1}{C_{MOS}}<br>
+$$</p>
 <p>When $ C_{FE} &lt; 0 $ and $ |C_{FE}| \approx C_{MOS} $, the total capacitance $ C_{total} $ increases, leading to an amplified surface potential:</p>
-<p>$$<br>\frac{d\phi_s}{dV_{GS}} &gt; 1 \Rightarrow SS &lt; 60~\text{mV&#x2F;dec}<br>$$</p>
+<p>$$<br>
+\frac{d\phi_s}{dV_{GS}} &gt; 1 \Rightarrow SS &lt; 60~\text{mV/dec}<br>
+$$</p>
 <p>However, achieving this condition in practice is nontrivial due to the constraints of stability, material defects, and domain dynamics.</p>
 <hr>
-<h2 id="4-Subthreshold-Swing-and-Measurement-Interpretation"><a href="#4-Subthreshold-Swing-and-Measurement-Interpretation" class="headerlink" title="4. Subthreshold Swing and Measurement Interpretation"></a>4. Subthreshold Swing and Measurement Interpretation</h2><h3 id="4-1-Understanding-Sub-60-mV-dec-Behavior"><a href="#4-1-Understanding-Sub-60-mV-dec-Behavior" class="headerlink" title="4.1 Understanding Sub-60 mV&#x2F;dec Behavior"></a>4.1 Understanding Sub-60 mV&#x2F;dec Behavior</h3><p>The subthreshold swing (SS) in FETs is defined as:</p>
-<p>$$<br>SS &#x3D; \left( \frac{d\log I_D}{dV_{GS}} \right)^{-1}<br>$$</p>
+<h2 id="4-Subthreshold-Swing-and-Measurement-Interpretation">4. Subthreshold Swing and Measurement Interpretation</h2>
+<h3 id="4-1-Understanding-Sub-60-mV-dec-Behavior">4.1 Understanding Sub-60 mV/dec Behavior</h3>
+<p>The subthreshold swing (SS) in FETs is defined as:</p>
+<p>$$<br>
+SS = \left( \frac{d\log I_D}{dV_{GS}} \right)^{-1}<br>
+$$</p>
 <p>In ideal MOSFETs:</p>
-<p>$$<br>SS_{min} &#x3D; \ln(10) \cdot \frac{kT}{q} \approx 60~\text{mV&#x2F;dec at 300K}<br>$$</p>
+<p>$$<br>
+SS_{min} = \ln(10) \cdot \frac{kT}{q} \approx 60~\text{mV/dec at 300K}<br>
+$$</p>
 <p>In NC-FETs, the internal voltage amplification allows:</p>
-<p>$$<br>SS &lt; 60~\text{mV&#x2F;dec}<br>$$</p>
+<p>$$<br>
+SS &lt; 60~\text{mV/dec}<br>
+$$</p>
 <p>Yet, many researchers argue that this behavior is <em>transient</em>, not thermodynamically stable. Time-dependent polarization switching and incomplete stabilization in the negative curvature region may artificially create steep slopes.</p>
 <p><img src="/2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/subthreshold_swing.png" alt="Subthreshold Swing Comparison"></p>
-<h3 id="4-2-Scan-Rate-and-Hysteresis-Concerns"><a href="#4-2-Scan-Rate-and-Hysteresis-Concerns" class="headerlink" title="4.2 Scan Rate and Hysteresis Concerns"></a>4.2 Scan Rate and Hysteresis Concerns</h3><p>Measured transfer curves showing sub-60 mV&#x2F;dec often vary with scan rate. Fast scans may capture polarization overshoot, while slow scans may reveal hysteresis or relaxation. This complicates the interpretation of “negative capacitance” as an equilibrium effect.</p>
+<h3 id="4-2-Scan-Rate-and-Hysteresis-Concerns">4.2 Scan Rate and Hysteresis Concerns</h3>
+<p>Measured transfer curves showing sub-60 mV/dec often vary with scan rate. Fast scans may capture polarization overshoot, while slow scans may reveal hysteresis or relaxation. This complicates the interpretation of “negative capacitance” as an equilibrium effect.</p>
 <hr>
-<h2 id="5-Critique-and-Theoretical-Challenges"><a href="#5-Critique-and-Theoretical-Challenges" class="headerlink" title="5. Critique and Theoretical Challenges"></a>5. Critique and Theoretical Challenges</h2><ul>
+<h2 id="5-Critique-and-Theoretical-Challenges">5. Critique and Theoretical Challenges</h2>
+<ul>
 <li><strong>Can negative capacitance be stabilized under quasi-static operation?</strong></li>
 <li><strong>Do domain dynamics and energy dissipation obscure equilibrium interpretation?</strong></li>
 <li><strong>Is the Landau framework sufficient, or is a microscopic model (e.g., DFT + polarization dynamics) needed?</strong></li>
 <li><strong>What are the impacts of film thickness, interface states, and non-idealities on $ C_{FE} $?</strong></li>
 </ul>
 <hr>
-<h2 id="6-Outlook-and-Phase-Based-Device-Engineering"><a href="#6-Outlook-and-Phase-Based-Device-Engineering" class="headerlink" title="6. Outlook and Phase-Based Device Engineering"></a>6. Outlook and Phase-Based Device Engineering</h2><p>Despite challenges, the concept of harnessing phase transitions for electronic functionality is powerful and forward-looking. Emerging directions include:</p>
+<h2 id="6-Outlook-and-Phase-Based-Device-Engineering">6. Outlook and Phase-Based Device Engineering</h2>
+<p>Despite challenges, the concept of harnessing phase transitions for electronic functionality is powerful and forward-looking. Emerging directions include:</p>
 <ul>
 <li>Mott-FETs based on correlated oxides or moiré systems</li>
 <li>Electrostatic topological switching using TMDs and Bi bilayers</li>
@@ -531,7 +566,8 @@ height:50vh;
 </ul>
 <p>This suggests a shift from <strong>charge-centric control</strong> to <strong>phase-centric design</strong> in future nanoelectronics.</p>
 <hr>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<h2 id="References">References</h2>
+<ol>
 <li>Landau, L.D., Lifshitz, E.M. <em>Statistical Physics</em>.</li>
 <li>Salahuddin, S. &amp; Datta, S. (2008). Nano Letters, 8(2), 405–410.</li>
 <li>Khan, A.I. et al. (2020). Nature Electronics, 3, 588–595.</li>
@@ -710,7 +746,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Phase-Transitions-in-Electronic-Materials-and-Devices-From-Thermodynamic-Foundations-to-the-Limits-of-Negative-Capacitance-FETs"><span class="toc-number">1.</span> <span class="toc-text">Phase Transitions in Electronic Materials and Devices: From Thermodynamic Foundations to the Limits of Negative Capacitance FETs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-number">1.1.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Thermodynamic-Perspective-on-Phase-Transitions"><span class="toc-number">1.2.</span> <span class="toc-text">1. Thermodynamic Perspective on Phase Transitions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-First-order-and-Second-order-Transitions"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.1 First-order and Second-order Transitions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Stability-Metastability-and-Hysteresis"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2 Stability, Metastability, and Hysteresis</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Phase-Transitions-in-Low-Dimensional-and-Quantum-Materials"><span class="toc-number">1.3.</span> <span class="toc-text">2. Phase Transitions in Low-Dimensional and Quantum Materials</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Gate-Tuned-Quantum-Phase-Transitions-in-2D-FETs"><span class="toc-number">1.3.1.</span> <span class="toc-text">2.1 Gate-Tuned Quantum Phase Transitions in 2D FETs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Mapping-Transitions-via-Carrier-Density"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.2 Mapping Transitions via Carrier Density</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Landau-Theory-and-Negative-Capacitance"><span class="toc-number">1.4.</span> <span class="toc-text">3. Landau Theory and Negative Capacitance</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Free-Energy-of-a-Ferroelectric-System"><span class="toc-number">1.4.1.</span> <span class="toc-text">3.1 Free Energy of a Ferroelectric System</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Stabilization-via-Capacitance-Matching"><span class="toc-number">1.4.2.</span> <span class="toc-text">3.2 Stabilization via Capacitance Matching</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Subthreshold-Swing-and-Measurement-Interpretation"><span class="toc-number">1.5.</span> <span class="toc-text">4. Subthreshold Swing and Measurement Interpretation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Understanding-Sub-60-mV-dec-Behavior"><span class="toc-number">1.5.1.</span> <span class="toc-text">4.1 Understanding Sub-60 mV&#x2F;dec Behavior</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Scan-Rate-and-Hysteresis-Concerns"><span class="toc-number">1.5.2.</span> <span class="toc-text">4.2 Scan Rate and Hysteresis Concerns</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Critique-and-Theoretical-Challenges"><span class="toc-number">1.6.</span> <span class="toc-text">5. Critique and Theoretical Challenges</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Outlook-and-Phase-Based-Device-Engineering"><span class="toc-number">1.7.</span> <span class="toc-text">6. Outlook and Phase-Based Device Engineering</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-number">1.8.</span> <span class="toc-text">References</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">Phase Transitions in Electronic Materials and Devices: From Thermodynamic Foundations to the Limits of Negative Capacitance FETs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-number">1.1.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Thermodynamic-Perspective-on-Phase-Transitions"><span class="toc-number">1.2.</span> <span class="toc-text">1. Thermodynamic Perspective on Phase Transitions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-First-order-and-Second-order-Transitions"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.1 First-order and Second-order Transitions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Stability-Metastability-and-Hysteresis"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2 Stability, Metastability, and Hysteresis</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Phase-Transitions-in-Low-Dimensional-and-Quantum-Materials"><span class="toc-number">1.3.</span> <span class="toc-text">2. Phase Transitions in Low-Dimensional and Quantum Materials</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Gate-Tuned-Quantum-Phase-Transitions-in-2D-FETs"><span class="toc-number">1.3.1.</span> <span class="toc-text">2.1 Gate-Tuned Quantum Phase Transitions in 2D FETs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Mapping-Transitions-via-Carrier-Density"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.2 Mapping Transitions via Carrier Density</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Landau-Theory-and-Negative-Capacitance"><span class="toc-number">1.4.</span> <span class="toc-text">3. Landau Theory and Negative Capacitance</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Free-Energy-of-a-Ferroelectric-System"><span class="toc-number">1.4.1.</span> <span class="toc-text">3.1 Free Energy of a Ferroelectric System</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Stabilization-via-Capacitance-Matching"><span class="toc-number">1.4.2.</span> <span class="toc-text">3.2 Stabilization via Capacitance Matching</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Subthreshold-Swing-and-Measurement-Interpretation"><span class="toc-number">1.5.</span> <span class="toc-text">4. Subthreshold Swing and Measurement Interpretation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Understanding-Sub-60-mV-dec-Behavior"><span class="toc-number">1.5.1.</span> <span class="toc-text">4.1 Understanding Sub-60 mV&#x2F;dec Behavior</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Scan-Rate-and-Hysteresis-Concerns"><span class="toc-number">1.5.2.</span> <span class="toc-text">4.2 Scan Rate and Hysteresis Concerns</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Critique-and-Theoretical-Challenges"><span class="toc-number">1.6.</span> <span class="toc-text">5. Critique and Theoretical Challenges</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Outlook-and-Phase-Based-Device-Engineering"><span class="toc-number">1.7.</span> <span class="toc-text">6. Outlook and Phase-Based Device Engineering</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-number">1.8.</span> <span class="toc-text">References</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1884,11 +1920,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
-    
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
     
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
@@ -1896,13 +1930,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
-        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
     
         <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
-        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
-    
-        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
@@ -1914,21 +1946,29 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
     
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
-    
         <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
+    
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+    
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
+    
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+    
+        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
         <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
     
         <span class="sidebar-tag-name" data-tags="Nanodevice"><span class="iconfont-archer">&#xe606;</span>Nanodevice</span>
-    
-        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
-    
-        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
-    
-        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -1938,33 +1978,29 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
-    
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
-    
         <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
     
         <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
+    
+        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
-        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
+        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
+    
+        <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
         <span class="sidebar-tag-name" data-tags="Condense Physics"><span class="iconfont-archer">&#xe606;</span>Condense Physics</span>
     
-        <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
-    
-        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
-    
         <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
     
         <span class="sidebar-tag-name" data-tags="Avalanche"><span class="iconfont-archer">&#xe606;</span>Avalanche</span>
-    
-        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
         <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
     
@@ -1972,7 +2008,7 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
+        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -2007,37 +2043,37 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
-    
         <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
-        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
-    
-        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
-    
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     

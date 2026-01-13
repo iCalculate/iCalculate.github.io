@@ -307,7 +307,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">1.5k</span>Reading time: <span class="post-count reading-time">9 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1.4k</span>Reading time: <span class="post-count reading-time">8 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -436,167 +436,221 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="Model-335-Cryogenic-Temperature-Controller"><a href="#Model-335-Cryogenic-Temperature-Controller" class="headerlink" title="Model 335 Cryogenic Temperature Controller"></a>Model 335 Cryogenic Temperature Controller</h1><p>The Model 335 measures and controls cryogenic temperature environments.</p>
+        <h1>Model 335 Cryogenic Temperature Controller</h1>
+<p>The Model 335 measures and controls cryogenic temperature environments.</p>
 <p>More information about the instrument can be found <a href="https://www.lakeshore.com/products/categories/overview/temperature-products/cryogenic-temperature-controllers/model-335-cryogenic-temperature-controller" target="_blank" rel="noopener">on our website</a> including the manual which has a list of all commands and queries.</p>
-<h2 id="Example-Scripts"><a href="#Example-Scripts" class="headerlink" title="Example Scripts"></a>Example Scripts</h2><h3 id="Setting-a-temperature-curve"><a href="#Setting-a-temperature-curve" class="headerlink" title="Setting a temperature curve"></a>Setting a temperature curve</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> lakeshore <span class="keyword">import</span> Model224</span><br><span class="line"><span class="keyword">from</span> lakeshore.model_224 <span class="keyword">import</span> Model224CurveHeader, Model224CurveFormat, Model224CurveTemperatureCoefficients, \</span><br><span class="line">    Model224SoftCalSensorTypes</span><br><span class="line"></span><br><span class="line"><span class="comment"># Connect to a temperature instrument (the Model 224 in this case) over USB</span></span><br><span class="line">myinstrument = Model224()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure a curve by first setting its header parameters. First, set the name and serial number of the curve.</span></span><br><span class="line"><span class="comment"># Then, select the units used to set map the sensor units to temperature units. Set a temperature limit, and</span></span><br><span class="line"><span class="comment"># then specify whether the coefficients are positive or negative.</span></span><br><span class="line">curve_header_25 = Model224CurveHeader(<span class="string">"My_Curve"</span>, <span class="string">"ABC123"</span>, Model224CurveFormat.VOLTS_PER_KELVIN, <span class="number">300.0</span>,</span><br><span class="line">                                      Model224CurveTemperatureCoefficients.POSITIVE)</span><br><span class="line">myinstrument.set_curve_header(<span class="number">25</span>, curve_header_25)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Edit individual data points of the curve. In this case, a sensor value of 1.23 is set to equal a Kelvin value of</span></span><br><span class="line"><span class="comment"># 276.0</span></span><br><span class="line">myinstrument.set_curve_data_point(<span class="number">25</span>, <span class="number">1</span>, <span class="number">1.23</span>, <span class="number">276.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># You can create a softcal curve by inputting 1-3 calibration sensor/temperature points. The instrument generates</span></span><br><span class="line"><span class="comment"># a new curve using your entered data points and the selected standard curve</span></span><br><span class="line">myinstrument.generate_and_apply_soft_cal_curve(Model224SoftCalSensorTypes.DT_400, <span class="number">30</span>, <span class="string">"SN123"</span>, (<span class="number">276</span>, <span class="number">10</span>),</span><br><span class="line">                                               (<span class="number">300</span>, <span class="number">5</span>), (<span class="number">310</span>, <span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use the get_curve method to get all the data points for a curve as a list. This can then be used to create a plot</span></span><br><span class="line"><span class="comment"># of the calibration curve.</span></span><br><span class="line">data_points_list = myinstrument.get_curve(<span class="number">30</span>)</span><br><span class="line">x_list = [item[<span class="number">0</span>] <span class="keyword">for</span> item <span class="keyword">in</span> data_points_list]</span><br><span class="line">y_list = [item[<span class="number">1</span>] <span class="keyword">for</span> item <span class="keyword">in</span> data_points_list]</span><br><span class="line">plt.plot(x_list, y_list)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Finally, a curve can be deleted if you would like to reset the data points for that curve. Only user curves</span></span><br><span class="line"><span class="comment"># can be deleted.</span></span><br><span class="line">myinstrument.delete_curve(<span class="number">25</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Recording-data-with-the-Model-335"><a href="#Recording-data-with-the-Model-335" class="headerlink" title="Recording data with the Model 335"></a>Recording data with the Model 335</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lakeshore.model_335 <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># Connect to the first available Model 335 temperature controller over USB using a baud rate of 57600</span></span><br><span class="line">my_model_335 = Model335(<span class="number">57600</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a new instance of the input sensor settings class</span></span><br><span class="line">sensor_settings = Model335InputSensorSettings(Model335InputSensorType.DIODE, <span class="literal">True</span>, <span class="literal">False</span>,</span><br><span class="line">                                              Model335InputSensorUnits.KELVIN,</span><br><span class="line">                                              Model335DiodeRange.TWO_POINT_FIVE_VOLTS)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Apply these settings to input A of the instrument</span></span><br><span class="line">my_model_335.set_input_sensor(<span class="string">"A"</span>, sensor_settings)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set diode excitation current on channel A to 10uA</span></span><br><span class="line">my_model_335.set_diode_excitation_current(<span class="string">"A"</span>, Model335DiodeCurrent.TEN_MICROAMPS)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Collect instrument data</span></span><br><span class="line">heater_output_1 = my_model_335.get_heater_output(<span class="number">1</span>)</span><br><span class="line">heater_output_2 = my_model_335.get_heater_output(<span class="number">2</span>)</span><br><span class="line">temperature_reading = my_model_335.get_all_kelvin_reading()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Open a csv file to write</span></span><br><span class="line">file = open(<span class="string">"335_record_data.csv"</span>, <span class="string">"w"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Write the data to the file</span></span><br><span class="line">file.write(<span class="string">"Data retrieved from the Lake Shore Model 335\n"</span>)</span><br><span class="line">file.write(<span class="string">"Temperature Reading A: "</span> + str(temperature_reading[<span class="number">0</span>]) + <span class="string">"\n"</span>)</span><br><span class="line">file.write(<span class="string">"Temperature Reading B: "</span> + str(temperature_reading[<span class="number">1</span>]) + <span class="string">"\n"</span>)</span><br><span class="line">file.write(<span class="string">"Heater Output 1: "</span> + str(heater_output_1) + <span class="string">"\n"</span>)</span><br><span class="line">file.write(<span class="string">"Heater Output 2: "</span> + str(heater_output_2) + <span class="string">"\n"</span>)</span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>
-
-<h3 id="Setting-up-autotune-on-the-Model-335"><a href="#Setting-up-autotune-on-the-Model-335" class="headerlink" title="Setting up autotune on the Model 335"></a>Setting up autotune on the Model 335</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lakeshore <span class="keyword">import</span> Model335</span><br><span class="line"><span class="keyword">from</span> lakeshore.model_335 <span class="keyword">import</span> Model335DisplaySetup, Model335HeaterResistance, \</span><br><span class="line">    Model335HeaterOutputDisplay, Model335HeaterRange, Model335AutoTuneMode, Model335HeaterError</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line"><span class="comment"># Connect to the first available Model 335 temperature controller over USB using a baud rate of 57600</span></span><br><span class="line">my_model_335 = Model335(<span class="number">57600</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># It is assumed that the instrument is configured properly with a control input sensor curve</span></span><br><span class="line"><span class="comment"># and heater output, capable of closed loop control</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure the display mode</span></span><br><span class="line">my_model_335.set_display_setup(Model335DisplaySetup.TWO_INPUT_A)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure heater output 1 using the HeaterSetup class and set_heater_setup method</span></span><br><span class="line">my_model_335.set_heater_setup_one(Model335HeaterResistance.HEATER_50_OHM, <span class="number">1.0</span>, Model335HeaterOutputDisplay.POWER)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure heater output 1 to a setpoint of 310 kelvin (units correspond to the configured output units)</span></span><br><span class="line">set_point = <span class="number">325</span></span><br><span class="line">my_model_335.set_control_setpoint(<span class="number">1</span>, set_point)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Turn on the heater by setting the range</span></span><br><span class="line">my_model_335.set_heater_range(<span class="number">1</span>, Model335HeaterRange.HIGH)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Check to see if there are any heater related errors</span></span><br><span class="line">heater_error = my_model_335.get_heater_status(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">if</span> heater_error <span class="keyword">is</span> <span class="keyword">not</span> Model335HeaterError.NO_ERROR:</span><br><span class="line">    <span class="keyword">raise</span> Exception(heater_error.name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Allow the heater some time to turn on and start maintaining a setpoint</span></span><br><span class="line">sleep(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Ensure that the temperature is within 5 degrees kelvin of the setpoint</span></span><br><span class="line">kelvin_reading = my_model_335.get_kelvin_reading(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">if</span> (kelvin_reading &lt; (set_point - <span class="number">5</span>)) <span class="keyword">or</span> (kelvin_reading &gt; (set_point + <span class="number">5</span>)):</span><br><span class="line">    <span class="keyword">raise</span> Exception(<span class="string">"Temperature reading is not within 5k of the setpoint"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initiate autotune in PI mode, initial conditions will not be met if the system is not</span></span><br><span class="line"><span class="comment"># maintaining a temperature within 5 K of the setpoint</span></span><br><span class="line">my_model_335.set_autotune(<span class="number">1</span>, Model335AutoTuneMode.P_I)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Poll the instrument until the autotune process completes</span></span><br><span class="line">autotune_status = my_model_335.get_tuning_control_status()</span><br><span class="line"><span class="keyword">while</span> autotune_status[<span class="string">"active_tuning_enable"</span>] <span class="keyword">and</span> <span class="keyword">not</span> autotune_status[<span class="string">"tuning_error"</span>]:</span><br><span class="line">    autotune_status = my_model_335.get_tuning_control_status()</span><br><span class="line">    <span class="comment"># Print the status to the console every 5 seconds</span></span><br><span class="line">    print(<span class="string">"Active tuning: "</span> + str(autotune_status[<span class="string">"active_tuning_enable"</span>]))</span><br><span class="line">    print(<span class="string">"Stage status: "</span> + str(autotune_status[<span class="string">"stage_status"</span>]) + <span class="string">"/10"</span>)</span><br><span class="line">    sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> autotune_status[<span class="string">"tuning_error"</span>]:</span><br><span class="line">    <span class="keyword">raise</span> Exception(<span class="string">"An error occurred while running autotune"</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="Enumeration-objects"><a href="#Enumeration-objects" class="headerlink" title="Enumeration objects"></a>Enumeration objects</h2><p>This section describes the Enum type objects that have been created to name various settings of the Model 335 series that are represented as an int or single character to the instrument. The purpose of these enum types is to make the settings more descriptive and obvious to the user rather than interpreting the ints taken by the instrument.</p>
+<h2 id="Example-Scripts">Example Scripts</h2>
+<h3 id="Setting-a-temperature-curve">Setting a temperature curve</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> lakeshore <span class="keyword">import</span> Model224</span><br><span class="line"><span class="keyword">from</span> lakeshore.model_224 <span class="keyword">import</span> Model224CurveHeader, Model224CurveFormat, Model224CurveTemperatureCoefficients, \</span><br><span class="line">    Model224SoftCalSensorTypes</span><br><span class="line"></span><br><span class="line"><span class="comment"># Connect to a temperature instrument (the Model 224 in this case) over USB</span></span><br><span class="line">myinstrument = Model224()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure a curve by first setting its header parameters. First, set the name and serial number of the curve.</span></span><br><span class="line"><span class="comment"># Then, select the units used to set map the sensor units to temperature units. Set a temperature limit, and</span></span><br><span class="line"><span class="comment"># then specify whether the coefficients are positive or negative.</span></span><br><span class="line">curve_header_25 = Model224CurveHeader(<span class="string">"My_Curve"</span>, <span class="string">"ABC123"</span>, Model224CurveFormat.VOLTS_PER_KELVIN, <span class="number">300.0</span>,</span><br><span class="line">                                      Model224CurveTemperatureCoefficients.POSITIVE)</span><br><span class="line">myinstrument.set_curve_header(<span class="number">25</span>, curve_header_25)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Edit individual data points of the curve. In this case, a sensor value of 1.23 is set to equal a Kelvin value of</span></span><br><span class="line"><span class="comment"># 276.0</span></span><br><span class="line">myinstrument.set_curve_data_point(<span class="number">25</span>, <span class="number">1</span>, <span class="number">1.23</span>, <span class="number">276.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># You can create a softcal curve by inputting 1-3 calibration sensor/temperature points. The instrument generates</span></span><br><span class="line"><span class="comment"># a new curve using your entered data points and the selected standard curve</span></span><br><span class="line">myinstrument.generate_and_apply_soft_cal_curve(Model224SoftCalSensorTypes.DT_400, <span class="number">30</span>, <span class="string">"SN123"</span>, (<span class="number">276</span>, <span class="number">10</span>),</span><br><span class="line">                                               (<span class="number">300</span>, <span class="number">5</span>), (<span class="number">310</span>, <span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use the get_curve method to get all the data points for a curve as a list. This can then be used to create a plot</span></span><br><span class="line"><span class="comment"># of the calibration curve.</span></span><br><span class="line">data_points_list = myinstrument.get_curve(<span class="number">30</span>)</span><br><span class="line">x_list = [item[<span class="number">0</span>] <span class="keyword">for</span> item <span class="keyword">in</span> data_points_list]</span><br><span class="line">y_list = [item[<span class="number">1</span>] <span class="keyword">for</span> item <span class="keyword">in</span> data_points_list]</span><br><span class="line">plt.plot(x_list, y_list)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Finally, a curve can be deleted if you would like to reset the data points for that curve. Only user curves</span></span><br><span class="line"><span class="comment"># can be deleted.</span></span><br><span class="line">myinstrument.delete_curve(<span class="number">25</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Recording-data-with-the-Model-335">Recording data with the Model 335</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lakeshore.model_335 <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># Connect to the first available Model 335 temperature controller over USB using a baud rate of 57600</span></span><br><span class="line">my_model_335 = Model335(<span class="number">57600</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a new instance of the input sensor settings class</span></span><br><span class="line">sensor_settings = Model335InputSensorSettings(Model335InputSensorType.DIODE, <span class="literal">True</span>, <span class="literal">False</span>,</span><br><span class="line">                                              Model335InputSensorUnits.KELVIN,</span><br><span class="line">                                              Model335DiodeRange.TWO_POINT_FIVE_VOLTS)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Apply these settings to input A of the instrument</span></span><br><span class="line">my_model_335.set_input_sensor(<span class="string">"A"</span>, sensor_settings)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set diode excitation current on channel A to 10uA</span></span><br><span class="line">my_model_335.set_diode_excitation_current(<span class="string">"A"</span>, Model335DiodeCurrent.TEN_MICROAMPS)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Collect instrument data</span></span><br><span class="line">heater_output_1 = my_model_335.get_heater_output(<span class="number">1</span>)</span><br><span class="line">heater_output_2 = my_model_335.get_heater_output(<span class="number">2</span>)</span><br><span class="line">temperature_reading = my_model_335.get_all_kelvin_reading()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Open a csv file to write</span></span><br><span class="line">file = open(<span class="string">"335_record_data.csv"</span>, <span class="string">"w"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Write the data to the file</span></span><br><span class="line">file.write(<span class="string">"Data retrieved from the Lake Shore Model 335\n"</span>)</span><br><span class="line">file.write(<span class="string">"Temperature Reading A: "</span> + str(temperature_reading[<span class="number">0</span>]) + <span class="string">"\n"</span>)</span><br><span class="line">file.write(<span class="string">"Temperature Reading B: "</span> + str(temperature_reading[<span class="number">1</span>]) + <span class="string">"\n"</span>)</span><br><span class="line">file.write(<span class="string">"Heater Output 1: "</span> + str(heater_output_1) + <span class="string">"\n"</span>)</span><br><span class="line">file.write(<span class="string">"Heater Output 2: "</span> + str(heater_output_2) + <span class="string">"\n"</span>)</span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>
+<h3 id="Setting-up-autotune-on-the-Model-335">Setting up autotune on the Model 335</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lakeshore <span class="keyword">import</span> Model335</span><br><span class="line"><span class="keyword">from</span> lakeshore.model_335 <span class="keyword">import</span> Model335DisplaySetup, Model335HeaterResistance, \</span><br><span class="line">    Model335HeaterOutputDisplay, Model335HeaterRange, Model335AutoTuneMode, Model335HeaterError</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line"><span class="comment"># Connect to the first available Model 335 temperature controller over USB using a baud rate of 57600</span></span><br><span class="line">my_model_335 = Model335(<span class="number">57600</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># It is assumed that the instrument is configured properly with a control input sensor curve</span></span><br><span class="line"><span class="comment"># and heater output, capable of closed loop control</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure the display mode</span></span><br><span class="line">my_model_335.set_display_setup(Model335DisplaySetup.TWO_INPUT_A)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure heater output 1 using the HeaterSetup class and set_heater_setup method</span></span><br><span class="line">my_model_335.set_heater_setup_one(Model335HeaterResistance.HEATER_50_OHM, <span class="number">1.0</span>, Model335HeaterOutputDisplay.POWER)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure heater output 1 to a setpoint of 310 kelvin (units correspond to the configured output units)</span></span><br><span class="line">set_point = <span class="number">325</span></span><br><span class="line">my_model_335.set_control_setpoint(<span class="number">1</span>, set_point)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Turn on the heater by setting the range</span></span><br><span class="line">my_model_335.set_heater_range(<span class="number">1</span>, Model335HeaterRange.HIGH)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Check to see if there are any heater related errors</span></span><br><span class="line">heater_error = my_model_335.get_heater_status(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">if</span> heater_error <span class="keyword">is</span> <span class="keyword">not</span> Model335HeaterError.NO_ERROR:</span><br><span class="line">    <span class="keyword">raise</span> Exception(heater_error.name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Allow the heater some time to turn on and start maintaining a setpoint</span></span><br><span class="line">sleep(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Ensure that the temperature is within 5 degrees kelvin of the setpoint</span></span><br><span class="line">kelvin_reading = my_model_335.get_kelvin_reading(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">if</span> (kelvin_reading &lt; (set_point - <span class="number">5</span>)) <span class="keyword">or</span> (kelvin_reading &gt; (set_point + <span class="number">5</span>)):</span><br><span class="line">    <span class="keyword">raise</span> Exception(<span class="string">"Temperature reading is not within 5k of the setpoint"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initiate autotune in PI mode, initial conditions will not be met if the system is not</span></span><br><span class="line"><span class="comment"># maintaining a temperature within 5 K of the setpoint</span></span><br><span class="line">my_model_335.set_autotune(<span class="number">1</span>, Model335AutoTuneMode.P_I)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Poll the instrument until the autotune process completes</span></span><br><span class="line">autotune_status = my_model_335.get_tuning_control_status()</span><br><span class="line"><span class="keyword">while</span> autotune_status[<span class="string">"active_tuning_enable"</span>] <span class="keyword">and</span> <span class="keyword">not</span> autotune_status[<span class="string">"tuning_error"</span>]:</span><br><span class="line">    autotune_status = my_model_335.get_tuning_control_status()</span><br><span class="line">    <span class="comment"># Print the status to the console every 5 seconds</span></span><br><span class="line">    print(<span class="string">"Active tuning: "</span> + str(autotune_status[<span class="string">"active_tuning_enable"</span>]))</span><br><span class="line">    print(<span class="string">"Stage status: "</span> + str(autotune_status[<span class="string">"stage_status"</span>]) + <span class="string">"/10"</span>)</span><br><span class="line">    sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> autotune_status[<span class="string">"tuning_error"</span>]:</span><br><span class="line">    <span class="keyword">raise</span> Exception(<span class="string">"An error occurred while running autotune"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Enumeration-objects">Enumeration objects</h2>
+<p>This section describes the Enum type objects that have been created to name various settings of the Model 335 series that are represented as an int or single character to the instrument. The purpose of these enum types is to make the settings more descriptive and obvious to the user rather than interpreting the ints taken by the instrument.</p>
 <ul>
-<li><p><code>lakeshore.model_335.``Model335RelayControlMode</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335RelayControlMode</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.RelayControlMode" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.RelayControlMode</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``RelayControlMode</code></p>
-<p>Relay operating mode enumeration<code>ALARMS</code><em>&#x3D; 2</em><code>RELAY_OFF</code><em>&#x3D; 0</em><code>RELAY_ON</code><em>&#x3D; 1</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``RelayControlMode</code></p>
+<p>Relay operating mode enumeration<code>ALARMS</code><em>= 2</em><code>RELAY_OFF</code><em>= 0</em><code>RELAY_ON</code><em>= 1</em></p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335RelayControlAlarm</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335RelayControlAlarm</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.RelayControlAlarm" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.RelayControlAlarm</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``RelayControlAlarm</code></p>
-<p>Enumeration of the setting determining which alarm(s) cause a relay to close in alarm mode.<code>BOTH_ALARMS</code><em>&#x3D; 2</em><code>HIGH_ALARM</code><em>&#x3D; 1</em><code>LOW_ALARM</code><em>&#x3D; 0</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``RelayControlAlarm</code></p>
+<p>Enumeration of the setting determining which alarm(s) cause a relay to close in alarm mode.<code>BOTH_ALARMS</code><em>= 2</em><code>HIGH_ALARM</code><em>= 1</em><code>LOW_ALARM</code><em>= 0</em></p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335InterfaceMode</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335InterfaceMode</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.InterfaceMode" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.InterfaceMode</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``InterfaceMode</code></p>
-<p>Enumeration for the mode of the remote interface<code>LOCAL</code><em>&#x3D; 0</em><code>REMOTE</code><em>&#x3D; 1</em><code>REMOTE_LOCAL_LOCK</code><em>&#x3D; 2</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``InterfaceMode</code></p>
+<p>Enumeration for the mode of the remote interface<code>LOCAL</code><em>= 0</em><code>REMOTE</code><em>= 1</em><code>REMOTE_LOCAL_LOCK</code><em>= 2</em></p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335HeaterError</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335HeaterError</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.HeaterError" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.HeaterError</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``HeaterError</code></p>
-<p>Enumeration for possible errors flagged by the heater<code>HEATER_OPEN_LOAD</code><em>&#x3D; 1</em><code>HEATER_SHORT</code><em>&#x3D; 2</em><code>NO_ERROR</code><em>&#x3D; 0</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``HeaterError</code></p>
+<p>Enumeration for possible errors flagged by the heater<code>HEATER_OPEN_LOAD</code><em>= 1</em><code>HEATER_SHORT</code><em>= 2</em><code>NO_ERROR</code><em>= 0</em></p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335CurveFormat</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335CurveFormat</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.CurveFormat" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.CurveFormat</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``CurveFormat</code></p>
-<p>Enumerations specify formats for temperature sensor curves<code>LOG_OHMS_PER_KELVIN</code><em>&#x3D; 4</em><code>MILLIVOLT_PER_KELVIN</code><em>&#x3D; 1</em><code>OHMS_PER_KELVIN</code><em>&#x3D; 3</em><code>VOLTS_PER_KELVIN</code><em>&#x3D; 2</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``CurveFormat</code></p>
+<p>Enumerations specify formats for temperature sensor curves<code>LOG_OHMS_PER_KELVIN</code><em>= 4</em><code>MILLIVOLT_PER_KELVIN</code><em>= 1</em><code>OHMS_PER_KELVIN</code><em>= 3</em><code>VOLTS_PER_KELVIN</code><em>= 2</em></p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335CurveTemperatureCoefficient</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335CurveTemperatureCoefficient</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.CurveTemperatureCoefficient" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.CurveTemperatureCoefficient</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``CurveTemperatureCoefficient</code></p>
-<p>Enumerations specify positive&#x2F;negative temperature sensor curve coefficients<code>NEGATIVE</code><em>&#x3D; 1</em><code>POSITIVE</code><em>&#x3D; 2</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``CurveTemperatureCoefficient</code></p>
+<p>Enumerations specify positive/negative temperature sensor curve coefficients<code>NEGATIVE</code><em>= 1</em><code>POSITIVE</code><em>= 2</em></p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335AutoTuneMode</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335AutoTuneMode</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.AutotuneMode" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.AutotuneMode</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``AutotuneMode</code></p>
-<p>Enumerator used to represent the different autotune control modes<code>P_I</code><em>&#x3D; 1</em><code>P_I_D</code><em>&#x3D; 2</em><code>P_ONLY</code><em>&#x3D; 0</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``AutotuneMode</code></p>
+<p>Enumerator used to represent the different autotune control modes<code>P_I</code><em>= 1</em><code>P_I_D</code><em>= 2</em><code>P_ONLY</code><em>= 0</em></p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335HeaterResistance</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335HeaterResistance</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.HeaterResistance" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.HeaterResistance</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``HeaterResistance</code></p>
-<p>Enumerator used to represent the different heater resistances<code>HEATER_25_OHM</code><em>&#x3D; 1</em><code>HEATER_50_OHM</code><em>&#x3D; 2</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``HeaterResistance</code></p>
+<p>Enumerator used to represent the different heater resistances<code>HEATER_25_OHM</code><em>= 1</em><code>HEATER_50_OHM</code><em>= 2</em></p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335HeaterOutputUnits</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335HeaterOutputUnits</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.HeaterOutputUnits" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.HeaterOutputUnits</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``HeaterOutputUnits</code></p>
-<p>Enumerator used to represent heater output unit settings<code>CURRENT</code><em>&#x3D; 1</em><code>POWER</code><em>&#x3D; 2</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``HeaterOutputUnits</code></p>
+<p>Enumerator used to represent heater output unit settings<code>CURRENT</code><em>= 1</em><code>POWER</code><em>= 2</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335InputSensor</code></p>
-<p>Enumeration when “NONE” is an option for sensor input<code>CHANNEL_A</code><em>&#x3D; 1</em><code>CHANNEL_B</code><em>&#x3D; 2</em><code>NONE</code><em>&#x3D; 0</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335InputSensor</code></p>
+<p>Enumeration when “NONE” is an option for sensor input<code>CHANNEL_A</code><em>= 1</em><code>CHANNEL_B</code><em>= 2</em><code>NONE</code><em>= 0</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335MonitorOutUnits</code></p>
-<p>Units associated with a sensor channel<code>CELSIUS</code><em>&#x3D; 2</em><code>KELVIN</code><em>&#x3D; 1</em><code>SENSOR</code><em>&#x3D; 3</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335MonitorOutUnits</code></p>
+<p>Units associated with a sensor channel<code>CELSIUS</code><em>= 2</em><code>KELVIN</code><em>= 1</em><code>SENSOR</code><em>= 3</em></p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335Polarity</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335Polarity</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.Polarity" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.Polarity</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``Polarity</code></p>
-<p>Enumerator for unipolar or bipolar output operation<code>BIPOLAR</code><em>&#x3D; 1</em><code>UNIPOLAR</code><em>&#x3D; 0</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``Polarity</code></p>
+<p>Enumerator for unipolar or bipolar output operation<code>BIPOLAR</code><em>= 1</em><code>UNIPOLAR</code><em>= 0</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335InputSensorType</code></p>
-<p>Sensor type enumeration<code>DIODE</code><em>&#x3D; 1</em><code>DISABLED</code><em>&#x3D; 0</em><code>NTC_RTD</code><em>&#x3D; 3</em><code>PLATINUM_RTD</code><em>&#x3D; 2</em><code>THERMOCOUPLE</code><em>&#x3D; 4</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335InputSensorType</code></p>
+<p>Sensor type enumeration<code>DIODE</code><em>= 1</em><code>DISABLED</code><em>= 0</em><code>NTC_RTD</code><em>= 3</em><code>PLATINUM_RTD</code><em>= 2</em><code>THERMOCOUPLE</code><em>= 4</em></p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335InputSensorUnits</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335InputSensorUnits</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.InputSensorUnits" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.InputSensorUnits</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``InputSensorUnits</code></p>
-<p>Enumerator used to represent temperature sensor unit options<code>CELSIUS</code><em>&#x3D; 2</em><code>KELVIN</code><em>&#x3D; 1</em><code>SENSOR</code><em>&#x3D; 3</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``InputSensorUnits</code></p>
+<p>Enumerator used to represent temperature sensor unit options<code>CELSIUS</code><em>= 2</em><code>KELVIN</code><em>= 1</em><code>SENSOR</code><em>= 3</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335DiodeRange</code></p>
-<p>Diode voltage range enumeration<code>TEN_VOLTS</code><em>&#x3D; 1</em><code>TWO_POINT_FIVE_VOLTS</code><em>&#x3D; 0</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335DiodeRange</code></p>
+<p>Diode voltage range enumeration<code>TEN_VOLTS</code><em>= 1</em><code>TWO_POINT_FIVE_VOLTS</code><em>= 0</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335RTDRange</code></p>
-<p>RTD resistance range enumeration<code>HUNDRED_OHM</code><em>&#x3D; 2</em><code>ONE_HUNDRED_THOUSAND_OHM</code><em>&#x3D; 8</em><code>ONE_THOUSAND_OHM</code><em>&#x3D; 4</em><code>TEN_OHM</code><em>&#x3D; 0</em><code>TEN_THOUSAND_OHM</code><em>&#x3D; 6</em><code>THIRTY_OHM</code><em>&#x3D; 1</em><code>THIRTY_THOUSAND_OHM</code><em>&#x3D; 7</em><code>THREE_HUNDRED_OHM</code><em>&#x3D; 3</em><code>THREE_THOUSAND_OHM</code><em>&#x3D; 5</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335RTDRange</code></p>
+<p>RTD resistance range enumeration<code>HUNDRED_OHM</code><em>= 2</em><code>ONE_HUNDRED_THOUSAND_OHM</code><em>= 8</em><code>ONE_THOUSAND_OHM</code><em>= 4</em><code>TEN_OHM</code><em>= 0</em><code>TEN_THOUSAND_OHM</code><em>= 6</em><code>THIRTY_OHM</code><em>= 1</em><code>THIRTY_THOUSAND_OHM</code><em>= 7</em><code>THREE_HUNDRED_OHM</code><em>= 3</em><code>THREE_THOUSAND_OHM</code><em>= 5</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335ThermocoupleRange</code></p>
-<p>Thermocouple range enumeration<code>FIFTY_MILLIVOLT</code><em>&#x3D; 0</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335ThermocoupleRange</code></p>
+<p>Thermocouple range enumeration<code>FIFTY_MILLIVOLT</code><em>= 0</em></p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335BrightnessLevel</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335BrightnessLevel</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.BrightnessLevel" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.BrightnessLevel</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``BrightnessLevel</code></p>
-<p>Enumerator to specify the brightness level of an instrument display<code>FULL</code><em>&#x3D; 3</em><code>HALF</code><em>&#x3D; 1</em><code>QUARTER</code><em>&#x3D; 0</em><code>THREE_QUARTERS</code><em>&#x3D; 2</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``BrightnessLevel</code></p>
+<p>Enumerator to specify the brightness level of an instrument display<code>FULL</code><em>= 3</em><code>HALF</code><em>= 1</em><code>QUARTER</code><em>= 0</em><code>THREE_QUARTERS</code><em>= 2</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335HeaterOutType</code></p>
-<p>Heater output 2 enumeration<code>CURRENT</code><em>&#x3D; 0</em><code>VOLTAGE</code><em>&#x3D; 1</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335HeaterOutType</code></p>
+<p>Heater output 2 enumeration<code>CURRENT</code><em>= 0</em><code>VOLTAGE</code><em>= 1</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335HeaterOutputDisplay</code></p>
-<p>Heater output display units enumeration<code>CURRENT</code><em>&#x3D; 1</em><code>POWER</code><em>&#x3D; 2</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335HeaterOutputDisplay</code></p>
+<p>Heater output display units enumeration<code>CURRENT</code><em>= 1</em><code>POWER</code><em>= 2</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335HeaterOutputMode</code></p>
-<p>Control loop enumeration<code>CLOSED_LOOP</code><em>&#x3D; 1</em><code>MONITOR_OUT</code><em>&#x3D; 4</em><code>OFF</code><em>&#x3D; 0</em><code>OPEN_LOOP</code><em>&#x3D; 3</em><code>WARMUP_SUPPLY</code><em>&#x3D; 5</em><code>ZONE</code><em>&#x3D; 2</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335HeaterOutputMode</code></p>
+<p>Control loop enumeration<code>CLOSED_LOOP</code><em>= 1</em><code>MONITOR_OUT</code><em>= 4</em><code>OFF</code><em>= 0</em><code>OPEN_LOOP</code><em>= 3</em><code>WARMUP_SUPPLY</code><em>= 5</em><code>ZONE</code><em>= 2</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335WarmupControl</code></p>
-<p>Heater output 2 voltage mode warmup enumerations<code>AUTO_OFF</code><em>&#x3D; 0</em><code>CONTINUOUS</code><em>&#x3D; 1</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335WarmupControl</code></p>
+<p>Heater output 2 voltage mode warmup enumerations<code>AUTO_OFF</code><em>= 0</em><code>CONTINUOUS</code><em>= 1</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335HeaterRange</code></p>
-<p>Control loop heater range enumeration<code>HIGH</code><em>&#x3D; 3</em><code>LOW</code><em>&#x3D; 1</em><code>MEDIUM</code><em>&#x3D; 2</em><code>OFF</code><em>&#x3D; 0</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335HeaterRange</code></p>
+<p>Control loop heater range enumeration<code>HIGH</code><em>= 3</em><code>LOW</code><em>= 1</em><code>MEDIUM</code><em>= 2</em><code>OFF</code><em>= 0</em></p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335ControlTypes</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335ControlTypes</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.ControlTypes" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.ControlTypes</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``ControlTypes</code></p>
-<p>Enumerator used to represent the control type settings<code>AUTO_OFF</code><em>&#x3D; 0</em><code>CONTINUOUS</code><em>&#x3D; 1</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``ControlTypes</code></p>
+<p>Enumerator used to represent the control type settings<code>AUTO_OFF</code><em>= 0</em><code>CONTINUOUS</code><em>= 1</em></p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335DiodeCurrent</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335DiodeCurrent</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.DiodeCurrent" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.DiodeCurrent</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``DiodeCurrent</code></p>
-<p>Enumerator used to represent diode current ranges<code>ONE_MILLIAMP</code><em>&#x3D; 1</em><code>TEN_MICROAMPS</code><em>&#x3D; 0</em></p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``DiodeCurrent</code></p>
+<p>Enumerator used to represent diode current ranges<code>ONE_MILLIAMP</code><em>= 1</em><code>TEN_MICROAMPS</code><em>= 0</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335DisplaySetup</code></p>
-<p>Panel display setup enumeration<code>CUSTOM</code><em>&#x3D; 6</em><code>INPUT_A</code><em>&#x3D; 0</em><code>INPUT_A_MAX_MIN</code><em>&#x3D; 1</em><code>INPUT_B</code><em>&#x3D; 3</em><code>INPUT_B_MAX_MIN</code><em>&#x3D; 4</em><code>TWO_INPUT_A</code><em>&#x3D; 2</em><code>TWO_INPUT_B</code><em>&#x3D; 5</em><code>TWO_LOOP</code><em>&#x3D; 7</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335DisplaySetup</code></p>
+<p>Panel display setup enumeration<code>CUSTOM</code><em>= 6</em><code>INPUT_A</code><em>= 0</em><code>INPUT_A_MAX_MIN</code><em>= 1</em><code>INPUT_B</code><em>= 3</em><code>INPUT_B_MAX_MIN</code><em>= 4</em><code>TWO_INPUT_A</code><em>= 2</em><code>TWO_INPUT_B</code><em>= 5</em><code>TWO_LOOP</code><em>= 7</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335HeaterVoltageRange</code></p>
-<p>Voltage mode heater enumerations<code>VOLTAGE_OFF</code><em>&#x3D; 0</em><code>VOLTAGE_ON</code><em>&#x3D; 1</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335HeaterVoltageRange</code></p>
+<p>Voltage mode heater enumerations<code>VOLTAGE_OFF</code><em>= 0</em><code>VOLTAGE_ON</code><em>= 1</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335DisplayInputChannel</code></p>
-<p>Panel display information enumeration<code>INPUT_A</code><em>&#x3D; 1</em><code>INPUT_B</code><em>&#x3D; 2</em><code>NONE</code><em>&#x3D; 0</em><code>OUTPUT_1</code><em>&#x3D; 5</em><code>OUTPUT_2</code><em>&#x3D; 6</em><code>SETPOINT_1</code><em>&#x3D; 3</em><code>SETPOINT_2</code><em>&#x3D; 4</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335DisplayInputChannel</code></p>
+<p>Panel display information enumeration<code>INPUT_A</code><em>= 1</em><code>INPUT_B</code><em>= 2</em><code>NONE</code><em>= 0</em><code>OUTPUT_1</code><em>= 5</em><code>OUTPUT_2</code><em>= 6</em><code>SETPOINT_1</code><em>= 3</em><code>SETPOINT_2</code><em>= 4</em></p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335DisplayFieldUnits</code></p>
-<p>Panel display units enumeration<code>CELSIUS</code><em>&#x3D; 2</em><code>KELVIN</code><em>&#x3D; 1</em><code>MAXIMUM_DATA</code><em>&#x3D; 5</em><code>MINIMUM_DATA</code><em>&#x3D; 4</em><code>SENSOR_NAME</code><em>&#x3D; 6</em><code>SENSOR_UNITS</code><em>&#x3D; 3</em></p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335DisplayFieldUnits</code></p>
+<p>Panel display units enumeration<code>CELSIUS</code><em>= 2</em><code>KELVIN</code><em>= 1</em><code>MAXIMUM_DATA</code><em>= 5</em><code>MINIMUM_DATA</code><em>= 4</em><code>SENSOR_NAME</code><em>= 6</em><code>SENSOR_UNITS</code><em>= 3</em></p>
 </li>
 </ul>
-<h2 id="Status-register-classes"><a href="#Status-register-classes" class="headerlink" title="Status register classes"></a>Status register classes</h2><p>This section describes the register objects. Each bit in the register is represented as a member of the register’s class</p>
+<h2 id="Status-register-classes">Status register classes</h2>
+<p>This section describes the register objects. Each bit in the register is represented as a member of the register’s class</p>
 <ul>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335StatusByteRegister</code>(<em>message_available_summary_bit</em>, <em>event_status_summary_bit</em>, <em>service_request</em>, <em>operation_summary_bit</em>)</p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335StatusByteRegister</code>(<em>message_available_summary_bit</em>, <em>event_status_summary_bit</em>, <em>service_request</em>, <em>operation_summary_bit</em>)</p>
 <p>Class object representing the status byte register LSB to MSB</p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335ServiceRequestEnable</code>(<em>message_available_summary_bit</em>, <em>event_status_summary_bit</em>, <em>operation_summary_bit</em>)</p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335ServiceRequestEnable</code>(<em>message_available_summary_bit</em>, <em>event_status_summary_bit</em>, <em>operation_summary_bit</em>)</p>
 <p>Class object representing the service request enable register LSB to MSB</p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335StandardEventRegister</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335StandardEventRegister</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.StandardEventRegister" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.StandardEventRegister</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``StandardEventRegister</code>(<em>operation_complete</em>, <em>query_error</em>, <em>execution_error</em>, <em>command_error</em>, <em>power_on</em>)</p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``StandardEventRegister</code>(<em>operation_complete</em>, <em>query_error</em>, <em>execution_error</em>, <em>command_error</em>, <em>power_on</em>)</p>
 <p>Class object representing the standard event register</p>
 </li>
-<li><p><code>lakeshore.model_335.``Model335OperationEvent</code></p>
+<li>
+<p><code>lakeshore.model_335.``Model335OperationEvent</code></p>
 <p>alias of <a href="https://lake-shore-python-driver.readthedocs.io/en/latest/model_335.html#lakeshore.temperature_controllers.OperationEvent" target="_blank" rel="noopener"><code>lakeshore.temperature_controllers.OperationEvent</code></a></p>
 </li>
-<li><p><em>class</em><code>lakeshore.temperature_controllers.``OperationEvent</code>(<em>alarm</em>, <em>sensor_overload</em>, <em>loop_2_ramp_done</em>, <em>loop_1_ramp_done</em>, <em>new_sensor_reading</em>, <em>autotune_process_completed</em>, <em>calibration_error</em>, <em>processor_communication_error</em>)</p>
+<li>
+<p><em>class</em><code>lakeshore.temperature_controllers.``OperationEvent</code>(<em>alarm</em>, <em>sensor_overload</em>, <em>loop_2_ramp_done</em>, <em>loop_1_ramp_done</em>, <em>new_sensor_reading</em>, <em>autotune_process_completed</em>, <em>calibration_error</em>, <em>processor_communication_error</em>)</p>
 <p>Class object representing the status byte register LSB to MSB</p>
 </li>
-<li><p><em>class</em><code>lakeshore.model_335.``Model335InputReadingStatus</code>(<em>invalid_reading</em>, <em>temp_underrange</em>, <em>temp_overrange</em>, <em>sensor_units_zero</em>, <em>sensor_units_overrange</em>)</p>
+<li>
+<p><em>class</em><code>lakeshore.model_335.``Model335InputReadingStatus</code>(<em>invalid_reading</em>, <em>temp_underrange</em>, <em>temp_overrange</em>, <em>sensor_units_zero</em>, <em>sensor_units_overrange</em>)</p>
 <p>Class object representing the input status flag bits</p>
 </li>
 </ul>
@@ -772,7 +826,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Model-335-Cryogenic-Temperature-Controller"><span class="toc-number">1.</span> <span class="toc-text">Model 335 Cryogenic Temperature Controller</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Example-Scripts"><span class="toc-number">1.1.</span> <span class="toc-text">Example Scripts</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Setting-a-temperature-curve"><span class="toc-number">1.1.1.</span> <span class="toc-text">Setting a temperature curve</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Recording-data-with-the-Model-335"><span class="toc-number">1.1.2.</span> <span class="toc-text">Recording data with the Model 335</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Setting-up-autotune-on-the-Model-335"><span class="toc-number">1.1.3.</span> <span class="toc-text">Setting up autotune on the Model 335</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Enumeration-objects"><span class="toc-number">1.2.</span> <span class="toc-text">Enumeration objects</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Status-register-classes"><span class="toc-number">1.3.</span> <span class="toc-text">Status register classes</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">Model 335 Cryogenic Temperature Controller</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Example-Scripts"><span class="toc-number">1.1.</span> <span class="toc-text">Example Scripts</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Setting-a-temperature-curve"><span class="toc-number">1.1.1.</span> <span class="toc-text">Setting a temperature curve</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Recording-data-with-the-Model-335"><span class="toc-number">1.1.2.</span> <span class="toc-text">Recording data with the Model 335</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Setting-up-autotune-on-the-Model-335"><span class="toc-number">1.1.3.</span> <span class="toc-text">Setting up autotune on the Model 335</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Enumeration-objects"><span class="toc-number">1.2.</span> <span class="toc-text">Enumeration objects</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Status-register-classes"><span class="toc-number">1.3.</span> <span class="toc-text">Status register classes</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1946,11 +2000,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
-    
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
     
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
@@ -1958,13 +2010,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
-        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
     
         <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
-        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
-    
-        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
@@ -1976,21 +2026,29 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
     
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
-    
         <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
+    
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+    
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
+    
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+    
+        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
         <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
     
         <span class="sidebar-tag-name" data-tags="Nanodevice"><span class="iconfont-archer">&#xe606;</span>Nanodevice</span>
-    
-        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
-    
-        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
-    
-        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -2000,33 +2058,29 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
-    
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
-    
         <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
     
         <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
+    
+        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
-        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
+        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
+    
+        <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
         <span class="sidebar-tag-name" data-tags="Condense Physics"><span class="iconfont-archer">&#xe606;</span>Condense Physics</span>
     
-        <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
-    
-        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
-    
         <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
     
         <span class="sidebar-tag-name" data-tags="Avalanche"><span class="iconfont-archer">&#xe606;</span>Avalanche</span>
-    
-        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
         <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
     
@@ -2034,7 +2088,7 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
+        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -2069,37 +2123,37 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
-    
         <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
-        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
-    
-        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
-    
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
