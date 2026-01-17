@@ -307,7 +307,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">911</span>Reading time: <span class="post-count reading-time">5 min</span></span>
+                        <span>Word count: <span class="post-count word-count">912</span>Reading time: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -438,8 +438,8 @@ height:50vh;
     <article class="article-entry">
         <p>基于pymeasure库开发，控制2400源表进行电流循环扫描，可以实时绘图或扫描完成后进行结果分析。</p>
 <a id="more"></a>
-
-<h1 id="Keithley-2400源表电流扫描Python程序"><a href="#Keithley-2400源表电流扫描Python程序" class="headerlink" title="Keithley 2400源表电流扫描Python程序"></a>Keithley 2400源表电流扫描Python程序</h1><p>基于pymeasure库开发，控制源表进行电流循环扫描，可以实时绘图或扫描完成后进行结果分析。</p>
+<h1>Keithley 2400源表电流扫描Python程序</h1>
+<p>基于pymeasure库开发，控制源表进行电流循环扫描，可以实时绘图或扫描完成后进行结果分析。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Keithley I-V Sweep</span></span><br><span class="line"><span class="string">Demis D. John, October 2014, Univ. of California Santa Barbara</span></span><br><span class="line"><span class="string">Program to sweep voltage &amp; measure current on Keithley SMU</span></span><br><span class="line"><span class="string">Known bugs: With PythonXY, the plot window opens *behind* the current window.</span></span><br><span class="line"><span class="string">Also, file is saved *usually* in same directory as this script - but at one point it kept saving into the PythonXY directory, which was confusing.  Probably need to set the Python working directory to be sure.</span></span><br><span class="line"><span class="string">Edit/Run this file via Python(x,y) (click the 1st button to open the Spyder IDE)</span></span><br><span class="line"><span class="string">Installed PyVISA for GPIB communication.</span></span><br><span class="line"><span class="string">Spyder Editor. </span></span><br><span class="line"><span class="string">Based off Steve Nichols' Script from ~2010, Univ. of California Santa Barbara</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line">SaveFiles = <span class="literal">False</span>   <span class="comment"># Save the plot &amp; data?  Only display if False.</span></span><br><span class="line"></span><br><span class="line">DevName = <span class="string">'I-V Curve 01'</span> <span class="comment"># will be inserted into filename of saved plot</span></span><br><span class="line">Keithley_GPIB_Addr = <span class="number">18</span>  <span class="comment"># Keithley 2400 SourceMeter GPIB address is 16</span></span><br><span class="line">SR400_GPIB_Addr = <span class="number">32</span>  <span class="comment"># Keithley 2400 SourceMeter GPIB address is 16</span></span><br><span class="line"></span><br><span class="line">SweepMode = <span class="string">'Current'</span> <span class="comment"># 'Voltage' for I-V curve, 'Current' for V-I curve</span></span><br><span class="line">VoltageComp = <span class="number">10</span>       <span class="comment"># compliance (max) current</span></span><br><span class="line">CurrentComp = <span class="number">100.0e-3</span>    <span class="comment"># compliance (max) current</span></span><br><span class="line">start = <span class="number">0</span>     <span class="comment"># starting value of Voltage sweep</span></span><br><span class="line">stop = +<span class="number">0.05</span>    <span class="comment"># ending value </span></span><br><span class="line">numpoints = <span class="number">40</span>  <span class="comment"># number of points in sweep</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pyvisa <span class="keyword">as</span> visa          <span class="comment"># PyVISA module, for GPIB comms</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> N    <span class="comment"># enable NumPy numerical analysis</span></span><br><span class="line"><span class="keyword">import</span> time          <span class="comment"># to allow pause between measurements</span></span><br><span class="line"><span class="keyword">import</span> os            <span class="comment"># Filesystem manipulation - mkdir, paths etc.</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt <span class="comment"># for python-style plottting</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Open Visa connections to instruments</span></span><br><span class="line"><span class="comment"># keithley = visa.GpibInstrument(22)     # GPIB addr 22</span></span><br><span class="line">rm = visa.ResourceManager()</span><br><span class="line">keithley = rm.open_resource(<span class="string">'GPIB0::'</span> + str(Keithley_GPIB_Addr) + <span class="string">'::INSTR'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> SweepMode==<span class="string">'Current'</span>:</span><br><span class="line">    <span class="comment"># Setup Keithley for current loop</span></span><br><span class="line">    keithley.write(<span class="string">"*RST"</span>)</span><br><span class="line">    print(<span class="string">"reset the instrument"</span>)</span><br><span class="line">    keithley.write(<span class="string">":SOUR:FUNC:MODE CURR"</span>)  <span class="comment"># current source</span></span><br><span class="line">    keithley.write(<span class="string">":SOURce:CURRent:MODE FIXed"</span>)  <span class="comment">#Select fixed sourcing mode for I-source.</span></span><br><span class="line">    keithley.write(<span class="string">":SOURce:CURRent:RANGe:AUTO 1"</span>)  <span class="comment">#Select I-source range (n = range).</span></span><br><span class="line">    keithley.write(<span class="string">":SENS:FUNC \"VOLT\""</span>)  <span class="comment">#Select measure function (function = “VOLTage” or “CURRent”).</span></span><br><span class="line">    keithley.write(<span class="string">":SENS:VOLT:PROT:LEV "</span> + str(VoltageComp))  <span class="comment"># set voltage compliance</span></span><br><span class="line">    keithley.write(<span class="string">":SENS:VOLT:RANGE:AUTO 1"</span>)   <span class="comment"># set current reading range to auto (boolean)</span></span><br><span class="line">    keithley.write(<span class="string">":OUTP ON"</span>)                             <span class="comment"># turn on output</span></span><br><span class="line">    print(<span class="string">"keithley Current source initialized ..."</span>)</span><br><span class="line"><span class="keyword">elif</span> SweepMode==<span class="string">'Voltage'</span>:</span><br><span class="line">    <span class="comment"># Setup electrodes as voltage source</span></span><br><span class="line">    keithley.write(<span class="string">"*RST"</span>)</span><br><span class="line">    print(<span class="string">"reset the instrument"</span>)</span><br><span class="line">    time.sleep(<span class="number">0.5</span>)    <span class="comment"># add second between</span></span><br><span class="line">    keithley.write(<span class="string">":SOUR:FUNC:MODE VOLT"</span>)</span><br><span class="line">    keithley.write(<span class="string">":SENS:CURR:PROT:LEV "</span> + str(CurrentComp))</span><br><span class="line">    keithley.write(<span class="string">":SENS:CURR:RANGE:AUTO 1"</span>)   <span class="comment"># set current reading range to auto (boolean)</span></span><br><span class="line">    keithley.write(<span class="string">":OUTP ON"</span>)                    <span class="comment"># Output on    </span></span><br><span class="line">    print(<span class="string">"keithley Voltage source initialized ..."</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">raise</span> ValueError(<span class="string">'SweepMode initialization error!'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Loop to sweep voltage</span></span><br><span class="line">Voltage = []</span><br><span class="line">Current = []</span><br><span class="line">Resistent = []</span><br><span class="line">Timestamp = []</span><br><span class="line">Status = []</span><br><span class="line">plt.ion()</span><br><span class="line"><span class="keyword">if</span> SweepMode==<span class="string">'Voltage'</span>:</span><br><span class="line">    <span class="keyword">for</span> V <span class="keyword">in</span> N.linspace(start, stop, num=numpoints, endpoint=<span class="literal">True</span>):</span><br><span class="line">        print(<span class="string">"Voltage set to: "</span> + str(V) + <span class="string">" V"</span> )</span><br><span class="line">        keithley.write(<span class="string">":SOUR:VOLT "</span> + str(V))</span><br><span class="line">        <span class="comment">#time.sleep(0.1)    # add second between</span></span><br><span class="line">        data = keithley.query(<span class="string">":READ?"</span>)   <span class="comment">#returns string with many values (V, I, ...)</span></span><br><span class="line">        answer = data.split(<span class="string">','</span>)    <span class="comment"># remove delimiters, return values into list elements</span></span><br><span class="line">        I = eval( answer.pop(<span class="number">1</span>) ) * <span class="number">1e3</span>     <span class="comment"># convert to number</span></span><br><span class="line">        Current.append( I )</span><br><span class="line">        vread = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Voltage.append(vread)</span><br><span class="line">        resis = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Resistent.append(resis)</span><br><span class="line">        t = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Timestamp.append(t)</span><br><span class="line">        stat = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Status.append(stat)</span><br><span class="line">        plt.clf()</span><br><span class="line">        plt.plot(Current, Voltage, <span class="string">'*-'</span>)</span><br><span class="line">        plt.xlabel(<span class="string">"Current (mA)"</span>)</span><br><span class="line">        plt.ylabel(<span class="string">"Voltage (V)"</span>)</span><br><span class="line">        plt.pause(<span class="number">0.01</span>)</span><br><span class="line">        plt.ioff()</span><br><span class="line">        <span class="comment">#Current.append(  I  )          # read the current</span></span><br><span class="line">        print(<span class="string">"--&gt; Current = "</span> + str(Current[<span class="number">-1</span>]) + <span class="string">' mA'</span>)   <span class="comment"># print last read value</span></span><br><span class="line">    <span class="comment">#end for(V)</span></span><br><span class="line"><span class="keyword">elif</span> SweepMode==<span class="string">'Current'</span>:</span><br><span class="line">    <span class="keyword">for</span> I <span class="keyword">in</span> N.linspace(start, stop, num=numpoints, endpoint=<span class="literal">True</span>):</span><br><span class="line">        print(<span class="string">"Current set to: "</span> + str(I) + <span class="string">" A"</span> )</span><br><span class="line">        keithley.write(<span class="string">":SOUR:CURR "</span> + str(I))</span><br><span class="line">        <span class="comment">#time.sleep(0.1)    # add second between</span></span><br><span class="line">        data = keithley.query(<span class="string">":READ?"</span>)   <span class="comment">#returns string with many values (V, I, ...)</span></span><br><span class="line">        answer = data.split(<span class="string">','</span>)    <span class="comment"># remove delimiters, return values into list elements</span></span><br><span class="line">        I = eval( answer.pop(<span class="number">1</span>) ) * <span class="number">1e3</span>     <span class="comment"># convert to number</span></span><br><span class="line">        Current.append( I )</span><br><span class="line">        vread = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Voltage.append(vread)</span><br><span class="line">        resis = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Resistent.append(resis)</span><br><span class="line">        t = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Timestamp.append(t)</span><br><span class="line">        stat = eval( answer.pop(<span class="number">0</span>) )</span><br><span class="line">        Status.append(stat)</span><br><span class="line">        <span class="comment">#Current.append(  I  )          # read the current</span></span><br><span class="line">        print(<span class="string">"--&gt; Voltage = "</span> + str(Voltage[<span class="number">-1</span>]) + <span class="string">' V'</span>)   <span class="comment"># print last read value</span></span><br><span class="line">    <span class="comment">#end for(V)</span></span><br><span class="line"></span><br><span class="line">keithley.write(<span class="string">":OUTP OFF"</span>)     <span class="comment"># turn off</span></span><br><span class="line">keithley.write(<span class="string">":SYSTem:BEEPer 1046, 0.1"</span>)</span><br><span class="line">time.sleep(<span class="number">0.1</span>)</span><br><span class="line">keithley.write(<span class="string">":SYSTem:BEEPer 784, 0.1"</span>)</span><br><span class="line">time.sleep(<span class="number">0.1</span>)</span><br><span class="line">keithley.write(<span class="string">":SYSTem:BEEPer 523, 0.1"</span>)</span><br><span class="line">time.sleep(<span class="number">0.1</span>)</span><br><span class="line">keithley.write(<span class="string">":SYSTem:BEEPer 587, 0.2"</span>)</span><br><span class="line">keithley.write(<span class="string">"SYSTEM:KEY 23"</span>) <span class="comment"># change to local control</span></span><br><span class="line">keithley.close()</span><br><span class="line"></span><br><span class="line"><span class="comment">#plt.plot(Current, Voltage, '*-')</span></span><br><span class="line"><span class="comment">#plt.xlabel("Current (mA)")</span></span><br><span class="line"><span class="comment">#plt.ylabel("Voltage (V)")</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> SaveFiles:</span><br><span class="line">    <span class="comment"># create subfolder if needed:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(DevName): os.mkdir(DevName)</span><br><span class="line">    curtime = time.strftime(<span class="string">'%Y-%M-%d_%H%M.%S'</span>)</span><br><span class="line">    SavePath = os.path.join(DevName, <span class="string">'I-V Curve - '</span> + DevName + <span class="string">' - ['</span> + curtime +<span class="string">']'</span> )</span><br><span class="line">    </span><br><span class="line">    data = np.array(  zip(Current, Voltage)  )</span><br><span class="line">    np.savetxt( SavePath + <span class="string">'.txt'</span>, data, fmt=<span class="string">"%e"</span>, delimiter=<span class="string">"\t"</span>, header=<span class="string">"Current (A)\tVoltage (V)"</span> )</span><br><span class="line">    <span class="comment">#np.array(Voltage).tofile(  os.path.join(DevName, 'I-V Voltage - ' + DevName + ' - [' + curtime +'].txt' )  )</span></span><br><span class="line">    <span class="comment">#np.array(Current).tofile(  os.path.join(DevName, 'I-V Current - ' + DevName + ' - [' + curtime +'].txt' )  )</span></span><br><span class="line"><span class="comment">#end if(SaveFiles)</span></span><br></pre></td></tr></table></figure>
     </article>
     <!-- license  -->
@@ -612,7 +612,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Keithley-2400源表电流扫描Python程序"><span class="toc-number">1.</span> <span class="toc-text">Keithley 2400源表电流扫描Python程序</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">Keithley 2400源表电流扫描Python程序</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1786,19 +1786,25 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
-    
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
     
-        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
     
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
+        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
+    
+        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+    
         <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
+    
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
     
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
@@ -1806,23 +1812,29 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
     
-        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
-    
-        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
-    
-        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
         <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
     
-        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
-    
         <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
     
-        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
         <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
     
         <span class="sidebar-tag-name" data-tags="Nanodevice"><span class="iconfont-archer">&#xe606;</span>Nanodevice</span>
+    
+        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
+    
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+    
+        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -1832,37 +1844,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
-    
-        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
-    
-        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
-    
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
-    
-        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
-    
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
-    
-        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
-    
-        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
-    
         <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
-        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
+        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
+    
+        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
         <span class="sidebar-tag-name" data-tags="Condense Physics"><span class="iconfont-archer">&#xe606;</span>Condense Physics</span>
     
-        <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
-    
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
+        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
     
         <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
     
@@ -1873,6 +1869,10 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
         <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
@@ -1909,35 +1909,35 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
-    
         <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
-    
         <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
-        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
-    
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+    
         <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
     
