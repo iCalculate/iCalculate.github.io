@@ -440,85 +440,67 @@ height:50vh;
     <article class="article-entry">
         <p>A path from planar 2D-FETs to high-performance 2D-CFETs</p>
 <a id="more"></a>
-<h2 id="The-Si-based-logic-scaling-roadmap">The Si-based logic scaling roadmap</h2>
-<p>It has been clear for nearly two decades that the pure dimensional scaling inspired by Moore’s Law is no longer the only indicator to predict the evolution of CMOS technology nodes. The first sign came around 2005 when node-to-node performance improvements at fixed power – referred to as Dennard scaling – started to slow down. Gradually, the semiconductor industry started to complement lithography-centric scaling with other technology innovations to <strong>maintain the performance-power-area-cost benefit</strong>: material and architectural explorations at transistor level, design-technology co-optimization at standard cell level, and <a href="https://www.imec-int.com/en/articles/unlocking-system-scaling-bottlenecks-system-technology-co-optimization" target="_blank" rel="noopener">system-technology co-optimization</a> enabled by 3D integration technologies.</p>
+
+<h2 id="The-Si-based-logic-scaling-roadmap"><a href="#The-Si-based-logic-scaling-roadmap" class="headerlink" title="The Si-based logic scaling roadmap"></a>The Si-based logic scaling roadmap</h2><p>It has been clear for nearly two decades that the pure dimensional scaling inspired by Moore’s Law is no longer the only indicator to predict the evolution of CMOS technology nodes. The first sign came around 2005 when node-to-node performance improvements at fixed power – referred to as Dennard scaling – started to slow down. Gradually, the semiconductor industry started to complement lithography-centric scaling with other technology innovations to <strong>maintain the performance-power-area-cost benefit</strong>: material and architectural explorations at transistor level, design-technology co-optimization at standard cell level, and <a href="https://www.imec-int.com/en/articles/unlocking-system-scaling-bottlenecks-system-technology-co-optimization" target="_blank" rel="noopener">system-technology co-optimization</a> enabled by 3D integration technologies.</p>
 <p><strong>At transistor level</strong>, the scaling-induced performance degradation originated from short channel phenomena. The combination of strong gate length reduction and the shortening of the conduction channel led to an increase in leakage current, even when no voltage was applied to the gate. Similarly, the impact of source and drain on the shrinking channel region grew dramatically.</p>
 <p>These <strong>short channel effects</strong> drove the chip industry to <strong>transition from planar MOSFET to FinFET</strong>, and recently, <strong>to gate-all-around</strong> <strong>(GAA) <a href="https://www.imec-int.com/en/articles/entering-nanosheet-transistor-era-0" target="_blank" rel="noopener">nanosheet</a> transistors</strong> for high-performance computing applications. These architectural innovations allowed the gate to regain electrostatic control over the conduction channel. The nanosheet family of transistors promises to continue the logic <a href="https://www.imec-int.com/en/articles/smaller-better-faster-imec-presents-chip-scaling-roadmap" target="_blank" rel="noopener">scaling roadmap</a> with at least three technology generations, when combined with innovations at standard cell level. These include, among others, advanced interconnect and middle-of-line schemes and the introduction of <a href="https://www.imec-int.com/en/articles/how-power-chips-backside" target="_blank" rel="noopener">backside power delivery</a> networks (BSPDNs).</p>
 <p>The <strong>complementary FET or <a href="https://www.imec-int.com/en/articles/imec-puts-complementary-fet-cfet-logic-technology-roadmap" target="_blank" rel="noopener">CFET</a></strong> will be the <strong>next game changer</strong>, allowing further area reduction by stacking n and p channels on top of each other. Imec foresees its introduction from the A7 node onwards, extending the imec technology roadmap to at least the A3 generation. Just like in GAA nanosheet transistors, the gate – now common to n and p – fully wraps around and in between the Si channels, ensuring maximal electrostatic control.</p>
-<h2 id="Enter-2D-materials">Enter: 2D materials</h2>
-<p>But eventually, even in the CFET transistor era, short channel effects will again complicate further scaling. The continuous reduction of the transistor’s gate and channel length requires <strong>ever thinner semiconductor channels</strong> to restrict the pathway for the current to flow, hence limiting the opportunity for charge carriers to leak when the device is turned off. To move CFET transistors into the A2 transistor technology node with conduction channel lengths below 10nm, the Si channel’s thickness should also shrink below 10nm. But in such thin Si channels, the mobility of the charge carriers and the transistor’s on-state current begin to decline dramatically.</p>
-<p><img src="https://www.imec-int.com/_next/image?url=https%3A%2F%2Fdrupal.imec-int.com%2Fsites%2Fdefault%2Ffiles%2F2025-01%2FFigure%25201%2520-%2520Imec%2520roadmap.png&amp;w=3840&amp;q=75" alt="Article 2D-material"></p>
+<h2 id="Enter-2D-materials"><a href="#Enter-2D-materials" class="headerlink" title="Enter: 2D materials"></a>Enter: 2D materials</h2><p>But eventually, even in the CFET transistor era, short channel effects will again complicate further scaling. The continuous reduction of the transistor’s gate and channel length requires <strong>ever thinner semiconductor channels</strong> to restrict the pathway for the current to flow, hence limiting the opportunity for charge carriers to leak when the device is turned off. To move CFET transistors into the A2 transistor technology node with conduction channel lengths below 10nm, the Si channel’s thickness should also shrink below 10nm. But in such thin Si channels, the mobility of the charge carriers and the transistor’s on-state current begin to decline dramatically.</p>
+<p><img src="https://www.imec-int.com/_next/image?url=https://drupal.imec-int.com/sites/default/files/2025-01/Figure%25201%2520-%2520Imec%2520roadmap.png&w=3840&q=75" alt="Article 2D-material"></p>
 <p><em>Figure 1 – The imec logic technology roadmap.</em></p>
 <p>That’s where 2D semiconductors, more particularly, <strong>transition metal dichalcogenides (MX2</strong>), provide an opportunity. In these semiconductors, atoms are arranged in layered crystals with a single layer thickness of only ~0.7nm, allowing for very thin channels. In addition, they promise to maintain a relatively high carrier mobility independent of channel thickness. This enables <strong>ultimate gate and channel length scaling</strong> without worrying about short channel effects.</p>
-<h2 id="2D-material-integration-in-advanced-nodes-challenges">2D material integration in advanced nodes: challenges</h2>
-<p>The big performance leap that 2D channel materials can deliver at ultimately scaled nodes has sparked the interest of <strong>major chip manufacturers and academic leaders</strong> in the field. Encouragingly, they have started to invest heavily in research and development to overcome the obstacles of introducing 2D materials in the most advanced nodes. <strong>2D-material integration</strong> indeed comes with its own set of <strong>challenges</strong>, adding to the cost and integration efforts towards A2 node introduction.</p>
-<h3 id="2D-material-deposition"><strong>2D material deposition</strong></h3>
-<p>First, there is the challenge of <strong>depositing</strong> the 2D materials layers. For applications requiring high-performance devices, two main routes can be followed: (1) direct growth of the 2D material on the target substrate, and (2) the growth on a ‘growth substrate’ followed by a transfer of the layer to the target substrate.</p>
+<h2 id="2D-material-integration-in-advanced-nodes-challenges"><a href="#2D-material-integration-in-advanced-nodes-challenges" class="headerlink" title="2D material integration in advanced nodes: challenges"></a>2D material integration in advanced nodes: challenges</h2><p>The big performance leap that 2D channel materials can deliver at ultimately scaled nodes has sparked the interest of <strong>major chip manufacturers and academic leaders</strong> in the field. Encouragingly, they have started to invest heavily in research and development to overcome the obstacles of introducing 2D materials in the most advanced nodes. <strong>2D-material integration</strong> indeed comes with its own set of <strong>challenges</strong>, adding to the cost and integration efforts towards A2 node introduction.</p>
+<h3 id="2D-material-deposition"><a href="#2D-material-deposition" class="headerlink" title="2D material deposition"></a><strong>2D material deposition</strong></h3><p>First, there is the challenge of <strong>depositing</strong> the 2D materials layers. For applications requiring high-performance devices, two main routes can be followed: (1) direct growth of the 2D material on the target substrate, and (2) the growth on a ‘growth substrate’ followed by a transfer of the layer to the target substrate.</p>
 <p><strong>Direct growth</strong> of the 2D material normally requires specific substrates and occurs at high temperatures (~1000°C). If industry compatible processes and materials are required, the growth substrate may however not be ideal for inducing a high degree of crystallization – degrading the film’s performance. Nevertheless, direct growth may offer conformality, wafer level coverage and compatibility with industrial processes.</p>
 <p>In the second approach, growth can take place on a foreign ‘ideal’ substrate (such as sapphire), facilitating high performing films and subsequent <strong>transfer</strong> to the target wafer. The transfer itself can be performed at much lower temperatures (around 300°C) than in the direct growth case. The increased number of process steps induced by transfer may however impact the cost and yield of the chip fabrication process.</p>
-<h3 id="Gate-stack-integration"><strong>Gate stack integration</strong></h3>
-<p>A second challenge relates to <strong>gate stack integration and dielectric deposition</strong>. Ironically, the very reason why 2D materials can be made so thin is also responsible for complicating dielectric deposition. The layers that make up the 2D materials are vertically bound to each other by very weak van der Waals (vdW) forces, leaving the surface mostly passivated – without any dangling bonds. This challenges the use of deposition techniques that have worked so well on Si, including atomic layer deposition (ALD) which relies on the interaction with dangling bonds on the surface.</p>
-<p><img src="https://www.imec-int.com/_next/image?url=https%3A%2F%2Fdrupal.imec-int.com%2Fsites%2Fdefault%2Ffiles%2F2025-01%2FFigure%25202%2520-%25202D%2520materials%2520-%2520vdWaals%2520forces.jpg&amp;w=3840&amp;q=75" alt="Article 2D-material"></p>
+<h3 id="Gate-stack-integration"><a href="#Gate-stack-integration" class="headerlink" title="Gate stack integration"></a><strong>Gate stack integration</strong></h3><p>A second challenge relates to <strong>gate stack integration and dielectric deposition</strong>. Ironically, the very reason why 2D materials can be made so thin is also responsible for complicating dielectric deposition. The layers that make up the 2D materials are vertically bound to each other by very weak van der Waals (vdW) forces, leaving the surface mostly passivated – without any dangling bonds. This challenges the use of deposition techniques that have worked so well on Si, including atomic layer deposition (ALD) which relies on the interaction with dangling bonds on the surface.</p>
+<p><img src="https://www.imec-int.com/_next/image?url=https://drupal.imec-int.com/sites/default/files/2025-01/Figure%25202%2520-%25202D%2520materials%2520-%2520vdWaals%2520forces.jpg&w=3840&q=75" alt="Article 2D-material"></p>
 <p><em>Figure 2 – Layers of 2D materials (WS2) bonded by weak van der Waals forces.</em></p>
 <p>In recent years, good progress has been made by imec and leading chip manufacturers, and n-type nanosheet 2D-channels with integrated gate stacks have been demonstrated – although mainly on <strong>lab-based devices</strong> [1-6].</p>
-<h3 id="Low-resistance-source-drain-contacts"><strong>Low-resistance source/drain contacts</strong></h3>
-<p>A third major challenge is the formation of <strong>low-resistance source/drain contacts</strong>. In the case of Si, source/drain contacts are formed by bringing a metal in contact with the source/drain regions, creating a Schottky barrier at the interface. Charge carriers can then be injected into the source by means of tunneling. To ensure low-resistance source/drain contacts, two key techniques are applied: (1) heavily doping of the source/drain regions; and (2) the formation of silicides. These enabling techniques are however very difficult to achieve on thin layers of 2D materials, spurring researchers to explore alternative solutions. [7-9]</p>
-<h3 id="Doping-of-2D-materials"><strong>Doping of 2D materials</strong></h3>
-<p>Doping of 2D materials is not only critical for obtaining low-resistance contacts. It is also required for tuning the threshold voltage (Vth) in the channel and for reducing the access resistance. Differently to its 3D counterparts, substitutional doping in 2D materials using conventional ion beam implantation greatly degrades the transport properties of the material. Due to its extremely thin nature, replacing even one atom in the lattice is much more impactful for 2D materials than 3D materials. Other <strong>techniques for doping</strong> are being explored (such as electrostatic doping or surface doping) but there is still no clear solution.</p>
-<h3 id="p-and-n-type-FETs"><strong>p and n type FETs</strong></h3>
-<p>CMOS technology applications rely on a combination of <strong>both n- and p-channel FETs</strong>. In standard CMOS technologies, Si is used to form both types of FETs. But no 2D material has been found so far to make that possible: the optimal material used for n types (such as MoS2) is not the optimal material for p-type FETs (with WSe2 being most promising).</p>
-<h3 id="Fab-integration-and-the-need-for-increased-reliability-and-variability"><strong>Fab integration and the need for increased reliability and variability</strong></h3>
-<p>Finally, until recently, research has mainly been carried out in the labs, where ‘hero’ devices could be obtained on cm-scale coupons. Huge development efforts are however needed to bring the processes to an industrial scale, compatible with <strong>300mm wafer integration</strong> [10]. In parallel, a boost in <strong>reliability</strong> and strong reduction of the <strong>variability</strong> are needed.</p>
-<h2 id="Introducing-2D-materials-in-lower-performant-devices-–-an-imec-approach">Introducing 2D materials in lower performant devices – an imec approach</h2>
-<p>While leading chip manufacturers and university groups are seeking solutions for introducing 2D materials in the conduction channels of the most advanced CFET architectures, <strong>imec takes a different turn</strong> – driven by the many integration challenges and expected costs.</p>
-<p>To reduce efforts and expected costs of introducing 2D materials, we opt to <strong>phase them into less advanced nodes and in less performing devices</strong>. We <strong>start</strong> focusing our module developments and 300mm wafer process development on <strong>planar 2D devices</strong>. By the time we need to integrate them into very <strong>complex CFET architectures</strong>, we can fall back on what we have learned. The 2D material will have already been introduced into the 300mm fab, solutions will be ready for dielectric deposition and source/drain contact formation, and routes will have been explored for increasing reliability and variability. Below, imec’s approach is described in more detail.</p>
-<p><img src="https://www.imec-int.com/_next/image?url=https%3A%2F%2Fdrupal.imec-int.com%2Fsites%2Fdefault%2Ffiles%2F2025-01%2FFigure%25203%2520-%2520Imec%2520approach.jpg&amp;w=3840&amp;q=75" alt="Article 2D-material"></p>
+<h3 id="Low-resistance-source-drain-contacts"><a href="#Low-resistance-source-drain-contacts" class="headerlink" title="Low-resistance source&#x2F;drain contacts"></a><strong>Low-resistance source&#x2F;drain contacts</strong></h3><p>A third major challenge is the formation of <strong>low-resistance source&#x2F;drain contacts</strong>. In the case of Si, source&#x2F;drain contacts are formed by bringing a metal in contact with the source&#x2F;drain regions, creating a Schottky barrier at the interface. Charge carriers can then be injected into the source by means of tunneling. To ensure low-resistance source&#x2F;drain contacts, two key techniques are applied: (1) heavily doping of the source&#x2F;drain regions; and (2) the formation of silicides. These enabling techniques are however very difficult to achieve on thin layers of 2D materials, spurring researchers to explore alternative solutions. [7-9]</p>
+<h3 id="Doping-of-2D-materials"><a href="#Doping-of-2D-materials" class="headerlink" title="Doping of 2D materials"></a><strong>Doping of 2D materials</strong></h3><p>Doping of 2D materials is not only critical for obtaining low-resistance contacts. It is also required for tuning the threshold voltage (Vth) in the channel and for reducing the access resistance. Differently to its 3D counterparts, substitutional doping in 2D materials using conventional ion beam implantation greatly degrades the transport properties of the material. Due to its extremely thin nature, replacing even one atom in the lattice is much more impactful for 2D materials than 3D materials. Other <strong>techniques for doping</strong> are being explored (such as electrostatic doping or surface doping) but there is still no clear solution.</p>
+<h3 id="p-and-n-type-FETs"><a href="#p-and-n-type-FETs" class="headerlink" title="p and n type FETs"></a><strong>p and n type FETs</strong></h3><p>CMOS technology applications rely on a combination of <strong>both n- and p-channel FETs</strong>. In standard CMOS technologies, Si is used to form both types of FETs. But no 2D material has been found so far to make that possible: the optimal material used for n types (such as MoS2) is not the optimal material for p-type FETs (with WSe2 being most promising).</p>
+<h3 id="Fab-integration-and-the-need-for-increased-reliability-and-variability"><a href="#Fab-integration-and-the-need-for-increased-reliability-and-variability" class="headerlink" title="Fab integration and the need for increased reliability and variability"></a><strong>Fab integration and the need for increased reliability and variability</strong></h3><p>Finally, until recently, research has mainly been carried out in the labs, where ‘hero’ devices could be obtained on cm-scale coupons. Huge development efforts are however needed to bring the processes to an industrial scale, compatible with <strong>300mm wafer integration</strong> [10]. In parallel, a boost in <strong>reliability</strong> and strong reduction of the <strong>variability</strong> are needed.  </p>
+<h2 id="Introducing-2D-materials-in-lower-performant-devices-–-an-imec-approach"><a href="#Introducing-2D-materials-in-lower-performant-devices-–-an-imec-approach" class="headerlink" title="Introducing 2D materials in lower performant devices – an imec approach"></a>Introducing 2D materials in lower performant devices – an imec approach</h2><p>While leading chip manufacturers and university groups are seeking solutions for introducing 2D materials in the conduction channels of the most advanced CFET architectures, <strong>imec takes a different turn</strong> – driven by the many integration challenges and expected costs.</p>
+<p>To reduce efforts and expected costs of introducing 2D materials, we opt to <strong>phase them into less advanced nodes and in less performing devices</strong>. We <strong>start</strong> focusing our module developments and 300mm wafer process development on <strong>planar 2D devices</strong>. By the time we need to integrate them into very <strong>complex CFET architectures</strong>, we can fall back on what we have learned. The 2D material will have already been introduced into the 300mm fab, solutions will be ready for dielectric deposition and source&#x2F;drain contact formation, and routes will have been explored for increasing reliability and variability. Below, imec’s approach is described in more detail.</p>
+<p><img src="https://www.imec-int.com/_next/image?url=https://drupal.imec-int.com/sites/default/files/2025-01/Figure%25203%2520-%2520Imec%2520approach.jpg&w=3840&q=75" alt="Article 2D-material"></p>
 <p><em>Figure 3 – Opportunities for 2D MX2 devices – an imec approach.</em></p>
-<h3 id="Planar-2D-based-n-or-pFETs-in-the-A7-technology-node"><strong>Planar 2D-based n or pFETs in the A7 technology node</strong></h3>
-<p>Imec is working on introducing <strong>2D MX2 based devices first in the A7 node</strong> of the imec logic technology roadmap. In this future technology generation, CFETs with Si channels will make up high-performant logic CMOS, power will be routed to these logic devices by BSPDNs,  and last-level cache memory may connect to the logic CMOS through advanced 3D integration technologies. An opportunity for planar 2D MX2 based devices are <strong>peripheral devices</strong>, residing <strong>in the back-end-of-line (BEOL) or even in the backside of the wafers</strong>. Think about low dropout voltage regulators (LDOs) and lower performant power switches that turn on (and off) blocks of logic CMOS devices.</p>
+<h3 id="Planar-2D-based-n-or-pFETs-in-the-A7-technology-node"><a href="#Planar-2D-based-n-or-pFETs-in-the-A7-technology-node" class="headerlink" title="Planar 2D-based n or pFETs in the A7 technology node"></a><strong>Planar 2D-based n or pFETs in the A7 technology node</strong></h3><p>Imec is working on introducing <strong>2D MX2 based devices first in the A7 node</strong> of the imec logic technology roadmap. In this future technology generation, CFETs with Si channels will make up high-performant logic CMOS, power will be routed to these logic devices by BSPDNs,  and last-level cache memory may connect to the logic CMOS through advanced 3D integration technologies. An opportunity for planar 2D MX2 based devices are <strong>peripheral devices</strong>, residing <strong>in the back-end-of-line (BEOL) or even in the backside of the wafers</strong>. Think about low dropout voltage regulators (LDOs) and lower performant power switches that turn on (and off) blocks of logic CMOS devices.</p>
 <p>Simulations by imec researchers show that planar nMOS devices with MX2 channel are very promising for such applications. In the wafer backside or <a href="https://www.imec-int.com/en/expertise/cmos-advanced/compute/beol" target="_blank" rel="noopener">BEOL</a>, there will be more space available to implement them. As such, their footprint can be relaxed compared to their (expensive) frontside counterparts, leaving room for larger, planar device architectures – either n or p type. For these applications, <strong>layer transfer</strong> is the preferred deposition technique: BEOL and backside processing both limit the available temperature budget to sub-400°C, as not to degrade the performance of the devices already present in the frontside. Direct growth of 2D materials at these low temperatures (in an industrially compatible fashion) is challenging, as it might result in layers of bad quality.</p>
-<h3 id="Planar-2D-based-n-and-pFETs-in-the-A3-node"><strong>Planar 2D-based n and pFETs in the A3 node</strong></h3>
-<p>In parallel, developments are ongoing for inserting the material in the <strong>imec A3 technology node</strong>. Here, imec anticipates the gradual transition towards <a href="https://www.imec-int.com/en/articles/cmos-20-bringing-heterogeneity-inside-system-chip" target="_blank" rel="noopener">CMOS 2.0</a> – a paradigm change that allows to unlock the potential of Moore’s Law by bringing hybrid integration inside the compute system-on-chip (SoC) [11]. It does so by re-partitioning the SoC into different functional layers (with the aid of STCO) and re-connecting them using advanced 3D interconnect and backside technologies. Instead of using the most advanced nodes for each functional part of the SoC, the functional layers can be built using the technology option that most closely matches their constraints. The layers that require extreme device density (e.g., the dense logic) will be made up of the most scaled technologies (i.e., CFET).</p>
-<p><img src="https://www.imec-int.com/_next/image?url=https%3A%2F%2Fdrupal.imec-int.com%2Fsites%2Fdefault%2Ffiles%2F2025-01%2FFigure%25204%2520-%2520CMOS%25202.0.jpg&amp;w=3840&amp;q=75" alt="Article 2D-material"></p>
+<h3 id="Planar-2D-based-n-and-pFETs-in-the-A3-node"><a href="#Planar-2D-based-n-and-pFETs-in-the-A3-node" class="headerlink" title="Planar 2D-based n and pFETs in the A3 node"></a><strong>Planar 2D-based n and pFETs in the A3 node</strong></h3><p>In parallel, developments are ongoing for inserting the material in the <strong>imec A3 technology node</strong>. Here, imec anticipates the gradual transition towards <a href="https://www.imec-int.com/en/articles/cmos-20-bringing-heterogeneity-inside-system-chip" target="_blank" rel="noopener">CMOS 2.0</a> – a paradigm change that allows to unlock the potential of Moore’s Law by bringing hybrid integration inside the compute system-on-chip (SoC) [11]. It does so by re-partitioning the SoC into different functional layers (with the aid of STCO) and re-connecting them using advanced 3D interconnect and backside technologies. Instead of using the most advanced nodes for each functional part of the SoC, the functional layers can be built using the technology option that most closely matches their constraints. The layers that require extreme device density (e.g., the dense logic) will be made up of the most scaled technologies (i.e., CFET).</p>
+<p><img src="https://www.imec-int.com/_next/image?url=https://drupal.imec-int.com/sites/default/files/2025-01/Figure%25204%2520-%2520CMOS%25202.0.jpg&w=3840&q=75" alt="Article 2D-material"></p>
 <p><em>Figure 4 - Example of a possible partitioning of an SoC in the CMOS 2.0 era.</em></p>
 <p>CMOS 2.0 allows a <strong>smooth introduction of 2D materials in different layers of the SoC</strong>. For example, power switches as part of the active interconnects in the wafer’s backside, or planar MX2 devices as part of the memory layers.</p>
-<h3 id="2D-based-GAA-nanosheets-and-CFETs"><strong>2D-based GAA nanosheets and CFETs</strong></h3>
-<p>While the above developments are taking place inside the 300mm cleanroom, imec at the same time explores the introduction of 2D materials as <strong>conduction channels in GAA nanosheet transistors</strong>. These studies take place at <strong>lab scale</strong> but do use fab-compatible tools and processes. The aim of these investigations is to address the impact of 2D material integration on nanosheet-specific modules, which will be relevant to CFET on the longer term. Think about the nanosheet channel release (i.e., the removal of sacrificial layers to form the nanosheet channels), inner spacer formation and the replacement metal gate integration step.</p>
-<h2 id="Learnings-obtained-on-lower-performant-planar-MX2-FETs-layer-transfer-pFET-integration-and-increased-reliability">Learnings obtained on lower-performant planar MX2 FETs: layer transfer, pFET integration and increased reliability</h2>
-<h3 id="300mm-templated-growth-and-layer-transfer-a-viable-route-towards-uniform-high-quality-2D-monolayers"><strong>300mm templated growth and layer transfer: a viable route towards uniform, high-quality 2D monolayers</strong></h3>
-<p><strong>Templated growth and layer transfer</strong> of 2D materials is an interesting approach to deposit high-quality layers of 2D materials on 300mm target wafers at temperatures below 400°C. With templated growth, a pre-defined ‘templated’ substrate (such as sapphire) is used to direct the growth of the 2D materials into one single crystal orientation. Afterwards, the ultrathin layers spanning the entire 300mm wafer surface need to be transferred to the target wafer without breaking.</p>
+<h3 id="2D-based-GAA-nanosheets-and-CFETs"><a href="#2D-based-GAA-nanosheets-and-CFETs" class="headerlink" title="2D-based GAA nanosheets and CFETs"></a><strong>2D-based GAA nanosheets and CFETs</strong></h3><p>While the above developments are taking place inside the 300mm cleanroom, imec at the same time explores the introduction of 2D materials as <strong>conduction channels in GAA nanosheet transistors</strong>. These studies take place at <strong>lab scale</strong> but do use fab-compatible tools and processes. The aim of these investigations is to address the impact of 2D material integration on nanosheet-specific modules, which will be relevant to CFET on the longer term. Think about the nanosheet channel release (i.e., the removal of sacrificial layers to form the nanosheet channels), inner spacer formation and the replacement metal gate integration step.</p>
+<h2 id="Learnings-obtained-on-lower-performant-planar-MX2-FETs-layer-transfer-pFET-integration-and-increased-reliability"><a href="#Learnings-obtained-on-lower-performant-planar-MX2-FETs-layer-transfer-pFET-integration-and-increased-reliability" class="headerlink" title="Learnings obtained on lower-performant planar MX2 FETs: layer transfer, pFET integration and increased reliability"></a>Learnings obtained on lower-performant planar MX2 FETs: layer transfer, pFET integration and increased reliability</h2><h3 id="300mm-templated-growth-and-layer-transfer-a-viable-route-towards-uniform-high-quality-2D-monolayers"><a href="#300mm-templated-growth-and-layer-transfer-a-viable-route-towards-uniform-high-quality-2D-monolayers" class="headerlink" title="300mm templated growth and layer transfer: a viable route towards uniform, high-quality 2D monolayers"></a><strong>300mm templated growth and layer transfer: a viable route towards uniform, high-quality 2D monolayers</strong></h3><p><strong>Templated growth and layer transfer</strong> of 2D materials is an interesting approach to deposit high-quality layers of 2D materials on 300mm target wafers at temperatures below 400°C. With templated growth, a pre-defined ‘templated’ substrate (such as sapphire) is used to direct the growth of the 2D materials into one single crystal orientation. Afterwards, the ultrathin layers spanning the entire 300mm wafer surface need to be transferred to the target wafer without breaking.</p>
 <p>At 2024 VLSI, imec has demonstrated a <strong>300mm MX2 dry transfer process flow</strong> which resulted for the first time in a repeatable process with excellent uniformity over the wafer (&gt;99.5% morphological yield) [12]. In addition, the number of defects was significantly reduced compared to other layer transfer approaches. Key to obtaining these breakthrough results is the use of <strong>bond front initiation during performant bonding</strong>, and photonic debonding during release of the temporary carrier. Bond front initiation is based on first applying a bonding force at the center of the wafer, which is then propagated towards the edges. The techniques were shown to mitigate void formation, improve bonding uniformity and yield little to no residues.</p>
-<p><img src="https://www.imec-int.com/_next/image?url=https%3A%2F%2Fdrupal.imec-int.com%2Fsites%2Fdefault%2Ffiles%2F2025-01%2FFigure%25205%2520-%2520Layer%2520transfer%2520-%2520process%2520flow.JPG&amp;w=3840&amp;q=75" alt="Article 2D-material"></p>
-<p><em>Figure 5 – Imec’s 300mm MX2 dry transfer process flow, including bond front initiation and photonic debonding. On this test vehicle, Si/SiO2 was used as the MX2 growth template (as shown at 2024 VLSI).</em></p>
+<p><img src="https://www.imec-int.com/_next/image?url=https://drupal.imec-int.com/sites/default/files/2025-01/Figure%25205%2520-%2520Layer%2520transfer%2520-%2520process%2520flow.JPG&w=3840&q=75" alt="Article 2D-material"></p>
+<p><em>Figure 5 – Imec’s 300mm MX2 dry transfer process flow, including bond front initiation and photonic debonding. On this test vehicle, Si&#x2F;SiO2 was used as the MX2 growth template (as shown at 2024 VLSI).</em></p>
 <p>This makes layer transfer a viable option for 2D material deposition. The proposed process flow uses 300mm compatible fabrication steps that are well-known to the chip industry – in the context of 3D SoC and chiplet integration.</p>
-<h3 id="Layer-transfer-applied-on-lab-based-GAA-nanosheets-good-layer-conformity-and-quality"><strong>Layer transfer applied on lab-based GAA nanosheets: good layer conformity and quality</strong></h3>
-<p>The imec team has applied the learnings obtained from the <strong>layer transfer</strong> on planar devices to GAA nanosheet test vehicles. The results show lab-based MX2 nFETs with excellent conformity, uniformity and layer quality. Layer transfer is an interesting approach for nanosheet channel-formation (so, also for CFETs), which is preferably done at temperatures below 600°C.</p>
-<p>In addition, at 2024 IEDM, imec for the first time reported functional stacked <strong>nanosheet FETs with monolayer MoS2 channels</strong> deposited via layer transfer on 300mm target wafers. The device shows comparable Ion (~451µA/µm) and record on-off ratio (&gt;109) compared to state of the art. Learnings based on planar devices were used for critical module development, including the gate module [13].</p>
-<p><img src="https://www.imec-int.com/_next/image?url=https%3A%2F%2Fdrupal.imec-int.com%2Fsites%2Fdefault%2Ffiles%2F2025-01%2FFigure%25206%2520-%2520TEM%2520of%2520MoS2%2520NS-FET.jpg&amp;w=3840&amp;q=75" alt="Article 2D-material"></p>
+<h3 id="Layer-transfer-applied-on-lab-based-GAA-nanosheets-good-layer-conformity-and-quality"><a href="#Layer-transfer-applied-on-lab-based-GAA-nanosheets-good-layer-conformity-and-quality" class="headerlink" title="Layer transfer applied on lab-based GAA nanosheets: good layer conformity and quality"></a><strong>Layer transfer applied on lab-based GAA nanosheets: good layer conformity and quality</strong></h3><p>The imec team has applied the learnings obtained from the <strong>layer transfer</strong> on planar devices to GAA nanosheet test vehicles. The results show lab-based MX2 nFETs with excellent conformity, uniformity and layer quality. Layer transfer is an interesting approach for nanosheet channel-formation (so, also for CFETs), which is preferably done at temperatures below 600°C.</p>
+<p>In addition, at 2024 IEDM, imec for the first time reported functional stacked <strong>nanosheet FETs with monolayer MoS2 channels</strong> deposited via layer transfer on 300mm target wafers. The device shows comparable Ion (~451µA&#x2F;µm) and record on-off ratio (&gt;109) compared to state of the art. Learnings based on planar devices were used for critical module development, including the gate module [13].</p>
+<p><img src="https://www.imec-int.com/_next/image?url=https://drupal.imec-int.com/sites/default/files/2025-01/Figure%25206%2520-%2520TEM%2520of%2520MoS2%2520NS-FET.jpg&w=3840&q=75" alt="Article 2D-material"></p>
 <p>*Figure 6 – TEM cross-section of a monolayer-*MoS2 <em>nanosheet FET with high-k and gate metal fully wrapped around the channel (as presented at 2024 IEDM).</em></p>
 <p>Alternatively, imec explores direct growth of 2D materials at reduced temperatures, which may enable good quality layers only when deposited at smaller, selected areas.</p>
-<h3 id="A-300mm-integration-platform-for-2D-based-planar-pFETs"><strong>A 300mm integration platform for 2D-based planar pFETs</strong></h3>
-<p>So far, most integration efforts have been made on n-type devices. At IEDM 2023, imec in collaboration with Intel were the first to demonstrate 300mm integrated planar <strong>WSe2 pFET transistors</strong>, using a similar process flow as for MoS2 nFETs [14]. The teams also provided a clear analysis of the impact of grain size on the performance and reliability of the device.</p>
-<h3 id="A-path-to-increased-reliability-and-reduced-variability"><strong>A path to increased reliability and reduced variability</strong></h3>
-<p>In previous years, imec and Vienna University of Technology (Prof. Tibor Grasser’s group) made progress in <strong>quantifying the reliability and variability</strong> of 2D-material based devices. They studied the impact of, for example, 2D layer thickness, crystal grain size and orientation, and 2D growth template on the performance of 300mm integrated MX2 planar devices. They were also able to identify the <strong>root cause</strong> of the reliability and variability issues and are now working towards solutions. [15]</p>
-<h2 id="Addressing-the-remaining-challenges-a-collaborative-effort">Addressing the remaining challenges: a collaborative effort</h2>
-<p>While big leaps forward have been made by various research groups worldwide, some breakthroughs are still needed to bridge the gap towards high-volume manufacturing at advanced nodes. Imec identifies <strong>fab-compatible source/drain contact formation</strong>, controllable <strong>doping</strong> and the enablement of <strong>CMOS</strong> with MX2 devices (i.e., integrating p and n type FETs together) as the most <strong>critical obstacles</strong> going forward. Solving these issues requires a <strong>collaborative effort</strong>, involving industry leaders, university groups and research institutions, as well as tool developers.</p>
+<h3 id="A-300mm-integration-platform-for-2D-based-planar-pFETs"><a href="#A-300mm-integration-platform-for-2D-based-planar-pFETs" class="headerlink" title="A 300mm integration platform for 2D-based planar pFETs"></a><strong>A 300mm integration platform for 2D-based planar pFETs</strong></h3><p>So far, most integration efforts have been made on n-type devices. At IEDM 2023, imec in collaboration with Intel were the first to demonstrate 300mm integrated planar <strong>WSe2 pFET transistors</strong>, using a similar process flow as for MoS2 nFETs [14]. The teams also provided a clear analysis of the impact of grain size on the performance and reliability of the device.</p>
+<h3 id="A-path-to-increased-reliability-and-reduced-variability"><a href="#A-path-to-increased-reliability-and-reduced-variability" class="headerlink" title="A path to increased reliability and reduced variability"></a><strong>A path to increased reliability and reduced variability</strong></h3><p>In previous years, imec and Vienna University of Technology (Prof. Tibor Grasser’s group) made progress in <strong>quantifying the reliability and variability</strong> of 2D-material based devices. They studied the impact of, for example, 2D layer thickness, crystal grain size and orientation, and 2D growth template on the performance of 300mm integrated MX2 planar devices. They were also able to identify the <strong>root cause</strong> of the reliability and variability issues and are now working towards solutions. [15]</p>
+<h2 id="Addressing-the-remaining-challenges-a-collaborative-effort"><a href="#Addressing-the-remaining-challenges-a-collaborative-effort" class="headerlink" title="Addressing the remaining challenges: a collaborative effort"></a>Addressing the remaining challenges: a collaborative effort</h2><p>While big leaps forward have been made by various research groups worldwide, some breakthroughs are still needed to bridge the gap towards high-volume manufacturing at advanced nodes. Imec identifies <strong>fab-compatible source&#x2F;drain contact formation</strong>, controllable <strong>doping</strong> and the enablement of <strong>CMOS</strong> with MX2 devices (i.e., integrating p and n type FETs together) as the most <strong>critical obstacles</strong> going forward. Solving these issues requires a <strong>collaborative effort</strong>, involving industry leaders, university groups and research institutions, as well as tool developers.</p>
 <p>With these issues solved, the future looks bright for 2D materials. Not only do they promise to <strong>advance the logic scaling roadmap from A7 on</strong>, but their characteristics also allow to <strong>expand the application domain</strong> far beyond logic. Benefiting from their extremely low off-state current, they show potential for <strong>embedded DRAM</strong> applications – possibly from the A7 node onwards. In addition, the transport properties of ‘surface-like’ 2D materials are very easy to perturbate, and this makes them ideally suited for <strong>probabilistic computing</strong> or even <strong>machine learning</strong> applications.</p>
 <p>[1] ‘First Demonstration of GAA Monolayer-MoS2 Nanosheet nFET with 410μA μ m ID 1V VD at 40nm gate length,’ Y. Chung et al., 2022 IEEE International Electron Devices Meeting (IEDM)</p>
 <p>[2] ‘High Mobility TMD NMOS and PMOS Transistors and GAA Architecture for Ultimate CMOS Scaling’, A. Penumatcha et al., 2023 IEEE International Electron Devices Meeting (IEDM)</p>
 <p>[3] ‘Status and Performance of Integration Modules Toward Scaled CMOS with Transition Metal Dichalcogenide Channel,’ A. Chou et al., 2023 IEEE International Electron Devices Meeting (IEDM)</p>
 <p>[4] ’Monolayer-MoS2 Stacked Nanosheet Channel with C-type Metal Contact,’ Y. Chung et al., 2023 IEEE International Electron Devices Meeting (IEDM)</p>
-<p>[5] ‘Dual gate synthetic WS2 MOSFETs with 120µS/µm Gm 2.7µF/cm2 capacitance and ambipolar channel,’ D. Lin et al., 2020 IEEE International Electron Devices Meeting (IEDM)</p>
+<p>[5] ‘Dual gate synthetic WS2 MOSFETs with 120µS&#x2F;µm Gm 2.7µF&#x2F;cm2 capacitance and ambipolar channel,’ D. Lin et al., 2020 IEEE International Electron Devices Meeting (IEDM)</p>
 <p>[6] ’Scaling synthetic WS2 dual-gate MOS devices towards sub-nm CET,’ D. Lin et al., VLSI 2021</p>
 <p>[7] ‘Yttrium-doping-induced metallization of molybdenum disulfide for ohmic contacts in two-dimensional transistors,’ Jiang, J., Xu, L., Du, L. et al., J. Nat Electron 7, 545–556 (2024). <a href="https://doi.org/10.1038/s41928-024-01176-2" target="_blank" rel="noopener">https://doi.org/10.1038/s41928-024-01176-2</a></p>
-<p>[8] ‘Antimony Semimetal Contact with Enhanced Thermal Stability for High Performance 2D Electronics,’ A. -S. Chou et al., 2021 IEEE International Electron Devices Meeting (IEDM), San Francisco, CA, USA, 2021, pp. 7.2.1-7.2.4, doi: 10.1109/IEDM19574.2021.9720608</p>
-<p>[9] ‘Advancing 2D Monolayer CMOS Through Contact, Channel and Interface Engineering,’ K. P. O’Brien et al., 2021 IEEE International Electron Devices Meeting (IEDM), San Francisco, CA, USA, 2021, pp. 7.1.1-7.1.4, doi: 10.1109/IEDM19574.2021.9720651</p>
+<p>[8] ‘Antimony Semimetal Contact with Enhanced Thermal Stability for High Performance 2D Electronics,’ A. -S. Chou et al., 2021 IEEE International Electron Devices Meeting (IEDM), San Francisco, CA, USA, 2021, pp. 7.2.1-7.2.4, doi: 10.1109&#x2F;IEDM19574.2021.9720608</p>
+<p>[9] ‘Advancing 2D Monolayer CMOS Through Contact, Channel and Interface Engineering,’ K. P. O’Brien et al., 2021 IEEE International Electron Devices Meeting (IEDM), San Francisco, CA, USA, 2021, pp. 7.1.1-7.1.4, doi: 10.1109&#x2F;IEDM19574.2021.9720651</p>
 <p>[10] ‘Process integration and future outlook of 2D transistors,’ K.P. O’Brien, <a href="https://www.nature.com/ncomms" target="_blank" rel="noopener">Nature Communications</a> volume 14, Article number: 6400 (2023)</p>
 <p>[11] <a href="https://www.imec-int.com/en/articles/cmos-20-bringing-heterogeneity-inside-system-chip" target="_blank" rel="noopener">‘CMOS 2.0: bringing heterogeneity inside the system-on-chip’</a>, imec Reading Room</p>
 <p>[12] ‘EOT scaling via 300mm MX2 dry transfer – Steps toward a manufacturable process development and device integration’, S. Ghosh et al., VLSI 2024</p>
-<p>[13] ‘High-performance monolayer-2D stacked nanosheet FETs with high ION ~ 451 μA/μm and ION/IOFF &gt; 109’, F. Xi et al., 2024 IEEE International Electron Devices Meeting (IEDM)</p>
+<p>[13] ‘High-performance monolayer-2D stacked nanosheet FETs with high ION ~ 451 μA&#x2F;μm and ION&#x2F;IOFF &gt; 109’, F. Xi et al., 2024 IEEE International Electron Devices Meeting (IEDM)</p>
 <p>[14] ‘Exploring manufacturability of novel 2D channel materials: 300mm wafer-scale 2D NMOS &amp; PMOS using MoS2, WS2, &amp; WSe2,’ C.J. Dorow, T. Schram et al., 2023 IEEE International Electron Devices Meeting (IEDM)</p>
-<p>[15] ‘Evidence of contact-induced variability in industrially-fabricated highly-scaled MoS2 FETs,’ L. Panarella et al., <a href="https://www.nature.com/npj2dmaterials" target="_blank" rel="noopener">npj 2D Materials and Applications</a> volume 8, Article number: 44 (2024)</p>
+<p>[15] ‘Evidence of contact-induced variability in industrially-fabricated highly-scaled MoS2 FETs,’ L. Panarella et al., <a href="https://www.nature.com/npj2dmaterials" target="_blank" rel="noopener">npj 2D Materials and Applications</a> volume 8, Article number: 44 (2024) </p>
 
     </article>
     <!-- license  -->
@@ -585,7 +567,7 @@ height:50vh;
             
                 <span class="iconfont-archer wechat" title=wechat>
                   
-                  <img class="profile-qr" src="/assets/WeChat_QR.jpg" />
+                  <img class="profile-qr" src="" />
                 </span>
             
         
@@ -594,14 +576,14 @@ height:50vh;
             
                 <span class="iconfont-archer qq" title=qq>
                   
-                  <img class="profile-qr" src="/assets/QQ_QR.jpg" />
+                  <img class="profile-qr" src="" />
                 </span>
             
         
     
         
             
-                <a href="https://t.me/chauncy_du" class="iconfont-archer telegram" target="_blank" title=telegram></a>
+                <a href="../../https:/t.me/chauncy_du" class="iconfont-archer telegram" target="_blank" title=telegram></a>
             
         
     
@@ -613,7 +595,7 @@ height:50vh;
     
         
             
-                <a href="https://www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+                <a href="../../https:/www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
             
         
     
@@ -631,19 +613,19 @@ height:50vh;
     
         
             
-                <a href="https://space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+                <a href="../../https:/space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
             
         
     
         
             
-                <a href="https://www.linkedin.com/in/xinchuan-du-a4b0b51bb/" class="iconfont-archer linkedin" target="_blank" title=linkedin></a>
+                <a href="../../https:/www.linkedin.com/in/xinchuan-du-a4b0b51bb/" class="iconfont-archer linkedin" target="_blank" title=linkedin></a>
             
         
     
         
             
-                <a href="https://steamcommunity.com/id/icalculate97/" class="iconfont-archer steam" target="_blank" title=steam></a>
+                <a href="../../https:/steamcommunity.com/id/icalculate97/" class="iconfont-archer steam" target="_blank" title=steam></a>
             
         
     
@@ -1860,25 +1842,25 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
-    
         <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
     
+        <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
+    
         <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
+        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
-        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
-    
-        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
         <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
         <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
     
         <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+    
+        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
@@ -1888,27 +1870,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
-    
         <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
-    
-        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
         <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
     
         <span class="sidebar-tag-name" data-tags="Nanodevice"><span class="iconfont-archer">&#xe606;</span>Nanodevice</span>
     
+        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
+    
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+    
         <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
-    
-        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
-    
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
     
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
-        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -1918,15 +1896,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
+    
+        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
-        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
-    
-        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
+        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
@@ -1934,19 +1916,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
     
+        <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
+    
         <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
     
         <span class="sidebar-tag-name" data-tags="Avalanche"><span class="iconfont-archer">&#xe606;</span>Avalanche</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
         <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
     
         <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
-    
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
         <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
@@ -1983,9 +1965,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
-    
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
@@ -1993,25 +1975,25 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
-    
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
-        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
-    
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
         <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
     
@@ -2052,27 +2034,7 @@ jsonContent:
     
         <script src="../../../../scripts/share.js" async></script>    
      
-    <script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['
-</html>
-
-
-, '
-</html>
-
-
-], ['\\(', '\\)']],
-    displayMath: [['$', '$'], ['\\[', '\\]']]
-  },
-  options: {
-    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-  }
-};
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</body>
+    </body>
 </html>
 
 
