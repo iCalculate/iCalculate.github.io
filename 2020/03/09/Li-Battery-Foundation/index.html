@@ -438,63 +438,50 @@ height:50vh;
     <article class="article-entry">
         <p>测定电池的放电曲线，是研究电池性能的基本方法之一，根据放电曲线，可以判断电池工作性能是否稳定，以及电池在稳定工作时所允许的最大电流。本文详细全面地介绍锂离子电池放电曲线的基础知识。由于作者水平有限，文中错误之处，欢迎批评指正。本文较长，10000多字，主要内容包括：</p>
 <p>锂离子电池放电时，它的工作电压总是随着时间的延续而不断发生变化，用电池的工作电压做纵坐标，放电时间，或容量，或荷电状态（SOC），或放电深度（DOD）做横坐标，绘制而成的曲线称为放电曲线。要认识电池的放电特性曲线，首先需要从原理上理解电池的电压。</p>
-<h2 id="1-电池的电压">1 电池的电压</h2>
-<p>电极反应要形成电池必须满足以下条件：化学反应中失去电子的过程(即氧化过程)和得到电子的过程(即还原反应过程)必须分隔在两个不同区域中进行，这区别于一般的氧化还原反应；两电极的活性物质进行氧化还原反应时所需的电子必须由外电路传递，这区别于金属腐蚀过程的微电池反应。电池的电压是正极与负极之间的电势差，具体的关键参数包括开路电压、工作电压、充放电截止电压等。</p>
-<h3 id="1-1-锂离子电池材料的电极电位">1.1 锂离子电池材料的电极电位</h3>
-<p>电极电位是指固体材料浸于电解质溶液中，显示出电的效应，即金属的表面与溶液间产生的电位差，这种电位差称为金属在此溶液中的电位或电极电位。简单说电极电位是表示某种离子或原子获得电子而被还原的趋势。</p>
+<h2 id="1-电池的电压"><a href="#1-电池的电压" class="headerlink" title="1 电池的电压"></a>1 电池的电压</h2><p>电极反应要形成电池必须满足以下条件：化学反应中失去电子的过程(即氧化过程)和得到电子的过程(即还原反应过程)必须分隔在两个不同区域中进行，这区别于一般的氧化还原反应；两电极的活性物质进行氧化还原反应时所需的电子必须由外电路传递，这区别于金属腐蚀过程的微电池反应。电池的电压是正极与负极之间的电势差，具体的关键参数包括开路电压、工作电压、充放电截止电压等。</p>
+<h3 id="1-1-锂离子电池材料的电极电位"><a href="#1-1-锂离子电池材料的电极电位" class="headerlink" title="1.1 锂离子电池材料的电极电位"></a>1.1 锂离子电池材料的电极电位</h3><p>电极电位是指固体材料浸于电解质溶液中，显示出电的效应，即金属的表面与溶液间产生的电位差，这种电位差称为金属在此溶液中的电位或电极电位。简单说电极电位是表示某种离子或原子获得电子而被还原的趋势。</p>
 <p>因此，对某种正极或负极材料来说，当处于有锂盐的电解质中时，其电极电位表示成：</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145810572201.webp!w720.jpg" alt="img"></p>
 <p>其中，φc即是这种物质表现出来的电极电位。表1中所列的标准电极电势（25.0℃，101.325kPa）是相对于标准氢电极电势的值。标准氢电极电势被规定为0.0V。</p>
 <p>表1  常见的材料在水溶液中的标准电极电势</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145811126852.webp!w720.jpg" alt="img"></p>
-<h3 id="1-2-电池的开路电压">1.2 电池的开路电压</h3>
-<p>电池电动势是根据电池反应，应用热力学方法进行计算的理论值，即电池在断路时处于可逆平衡状态下，正负极之间的平衡电极电势之差，是电池可以给出电压的极大值。而实际上，正负极在电解液中并不一定处于热力学平衡状态，即电池的正负极在电解质溶液中所建立的电极电势通常并非平衡电极电势，因此电池的开路电压一般均小于它的电动势。对于电极反应：</p>
+<h3 id="1-2-电池的开路电压"><a href="#1-2-电池的开路电压" class="headerlink" title="1.2 电池的开路电压"></a>1.2 电池的开路电压</h3><p>电池电动势是根据电池反应，应用热力学方法进行计算的理论值，即电池在断路时处于可逆平衡状态下，正负极之间的平衡电极电势之差，是电池可以给出电压的极大值。而实际上，正负极在电解液中并不一定处于热力学平衡状态，即电池的正负极在电解质溶液中所建立的电极电势通常并非平衡电极电势，因此电池的开路电压一般均小于它的电动势。对于电极反应：</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145811412014.webp!w720.jpg" alt="img"></p>
 <p>考虑反应物组分的非标准状态以及活性组分的活度（或浓度）随时间的变化，采用能斯特方程修正电池实际开路电压：</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145811102869.webp!w720.jpg" alt="img"></p>
-<p>其中，R是气体常数，T是反应温度，a是组分活度或浓度。电池的开路电压取决于电池正负极材料的性质、电解质和温度条件等，而与电池的几何结构和尺寸大小无关。</p>
+<p>其中，R是气体常数，T是反应温度，a是组分活度或浓度。电池的开路电压取决于电池正负极材料的性质、电解质和温度条件等，而与电池的几何结构和尺寸大小无关。 </p>
 <p>锂离子电极材料制备成极片，与金属锂片组装成纽扣半电池，可以测得电极材料在不同的SOC状态下的开路电压，开路电压曲线是电极材料荷电状态的反应，图1是磷酸铁锂电极材料的开路电压曲线，从开路电压曲线可以判定电极材料的对应的脱嵌锂状态。而电池的开路电压曲线是正负极材料信息的叠加状态。</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145811382346.webp!w720.jpg" alt="img"></p>
 <p>图1 磷酸铁锂电极材料的开路电压曲线</p>
 <p>电池贮存过程中开路电压会下降，但幅度不会很大，如果开路电压下降速度过快或幅度过大属异常现象。 两极活性物质表面状态变化及电池自放电是开路电压在贮存中下降的主要原因，具体包括正负极材料表面膜层的变化；电极热力学不稳定性造成的电位变化；金属异物杂质的溶解与析出；正负极之间隔膜造成的微短路等。锂离子电池在老化时， K值（电压降）的变化正是电极材料表面SEI膜的形成和稳定过程，如果电压降太大，说明内部存在微短路，判定电池为不合格品。</p>
-<h3 id="1-3-电池极化">1.3 电池极化</h3>
-<p>电流通过电极时，电极偏离平衡电极电势的现象称为极化，极化产生过电势。根据极化产生的原因可以将极化分为欧姆极化、浓差极化和电化学极化，图2是电池典型的放电曲线及各种极化对电压的影响。</p>
+<h3 id="1-3-电池极化"><a href="#1-3-电池极化" class="headerlink" title="1.3 电池极化"></a>1.3 电池极化</h3><p>电流通过电极时，电极偏离平衡电极电势的现象称为极化，极化产生过电势。根据极化产生的原因可以将极化分为欧姆极化、浓差极化和电化学极化，图2是电池典型的放电曲线及各种极化对电压的影响。</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145811200430.webp!w720.jpg" alt="img"></p>
 <p>图2 典型放电曲线及极化</p>
 <ol>
-<li>
-<p>欧姆极化：由电池连接各部分的电阻造成，其压降值遵循欧姆定律，电流减小，极化立即减小，电流停止后立即消失。</p>
+<li><p>欧姆极化：由电池连接各部分的电阻造成，其压降值遵循欧姆定律，电流减小，极化立即减小，电流停止后立即消失。</p>
 </li>
-<li>
-<p>电化学极化：由电极表面电化学反应的迟缓性造成极化。随着电流变小，在微秒级内显著降低。</p>
+<li><p>电化学极化：由电极表面电化学反应的迟缓性造成极化。随着电流变小，在微秒级内显著降低。</p>
 </li>
-<li>
-<p>浓差极化：由于溶液中离子扩散过程的迟缓性，造成在一定电流下电极表面与溶液本体浓度差，产生极化。这种极化随着电流下降，在宏观的秒级(几秒到几十秒)上降低或消失。</p>
+<li><p>浓差极化：由于溶液中离子扩散过程的迟缓性，造成在一定电流下电极表面与溶液本体浓度差，产生极化。这种极化随着电流下降，在宏观的秒级(几秒到几十秒)上降低或消失。</p>
 </li>
 </ol>
-<p>电池的内阻随电池放电电流的增大而增大，这主要是由于大的放电电流使得电池的极化趋势增大，并且放电电流越大，则极化的趋势就越明显，如图3所示。根据欧姆定律： V=E0-I×RT，内部整体电阻RT的增加，则电池电压达到放电截止电压所需要的时间也相应减少，故放出的容量也减少。</p>
+<p>电池的内阻随电池放电电流的增大而增大，这主要是由于大的放电电流使得电池的极化趋势增大，并且放电电流越大，则极化的趋势就越明显，如图3所示。根据欧姆定律： V&#x3D;E0-I×RT，内部整体电阻RT的增加，则电池电压达到放电截止电压所需要的时间也相应减少，故放出的容量也减少。</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145811278592.webp!w720.jpg" alt="img"></p>
 <p>图3 电流密度对极化的影响</p>
 <p>锂离子电池实质上是一种锂离子浓差电池，锂离子电池的充放电过程为锂离子在正负极的嵌入、脱出的过程。影响锂离子电池极化的因素包括：</p>
 <ol>
-<li>
-<p>电解液的影响：电解液电导率低是锂离子电池极化发生的主要原因。在一般温度范围内，锂离子电池用电解液的电导率一般只有0.01～0.1S/cm,，是水溶液的百分之一。因此，锂离子电池在大电流放电时，来不及从电解液中补充Li+，会发生极化现象。提高电解液的导电能力是改善锂离子电池大电流放电能力的关键因素。</p>
+<li><p>电解液的影响：电解液电导率低是锂离子电池极化发生的主要原因。在一般温度范围内，锂离子电池用电解液的电导率一般只有0.01～0.1S&#x2F;cm,，是水溶液的百分之一。因此，锂离子电池在大电流放电时，来不及从电解液中补充Li+，会发生极化现象。提高电解液的导电能力是改善锂离子电池大电流放电能力的关键因素。</p>
 </li>
-<li>
-<p>正负极材料的影响：正负极材料颗粒大锂离子扩散到表面的通道加长，不利于大倍率放电。</p>
+<li><p>正负极材料的影响：正负极材料颗粒大锂离子扩散到表面的通道加长，不利于大倍率放电。</p>
 </li>
-<li>
-<p>导电剂：导电剂的含量是影响高倍率放电性能的重要因素。如果正极配方中的导电剂含量不足，大电流放电时电子不能及时地转移，极化内阻迅速增大，使电池的电压很快降低到放电截止电压。</p>
+<li><p>导电剂：导电剂的含量是影响高倍率放电性能的重要因素。如果正极配方中的导电剂含量不足，大电流放电时电子不能及时地转移，极化内阻迅速增大，使电池的电压很快降低到放电截止电压。</p>
 </li>
-<li>
-<p>极片设计的影响：极片厚度：大电流放电的情况下，活性物质反应速度很快，要求锂离子能在材料中迅速的嵌入、脱出，若是极片较厚，锂离子扩散的路径增加，极片厚度方向会产生很大的锂离子浓度梯度。压实密度：极片的压实密度较大，孔隙变得更小，则极片厚度方向锂离子运动的路径更长。另外，压实密度过大，材料与电解液之间接触面积减小，电极反应场所减少，电池内阻也会增大。</p>
+<li><p>极片设计的影响：极片厚度：大电流放电的情况下，活性物质反应速度很快，要求锂离子能在材料中迅速的嵌入、脱出，若是极片较厚，锂离子扩散的路径增加，极片厚度方向会产生很大的锂离子浓度梯度。压实密度：极片的压实密度较大，孔隙变得更小，则极片厚度方向锂离子运动的路径更长。另外，压实密度过大，材料与电解液之间接触面积减小，电极反应场所减少，电池内阻也会增大。</p>
 </li>
-<li>
-<p>SEI膜的影响：SEI 膜的形成增加了电极/电解液界面的电阻，造成电压滞后即极化。</p>
+<li><p>SEI膜的影响：SEI 膜的形成增加了电极&#x2F;电解液界面的电阻，造成电压滞后即极化。</p>
 </li>
 </ol>
-<h3 id="1-4-电池的工作电压">1.4 电池的工作电压</h3>
-<p>工作电压又称端电压，是指电池在工作状态下即电路中有电流流过时电池正负极之间的电势差。在电池放电工作状态下，当电流流过电池内部时，需克服电池的内阻所造成阻力，会造成欧姆压降和电极极化，故工作电压总是低于开路电压，充电时则与之相反，端电压总是高于开路电压。即极化的结果使电池放电时端电压低于电池的电动势，电池充电时，电池的端电压高于电池的电动势。</p>
+<h3 id="1-4-电池的工作电压"><a href="#1-4-电池的工作电压" class="headerlink" title="1.4 电池的工作电压"></a>1.4 电池的工作电压</h3><p>工作电压又称端电压，是指电池在工作状态下即电路中有电流流过时电池正负极之间的电势差。在电池放电工作状态下，当电流流过电池内部时，需克服电池的内阻所造成阻力，会造成欧姆压降和电极极化，故工作电压总是低于开路电压，充电时则与之相反，端电压总是高于开路电压。即极化的结果使电池放电时端电压低于电池的电动势，电池充电时，电池的端电压高于电池的电动势。</p>
 <p>由于极化现象的存在，会导致电池在充放电过程中瞬时电压与实际电压会产生一定的偏差。充电时，瞬时电压略高于实际电压，充电结束后极化消失，电压回落；放电时，瞬时电压略低于实际电压，放电结束后极化消失，电压回升。</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145811883733.webp!w720.jpg" alt="img"></p>
 <p>图4 电池电压的组成及其与工作电流的关系</p>
@@ -510,18 +497,15 @@ height:50vh;
 <p>图5 常见商业电池的典型放电的电流和电压曲线。</p>
 <p>在整个放电过程中锂离子电池的电压曲线可以分为 3 个阶段：</p>
 <ol>
-<li>
-<p>电池在初始阶段端电压快速下降，放电倍率越大，电压下降的越快；</p>
+<li><p>电池在初始阶段端电压快速下降，放电倍率越大，电压下降的越快；</p>
 </li>
-<li>
-<p>电池电压进入一个缓慢变化的阶段，这段时间称为电池的平台区，放电倍率越小，平台区持续的时间越长，平台电压越高，电压下降越缓慢。</p>
+<li><p>电池电压进入一个缓慢变化的阶段，这段时间称为电池的平台区，放电倍率越小，平台区持续的时间越长，平台电压越高，电压下降越缓慢。</p>
 </li>
-<li>
-<p>在电池电量接近放完时， 电池负载电压开始急剧下降直至达到放电截止电压。</p>
+<li><p>在电池电量接近放完时， 电池负载电压开始急剧下降直至达到放电截止电压。</p>
 </li>
 </ol>
-<p>测试时，采集数据的方式有两种：（1）根据设定的时间间隔Δt采集电流，电压和时间等数据；（2）根据设定电压变化差ΔV采集电流，电压和时间数据。充放电设备的精度主要包括电流精度、电压精度、时间精度。表2是某款充放电机的设备参数，其中，% FS 表示全量程的百分数，0.05%RD是指测量的误差在读数的0.05%范围内。</p>
-<p>表2 某款充放电机的设备参数</p>
+<p>测试时，采集数据的方式有两种：（1）根据设定的时间间隔Δt采集电流，电压和时间等数据；（2）根据设定电压变化差ΔV采集电流，电压和时间数据。充放电设备的精度主要包括电流精度、电压精度、时间精度。表2是某款充放电机的设备参数，其中，% FS 表示全量程的百分数，0.05%RD是指测量的误差在读数的0.05%范围内。 </p>
+<p>表2 某款充放电机的设备参数 </p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145812633826.webp!w720.jpg" alt="img"></p>
 <p>充放电设备一般采用数控恒流源代替负载电阻作负载，使电池的输出电压与回路中串联电阻或寄生电阻无关，而只与电池等效的理想电压源的电压E 和内阻r 以及回路电流 I 相关。如果使用电阻做负载，设电池等效的理想电压源的电压为E，内阻为 r，负载电阻为R，用电压表测量负载电阻两端的电压，如图6上图所示。但是，实际情况下，电路中存在引线电阻和夹具接触电阻（统一为寄生电阻）图 6上图的等效电路图为图6下图所示。实际情况下不可避免地引入了寄生电阻，从而使总的负载电阻变大，但是测量的电压是负载电阻R 两端的电压，因此引入了误差。</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145813265551.webp!w720.jpg" alt="img"></p>
@@ -532,14 +516,11 @@ height:50vh;
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145813774438.webp!w720.jpg" alt="img"></p>
 <p>图7 恒流源负载等效原理框图和实际等效电路图</p>
 <p>恒流源是一种能向负载提供恒定电流的电源装置，在外界电网电源产生波动和阻抗特性发生变化时它仍能使输出电流保持恒定。</p>
-<h3 id="2-1-放电测试模式">2.1 放电测试模式</h3>
-<p>充放电测试设备一般使用半导体器件作为通流元件，通过调整半导体器件的控制信号，可以模拟出恒流，恒压，恒阻等多种不同特性的负载。锂离子电池放电测试模式主要包括恒流放电、恒阻放电、恒功率放电等。在各放电模式下还可以分出连续放电和间隔放电，其中根据时间的长短，间隔放电又可以分为间歇放电和脉冲放电。放电测试时，电池根据设定的模式进行放电，达到设定的条件后停止放电，放电截止条件包括设定电压截止、设定时间截止、设定容量截止，设定负电压梯度截止等。电池放电电压的变化与放电制度有关，即放电曲线的变化还受放电制度的影响，包括：放电电流，放电温度，放电终止电压；间歇还是连续放电。放电电流越大，工作电压下降越快；随放电温度的增加，放电曲线变化较平缓。</p>
-<h4 id="（1）恒流放电">（1）恒流放电</h4>
-<p>恒流放电时，设定电流值，然后通过调节数控恒流源来达到这一电流值，从而实现电池的恒流放电，同时采集电池的端电压的变化，用来检测电池的放电特性。恒流放电是放电电流不变，但是电池电压持续下降，所以功率持续下降的放电。图5就是锂离子电池恒流放电的电压和电流曲线。由于用恒电流放电，时间坐标轴很容易转换为容量（电流与时间的乘积）坐标轴。图8是恒流放电时电压-容量曲线。恒流放电是锂离子电池测试中最常使用的放电方式。</p>
+<h3 id="2-1-放电测试模式"><a href="#2-1-放电测试模式" class="headerlink" title="2.1 放电测试模式"></a>2.1 放电测试模式</h3><p>充放电测试设备一般使用半导体器件作为通流元件，通过调整半导体器件的控制信号，可以模拟出恒流，恒压，恒阻等多种不同特性的负载。锂离子电池放电测试模式主要包括恒流放电、恒阻放电、恒功率放电等。在各放电模式下还可以分出连续放电和间隔放电，其中根据时间的长短，间隔放电又可以分为间歇放电和脉冲放电。放电测试时，电池根据设定的模式进行放电，达到设定的条件后停止放电，放电截止条件包括设定电压截止、设定时间截止、设定容量截止，设定负电压梯度截止等。电池放电电压的变化与放电制度有关，即放电曲线的变化还受放电制度的影响，包括：放电电流，放电温度，放电终止电压；间歇还是连续放电。放电电流越大，工作电压下降越快；随放电温度的增加，放电曲线变化较平缓。</p>
+<h4 id="（1）恒流放电"><a href="#（1）恒流放电" class="headerlink" title="（1）恒流放电"></a>（1）恒流放电</h4><p>恒流放电时，设定电流值，然后通过调节数控恒流源来达到这一电流值，从而实现电池的恒流放电，同时采集电池的端电压的变化，用来检测电池的放电特性。恒流放电是放电电流不变，但是电池电压持续下降，所以功率持续下降的放电。图5就是锂离子电池恒流放电的电压和电流曲线。由于用恒电流放电，时间坐标轴很容易转换为容量（电流与时间的乘积）坐标轴。图8是恒流放电时电压-容量曲线。恒流放电是锂离子电池测试中最常使用的放电方式。</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145813122682.webp!w720.jpg" alt="img"></p>
 <p>图8 不同倍率下的恒流恒压充电、恒流放电曲线（来源于参考文献）</p>
-<h4 id="（2）恒功率放电">（2）恒功率放电</h4>
-<p>恒功率放电时，首先设定恒功率的功率值P，并采集电池的输出电压U。在放电过程中，要求P恒定不变，但是U是不断变化的，所以需要根据公式I = P / U不断地调节数控恒流源的电流I以达到恒功率放电的目的。保持放电功率不变，因放电过程中电池的电压持续下降，所以恒功率放电中电流是持续上升的。由于用恒功率放电，时间坐标轴很容易转换为能量（功率与时间的乘积）坐标轴。图9是锂离子电池典型的恒功率充、放电曲线。</p>
+<h4 id="（2）恒功率放电"><a href="#（2）恒功率放电" class="headerlink" title="（2）恒功率放电"></a>（2）恒功率放电</h4><p>恒功率放电时，首先设定恒功率的功率值P，并采集电池的输出电压U。在放电过程中，要求P恒定不变，但是U是不断变化的，所以需要根据公式I &#x3D; P &#x2F; U不断地调节数控恒流源的电流I以达到恒功率放电的目的。保持放电功率不变，因放电过程中电池的电压持续下降，所以恒功率放电中电流是持续上升的。由于用恒功率放电，时间坐标轴很容易转换为能量（功率与时间的乘积）坐标轴。图9是锂离子电池典型的恒功率充、放电曲线。</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145813322700.webp!w720.jpg" alt="img"></p>
 <p>图9 不同倍率下的恒功率充、放电曲线</p>
 <p>恒流放电和恒功率放电对比[3]</p>
@@ -547,28 +528,23 @@ height:50vh;
 <p>图10 不同倍率下的（a）充放电容量图；（b）充放电曲线图</p>
 <p>图10是磷酸铁锂电池两种模式下不同倍率充放电测试结果。根据图10(a)的容量曲线，恒流模式下随着充放电电流的增大，电池实际充放电容量均逐渐变小但变化幅度相对较小。恒功率模式下电池的实际充放电容量也随功率的增加而逐渐减小，且倍率越大，容量衰减越快。1 h 率放电容量较恒流模式为低。同时，当充放电倍率低于5 h 率时，恒功率条件下电池容量较高，而高于5 h 率时则恒流条件下电池容量较高。</p>
 <p>从图10(b)所示的容量-电压曲线可以看出，在低倍率条件下，磷酸铁锂电池两种模式容量-电压曲线接近，且充放电电压平台变化不大，但在高倍率条件下，恒流-恒压模式的恒压时间明显加长，且充电电压平台明显升高，放电电压平台明显降低。</p>
-<h4 id="（3）恒阻放电">（3）恒阻放电</h4>
-<p>恒阻放电时，首先设定恒定的电阻值R，采集电池的输出电压U，在放电过程中，要求R恒定不变，但是U是不断变化的，所以需要根据公式I=U/R不断地调节数控恒流源的电流I值以达到恒电阻放电的目的。电池的电压在放电过程是一直在下降的，电阻不变，所以放电电流I也是一个下降的过程。</p>
-<h4 id="（4）连续放电、间歇放电和脉冲放电">（4）连续放电、间歇放电和脉冲放电</h4>
-<p>电池在恒电流、恒功率和恒电阻三种方式下放电的同时，利用定时功能以实现连续放电、间歇放电和脉冲放电的控制。图11 是典型脉冲充放电测试的电流曲线和电压曲线。</p>
+<h4 id="（3）恒阻放电"><a href="#（3）恒阻放电" class="headerlink" title="（3）恒阻放电"></a>（3）恒阻放电</h4><p>恒阻放电时，首先设定恒定的电阻值R，采集电池的输出电压U，在放电过程中，要求R恒定不变，但是U是不断变化的，所以需要根据公式I&#x3D;U&#x2F;R不断地调节数控恒流源的电流I值以达到恒电阻放电的目的。电池的电压在放电过程是一直在下降的，电阻不变，所以放电电流I也是一个下降的过程。 </p>
+<h4 id="（4）连续放电、间歇放电和脉冲放电"><a href="#（4）连续放电、间歇放电和脉冲放电" class="headerlink" title="（4）连续放电、间歇放电和脉冲放电"></a>（4）连续放电、间歇放电和脉冲放电</h4><p>电池在恒电流、恒功率和恒电阻三种方式下放电的同时，利用定时功能以实现连续放电、间歇放电和脉冲放电的控制。图11 是典型脉冲充放电测试的电流曲线和电压曲线。</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145814510810.webp!w720.jpg" alt="img"></p>
 <p>图11 典型脉冲充放电测试的电流曲线和电压曲线</p>
-<h3 id="2-2-放电曲线包含的信息">2.2 放电曲线包含的信息</h3>
-<p>放电曲线是指放电过程中，电池的电压、电流、容量等随时间的变化的曲线。充放电曲线中所包含的信息非常丰富，具体包括容量，能量，工作电压及电压平台，电极电势与荷电状态的关系等。放电测试时记录的主要数据就是电流和电压的时间演变，从这些基础数据可以获取很多参数，以下详细介绍放电曲线能够获取的参数。</p>
-<h4 id="（1）电压">（1）电压</h4>
-<p>锂离子电池放电测试中，电压参数主要包括电压平台、中值电压、平均电压、截止电压等。</p>
-<p>平台电压是指电压变化最小而容量变化较大时对应的电压值，可以通过dQ/dV的峰值得出。</p>
+<h3 id="2-2-放电曲线包含的信息"><a href="#2-2-放电曲线包含的信息" class="headerlink" title="2.2 放电曲线包含的信息"></a>2.2 放电曲线包含的信息</h3><p>放电曲线是指放电过程中，电池的电压、电流、容量等随时间的变化的曲线。充放电曲线中所包含的信息非常丰富，具体包括容量，能量，工作电压及电压平台，电极电势与荷电状态的关系等。放电测试时记录的主要数据就是电流和电压的时间演变，从这些基础数据可以获取很多参数，以下详细介绍放电曲线能够获取的参数。</p>
+<h4 id="（1）电压"><a href="#（1）电压" class="headerlink" title="（1）电压"></a>（1）电压</h4><p>锂离子电池放电测试中，电压参数主要包括电压平台、中值电压、平均电压、截止电压等。</p>
+<p>平台电压是指电压变化最小而容量变化较大时对应的电压值，可以通过dQ&#x2F;dV的峰值得出。</p>
 <p>中值电压是电池容量一半时对应的电压值，对于平台比较明显的材料，如磷酸铁锂和钛酸锂等，中值电压就是平台电压。</p>
-<p>平均电压是电压-容量曲线的有效面积（即电池放电能量）除以容量，计算公式为Ü = ∫U(t)*I(t)dt / ∫I(t)dt。</p>
+<p>平均电压是电压-容量曲线的有效面积（即电池放电能量）除以容量，计算公式为Ü &#x3D; ∫U(t)*I(t)dt &#x2F; ∫I(t)dt。</p>
 <p>截止电压是是指电池放电时允许的最低电压，如果电压低于放电截止电压后继续放电，电池两端的电压会迅速下降，形成过度放电，过放电可能造成电极活性物质损伤，失去反应能力，使电池寿命缩短。</p>
 <p>如第一部分所述，电池的电压与正负极材料的荷电状态及电极电势相关。</p>
-<h4 id="（2）容量和比容量">（2）容量和比容量</h4>
-<p>电池容量是指一定放电制度下（在一定的放电电流I，放电温度T，放电截止电压V条件），电池所放出的电量，表征电池储存能量的能力，单位是Ah或C。容量受很多引素的影响，如：放电电流、放电温度等。容量大小是由正负极中活性物质的数量多少来决定的。</p>
+<h4 id="（2）容量和比容量"><a href="#（2）容量和比容量" class="headerlink" title="（2）容量和比容量"></a>（2）容量和比容量</h4><p>电池容量是指一定放电制度下（在一定的放电电流I，放电温度T，放电截止电压V条件），电池所放出的电量，表征电池储存能量的能力，单位是Ah或C。容量受很多引素的影响，如：放电电流、放电温度等。容量大小是由正负极中活性物质的数量多少来决定的。</p>
 <p>理论容量：活性物质全部参加反应所给出的容量。</p>
 <p>实际容量：在一定的放电制度下实际放出的容量。</p>
 <p>额定容量：指电池在设计的放电条件下，电池保证给出的最低电量。</p>
-<p>放电测试中，容量通过电流对时间积分计算，即C = ∫I(t)dt，恒流放电时电流恒定不变，C = ∫I(t)dt = It；恒电阻R放电时，C = ∫I(t)dt = (1/R)*∫U(t)dt ≈ (1/R)*Üt（Ü为放电平均电压，t为放电时间）。</p>
-<p>比容量：为了对不同的电池进行比较，引入比容量概念。比容量是指单位质量或单位体积电极活性物质所给出的容量，称为质量比容量或体积比容量。通常计算方法为：比容量=电池首次放电容量 /（活性物质量*活性物质利用率）</p>
+<p>放电测试中，容量通过电流对时间积分计算，即C &#x3D; ∫I(t)dt，恒流放电时电流恒定不变，C &#x3D; ∫I(t)dt &#x3D; It；恒电阻R放电时，C &#x3D; ∫I(t)dt &#x3D; (1&#x2F;R)*∫U(t)dt ≈ (1&#x2F;R)*Üt（Ü为放电平均电压，t为放电时间）。</p>
+<p>比容量：为了对不同的电池进行比较，引入比容量概念。比容量是指单位质量或单位体积电极活性物质所给出的容量，称为质量比容量或体积比容量。通常计算方法为：比容量&#x3D;电池首次放电容量 &#x2F;（活性物质量*活性物质利用率）</p>
 <p>影响电池容量的因素：</p>
 <p>a.电池的放电电流：电流越大，输出的容量减少；</p>
 <p>b.电池的放电温度：温度降低，输出容量减少；</p>
@@ -576,27 +552,24 @@ height:50vh;
 <p>d.电池的充放电次数：电池经过多次充放电后，由于电极材料的失效，电池的放电容量会相应减少。</p>
 <p>e.电池的充电条件：充电倍率、温度、截止电压等影响充入电池的容量，从而决定放电容量。</p>
 <p>电池容量的测定方法：</p>
-<p>不同行业根据使用工况，具有不同的测试标准。对于3C产品用的锂离子电池，根据国标《GB/T18287-2000蜂窝电话用锂离子电池总规范》，电池的额定容量测试方法为：a)充电：0.2C5A充电；b)放电：0.2C5A放电；c)进行五个循环，其中有一次达到即判定为合格。</p>
-<p>对于电动汽车行业，根据国标《GB/T 31486-2015 电动汽车用动力蓄电池电性能要求及试验方法》，电池的额定容量是指室温下电池以1I1(A)电流放电，达到终止电压时所放出的容量(Ah)，其中I1为1小时率放电电流，其数值等于C1 (A)。测试方法为：</p>
+<p>不同行业根据使用工况，具有不同的测试标准。对于3C产品用的锂离子电池，根据国标《GB&#x2F;T18287-2000蜂窝电话用锂离子电池总规范》，电池的额定容量测试方法为：a)充电：0.2C5A充电；b)放电：0.2C5A放电；c)进行五个循环，其中有一次达到即判定为合格。</p>
+<p>对于电动汽车行业，根据国标《GB&#x2F;T 31486-2015 电动汽车用动力蓄电池电性能要求及试验方法》，电池的额定容量是指室温下电池以1I1(A)电流放电，达到终止电压时所放出的容量(Ah)，其中I1为1小时率放电电流，其数值等于C1 (A)。测试方法为：</p>
 <p>a）室温下，以1I1(A)电流恒流充电至企业规定的充电终止电压时转恒压充电，至充电终止电流降至0.05I1(A)时停止充电，充电后搁置1h。</p>
 <p>b) 室温下，电池以1I1(A)电流放电，直到放电至企业技术条件中规定的放电终止电压；</p>
-<p>c) 计量放电容量（以Ah计），计算放电比能量（以Wh/kg计）；</p>
+<p>c) 计量放电容量（以Ah计），计算放电比能量（以Wh&#x2F;kg计）；</p>
 <p>d) 重复步骤a）-c）5次，当连续3次试验结果的极差小于额定容量的3%，可提前结束试验，取最后3次试验结果平均值。</p>
-<h4 id="（3）荷电状态SOC">（3）荷电状态SOC</h4>
-<p>SOC（State of Charge ）为荷电状态，表示在一定的放电倍率下，电池使用一段时间或长期搁置后剩余容量与其完全充电状态的容量的比值。“开路电压 + 安时积分”法利用开路电压法估算出电池初始状态荷电容量SOC0，然后利用安时积分法求得电池运行消耗的电量，消耗电量为放电电流与放电时间的乘积，则剩余电量等于初始电量与消耗电量的差值。开路电压与安时积分结合估算SOC 数学表达式为：</p>
+<h4 id="（3）荷电状态SOC"><a href="#（3）荷电状态SOC" class="headerlink" title="（3）荷电状态SOC"></a>（3）荷电状态SOC</h4><p>SOC（State of Charge ）为荷电状态，表示在一定的放电倍率下，电池使用一段时间或长期搁置后剩余容量与其完全充电状态的容量的比值。“开路电压 + 安时积分”法利用开路电压法估算出电池初始状态荷电容量SOC0，然后利用安时积分法求得电池运行消耗的电量，消耗电量为放电电流与放电时间的乘积，则剩余电量等于初始电量与消耗电量的差值。开路电压与安时积分结合估算SOC 数学表达式为：</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145814973998.webp!w720.jpg" alt="img"></p>
 <p>其中，CN 为额定容量；η为充放电效率；T为电池使用温度；I 为电池电流；t为电池放电时间。</p>
-<p>DOD（Depth of Discharge ）为放电深度，表示放电程度的一种量度，为放电容量与总放电容量的百分比。放电深度的高低和电池的寿命有很大的关系：放电深度越深，其寿命就越短。两者关系为SOC = 100%- DOD。</p>
-<h4 id="（4）能量和比能量">（4）能量和比能量</h4>
-<p>电池在一定条件下对外作功所能输出的电能叫做电池的能量，单位一般用wh表示。放电曲线中，能量的计算式为：W = ∫U(t)<em>I(t)dt。恒流放电时，W = I</em>∫U(t)dt = It*Ü（Ü为放电平均电压，t为放电时间）。</p>
+<p>DOD（Depth of Discharge ）为放电深度，表示放电程度的一种量度，为放电容量与总放电容量的百分比。放电深度的高低和电池的寿命有很大的关系：放电深度越深，其寿命就越短。两者关系为SOC &#x3D; 100%- DOD。</p>
+<h4 id="（4）能量和比能量"><a href="#（4）能量和比能量" class="headerlink" title="（4）能量和比能量"></a>（4）能量和比能量</h4><p>电池在一定条件下对外作功所能输出的电能叫做电池的能量，单位一般用wh表示。放电曲线中，能量的计算式为：W &#x3D; ∫U(t)<em>I(t)dt。恒流放电时，W &#x3D; I</em>∫U(t)dt &#x3D; It*Ü（Ü为放电平均电压，t为放电时间）。 </p>
 <p>a.理论能量</p>
 <p>电池的放电过程处于平衡状态，放电电压保持电动势(E)数值，且活性物质利用率为100％，在此条件下电池的输出能量为理论能量，即可逆电池在恒温恒压下所做的最大功。</p>
 <p>b.实际能量</p>
-<p>电池放电时实际输出的能量称为实际能量，电动汽车行业规定（《GB/T 31486-2015 电动汽车用动力蓄电池电性能要求及试验方法》），室温下蓄电池以1I1(A)电流放电，达到终止电压时所放出的能量(Wh)，称额定能量。</p>
+<p>电池放电时实际输出的能量称为实际能量，电动汽车行业规定（《GB&#x2F;T 31486-2015 电动汽车用动力蓄电池电性能要求及试验方法》），室温下蓄电池以1I1(A)电流放电，达到终止电压时所放出的能量(Wh)，称额定能量。</p>
 <p>c.比能量</p>
-<p>单位质量和单位体积的电池所给出的能量，称质量比能量或体积比能量，也称能量密度。单位为wh/kg或wh/L。</p>
-<h3 id="2-3-放电曲线的基本形式">2.3 放电曲线的基本形式</h3>
-<p>放电曲线最基本的形式就是电压-时间和电流时间曲线，通过对时间轴进行变换计算，常见的放电曲线还有电压-容量（比容量）曲线、电压-能量（比能量）曲线、电压-SOC曲线等。</p>
+<p>单位质量和单位体积的电池所给出的能量，称质量比能量或体积比能量，也称能量密度。单位为wh&#x2F;kg或wh&#x2F;L。</p>
+<h3 id="2-3-放电曲线的基本形式"><a href="#2-3-放电曲线的基本形式" class="headerlink" title="2.3 放电曲线的基本形式"></a>2.3 放电曲线的基本形式</h3><p>放电曲线最基本的形式就是电压-时间和电流时间曲线，通过对时间轴进行变换计算，常见的放电曲线还有电压-容量（比容量）曲线、电压-能量（比能量）曲线、电压-SOC曲线等。</p>
 <p>（1）电压-时间和电流时间曲线</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145814621339.webp!w720.jpg" alt="img"></p>
 <p>图12 电压-时间和电流-时间曲线</p>
@@ -606,8 +579,7 @@ height:50vh;
 <p>（3）电压-能量曲线</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145814321816.webp!w720.jpg" alt="img"></p>
 <p>图14 电压-能量曲线</p>
-<h2 id="3-放电曲线的微分处理">3 放电曲线的微分处理</h2>
-<p>充放电曲线中电压对时间（容量）的变化含有电极过程的信息，但这种变化一般很小，不容易表现出来，对曲线微分可以将变化放大，便于观察和处理，这对充放电曲线进行微分处理的目的。处理的方法包括：dQ/dV和dV/dQ，常用的方法是对容量或者比容量做微分处理。</p>
+<h2 id="3-放电曲线的微分处理"><a href="#3-放电曲线的微分处理" class="headerlink" title="3 放电曲线的微分处理"></a>3 放电曲线的微分处理</h2><p>充放电曲线中电压对时间（容量）的变化含有电极过程的信息，但这种变化一般很小，不容易表现出来，对曲线微分可以将变化放大，便于观察和处理，这对充放电曲线进行微分处理的目的。处理的方法包括：dQ&#x2F;dV和dV&#x2F;dQ，常用的方法是对容量或者比容量做微分处理。</p>
 <p>相对于参比电极的充放电曲线真实地反映了工作电极的电极过程（三电极体系）；相对于金属锂电极的充放电曲线近似地反映了工作电极的电极过程（扣式电池）；而电池的充放电曲线表现的是正负极电极过程的叠加，因此，电池充放电曲线的微分曲线的峰不能直接确定是反映哪个电极的电极过程。因此，可以通过以下两种方法处理：</p>
 <p>1）纽扣半电池：分别用正、负极与金属锂组装扣式电池，测试充放电曲线，进行微分，分析，图15为分析实例，详细解释见参考文献【4】；</p>
 <p>2）三电极电池：将电池组装成三电极体系，分别测出正、负极的充放电曲线并微分，图16是三电极电池正负极和全电池的充放电电压曲线，可以单独对正、负极充放电曲线做微分分析；</p>
@@ -616,20 +588,20 @@ height:50vh;
 <p>图15 容量微分分析实例：（a）-（b）硅-石墨烯负极的充放电曲线及比容量微分曲线；（c）-（d）NCA正极充放电曲线及比容量微分曲线；（e）-（f）硅-石墨烯|NCA全电池充放电曲线及比容量微分曲线</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145815135857.webp!w720.jpg" alt="img"></p>
 <p>图16 三电极电池正负极和全电池的充放电电压曲线</p>
-<p>对电压-容量曲线做微分对原始数据有一定要求，否则无法做出峰值明显的微分曲线，一般要求等电压差的电压、容量数据列。因此，在做充放电测试时，可以设定电压间隔ΔV=10~50mV来采集数据。或者对原始数据进行筛选，图17新威充放电设备数据筛选界面。</p>
+<p>对电压-容量曲线做微分对原始数据有一定要求，否则无法做出峰值明显的微分曲线，一般要求等电压差的电压、容量数据列。因此，在做充放电测试时，可以设定电压间隔ΔV&#x3D;10~50mV来采集数据。或者对原始数据进行筛选，图17新威充放电设备数据筛选界面。</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145815254832.webp!w720.jpg" alt="img"></p>
 <p>图17 新威充放电设备数据筛选界面</p>
 <p>另外，利用Excel也可以实现数据的筛选，具体筛选方法如下（本部分内容由网友霞光万道整理）：</p>
 <p>1）将电压、容量的原始数据复制到excel表中A、B列，如图18所示。</p>
 <p>2）将A列的第一个电压数据复制到D2列并选中，点击编辑栏中的“填充”，出现一对话框，选择“列”，填写“步长值”和“最大值”后，点击确定，如图18所示生成D列电压数据。</p>
-<p>3）点击E2，输入公式=vlookup(D2,A:B,2,TRUE)，按回车，下拉菜单或双击，数据筛选完成。</p>
+<p>3）点击E2，输入公式&#x3D;vlookup(D2,A:B,2,TRUE)，按回车，下拉菜单或双击，数据筛选完成。</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145815452400.webp!w720.jpg" alt="img"></p>
 <p>图18 Excel实现数据的筛选</p>
-<p>筛选完成的数据导入origin软件中。然后，容量选为y轴，电压选为x轴，然后再执行analysis—mathematics—differentiate操作，会发现数据表格中多出一列数据，这就是dQ/dV值，再以它为y轴，电压为x轴作图，即可得到dQ/dV曲线。</p>
-<p>容量微分分析示例</p>
+<p>筛选完成的数据导入origin软件中。然后，容量选为y轴，电压选为x轴，然后再执行analysis—mathematics—differentiate操作，会发现数据表格中多出一列数据，这就是dQ&#x2F;dV值，再以它为y轴，电压为x轴作图，即可得到dQ&#x2F;dV曲线。</p>
+<p>容量微分分析示例 </p>
 <p>图19是几种负极材料无定形炭、硅、二氧化硅、一氧化硅材料前两次充放电循环的容量微分曲线【6】。图19（a）是无定形炭材料前两次充放电循环的容量微分曲线。由图可知，无定形炭材料在前两次放电过程主要嵌锂峰的峰值电压均小于0.1 V，与之对应的是在充电曲线中出现峰值电压为0.2 V的脱锂峰。该无定形碳材料在电势&gt;0.1 V的区间内几乎没有观察到明显的还原峰。</p>
 <p>图19（b）是无定形硅负极材料在前两次充放电循环中的容量微分曲线。由图可知，无定形硅在首次放电过程中存在一个电势为0.1~0.2 V的强烈的嵌锂峰，与之对应的是在充电过程中电势为0.42 V的强烈的脱锂峰；从第二次充放电循环开始，硅负极材料显示两个不同的还原氧化峰对，其还原电势分别0.06和0.21 V，对应的是锂离子同硅合金化反应形成LixSi</p>
-<p>中间态的过程。</p>
+<p>中间态的过程。 </p>
 <p>图19（c）是无定形二氧化硅负极材料第二次充放电循环的容量微分曲线。由图可知，无定形二氧化硅材料的第二次放电过程的存在两个不同的还原峰，分别位于0.17和0.06V，与之对应的是在充电过程位于0.32V和0.46V的氧化峰。这两个还原-氧化峰对分别对应于锂离子同SiO2结构作用形成Li2Si2O5和单晶硅，以及锂离子同单晶硅作用形成LixSi合金的过称。</p>
 <p>图19（d）是无定形一氧化硅材料第二次充放电循环的容量微分曲线。由图可知，无定形一氧化硅材料在第二次放电过程中存在两个电势分别为0.1和0.2V的还原峰，与之对应的是电势为0.27和0.46 V的两个氧化峰。一氧化硅负极材料的结构包含[SiSi4]微区和SiO2微区，这两对氧化还原峰对应的是这两种微区结构同锂离子的作用。</p>
 <p><img src="https://cdn-fs.d1ev.com/d/file/custom/152697/file/201806/1530145815458660.webp!w720.jpg" alt="img"></p>
@@ -1984,21 +1956,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
-    
-        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
-    
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
+        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
         <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
     
-        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
+        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
-        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
     
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
@@ -2006,7 +1976,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
     
-        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
+    
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
     
         <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
     
@@ -2014,21 +1986,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
     
+        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
+    
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
         <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
     
         <span class="sidebar-tag-name" data-tags="Nanodevice"><span class="iconfont-archer">&#xe606;</span>Nanodevice</span>
     
-        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
-    
-        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
-    
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
-    
-        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
-    
         <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
     
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
     
@@ -2038,33 +2006,37 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
     
+        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
         <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
     
         <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
+    
+        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
         <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
     
         <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
     
-        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
-    
         <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
+    
+        <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
         <span class="sidebar-tag-name" data-tags="Condense Physics"><span class="iconfont-archer">&#xe606;</span>Condense Physics</span>
     
-        <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
+    
+        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
         <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
     
         <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
-    
-        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
         <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
     
@@ -2111,23 +2083,23 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
-    
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
-        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
-    
-        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
-    
-        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
+    
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
-        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
