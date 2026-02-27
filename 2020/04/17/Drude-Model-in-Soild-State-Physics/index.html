@@ -442,30 +442,30 @@ height:50vh;
 <p>简单来说，Drude model 就是将电子看作是经典的粒子</p>
 <p>{利用独立电子近似（忽略电子相互作用），自由电子近似（忽略电子与晶格相互作用），再考虑一个弛豫时间}</p>
 <p>从经典的牛顿第二定律入手，动力学方程为</p>
-<p><img src="https://www.zhihu.com/equation?tex=m%5Cfrac%7Bdv%7D%7Bdt%7D+%5Cfrac%7Bmv%7D%7B%5Ctau%7D=eE_%7B0%7De%5E%7B-i%5Comega+t%7D" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=m%5Cfrac%7Bdv%7D%7Bdt%7D%2B%5Cfrac%7Bmv%7D%7B%5Ctau%7D%3DeE_%7B0%7De%5E%7B-i%5Comega+t%7D" alt="[公式]"></p>
 <p>这里 <img src="https://www.zhihu.com/equation?tex=%5Ctau" alt="[公式]"> 这一项提供了阻尼项；一个正弦变化的电场提供驱动力，</p>
 <p>为了对应正弦变化的场，电子的运动速度也会是正弦变化，设为</p>
-<p><img src="https://www.zhihu.com/equation?tex=v=+v_%7B0%7Dx%5E%7B-i%5Comega+t%7D" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=v%3D+v_%7B0%7Dx%5E%7B-i%5Comega+t%7D" alt="[公式]"></p>
 <p>得到</p>
-<p><img src="https://www.zhihu.com/equation?tex=(-m%5Comega+i9+%5Cfrac%7Bm%7D%7B%5Ctau%7D)v_%7B0%7D+=%5Csigma+E_%7B0%7D" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=%28-m%5Comega+i9%2B%5Cfrac%7Bm%7D%7B%5Ctau%7D%29v_%7B0%7D+%3D%5Csigma+E_%7B0%7D" alt="[公式]"></p>
 <p>求解出了电子的运动速度 <img src="https://www.zhihu.com/equation?tex=v_%7B0%7D" alt="[公式]"> ，进而用</p>
-<p><img src="https://www.zhihu.com/equation?tex=j=nev_%7B0%7D=%5Csigma+E_%7B0%7D" alt="[公式]"></p>
-<p>从而求解出 <img src="https://www.zhihu.com/equation?tex=%5Csigma(%5Comega)" alt="[公式]"></p>
-<p>而从基本麦克斯韦方程可以推导出 <img src="https://www.zhihu.com/equation?tex=%5Csigma" alt="[公式]"> 和 <img src="https://www.zhihu.com/equation?tex=%5Cvarepsilon" alt="[公式]"> 的千丝万缕的关系，从而有了 <img src="https://www.zhihu.com/equation?tex=%5Cepsilon+(%5Comega)" alt="[公式]"> ,</p>
-<p><img src="https://www.zhihu.com/equation?tex=%5Cepsilon(%5Comega)=%5Cepsilon_%7Bcore%7D+%5Cfrac%7B4%5Cpi+i%7D%7B%5Comega%7D%5Cfrac%7Bne%5E%7B2%7D%5Ctau%7D%7Bm(1-i%5Comega%5Ctau)%7D=%5Cvarepsilon_%7B1%7D+%5Cvarepsilon_%7B2%7Di" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=j%3Dnev_%7B0%7D%3D%5Csigma+E_%7B0%7D" alt="[公式]"></p>
+<p>从而求解出 <img src="https://www.zhihu.com/equation?tex=%5Csigma%28%5Comega%29" alt="[公式]"></p>
+<p>而从基本麦克斯韦方程可以推导出 <img src="https://www.zhihu.com/equation?tex=%5Csigma" alt="[公式]"> 和 <img src="https://www.zhihu.com/equation?tex=%5Cvarepsilon" alt="[公式]"> 的千丝万缕的关系，从而有了 <img src="https://www.zhihu.com/equation?tex=%5Cepsilon+%28%5Comega%29" alt="[公式]"> ,</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cepsilon%28%5Comega%29%3D%5Cepsilon_%7Bcore%7D%2B%5Cfrac%7B4%5Cpi+i%7D%7B%5Comega%7D%5Cfrac%7Bne%5E%7B2%7D%5Ctau%7D%7Bm%281-i%5Comega%5Ctau%29%7D%3D%5Cvarepsilon_%7B1%7D%2B%5Cvarepsilon_%7B2%7Di" alt="[公式]"></p>
 <p>也就是有了</p>
-<p><img src="https://www.zhihu.com/equation?tex=n(%5Comega)=sqrt(%5Cvarepsilon)=n+ki" alt="[公式]"> ，      也就是有了色散关系。</p>
-<p>然后分别根据高频和低频以及共振频率进行分析。低频和高频是电子波频率相对与电子运动的频率的比较，一半用 <img src="https://www.zhihu.com/equation?tex=%5Comega%5Ctau" alt="[公式]"> 跟1的关系是远大于还是远小于来衡量，换个形式就是 <img src="https://www.zhihu.com/equation?tex=%5Comega" alt="[公式]"> 和 <img src="https://www.zhihu.com/equation?tex=1/%5Ctau" alt="[公式]"> 的比较， <img src="https://www.zhihu.com/equation?tex=1/%5Ctau" alt="[公式]"> 显然就是电子的频率。当然上面色散关系的分母就是 <img src="https://www.zhihu.com/equation?tex=1-i%5Comega%5Ctau" alt="[公式]"> ，因此通过比较就可以做不同的近似，从而是色散关系简单很多。</p>
+<p><img src="https://www.zhihu.com/equation?tex=n%28%5Comega%29%3Dsqrt%28%5Cvarepsilon%29%3Dn%2Bki" alt="[公式]"> ，      也就是有了色散关系。</p>
+<p>然后分别根据高频和低频以及共振频率进行分析。低频和高频是电子波频率相对与电子运动的频率的比较，一半用 <img src="https://www.zhihu.com/equation?tex=%5Comega%5Ctau" alt="[公式]"> 跟1的关系是远大于还是远小于来衡量，换个形式就是 <img src="https://www.zhihu.com/equation?tex=%5Comega" alt="[公式]"> 和 <img src="https://www.zhihu.com/equation?tex=1%2F%5Ctau" alt="[公式]"> 的比较， <img src="https://www.zhihu.com/equation?tex=1%2F%5Ctau" alt="[公式]"> 显然就是电子的频率。当然上面色散关系的分母就是 <img src="https://www.zhihu.com/equation?tex=1-i%5Comega%5Ctau" alt="[公式]"> ，因此通过比较就可以做不同的近似，从而是色散关系简单很多。</p>
 <p>下面再把介电常数和折射率再分开解释一下。</p>
 <p>物质的介电常数表述的是对外加电场的响应情况，对了，电磁波（光）是高频变化的电场。介电常数是复数，而且可正可负可为零的，我暂时理解正负号是对外电场做出回应的方向不同（有误请指出），而虚部是对外电场相应的相位滞后。</p>
 <p>介电常数随频率变化会存在一个零点，这个频率为零的称为 等离子体频率 <img src="https://www.zhihu.com/equation?tex=%5Comega_%7Bp%7D" alt="[公式]"> （Plasma frequency）。</p>
 <p>金属的等离子体频率很高，在x射线波段。</p>
 <p>而半导体的等离子体频率和掺杂关系很大，对半导体而言，当介电常数从正变为负时，也说其对光的相应从半导体变为金属性质，半导体介电常数的实部是与掺杂浓度呈反比的关系，掺杂浓度越高，介电常数越小，折射率也就越小。</p>
 <p>折射率</p>
-<p><img src="https://www.zhihu.com/equation?tex=n(%5Comega)=sqrt(%5Cvarepsilon)=n+ki" alt="[公式]"> <img src="https://www.zhihu.com/equation?tex=+" alt="[公式]"> </p>
-<p>实部可以立即成物质对光在里面传播的阻碍作用，v&#x3D;c&#x2F;n，折射率越大意味着光在物质中的速度越小。而折射率的虚部则描述的是光对物质的吸收和损耗作用。</p>
+<p><img src="https://www.zhihu.com/equation?tex=n%28%5Comega%29%3Dsqrt%28%5Cvarepsilon%29%3Dn%2Bki" alt="[公式]"> <img src="https://www.zhihu.com/equation?tex=+" alt="[公式]"></p>
+<p>实部可以立即成物质对光在里面传播的阻碍作用，v=c/n，折射率越大意味着光在物质中的速度越小。而折射率的虚部则描述的是光对物质的吸收和损耗作用。</p>
 <p>下面再说一个参数，吸收系数 <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> ，也就是损耗。</p>
-<p><img src="https://www.zhihu.com/equation?tex=%5Calpha=%5Cfrac%7B2%5Comega%7D%7Bc%7D*k(w)=%5Cfrac%7B4pi%7D%7B%5Clambda%7D*k(w)" alt="[公式]"> </p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Calpha%3D%5Cfrac%7B2%5Comega%7D%7Bc%7D%2Ak%28w%29%3D%5Cfrac%7B4pi%7D%7B%5Clambda%7D%2Ak%28w%29" alt="[公式]"></p>
 <p>吸收有自由载流子吸收和带间跃迁吸收，这里只讲一下金属和半导体中自由载流子的吸收，有人需要的话我再不带间吸收的。具体公式我也就不写了，</p>
 <p>对金属而言，吸收系数 <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> 与 <img src="https://www.zhihu.com/equation?tex=%5Comega%5E%7B%5Cfrac%7B1%7D%7B2%7D%7D" alt="[公式]"> 成正比；</p>
 <p>对半导体而言，吸收系数 <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> 与 <img src="https://www.zhihu.com/equation?tex=%5Comega%5E%7B-2%7D" alt="[公式]"> 成正比。</p>
@@ -1822,47 +1822,47 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
     
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
+        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
+    
         <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
     
         <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
-    
-        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
     
         <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
     
         <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
-    
-        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
-    
-        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
-    
-        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
-    
-        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
-    
-        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
-    
-        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
-    
-        <span class="sidebar-tag-name" data-tags="Nanodevice"><span class="iconfont-archer">&#xe606;</span>Nanodevice</span>
-    
-        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
-    
-        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
-    
-        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
     
         <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
     
         <span class="sidebar-tag-name" data-tags="Thin Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin Film Deposition</span>
     
         <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
+    
+        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
+    
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
+    
+        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
+    
+        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
+    
+        <span class="sidebar-tag-name" data-tags="Nanodevice"><span class="iconfont-archer">&#xe606;</span>Nanodevice</span>
+    
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
+        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
+    
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+    
+        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
     
         <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
     
@@ -1886,11 +1886,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
     
+        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
+    
         <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
     
         <span class="sidebar-tag-name" data-tags="Condense Physics"><span class="iconfont-archer">&#xe606;</span>Condense Physics</span>
-    
-        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
     
         <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
     
@@ -1900,13 +1900,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
     
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
+    
         <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
     
         <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
     
         <span class="sidebar-tag-name" data-tags="Avalanche"><span class="iconfont-archer">&#xe606;</span>Avalanche</span>
-    
-        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1947,27 +1947,27 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+        <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
-        <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
-    
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
