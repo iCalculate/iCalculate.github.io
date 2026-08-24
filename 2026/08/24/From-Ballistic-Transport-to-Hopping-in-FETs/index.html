@@ -1,0 +1,2445 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNMSN3C9M8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MNMSN3C9M8');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="Du Xinchuan">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Du Xinchuan">
+    
+    <meta name="keywords" content="Xinchuan Du,Du Xinchuan,2D materials,optoelectronic devices,spectroscopy,semiconductor physics,photodetectors,quantum sensing">
+    
+    <meta name="description" content="Dr. Xinchuan Du's research notes and project documentation. 
+Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sensing.
+">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>From Ballistic Transport to Hopping in FETs · Xinchuan Du | Researcher in 2D Materials &amp; Optoelectronics</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("../../../../font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "../../../../css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "../../../../css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "../../../../assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="../../../../scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="../../../../font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', '[object Object]', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="../../../../index.html" >iCalculate’s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">From Ballistic Transport to Hopping in FETs</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>iCalculate’s Studio</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(../../../../intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            From Ballistic Transport to Hopping in FETs
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Quantum Transport">Quantum Transport</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Semiconductor Physics">Semiconductor Physics</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Schottky Barrier">Schottky Barrier</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Hopping Transport">Hopping Transport</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">2.8k</span>Reading time: <span class="post-count reading-time">17 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2026/08/24</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "../../../../lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="../../../../assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>Ballistic conduction, Schottky injection, tunneling, and hopping are often treated as separate transport models. This article connects them through one question: which electronic states are available, and how likely is an injected carrier to reach the drain? Starting from one-dimensional quantum states, it derives carrier flux and the Landauer formula, then follows transmission through Schottky barriers into thermionic emission, field emission, and thermionic-field emission. It concludes with localized-state transport, nearest-neighbor and variable-range hopping, mobility edges, and practical signatures for identifying the dominant mechanism in real FETs.</p>
+<a id="more"></a>
+
+<p>Semiconductor transport is often taught as a collection of separate models: ballistic transport, Schottky emission, tunneling, thermionic-field emission, nearest-neighbor hopping, and variable-range hopping.</p>
+<p>A more useful picture is to connect them through one question:</p>
+<blockquote>
+<p><strong>What electronic states are available, and what is the probability that an electron injected from the source can reach the drain?</strong></p>
+</blockquote>
+<p>This leads to the hierarchy</p>
+<p>[<br>\boxed{\text{Quantum states}\rightarrow\text{1D carrier flux}\rightarrow\text{Landauer transport}\rightarrow\mathcal T(E)\rightarrow\text{Schottky barrier}\rightarrow\text{TE&#x2F;TFE&#x2F;FE}\rightarrow\text{localized states}\rightarrow\text{hopping}}<br>]</p>
+<p>Here, (\mathcal T(E)) is the energy-dependent transmission probability.</p>
+<hr>
+<h2 id="1-Quantum-states-and-one-dimensional-carrier-flux"><a href="#1-Quantum-states-and-one-dimensional-carrier-flux" class="headerlink" title="1. Quantum states and one-dimensional carrier flux"></a>1. Quantum states and one-dimensional carrier flux</h2><p>Consider an ideal one-dimensional conductor of length (L). For a plane wave</p>
+<p>[<br>\psi(x)&#x3D;e^{ikx},<br>]</p>
+<p>periodic boundary conditions require</p>
+<p>[<br>\psi(x+L)&#x3D;\psi(x),<br>]</p>
+<p>so</p>
+<p>[<br>e^{ikL}&#x3D;1,<br>\qquad<br>kL&#x3D;2\pi n.<br>]</p>
+<p>Therefore</p>
+<p>[<br>\boxed{k_n&#x3D;\frac{2\pi n}{L}}<br>]</p>
+<p>and</p>
+<p>[<br>\boxed{\Delta k&#x3D;\frac{2\pi}{L}}.<br>]</p>
+<p>For one spin species, the number of states between (k) and (k+dk) is</p>
+<p>[<br>dN&#x3D;\frac{L}{2\pi}dk.<br>]</p>
+<p>This counts states. Transport instead asks how many states cross a section per unit time.</p>
+<hr>
+<h3 id="1-1-Why-a-1D-mode-carries-dE-h-states-per-second"><a href="#1-1-Why-a-1D-mode-carries-dE-h-states-per-second" class="headerlink" title="1.1 Why a 1D mode carries (dE&#x2F;h) states per second"></a>1.1 Why a 1D mode carries (dE&#x2F;h) states per second</h3><p>The group velocity is</p>
+<p>[<br>v(k)&#x3D;\frac{1}{\hbar}\frac{dE}{dk}.<br>]</p>
+<p>An electron moving with speed (v) through a system of length (L) crosses a given point at a rate (v&#x2F;L). Hence</p>
+<p>[<br>d\dot N&#x3D;dN\frac{v}{L}.<br>]</p>
+<p>Using (dN&#x3D;Ldk&#x2F;(2\pi)),</p>
+<p>[<br>d\dot N&#x3D;\frac{v}{2\pi}dk.<br>]</p>
+<p>Since</p>
+<p>[<br>v,dk&#x3D;\frac{dE}{\hbar},<br>]</p>
+<p>we obtain</p>
+<p>[<br>d\dot N&#x3D;\frac{dE}{2\pi\hbar}&#x3D;\boxed{\frac{dE}{h}}.<br>]</p>
+<p>Thus a single propagating 1D quantum mode, for one spin and one propagation direction, carries (dE&#x2F;h) available states per unit time in an energy interval (dE).</p>
+<p>The result is independent of the detailed band dispersion because in one dimension</p>
+<p>[<br>D_{1D}(E)\propto \frac{1}{v(E)},<br>]</p>
+<p>so (D_{1D}(E)v(E)) is constant.</p>
+<hr>
+<h2 id="2-Landauer-current-and-transport-dimensionality"><a href="#2-Landauer-current-and-transport-dimensionality" class="headerlink" title="2. Landauer current and transport dimensionality"></a>2. Landauer current and transport dimensionality</h2><p>Connect the channel between source and drain reservoirs with Fermi functions (f_S(E)) and (f_D(E)). If an electron at energy (E) has transmission probability (\mathcal T(E)), then for one non-degenerate mode</p>
+<p>[<br>dI&#x3D;q\frac{dE}{h}\mathcal T(E)[f_S(E)-f_D(E)].<br>]</p>
+<p>Therefore</p>
+<p>[<br>\boxed{I&#x3D;\frac{q}{h}\int \mathcal T(E)[f_S-f_D]dE}.<br>]</p>
+<p>Including spin degeneracy gives</p>
+<p>[<br>\boxed{I&#x3D;\frac{2q}{h}\int \mathcal T(E)[f_S-f_D]dE}.<br>]</p>
+<p>For (M(E)) transverse modes,</p>
+<p>[<br>\boxed{I&#x3D;\frac{2q}{h}\int M(E)\mathcal T(E)[f_S-f_D]dE}.<br>]</p>
+<p>At low temperature and small bias,</p>
+<p>[<br>\mu_S-\mu_D&#x3D;qV,<br>]</p>
+<p>so</p>
+<p>[<br>I\approx \frac{2q^2}{h}M(E_F)\mathcal T(E_F)V.<br>]</p>
+<p>Hence</p>
+<p>[<br>\boxed{G&#x3D;\frac{2q^2}{h}M\mathcal T}.<br>]</p>
+<p>For one perfectly transmitting spin-degenerate mode,</p>
+<p>[<br>\boxed{G_0&#x3D;\frac{2q^2}{h}\approx 77.5\ \mu\mathrm{S}}<br>]</p>
+<p>and</p>
+<p>[<br>\boxed{R_0&#x3D;\frac{h}{2q^2}\approx 12.9\ \mathrm{k\Omega}}.<br>]</p>
+<p>This is the conductance quantum.</p>
+<hr>
+<h3 id="2-1-From-one-dimension-to-two-and-three-dimensions"><a href="#2-1-From-one-dimension-to-two-and-three-dimensions" class="headerlink" title="2.1 From one dimension to two and three dimensions"></a>2.1 From one dimension to two and three dimensions</h3><p>Higher-dimensional transport can be viewed as many parallel one-dimensional longitudinal modes.</p>
+<h4 id="2-1-1-One-dimension"><a href="#2-1-1-One-dimension" class="headerlink" title="2.1.1 One dimension"></a>2.1.1 One dimension</h4><p>A strictly 1D conductor has no transverse momentum. The Fermi surface consists of two points, (\pm k_F). With total degeneracy (g),</p>
+<p>[<br>\boxed{n_{1D}&#x3D;\frac{gk_F}{\pi}}.<br>]</p>
+<h4 id="2-1-2-Two-dimensions"><a href="#2-1-2-Two-dimensions" class="headerlink" title="2.1.2 Two dimensions"></a>2.1.2 Two dimensions</h4><p>For an isotropic 2D parabolic band,</p>
+<p>[<br>E&#x3D;\frac{\hbar^2}{2m^*}(k_x^2+k_y^2).<br>]</p>
+<p>At (T&#x3D;0), occupied states form a Fermi disk,</p>
+<p>[<br>k_x^2+k_y^2\le k_F^2.<br>]</p>
+<p>For a channel of width (W), periodic boundary conditions give</p>
+<p>[<br>\Delta k_y&#x3D;\frac{2\pi}{W}.<br>]</p>
+<p>The allowed transverse interval is approximately (-k_F&lt;k_y&lt;k_F), therefore</p>
+<p>[<br>M\approx\frac{2k_F}{2\pi&#x2F;W}&#x3D;\boxed{\frac{Wk_F}{\pi}}.<br>]</p>
+<p>Including degeneracy,</p>
+<p>[<br>\boxed{M_{2D}&#x3D;g\frac{Wk_F}{\pi}}.<br>]</p>
+<p>Each (k)-state occupies an area ((2\pi)^2&#x2F;A) in 2D momentum space. Thus</p>
+<p>[<br>N&#x3D;g\frac{A}{(2\pi)^2}\pi k_F^2,<br>]</p>
+<p>and</p>
+<p>[<br>\boxed{n_{2D}&#x3D;\frac{gk_F^2}{4\pi}}.<br>]</p>
+<p>Therefore</p>
+<p>[<br>k_F&#x3D;\sqrt{\frac{4\pi n_{2D}}{g}},<br>\qquad<br>M_{2D}\propto W\sqrt{n_{2D}}.<br>]</p>
+<p>Hence the width-normalized quantum contact resistance scales as</p>
+<p>[<br>\boxed{R_QW\propto n_{2D}^{-1&#x2F;2}}.<br>]</p>
+<h4 id="2-1-3-Three-dimensions"><a href="#2-1-3-Three-dimensions" class="headerlink" title="2.1.3 Three dimensions"></a>2.1.3 Three dimensions</h4><p>For a 3D parabolic band,</p>
+<p>[<br>E&#x3D;\frac{\hbar^2}{2m^*}(k_x^2+k_y^2+k_z^2).<br>]</p>
+<p>The occupied states form a Fermi sphere. Each (k)-state occupies ((2\pi)^3&#x2F;V), so</p>
+<p>[<br>N&#x3D;g\frac{V}{(2\pi)^3}\frac{4\pi k_F^3}{3}<br>]</p>
+<p>and</p>
+<p>[<br>\boxed{n_{3D}&#x3D;\frac{gk_F^3}{6\pi^2}}.<br>]</p>
+<p>For transport along (x), each allowed pair ((k_y,k_z)) defines one longitudinal mode. For cross-sectional area (A),</p>
+<p>[<br>\boxed{M_{3D}&#x3D;g\frac{Ak_F^2}{4\pi}}.<br>]</p>
+<p>Because (k_F\propto n_{3D}^{1&#x2F;3}),</p>
+<p>[<br>\boxed{M_{3D}\propto A n_{3D}^{2&#x2F;3}},<br>\qquad<br>\boxed{R_QA\propto n_{3D}^{-2&#x2F;3}}.<br>]</p>
+<p>A compact summary is:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Fermi surface</th>
+<th>Carrier density</th>
+<th>Transport modes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1D</td>
+<td>two points</td>
+<td>(n_{1D}\propto k_F)</td>
+<td>one per occupied subband</td>
+</tr>
+<tr>
+<td>2D</td>
+<td>circle</td>
+<td>(n_{2D}\propto k_F^2)</td>
+<td>(M\propto Wk_F)</td>
+</tr>
+<tr>
+<td>3D</td>
+<td>sphere</td>
+<td>(n_{3D}\propto k_F^3)</td>
+<td>(M\propto Ak_F^2)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="3-Transmission-and-Schottky-barriers"><a href="#3-Transmission-and-Schottky-barriers" class="headerlink" title="3. Transmission and Schottky barriers"></a>3. Transmission and Schottky barriers</h2><p>In the ideal ballistic limit,</p>
+<p>[<br>\mathcal T(E)&#x3D;1.<br>]</p>
+<p>In a real FET,</p>
+<p>[<br>0\le \mathcal T(E)\le 1.<br>]</p>
+<p>Transmission can be reduced by metal&#x2F;semiconductor barriers, wavefunction mismatch, interface disorder, phonons, impurities, localization, and grain boundaries.</p>
+<p>A Schottky barrier is one especially important mechanism that makes (\mathcal T(E)) strongly energy dependent.</p>
+<hr>
+<h3 id="3-1-From-Landauer-transmission-to-a-Schottky-barrier"><a href="#3-1-From-Landauer-transmission-to-a-Schottky-barrier" class="headerlink" title="3.1 From Landauer transmission to a Schottky barrier"></a>3.1 From Landauer transmission to a Schottky barrier</h3><p>For an ideal metal&#x2F;n-type-semiconductor contact, the Schottky-Mott barrier height is</p>
+<p>[<br>\boxed{\Phi_{Bn}&#x3D;\Phi_M-\chi},<br>]</p>
+<p>where (\Phi_M) is the metal work function and (\chi) is the semiconductor electron affinity.</p>
+<p>Real interfaces may exhibit Fermi-level pinning, interface states, and metal-induced gap states, so the actual barrier can differ substantially from this ideal value.</p>
+<p>The essential transport consequence is:</p>
+<ul>
+<li>for (E&gt;q\Phi_B), electrons can classically go over the barrier;</li>
+<li>for (E&lt;q\Phi_B), classical transmission is forbidden but quantum tunneling remains possible.</li>
+</ul>
+<p>This leads naturally to thermionic emission (TE), thermionic-field emission (TFE), and field emission (FE).</p>
+<hr>
+<h2 id="4-Thermionic-emission-field-emission-and-TFE"><a href="#4-Thermionic-emission-field-emission-and-TFE" class="headerlink" title="4. Thermionic emission, field emission, and TFE"></a>4. Thermionic emission, field emission, and TFE</h2><p>For a 3D non-degenerate semiconductor, the forward carrier flux over the barrier is obtained by integrating the occupied states with positive velocity normal to the interface:</p>
+<p>[<br>J&#x3D;q\int_{v_x&gt;v_{\min}} v_x f(E)D(\mathbf k)d^3k.<br>]</p>
+<p>Using the Maxwell-Boltzmann approximation</p>
+<p>[<br>f(E)\approx\exp\left[-\frac{E-E_F}{k_BT}\right]<br>]</p>
+<p>and the condition that the normal kinetic energy exceeds the barrier,</p>
+<p>[<br>\frac{\hbar^2k_x^2}{2m^*}&gt;q\Phi_B,<br>]</p>
+<p>one obtains the Richardson equation</p>
+<p>[<br>\boxed{J_S&#x3D;A^*T^2\exp\left(-\frac{q\Phi_B}{k_BT}\right)}<br>]</p>
+<p>with</p>
+<p>[<br>\boxed{A^*&#x3D;\frac{4\pi qm^*k_B^2}{h^3}}.<br>]</p>
+<p>Under applied bias,</p>
+<p>[<br>\boxed{J&#x3D;A^*T^2\exp\left(-\frac{q\Phi_B}{k_BT}\right)\left[\exp\left(\frac{qV}{nk_BT}\right)-1\right]}.<br>]</p>
+<p>The key factor</p>
+<p>[<br>\exp\left(-\frac{q\Phi_B}{k_BT}\right)<br>]</p>
+<p>is the fraction of the thermal distribution capable of reaching the top of the barrier.</p>
+<p>For an ideal parabolic system of dimensionality (d), the thermionic prefactor scales approximately as</p>
+<p>[<br>J_d\propto T^{(d+1)&#x2F;2}e^{-q\Phi_B&#x2F;k_BT}.<br>]</p>
+<p>Thus, ideally,</p>
+<p>[<br>1D:\ I\propto T e^{-q\Phi_B&#x2F;k_BT},<br>]</p>
+<p>[<br>2D:\ I&#x2F;W\propto T^{3&#x2F;2}e^{-q\Phi_B&#x2F;k_BT},<br>]</p>
+<p>[<br>3D:\ J\propto T^2e^{-q\Phi_B&#x2F;k_BT}.<br>]</p>
+<p>For atomically thin materials, the exact prefactor depends on contact geometry, momentum conservation, and band structure, so the conventional 3D Richardson form should not be used blindly.</p>
+<hr>
+<h3 id="4-1-Tunneling-through-the-Schottky-barrier"><a href="#4-1-Tunneling-through-the-Schottky-barrier" class="headerlink" title="4.1 Tunneling through the Schottky barrier"></a>4.1 Tunneling through the Schottky barrier</h3><p>For a classically forbidden region (U(x)&gt;E), the WKB transmission probability is</p>
+<p>[<br>\boxed{\mathcal T(E)\approx\exp\left[-2\int_{x_1}^{x_2}\kappa(x)dx\right]}<br>]</p>
+<p>with</p>
+<p>[<br>\boxed{\kappa(x)&#x3D;\frac{\sqrt{2m^*[U(x)-E]}}{\hbar}}.<br>]</p>
+<p>For a rectangular barrier of width (w),</p>
+<p>[<br>\boxed{\mathcal T(E)\approx\exp\left[-\frac{2w}{\hbar}\sqrt{2m^*(U_0-E)}\right]}.<br>]</p>
+<p>Thus, barrier width is as important as barrier height.</p>
+<p>For a triangular barrier created by a strong electric field,</p>
+<p>[<br>U(x)&#x3D;U_0-qFx,<br>]</p>
+<p>WKB gives</p>
+<p>[<br>\boxed{\mathcal T_{FE}\approx\exp\left[-\frac{4\sqrt{2m^*}(U_0-E)^{3&#x2F;2}}{3q\hbar F}\right]}.<br>]</p>
+<p>Hence larger electric field or stronger contact doping can dramatically increase transmission.</p>
+<hr>
+<h3 id="4-2-TE-TFE-and-FE-as-one-Landauer-problem"><a href="#4-2-TE-TFE-and-FE-as-one-Landauer-problem" class="headerlink" title="4.2 TE, TFE, and FE as one Landauer problem"></a>4.2 TE, TFE, and FE as one Landauer problem</h3><p>The same Landauer integral describes all three regimes:</p>
+<p>[<br>\boxed{I&#x3D;\frac{2q}{h}\int M(E)\mathcal T(E)[f_S-f_D]dE}.<br>]</p>
+<p>The difference is the dominant energy window.</p>
+<h4 id="4-2-1-Thermionic-emission-TE"><a href="#4-2-1-Thermionic-emission-TE" class="headerlink" title="4.2.1 Thermionic emission (TE)"></a>4.2.1 Thermionic emission (TE)</h4><p>Electrons mainly occupy states above the barrier:</p>
+<p>[<br>E\gtrsim U_B.<br>]</p>
+<h4 id="4-2-2-Field-emission-FE"><a href="#4-2-2-Field-emission-FE" class="headerlink" title="4.2.2 Field emission (FE)"></a>4.2.2 Field emission (FE)</h4><p>Electrons remain close to the Fermi energy,</p>
+<p>[<br>E\approx E_F&lt;U_B,<br>]</p>
+<p>and tunnel directly through a thin barrier.</p>
+<h4 id="4-2-3-Thermionic-field-emission-TFE"><a href="#4-2-3-Thermionic-field-emission-TFE" class="headerlink" title="4.2.3 Thermionic-field emission (TFE)"></a>4.2.3 Thermionic-field emission (TFE)</h4><p>Electrons first gain thermal energy but do not reach the barrier top, then tunnel through the remaining barrier:</p>
+<p>[<br>E_F&lt;E&lt;U_B.<br>]</p>
+<p>Thus TE, TFE, and FE are not three unrelated mechanisms; they are different parts of the same energy-resolved transmission integral.</p>
+<hr>
+<h2 id="5-Carrier-density-and-contact-resistance"><a href="#5-Carrier-density-and-contact-resistance" class="headerlink" title="5. Carrier density and contact resistance"></a>5. Carrier density and contact resistance</h2><p>Increasing carrier density near a FET contact has two distinct effects.</p>
+<p>First,</p>
+<p>[<br>n\uparrow\Rightarrow k_F\uparrow\Rightarrow M\uparrow,<br>]</p>
+<p>so the quantum contact resistance decreases.</p>
+<p>Second,</p>
+<p>[<br>n\uparrow\Rightarrow w_B\downarrow\Rightarrow \mathcal T\uparrow,<br>]</p>
+<p>so the actual contact approaches the quantum limit more closely.</p>
+<p>Therefore</p>
+<p>[<br>\boxed{n\uparrow\Rightarrow{M\uparrow,\ \mathcal T\uparrow}\Rightarrow R_c\downarrow}.<br>]</p>
+<hr>
+<h2 id="6-Localized-states-and-hopping-transport"><a href="#6-Localized-states-and-hopping-transport" class="headerlink" title="6. Localized states and hopping transport"></a>6. Localized states and hopping transport</h2><p>The Schottky picture assumes that once the carrier enters the semiconductor, it can occupy extended states. Disorder, defects, structural randomness, strong electron-phonon coupling, or band-tail states may instead produce localized states.</p>
+<p>A localized wavefunction decays approximately as</p>
+<p>[<br>|\psi(r)|\propto e^{-r&#x2F;\xi},<br>]</p>
+<p>where (\xi) is the localization length.</p>
+<p>Two localized states separated by distance (R) have overlap approximately</p>
+<p>[<br>e^{-R&#x2F;\xi},<br>]</p>
+<p>so the transition probability contains</p>
+<p>[<br>\boxed{P_{\rm overlap}\propto e^{-2R&#x2F;\xi}}.<br>]</p>
+<p>At this point the relevant transport process is no longer coherent propagation through an extended band, but hopping between localized states.</p>
+<hr>
+<h3 id="6-1-Phonon-assisted-hopping"><a href="#6-1-Phonon-assisted-hopping" class="headerlink" title="6.1 Phonon-assisted hopping"></a>6.1 Phonon-assisted hopping</h3><p>Consider localized states (i) and (j), separated by (R_{ij}), with energy difference (\Delta E&#x3D;E_j-E_i&gt;0). A simplified hopping rate is</p>
+<p>[<br>\boxed{\Gamma_{ij}\sim\Gamma_0\exp\left(-\frac{2R_{ij}}{\xi}\right)\exp\left(-\frac{\Delta E}{k_BT}\right)}.<br>]</p>
+<p>The first exponential is the spatial-overlap penalty; the second is the thermal activation penalty.</p>
+<p>The electron therefore trades spatial distance against energy difference.</p>
+<hr>
+<h3 id="6-2-Nearest-neighbor-hopping"><a href="#6-2-Nearest-neighbor-hopping" class="headerlink" title="6.2 Nearest-neighbor hopping"></a>6.2 Nearest-neighbor hopping</h3><p>At relatively high temperature, the electron mainly hops to nearby sites. If the characteristic activation energy is (E_A),</p>
+<p>[<br>\boxed{\sigma&#x3D;\sigma_0\exp\left(-\frac{E_A}{k_BT}\right)}.<br>]</p>
+<p>Therefore</p>
+<p>[<br>\ln\sigma\propto -\frac{1}{T}.<br>]</p>
+<p>At lower temperature, it can be favorable to hop farther in real space to find a state closer in energy. This produces variable-range hopping.</p>
+<hr>
+<h3 id="6-3-Mott-variable-range-hopping"><a href="#6-3-Mott-variable-range-hopping" class="headerlink" title="6.3 Mott variable-range hopping"></a>6.3 Mott variable-range hopping</h3><p>Assume that localized states near the Fermi energy have an approximately constant density of states (g(E_F)).</p>
+<p>If the electron searches within radius (R) and energy interval (\Delta E), the number of candidate states in (d) dimensions scales as</p>
+<p>[<br>N\sim g(E_F)\Delta E R^d.<br>]</p>
+<p>For approximately one available state,</p>
+<p>[<br>N\sim 1,<br>]</p>
+<p>so</p>
+<p>[<br>\boxed{\Delta E\sim\frac{1}{g(E_F)R^d}}.<br>]</p>
+<p>The hopping exponent is</p>
+<p>[<br>S(R)&#x3D;\frac{2R}{\xi}+\frac{\Delta E}{k_BT}<br>]</p>
+<p>or</p>
+<p>[<br>S(R)&#x3D;\frac{2R}{\xi}+\frac{1}{g(E_F)k_BTR^d}.<br>]</p>
+<p>The optimum hop minimizes (S(R)):</p>
+<p>[<br>\frac{dS}{dR}&#x3D;0.<br>]</p>
+<p>Therefore</p>
+<p>[<br>R_{\rm opt}^{d+1}\propto\frac{\xi}{g(E_F)k_BT},<br>]</p>
+<p>so</p>
+<p>[<br>R_{\rm opt}\propto T^{-1&#x2F;(d+1)}.<br>]</p>
+<p>Substitution back into the exponent gives Mott’s law:</p>
+<p>[<br>\boxed{\sigma(T)&#x3D;\sigma_0\exp\left[-\left(\frac{T_0}{T}\right)^{1&#x2F;(d+1)}\right]}.<br>]</p>
+<p>Here</p>
+<p>[<br>\boxed{T_0\sim\frac{\beta_d}{k_Bg(E_F)\xi^d}}.<br>]</p>
+<hr>
+<h3 id="6-4-Hopping-in-one-two-and-three-dimensions"><a href="#6-4-Hopping-in-one-two-and-three-dimensions" class="headerlink" title="6.4 Hopping in one, two, and three dimensions"></a>6.4 Hopping in one, two, and three dimensions</h3><p>For 1D Mott VRH,</p>
+<p>[<br>\boxed{\sigma&#x3D;\sigma_0\exp\left[-\left(\frac{T_0}{T}\right)^{1&#x2F;2}\right]}.<br>]</p>
+<p>For 2D Mott VRH,</p>
+<p>[<br>\boxed{\sigma&#x3D;\sigma_0\exp\left[-\left(\frac{T_0}{T}\right)^{1&#x2F;3}\right]}.<br>]</p>
+<p>For 3D Mott VRH,</p>
+<p>[<br>\boxed{\sigma&#x3D;\sigma_0\exp\left[-\left(\frac{T_0}{T}\right)^{1&#x2F;4}\right]}.<br>]</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Mott exponent</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1D</td>
+<td>(1&#x2F;2)</td>
+</tr>
+<tr>
+<td>2D</td>
+<td>(1&#x2F;3)</td>
+</tr>
+<tr>
+<td>3D</td>
+<td>(1&#x2F;4)</td>
+</tr>
+</tbody></table>
+<p>The exponent decreases with dimension because a higher-dimensional system offers more spatial possibilities for finding an energetically favorable destination.</p>
+<p>A (T^{-1&#x2F;2}) law does not automatically prove 1D hopping. Electron-electron interactions can create a Coulomb gap and produce Efros-Shklovskii VRH,</p>
+<p>[<br>\boxed{\sigma&#x3D;\sigma_0\exp\left[-\left(\frac{T_{ES}}{T}\right)^{1&#x2F;2}\right]},<br>]</p>
+<p>in multiple dimensions.</p>
+<hr>
+<h2 id="7-Mobility-edges-and-transport-in-real-FETs"><a href="#7-Mobility-edges-and-transport-in-real-FETs" class="headerlink" title="7. Mobility edges and transport in real FETs"></a>7. Mobility edges and transport in real FETs</h2><p>Disorder can create localized tail states near a band edge. A useful picture is</p>
+<p>[<br>\text{deep gap}\rightarrow\text{localized tail states}\rightarrow E_M\rightarrow\text{extended states},<br>]</p>
+<p>where (E_M) is the mobility edge.</p>
+<p>If the Fermi level lies below (E_M), carriers may thermally activate to extended states,</p>
+<p>[<br>\boxed{\sigma\propto\exp\left[-\frac{E_M-E_F}{k_BT}\right]},<br>]</p>
+<p>or hop through localized states,</p>
+<p>[<br>\boxed{\sigma\propto\exp\left[-\left(\frac{T_0}{T}\right)^p\right]}.<br>]</p>
+<p>For Mott VRH,</p>
+<p>[<br>p&#x3D;\frac{1}{d+1}.<br>]</p>
+<p>A gate voltage can therefore move a FET through qualitatively different transport regimes by shifting (E_F) relative to localized and extended states.</p>
+<hr>
+<h3 id="7-1-The-full-transport-picture-of-a-real-FET"><a href="#7-1-The-full-transport-picture-of-a-real-FET" class="headerlink" title="7.1 The full transport picture of a real FET"></a>7.1 The full transport picture of a real FET</h3><p>A two-terminal FET generally contains at least three regions:</p>
+<p>[<br>\boxed{R_{\rm total}&#x3D;R_{c,S}+R_{\rm channel}+R_{c,D}}.<br>]</p>
+<p>The source contact may be dominated by TE, TFE, or FE. The channel may be ballistic, diffusive, thermally activated, or hopping dominated. The drain introduces a second injection&#x2F;extraction process.</p>
+<p>Therefore a measured (I_D-V_G) curve may contain multiple mechanisms simultaneously:</p>
+<ul>
+<li>Schottky injection,</li>
+<li>tunneling,</li>
+<li>trap filling,</li>
+<li>band-tail transport,</li>
+<li>hopping,</li>
+<li>ordinary drift-diffusion.</li>
+</ul>
+<p>This is especially important in atomically thin FETs.</p>
+<hr>
+<h2 id="8-Experimental-signatures-and-unified-picture"><a href="#8-Experimental-signatures-and-unified-picture" class="headerlink" title="8. Experimental signatures and unified picture"></a>8. Experimental signatures and unified picture</h2><table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Typical temperature dependence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3D thermionic emission</td>
+<td>(J&#x2F;T^2\propto e^{-q\Phi_B&#x2F;k_BT})</td>
+</tr>
+<tr>
+<td>Ideal 2D thermionic emission</td>
+<td>(J&#x2F;T^{3&#x2F;2}\propto e^{-q\Phi_B&#x2F;k_BT})</td>
+</tr>
+<tr>
+<td>Field emission</td>
+<td>weak temperature dependence, strong field dependence</td>
+</tr>
+<tr>
+<td>Nearest-neighbor hopping</td>
+<td>(\ln\sigma\propto-T^{-1})</td>
+</tr>
+<tr>
+<td>1D Mott VRH</td>
+<td>(\ln\sigma\propto-T^{-1&#x2F;2})</td>
+</tr>
+<tr>
+<td>2D Mott VRH</td>
+<td>(\ln\sigma\propto-T^{-1&#x2F;3})</td>
+</tr>
+<tr>
+<td>3D Mott VRH</td>
+<td>(\ln\sigma\propto-T^{-1&#x2F;4})</td>
+</tr>
+<tr>
+<td>Efros-Shklovskii VRH</td>
+<td>(\ln\sigma\propto-T^{-1&#x2F;2})</td>
+</tr>
+</tbody></table>
+<p>One linearized fit is rarely sufficient to establish a transport mechanism.</p>
+<p>Useful complementary experiments include channel-length scaling, four-probe measurements, TLM, gate-dependent activation-energy analysis, bias-dependent temperature measurements, contact-metal comparison, Hall measurements, STS, and KPFM.</p>
+<hr>
+<h3 id="8-1-A-unified-view-from-mathcal-T-1-to-hopping"><a href="#8-1-A-unified-view-from-mathcal-T-1-to-hopping" class="headerlink" title="8.1 A unified view: from (\mathcal T&#x3D;1) to hopping"></a>8.1 A unified view: from (\mathcal T&#x3D;1) to hopping</h3><p>The complete hierarchy is</p>
+<p>[<br>\boxed{<br>\begin{aligned}<br>&amp;\text{quantization of }k\<br>&amp;\downarrow\<br>&amp;d\dot N&#x3D;\frac{dE}{h}\<br>&amp;\downarrow\<br>&amp;G_0&#x3D;\frac{2q^2}{h}\<br>&amp;\downarrow\<br>&amp;G&#x3D;\frac{2q^2}{h}\sum_n\mathcal T_n\<br>&amp;\downarrow\<br>&amp;\text{energy-dependent }\mathcal T(E)\<br>&amp;\downarrow\<br>&amp;\text{Schottky barrier}\<br>&amp;\downarrow\<br>&amp;\text{TE&#x2F;TFE&#x2F;FE}\<br>&amp;\downarrow\<br>&amp;\text{localized band-tail states}\<br>&amp;\downarrow\<br>&amp;\Gamma_{ij}\sim e^{-2R&#x2F;\xi-\Delta E&#x2F;k_BT}\<br>&amp;\downarrow\<br>&amp;\text{NNH&#x2F;Mott VRH&#x2F;ES-VRH}.<br>\end{aligned}}<br>]</p>
+<p>The two central quantities are:</p>
+<ol>
+<li><strong>Phase space:</strong> how many electronic states are available? This determines the number of Landauer modes and the quantum conductance limit.</li>
+<li><strong>Transition probability:</strong> how easily can an electron move between those states? For extended states this is described by (\mathcal T(E)); for localized states it is described by transition rates (\Gamma_{ij}).</li>
+</ol>
+<p>Seen this way, ballistic transport, Schottky injection, tunneling, and hopping are not isolated textbook models.</p>
+<p>They are successive regimes that emerge as the nature of the electronic states and the probability of moving between them change.</p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="http://www.iCalculate.website">Du Xinchuan</a>
+            <p>原文链接：<a href="http://www.icalculate.website/2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/">http://www.icalculate.website/2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/</a>
+            <p>发表日期：<a href="http://www.icalculate.website/2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/">August 24th 2026, 1:29:54 pm</a>
+            <p>更新日期：<a href="http://www.icalculate.website/2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/">August 24th 2026, 1:30:37 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "../From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/" title= "From Capacitors to FETs">
+                    <div class="prevTitle">From Capacitors to FETs</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:549174176@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/iCalculate" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/WeChat_QR.jpg" />
+                </span>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title=qq>
+                  
+                  <img class="profile-qr" src="/assets/QQ_QR.jpg" />
+                </span>
+            
+        
+    
+        
+            
+                <a href="https://t.me/chauncy_du" class="iconfont-archer telegram" target="_blank" title=telegram></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+            
+                <a href="https://www.linkedin.com/in/xinchuan-du-a4b0b51bb/" class="iconfont-archer linkedin" target="_blank" title=linkedin></a>
+            
+        
+    
+        
+            
+                <a href="https://steamcommunity.com/id/icalculate97/" class="iconfont-archer steam" target="_blank" title=steam></a>
+            
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Quantum-states-and-one-dimensional-carrier-flux"><span class="toc-number">1.</span> <span class="toc-text">1. Quantum states and one-dimensional carrier flux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Why-a-1D-mode-carries-dE-h-states-per-second"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 Why a 1D mode carries (dE&#x2F;h) states per second</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Landauer-current-and-transport-dimensionality"><span class="toc-number">2.</span> <span class="toc-text">2. Landauer current and transport dimensionality</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-From-one-dimension-to-two-and-three-dimensions"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 From one dimension to two and three dimensions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Transmission-and-Schottky-barriers"><span class="toc-number">3.</span> <span class="toc-text">3. Transmission and Schottky barriers</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-From-Landauer-transmission-to-a-Schottky-barrier"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 From Landauer transmission to a Schottky barrier</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Thermionic-emission-field-emission-and-TFE"><span class="toc-number">4.</span> <span class="toc-text">4. Thermionic emission, field emission, and TFE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Tunneling-through-the-Schottky-barrier"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 Tunneling through the Schottky barrier</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-TE-TFE-and-FE-as-one-Landauer-problem"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 TE, TFE, and FE as one Landauer problem</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Carrier-density-and-contact-resistance"><span class="toc-number">5.</span> <span class="toc-text">5. Carrier density and contact resistance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Localized-states-and-hopping-transport"><span class="toc-number">6.</span> <span class="toc-text">6. Localized states and hopping transport</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-Phonon-assisted-hopping"><span class="toc-number">6.1.</span> <span class="toc-text">6.1 Phonon-assisted hopping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-Nearest-neighbor-hopping"><span class="toc-number">6.2.</span> <span class="toc-text">6.2 Nearest-neighbor hopping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-Mott-variable-range-hopping"><span class="toc-number">6.3.</span> <span class="toc-text">6.3 Mott variable-range hopping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-Hopping-in-one-two-and-three-dimensions"><span class="toc-number">6.4.</span> <span class="toc-text">6.4 Hopping in one, two, and three dimensions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Mobility-edges-and-transport-in-real-FETs"><span class="toc-number">7.</span> <span class="toc-text">7. Mobility edges and transport in real FETs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-The-full-transport-picture-of-a-real-FET"><span class="toc-number">7.1.</span> <span class="toc-text">7.1 The full transport picture of a real FET</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Experimental-signatures-and-unified-picture"><span class="toc-number">8.</span> <span class="toc-text">8. Experimental signatures and unified picture</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-A-unified-view-from-mathcal-T-1-to-hopping"><span class="toc-number">8.1.</span> <span class="toc-text">8.1 A unified view: from (\mathcal T&#x3D;1) to hopping</span></a></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 63
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2026 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/" >From Ballistic Transport to Hopping in FETs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/" >From Capacitors to FETs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href= "2026/05/17/What-Top-Journals-Really-Look-For/" >What Top Journals Really Look For</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/16</span><a class="archive-post-title" href= "2026/05/16/Research-Taste-in-the-Age-of-Vibe-Coding/" >Research Taste in the Age of Vibe Coding</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2025 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2025/08/18/Introducing-2D-material-based-devices-in-the-logic-scaling-roadmap/" >Introducing 2D-material based devices in the logic scaling roadmap</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "2025/07/16/Vortex-Avalanche/" >Vortex Avalanche</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "2025/07/16/The-RTS-Waveform-Evolution/" >The RTS Waveform Evolution</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET Quantum Transport Simulation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/" >Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/EBE-Deposition-Operation-Notes/" >EBE Deposition Operation Notes</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/01</span><a class="archive-post-title" href= "2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/" >Phase Transitions in Electronic Materials and Devices</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/28</span><a class="archive-post-title" href= "2025/06/28/When-a-Stranger-Becomes-Both-Guest-and-Enemy-Enantiosemy/" >When a Stranger Becomes Both Guest and Enemy: Enantiosemy</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/" >From Classical Mechanics to Quantum Theory</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2024 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "2024/11/17/Deck-of-Doctoral-Dissertation/" >Deck of Doctoral Dissertation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/Science-Communication/" >Science Communication</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/How-to-give-a-talk/" >How to give a talk</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2023 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2023/03/27/SR400-photon-counter-delay-scan-demo/" >SR400 photon counter delay scan demo</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/23</span><a class="archive-post-title" href= "2023/03/23/Python-library-for-SR400-Photon-counter/" >Python library for SR400 Photon counter</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href= "2023/03/21/COMSOL-script-for-random-object-generation/" >COMSOL script for random object generation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "2023/03/18/LakeShore-Model-335-Python-Script/" >LakeShore Model 335 Python控制脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2023/03/17/Python-script-for-Keithley-2400-current-sweep/" >Keithley2400源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "2023/03/16/Python-script-for-Keithley-2450-current-sweep/" >Keithley2450源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "2023/03/15/Frontiers-in-condensed-matter-physics/" >Frontiers in condensed matter physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2023/03/13/HER-auto-test-script/" >HER auto test script</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2021/02/15/Cmd%20Markdown%20Editor/" >Cmd Markdown Editor</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "2020/11/24/Introduction-for-CHI660e-Macro-Generator/" >Introduction for CHI660e Macro Generator</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/15</span><a class="archive-post-title" href= "2020/11/15/hello-world/" >Hello World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "2020/09/29/Why-movies-appeal-to-me/" >Why movies appeal to me</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/15</span><a class="archive-post-title" href= "2020/09/15/A-letter-from-the-middle-of-September/" >七月流火 春日迟迟</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2020/08/18/Understanding-of-Pseudocapacitance/" >Understanding of Pseudocapacitance</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "2020/06/18/Perspective-Blaming-China-is-Illegimate-and-Irresponsible/" >Blaming China is Illegimate and Irresponsible</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span><a class="archive-post-title" href= "2020/05/19/Side-by-Side-Battery-Technologies-with-Lithium%E2%80%90Ion-Based-Batteries/" >Side-by-Side-Battery-Technologies-with-Lithium‐Ion-Based-Batteries</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href= "2020/05/01/WHAT-IS-ATR-SEIRAS/" >WHAT IS ATR-SEIRAS?</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "2020/04/30/Microcell-Electrochemistry-Literature-Review/" >Microcell Electrochemistry Literature Review</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "2020/04/28/Mass-Transfer-in-Electrochemistry/" >Mass Transfer in Electrochemistry</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "2020/04/17/Drude-Model-in-Soild-State-Physics/" >Drude Model in Soild State Physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "2020/04/03/Is-the-World-Virtual/" >Is the World Virtual</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2020/03/27/Topological-two-dimensional-polymers/" >Topological two-dimensional polymers</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href= "2020/03/26/The-Configuration-to-the-Deep-Network/" >The Configuration to the Deep Network</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Artical-Dynamic-stability-of-active-sites-in-hydr(oxy)-oxides-for-the-oxygen-evolution-reaction/" >顶刊精读：动态平衡视角下的OER反应位点</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Literature-research-website/" >Literature research website</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2020/03/13/Advantages-of-microelectrode-system-in-electrochemical-science/" >Advantages of microelectrode system in electrochemical science</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "2020/03/11/Hertz-Knudsen-Equation-for-Evaporation-and-Condensation/" >Hertz-Knudsen Equation for Evaporation and Condensation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/How-to-measure-ECSA/" >How to measure ECSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/Li-Battery-Foundation/" >Li Battery Foundation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "2020/03/03/CDW-and-SDW/" >CDW and SDW</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "2020/02/27/3Dmax-Draw-Graphene-Grain-Boundaries/" >使用3Dmax绘制石墨烯晶格缺陷</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "2020/02/26/Anacoda-Introductory-Tutorail/" >Anaconda详细安装及使用教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Plugins-Density-Filter/" >Origin插件之：散点密度热图（Density Filter）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Python-Environment-Build-up/" >Origin+Python环境搭建</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "2020/02/24/Origin-Plugins-Graph-Maker/" >Origin插件之：快速作图（Graph Maker）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Venn-Diagram/" >Origin插件之：韦恩图生成插件（Venn Diagram）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Layer-Stack-Manager/" >Origin插件之：堆叠图小工具（Layer Stack Manager）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "2020/02/22/Origin-Plugins-Color-Editor/" >Origin插件之：配色编辑器(Color Editor)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "2020/02/21/Origin-Plugins-Tafel-Extrapolation/" >Origin插件之：LSV数据处理插件(Tafel Extrapolation)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/P5-js-new-journal/" >P5.js new journal</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/Katex-Test/" >Katex Test</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Artical-Current-and-future-role-of-Haber-Bosch-ammonia-in-a-carbon-free-energy-landscape/" >催化合成氨未来何去何从</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/4thYearAnniversary/" >写在第四年的Anniversary</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Group-Meeting/" >Group Meeting Backup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "2020/02/16/Artical-Precise-Anionic-Regulation-Assisted-by-Electrochemical-Reactions/" >张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/" >原子轨道耦合帮你分析固氮催化位点活性！</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "2020/02/14/Some-Useful-website/" >Some Useful website</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
+    
+        <span class="sidebar-tag-name" data-tags="3Dmax"><span class="iconfont-archer">&#xe606;</span>3Dmax</span>
+    
+        <span class="sidebar-tag-name" data-tags="Note"><span class="iconfont-archer">&#xe606;</span>Note</span>
+    
+        <span class="sidebar-tag-name" data-tags="Literature"><span class="iconfont-archer">&#xe606;</span>Literature</span>
+    
+        <span class="sidebar-tag-name" data-tags="Anaconda"><span class="iconfont-archer">&#xe606;</span>Anaconda</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Knowledge Point"><span class="iconfont-archer">&#xe606;</span>Knowledge Point</span>
+    
+        <span class="sidebar-tag-name" data-tags="COMSOL"><span class="iconfont-archer">&#xe606;</span>COMSOL</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal"><span class="iconfont-archer">&#xe606;</span>Personal</span>
+    
+        <span class="sidebar-tag-name" data-tags="Share"><span class="iconfont-archer">&#xe606;</span>Share</span>
+    
+        <span class="sidebar-tag-name" data-tags="Backup"><span class="iconfont-archer">&#xe606;</span>Backup</span>
+    
+        <span class="sidebar-tag-name" data-tags="Causerie"><span class="iconfont-archer">&#xe606;</span>Causerie</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical"><span class="iconfont-archer">&#xe606;</span>Electrochemical</span>
+    
+        <span class="sidebar-tag-name" data-tags="EBE"><span class="iconfont-archer">&#xe606;</span>EBE</span>
+    
+        <span class="sidebar-tag-name" data-tags="Thin Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin Film Deposition</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lab SOP"><span class="iconfont-archer">&#xe606;</span>Lab SOP</span>
+    
+        <span class="sidebar-tag-name" data-tags="Theory"><span class="iconfont-archer">&#xe606;</span>Theory</span>
+    
+        <span class="sidebar-tag-name" data-tags="Script"><span class="iconfont-archer">&#xe606;</span>Script</span>
+    
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
+        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
+    
+        <span class="sidebar-tag-name" data-tags="Nanodevice"><span class="iconfont-archer">&#xe606;</span>Nanodevice</span>
+    
+        <span class="sidebar-tag-name" data-tags="Battery"><span class="iconfont-archer">&#xe606;</span>Battery</span>
+    
+        <span class="sidebar-tag-name" data-tags="MOSFET"><span class="iconfont-archer">&#xe606;</span>MOSFET</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Semiconductor Physics"><span class="iconfont-archer">&#xe606;</span>Semiconductor Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Interactive Simulation"><span class="iconfont-archer">&#xe606;</span>Interactive Simulation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Website"><span class="iconfont-archer">&#xe606;</span>Website</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microcell"><span class="iconfont-archer">&#xe606;</span>Microcell</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
+        <span class="sidebar-tag-name" data-tags="P5.js"><span class="iconfont-archer">&#xe606;</span>P5.js</span>
+    
+        <span class="sidebar-tag-name" data-tags="Front"><span class="iconfont-archer">&#xe606;</span>Front</span>
+    
+        <span class="sidebar-tag-name" data-tags="COVID-19"><span class="iconfont-archer">&#xe606;</span>COVID-19</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transition"><span class="iconfont-archer">&#xe606;</span>Phase Transition</span>
+    
+        <span class="sidebar-tag-name" data-tags="NC-FET"><span class="iconfont-archer">&#xe606;</span>NC-FET</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Conductance"><span class="iconfont-archer">&#xe606;</span>Quantum Conductance</span>
+    
+        <span class="sidebar-tag-name" data-tags="Condense Physics"><span class="iconfont-archer">&#xe606;</span>Condense Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="DeepNet"><span class="iconfont-archer">&#xe606;</span>DeepNet</span>
+    
+        <span class="sidebar-tag-name" data-tags="Superconducting"><span class="iconfont-archer">&#xe606;</span>Superconducting</span>
+    
+        <span class="sidebar-tag-name" data-tags="Vortex"><span class="iconfont-archer">&#xe606;</span>Vortex</span>
+    
+        <span class="sidebar-tag-name" data-tags="Avalanche"><span class="iconfont-archer">&#xe606;</span>Avalanche</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology"><span class="iconfont-archer">&#xe606;</span>Technology</span>
+    
+        <span class="sidebar-tag-name" data-tags="Etymology"><span class="iconfont-archer">&#xe606;</span>Etymology</span>
+    
+        <span class="sidebar-tag-name" data-tags="Language History"><span class="iconfont-archer">&#xe606;</span>Language History</span>
+    
+        <span class="sidebar-tag-name" data-tags="Cultural Semantics"><span class="iconfont-archer">&#xe606;</span>Cultural Semantics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Movie"><span class="iconfont-archer">&#xe606;</span>Movie</span>
+    
+        <span class="sidebar-tag-name" data-tags="HEMT"><span class="iconfont-archer">&#xe606;</span>HEMT</span>
+    
+        <span class="sidebar-tag-name" data-tags="Schottky Barrier"><span class="iconfont-archer">&#xe606;</span>Schottky Barrier</span>
+    
+        <span class="sidebar-tag-name" data-tags="Hopping Transport"><span class="iconfont-archer">&#xe606;</span>Hopping Transport</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Du Xinchuan"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="../../../../lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="../../../../scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="../../../../scripts/share.js" async></script>    
+     
+    <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['
+</html>
+
+
+, '
+</html>
+
+
+], ['\\(', '\\)']],
+    displayMath: [['$', '$'], ['\\[', '\\]']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
+
+
