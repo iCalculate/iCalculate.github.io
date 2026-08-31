@@ -384,12 +384,24 @@
     const focus = state.selected || state.hovered;
     const neighborhood = connected(focus);
     context.save();
-    context.strokeStyle = 'rgba(0,0,0,.035)';
-    context.lineWidth = 1;
-    const grid = 64 * state.transform.k;
-    if (grid > 20) {
-      for (let x = state.transform.x % grid; x < width; x += grid) { context.beginPath(); context.moveTo(x, 0); context.lineTo(x, height); context.stroke(); }
-      for (let y = state.transform.y % grid; y < height; y += grid) { context.beginPath(); context.moveTo(0, y); context.lineTo(width, y); context.stroke(); }
+    const grid = 48 * state.transform.k;
+    if (grid > 14) {
+      const originX = ((state.transform.x % grid) + grid) % grid;
+      const originY = ((state.transform.y % grid) + grid) % grid;
+      for (let x = originX; x < width; x += grid) {
+        const index = Math.round((x - state.transform.x) / grid);
+        const major = Math.abs(index) % 4 === 0;
+        context.beginPath(); context.moveTo(x, 0); context.lineTo(x, height);
+        context.strokeStyle = major ? 'rgba(54,79,94,.105)' : 'rgba(74,99,113,.052)';
+        context.lineWidth = major ? 1 : .7; context.stroke();
+      }
+      for (let y = originY; y < height; y += grid) {
+        const index = Math.round((y - state.transform.y) / grid);
+        const major = Math.abs(index) % 4 === 0;
+        context.beginPath(); context.moveTo(0, y); context.lineTo(width, y);
+        context.strokeStyle = major ? 'rgba(54,79,94,.105)' : 'rgba(74,99,113,.052)';
+        context.lineWidth = major ? 1 : .7; context.stroke();
+      }
     }
     context.restore();
     if (state.layout === 'hierarchy') {
@@ -430,7 +442,7 @@
       const faded = Boolean((state.query && !matches(node)) || (focus && !related));
       const base = domainColor(node);
       const stroke = faded ? mixWithWhite(base, .72) : color(node);
-      const fill = node.type === 'topic' ? '#fff' : faded ? mixWithWhite(base, .82) : color(node);
+      const fill = node.type === 'topic' ? '#f2f6f5' : faded ? mixWithWhite(base, .82) : color(node);
       context.save();
       context.translate(point.x, point.y);
       if (active) {
