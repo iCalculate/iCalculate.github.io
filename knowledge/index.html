@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="An interactive map of articles, research notes, and the ideas connecting them.">
+  <title>Knowledge Atlas · iCalculate’s Studio</title>
+  <link rel="icon" href="../assets/favicon.ico">
+  <link rel="stylesheet" href="graph.css">
+</head>
+<body class="atlas-page">
+  <canvas id="atlas" aria-label="Interactive knowledge graph"></canvas>
+  <div class="atmosphere" aria-hidden="true"></div>
+  <header class="atlas-header"><a class="wordmark" href="../">iCalculate’s Studio</a></header>
+  <aside class="atlas-panel" aria-label="Graph controls">
+    <button class="panel-toggle" id="panel-toggle" type="button" aria-label="Toggle graph controls">Layers</button>
+    <p class="eyebrow">THE LIVING INDEX</p><h1>Knowledge<br>Atlas</h1>
+    <p class="intro">Articles preserve the chronology. Notes reveal the constellations between them.</p>
+    <label class="search-box" for="graph-search"><span>Search the atlas</span><input id="graph-search" type="search" placeholder="A title, tag, or idea…" autocomplete="off"><kbd>/</kbd></label>
+    <fieldset class="layout-picker"><legend>Layout</legend>
+      <button type="button" class="active" data-layout="domain">Domains</button>
+      <button type="button" data-layout="concept">Concepts</button>
+      <button type="button" data-layout="hierarchy">Hierarchy</button>
+    </fieldset>
+    <fieldset class="filters"><legend>Layers</legend>
+      <label><input type="checkbox" value="post" checked><i class="post-dot"></i>Articles <b id="post-count">—</b></label>
+      <label><input type="checkbox" value="note" checked><i class="note-dot"></i>Knowledge notes <b id="note-count">—</b></label>
+      <label><input type="checkbox" value="topic" checked><i class="topic-dot"></i>Topics <b id="topic-count">—</b></label>
+    </fieldset>
+    <div class="atlas-actions"><button id="reset-view" type="button">Reset view</button><button id="reheat-graph" type="button">Rearrange</button></div>
+    <p class="hint">Choose a layout · drag to reshape · scroll to zoom · click to inspect</p>
+  </aside>
+  <section class="inspector" id="inspector" aria-live="polite" aria-label="Selected node" hidden>
+    <button class="inspector-close" id="inspector-close" type="button" aria-label="Close details">×</button>
+    <div id="inspector-content" class="inspector-content">
+      <p class="inspector-type" id="inspector-type"></p><h2 id="inspector-title"></h2><p class="inspector-date" id="inspector-date"></p><p class="inspector-excerpt" id="inspector-excerpt"></p>
+      <div class="inspector-tags" id="inspector-tags"></div><div class="connections"><span>Immediate connections</span><div id="inspector-links"></div></div>
+      <a class="open-node" id="open-node" href="#">Open this page <span>↗</span></a>
+    </div>
+  </section>
+  <div class="atlas-status"><span id="visible-count">Loading the atlas…</span><span class="coordinates" id="coordinates">X 000 · Y 000</span></div>
+  <div class="loading-state" id="loading-state"><i></i><span>Tracing connections</span></div>
+  <noscript>This atlas needs JavaScript to draw and explore the graph.</noscript>
+  <script src="graph.js" defer></script>
+</body>
+</html>
