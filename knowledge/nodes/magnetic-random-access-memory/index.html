@@ -8,39 +8,33 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Magnetic Random-Access Memory</span><span data-lang="zh" hidden>磁阻随机存储器</span></h1><p class="node-deck"><span data-lang="en">MRAM stores the relative magnetization of magnetic layers and reads it through tunneling magnetoresistance.</span><span data-lang="zh" hidden>MRAM 保存磁层相对磁化构型，并通过隧穿磁阻读取。</span></p><div class="node-tags"><span>Memory Physics</span><span>Device Physics</span><span>Technology Roadmap</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> MRAM stores the relative magnetization of magnetic layers and reads it through tunneling magnetoresistance.</p>
 </blockquote>
-<h2 id="Physical-Picture">Physical Picture</h2>
-<p>MRAM stores the relative magnetization of magnetic layers and reads it through tunneling magnetoresistance. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
-<h3 id="Tunnel-magnetoresistance-readout">Tunnel magnetoresistance readout</h3>
-<p>An MTJ contains two ferromagnets separated by a thin tunnel barrier.  Spin-resolved densities of states give, in the Jullière picture,</p>
+<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>MRAM stores the relative magnetization of magnetic layers and reads it through tunneling magnetoresistance. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="Tunnel-magnetoresistance-readout"><a href="#Tunnel-magnetoresistance-readout" class="headerlink" title="Tunnel magnetoresistance readout"></a>Tunnel magnetoresistance readout</h3><p>An MTJ contains two ferromagnets separated by a thin tunnel barrier.  Spin-resolved densities of states give, in the Jullière picture,</p>
 <div class="math-display">\[TMR=\frac{R_{AP}-R_P}{R_P}\approx\frac{2P_1P_2}{1-P_1P_2}.\]</div>
+
 <p>Crystalline MgO junctions additionally use symmetry filtering, so interface disorder strongly affects TMR.</p>
-<h3 id="Magnetization-dynamics-and-writing">Magnetization dynamics and writing</h3>
-<p>The free-layer unit vector follows Landau–Lifshitz–Gilbert dynamics with spin torque</p>
+<h3 id="Magnetization-dynamics-and-writing"><a href="#Magnetization-dynamics-and-writing" class="headerlink" title="Magnetization dynamics and writing"></a>Magnetization dynamics and writing</h3><p>The free-layer unit vector follows Landau–Lifshitz–Gilbert dynamics with spin torque</p>
 <div class="math-display">\[\dot{\mathbf m}=-\gamma\mathbf m\times\mathbf H_{eff}
 +\alpha\mathbf m\times\dot{\mathbf m}+\boldsymbol\tau_{STT/SOT}.\]</div>
+
 <p>STT passes write current through the barrier; SOT uses an adjacent spin source.  Lowering anisotropy reduces write current but also reduces retention.</p>
-<h3 id="Thermal-stability">Thermal stability</h3>
-<p>The stability factor \(\Delta=E_b/k_BT\approx K_{eff}V/k_BT\) controls spontaneous error rate.  Switching is stochastic near threshold, so write-error rate must be measured versus pulse width and current.  Endurance claims should include barrier breakdown, read disturb and distribution of \(\Delta\), not only median TMR.</p>
-<h2 id="Minimal-Model">Minimal Model</h2>
-<div class="math-display">\[TMR=(R_AP-R_P)/R_P; Δ=E_barrier/kT controls retention\]</div>
+<h3 id="Thermal-stability"><a href="#Thermal-stability" class="headerlink" title="Thermal stability"></a>Thermal stability</h3><p>The stability factor \(\Delta=E_b/k_BT\approx K_{eff}V/k_BT\) controls spontaneous error rate.  Switching is stochastic near threshold, so write-error rate must be measured versus pulse width and current.  Endurance claims should include barrier breakdown, read disturb and distribution of \(\Delta\), not only median TMR.</p>
+<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[TMR=(R_AP-R_P)/R_P; Δ=E_barrier/kT controls retention\]</div>
+
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences">Device Consequences</h2>
-<p>Spin-transfer and spin–orbit torque write schemes trade current, speed, selector area and endurance.</p>
+<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>Spin-transfer and spin–orbit torque write schemes trade current, speed, selector area and endurance.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
-<p>Thermal stability conflicts with low switching energy; variation in anisotropy and critical current affects arrays. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
-<p><strong>Maturity:</strong> Engineering. Connected concepts:</p>
+
+<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>Thermal stability conflicts with low switching energy; variation in anisotropy and critical current affects arrays. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Engineering. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/advanced-nonvolatile-memory-physics/">advanced-nonvolatile-memory-physics</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-magnetism/">two-dimensional-magnetism</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-magnetic-tunnel-junctions/">two-dimensional-magnetic-tunnel-junctions</a></li>
 <li><a href="/knowledge/nodes/memory-reliability-and-scaling/">memory-reliability-and-scaling</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
-<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41699-020-0152-0" target="_blank" rel="noopener">Lin et al., 2D materials for spintronic devices</a></li>
 <li><a href="https://www.nature.com/articles/s41467-025-68043-2" target="_blank" rel="noopener">Two-dimensional magnetic tunnel p–n junctions</a></li>
@@ -48,39 +42,33 @@
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**MRAM 保存磁层相对磁化构型，并通过隧穿磁阻读取。</p>
 </blockquote>
-<h2 id="物理图像">物理图像</h2>
-<p>MRAM 保存磁层相对磁化构型，并通过隧穿磁阻读取。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
-<h3 id="隧道磁阻读出">隧道磁阻读出</h3>
-<p>MTJ 由两个铁磁层和薄隧穿势垒组成。在 Jullière 图像中，自旋分辨态密度给出</p>
+<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>MRAM 保存磁层相对磁化构型，并通过隧穿磁阻读取。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="隧道磁阻读出"><a href="#隧道磁阻读出" class="headerlink" title="隧道磁阻读出"></a>隧道磁阻读出</h3><p>MTJ 由两个铁磁层和薄隧穿势垒组成。在 Jullière 图像中，自旋分辨态密度给出</p>
 <div class="math-display">\[TMR=\frac{R_{AP}-R_P}{R_P}\approx\frac{2P_1P_2}{1-P_1P_2}.\]</div>
+
 <p>晶态 MgO 结还依赖对称性过滤，因此界面无序会强烈影响 TMR。</p>
-<h3 id="磁化动力学与写入">磁化动力学与写入</h3>
-<p>自由层单位磁化矢量服从带自旋力矩的 Landau–Lifshitz–Gilbert 方程</p>
+<h3 id="磁化动力学与写入"><a href="#磁化动力学与写入" class="headerlink" title="磁化动力学与写入"></a>磁化动力学与写入</h3><p>自由层单位磁化矢量服从带自旋力矩的 Landau–Lifshitz–Gilbert 方程</p>
 <div class="math-display">\[\dot{\mathbf m}=-\gamma\mathbf m\times\mathbf H_{eff}
 +\alpha\mathbf m\times\dot{\mathbf m}+\boldsymbol\tau_{STT/SOT}.\]</div>
+
 <p>STT 让写电流穿过势垒，SOT 则使用邻近自旋源。降低各向异性可减小写电流，却会同时牺牲保持。</p>
-<h3 id="热稳定性">热稳定性</h3>
-<p>稳定因子 \(\Delta=E_b/k_BT\approx K_{eff}V/k_BT\) 控制自发错误率。阈值附近的翻转具有随机性，因此必须测量写错误率随脉宽和电流的变化。耐久结论还应包含势垒击穿、读扰动及 \(\Delta\) 分布，而不只是中位 TMR。</p>
-<h2 id="最小模型">最小模型</h2>
-<div class="math-display">\[TMR=(R_AP-R_P)/R_P; Δ=E_barrier/kT controls retention\]</div>
+<h3 id="热稳定性"><a href="#热稳定性" class="headerlink" title="热稳定性"></a>热稳定性</h3><p>稳定因子 \(\Delta=E_b/k_BT\approx K_{eff}V/k_BT\) 控制自发错误率。阈值附近的翻转具有随机性，因此必须测量写错误率随脉宽和电流的变化。耐久结论还应包含势垒击穿、读扰动及 \(\Delta\) 分布，而不只是中位 TMR。</p>
+<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[TMR=(R_AP-R_P)/R_P; Δ=E_barrier/kT controls retention\]</div>
+
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义">器件意义</h2>
-<p>自旋转移矩和自旋轨道矩写入在电流、速度、选通面积与耐久之间权衡。</p>
+<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>自旋转移矩和自旋轨道矩写入在电流、速度、选通面积与耐久之间权衡。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-<h2 id="限制与判据">限制与判据</h2>
-<p>热稳定性与低翻转能量相冲突，各向异性和临界电流变异影响阵列。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
-<p>**成熟度：**Engineering。关联节点：</p>
+
+<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>热稳定性与低翻转能量相冲突，各向异性和临界电流变异影响阵列。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Engineering。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/advanced-nonvolatile-memory-physics/">advanced-nonvolatile-memory-physics</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-magnetism/">two-dimensional-magnetism</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-magnetic-tunnel-junctions/">two-dimensional-magnetic-tunnel-junctions</a></li>
 <li><a href="/knowledge/nodes/memory-reliability-and-scaling/">memory-reliability-and-scaling</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
-<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41699-020-0152-0" target="_blank" rel="noopener">Lin et al., 2D materials for spintronic devices</a></li>
 <li><a href="https://www.nature.com/articles/s41467-025-68043-2" target="_blank" rel="noopener">Two-dimensional magnetic tunnel p–n junctions</a></li>
