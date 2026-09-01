@@ -1,0 +1,2830 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNMSN3C9M8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MNMSN3C9M8');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="Du Xinchuan">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Du Xinchuan">
+    
+    <meta name="keywords" content="Xinchuan Du,Du Xinchuan,2D materials,optoelectronic devices,spectroscopy,semiconductor physics,photodetectors,quantum sensing">
+    
+    <meta name="description" content="Dr. Xinchuan Du's research notes and project documentation. 
+Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sensing.
+">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Semiconductor Devices &amp; Quantum Physics: An Interactive Knowledge Directory · Xinchuan Du | Researcher in 2D Materials &amp; Optoelectronics</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("../../../../font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "../../../../css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "../../../../css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "../../../../assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="../../../../scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="../../../../font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', '[object Object]', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="../../../../index.html" >iCalculate’s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Semiconductor Devices & Quantum Physics: An Interactive Knowledge Directory</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>iCalculate’s Studio</a>
+    <a class="knowledge-atlas-link" href="../../../../knowledge/">Knowledge Atlas</a>
+</header>
+<style>
+  .knowledge-atlas-link {
+    position: absolute; left: 4.5rem; right: auto; top: 1.55rem; z-index: 2;
+    color: rgba(255,255,255,.82); font-size: .72rem; letter-spacing: .13em;
+    text-transform: uppercase; border-bottom: 1px solid rgba(247,83,87,.85);
+    padding-bottom: .22rem; transition: color .2s ease, border-color .2s ease;
+  }
+  .knowledge-atlas-link:hover { color: #fff; border-color: #fff; }
+  @media (max-width: 680px) { .knowledge-atlas-link { left: 3.8rem; right: auto; top: 1.35rem; font-size: .62rem; } }
+</style>
+
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(../../../../intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Semiconductor Devices & Quantum Physics: An Interactive Knowledge Directory
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "2D Materials">2D Materials</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Quantum Transport">Quantum Transport</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Device Physics">Device Physics</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Research Resources">Research Resources</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">7.2k</span>Reading time: <span class="post-count reading-time">32 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2026/09/01</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "../../../../lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="../../../../assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <link rel="stylesheet" href="/css/bilingual-post.css">
+<script defer src="/js/bilingual-post.js"></script>
+<nav class="language-switcher" aria-label="Article language">
+  <span class="language-switcher__label">Read in</span>
+  <button type="button" data-language="en" aria-pressed="true">English</button>
+  <button type="button" data-language="zh" aria-pressed="false">中文</button>
+</nav>
+<section class="lang-panel lang-en" lang="en">
+<link rel="stylesheet" href="/css/semiconductor-quantum-directory.css">
+<script defer src="/js/semiconductor-quantum-directory.js"></script>
+
+<h1 id="Semiconductor-Devices-Quantum-Physics-An-Interactive-Knowledge-Directory"><a href="#Semiconductor-Devices-Quantum-Physics-An-Interactive-Knowledge-Directory" class="headerlink" title="Semiconductor Devices &amp; Quantum Physics: An Interactive Knowledge Directory"></a>Semiconductor Devices &amp; Quantum Physics: An Interactive Knowledge Directory</h1><p>Semiconductor device physics is best navigated as a causal network rather than a list of components: <strong>materials define states, fields reshape barriers, transport produces terminal response, and internal state variables create memory or functionality.</strong> This directory provides several entrances into that network while preserving a clear route back to first principles.</p>
+<!--more-->
+
+<p>Use search when you know a term, maturity filters when you want to separate foundations from research frontiers, or a learning-path preset when you want a coherent sequence. Every card opens a bilingual Knowledge Note; English is the default language throughout the collection.</p>
+<div class="sq-directory" data-directory-lang="en">
+  <div class="sq-directory__mast">
+    <div><span>Interactive field index</span><strong>67</strong><small>bilingual entry points</small></div>
+    <p>Begin with classical device physics, then move through 2D quantum effects, steep-slope logic, memory, and quantum devices.</p>
+  </div>
+  <div class="sq-controls">
+    <label class="sq-search"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search a concept, device, or physical mechanism" aria-label="Search a concept, device, or physical mechanism"><kbd>/</kbd></label>
+    <div class="sq-filter" role="group" aria-label="Maturity filter">
+      <button type="button" data-maturity="all" aria-pressed="true">All maturity</button>
+      <button type="button" data-maturity="foundation" aria-pressed="false">Foundation</button>
+      <button type="button" data-maturity="engineering" aria-pressed="false">Engineering</button>
+      <button type="button" data-maturity="prototype" aria-pressed="false">Prototype</button>
+      <button type="button" data-maturity="frontier" aria-pressed="false">Frontier</button>
+    </div>
+    <div class="sq-paths"><span>Quick learning paths</span>
+      <button type="button" data-path="all" aria-pressed="true">Complete map</button>
+      <button type="button" data-path="classical,logic">Low-power logic</button>
+      <button type="button" data-path="quantum-foundations,spin-topology,excitons-moire,ordered-states,quantum-devices">2D quantum</button>
+      <button type="button" data-path="classical,memory,functional">Memory & compute</button>
+    </div>
+    <div class="sq-actions"><span class="sq-status" aria-live="polite"><b>67</b> visible nodes</span><button type="button" data-expand>Expand all</button><button type="button" data-collapse>Collapse all</button></div>
+  </div>
+  <div class="sq-branches"><section class="sq-branch is-collapsed" data-branch="classical">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">01</span>
+    <span><strong>Classical Device Physics</strong><small>The causal trunk: bands, charge, transport, junctions and transistor action.</small></span>
+    <em><span data-branch-count>15</span> nodes</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="semiconductor device physics knowledge network: from energy bands to device functions 半导体器件物理知识网络：从能带到器件功能 a causal map of semiconductor device physics, organized around physical dependencies rather than textbook page order and scoped to sze&#39;s third edition. 以施敏《半导体器件物理》第三版为范围，以物理因果链而非教材页码组织的器件物理入口。 device physics foundation">
+  <div class="sq-card__meta"><span>Device Physics</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Semiconductor Device Physics Knowledge Network: From Energy Bands to Device Functions</h3>
+  <p>A causal map of semiconductor device physics, organized around physical dependencies rather than textbook page order and scoped to Sze&#39;s third edition.</p>
+  <a href="/knowledge/nodes/semiconductor-device-physics-knowledge-network/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="energy bands, density of states, and carrier statistics 能带、态密度与载流子统计 from bands in a periodic potential to electron and hole concentrations through density of states, fermi statistics, and charge neutrality. 从周期势中的能带出发，用态密度、费米分布和电中性条件得到电子与空穴浓度。 electronic structure foundation">
+  <div class="sq-card__meta"><span>Electronic Structure</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Energy Bands, Density of States, and Carrier Statistics</h3>
+  <p>From bands in a periodic potential to electron and hole concentrations through density of states, Fermi statistics, and charge neutrality.</p>
+  <a href="/knowledge/nodes/semiconductor-band-carrier-statistics/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="drift, diffusion, and current in semiconductors 半导体中的漂移、扩散与电流 a unified account of drift and diffusion through electric fields, concentration gradients, and electrochemical potentials, including their high-field limits. 用电场、浓度梯度和电化学势统一理解漂移扩散电流，并说明迁移率、扩散系数和速度饱和的边界。 transport physics foundation">
+  <div class="sq-card__meta"><span>Transport Physics</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Drift, Diffusion, and Current in Semiconductors</h3>
+  <p>A unified account of drift and diffusion through electric fields, concentration gradients, and electrochemical potentials, including their high-field limits.</p>
+  <a href="/knowledge/nodes/semiconductor-carrier-transport/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="nonequilibrium carriers: generation, recombination, and quasi-fermi levels 非平衡载流子：产生、复合与准费米能级 carrier lifetime, diffusion length, generation–recombination mechanisms, and electron–hole quasi-fermi-level splitting under optical or electrical injection. 描述光生或电注入载流子的寿命、扩散长度、产生复合机制及电子空穴准费米能级分裂。 transport physics foundation">
+  <div class="sq-card__meta"><span>Transport Physics</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Nonequilibrium Carriers: Generation, Recombination, and Quasi-Fermi Levels</h3>
+  <p>Carrier lifetime, diffusion length, generation–recombination mechanisms, and electron–hole quasi-Fermi-level splitting under optical or electrical injection.</p>
+  <a href="/knowledge/nodes/non-equilibrium-carriers/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the governing equations of semiconductor devices 半导体器件的基本方程 the self-consistent poisson, carrier-statistics, drift–diffusion, and continuity system underlying classical semiconductor-device simulation. 将泊松方程、载流子统计、漂移扩散电流与连续性方程闭合成经典器件模拟的自洽方程组。 fundamental models foundation">
+  <div class="sq-card__meta"><span>Fundamental Models</span><b data-tone="foundation">Foundation</b></div>
+  <h3>The Governing Equations of Semiconductor Devices</h3>
+  <p>The self-consistent Poisson, carrier-statistics, drift–diffusion, and continuity system underlying classical semiconductor-device simulation.</p>
+  <a href="/knowledge/nodes/semiconductor-device-equations/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the pn junction: space charge, band bending, and rectification pn结：空间电荷、能带与整流 from diffusion-built space charge and built-in potential to the diode equation, junction capacitance, transients, and breakdown. 从扩散建立空间电荷和内建电势，再由少数载流子边界条件推导二极管方程、结电容与击穿。 junction devices foundation">
+  <div class="sq-card__meta"><span>Junction Devices</span><b data-tone="foundation">Foundation</b></div>
+  <h3>The PN Junction: Space Charge, Band Bending, and Rectification</h3>
+  <p>From diffusion-built space charge and built-in potential to the diode equation, junction capacitance, transients, and breakdown.</p>
+  <a href="/knowledge/nodes/pn-junction-physics/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="metal–semiconductor contacts and schottky barriers 金属-半导体接触与肖特基势垒 schottky and ohmic contacts from work-function alignment, electron affinity, thermionic emission, tunneling, and fermi-level pinning. 从功函数、电子亲和能和费米能级对齐理解肖特基与欧姆接触，并比较热发射、隧穿和界面钉扎。 interface physics foundation">
+  <div class="sq-card__meta"><span>Interface Physics</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Metal–Semiconductor Contacts and Schottky Barriers</h3>
+  <p>Schottky and ohmic contacts from work-function alignment, electron affinity, thermionic emission, tunneling, and Fermi-level pinning.</p>
+  <a href="/knowledge/nodes/metal-semiconductor-contact/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the mos capacitor: accumulation, depletion, and inversion mos电容：积累、耗尽与反型 accumulation, depletion, inversion, threshold, and c–v response from gate-voltage partitioning, surface potential, and semiconductor space charge. 用栅压分配、表面势和半导体空间电荷解释mos结构的积累、耗尽、反型、阈值与c-v响应。 mos electrostatics foundation">
+  <div class="sq-card__meta"><span>MOS Electrostatics</span><b data-tone="foundation">Foundation</b></div>
+  <h3>The MOS Capacitor: Accumulation, Depletion, and Inversion</h3>
+  <p>Accumulation, depletion, inversion, threshold, and C–V response from gate-voltage partitioning, surface potential, and semiconductor space charge.</p>
+  <a href="/knowledge/nodes/mos-capacitor-physics/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the mosfet: gate-controlled charge and channel transport mosfet：栅控电荷与沟道输运 combining vertical mos electrostatics with lateral source–drain transport to derive long-channel i–v, transconductance, saturation, and subthreshold behavior. 将mos电容的垂直静电与源漏方向的横向输运结合，推导长沟道i-v、跨导、饱和和亚阈值行为。 field-effect transistors foundation">
+  <div class="sq-card__meta"><span>Field-Effect Transistors</span><b data-tone="foundation">Foundation</b></div>
+  <h3>The MOSFET: Gate-Controlled Charge and Channel Transport</h3>
+  <p>Combining vertical MOS electrostatics with lateral source–drain transport to derive long-channel I–V, transconductance, saturation, and subthreshold behavior.</p>
+  <a href="/knowledge/nodes/mosfet-physics/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the bipolar junction transistor: minority-carrier injection and gain 双极晶体管：少子注入与电流放大 the bjt as two asymmetric coupled pn junctions, combining emitter injection, thin-base transport, and collector-field collection. 把bjt理解为两个非对称、相互耦合的pn结：发射结注入、薄基区输运、集电结收集共同产生电流增益。 bipolar transistors foundation">
+  <div class="sq-card__meta"><span>Bipolar Transistors</span><b data-tone="foundation">Foundation</b></div>
+  <h3>The Bipolar Junction Transistor: Minority-Carrier Injection and Gain</h3>
+  <p>The BJT as two asymmetric coupled PN junctions, combining emitter injection, thin-base transport, and collector-field collection.</p>
+  <a href="/knowledge/nodes/bipolar-junction-transistor-physics/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="heterojunctions, jfets, mesfets, and hemts 异质结、jfet、mesfet与hemt a unified view of jfets, mesfets, modfets/hemts, and two-dimensional carrier gases through depletion control and heterojunction band engineering. 用耗尽层控制和异质结能带工程统一理解jfet、mesfet、modfet/hemt及二维电子气。 field-effect transistors foundation">
+  <div class="sq-card__meta"><span>Field-Effect Transistors</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Heterojunctions, JFETs, MESFETs, and HEMTs</h3>
+  <p>A unified view of JFETs, MESFETs, MODFETs/HEMTs, and two-dimensional carrier gases through depletion control and heterojunction band engineering.</p>
+  <a href="/knowledge/nodes/heterojunction-and-fet-family/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="breakdown, scaling, and device nonidealities 击穿、缩放与器件非理想效应 tunneling, avalanche, short-channel electrostatics, high-field transport, parasitics, self-heating, and reliability across pn junctions, bjts, and mosfets. 横向连接pn结、bjt和mosfet中的隧穿、雪崩、短沟道、高场、寄生电阻、自热与可靠性问题。 scaling effects foundation">
+  <div class="sq-card__meta"><span>Scaling Effects</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Breakdown, Scaling, and Device Nonidealities</h3>
+  <p>Tunneling, avalanche, short-channel electrostatics, high-field transport, parasitics, self-heating, and reliability across PN junctions, BJTs, and MOSFETs.</p>
+  <a href="/knowledge/nodes/device-breakdown-and-scaling/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="power semiconductor devices 功率半导体器件 power diodes, mosfets, igbts, and thyristors through the trade-offs among blocking voltage, conduction loss, switching loss, and heat removal. 用耐压、导通损耗、开关损耗和热管理的权衡统一理解功率二极管、mosfet、igbt与晶闸管。 power devices foundation">
+  <div class="sq-card__meta"><span>Power Devices</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Power Semiconductor Devices</h3>
+  <p>Power diodes, MOSFETs, IGBTs, and thyristors through the trade-offs among blocking voltage, conduction loss, switching loss, and heat removal.</p>
+  <a href="/knowledge/nodes/power-semiconductor-devices/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="optoelectronic devices: leds, photodiodes, and solar cells 光电子器件：led、光电二极管与太阳电池 a unified account of light emission, detection, and photovoltaics through absorption, generation–recombination, junction separation, and quasi-fermi-level splitting. 以光吸收、载流子产生复合、结区分离和准费米能级分裂统一理解发光、探测与光伏器件。 optoelectronic devices foundation">
+  <div class="sq-card__meta"><span>Optoelectronic Devices</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Optoelectronic Devices: LEDs, Photodiodes, and Solar Cells</h3>
+  <p>A unified account of light emission, detection, and photovoltaics through absorption, generation–recombination, junction separation, and quasi-Fermi-level splitting.</p>
+  <a href="/knowledge/nodes/optoelectronic-semiconductor-devices/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="device physics of nonvolatile memory 非易失存储器的器件物理 flash and eeprom operation from floating-gate-induced threshold shifts, including program, erase, read, retention, and endurance trade-offs. 从浮栅电荷改变mosfet阈值出发，理解flash/eeprom的写入、擦除、读取、保持与耐久性权衡。 memory devices foundation">
+  <div class="sq-card__meta"><span>Memory Devices</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Device Physics of Nonvolatile Memory</h3>
+  <p>Flash and EEPROM operation from floating-gate-induced threshold shifts, including program, erase, read, retention, and endurance trade-offs.</p>
+  <a href="/knowledge/nodes/nonvolatile-memory-device-physics/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="quantum-foundations">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">02</span>
+    <span><strong>2D Quantum Foundations</strong><small>Screening, interfaces, quantum capacitance, mesoscopic transport and tunneling.</small></span>
+    <em><span data-branch-count>11</span> nodes</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="two-dimensional quantum foundations 二维量子物理基础 reducing a crystal to one or a few atomic layers changes screening, density of states, symmetry and available internal degrees of freedom; it does more than merely shrink a bulk semiconductor. 把晶体减薄到单层或少层会同时改变屏蔽、态密度、对称性和内部自由度，并非只是把体材料缩小。 2d quantum foundations foundation">
+  <div class="sq-card__meta"><span>2D Quantum Foundations</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Two-Dimensional Quantum Foundations</h3>
+  <p>Reducing a crystal to one or a few atomic layers changes screening, density of states, symmetry and available internal degrees of freedom; it does more than merely shrink a bulk semiconductor.</p>
+  <a href="/knowledge/nodes/two-dimensional-quantum-foundations/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="quantum tunneling in semiconductor devices 半导体器件中的量子隧穿 a carrier can cross a classically forbidden barrier when its wavefunction has finite amplitude on the far side; barrier shape, effective mass and conserved momentum set the transmission. 当载流子波函数在经典禁阻区另一侧仍有有限振幅时即可穿越势垒；透射率由势垒形状、有效质量和守恒动量共同决定。 quantum tunneling foundation">
+  <div class="sq-card__meta"><span>Quantum Tunneling</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Quantum Tunneling in Semiconductor Devices</h3>
+  <p>A carrier can cross a classically forbidden barrier when its wavefunction has finite amplitude on the far side; barrier shape, effective mass and conserved momentum set the transmission.</p>
+  <a href="/knowledge/nodes/quantum-tunneling-in-semiconductor-devices/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="dirac fermions in two-dimensional materials 二维材料中的狄拉克费米子 in graphene-like systems two sublattices produce a low-energy pseudospin hamiltonian with approximately linear dispersion and chiral wavefunctions. 在石墨烯类体系中，两套亚晶格形成低能赝自旋哈密顿量，产生近似线性色散和手性波函数。 2d quantum foundations foundation">
+  <div class="sq-card__meta"><span>2D Quantum Foundations</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Dirac Fermions in Two-Dimensional Materials</h3>
+  <p>In graphene-like systems two sublattices produce a low-energy pseudospin Hamiltonian with approximately linear dispersion and chiral wavefunctions.</p>
+  <a href="/knowledge/nodes/dirac-fermions-in-two-dimensional-materials/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="reduced dielectric screening in two dimensions 二维体系中的弱介电屏蔽 field lines around an atomically thin layer extend into its environment, so electron–electron and electron–hole interactions are nonlocal and strongly substrate dependent. 原子级薄层周围的场线大量延伸到外部环境，使电子间及电子–空穴相互作用呈非局域性并强烈依赖衬底。 quantum electrostatics foundation">
+  <div class="sq-card__meta"><span>Quantum Electrostatics</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Reduced Dielectric Screening in Two Dimensions</h3>
+  <p>Field lines around an atomically thin layer extend into its environment, so electron–electron and electron–hole interactions are nonlocal and strongly substrate dependent.</p>
+  <a href="/knowledge/nodes/reduced-dielectric-screening-in-2d/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="quantum capacitance in two-dimensional devices 二维器件中的量子电容 when the electronic density of states is small, adding charge must move the chemical potential; this finite electronic compressibility appears as a capacitance in series with the geometrical gate capacitance. 当电子态密度较低时，增加电荷必须推动化学势移动；这种有限电子可压缩性表现为与几何栅电容串联的量子电容。 quantum electrostatics foundation">
+  <div class="sq-card__meta"><span>Quantum Electrostatics</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Quantum Capacitance in Two-Dimensional Devices</h3>
+  <p>When the electronic density of states is small, adding charge must move the chemical potential; this finite electronic compressibility appears as a capacitance in series with the geometrical gate capacitance.</p>
+  <a href="/knowledge/nodes/quantum-capacitance-in-two-dimensional-devices/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="interface dipoles and fermi-level pinning in 2d contacts 二维接触中的界面偶极与费米能级钉扎 a metal–2d semiconductor contact is set by work functions, interface dipoles, metal-induced gap states, defects and local electrostatics rather than by the ideal schottky–mott rule alone. 金属–二维半导体接触由功函数、界面偶极、金属诱导带隙态、缺陷及局域静电共同决定，不能只用理想 schottky–mott 规则。 interface physics engineering">
+  <div class="sq-card__meta"><span>Interface Physics</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Interface Dipoles and Fermi-Level Pinning in 2D Contacts</h3>
+  <p>A metal–2D semiconductor contact is set by work functions, interface dipoles, metal-induced gap states, defects and local electrostatics rather than by the ideal Schottky–Mott rule alone.</p>
+  <a href="/knowledge/nodes/interface-dipoles-and-fermi-level-pinning/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="landauer–büttiker quantum transport landauer–büttiker 量子输运 mesoscopic current is carried by quantum modes whose occupations are fixed by reservoirs and whose contribution is weighted by transmission. 介观电流由量子传输模式承载，模式占据由电极库决定，贡献由透射率加权。 mesoscopic transport foundation">
+  <div class="sq-card__meta"><span>Mesoscopic Transport</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Landauer–Büttiker Quantum Transport</h3>
+  <p>Mesoscopic current is carried by quantum modes whose occupations are fixed by reservoirs and whose contribution is weighted by transmission.</p>
+  <a href="/knowledge/nodes/landauer-buttiker-transport/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="ballistic and quasi-ballistic transport 弹道与准弹道输运 transport becomes ballistic when device length is shorter than the relevant momentum-relaxation mean free path; quasi-ballistic devices retain only part of the injected flux. 当器件长度短于相关动量弛豫平均自由程时进入弹道区；准弹道器件只保留部分注入通量。 mesoscopic transport foundation">
+  <div class="sq-card__meta"><span>Mesoscopic Transport</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Ballistic and Quasi-Ballistic Transport</h3>
+  <p>Transport becomes ballistic when device length is shorter than the relevant momentum-relaxation mean free path; quasi-ballistic devices retain only part of the injected flux.</p>
+  <a href="/knowledge/nodes/ballistic-and-quasi-ballistic-transport/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="klein tunneling and electron optics 克莱因隧穿与电子光学 chiral dirac carriers can transmit perfectly at normal incidence through a smooth electrostatic barrier because pseudospin matching suppresses backscattering. 手性狄拉克载流子在正入射平滑静电势垒时可因赝自旋匹配而抑制背散射，实现高透射。 mesoscopic transport prototype">
+  <div class="sq-card__meta"><span>Mesoscopic Transport</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Klein Tunneling and Electron Optics</h3>
+  <p>Chiral Dirac carriers can transmit perfectly at normal incidence through a smooth electrostatic barrier because pseudospin matching suppresses backscattering.</p>
+  <a href="/knowledge/nodes/klein-tunneling-and-electron-optics/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="interlayer tunneling and negative differential resistance 层间隧穿与负微分电阻 atomically sharp vdw interfaces allow tunneling between two separately gated layers; energy and in-plane momentum alignment can create a resonant current peak followed by negative differential resistance. 原子级平整的 vdw 界面允许载流子在独立栅控层间隧穿；能量和面内动量对准可产生共振电流峰及负微分电阻。 quantum tunneling prototype">
+  <div class="sq-card__meta"><span>Quantum Tunneling</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Interlayer Tunneling and Negative Differential Resistance</h3>
+  <p>Atomically sharp vdW interfaces allow tunneling between two separately gated layers; energy and in-plane momentum alignment can create a resonant current peak followed by negative differential resistance.</p>
+  <a href="/knowledge/nodes/interlayer-tunneling-and-negative-differential-resistance/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="hydrodynamic electron flow 电子流体动力学 when momentum-conserving electron–electron collisions are faster than momentum-relaxing scattering, carriers behave collectively as a viscous charged fluid. 当保持总动量的电子–电子碰撞快于动量弛豫散射时，载流子会表现为具有黏性的带电流体。 mesoscopic transport frontier">
+  <div class="sq-card__meta"><span>Mesoscopic Transport</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Hydrodynamic Electron Flow</h3>
+  <p>When momentum-conserving electron–electron collisions are faster than momentum-relaxing scattering, carriers behave collectively as a viscous charged fluid.</p>
+  <a href="/knowledge/nodes/hydrodynamic-electron-flow/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="spin-topology">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">03</span>
+    <span><strong>Spin, Valley &amp; Topology</strong><small>Internal quantum labels, Berry geometry and protected boundary transport.</small></span>
+    <em><span data-branch-count>3</span> nodes</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="spin–valley physics in two-dimensional semiconductors 二维半导体中的自旋–谷物理 broken inversion symmetry and strong spin–orbit coupling in monolayer tmds tie spin, valley and optical helicity to the k and k′ band extrema. 单层 tmd 的反演对称性破缺与强自旋轨道耦合，使 k/k′ 带谷与自旋及光学圆偏振发生关联。 spin valley topology foundation">
+  <div class="sq-card__meta"><span>Spin Valley Topology</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Spin–Valley Physics in Two-Dimensional Semiconductors</h3>
+  <p>Broken inversion symmetry and strong spin–orbit coupling in monolayer TMDs tie spin, valley and optical helicity to the K and K′ band extrema.</p>
+  <a href="/knowledge/nodes/spin-valley-physics/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="berry curvature and topological transport 贝里曲率与拓扑输运 berry curvature acts as a momentum-space magnetic field, producing anomalous transverse velocity and connecting local band geometry to global topological invariants. 贝里曲率类似动量空间中的磁场，产生反常横向速度，并把局域能带几何与整体拓扑不变量联系起来。 spin valley topology foundation">
+  <div class="sq-card__meta"><span>Spin Valley Topology</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Berry Curvature and Topological Transport</h3>
+  <p>Berry curvature acts as a momentum-space magnetic field, producing anomalous transverse velocity and connecting local band geometry to global topological invariants.</p>
+  <a href="/knowledge/nodes/berry-curvature-and-topological-transport/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="quantum hall and topological edge states 量子霍尔与拓扑边缘态 landau quantization or nontrivial band topology can create bulk gaps with conducting boundary channels protected against selected scattering processes. 朗道量子化或非平庸能带拓扑可形成体能隙及边界导电通道，并对特定散射具有保护。 spin valley topology frontier">
+  <div class="sq-card__meta"><span>Spin Valley Topology</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Quantum Hall and Topological Edge States</h3>
+  <p>Landau quantization or nontrivial band topology can create bulk gaps with conducting boundary channels protected against selected scattering processes.</p>
+  <a href="/knowledge/nodes/quantum-hall-and-topological-edge-states/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="excitons-moire">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">04</span>
+    <span><strong>Excitons &amp; Moiré Matter</strong><small>Strong Coulomb binding, interlayer dipoles, twist and correlated flat bands.</small></span>
+    <em><span data-branch-count>3</span> nodes</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="excitons in two-dimensional semiconductors 二维半导体中的激子 reduced screening and quantum confinement bind electrons and holes strongly, so excitons, trions and many-body renormalization dominate optical spectra of monolayer tmds. 弱屏蔽和量子限域使电子与空穴强烈束缚，因此激子、三激子及多体重整化主导单层 tmd 光谱。 exciton physics foundation">
+  <div class="sq-card__meta"><span>Exciton Physics</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Excitons in Two-Dimensional Semiconductors</h3>
+  <p>Reduced screening and quantum confinement bind electrons and holes strongly, so excitons, trions and many-body renormalization dominate optical spectra of monolayer TMDs.</p>
+  <a href="/knowledge/nodes/excitons-in-two-dimensional-semiconductors/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="interlayer and moiré excitons 层间激子与莫尔激子 in a type-ii vdw heterostructure the electron and hole can occupy different layers; the resulting dipole lengthens lifetime and makes the exciton sensitive to gate field, twist and moiré confinement. 在 ii 型 vdw 异质结中电子和空穴可分居不同层；由此产生的偶极延长寿命，并使激子对栅场、扭角及莫尔限域敏感。 exciton physics frontier">
+  <div class="sq-card__meta"><span>Exciton Physics</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Interlayer and Moiré Excitons</h3>
+  <p>In a type-II vdW heterostructure the electron and hole can occupy different layers; the resulting dipole lengthens lifetime and makes the exciton sensitive to gate field, twist and moiré confinement.</p>
+  <a href="/knowledge/nodes/interlayer-and-moire-excitons/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="moiré quantum matter and correlated flat bands 莫尔量子物质与关联平带 a small twist angle or lattice mismatch produces a long-period moiré potential that narrows bands and makes coulomb interactions comparable to or larger than kinetic energy. 小扭角或晶格失配产生长周期莫尔势，使能带变窄，并令库仑相互作用达到或超过动能尺度。 moiré physics frontier">
+  <div class="sq-card__meta"><span>Moiré Physics</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Moiré Quantum Matter and Correlated Flat Bands</h3>
+  <p>A small twist angle or lattice mismatch produces a long-period moiré potential that narrows bands and makes Coulomb interactions comparable to or larger than kinetic energy.</p>
+  <a href="/knowledge/nodes/moire-quantum-matter/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="ordered-states">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">05</span>
+    <span><strong>2D Ordered States</strong><small>Ferroelectric, magnetic and superconducting order at atomic thickness.</small></span>
+    <em><span data-branch-count>3</span> nodes</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="prototype" data-search="two-dimensional and sliding ferroelectricity 二维与滑移铁电性 switchable polarization can survive in atomically thin crystals; in sliding ferroelectrics it arises from stacking-dependent interlayer charge transfer and reverses when layers translate. 可翻转极化能够存在于原子级薄晶体；滑移铁电中，极化来自堆叠相关的层间电荷转移，并随层间平移而反转。 2d ferroics prototype">
+  <div class="sq-card__meta"><span>2D Ferroics</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Two-Dimensional and Sliding Ferroelectricity</h3>
+  <p>Switchable polarization can survive in atomically thin crystals; in sliding ferroelectrics it arises from stacking-dependent interlayer charge transfer and reverses when layers translate.</p>
+  <a href="/knowledge/nodes/two-dimensional-ferroelectricity/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="two-dimensional magnetism and spin filtering 二维磁性与自旋过滤 magnetic anisotropy and spin–orbit coupling can stabilize order in atomically thin magnets, while vdw interfaces provide clean spin filters and proximity exchange. 磁各向异性和自旋轨道耦合可在原子级薄磁体中稳定有序，vdw 界面则提供洁净的自旋过滤和邻近交换。 2d ferroics prototype">
+  <div class="sq-card__meta"><span>2D Ferroics</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Two-Dimensional Magnetism and Spin Filtering</h3>
+  <p>Magnetic anisotropy and spin–orbit coupling can stabilize order in atomically thin magnets, while vdW interfaces provide clean spin filters and proximity exchange.</p>
+  <a href="/knowledge/nodes/two-dimensional-magnetism/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="two-dimensional superconductivity and josephson physics 二维超导与约瑟夫森物理 two-dimensional superconductors combine phase fluctuations, strong spin–orbit coupling and gate-tunable carrier density; proximity coupling transfers pairing correlations into graphene or tmd channels. 二维超导体结合强相位涨落、自旋轨道耦合与可栅控载流子密度；邻近效应还能把配对关联引入石墨烯或 tmd 沟道。 2d ferroics frontier">
+  <div class="sq-card__meta"><span>2D Ferroics</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Two-Dimensional Superconductivity and Josephson Physics</h3>
+  <p>Two-dimensional superconductors combine phase fluctuations, strong spin–orbit coupling and gate-tunable carrier density; proximity coupling transfers pairing correlations into graphene or TMD channels.</p>
+  <a href="/knowledge/nodes/two-dimensional-superconductivity/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="logic">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">06</span>
+    <span><strong>Emerging Logic</strong><small>TFET, NCFET and cold-source routes beyond conventional thermionic switching.</small></span>
+    <em><span data-branch-count>7</span> nodes</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="subthreshold swing and the thermal limit 亚阈值摆幅与热力学极限 a conventional mosfet changes current by electrostatically moving a barrier through a thermally broadened fermi distribution, producing the familiar room-temperature 60 mv/dec lower bound under ideal quasistatic conditions. 传统 mosfet 通过静电移动势垒并采样热展宽的费米分布，因此在理想准静态条件下出现室温约 60 mv/dec 的下限。 steep-slope devices foundation">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Subthreshold Swing and the Thermal Limit</h3>
+  <p>A conventional MOSFET changes current by electrostatically moving a barrier through a thermally broadened Fermi distribution, producing the familiar room-temperature 60 mV/dec lower bound under ideal quasistatic conditions.</p>
+  <a href="/knowledge/nodes/subthreshold-swing-and-thermal-limit/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="emerging steep-slope transistors 新兴陡峭亚阈值晶体管 steep-slope concepts try to reduce switching voltage by changing injection statistics, adding internal voltage gain or reshaping the source density of states. 陡峭亚阈值器件通过改变注入统计、引入内部电压增益或重塑源态密度来降低开关电压。 steep-slope devices engineering">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Emerging Steep-Slope Transistors</h3>
+  <p>Steep-slope concepts try to reduce switching voltage by changing injection statistics, adding internal voltage gain or reshaping the source density of states.</p>
+  <a href="/knowledge/nodes/emerging-steep-slope-transistors/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="tunnel field-effect transistor 隧穿场效应晶体管 a tfet gate controls the spatial overlap of source valence-band states and channel conduction-band states, turning band-to-band tunneling on and off. tfet 栅极控制源区价带态与沟道导带态的空间重叠，从而开关带间隧穿。 steep-slope devices prototype">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Tunnel Field-Effect Transistor</h3>
+  <p>A TFET gate controls the spatial overlap of source valence-band states and channel conduction-band states, turning band-to-band tunneling on and off.</p>
+  <a href="/knowledge/nodes/tunnel-field-effect-transistor/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="two-dimensional, heterojunction and interlayer tfets 二维、异质结与层间 tfet atomically thin bodies improve gate control, while type-ii or broken-gap vdw heterojunctions reduce tunneling distance and permit independent band alignment by dual gates. 原子级薄沟道增强栅控，ii 型或破缺带隙 vdw 异质结缩短隧穿距离，并允许双栅独立调节能带对准。 steep-slope devices prototype">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Two-Dimensional, Heterojunction and Interlayer TFETs</h3>
+  <p>Atomically thin bodies improve gate control, while type-II or broken-gap vdW heterojunctions reduce tunneling distance and permit independent band alignment by dual gates.</p>
+  <a href="/knowledge/nodes/two-dimensional-tfet-and-interlayer-tfet/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="negative-capacitance field-effect transistor 负电容场效应晶体管 an nc-fet places a ferroelectric response in the gate stack so that a change in gate voltage may produce a larger change in semiconductor surface potential. ncfet 在栅堆栈中加入铁电响应，使栅压变化可能转化为更大的半导体表面势变化。 steep-slope devices prototype">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Negative-Capacitance Field-Effect Transistor</h3>
+  <p>An NC-FET places a ferroelectric response in the gate stack so that a change in gate voltage may produce a larger change in semiconductor surface potential.</p>
+  <a href="/knowledge/nodes/negative-capacitance-field-effect-transistor/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="cold-source field-effect transistor 冷源场效应晶体管 a cold-source fet suppresses the high-energy tail of injected carriers through a sharply decreasing source density of states or an energy-selective heterojunction. 冷源 fet 借助快速下降的源态密度或能量选择异质结抑制注入载流子的高能尾部。 steep-slope devices frontier">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Cold-Source Field-Effect Transistor</h3>
+  <p>A cold-source FET suppresses the high-energy tail of injected carriers through a sharply decreasing source density of states or an energy-selective heterojunction.</p>
+  <a href="/knowledge/nodes/cold-source-field-effect-transistor/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="benchmarking steep-slope devices 陡峭亚阈值器件的基准比较 a credible comparison must place current, slope, capacitance, voltage, delay, energy, area, temperature and hysteresis on the same operating point and footprint. 可信比较必须在相同工作点和面积尺度下同时考虑电流、斜率、电容、电压、延迟、能量、温度和滞回。 steep-slope devices engineering">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Benchmarking Steep-Slope Devices</h3>
+  <p>A credible comparison must place current, slope, capacitance, voltage, delay, energy, area, temperature and hysteresis on the same operating point and footprint.</p>
+  <a href="/knowledge/nodes/steep-slope-device-benchmarking/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="memory">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">07</span>
+    <span><strong>Memory &amp; Stateful Devices</strong><small>Charge, polarization, ionic configuration, phase and magnetization as memory.</small></span>
+    <em><span data-branch-count>11</span> nodes</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="engineering" data-search="advanced nonvolatile memory physics 先进非易失存储器物理 nonvolatile memories differ by the state variable that crosses an energy barrier during write and remains trapped during retention: charge, polarization, atomic configuration, phase or magnetization. 非易失存储器的差别在于写入时跨越能垒、保持时被困住的状态变量：电荷、极化、原子构型、物相或磁化。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Advanced Nonvolatile Memory Physics</h3>
+  <p>Nonvolatile memories differ by the state variable that crosses an energy barrier during write and remains trapped during retention: charge, polarization, atomic configuration, phase or magnetization.</p>
+  <a href="/knowledge/nodes/advanced-nonvolatile-memory-physics/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="floating-gate mos memory 浮栅 mos 存储器 an electrically isolated conductor stores electronic charge and shifts the threshold voltage through a capacitive divider. 被介质包围的浮置导体保存电子电荷，并通过电容分压改变晶体管阈值。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Floating-Gate MOS Memory</h3>
+  <p>An electrically isolated conductor stores electronic charge and shifts the threshold voltage through a capacitive divider.</p>
+  <a href="/knowledge/nodes/floating-gate-mos-memory/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="flash injection, program and erase physics flash 注入、编程与擦除物理 flash changes stored charge through channel hot-electron injection, fowler–nordheim tunneling or related high-field transport, then reads the resulting threshold shift at low bias. flash 通过沟道热电子注入、fowler–nordheim 隧穿等高场输运改变存储电荷，再用低偏压读取阈值漂移。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Flash Injection, Program and Erase Physics</h3>
+  <p>Flash changes stored charge through channel hot-electron injection, Fowler–Nordheim tunneling or related high-field transport, then reads the resulting threshold shift at low bias.</p>
+  <a href="/knowledge/nodes/flash-injection-and-tunneling/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="charge-trap flash and three-dimensional nand 电荷俘获型 flash 与三维 nand charge-trap cells store carriers in localized dielectric states rather than one continuous floating gate; vertical strings trade lithographic scaling for layer stacking. 电荷俘获单元把载流子保存在离散介质陷阱中，而非连续浮栅；三维 nand 则通过垂直堆叠替代横向光刻缩放。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Charge-Trap Flash and Three-Dimensional NAND</h3>
+  <p>Charge-trap cells store carriers in localized dielectric states rather than one continuous floating gate; vertical strings trade lithographic scaling for layer stacking.</p>
+  <a href="/knowledge/nodes/charge-trap-flash-and-three-dimensional-nand/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="ferroelectric field-effect transistor memory 铁电场效应晶体管存储器 a fefet stores remanent polarization in its gate stack; the polarization charge shifts channel threshold and can be read nondestructively as conductance. fefet 在栅堆栈中保存剩余极化，极化电荷移动沟道阈值，并可通过电导进行非破坏读取。 memory physics prototype">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Ferroelectric Field-Effect Transistor Memory</h3>
+  <p>A FeFET stores remanent polarization in its gate stack; the polarization charge shifts channel threshold and can be read nondestructively as conductance.</p>
+  <a href="/knowledge/nodes/ferroelectric-field-effect-transistor-memory/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="sliding-ferroelectric memory devices 滑移铁电存储器件 in a vdw bilayer, electrically driven relative translation changes stacking order and reverses an out-of-plane dipole, creating a structural polarization state. 在 vdw 双层中，电驱动的相对平移改变堆叠顺序并翻转面外偶极，从而形成结构极化存储态。 memory physics frontier">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Sliding-Ferroelectric Memory Devices</h3>
+  <p>In a vdW bilayer, electrically driven relative translation changes stacking order and reverses an out-of-plane dipole, creating a structural polarization state.</p>
+  <a href="/knowledge/nodes/sliding-ferroelectric-memory-devices/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="memristive systems and resistive switching 忆阻系统与阻变物理 a memristive system has conductance controlled by internal state variables with their own dynamics; physical implementations include ionic redox, phase, ferroelectric and spin configurations. 忆阻系统的电导由具有自身动力学的内部状态变量控制；物理实现包括离子氧化还原、物相、铁电和自旋构型。 memristive devices engineering">
+  <div class="sq-card__meta"><span>Memristive Devices</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Memristive Systems and Resistive Switching</h3>
+  <p>A memristive system has conductance controlled by internal state variables with their own dynamics; physical implementations include ionic redox, phase, ferroelectric and spin configurations.</p>
+  <a href="/knowledge/nodes/memristive-systems-and-resistive-switching/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="resistive ram and conductive-filament dynamics 阻变存储器与导电细丝动力学 rram switches resistance by redistributing ions and defects, often forming or rupturing a nanoscale metallic or oxygen-vacancy-rich conduction path. rram 通过重新分布离子和缺陷改变电阻，常表现为纳米金属细丝或富氧空位导电通道的形成与断裂。 memristive devices engineering">
+  <div class="sq-card__meta"><span>Memristive Devices</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Resistive RAM and Conductive-Filament Dynamics</h3>
+  <p>RRAM switches resistance by redistributing ions and defects, often forming or rupturing a nanoscale metallic or oxygen-vacancy-rich conduction path.</p>
+  <a href="/knowledge/nodes/resistive-random-access-memory/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="phase-change memory 相变存储器 pcm stores information in the resistance contrast between amorphous and crystalline phases produced by controlled joule-heating pulses. pcm 利用受控焦耳热脉冲产生的非晶态与晶态电阻差保存信息。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Phase-Change Memory</h3>
+  <p>PCM stores information in the resistance contrast between amorphous and crystalline phases produced by controlled Joule-heating pulses.</p>
+  <a href="/knowledge/nodes/phase-change-memory/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="magnetic random-access memory 磁阻随机存储器 mram stores the relative magnetization of magnetic layers and reads it through tunneling magnetoresistance. mram 保存磁层相对磁化构型，并通过隧穿磁阻读取。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Magnetic Random-Access Memory</h3>
+  <p>MRAM stores the relative magnetization of magnetic layers and reads it through tunneling magnetoresistance.</p>
+  <a href="/knowledge/nodes/magnetic-random-access-memory/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="memory reliability, variability and scaling 存储器可靠性、变异与缩放 retention, endurance, read/write disturb, stochastic variation and thermal stability are coupled consequences of the energy landscape and write stress. 保持、耐久、读写干扰、随机变异及热稳定性都是能量景观与写入应力耦合产生的结果。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Memory Reliability, Variability and Scaling</h3>
+  <p>Retention, endurance, read/write disturb, stochastic variation and thermal stability are coupled consequences of the energy landscape and write stress.</p>
+  <a href="/knowledge/nodes/memory-reliability-and-scaling/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="functional">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">08</span>
+    <span><strong>Neuromorphic &amp; In-Memory Systems</strong><small>Crossbars, selectors, physical synapses and sensing–memory integration.</small></span>
+    <em><span data-branch-count>5</span> nodes</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="prototype" data-search="functional and neuromorphic devices 功能与神经形态器件 functional devices exploit internal dynamics, nonvolatility, optical response or stochasticity so that one physical element performs memory, sensing or computation rather than only binary switching. 功能器件利用内部动力学、非易失性、光响应或随机性，使单个物理元件承担存储、传感或计算，而非只做二值开关。 neuromorphic hardware prototype">
+  <div class="sq-card__meta"><span>Neuromorphic Hardware</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Functional and Neuromorphic Devices</h3>
+  <p>Functional devices exploit internal dynamics, nonvolatility, optical response or stochasticity so that one physical element performs memory, sensing or computation rather than only binary switching.</p>
+  <a href="/knowledge/nodes/functional-and-neuromorphic-devices/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="crossbar arrays, selectors and sneak paths 交叉阵列、选通器与潜通路 a crossbar maps conductance cells to row–column intersections, but unselected paths carry parasitic current unless nonlinearity or access devices isolate them. 交叉阵列把电导单元放在行列交点，但若无非线性器件或访问晶体管隔离，未选路径会产生寄生电流。 neuromorphic hardware engineering">
+  <div class="sq-card__meta"><span>Neuromorphic Hardware</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Crossbar Arrays, Selectors and Sneak Paths</h3>
+  <p>A crossbar maps conductance cells to row–column intersections, but unselected paths carry parasitic current unless nonlinearity or access devices isolate them.</p>
+  <a href="/knowledge/nodes/crossbar-arrays-selectors-and-sneak-paths/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="compute-in-memory 存内计算 compute-in-memory performs operations where data are stored, commonly using kirchhoff current summation and ohm conductance multiplication in crossbars. 存内计算在数据存储位置直接运算，常利用交叉阵列中的欧姆电导乘法和基尔霍夫电流求和。 neuromorphic hardware prototype">
+  <div class="sq-card__meta"><span>Neuromorphic Hardware</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Compute-in-Memory</h3>
+  <p>Compute-in-memory performs operations where data are stored, commonly using Kirchhoff current summation and Ohm conductance multiplication in crossbars.</p>
+  <a href="/knowledge/nodes/compute-in-memory/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="artificial synapses and neuromorphic dynamics 人工突触与神经形态动力学 a physical synapse maps pulse history to conductance, while dynamical memristors can use relaxation, thresholds and volatility to emulate short- and long-term plasticity or neuronal dynamics. 物理突触把脉冲历史映射为电导，动态忆阻器还可利用弛豫、阈值与易失性模拟长短时可塑性或神经元动力学。 neuromorphic hardware prototype">
+  <div class="sq-card__meta"><span>Neuromorphic Hardware</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Artificial Synapses and Neuromorphic Dynamics</h3>
+  <p>A physical synapse maps pulse history to conductance, while dynamical memristors can use relaxation, thresholds and volatility to emulate short- and long-term plasticity or neuronal dynamics.</p>
+  <a href="/knowledge/nodes/artificial-synapses-and-neuromorphic-dynamics/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="optoelectronic memory, photomemristors and reconfigurable devices 光电存储、光忆阻与可重构器件 coupling photogeneration to trapped charge, ions, polarization or phase creates devices whose conductance remembers illumination and can combine sensing, memory and processing. 把光生载流子与陷阱电荷、离子、极化或物相耦合，可使器件电导记住光照并融合感知、存储与处理。 neuromorphic hardware frontier">
+  <div class="sq-card__meta"><span>Neuromorphic Hardware</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Optoelectronic Memory, Photomemristors and Reconfigurable Devices</h3>
+  <p>Coupling photogeneration to trapped charge, ions, polarization or phase creates devices whose conductance remembers illumination and can combine sensing, memory and processing.</p>
+  <a href="/knowledge/nodes/optoelectronic-memory-and-reconfigurable-devices/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="quantum-devices">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">09</span>
+    <span><strong>Quantum &amp; Electron-Source Devices</strong><small>Electron optics, spin/valley devices, quantum emitters, Josephson circuits and cold cathodes.</small></span>
+    <em><span data-branch-count>9</span> nodes</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="prototype" data-search="two-dimensional quantum devices 二维量子器件 two-dimensional materials expose every carrier to gates, interfaces and optical fields, allowing quantum states to be assembled and tuned in devices rather than fixed only by bulk chemistry. 二维材料使每个载流子都强烈感受到栅极、界面和光场，从而能在器件中组装和调控量子态，而不只由体化学成分决定。 quantum devices prototype">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Two-Dimensional Quantum Devices</h3>
+  <p>Two-dimensional materials expose every carrier to gates, interfaces and optical fields, allowing quantum states to be assembled and tuned in devices rather than fixed only by bulk chemistry.</p>
+  <a href="/knowledge/nodes/two-dimensional-quantum-devices/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="graphene electron-optics devices 石墨烯电子光学器件 ballistic dirac carriers refract at gate-defined p–n interfaces and can be collimated or focused when phase coherence and mean free path exceed device dimensions. 弹道狄拉克载流子在栅定义 p–n 界面折射，并可在相干长度和平均自由程超过器件尺寸时实现准直和聚焦。 quantum devices prototype">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Graphene Electron-Optics Devices</h3>
+  <p>Ballistic Dirac carriers refract at gate-defined p–n interfaces and can be collimated or focused when phase coherence and mean free path exceed device dimensions.</p>
+  <a href="/knowledge/nodes/graphene-electron-optics-devices/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="resonant and interlayer tunneling devices 共振与层间隧穿器件 separate 2d electrodes and barriers create spectrally and momentum-selective current, with gates tuning alignment rather than only barrier height. 独立二维电极和势垒产生能谱与动量选择电流，栅极调控能级对准而不只是势垒高度。 quantum devices prototype">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Resonant and Interlayer Tunneling Devices</h3>
+  <p>Separate 2D electrodes and barriers create spectrally and momentum-selective current, with gates tuning alignment rather than only barrier height.</p>
+  <a href="/knowledge/nodes/resonant-and-interlayer-tunneling-devices/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="spin and valley devices 自旋与谷器件 spin and valley devices generate, manipulate and detect internal quantum labels through optical helicity, magnetic proximity, spin–orbit fields or berry-curvature-driven transverse motion. 自旋与谷器件借助光学手性、磁邻近、自旋轨道场或贝里曲率横向运动来产生、操纵并检测内部量子标记。 quantum devices prototype">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Spin and Valley Devices</h3>
+  <p>Spin and valley devices generate, manipulate and detect internal quantum labels through optical helicity, magnetic proximity, spin–orbit fields or Berry-curvature-driven transverse motion.</p>
+  <a href="/knowledge/nodes/spin-and-valley-devices/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="two-dimensional magnetic tunnel junctions 二维磁隧道结 atomically sharp stacks of 2d magnets, semiconductors and insulators create spin-dependent tunneling or spin-filter barriers controlled by magnetic configuration and gates. 二维磁体、半导体和绝缘体的原子级锐利堆叠可形成由磁构型和栅极控制的自旋依赖隧穿或自旋过滤势垒。 quantum devices prototype">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Two-Dimensional Magnetic Tunnel Junctions</h3>
+  <p>Atomically sharp stacks of 2D magnets, semiconductors and insulators create spin-dependent tunneling or spin-filter barriers controlled by magnetic configuration and gates.</p>
+  <a href="/knowledge/nodes/two-dimensional-magnetic-tunnel-junctions/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="excitonic and single-photon devices 激子与单光子器件 localized excitons in defects, strain potentials or moiré cells can emit one photon at a time, while interlayer excitons provide electrically tunable dipoles and transport. 缺陷、应变势或莫尔晶格中的局域激子可逐次发射单光子，层间激子则提供电可调偶极和输运。 quantum devices frontier">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Excitonic and Single-Photon Devices</h3>
+  <p>Localized excitons in defects, strain potentials or moiré cells can emit one photon at a time, while interlayer excitons provide electrically tunable dipoles and transport.</p>
+  <a href="/knowledge/nodes/excitonic-and-single-photon-devices/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="graphene and van der waals josephson devices 石墨烯与范德华约瑟夫森器件 superconducting electrodes induce pair correlations in a 2d weak link; gates tune carrier density, transmission and the current–phase relation. 超导电极在二维弱连接中诱导配对关联，栅极可调载流子密度、透射率和电流–相位关系。 quantum devices frontier">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Graphene and van der Waals Josephson Devices</h3>
+  <p>Superconducting electrodes induce pair correlations in a 2D weak link; gates tune carrier density, transmission and the current–phase relation.</p>
+  <a href="/knowledge/nodes/graphene-and-van-der-waals-josephson-devices/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="quantum dots, spin–valley qubits and topological candidates 量子点、自旋–谷量子比特与拓扑候选器件 electrostatic confinement discretizes 2d electronic states; spin, valley, layer or parity can encode quantum information and couple to gates, resonators or superconductors. 静电限域使二维电子态离散化，自旋、谷、层或宇称可编码量子信息，并与栅极、谐振腔或超导体耦合。 quantum devices frontier">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Quantum Dots, Spin–Valley Qubits and Topological Candidates</h3>
+  <p>Electrostatic confinement discretizes 2D electronic states; spin, valley, layer or parity can encode quantum information and couple to gates, resonators or superconductors.</p>
+  <a href="/knowledge/nodes/quantum-dots-spin-valley-qubits-and-topological-candidates/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="cold cathodes and two-dimensional electron emitters 冷阴极与二维电子发射器 a cold cathode emits electrons into vacuum without thermionic heating, commonly through field emission from a high-field nanoscale edge or tip. 冷阴极无需热电子加热即可向真空发射电子，通常依靠纳米边缘或尖端处的强场发射。 electron emission prototype">
+  <div class="sq-card__meta"><span>Electron Emission</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Cold Cathodes and Two-Dimensional Electron Emitters</h3>
+  <p>A cold cathode emits electrons into vacuum without thermionic heating, commonly through field emission from a high-field nanoscale edge or tip.</p>
+  <a href="/knowledge/nodes/cold-cathode-and-two-dimensional-electron-emitters/">Open knowledge note <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section></div>
+</div>
+
+<h2 id="How-the-directory-is-organized"><a href="#How-the-directory-is-organized" class="headerlink" title="How the directory is organized"></a>How the directory is organized</h2><ul>
+<li><strong>Foundation</strong> nodes establish models and conserved quantities.</li>
+<li><strong>Engineering</strong> nodes describe established device mechanisms and system constraints.</li>
+<li><strong>Prototype</strong> nodes have convincing device demonstrations but unresolved integration challenges.</li>
+<li><strong>Frontier</strong> nodes are active research platforms whose technological role is still open.</li>
+</ul>
+<p>For a spatial view of the same relationships, open the <a href="/knowledge/">Knowledge Atlas</a>. The directory is optimized for deliberate reading; the Atlas is optimized for discovering unexpected neighbors.</p>
+
+</section>
+
+<!-- bilingual:zh -->
+<section class="lang-panel lang-zh" lang="zh-CN" hidden>
+<div class="zh-heading zh-h1" role="heading" aria-level="1" id="半导体器件与量子物理：交互式知识目录"><a href="#半导体器件与量子物理：交互式知识目录" class="headerlink" title="半导体器件与量子物理：交互式知识目录"></a>半导体器件与量子物理：交互式知识目录</div><p>半导体器件物理更适合被理解为因果网络，而不是器件清单：<strong>材料决定可用状态，外场重塑势垒，输运形成端口响应，内部状态变量进一步产生存储与功能。</strong> 本目录提供多种进入这张网络的方式，同时保留返回第一性物理的清晰路径。</p>
+<p>你可以在知道术语时直接搜索，用成熟度筛选区分基础理论与研究前沿，也可以选择预设学习路径获得连续阅读顺序。每张卡片都会打开一个双语 Knowledge Note，整套内容默认显示英文。</p>
+<div class="sq-directory" data-directory-lang="zh">
+  <div class="sq-directory__mast">
+    <div><span>交互式领域索引</span><strong>67</strong><small>个双语知识入口</small></div>
+    <p>从经典器件物理出发，沿二维量子、陡峭亚阈值、存储与量子器件逐层深入。</p>
+  </div>
+  <div class="sq-controls">
+    <label class="sq-search"><span aria-hidden="true">⌕</span><input type="search" placeholder="搜索概念、器件或物理机制" aria-label="搜索概念、器件或物理机制"><kbd>/</kbd></label>
+    <div class="sq-filter" role="group" aria-label="Maturity filter">
+      <button type="button" data-maturity="all" aria-pressed="true">全部成熟度</button>
+      <button type="button" data-maturity="foundation" aria-pressed="false">基础</button>
+      <button type="button" data-maturity="engineering" aria-pressed="false">工程</button>
+      <button type="button" data-maturity="prototype" aria-pressed="false">原型</button>
+      <button type="button" data-maturity="frontier" aria-pressed="false">前沿</button>
+    </div>
+    <div class="sq-paths"><span>快速学习路径</span>
+      <button type="button" data-path="all" aria-pressed="true">完整地图</button>
+      <button type="button" data-path="classical,logic">低功耗逻辑</button>
+      <button type="button" data-path="quantum-foundations,spin-topology,excitons-moire,ordered-states,quantum-devices">二维量子</button>
+      <button type="button" data-path="classical,memory,functional">存储与计算</button>
+    </div>
+    <div class="sq-actions"><span class="sq-status" aria-live="polite"><b>67</b> 个可见节点</span><button type="button" data-expand>全部展开</button><button type="button" data-collapse>全部折叠</button></div>
+  </div>
+  <div class="sq-branches"><section class="sq-branch is-collapsed" data-branch="classical">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">01</span>
+    <span><strong>经典器件物理</strong><small>因果主干：能带、电荷、输运、结与晶体管作用。</small></span>
+    <em><span data-branch-count>15</span> 节点</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="semiconductor device physics knowledge network: from energy bands to device functions 半导体器件物理知识网络：从能带到器件功能 a causal map of semiconductor device physics, organized around physical dependencies rather than textbook page order and scoped to sze&#39;s third edition. 以施敏《半导体器件物理》第三版为范围，以物理因果链而非教材页码组织的器件物理入口。 device physics foundation">
+  <div class="sq-card__meta"><span>Device Physics</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">半导体器件物理知识网络：从能带到器件功能</div>
+  <p>以施敏《半导体器件物理》第三版为范围，以物理因果链而非教材页码组织的器件物理入口。</p>
+  <a href="/knowledge/nodes/semiconductor-device-physics-knowledge-network/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="energy bands, density of states, and carrier statistics 能带、态密度与载流子统计 from bands in a periodic potential to electron and hole concentrations through density of states, fermi statistics, and charge neutrality. 从周期势中的能带出发，用态密度、费米分布和电中性条件得到电子与空穴浓度。 electronic structure foundation">
+  <div class="sq-card__meta"><span>Electronic Structure</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">能带、态密度与载流子统计</div>
+  <p>从周期势中的能带出发，用态密度、费米分布和电中性条件得到电子与空穴浓度。</p>
+  <a href="/knowledge/nodes/semiconductor-band-carrier-statistics/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="drift, diffusion, and current in semiconductors 半导体中的漂移、扩散与电流 a unified account of drift and diffusion through electric fields, concentration gradients, and electrochemical potentials, including their high-field limits. 用电场、浓度梯度和电化学势统一理解漂移扩散电流，并说明迁移率、扩散系数和速度饱和的边界。 transport physics foundation">
+  <div class="sq-card__meta"><span>Transport Physics</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">半导体中的漂移、扩散与电流</div>
+  <p>用电场、浓度梯度和电化学势统一理解漂移扩散电流，并说明迁移率、扩散系数和速度饱和的边界。</p>
+  <a href="/knowledge/nodes/semiconductor-carrier-transport/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="nonequilibrium carriers: generation, recombination, and quasi-fermi levels 非平衡载流子：产生、复合与准费米能级 carrier lifetime, diffusion length, generation–recombination mechanisms, and electron–hole quasi-fermi-level splitting under optical or electrical injection. 描述光生或电注入载流子的寿命、扩散长度、产生复合机制及电子空穴准费米能级分裂。 transport physics foundation">
+  <div class="sq-card__meta"><span>Transport Physics</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">非平衡载流子：产生、复合与准费米能级</div>
+  <p>描述光生或电注入载流子的寿命、扩散长度、产生复合机制及电子空穴准费米能级分裂。</p>
+  <a href="/knowledge/nodes/non-equilibrium-carriers/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the governing equations of semiconductor devices 半导体器件的基本方程 the self-consistent poisson, carrier-statistics, drift–diffusion, and continuity system underlying classical semiconductor-device simulation. 将泊松方程、载流子统计、漂移扩散电流与连续性方程闭合成经典器件模拟的自洽方程组。 fundamental models foundation">
+  <div class="sq-card__meta"><span>Fundamental Models</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">半导体器件的基本方程</div>
+  <p>将泊松方程、载流子统计、漂移扩散电流与连续性方程闭合成经典器件模拟的自洽方程组。</p>
+  <a href="/knowledge/nodes/semiconductor-device-equations/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the pn junction: space charge, band bending, and rectification pn结：空间电荷、能带与整流 from diffusion-built space charge and built-in potential to the diode equation, junction capacitance, transients, and breakdown. 从扩散建立空间电荷和内建电势，再由少数载流子边界条件推导二极管方程、结电容与击穿。 junction devices foundation">
+  <div class="sq-card__meta"><span>Junction Devices</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">PN结：空间电荷、能带与整流</div>
+  <p>从扩散建立空间电荷和内建电势，再由少数载流子边界条件推导二极管方程、结电容与击穿。</p>
+  <a href="/knowledge/nodes/pn-junction-physics/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="metal–semiconductor contacts and schottky barriers 金属-半导体接触与肖特基势垒 schottky and ohmic contacts from work-function alignment, electron affinity, thermionic emission, tunneling, and fermi-level pinning. 从功函数、电子亲和能和费米能级对齐理解肖特基与欧姆接触，并比较热发射、隧穿和界面钉扎。 interface physics foundation">
+  <div class="sq-card__meta"><span>Interface Physics</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">金属-半导体接触与肖特基势垒</div>
+  <p>从功函数、电子亲和能和费米能级对齐理解肖特基与欧姆接触，并比较热发射、隧穿和界面钉扎。</p>
+  <a href="/knowledge/nodes/metal-semiconductor-contact/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the mos capacitor: accumulation, depletion, and inversion mos电容：积累、耗尽与反型 accumulation, depletion, inversion, threshold, and c–v response from gate-voltage partitioning, surface potential, and semiconductor space charge. 用栅压分配、表面势和半导体空间电荷解释mos结构的积累、耗尽、反型、阈值与c-v响应。 mos electrostatics foundation">
+  <div class="sq-card__meta"><span>MOS Electrostatics</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">MOS电容：积累、耗尽与反型</div>
+  <p>用栅压分配、表面势和半导体空间电荷解释MOS结构的积累、耗尽、反型、阈值与C-V响应。</p>
+  <a href="/knowledge/nodes/mos-capacitor-physics/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the mosfet: gate-controlled charge and channel transport mosfet：栅控电荷与沟道输运 combining vertical mos electrostatics with lateral source–drain transport to derive long-channel i–v, transconductance, saturation, and subthreshold behavior. 将mos电容的垂直静电与源漏方向的横向输运结合，推导长沟道i-v、跨导、饱和和亚阈值行为。 field-effect transistors foundation">
+  <div class="sq-card__meta"><span>Field-Effect Transistors</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">MOSFET：栅控电荷与沟道输运</div>
+  <p>将MOS电容的垂直静电与源漏方向的横向输运结合，推导长沟道I-V、跨导、饱和和亚阈值行为。</p>
+  <a href="/knowledge/nodes/mosfet-physics/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the bipolar junction transistor: minority-carrier injection and gain 双极晶体管：少子注入与电流放大 the bjt as two asymmetric coupled pn junctions, combining emitter injection, thin-base transport, and collector-field collection. 把bjt理解为两个非对称、相互耦合的pn结：发射结注入、薄基区输运、集电结收集共同产生电流增益。 bipolar transistors foundation">
+  <div class="sq-card__meta"><span>Bipolar Transistors</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">双极晶体管：少子注入与电流放大</div>
+  <p>把BJT理解为两个非对称、相互耦合的PN结：发射结注入、薄基区输运、集电结收集共同产生电流增益。</p>
+  <a href="/knowledge/nodes/bipolar-junction-transistor-physics/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="heterojunctions, jfets, mesfets, and hemts 异质结、jfet、mesfet与hemt a unified view of jfets, mesfets, modfets/hemts, and two-dimensional carrier gases through depletion control and heterojunction band engineering. 用耗尽层控制和异质结能带工程统一理解jfet、mesfet、modfet/hemt及二维电子气。 field-effect transistors foundation">
+  <div class="sq-card__meta"><span>Field-Effect Transistors</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">异质结、JFET、MESFET与HEMT</div>
+  <p>用耗尽层控制和异质结能带工程统一理解JFET、MESFET、MODFET/HEMT及二维电子气。</p>
+  <a href="/knowledge/nodes/heterojunction-and-fet-family/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="breakdown, scaling, and device nonidealities 击穿、缩放与器件非理想效应 tunneling, avalanche, short-channel electrostatics, high-field transport, parasitics, self-heating, and reliability across pn junctions, bjts, and mosfets. 横向连接pn结、bjt和mosfet中的隧穿、雪崩、短沟道、高场、寄生电阻、自热与可靠性问题。 scaling effects foundation">
+  <div class="sq-card__meta"><span>Scaling Effects</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">击穿、缩放与器件非理想效应</div>
+  <p>横向连接PN结、BJT和MOSFET中的隧穿、雪崩、短沟道、高场、寄生电阻、自热与可靠性问题。</p>
+  <a href="/knowledge/nodes/device-breakdown-and-scaling/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="power semiconductor devices 功率半导体器件 power diodes, mosfets, igbts, and thyristors through the trade-offs among blocking voltage, conduction loss, switching loss, and heat removal. 用耐压、导通损耗、开关损耗和热管理的权衡统一理解功率二极管、mosfet、igbt与晶闸管。 power devices foundation">
+  <div class="sq-card__meta"><span>Power Devices</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">功率半导体器件</div>
+  <p>用耐压、导通损耗、开关损耗和热管理的权衡统一理解功率二极管、MOSFET、IGBT与晶闸管。</p>
+  <a href="/knowledge/nodes/power-semiconductor-devices/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="optoelectronic devices: leds, photodiodes, and solar cells 光电子器件：led、光电二极管与太阳电池 a unified account of light emission, detection, and photovoltaics through absorption, generation–recombination, junction separation, and quasi-fermi-level splitting. 以光吸收、载流子产生复合、结区分离和准费米能级分裂统一理解发光、探测与光伏器件。 optoelectronic devices foundation">
+  <div class="sq-card__meta"><span>Optoelectronic Devices</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">光电子器件：LED、光电二极管与太阳电池</div>
+  <p>以光吸收、载流子产生复合、结区分离和准费米能级分裂统一理解发光、探测与光伏器件。</p>
+  <a href="/knowledge/nodes/optoelectronic-semiconductor-devices/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="device physics of nonvolatile memory 非易失存储器的器件物理 flash and eeprom operation from floating-gate-induced threshold shifts, including program, erase, read, retention, and endurance trade-offs. 从浮栅电荷改变mosfet阈值出发，理解flash/eeprom的写入、擦除、读取、保持与耐久性权衡。 memory devices foundation">
+  <div class="sq-card__meta"><span>Memory Devices</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">非易失存储器的器件物理</div>
+  <p>从浮栅电荷改变MOSFET阈值出发，理解Flash/EEPROM的写入、擦除、读取、保持与耐久性权衡。</p>
+  <a href="/knowledge/nodes/nonvolatile-memory-device-physics/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="quantum-foundations">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">02</span>
+    <span><strong>二维量子基础</strong><small>屏蔽、界面、量子电容、介观输运与隧穿。</small></span>
+    <em><span data-branch-count>11</span> 节点</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="two-dimensional quantum foundations 二维量子物理基础 reducing a crystal to one or a few atomic layers changes screening, density of states, symmetry and available internal degrees of freedom; it does more than merely shrink a bulk semiconductor. 把晶体减薄到单层或少层会同时改变屏蔽、态密度、对称性和内部自由度，并非只是把体材料缩小。 2d quantum foundations foundation">
+  <div class="sq-card__meta"><span>2D Quantum Foundations</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维量子物理基础</div>
+  <p>把晶体减薄到单层或少层会同时改变屏蔽、态密度、对称性和内部自由度，并非只是把体材料缩小。</p>
+  <a href="/knowledge/nodes/two-dimensional-quantum-foundations/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="quantum tunneling in semiconductor devices 半导体器件中的量子隧穿 a carrier can cross a classically forbidden barrier when its wavefunction has finite amplitude on the far side; barrier shape, effective mass and conserved momentum set the transmission. 当载流子波函数在经典禁阻区另一侧仍有有限振幅时即可穿越势垒；透射率由势垒形状、有效质量和守恒动量共同决定。 quantum tunneling foundation">
+  <div class="sq-card__meta"><span>Quantum Tunneling</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">半导体器件中的量子隧穿</div>
+  <p>当载流子波函数在经典禁阻区另一侧仍有有限振幅时即可穿越势垒；透射率由势垒形状、有效质量和守恒动量共同决定。</p>
+  <a href="/knowledge/nodes/quantum-tunneling-in-semiconductor-devices/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="dirac fermions in two-dimensional materials 二维材料中的狄拉克费米子 in graphene-like systems two sublattices produce a low-energy pseudospin hamiltonian with approximately linear dispersion and chiral wavefunctions. 在石墨烯类体系中，两套亚晶格形成低能赝自旋哈密顿量，产生近似线性色散和手性波函数。 2d quantum foundations foundation">
+  <div class="sq-card__meta"><span>2D Quantum Foundations</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维材料中的狄拉克费米子</div>
+  <p>在石墨烯类体系中，两套亚晶格形成低能赝自旋哈密顿量，产生近似线性色散和手性波函数。</p>
+  <a href="/knowledge/nodes/dirac-fermions-in-two-dimensional-materials/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="reduced dielectric screening in two dimensions 二维体系中的弱介电屏蔽 field lines around an atomically thin layer extend into its environment, so electron–electron and electron–hole interactions are nonlocal and strongly substrate dependent. 原子级薄层周围的场线大量延伸到外部环境，使电子间及电子–空穴相互作用呈非局域性并强烈依赖衬底。 quantum electrostatics foundation">
+  <div class="sq-card__meta"><span>Quantum Electrostatics</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维体系中的弱介电屏蔽</div>
+  <p>原子级薄层周围的场线大量延伸到外部环境，使电子间及电子–空穴相互作用呈非局域性并强烈依赖衬底。</p>
+  <a href="/knowledge/nodes/reduced-dielectric-screening-in-2d/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="quantum capacitance in two-dimensional devices 二维器件中的量子电容 when the electronic density of states is small, adding charge must move the chemical potential; this finite electronic compressibility appears as a capacitance in series with the geometrical gate capacitance. 当电子态密度较低时，增加电荷必须推动化学势移动；这种有限电子可压缩性表现为与几何栅电容串联的量子电容。 quantum electrostatics foundation">
+  <div class="sq-card__meta"><span>Quantum Electrostatics</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维器件中的量子电容</div>
+  <p>当电子态密度较低时，增加电荷必须推动化学势移动；这种有限电子可压缩性表现为与几何栅电容串联的量子电容。</p>
+  <a href="/knowledge/nodes/quantum-capacitance-in-two-dimensional-devices/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="interface dipoles and fermi-level pinning in 2d contacts 二维接触中的界面偶极与费米能级钉扎 a metal–2d semiconductor contact is set by work functions, interface dipoles, metal-induced gap states, defects and local electrostatics rather than by the ideal schottky–mott rule alone. 金属–二维半导体接触由功函数、界面偶极、金属诱导带隙态、缺陷及局域静电共同决定，不能只用理想 schottky–mott 规则。 interface physics engineering">
+  <div class="sq-card__meta"><span>Interface Physics</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维接触中的界面偶极与费米能级钉扎</div>
+  <p>金属–二维半导体接触由功函数、界面偶极、金属诱导带隙态、缺陷及局域静电共同决定，不能只用理想 Schottky–Mott 规则。</p>
+  <a href="/knowledge/nodes/interface-dipoles-and-fermi-level-pinning/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="landauer–büttiker quantum transport landauer–büttiker 量子输运 mesoscopic current is carried by quantum modes whose occupations are fixed by reservoirs and whose contribution is weighted by transmission. 介观电流由量子传输模式承载，模式占据由电极库决定，贡献由透射率加权。 mesoscopic transport foundation">
+  <div class="sq-card__meta"><span>Mesoscopic Transport</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">Landauer–Büttiker 量子输运</div>
+  <p>介观电流由量子传输模式承载，模式占据由电极库决定，贡献由透射率加权。</p>
+  <a href="/knowledge/nodes/landauer-buttiker-transport/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="ballistic and quasi-ballistic transport 弹道与准弹道输运 transport becomes ballistic when device length is shorter than the relevant momentum-relaxation mean free path; quasi-ballistic devices retain only part of the injected flux. 当器件长度短于相关动量弛豫平均自由程时进入弹道区；准弹道器件只保留部分注入通量。 mesoscopic transport foundation">
+  <div class="sq-card__meta"><span>Mesoscopic Transport</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">弹道与准弹道输运</div>
+  <p>当器件长度短于相关动量弛豫平均自由程时进入弹道区；准弹道器件只保留部分注入通量。</p>
+  <a href="/knowledge/nodes/ballistic-and-quasi-ballistic-transport/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="klein tunneling and electron optics 克莱因隧穿与电子光学 chiral dirac carriers can transmit perfectly at normal incidence through a smooth electrostatic barrier because pseudospin matching suppresses backscattering. 手性狄拉克载流子在正入射平滑静电势垒时可因赝自旋匹配而抑制背散射，实现高透射。 mesoscopic transport prototype">
+  <div class="sq-card__meta"><span>Mesoscopic Transport</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">克莱因隧穿与电子光学</div>
+  <p>手性狄拉克载流子在正入射平滑静电势垒时可因赝自旋匹配而抑制背散射，实现高透射。</p>
+  <a href="/knowledge/nodes/klein-tunneling-and-electron-optics/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="interlayer tunneling and negative differential resistance 层间隧穿与负微分电阻 atomically sharp vdw interfaces allow tunneling between two separately gated layers; energy and in-plane momentum alignment can create a resonant current peak followed by negative differential resistance. 原子级平整的 vdw 界面允许载流子在独立栅控层间隧穿；能量和面内动量对准可产生共振电流峰及负微分电阻。 quantum tunneling prototype">
+  <div class="sq-card__meta"><span>Quantum Tunneling</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">层间隧穿与负微分电阻</div>
+  <p>原子级平整的 vdW 界面允许载流子在独立栅控层间隧穿；能量和面内动量对准可产生共振电流峰及负微分电阻。</p>
+  <a href="/knowledge/nodes/interlayer-tunneling-and-negative-differential-resistance/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="hydrodynamic electron flow 电子流体动力学 when momentum-conserving electron–electron collisions are faster than momentum-relaxing scattering, carriers behave collectively as a viscous charged fluid. 当保持总动量的电子–电子碰撞快于动量弛豫散射时，载流子会表现为具有黏性的带电流体。 mesoscopic transport frontier">
+  <div class="sq-card__meta"><span>Mesoscopic Transport</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">电子流体动力学</div>
+  <p>当保持总动量的电子–电子碰撞快于动量弛豫散射时，载流子会表现为具有黏性的带电流体。</p>
+  <a href="/knowledge/nodes/hydrodynamic-electron-flow/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="spin-topology">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">03</span>
+    <span><strong>自旋、谷与拓扑</strong><small>内部量子标记、贝里几何与边界输运。</small></span>
+    <em><span data-branch-count>3</span> 节点</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="spin–valley physics in two-dimensional semiconductors 二维半导体中的自旋–谷物理 broken inversion symmetry and strong spin–orbit coupling in monolayer tmds tie spin, valley and optical helicity to the k and k′ band extrema. 单层 tmd 的反演对称性破缺与强自旋轨道耦合，使 k/k′ 带谷与自旋及光学圆偏振发生关联。 spin valley topology foundation">
+  <div class="sq-card__meta"><span>Spin Valley Topology</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维半导体中的自旋–谷物理</div>
+  <p>单层 TMD 的反演对称性破缺与强自旋轨道耦合，使 K/K′ 带谷与自旋及光学圆偏振发生关联。</p>
+  <a href="/knowledge/nodes/spin-valley-physics/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="berry curvature and topological transport 贝里曲率与拓扑输运 berry curvature acts as a momentum-space magnetic field, producing anomalous transverse velocity and connecting local band geometry to global topological invariants. 贝里曲率类似动量空间中的磁场，产生反常横向速度，并把局域能带几何与整体拓扑不变量联系起来。 spin valley topology foundation">
+  <div class="sq-card__meta"><span>Spin Valley Topology</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">贝里曲率与拓扑输运</div>
+  <p>贝里曲率类似动量空间中的磁场，产生反常横向速度，并把局域能带几何与整体拓扑不变量联系起来。</p>
+  <a href="/knowledge/nodes/berry-curvature-and-topological-transport/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="quantum hall and topological edge states 量子霍尔与拓扑边缘态 landau quantization or nontrivial band topology can create bulk gaps with conducting boundary channels protected against selected scattering processes. 朗道量子化或非平庸能带拓扑可形成体能隙及边界导电通道，并对特定散射具有保护。 spin valley topology frontier">
+  <div class="sq-card__meta"><span>Spin Valley Topology</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">量子霍尔与拓扑边缘态</div>
+  <p>朗道量子化或非平庸能带拓扑可形成体能隙及边界导电通道，并对特定散射具有保护。</p>
+  <a href="/knowledge/nodes/quantum-hall-and-topological-edge-states/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="excitons-moire">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">04</span>
+    <span><strong>激子与莫尔物质</strong><small>强库仑束缚、层间偶极、扭转与关联平带。</small></span>
+    <em><span data-branch-count>3</span> 节点</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="excitons in two-dimensional semiconductors 二维半导体中的激子 reduced screening and quantum confinement bind electrons and holes strongly, so excitons, trions and many-body renormalization dominate optical spectra of monolayer tmds. 弱屏蔽和量子限域使电子与空穴强烈束缚，因此激子、三激子及多体重整化主导单层 tmd 光谱。 exciton physics foundation">
+  <div class="sq-card__meta"><span>Exciton Physics</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维半导体中的激子</div>
+  <p>弱屏蔽和量子限域使电子与空穴强烈束缚，因此激子、三激子及多体重整化主导单层 TMD 光谱。</p>
+  <a href="/knowledge/nodes/excitons-in-two-dimensional-semiconductors/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="interlayer and moiré excitons 层间激子与莫尔激子 in a type-ii vdw heterostructure the electron and hole can occupy different layers; the resulting dipole lengthens lifetime and makes the exciton sensitive to gate field, twist and moiré confinement. 在 ii 型 vdw 异质结中电子和空穴可分居不同层；由此产生的偶极延长寿命，并使激子对栅场、扭角及莫尔限域敏感。 exciton physics frontier">
+  <div class="sq-card__meta"><span>Exciton Physics</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">层间激子与莫尔激子</div>
+  <p>在 II 型 vdW 异质结中电子和空穴可分居不同层；由此产生的偶极延长寿命，并使激子对栅场、扭角及莫尔限域敏感。</p>
+  <a href="/knowledge/nodes/interlayer-and-moire-excitons/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="moiré quantum matter and correlated flat bands 莫尔量子物质与关联平带 a small twist angle or lattice mismatch produces a long-period moiré potential that narrows bands and makes coulomb interactions comparable to or larger than kinetic energy. 小扭角或晶格失配产生长周期莫尔势，使能带变窄，并令库仑相互作用达到或超过动能尺度。 moiré physics frontier">
+  <div class="sq-card__meta"><span>Moiré Physics</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">莫尔量子物质与关联平带</div>
+  <p>小扭角或晶格失配产生长周期莫尔势，使能带变窄，并令库仑相互作用达到或超过动能尺度。</p>
+  <a href="/knowledge/nodes/moire-quantum-matter/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="ordered-states">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">05</span>
+    <span><strong>二维有序态</strong><small>原子级厚度中的铁电、磁性与超导有序。</small></span>
+    <em><span data-branch-count>3</span> 节点</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="prototype" data-search="two-dimensional and sliding ferroelectricity 二维与滑移铁电性 switchable polarization can survive in atomically thin crystals; in sliding ferroelectrics it arises from stacking-dependent interlayer charge transfer and reverses when layers translate. 可翻转极化能够存在于原子级薄晶体；滑移铁电中，极化来自堆叠相关的层间电荷转移，并随层间平移而反转。 2d ferroics prototype">
+  <div class="sq-card__meta"><span>2D Ferroics</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维与滑移铁电性</div>
+  <p>可翻转极化能够存在于原子级薄晶体；滑移铁电中，极化来自堆叠相关的层间电荷转移，并随层间平移而反转。</p>
+  <a href="/knowledge/nodes/two-dimensional-ferroelectricity/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="two-dimensional magnetism and spin filtering 二维磁性与自旋过滤 magnetic anisotropy and spin–orbit coupling can stabilize order in atomically thin magnets, while vdw interfaces provide clean spin filters and proximity exchange. 磁各向异性和自旋轨道耦合可在原子级薄磁体中稳定有序，vdw 界面则提供洁净的自旋过滤和邻近交换。 2d ferroics prototype">
+  <div class="sq-card__meta"><span>2D Ferroics</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维磁性与自旋过滤</div>
+  <p>磁各向异性和自旋轨道耦合可在原子级薄磁体中稳定有序，vdW 界面则提供洁净的自旋过滤和邻近交换。</p>
+  <a href="/knowledge/nodes/two-dimensional-magnetism/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="two-dimensional superconductivity and josephson physics 二维超导与约瑟夫森物理 two-dimensional superconductors combine phase fluctuations, strong spin–orbit coupling and gate-tunable carrier density; proximity coupling transfers pairing correlations into graphene or tmd channels. 二维超导体结合强相位涨落、自旋轨道耦合与可栅控载流子密度；邻近效应还能把配对关联引入石墨烯或 tmd 沟道。 2d ferroics frontier">
+  <div class="sq-card__meta"><span>2D Ferroics</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维超导与约瑟夫森物理</div>
+  <p>二维超导体结合强相位涨落、自旋轨道耦合与可栅控载流子密度；邻近效应还能把配对关联引入石墨烯或 TMD 沟道。</p>
+  <a href="/knowledge/nodes/two-dimensional-superconductivity/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="logic">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">06</span>
+    <span><strong>新兴逻辑器件</strong><small>超越传统热发射开关的 TFET、NCFET 与冷源路线。</small></span>
+    <em><span data-branch-count>7</span> 节点</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="subthreshold swing and the thermal limit 亚阈值摆幅与热力学极限 a conventional mosfet changes current by electrostatically moving a barrier through a thermally broadened fermi distribution, producing the familiar room-temperature 60 mv/dec lower bound under ideal quasistatic conditions. 传统 mosfet 通过静电移动势垒并采样热展宽的费米分布，因此在理想准静态条件下出现室温约 60 mv/dec 的下限。 steep-slope devices foundation">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">亚阈值摆幅与热力学极限</div>
+  <p>传统 MOSFET 通过静电移动势垒并采样热展宽的费米分布，因此在理想准静态条件下出现室温约 60 mV/dec 的下限。</p>
+  <a href="/knowledge/nodes/subthreshold-swing-and-thermal-limit/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="emerging steep-slope transistors 新兴陡峭亚阈值晶体管 steep-slope concepts try to reduce switching voltage by changing injection statistics, adding internal voltage gain or reshaping the source density of states. 陡峭亚阈值器件通过改变注入统计、引入内部电压增益或重塑源态密度来降低开关电压。 steep-slope devices engineering">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">新兴陡峭亚阈值晶体管</div>
+  <p>陡峭亚阈值器件通过改变注入统计、引入内部电压增益或重塑源态密度来降低开关电压。</p>
+  <a href="/knowledge/nodes/emerging-steep-slope-transistors/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="tunnel field-effect transistor 隧穿场效应晶体管 a tfet gate controls the spatial overlap of source valence-band states and channel conduction-band states, turning band-to-band tunneling on and off. tfet 栅极控制源区价带态与沟道导带态的空间重叠，从而开关带间隧穿。 steep-slope devices prototype">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">隧穿场效应晶体管</div>
+  <p>TFET 栅极控制源区价带态与沟道导带态的空间重叠，从而开关带间隧穿。</p>
+  <a href="/knowledge/nodes/tunnel-field-effect-transistor/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="two-dimensional, heterojunction and interlayer tfets 二维、异质结与层间 tfet atomically thin bodies improve gate control, while type-ii or broken-gap vdw heterojunctions reduce tunneling distance and permit independent band alignment by dual gates. 原子级薄沟道增强栅控，ii 型或破缺带隙 vdw 异质结缩短隧穿距离，并允许双栅独立调节能带对准。 steep-slope devices prototype">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维、异质结与层间 TFET</div>
+  <p>原子级薄沟道增强栅控，II 型或破缺带隙 vdW 异质结缩短隧穿距离，并允许双栅独立调节能带对准。</p>
+  <a href="/knowledge/nodes/two-dimensional-tfet-and-interlayer-tfet/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="negative-capacitance field-effect transistor 负电容场效应晶体管 an nc-fet places a ferroelectric response in the gate stack so that a change in gate voltage may produce a larger change in semiconductor surface potential. ncfet 在栅堆栈中加入铁电响应，使栅压变化可能转化为更大的半导体表面势变化。 steep-slope devices prototype">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">负电容场效应晶体管</div>
+  <p>NCFET 在栅堆栈中加入铁电响应，使栅压变化可能转化为更大的半导体表面势变化。</p>
+  <a href="/knowledge/nodes/negative-capacitance-field-effect-transistor/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="cold-source field-effect transistor 冷源场效应晶体管 a cold-source fet suppresses the high-energy tail of injected carriers through a sharply decreasing source density of states or an energy-selective heterojunction. 冷源 fet 借助快速下降的源态密度或能量选择异质结抑制注入载流子的高能尾部。 steep-slope devices frontier">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">冷源场效应晶体管</div>
+  <p>冷源 FET 借助快速下降的源态密度或能量选择异质结抑制注入载流子的高能尾部。</p>
+  <a href="/knowledge/nodes/cold-source-field-effect-transistor/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="benchmarking steep-slope devices 陡峭亚阈值器件的基准比较 a credible comparison must place current, slope, capacitance, voltage, delay, energy, area, temperature and hysteresis on the same operating point and footprint. 可信比较必须在相同工作点和面积尺度下同时考虑电流、斜率、电容、电压、延迟、能量、温度和滞回。 steep-slope devices engineering">
+  <div class="sq-card__meta"><span>Steep-Slope Devices</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">陡峭亚阈值器件的基准比较</div>
+  <p>可信比较必须在相同工作点和面积尺度下同时考虑电流、斜率、电容、电压、延迟、能量、温度和滞回。</p>
+  <a href="/knowledge/nodes/steep-slope-device-benchmarking/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="memory">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">07</span>
+    <span><strong>存储与状态器件</strong><small>以电荷、极化、离子构型、物相和磁化保存信息。</small></span>
+    <em><span data-branch-count>11</span> 节点</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="engineering" data-search="advanced nonvolatile memory physics 先进非易失存储器物理 nonvolatile memories differ by the state variable that crosses an energy barrier during write and remains trapped during retention: charge, polarization, atomic configuration, phase or magnetization. 非易失存储器的差别在于写入时跨越能垒、保持时被困住的状态变量：电荷、极化、原子构型、物相或磁化。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">先进非易失存储器物理</div>
+  <p>非易失存储器的差别在于写入时跨越能垒、保持时被困住的状态变量：电荷、极化、原子构型、物相或磁化。</p>
+  <a href="/knowledge/nodes/advanced-nonvolatile-memory-physics/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="floating-gate mos memory 浮栅 mos 存储器 an electrically isolated conductor stores electronic charge and shifts the threshold voltage through a capacitive divider. 被介质包围的浮置导体保存电子电荷，并通过电容分压改变晶体管阈值。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">浮栅 MOS 存储器</div>
+  <p>被介质包围的浮置导体保存电子电荷，并通过电容分压改变晶体管阈值。</p>
+  <a href="/knowledge/nodes/floating-gate-mos-memory/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="flash injection, program and erase physics flash 注入、编程与擦除物理 flash changes stored charge through channel hot-electron injection, fowler–nordheim tunneling or related high-field transport, then reads the resulting threshold shift at low bias. flash 通过沟道热电子注入、fowler–nordheim 隧穿等高场输运改变存储电荷，再用低偏压读取阈值漂移。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">Flash 注入、编程与擦除物理</div>
+  <p>Flash 通过沟道热电子注入、Fowler–Nordheim 隧穿等高场输运改变存储电荷，再用低偏压读取阈值漂移。</p>
+  <a href="/knowledge/nodes/flash-injection-and-tunneling/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="charge-trap flash and three-dimensional nand 电荷俘获型 flash 与三维 nand charge-trap cells store carriers in localized dielectric states rather than one continuous floating gate; vertical strings trade lithographic scaling for layer stacking. 电荷俘获单元把载流子保存在离散介质陷阱中，而非连续浮栅；三维 nand 则通过垂直堆叠替代横向光刻缩放。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">电荷俘获型 Flash 与三维 NAND</div>
+  <p>电荷俘获单元把载流子保存在离散介质陷阱中，而非连续浮栅；三维 NAND 则通过垂直堆叠替代横向光刻缩放。</p>
+  <a href="/knowledge/nodes/charge-trap-flash-and-three-dimensional-nand/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="ferroelectric field-effect transistor memory 铁电场效应晶体管存储器 a fefet stores remanent polarization in its gate stack; the polarization charge shifts channel threshold and can be read nondestructively as conductance. fefet 在栅堆栈中保存剩余极化，极化电荷移动沟道阈值，并可通过电导进行非破坏读取。 memory physics prototype">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">铁电场效应晶体管存储器</div>
+  <p>FeFET 在栅堆栈中保存剩余极化，极化电荷移动沟道阈值，并可通过电导进行非破坏读取。</p>
+  <a href="/knowledge/nodes/ferroelectric-field-effect-transistor-memory/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="sliding-ferroelectric memory devices 滑移铁电存储器件 in a vdw bilayer, electrically driven relative translation changes stacking order and reverses an out-of-plane dipole, creating a structural polarization state. 在 vdw 双层中，电驱动的相对平移改变堆叠顺序并翻转面外偶极，从而形成结构极化存储态。 memory physics frontier">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">滑移铁电存储器件</div>
+  <p>在 vdW 双层中，电驱动的相对平移改变堆叠顺序并翻转面外偶极，从而形成结构极化存储态。</p>
+  <a href="/knowledge/nodes/sliding-ferroelectric-memory-devices/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="memristive systems and resistive switching 忆阻系统与阻变物理 a memristive system has conductance controlled by internal state variables with their own dynamics; physical implementations include ionic redox, phase, ferroelectric and spin configurations. 忆阻系统的电导由具有自身动力学的内部状态变量控制；物理实现包括离子氧化还原、物相、铁电和自旋构型。 memristive devices engineering">
+  <div class="sq-card__meta"><span>Memristive Devices</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">忆阻系统与阻变物理</div>
+  <p>忆阻系统的电导由具有自身动力学的内部状态变量控制；物理实现包括离子氧化还原、物相、铁电和自旋构型。</p>
+  <a href="/knowledge/nodes/memristive-systems-and-resistive-switching/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="resistive ram and conductive-filament dynamics 阻变存储器与导电细丝动力学 rram switches resistance by redistributing ions and defects, often forming or rupturing a nanoscale metallic or oxygen-vacancy-rich conduction path. rram 通过重新分布离子和缺陷改变电阻，常表现为纳米金属细丝或富氧空位导电通道的形成与断裂。 memristive devices engineering">
+  <div class="sq-card__meta"><span>Memristive Devices</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">阻变存储器与导电细丝动力学</div>
+  <p>RRAM 通过重新分布离子和缺陷改变电阻，常表现为纳米金属细丝或富氧空位导电通道的形成与断裂。</p>
+  <a href="/knowledge/nodes/resistive-random-access-memory/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="phase-change memory 相变存储器 pcm stores information in the resistance contrast between amorphous and crystalline phases produced by controlled joule-heating pulses. pcm 利用受控焦耳热脉冲产生的非晶态与晶态电阻差保存信息。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">相变存储器</div>
+  <p>PCM 利用受控焦耳热脉冲产生的非晶态与晶态电阻差保存信息。</p>
+  <a href="/knowledge/nodes/phase-change-memory/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="magnetic random-access memory 磁阻随机存储器 mram stores the relative magnetization of magnetic layers and reads it through tunneling magnetoresistance. mram 保存磁层相对磁化构型，并通过隧穿磁阻读取。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">磁阻随机存储器</div>
+  <p>MRAM 保存磁层相对磁化构型，并通过隧穿磁阻读取。</p>
+  <a href="/knowledge/nodes/magnetic-random-access-memory/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="memory reliability, variability and scaling 存储器可靠性、变异与缩放 retention, endurance, read/write disturb, stochastic variation and thermal stability are coupled consequences of the energy landscape and write stress. 保持、耐久、读写干扰、随机变异及热稳定性都是能量景观与写入应力耦合产生的结果。 memory physics engineering">
+  <div class="sq-card__meta"><span>Memory Physics</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">存储器可靠性、变异与缩放</div>
+  <p>保持、耐久、读写干扰、随机变异及热稳定性都是能量景观与写入应力耦合产生的结果。</p>
+  <a href="/knowledge/nodes/memory-reliability-and-scaling/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="functional">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">08</span>
+    <span><strong>神经形态与存内系统</strong><small>交叉阵列、选通器、物理突触与感存融合。</small></span>
+    <em><span data-branch-count>5</span> 节点</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="prototype" data-search="functional and neuromorphic devices 功能与神经形态器件 functional devices exploit internal dynamics, nonvolatility, optical response or stochasticity so that one physical element performs memory, sensing or computation rather than only binary switching. 功能器件利用内部动力学、非易失性、光响应或随机性，使单个物理元件承担存储、传感或计算，而非只做二值开关。 neuromorphic hardware prototype">
+  <div class="sq-card__meta"><span>Neuromorphic Hardware</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">功能与神经形态器件</div>
+  <p>功能器件利用内部动力学、非易失性、光响应或随机性，使单个物理元件承担存储、传感或计算，而非只做二值开关。</p>
+  <a href="/knowledge/nodes/functional-and-neuromorphic-devices/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="crossbar arrays, selectors and sneak paths 交叉阵列、选通器与潜通路 a crossbar maps conductance cells to row–column intersections, but unselected paths carry parasitic current unless nonlinearity or access devices isolate them. 交叉阵列把电导单元放在行列交点，但若无非线性器件或访问晶体管隔离，未选路径会产生寄生电流。 neuromorphic hardware engineering">
+  <div class="sq-card__meta"><span>Neuromorphic Hardware</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">交叉阵列、选通器与潜通路</div>
+  <p>交叉阵列把电导单元放在行列交点，但若无非线性器件或访问晶体管隔离，未选路径会产生寄生电流。</p>
+  <a href="/knowledge/nodes/crossbar-arrays-selectors-and-sneak-paths/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="compute-in-memory 存内计算 compute-in-memory performs operations where data are stored, commonly using kirchhoff current summation and ohm conductance multiplication in crossbars. 存内计算在数据存储位置直接运算，常利用交叉阵列中的欧姆电导乘法和基尔霍夫电流求和。 neuromorphic hardware prototype">
+  <div class="sq-card__meta"><span>Neuromorphic Hardware</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">存内计算</div>
+  <p>存内计算在数据存储位置直接运算，常利用交叉阵列中的欧姆电导乘法和基尔霍夫电流求和。</p>
+  <a href="/knowledge/nodes/compute-in-memory/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="artificial synapses and neuromorphic dynamics 人工突触与神经形态动力学 a physical synapse maps pulse history to conductance, while dynamical memristors can use relaxation, thresholds and volatility to emulate short- and long-term plasticity or neuronal dynamics. 物理突触把脉冲历史映射为电导，动态忆阻器还可利用弛豫、阈值与易失性模拟长短时可塑性或神经元动力学。 neuromorphic hardware prototype">
+  <div class="sq-card__meta"><span>Neuromorphic Hardware</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">人工突触与神经形态动力学</div>
+  <p>物理突触把脉冲历史映射为电导，动态忆阻器还可利用弛豫、阈值与易失性模拟长短时可塑性或神经元动力学。</p>
+  <a href="/knowledge/nodes/artificial-synapses-and-neuromorphic-dynamics/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="optoelectronic memory, photomemristors and reconfigurable devices 光电存储、光忆阻与可重构器件 coupling photogeneration to trapped charge, ions, polarization or phase creates devices whose conductance remembers illumination and can combine sensing, memory and processing. 把光生载流子与陷阱电荷、离子、极化或物相耦合，可使器件电导记住光照并融合感知、存储与处理。 neuromorphic hardware frontier">
+  <div class="sq-card__meta"><span>Neuromorphic Hardware</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">光电存储、光忆阻与可重构器件</div>
+  <p>把光生载流子与陷阱电荷、离子、极化或物相耦合，可使器件电导记住光照并融合感知、存储与处理。</p>
+  <a href="/knowledge/nodes/optoelectronic-memory-and-reconfigurable-devices/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="quantum-devices">
+  <button class="sq-branch__head" type="button" aria-expanded="false">
+    <span class="sq-branch__index">09</span>
+    <span><strong>量子与电子源器件</strong><small>电子光学、自旋/谷器件、量子发射、约瑟夫森电路与冷阴极。</small></span>
+    <em><span data-branch-count>9</span> 节点</em>
+  </button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="prototype" data-search="two-dimensional quantum devices 二维量子器件 two-dimensional materials expose every carrier to gates, interfaces and optical fields, allowing quantum states to be assembled and tuned in devices rather than fixed only by bulk chemistry. 二维材料使每个载流子都强烈感受到栅极、界面和光场，从而能在器件中组装和调控量子态，而不只由体化学成分决定。 quantum devices prototype">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维量子器件</div>
+  <p>二维材料使每个载流子都强烈感受到栅极、界面和光场，从而能在器件中组装和调控量子态，而不只由体化学成分决定。</p>
+  <a href="/knowledge/nodes/two-dimensional-quantum-devices/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="graphene electron-optics devices 石墨烯电子光学器件 ballistic dirac carriers refract at gate-defined p–n interfaces and can be collimated or focused when phase coherence and mean free path exceed device dimensions. 弹道狄拉克载流子在栅定义 p–n 界面折射，并可在相干长度和平均自由程超过器件尺寸时实现准直和聚焦。 quantum devices prototype">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">石墨烯电子光学器件</div>
+  <p>弹道狄拉克载流子在栅定义 p–n 界面折射，并可在相干长度和平均自由程超过器件尺寸时实现准直和聚焦。</p>
+  <a href="/knowledge/nodes/graphene-electron-optics-devices/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="resonant and interlayer tunneling devices 共振与层间隧穿器件 separate 2d electrodes and barriers create spectrally and momentum-selective current, with gates tuning alignment rather than only barrier height. 独立二维电极和势垒产生能谱与动量选择电流，栅极调控能级对准而不只是势垒高度。 quantum devices prototype">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">共振与层间隧穿器件</div>
+  <p>独立二维电极和势垒产生能谱与动量选择电流，栅极调控能级对准而不只是势垒高度。</p>
+  <a href="/knowledge/nodes/resonant-and-interlayer-tunneling-devices/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="spin and valley devices 自旋与谷器件 spin and valley devices generate, manipulate and detect internal quantum labels through optical helicity, magnetic proximity, spin–orbit fields or berry-curvature-driven transverse motion. 自旋与谷器件借助光学手性、磁邻近、自旋轨道场或贝里曲率横向运动来产生、操纵并检测内部量子标记。 quantum devices prototype">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">自旋与谷器件</div>
+  <p>自旋与谷器件借助光学手性、磁邻近、自旋轨道场或贝里曲率横向运动来产生、操纵并检测内部量子标记。</p>
+  <a href="/knowledge/nodes/spin-and-valley-devices/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="two-dimensional magnetic tunnel junctions 二维磁隧道结 atomically sharp stacks of 2d magnets, semiconductors and insulators create spin-dependent tunneling or spin-filter barriers controlled by magnetic configuration and gates. 二维磁体、半导体和绝缘体的原子级锐利堆叠可形成由磁构型和栅极控制的自旋依赖隧穿或自旋过滤势垒。 quantum devices prototype">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维磁隧道结</div>
+  <p>二维磁体、半导体和绝缘体的原子级锐利堆叠可形成由磁构型和栅极控制的自旋依赖隧穿或自旋过滤势垒。</p>
+  <a href="/knowledge/nodes/two-dimensional-magnetic-tunnel-junctions/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="excitonic and single-photon devices 激子与单光子器件 localized excitons in defects, strain potentials or moiré cells can emit one photon at a time, while interlayer excitons provide electrically tunable dipoles and transport. 缺陷、应变势或莫尔晶格中的局域激子可逐次发射单光子，层间激子则提供电可调偶极和输运。 quantum devices frontier">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">激子与单光子器件</div>
+  <p>缺陷、应变势或莫尔晶格中的局域激子可逐次发射单光子，层间激子则提供电可调偶极和输运。</p>
+  <a href="/knowledge/nodes/excitonic-and-single-photon-devices/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="graphene and van der waals josephson devices 石墨烯与范德华约瑟夫森器件 superconducting electrodes induce pair correlations in a 2d weak link; gates tune carrier density, transmission and the current–phase relation. 超导电极在二维弱连接中诱导配对关联，栅极可调载流子密度、透射率和电流–相位关系。 quantum devices frontier">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">石墨烯与范德华约瑟夫森器件</div>
+  <p>超导电极在二维弱连接中诱导配对关联，栅极可调载流子密度、透射率和电流–相位关系。</p>
+  <a href="/knowledge/nodes/graphene-and-van-der-waals-josephson-devices/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="quantum dots, spin–valley qubits and topological candidates 量子点、自旋–谷量子比特与拓扑候选器件 electrostatic confinement discretizes 2d electronic states; spin, valley, layer or parity can encode quantum information and couple to gates, resonators or superconductors. 静电限域使二维电子态离散化，自旋、谷、层或宇称可编码量子信息，并与栅极、谐振腔或超导体耦合。 quantum devices frontier">
+  <div class="sq-card__meta"><span>Quantum Devices</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">量子点、自旋–谷量子比特与拓扑候选器件</div>
+  <p>静电限域使二维电子态离散化，自旋、谷、层或宇称可编码量子信息，并与栅极、谐振腔或超导体耦合。</p>
+  <a href="/knowledge/nodes/quantum-dots-spin-valley-qubits-and-topological-candidates/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="cold cathodes and two-dimensional electron emitters 冷阴极与二维电子发射器 a cold cathode emits electrons into vacuum without thermionic heating, commonly through field emission from a high-field nanoscale edge or tip. 冷阴极无需热电子加热即可向真空发射电子，通常依靠纳米边缘或尖端处的强场发射。 electron emission prototype">
+  <div class="sq-card__meta"><span>Electron Emission</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">冷阴极与二维电子发射器</div>
+  <p>冷阴极无需热电子加热即可向真空发射电子，通常依靠纳米边缘或尖端处的强场发射。</p>
+  <a href="/knowledge/nodes/cold-cathode-and-two-dimensional-electron-emitters/">打开知识节点 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section></div>
+</div>
+
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="目录的组织原则"><a href="#目录的组织原则" class="headerlink" title="目录的组织原则"></a>目录的组织原则</div><ul>
+<li><strong>基础</strong>节点建立模型、自由度和守恒量；</li>
+<li><strong>工程</strong>节点描述已确立的器件机制及系统约束；</li>
+<li><strong>原型</strong>节点已有可信器件验证，但集成问题尚未解决；</li>
+<li><strong>前沿</strong>节点属于活跃研究平台，未来技术角色仍未确定。</li>
+</ul>
+<p>若希望从空间关系发现意外关联，可进入 <a href="/knowledge/">Knowledge Atlas</a>；本目录适合有目的地阅读，Atlas 则适合探索邻近概念。</p>
+
+</section>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="http://www.iCalculate.website">Du Xinchuan</a>
+            <p>原文链接：<a href="http://www.icalculate.website/2026/09/01/Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory/">http://www.icalculate.website/2026/09/01/Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory/</a>
+            <p>发表日期：<a href="http://www.icalculate.website/2026/09/01/Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory/">September 1st 2026, 5:20:00 pm</a>
+            <p>更新日期：<a href="http://www.icalculate.website/2026/09/01/Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory/">September 1st 2026, 5:42:52 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "../Landau-Fermi-Liquid-Theory/" title= "From an Electron Sea to Quasiparticles: Landau Fermi-Liquid Theory (Part II)">
+                    <div class="prevTitle">From an Electron Sea to Quasiparticles: Landau Fermi-Liquid Theory (Part II)</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:549174176@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/iCalculate" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/WeChat_QR.jpg" />
+                </span>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title=qq>
+                  
+                  <img class="profile-qr" src="/assets/QQ_QR.jpg" />
+                </span>
+            
+        
+    
+        
+            
+                <a href="https://t.me/chauncy_du" class="iconfont-archer telegram" target="_blank" title=telegram></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+            
+                <a href="https://www.linkedin.com/in/xinchuan-du-a4b0b51bb/" class="iconfont-archer linkedin" target="_blank" title=linkedin></a>
+            
+        
+    
+        
+            
+                <a href="https://steamcommunity.com/id/icalculate97/" class="iconfont-archer steam" target="_blank" title=steam></a>
+            
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+        
+            
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Semiconductor Device Physics Knowledge Network: From Energy Bands to Device Functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Energy Bands, Density of States, and Carrier Statistics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Drift, Diffusion, and Current in Semiconductors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Nonequilibrium Carriers: Generation, Recombination, and Quasi-Fermi Levels</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">The Governing Equations of Semiconductor Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">The PN Junction: Space Charge, Band Bending, and Rectification</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Metal–Semiconductor Contacts and Schottky Barriers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">The MOS Capacitor: Accumulation, Depletion, and Inversion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">The MOSFET: Gate-Controlled Charge and Channel Transport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">The Bipolar Junction Transistor: Minority-Carrier Injection and Gain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Heterojunctions, JFETs, MESFETs, and HEMTs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Breakdown, Scaling, and Device Nonidealities</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Power Semiconductor Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Optoelectronic Devices: LEDs, Photodiodes, and Solar Cells</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Device Physics of Nonvolatile Memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Two-Dimensional Quantum Foundations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Quantum Tunneling in Semiconductor Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Dirac Fermions in Two-Dimensional Materials</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Reduced Dielectric Screening in Two Dimensions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Quantum Capacitance in Two-Dimensional Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Interface Dipoles and Fermi-Level Pinning in 2D Contacts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Landauer–Büttiker Quantum Transport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Ballistic and Quasi-Ballistic Transport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Klein Tunneling and Electron Optics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Interlayer Tunneling and Negative Differential Resistance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Hydrodynamic Electron Flow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Spin–Valley Physics in Two-Dimensional Semiconductors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Berry Curvature and Topological Transport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Quantum Hall and Topological Edge States</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Excitons in Two-Dimensional Semiconductors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Interlayer and Moiré Excitons</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Moiré Quantum Matter and Correlated Flat Bands</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Two-Dimensional and Sliding Ferroelectricity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Two-Dimensional Magnetism and Spin Filtering</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Two-Dimensional Superconductivity and Josephson Physics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Subthreshold Swing and the Thermal Limit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Emerging Steep-Slope Transistors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Tunnel Field-Effect Transistor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Two-Dimensional, Heterojunction and Interlayer TFETs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Negative-Capacitance Field-Effect Transistor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Cold-Source Field-Effect Transistor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Benchmarking Steep-Slope Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Advanced Nonvolatile Memory Physics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Floating-Gate MOS Memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Flash Injection, Program and Erase Physics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Charge-Trap Flash and Three-Dimensional NAND</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Ferroelectric Field-Effect Transistor Memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Sliding-Ferroelectric Memory Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Memristive Systems and Resistive Switching</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Resistive RAM and Conductive-Filament Dynamics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Phase-Change Memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Magnetic Random-Access Memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Memory Reliability, Variability and Scaling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Functional and Neuromorphic Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Crossbar Arrays, Selectors and Sneak Paths</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Compute-in-Memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Artificial Synapses and Neuromorphic Dynamics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Optoelectronic Memory, Photomemristors and Reconfigurable Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Two-Dimensional Quantum Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Graphene Electron-Optics Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Resonant and Interlayer Tunneling Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Spin and Valley Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Two-Dimensional Magnetic Tunnel Junctions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Excitonic and Single-Photon Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Graphene and van der Waals Josephson Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Quantum Dots, Spin–Valley Qubits and Topological Candidates</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Cold Cathodes and Two-Dimensional Electron Emitters</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-the-directory-is-organized"><span class="toc-text">How the directory is organized</span></a>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 66
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2026 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory/" >Semiconductor Devices & Quantum Physics: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Landau-Fermi-Liquid-Theory/" >From an Electron Sea to Quasiparticles: Landau Fermi-Liquid Theory (Part II)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Landau-Theory-From-Symmetry-to-Phase-Transitions/" >From Symmetry to Phase Transitions: Landau's Art of Ignoring Details (Part I)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/" >From Ballistic Transport to Hopping in FETs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/" >From Capacitors to FETs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href= "2026/05/17/What-Top-Journals-Really-Look-For/" >What Top Journals Really Look For</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/16</span><a class="archive-post-title" href= "2026/05/16/Research-Taste-in-the-Age-of-Vibe-Coding/" >Research Taste in the Age of Vibe Coding</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2025 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2025/08/18/Introducing-2D-material-based-devices-in-the-logic-scaling-roadmap/" >Introducing 2D-material based devices in the logic scaling roadmap</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "2025/07/16/Vortex-Avalanche/" >Vortex Avalanche</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "2025/07/16/The-RTS-Waveform-Evolution/" >The RTS Waveform Evolution</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET Quantum Transport Simulation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/" >Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/EBE-Deposition-Operation-Notes/" >EBE Deposition Operation Notes</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/01</span><a class="archive-post-title" href= "2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/" >Phase Transitions in Electronic Materials and Devices</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/28</span><a class="archive-post-title" href= "2025/06/28/When-a-Stranger-Becomes-Both-Guest-and-Enemy-Enantiosemy/" >When a Stranger Becomes Both Guest and Enemy: Enantiosemy</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/" >From Classical Mechanics to Quantum Theory</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2024 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "2024/11/17/Deck-of-Doctoral-Dissertation/" >Deck of Doctoral Dissertation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/Science-Communication/" >Science Communication</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/How-to-give-a-talk/" >How to give a talk</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2023 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2023/03/27/SR400-photon-counter-delay-scan-demo/" >SR400 photon counter delay scan demo</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/23</span><a class="archive-post-title" href= "2023/03/23/Python-library-for-SR400-Photon-counter/" >Python library for SR400 Photon counter</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href= "2023/03/21/COMSOL-script-for-random-object-generation/" >COMSOL script for random object generation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "2023/03/18/LakeShore-Model-335-Python-Script/" >LakeShore Model 335 Python控制脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2023/03/17/Python-script-for-Keithley-2400-current-sweep/" >Keithley2400源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "2023/03/16/Python-script-for-Keithley-2450-current-sweep/" >Keithley2450源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "2023/03/15/Frontiers-in-condensed-matter-physics/" >Frontiers in condensed matter physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2023/03/13/HER-auto-test-script/" >HER auto test script</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2021/02/15/Cmd%20Markdown%20Editor/" >Cmd Markdown Editor</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "2020/11/24/Introduction-for-CHI660e-Macro-Generator/" >Introduction for CHI660e Macro Generator</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/15</span><a class="archive-post-title" href= "2020/11/15/hello-world/" >Hello World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "2020/09/29/Why-movies-appeal-to-me/" >Why movies appeal to me</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/15</span><a class="archive-post-title" href= "2020/09/15/A-letter-from-the-middle-of-September/" >七月流火 春日迟迟</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2020/08/18/Understanding-of-Pseudocapacitance/" >Understanding of Pseudocapacitance</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "2020/06/18/Perspective-Blaming-China-is-Illegimate-and-Irresponsible/" >Blaming China is Illegimate and Irresponsible</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span><a class="archive-post-title" href= "2020/05/19/Side-by-Side-Battery-Technologies-with-Lithium%E2%80%90Ion-Based-Batteries/" >Side-by-Side-Battery-Technologies-with-Lithium‐Ion-Based-Batteries</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href= "2020/05/01/WHAT-IS-ATR-SEIRAS/" >WHAT IS ATR-SEIRAS?</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "2020/04/30/Microcell-Electrochemistry-Literature-Review/" >Microcell Electrochemistry Literature Review</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "2020/04/28/Mass-Transfer-in-Electrochemistry/" >Mass Transfer in Electrochemistry</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "2020/04/17/Drude-Model-in-Soild-State-Physics/" >Drude Model in Soild State Physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "2020/04/03/Is-the-World-Virtual/" >Is the World Virtual</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2020/03/27/Topological-two-dimensional-polymers/" >Topological two-dimensional polymers</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href= "2020/03/26/The-Configuration-to-the-Deep-Network/" >The Configuration to the Deep Network</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Artical-Dynamic-stability-of-active-sites-in-hydr(oxy)-oxides-for-the-oxygen-evolution-reaction/" >顶刊精读：动态平衡视角下的OER反应位点</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Literature-research-website/" >Literature research website</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2020/03/13/Advantages-of-microelectrode-system-in-electrochemical-science/" >Advantages of microelectrode system in electrochemical science</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "2020/03/11/Hertz-Knudsen-Equation-for-Evaporation-and-Condensation/" >Hertz-Knudsen Equation for Evaporation and Condensation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/How-to-measure-ECSA/" >How to measure ECSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/Li-Battery-Foundation/" >Li Battery Foundation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "2020/03/03/CDW-and-SDW/" >CDW and SDW</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "2020/02/27/3Dmax-Draw-Graphene-Grain-Boundaries/" >使用3Dmax绘制石墨烯晶格缺陷</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "2020/02/26/Anacoda-Introductory-Tutorail/" >Anaconda详细安装及使用教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Plugins-Density-Filter/" >Origin插件之：散点密度热图（Density Filter）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Python-Environment-Build-up/" >Origin+Python环境搭建</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "2020/02/24/Origin-Plugins-Graph-Maker/" >Origin插件之：快速作图（Graph Maker）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Venn-Diagram/" >Origin插件之：韦恩图生成插件（Venn Diagram）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Layer-Stack-Manager/" >Origin插件之：堆叠图小工具（Layer Stack Manager）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "2020/02/22/Origin-Plugins-Color-Editor/" >Origin插件之：配色编辑器(Color Editor)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "2020/02/21/Origin-Plugins-Tafel-Extrapolation/" >Origin插件之：LSV数据处理插件(Tafel Extrapolation)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/P5-js-new-journal/" >P5.js new journal</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/Katex-Test/" >Katex Test</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Artical-Current-and-future-role-of-Haber-Bosch-ammonia-in-a-carbon-free-energy-landscape/" >催化合成氨未来何去何从</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/4thYearAnniversary/" >写在第四年的Anniversary</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Group-Meeting/" >Group Meeting Backup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "2020/02/16/Artical-Precise-Anionic-Regulation-Assisted-by-Electrochemical-Reactions/" >张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/" >原子轨道耦合帮你分析固氮催化位点活性！</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "2020/02/14/Some-Useful-website/" >Some Useful website</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
+    
+        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
+    
+        <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
+    
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
+    
+        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
+    
+        <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Optical Properties"><span class="iconfont-archer">&#xe606;</span>Optical Properties</span>
+    
+        <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+    
+        <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Device Physics"><span class="iconfont-archer">&#xe606;</span>Device Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
+    
+        <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+    
+        <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
+    
+        <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
+    
+        <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
+    
+        <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
+        <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
+    
+        <span class="sidebar-tag-name" data-tags="AI-Assisted Research"><span class="iconfont-archer">&#xe606;</span>AI-Assisted Research</span>
+    
+        <span class="sidebar-tag-name" data-tags="Network Privacy"><span class="iconfont-archer">&#xe606;</span>Network Privacy</span>
+    
+        <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
+    
+        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
+    
+        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+    
+        <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Du Xinchuan"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="../../../../lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="../../../../scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="../../../../scripts/share.js" async></script>    
+     
+    <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['
+</html>
+
+
+, '
+</html>
+
+
+], ['\\(', '\\)']],
+    displayMath: [['$', '$'], ['\\[', '\\]']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
+
+
