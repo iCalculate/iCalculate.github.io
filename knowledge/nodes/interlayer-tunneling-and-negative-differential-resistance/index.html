@@ -8,22 +8,36 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Interlayer Tunneling and Negative Differential Resistance</span><span data-lang="zh" hidden>层间隧穿与负微分电阻</span></h1><p class="node-deck"><span data-lang="en">Atomically sharp vdW interfaces allow tunneling between two separately gated layers; energy and in-plane momentum alignment can create a resonant current peak followed by negative differential resistance.</span><span data-lang="zh" hidden>原子级平整的 vdW 界面允许载流子在独立栅控层间隧穿；能量和面内动量对准可产生共振电流峰及负微分电阻。</span></p><div class="node-tags"><span>Quantum Tunneling</span><span>Device Physics</span><span>2D Materials</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Atomically sharp vdW interfaces allow tunneling between two separately gated layers; energy and in-plane momentum alignment can create a resonant current peak followed by negative differential resistance.</p>
 </blockquote>
-<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>Atomically sharp vdW interfaces allow tunneling between two separately gated layers; energy and in-plane momentum alignment can create a resonant current peak followed by negative differential resistance. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[I∝Σ_k∫A_1(k,E)A_2(k,E+qV)[f_1-f_2]dE\]</div>
-
+<h2 id="Physical-Picture">Physical Picture</h2>
+<p>Atomically sharp vdW interfaces allow tunneling between two separately gated layers; energy and in-plane momentum alignment can create a resonant current peak followed by negative differential resistance. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
+<h3 id="Spectral-overlap-formulation">Spectral-overlap formulation</h3>
+<p>For weak tunnelling between two separately equilibrated 2D layers, Fermi’s golden rule can be written</p>
+<div class="math-display">\[I=\frac{ge}{\hbar}\sum_{\mathbf k,\mathbf q}|t_{\mathbf k\mathbf q}|^2
+\int\frac{dE}{2\pi}A_1(\mathbf k,E)A_2(\mathbf q,E+eV)[f_1-f_2].\]</div>
+<p>Clean aligned layers enforce approximately \(\mathbf k=\mathbf q\); twist displaces the valleys by \(\Delta\mathbf K\); disorder and phonons broaden momentum conservation.  Current peaks when occupied spectral weight in one layer overlaps empty weight in the other in both energy and momentum.</p>
+<h3 id="Origin-of-negative-differential-resistance">Origin of negative differential resistance</h3>
+<p>As bias first improves alignment, \(dI/dV&gt;0\).  Past resonance the overlap decreases even while voltage rises, hence \(dI/dV&lt;0\).  The peak-to-valley ratio is controlled by lifetime broadening \(\Gamma\), temperature, twist disorder and electrostatic feedback.  If charge transfer shifts the layer potentials, Poisson and tunnelling current must be solved self-consistently and bistability can appear.</p>
+<h3 id="Evidence-hierarchy">Evidence hierarchy</h3>
+<p>A robust resonance should move predictably with both gates, sharpen on cooling until limited by \(\Gamma\), and depend systematically on twist angle.  NDR alone is not proof of coherent momentum-conserving tunnelling: traps, self-heating and series resistance can also generate S-shaped or N-shaped curves.</p>
+<h2 id="Minimal-Model">Minimal Model</h2>
+<div class="math-display">\[I∝Σ_k∫A_1(k,E)A_2(k,E+qV)[f_1-f_2]dE\]</div>
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>The effect supports resonant tunneling diodes, oscillators and transverse TFET architectures.</p>
+<h2 id="Device-Consequences">Device Consequences</h2>
+<p>The effect supports resonant tunneling diodes, oscillators and transverse TFET architectures.</p>
 <p>The correct comparison therefore follows the causal chain</p>
-<div class="math-display">\[ext{material and geometry}ightarrow	ext{states and barriers}ightarrow	ext{transport or switching}ightarrow	ext{terminal response}.\]</div>
-
-<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>Twist angle, disorder and phonon-assisted momentum relaxation broaden resonance and reduce peak-to-valley ratio. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Prototype. Connected concepts:</p>
+<div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
+<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
+<p>Twist angle, disorder and phonon-assisted momentum relaxation broaden resonance and reduce peak-to-valley ratio. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
+<p><strong>Maturity:</strong> Prototype. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/quantum-tunneling-in-semiconductor-devices/">quantum-tunneling-in-semiconductor-devices</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-tfet-and-interlayer-tfet/">two-dimensional-tfet-and-interlayer-tfet</a></li>
 <li><a href="/knowledge/nodes/resonant-and-interlayer-tunneling-devices/">resonant-and-interlayer-tunneling-devices</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
+<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41928-019-0364-5" target="_blank" rel="noopener">A transverse tunnelling FET made from a van der Waals heterostructure</a></li>
 <li><a href="https://doi.org/10.1017/CBO9780511805776" target="_blank" rel="noopener">Datta, Electronic Transport in Mesoscopic Systems</a></li>
@@ -31,25 +45,39 @@
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**原子级平整的 vdW 界面允许载流子在独立栅控层间隧穿；能量和面内动量对准可产生共振电流峰及负微分电阻。</p>
 </blockquote>
-<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>原子级平整的 vdW 界面允许载流子在独立栅控层间隧穿；能量和面内动量对准可产生共振电流峰及负微分电阻。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[I∝Σ_k∫A_1(k,E)A_2(k,E+qV)[f_1-f_2]dE\]</div>
-
+<h2 id="物理图像">物理图像</h2>
+<p>原子级平整的 vdW 界面允许载流子在独立栅控层间隧穿；能量和面内动量对准可产生共振电流峰及负微分电阻。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
+<h3 id="谱函数重叠形式">谱函数重叠形式</h3>
+<p>对两个各自处于准平衡的二维层，弱隧穿的费米黄金律可写成</p>
+<div class="math-display">\[I=\frac{ge}{\hbar}\sum_{\mathbf k,\mathbf q}|t_{\mathbf k\mathbf q}|^2
+\int\frac{dE}{2\pi}A_1(\mathbf k,E)A_2(\mathbf q,E+eV)[f_1-f_2].\]</div>
+<p>洁净对准层近似保持 \(\mathbf k=\mathbf q\)；扭角使两个谷错开 \(\Delta\mathbf K\)；无序和声子则放宽动量守恒。当一层已占据谱权重与另一层空态在能量和动量上同时重叠时，电流达到峰值。</p>
+<h3 id="负微分电阻的来源">负微分电阻的来源</h3>
+<p>偏压起初改善对准，故 \(dI/dV&gt;0\)；越过共振后，即使电压继续增大，谱重叠反而减小，出现 \(dI/dV&lt;0\)。峰谷比由寿命展宽 \(\Gamma\)、温度、扭角无序和静电反馈决定。若电荷转移会移动层电势，就必须自洽求解泊松方程与隧穿电流，并可能出现双稳态。</p>
+<h3 id="证据层级">证据层级</h3>
+<p>可靠共振应随双栅按可预测轨迹移动，降温后变尖直至受 \(\Gamma\) 限制，并系统依赖扭角。只有 NDR 并不能证明相干动量守恒隧穿；陷阱、自热和串联电阻也可能产生 S 型或 N 型曲线。</p>
+<h2 id="最小模型">最小模型</h2>
+<div class="math-display">\[I∝Σ_k∫A_1(k,E)A_2(k,E+qV)[f_1-f_2]dE\]</div>
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>该效应可用于共振隧穿二极管、振荡器和横向 TFET。</p>
+<h2 id="器件意义">器件意义</h2>
+<p>该效应可用于共振隧穿二极管、振荡器和横向 TFET。</p>
 <p>合理的分析顺序是</p>
-<div class="math-display">\[ext{材料与几何}ightarrow	ext{状态与势垒}ightarrow	ext{输运或翻转}ightarrow	ext{端口响应}.\]</div>
-
-<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>扭角、无序及声子辅助动量弛豫会展宽共振并降低峰谷比。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Prototype。关联节点：</p>
+<div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
+<h2 id="限制与判据">限制与判据</h2>
+<p>扭角、无序及声子辅助动量弛豫会展宽共振并降低峰谷比。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
+<p>**成熟度：**Prototype。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/quantum-tunneling-in-semiconductor-devices/">quantum-tunneling-in-semiconductor-devices</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-tfet-and-interlayer-tfet/">two-dimensional-tfet-and-interlayer-tfet</a></li>
 <li><a href="/knowledge/nodes/resonant-and-interlayer-tunneling-devices/">resonant-and-interlayer-tunneling-devices</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
+<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41928-019-0364-5" target="_blank" rel="noopener">A transverse tunnelling FET made from a van der Waals heterostructure</a></li>
 <li><a href="https://doi.org/10.1017/CBO9780511805776" target="_blank" rel="noopener">Datta, Electronic Transport in Mesoscopic Systems</a></li>
 </ol>
-</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Physical-Picture" data-toc-index="0">Physical Picture</a></li><li><a href="#Minimal-Model" data-toc-index="1">Minimal Model</a></li><li><a href="#Device-Consequences" data-toc-index="2">Device Consequences</a></li><li><a href="#Limits-and-Diagnostic-Tests" data-toc-index="3">Limits and Diagnostic Tests</a></li><li><a href="#Position-in-the-Atlas" data-toc-index="4">Position in the Atlas</a></li><li><a href="#Figure-and-Reading-Sources" data-toc-index="5">Figure and Reading Sources</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/quantum-tunneling-in-semiconductor-devices/"><span data-lang="en">Quantum Tunneling in Semiconductor Devices</span><span data-lang="zh" hidden>半导体器件中的量子隧穿</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/two-dimensional-tfet-and-interlayer-tfet/"><span data-lang="en">Two-Dimensional, Heterojunction and Interlayer TFETs</span><span data-lang="zh" hidden>二维、异质结与层间 TFET</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/resonant-and-interlayer-tunneling-devices/"><span data-lang="en">Resonant and Interlayer Tunneling Devices</span><span data-lang="zh" hidden>共振与层间隧穿器件</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li></ul></section></article></main>
+</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Physical-Picture" data-toc-index="0">Physical Picture</a></li><li><a href="#Deep-Derivation-and-Physical-Interpretation" data-toc-index="1">Deep Derivation and Physical Interpretation</a></li><li><a href="#Minimal-Model" data-toc-index="2">Minimal Model</a></li><li><a href="#Device-Consequences" data-toc-index="3">Device Consequences</a></li><li><a href="#Limits-and-Diagnostic-Tests" data-toc-index="4">Limits and Diagnostic Tests</a></li><li><a href="#Position-in-the-Atlas" data-toc-index="5">Position in the Atlas</a></li><li><a href="#Figure-and-Reading-Sources" data-toc-index="6">Figure and Reading Sources</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/quantum-tunneling-in-semiconductor-devices/"><span data-lang="en">Quantum Tunneling in Semiconductor Devices</span><span data-lang="zh" hidden>半导体器件中的量子隧穿</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/two-dimensional-tfet-and-interlayer-tfet/"><span data-lang="en">Two-Dimensional, Heterojunction and Interlayer TFETs</span><span data-lang="zh" hidden>二维、异质结与层间 TFET</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/resonant-and-interlayer-tunneling-devices/"><span data-lang="en">Resonant and Interlayer Tunneling Devices</span><span data-lang="zh" hidden>共振与层间隧穿器件</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li></ul></section></article></main>
 <footer class="node-footer"><span data-lang="en">A standalone note connected through the knowledge atlas.</span><span data-lang="zh" hidden>一个通过知识图谱与其他概念相连的独立知识节点。</span></footer><script>(function(){var buttons=Array.from(document.querySelectorAll('[data-lang-option]'));var panels=Array.from(document.querySelectorAll('[data-lang]'));function setLanguage(language){panels.forEach(function(panel){panel.hidden=panel.dataset.lang!==language;});buttons.forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.langOption===language));});document.documentElement.lang=language==='zh'?'zh-CN':'en';}buttons.forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.langOption);});});document.querySelectorAll('[data-toc-index]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();var active=document.querySelector('.node-content[data-lang]:not([hidden])');var heading=active&&active.querySelectorAll('h2')[Number(link.dataset.tocIndex)];if(heading){heading.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+heading.id);}});});setLanguage('en');})();</script></body></html>

@@ -6,16 +6,17 @@
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
 <body class="knowledge-node-page"><header class="node-header"><a class="wordmark" href="/">iCalculate’s Studio</a><nav><a href="/archives/">Archive</a><a href="/knowledge/">Knowledge Atlas</a></nav></header>
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">The MOS Capacitor: Accumulation, Depletion, and Inversion</span><span data-lang="zh" hidden>MOS电容：积累、耗尽与反型</span></h1><p class="node-deck"><span data-lang="en">Accumulation, depletion, inversion, threshold, and C–V response from gate-voltage partitioning, surface potential, and semiconductor space charge.</span><span data-lang="zh" hidden>用栅压分配、表面势和半导体空间电荷解释MOS结构的积累、耗尽、反型、阈值与C-V响应。</span></p><div class="node-tags"><span>MOS Electrostatics</span><span>Field-Effect Transistors</span><span>Interface Physics</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
-<p><strong>Core idea:</strong> The MOS capacitor is the electrostatic core of the field-effect transistor. Gate voltage divides self-consistently among oxide drop, semiconductor surface potential, work-function offset, and fixed&#x2F;interface charge.</p>
+<p><strong>Core idea:</strong> The MOS capacitor is the electrostatic core of the field-effect transistor. Gate voltage divides self-consistently among oxide drop, semiconductor surface potential, work-function offset, and fixed/interface charge.</p>
 </blockquote>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/MOS_Capacitor.svg" alt="MOS capacitor on p-type silicon"></p>
-<p><em>Figure 1 | Positive gate bias first depletes holes and then forms an electron inversion layer. Brews ohare &#x2F; Fred the Oyster, CC BY-SA 3.0; <a href="https://commons.wikimedia.org/wiki/File:MOS_Capacitor.svg" target="_blank" rel="noopener">source</a>.</em></p>
-<h2 id="Voltage-Partition"><a href="#Voltage-Partition" class="headerlink" title="Voltage Partition"></a>Voltage Partition</h2><p>For a p-type substrate,</p>
+<p><em>Figure 1 | Positive gate bias first depletes holes and then forms an electron inversion layer. Brews ohare / Fred the Oyster, CC BY-SA 3.0; <a href="https://commons.wikimedia.org/wiki/File:MOS_Capacitor.svg" target="_blank" rel="noopener">source</a>.</em></p>
+<h2 id="Voltage-Partition">Voltage Partition</h2>
+<p>For a p-type substrate,</p>
 <div class="math-display">\[V_G=V_{FB}+\psi_s-\frac{Q_s}{C_{ox}},\qquad
 C_{ox}=\frac{\varepsilon_{ox}}{t_{ox}}.\]</div>
-
-<p>\(V_{FB}\) contains work-function difference and fixed&#x2F;interface charge, \(\psi_s\) is surface potential, and \(Q_s\) is semiconductor sheet charge. Signs must remain consistent with the chosen potential convention.</p>
-<h2 id="Three-Surface-Regimes"><a href="#Three-Surface-Regimes" class="headerlink" title="Three Surface Regimes"></a>Three Surface Regimes</h2><ul>
+<p>\(V_{FB}\) contains work-function difference and fixed/interface charge, \(\psi_s\) is surface potential, and \(Q_s\) is semiconductor sheet charge. Signs must remain consistent with the chosen potential convention.</p>
+<h2 id="Three-Surface-Regimes">Three Surface Regimes</h2>
+<ul>
 <li><strong>Accumulation:</strong> negative gate bias attracts majority holes.</li>
 <li><strong>Depletion:</strong> modest positive bias repels holes and exposes ionized acceptors.</li>
 <li><strong>Inversion:</strong> stronger positive bias raises the electron concentration above the hole concentration at the surface.</li>
@@ -23,32 +24,42 @@ C_{ox}=\frac{\varepsilon_{ox}}{t_{ox}}.\]</div>
 <p>Under depletion approximation,</p>
 <div class="math-display">\[|Q_B|=\sqrt{2q\varepsilon_sN_A\psi_s},\qquad
 W_d=\sqrt{\frac{2\varepsilon_s\psi_s}{qN_A}}.\]</div>
-
 <p>Strong inversion is conventionally defined by \(\psi_s=2\phi_F\), giving</p>
 <div class="math-display">\[V_T=V_{FB}+2\phi_F+
 \frac{\sqrt{4q\varepsilon_sN_A\phi_F}}{C_{ox}}.\]</div>
-
-<h2 id="Why-C–V-Depends-on-Frequency"><a href="#Why-C–V-Depends-on-Frequency" class="headerlink" title="Why C–V Depends on Frequency"></a>Why C–V Depends on Frequency</h2><p>Accumulation capacitance approaches \(C_{ox}\). In depletion, oxide and depletion capacitances are in series:</p>
+<h2 id="Why-C–V-Depends-on-Frequency">Why C–V Depends on Frequency</h2>
+<p>Accumulation capacitance approaches \(C_{ox}\). In depletion, oxide and depletion capacitances are in series:</p>
 <div class="math-display">\[\frac1C=\frac1{C_{ox}}+\frac1{C_d}.\]</div>
-
 <p>At low frequency, minority carriers follow the signal and inversion capacitance rises. At high frequency they cannot respond fast enough, so capacitance remains near its minimum. Deep depletion occurs when the voltage sweep outruns minority-carrier generation.</p>
-<h2 id="Nonideality-as-a-Measurement-Tool"><a href="#Nonideality-as-a-Measurement-Tool" class="headerlink" title="Nonideality as a Measurement Tool"></a>Nonideality as a Measurement Tool</h2><p>Flat-band shifts reveal fixed charge; C–V stretch-out and frequency dispersion reveal interface states; hysteresis may indicate mobile ions, trapping, or ferroelectric polarization; gate current diagnoses direct, Fowler–Nordheim, or defect-assisted tunneling. Effects harmful to logic can become the state variable of <a href="/knowledge/nodes/nonvolatile-memory-device-physics/">nonvolatile memory</a>.</p>
-<h2 id="From-Capacitor-to-Transistor"><a href="#From-Capacitor-to-Transistor" class="headerlink" title="From Capacitor to Transistor"></a>From Capacitor to Transistor</h2><p>The MOS capacitor solves the vertical map gate voltage → surface potential → inversion charge. The <a href="/knowledge/nodes/mosfet-physics/">MOSFET</a> adds a lateral source–drain potential that transports this charge. See also <a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/">From Capacitors to FETs</a>.</p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<h2 id="Nonideality-as-a-Measurement-Tool">Nonideality as a Measurement Tool</h2>
+<p>Flat-band shifts reveal fixed charge; C–V stretch-out and frequency dispersion reveal interface states; hysteresis may indicate mobile ions, trapping, or ferroelectric polarization; gate current diagnoses direct, Fowler–Nordheim, or defect-assisted tunneling. Effects harmful to logic can become the state variable of <a href="/knowledge/nodes/nonvolatile-memory-device-physics/">nonvolatile memory</a>.</p>
+<h2 id="From-Capacitor-to-Transistor">From Capacitor to Transistor</h2>
+<p>The MOS capacitor solves the vertical map gate voltage → surface potential → inversion charge. The <a href="/knowledge/nodes/mosfet-physics/">MOSFET</a> adds a lateral source–drain potential that transports this charge. See also <a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/">From Capacitors to FETs</a>.</p>
+<!--deep-classical:en-->
+<h2 id="Surface-potential-closure">Surface-potential closure</h2>
+<p>The gate equation is</p>
+<div class="math-display">\[V_G=V_{FB}+\psi_s-\frac{Q_s(\psi_s)}{C_{ox}},\]</div>
+<p>so MOS electrostatics is solved by finding \(\psi_s\) consistent with semiconductor charge.  In depletion \(|Q_d|\approx\sqrt{2q\epsilon_sN_A\psi_s}\); strong inversion begins near \(\psi_s=2\phi_F\), giving</p>
+<div class="math-display">\[V_T=V_{FB}+2\phi_F+\frac{\sqrt{4q\epsilon_sN_A\phi_F}}{C_{ox}}.\]</div>
+<p>Low-frequency C–V lets inversion charge follow the signal, while high-frequency C–V leaves minority carriers unable to respond.  Interface traps stretch the curve and add frequency-dependent capacitance; oxide charge shifts it.  Extracting doping or trap density therefore requires known area, series resistance, frequency and sweep history.</p>
+<!--/deep-classical:en-->
+<h2 id="References">References</h2>
+<ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapter 4.</li>
 <li>E. H. Nicollian and J. R. Brews, <em>MOS Physics and Technology</em>.</li>
 </ol>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
-<p><strong>核心结论</strong>：MOS 电容是场效应晶体管的静电核心。栅压不全部落在氧化层，也不全部落在半导体；它在氧化层电压降、表面势和功函数&#x2F;固定电荷偏移之间自洽分配。</p>
+<p><strong>核心结论</strong>：MOS 电容是场效应晶体管的静电核心。栅压不全部落在氧化层，也不全部落在半导体；它在氧化层电压降、表面势和功函数/固定电荷偏移之间自洽分配。</p>
 </blockquote>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/MOS_Capacitor.svg" alt="p型硅MOS电容的耗尽层与反型层"></p>
-<p><em>图 1｜正栅压下 p 型衬底表面先耗尽、后形成电子反型层。原图：Brews ohare &#x2F; Fred the Oyster，CC BY-SA 3.0；<a href="https://commons.wikimedia.org/wiki/File:MOS_Capacitor.svg" target="_blank" rel="noopener">文件页与许可</a>。</em></p>
-<h2 id="1-电压分配"><a href="#1-电压分配" class="headerlink" title="1. 电压分配"></a>1. 电压分配</h2><p>对 p 型衬底，通用栅压关系写成</p>
+<p><em>图 1｜正栅压下 p 型衬底表面先耗尽、后形成电子反型层。原图：Brews ohare / Fred the Oyster，CC BY-SA 3.0；<a href="https://commons.wikimedia.org/wiki/File:MOS_Capacitor.svg" target="_blank" rel="noopener">文件页与许可</a>。</em></p>
+<h2 id="1-电压分配">1. 电压分配</h2>
+<p>对 p 型衬底，通用栅压关系写成</p>
 <div class="math-display">\[V_G=V_{FB}+\psi_s-\frac{Q_s}{C_{ox}},
 \qquad C_{ox}=\frac{\varepsilon_{ox}}{t_{ox}}.\]</div>
-
 <p>\(V_{FB}\) 汇总金属–半导体功函数差、氧化层固定电荷和界面电荷；\(\psi_s\) 是半导体表面相对体内的势；\(Q_s\) 是单位面积半导体电荷。符号必须与电势和电荷约定配套，不能脱离定义记公式。</p>
-<h2 id="2-三种表面状态"><a href="#2-三种表面状态" class="headerlink" title="2. 三种表面状态"></a>2. 三种表面状态</h2><p>以 p 型衬底为例：</p>
+<h2 id="2-三种表面状态">2. 三种表面状态</h2>
+<p>以 p 型衬底为例：</p>
 <ul>
 <li><strong>积累</strong>：负栅压吸引空穴，表面多数载流子增多；</li>
 <li><strong>耗尽</strong>：小正栅压排斥空穴，留下离化受主；</li>
@@ -57,26 +68,35 @@ W_d=\sqrt{\frac{2\varepsilon_s\psi_s}{qN_A}}.\]</div>
 <p>耗尽近似下</p>
 <div class="math-display">\[|Q_B|=\sqrt{2q\varepsilon_sN_A\psi_s},\qquad
 W_d=\sqrt{\frac{2\varepsilon_s\psi_s}{qN_A}}.\]</div>
-
 <p>强反型常以 \(\psi_s=2\phi_F\) 定义，其中 \(\phi_F=(kT/q)\ln(N_A/n_i)\)。理想长沟道 nMOS 的阈值电压近似</p>
 <div class="math-display">\[V_T=V_{FB}+2\phi_F+
 \frac{\sqrt{4q\varepsilon_sN_A\phi_F}}{C_{ox}}.\]</div>
-
-<h2 id="3-C–V-为何依赖频率"><a href="#3-C–V-为何依赖频率" class="headerlink" title="3. C–V 为何依赖频率"></a>3. C–V 为何依赖频率</h2><p>积累时小信号电容接近 \(C_{ox}\)；耗尽时氧化层电容与耗尽层电容串联：</p>
+<h2 id="3-C–V-为何依赖频率">3. C–V 为何依赖频率</h2>
+<p>积累时小信号电容接近 \(C_{ox}\)；耗尽时氧化层电容与耗尽层电容串联：</p>
 <div class="math-display">\[\frac{1}{C}=\frac{1}{C_{ox}}+\frac{1}{C_d}.\]</div>
-
 <p>低频下少数载流子来得及产生并跟随交流信号，强反型电容回升；高频下反型层小信号电荷不能及时响应，电容保持在较低值。深耗尽说明扫压快于少子产生，而不是新的平衡态。</p>
-<h2 id="4-非理想性是一种测量资源"><a href="#4-非理想性是一种测量资源" class="headerlink" title="4. 非理想性是一种测量资源"></a>4. 非理想性是一种测量资源</h2><ul>
+<h2 id="4-非理想性是一种测量资源">4. 非理想性是一种测量资源</h2>
+<ul>
 <li>平带电压平移可估计固定氧化层电荷；</li>
 <li>C–V 拉伸和频率色散反映界面态；</li>
 <li>滞回可能来自可移动离子、陷阱充放电或铁电极化；</li>
 <li>栅漏电提示直接隧穿、Fowler–Nordheim 隧穿或缺陷辅助导电。</li>
 </ul>
 <p>这些效应在逻辑 MOSFET 中往往有害，却是<a href="/knowledge/nodes/nonvolatile-memory-device-physics/">非易失存储器的器件物理</a>用来保存信息的基础。</p>
-<h2 id="5-从电容到晶体管"><a href="#5-从电容到晶体管" class="headerlink" title="5. 从电容到晶体管"></a>5. 从电容到晶体管</h2><p>MOS 电容只解决垂直方向的“栅压 → 表面势 → 反型电荷”。<a href="/knowledge/nodes/mosfet-physics/">MOSFET：栅控电荷与沟道输运</a>再加入横向源漏电势，使反型电荷沿沟道运动。更完整推导见<a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/">From Capacitors to FETs</a>。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<h2 id="5-从电容到晶体管">5. 从电容到晶体管</h2>
+<p>MOS 电容只解决垂直方向的“栅压 → 表面势 → 反型电荷”。<a href="/knowledge/nodes/mosfet-physics/">MOSFET：栅控电荷与沟道输运</a>再加入横向源漏电势，使反型电荷沿沟道运动。更完整推导见<a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/">From Capacitors to FETs</a>。</p>
+<!--deep-classical:zh-->
+<h2 id="表面势闭合关系">表面势闭合关系</h2>
+<p>栅方程为</p>
+<div class="math-display">\[V_G=V_{FB}+\psi_s-\frac{Q_s(\psi_s)}{C_{ox}},\]</div>
+<p>因此 MOS 静电问题就是寻找与半导体电荷自洽的 \(\psi_s\)。耗尽区 \(|Q_d|\approx\sqrt{2q\epsilon_sN_A\psi_s}\)，强反型约从 \(\psi_s=2\phi_F\) 开始，对应</p>
+<div class="math-display">\[V_T=V_{FB}+2\phi_F+\frac{\sqrt{4q\epsilon_sN_A\phi_F}}{C_{ox}}.\]</div>
+<p>低频 C–V 中反型电荷可跟随信号，高频 C–V 中少数载流子来不及响应。界面陷阱会拉伸曲线并引入频率相关电容，氧化层电荷则整体平移曲线。因此提取掺杂或陷阱密度必须明确面积、串联电阻、频率与扫描历史。</p>
+<!--/deep-classical:zh-->
+<h2 id="参考">参考</h2>
+<ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapter 4.</li>
 <li>E. H. Nicollian and J. R. Brews, <em>MOS Physics and Technology</em>.</li>
 </ol>
-</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Voltage-Partition" data-toc-index="0">Voltage Partition</a></li><li><a href="#Three-Surface-Regimes" data-toc-index="1">Three Surface Regimes</a></li><li><a href="#Why-C–V-Depends-on-Frequency" data-toc-index="2">Why C–V Depends on Frequency</a></li><li><a href="#Nonideality-as-a-Measurement-Tool" data-toc-index="3">Nonideality as a Measurement Tool</a></li><li><a href="#From-Capacitor-to-Transistor" data-toc-index="4">From Capacitor to Transistor</a></li><li><a href="#References" data-toc-index="5">References</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/semiconductor-device-equations/"><span data-lang="en">The Governing Equations of Semiconductor Devices</span><span data-lang="zh" hidden>半导体器件的基本方程</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/metal-semiconductor-contact/"><span data-lang="en">Metal–Semiconductor Contacts and Schottky Barriers</span><span data-lang="zh" hidden>金属-半导体接触与肖特基势垒</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/mosfet-physics/"><span data-lang="en">The MOSFET: Gate-Controlled Charge and Channel Transport</span><span data-lang="zh" hidden>MOSFET：栅控电荷与沟道输运</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/nonvolatile-memory-device-physics/"><span data-lang="en">Device Physics of Nonvolatile Memory</span><span data-lang="zh" hidden>非易失存储器的器件物理</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/"><span data-lang="en">From Capacitors to FETs</span><span data-lang="zh" hidden>From Capacitors to FETs</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li></ul></section></article></main>
+</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Voltage-Partition" data-toc-index="0">Voltage Partition</a></li><li><a href="#Three-Surface-Regimes" data-toc-index="1">Three Surface Regimes</a></li><li><a href="#Why-C–V-Depends-on-Frequency" data-toc-index="2">Why C–V Depends on Frequency</a></li><li><a href="#Nonideality-as-a-Measurement-Tool" data-toc-index="3">Nonideality as a Measurement Tool</a></li><li><a href="#From-Capacitor-to-Transistor" data-toc-index="4">From Capacitor to Transistor</a></li><li><a href="#Surface-potential-closure" data-toc-index="5">Surface potential closure</a></li><li><a href="#References" data-toc-index="6">References</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/semiconductor-device-equations/"><span data-lang="en">The Governing Equations of Semiconductor Devices</span><span data-lang="zh" hidden>半导体器件的基本方程</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/metal-semiconductor-contact/"><span data-lang="en">Metal–Semiconductor Contacts and Schottky Barriers</span><span data-lang="zh" hidden>金属-半导体接触与肖特基势垒</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/mosfet-physics/"><span data-lang="en">The MOSFET: Gate-Controlled Charge and Channel Transport</span><span data-lang="zh" hidden>MOSFET：栅控电荷与沟道输运</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/nonvolatile-memory-device-physics/"><span data-lang="en">Device Physics of Nonvolatile Memory</span><span data-lang="zh" hidden>非易失存储器的器件物理</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/"><span data-lang="en">From Capacitors to FETs</span><span data-lang="zh" hidden>From Capacitors to FETs</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li></ul></section></article></main>
 <footer class="node-footer"><span data-lang="en">A standalone note connected through the knowledge atlas.</span><span data-lang="zh" hidden>一个通过知识图谱与其他概念相连的独立知识节点。</span></footer><script>(function(){var buttons=Array.from(document.querySelectorAll('[data-lang-option]'));var panels=Array.from(document.querySelectorAll('[data-lang]'));function setLanguage(language){panels.forEach(function(panel){panel.hidden=panel.dataset.lang!==language;});buttons.forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.langOption===language));});document.documentElement.lang=language==='zh'?'zh-CN':'en';}buttons.forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.langOption);});});document.querySelectorAll('[data-toc-index]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();var active=document.querySelector('.node-content[data-lang]:not([hidden])');var heading=active&&active.querySelectorAll('h2')[Number(link.dataset.tocIndex)];if(heading){heading.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+heading.id);}});});setLanguage('en');})();</script></body></html>

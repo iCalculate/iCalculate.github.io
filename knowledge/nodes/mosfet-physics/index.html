@@ -9,36 +9,42 @@
 <p><strong>Core idea:</strong> A MOSFET separates into two coupled problems: MOS electrostatics sets the local inversion charge, and the source–drain field transports that charge laterally. The square law is only the result of several long-channel approximations.</p>
 </blockquote>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/MOSFET_Structure.svg" alt="MOSFET structure"></p>
-<p><em>Figure 1 | Gate, source, drain, oxide, and substrate of a planar MOSFET. Brews ohare &#x2F; BentSm, CC BY-SA 3.0; <a href="https://commons.wikimedia.org/wiki/File:MOSFET_Structure.svg" target="_blank" rel="noopener">source</a>.</em></p>
-<h2 id="From-MOS-Capacitor-to-Channel"><a href="#From-MOS-Capacitor-to-Channel" class="headerlink" title="From MOS Capacitor to Channel"></a>From MOS Capacitor to Channel</h2><p>For an ideal long-channel nMOS in strong inversion,</p>
+<p><em>Figure 1 | Gate, source, drain, oxide, and substrate of a planar MOSFET. Brews ohare / BentSm, CC BY-SA 3.0; <a href="https://commons.wikimedia.org/wiki/File:MOSFET_Structure.svg" target="_blank" rel="noopener">source</a>.</em></p>
+<h2 id="From-MOS-Capacitor-to-Channel">From MOS Capacitor to Channel</h2>
+<p>For an ideal long-channel nMOS in strong inversion,</p>
 <div class="math-display">\[Q_i(y)=-C_{ox}[V_{GS}-V_T-V(y)].\]</div>
-
 <p>The gradual-channel approximation treats each lateral position as a local MOS capacitor. With</p>
 <div class="math-display">\[I_D=-W\mu_nQ_i(y)\frac{dV}{dy},\]</div>
-
 <p>integration gives the linear-region current</p>
 <div class="math-display">\[I_D=\mu_nC_{ox}\frac WL\left[(V_{GS}-V_T)V_{DS}-\frac{V_{DS}^2}{2}\right].\]</div>
-
-<h2 id="Saturation-Does-Not-Stop-Carrier-Motion"><a href="#Saturation-Does-Not-Stop-Carrier-Motion" class="headerlink" title="Saturation Does Not Stop Carrier Motion"></a>Saturation Does Not Stop Carrier Motion</h2><p>At \(V_{DS}=V_{GS}-V_T\equiv V_{OV}\), the ideal drain-end inversion charge approaches zero and the channel pinches off:</p>
+<h2 id="Saturation-Does-Not-Stop-Carrier-Motion">Saturation Does Not Stop Carrier Motion</h2>
+<p>At \(V_{DS}=V_{GS}-V_T\equiv V_{OV}\), the ideal drain-end inversion charge approaches zero and the channel pinches off:</p>
 <div class="math-display">\[I_{D,sat}=\frac12\mu_nC_{ox}\frac WL(V_{GS}-V_T)^2.\]</div>
-
 <p>Carriers still traverse the high-field pinch-off region. “Saturation” means reduced first-order sensitivity to \(V_{DS}\). Channel-length modulation gives</p>
 <div class="math-display">\[I_D\approx I_{D,sat}(1+\lambda V_{DS}).\]</div>
-
-<h2 id="Small-Signal-Parameters"><a href="#Small-Signal-Parameters" class="headerlink" title="Small-Signal Parameters"></a>Small-Signal Parameters</h2><p>In square-law saturation,</p>
+<h2 id="Small-Signal-Parameters">Small-Signal Parameters</h2>
+<p>In square-law saturation,</p>
 <div class="math-display">\[g_m=\mu_nC_{ox}\frac WL V_{OV}=\frac{2I_D}{V_{OV}},\qquad
 r_o\approx\frac1{\lambda I_D}.\]</div>
-
 <p>Intrinsic voltage gain is approximately \(g_mr_o\), so increasing current does not automatically increase voltage gain.</p>
-<h2 id="Subthreshold-Is-Diffusion-Controlled"><a href="#Subthreshold-Is-Diffusion-Controlled" class="headerlink" title="Subthreshold Is Diffusion-Controlled"></a>Subthreshold Is Diffusion-Controlled</h2><p>In weak inversion,</p>
+<h2 id="Subthreshold-Is-Diffusion-Controlled">Subthreshold Is Diffusion-Controlled</h2>
+<p>In weak inversion,</p>
 <div class="math-display">\[I_D\propto\exp\left(\frac{V_{GS}-V_T}{nV_T}\right),\]</div>
-
 <p>and</p>
 <div class="math-display">\[S=(\ln10)\frac{kT}{q}\left(1+\frac{C_d+C_{it}}{C_{ox}}\right).\]</div>
-
 <p>The room-temperature classical limit near \(60\ \mathrm{mV/dec}\) comes from Boltzmann statistics and gate coupling, not from silicon alone.</p>
-<h2 id="Why-Modern-Devices-Depart-from-the-Square-Law"><a href="#Why-Modern-Devices-Depart-from-the-Square-Law" class="headerlink" title="Why Modern Devices Depart from the Square Law"></a>Why Modern Devices Depart from the Square Law</h2><p>Vertical-field mobility reduction, velocity saturation, DIBL, series&#x2F;contact resistance, quantum confinement, quantum capacitance, ballistic injection, gate leakage, junction leakage, and band-to-band tunneling all change the ideal result. See <a href="/knowledge/nodes/device-breakdown-and-scaling/">Breakdown and Scaling</a>, <a href="/2025/07/03/MOSFET-Quantum-Transport-Simulation/">MOSFET Quantum Transport Simulation</a>, and <a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/">From Capacitors to FETs</a>.</p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<h2 id="Why-Modern-Devices-Depart-from-the-Square-Law">Why Modern Devices Depart from the Square Law</h2>
+<p>Vertical-field mobility reduction, velocity saturation, DIBL, series/contact resistance, quantum confinement, quantum capacitance, ballistic injection, gate leakage, junction leakage, and band-to-band tunneling all change the ideal result. See <a href="/knowledge/nodes/device-breakdown-and-scaling/">Breakdown and Scaling</a>, <a href="/2025/07/03/MOSFET-Quantum-Transport-Simulation/">MOSFET Quantum Transport Simulation</a>, and <a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/">From Capacitors to FETs</a>.</p>
+<!--deep-classical:en-->
+<h2 id="Charge-sheet-current-and-its-breakdown">Charge-sheet current and its breakdown</h2>
+<p>Under gradual-channel and strong-inversion approximations,</p>
+<div class="math-display">\[Q_i(x)\approx-C_{ox}[V_{GS}-V_T-V(x)],\]</div>
+<p>and integrating \(I=-W\mu Q_i,dV/dx\) gives</p>
+<div class="math-display">\[I_D=\mu C_{ox}\frac WL[(V_{GS}-V_T)V_{DS}-V_{DS}^2/2].\]</div>
+<p>Pinch-off at \(V_{DS}=V_{GS}-V_T\) yields the square-law saturation expression, but modern short channels saturate mainly through velocity saturation and source injection.  In weak inversion, current is diffusion controlled and exponential in surface potential.  A compact device view must therefore connect subthreshold electrostatics, charge control, quasi-ballistic injection and parasitic resistance rather than extrapolate one square law across all regimes.  Delay depends on total gate charge and available drive current, not mobility alone.</p>
+<!--/deep-classical:en-->
+<h2 id="References">References</h2>
+<ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapter 6.</li>
 <li><a href="https://www.cnblogs.com/TE4BR3K/p/19122009" target="_blank" rel="noopener">TE4BR3K: MOSFET notes</a> for review.</li>
 </ol>
@@ -46,37 +52,34 @@ r_o\approx\frac1{\lambda I_D}.\]</div>
 <p><strong>核心结论</strong>：MOSFET 可拆成两个耦合问题：栅压通过 MOS 静电决定每一点的沟道反型电荷，源漏电场驱动这些电荷沿沟道输运。长沟道平方律只是这一物理链在若干强近似下的结果。</p>
 </blockquote>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/MOSFET_Structure.svg" alt="MOSFET结构"></p>
-<p><em>图 1｜平面 MOSFET 的栅、源、漏、氧化层和衬底。原图：Brews ohare &#x2F; BentSm，CC BY-SA 3.0；<a href="https://commons.wikimedia.org/wiki/File:MOSFET_Structure.svg" target="_blank" rel="noopener">文件页与许可</a>。</em></p>
-<h2 id="1-从-MOS-电容到沟道"><a href="#1-从-MOS-电容到沟道" class="headerlink" title="1. 从 MOS 电容到沟道"></a>1. 从 MOS 电容到沟道</h2><p>对理想长沟道 nMOS，强反型下局部沟道片电荷近似</p>
+<p><em>图 1｜平面 MOSFET 的栅、源、漏、氧化层和衬底。原图：Brews ohare / BentSm，CC BY-SA 3.0；<a href="https://commons.wikimedia.org/wiki/File:MOSFET_Structure.svg" target="_blank" rel="noopener">文件页与许可</a>。</em></p>
+<h2 id="1-从-MOS-电容到沟道">1. 从 MOS 电容到沟道</h2>
+<p>对理想长沟道 nMOS，强反型下局部沟道片电荷近似</p>
 <div class="math-display">\[Q_i(y)=-C_{ox}[V_{GS}-V_T-V(y)].\]</div>
-
 <p>缓变沟道近似要求横向场变化尺度远大于垂直耗尽尺度，使每个沟道位置都可视为局域 MOS 电容。漂移电流</p>
 <div class="math-display">\[I_D=-W\mu_n Q_i(y)\frac{dV}{dy}\]</div>
-
 <p>沿沟道积分得到线性区</p>
 <div class="math-display">\[I_D=\mu_nC_{ox}\frac WL
 \left[(V_{GS}-V_T)V_{DS}-\frac{V_{DS}^2}{2}\right].\]</div>
-
-<h2 id="2-饱和不是载流子停止运动"><a href="#2-饱和不是载流子停止运动" class="headerlink" title="2. 饱和不是载流子停止运动"></a>2. 饱和不是载流子停止运动</h2><p>当 \(V_{DS}=V_{GS}-V_T\equiv V_{OV}\)，漏端反型电荷在理想模型中趋零并出现夹断：</p>
+<h2 id="2-饱和不是载流子停止运动">2. 饱和不是载流子停止运动</h2>
+<p>当 \(V_{DS}=V_{GS}-V_T\equiv V_{OV}\)，漏端反型电荷在理想模型中趋零并出现夹断：</p>
 <div class="math-display">\[I_{D,sat}=\frac12\mu_nC_{ox}\frac WL(V_{GS}-V_T)^2.\]</div>
-
 <p>夹断后电子仍被高场扫入漏极；“饱和”指理想电流对 \(V_{DS}\) 的一阶敏感性变弱。实际输出电流仍因沟道长度调制而上升：</p>
 <div class="math-display">\[I_D\approx I_{D,sat}(1+\lambda V_{DS}).\]</div>
-
-<h2 id="3-小信号参数"><a href="#3-小信号参数" class="headerlink" title="3. 小信号参数"></a>3. 小信号参数</h2><p>平方律饱和区</p>
+<h2 id="3-小信号参数">3. 小信号参数</h2>
+<p>平方律饱和区</p>
 <div class="math-display">\[g_m=\frac{\partial I_D}{\partial V_{GS}}
 =\mu_nC_{ox}\frac WL V_{OV}=\frac{2I_D}{V_{OV}},\]</div>
-
 <p>输出电阻 \(r_o\approx1/(\lambda I_D)\)。本征增益约为 \(g_mr_o\)，因此提高电流并不必然提高电压增益。</p>
-<h2 id="4-亚阈值是扩散控制"><a href="#4-亚阈值是扩散控制" class="headerlink" title="4. 亚阈值是扩散控制"></a>4. 亚阈值是扩散控制</h2><p>当表面尚未强反型时，漏电流主要由弱反型载流子扩散产生：</p>
+<h2 id="4-亚阈值是扩散控制">4. 亚阈值是扩散控制</h2>
+<p>当表面尚未强反型时，漏电流主要由弱反型载流子扩散产生：</p>
 <div class="math-display">\[I_D\propto\exp\left(\frac{V_{GS}-V_T}{nV_T}\right),\]</div>
-
 <p>亚阈值摆幅</p>
 <div class="math-display">\[S=\frac{dV_G}{d\log_{10}I_D}
 =(\ln10)\frac{kT}{q}\left(1+\frac{C_d+C_{it}}{C_{ox}}\right).\]</div>
-
 <p>室温经典极限约 \(60\ \mathrm{mV/dec}\)，来自玻尔兹曼统计与栅控效率，而不是某个硅材料常数。</p>
-<h2 id="5-现代器件为何偏离平方律"><a href="#5-现代器件为何偏离平方律" class="headerlink" title="5. 现代器件为何偏离平方律"></a>5. 现代器件为何偏离平方律</h2><ul>
+<h2 id="5-现代器件为何偏离平方律">5. 现代器件为何偏离平方律</h2>
+<ul>
 <li>垂直场降低有效迁移率；</li>
 <li>横向高场导致速度饱和，\(I_{sat}\) 更接近与 \(V_{OV}\) 线性；</li>
 <li>漏致势垒降低（DIBL）使 \(V_T\) 随漏压下降；</li>
@@ -85,9 +88,18 @@ r_o\approx\frac1{\lambda I_D}.\]</div>
 <li>栅漏、结漏和带间隧穿形成关态电流。</li>
 </ul>
 <p>详见<a href="/knowledge/nodes/device-breakdown-and-scaling/">击穿、缩放与器件非理想效应</a>、<a href="/2025/07/03/MOSFET-Quantum-Transport-Simulation/">MOSFET Quantum Transport Simulation</a>以及<a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/">From Capacitors to FETs</a>。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<!--deep-classical:zh-->
+<h2 id="电荷片电流及其失效">电荷片电流及其失效</h2>
+<p>在渐变沟道和强反型近似下</p>
+<div class="math-display">\[Q_i(x)\approx-C_{ox}[V_{GS}-V_T-V(x)],\]</div>
+<p>积分 \(I=-W\mu Q_i,dV/dx\) 得</p>
+<div class="math-display">\[I_D=\mu C_{ox}\frac WL[(V_{GS}-V_T)V_{DS}-V_{DS}^2/2].\]</div>
+<p>\(V_{DS}=V_{GS}-V_T\) 时夹断并得到平方律饱和，但现代短沟道更多由速度饱和和源端注入限制。弱反型区电流由扩散控制并对表面势呈指数关系。因此完整器件图像必须连接亚阈值静电、电荷控制、准弹道注入与寄生电阻，而不能把一条平方律外推到所有区间。延迟取决于总栅电荷和可用驱动电流，并非只由迁移率决定。</p>
+<!--/deep-classical:zh-->
+<h2 id="参考">参考</h2>
+<ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapter 6.</li>
 <li><a href="https://www.cnblogs.com/TE4BR3K/p/19122009" target="_blank" rel="noopener">TE4BR3K：MOSFET笔记</a>（交叉复习）。</li>
 </ol>
-</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#From-MOS-Capacitor-to-Channel" data-toc-index="0">From MOS Capacitor to Channel</a></li><li><a href="#Saturation-Does-Not-Stop-Carrier-Motion" data-toc-index="1">Saturation Does Not Stop Carrier Motion</a></li><li><a href="#Small-Signal-Parameters" data-toc-index="2">Small Signal Parameters</a></li><li><a href="#Subthreshold-Is-Diffusion-Controlled" data-toc-index="3">Subthreshold Is Diffusion Controlled</a></li><li><a href="#Why-Modern-Devices-Depart-from-the-Square-Law" data-toc-index="4">Why Modern Devices Depart from the Square Law</a></li><li><a href="#References" data-toc-index="5">References</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/mos-capacitor-physics/"><span data-lang="en">The MOS Capacitor: Accumulation, Depletion, and Inversion</span><span data-lang="zh" hidden>MOS电容：积累、耗尽与反型</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/semiconductor-carrier-transport/"><span data-lang="en">Drift, Diffusion, and Current in Semiconductors</span><span data-lang="zh" hidden>半导体中的漂移、扩散与电流</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/device-breakdown-and-scaling/"><span data-lang="en">Breakdown, Scaling, and Device Nonidealities</span><span data-lang="zh" hidden>击穿、缩放与器件非理想效应</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/nonvolatile-memory-device-physics/"><span data-lang="en">Device Physics of Nonvolatile Memory</span><span data-lang="zh" hidden>非易失存储器的器件物理</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/"><span data-lang="en">From Capacitors to FETs</span><span data-lang="zh" hidden>From Capacitors to FETs</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li><li><a href="/2025/07/03/MOSFET-Quantum-Transport-Simulation/"><span data-lang="en">MOSFET Quantum Transport Simulation</span><span data-lang="zh" hidden>MOSFET Quantum Transport Simulation</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li></ul></section></article></main>
+</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#From-MOS-Capacitor-to-Channel" data-toc-index="0">From MOS Capacitor to Channel</a></li><li><a href="#Saturation-Does-Not-Stop-Carrier-Motion" data-toc-index="1">Saturation Does Not Stop Carrier Motion</a></li><li><a href="#Small-Signal-Parameters" data-toc-index="2">Small Signal Parameters</a></li><li><a href="#Subthreshold-Is-Diffusion-Controlled" data-toc-index="3">Subthreshold Is Diffusion Controlled</a></li><li><a href="#Why-Modern-Devices-Depart-from-the-Square-Law" data-toc-index="4">Why Modern Devices Depart from the Square Law</a></li><li><a href="#Charge-sheet-current-and-its-breakdown" data-toc-index="5">Charge sheet current and its breakdown</a></li><li><a href="#References" data-toc-index="6">References</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/mos-capacitor-physics/"><span data-lang="en">The MOS Capacitor: Accumulation, Depletion, and Inversion</span><span data-lang="zh" hidden>MOS电容：积累、耗尽与反型</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/semiconductor-carrier-transport/"><span data-lang="en">Drift, Diffusion, and Current in Semiconductors</span><span data-lang="zh" hidden>半导体中的漂移、扩散与电流</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/device-breakdown-and-scaling/"><span data-lang="en">Breakdown, Scaling, and Device Nonidealities</span><span data-lang="zh" hidden>击穿、缩放与器件非理想效应</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/nonvolatile-memory-device-physics/"><span data-lang="en">Device Physics of Nonvolatile Memory</span><span data-lang="zh" hidden>非易失存储器的器件物理</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/"><span data-lang="en">From Capacitors to FETs</span><span data-lang="zh" hidden>From Capacitors to FETs</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li><li><a href="/2025/07/03/MOSFET-Quantum-Transport-Simulation/"><span data-lang="en">MOSFET Quantum Transport Simulation</span><span data-lang="zh" hidden>MOSFET Quantum Transport Simulation</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li></ul></section></article></main>
 <footer class="node-footer"><span data-lang="en">A standalone note connected through the knowledge atlas.</span><span data-lang="zh" hidden>一个通过知识图谱与其他概念相连的独立知识节点。</span></footer><script>(function(){var buttons=Array.from(document.querySelectorAll('[data-lang-option]'));var panels=Array.from(document.querySelectorAll('[data-lang]'));function setLanguage(language){panels.forEach(function(panel){panel.hidden=panel.dataset.lang!==language;});buttons.forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.langOption===language));});document.documentElement.lang=language==='zh'?'zh-CN':'en';}buttons.forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.langOption);});});document.querySelectorAll('[data-toc-index]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();var active=document.querySelector('.node-content[data-lang]:not([hidden])');var heading=active&&active.querySelectorAll('h2')[Number(link.dataset.tocIndex)];if(heading){heading.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+heading.id);}});});setLanguage('en');})();</script></body></html>

@@ -8,48 +8,76 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Spin–Valley Physics in Two-Dimensional Semiconductors</span><span data-lang="zh" hidden>二维半导体中的自旋–谷物理</span></h1><p class="node-deck"><span data-lang="en">Broken inversion symmetry and strong spin–orbit coupling in monolayer TMDs tie spin, valley and optical helicity to the K and K′ band extrema.</span><span data-lang="zh" hidden>单层 TMD 的反演对称性破缺与强自旋轨道耦合，使 K/K′ 带谷与自旋及光学圆偏振发生关联。</span></p><div class="node-tags"><span>Spin Valley Topology</span><span>Device Physics</span><span>Fundamental Models</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Broken inversion symmetry and strong spin–orbit coupling in monolayer TMDs tie spin, valley and optical helicity to the K and K′ band extrema.</p>
 </blockquote>
-<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>Broken inversion symmetry and strong spin–orbit coupling in monolayer TMDs tie spin, valley and optical helicity to the K and K′ band extrema. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[H_τ,s includes τ-dependent Berry curvature and SOC splitting\]</div>
-
+<h2 id="Physical-Picture">Physical Picture</h2>
+<p>Broken inversion symmetry and strong spin–orbit coupling in monolayer TMDs tie spin, valley and optical helicity to the K and K′ band extrema. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
+<h3 id="Massive-Dirac-model-for-a-monolayer-TMD">Massive Dirac model for a monolayer TMD</h3>
+<p>A compact valley-resolved Hamiltonian is</p>
+<div class="math-display">\[H_{\tau s}=at(\tau k_x\sigma_x+k_y\sigma_y)+\frac{\Delta}{2}\sigma_z
+-\lambda\tau s\frac{\sigma_z-1}{2}.\]</div>
+<p>Broken inversion symmetry distinguishes valleys \(\tau=\pm1\), while spin–orbit coupling gives opposite spin splittings related by time reversal.  Optical dipole matrix elements obey valley-contrasting selection rules: \(K\) and \(K&#39;\) couple preferentially to opposite circular polarizations.</p>
+<h3 id="Berry-curvature-and-coupled-labels">Berry curvature and coupled labels</h3>
+<p>The band eigenvectors carry opposite Berry curvature in the two valleys.  An in-plane field therefore drives transverse anomalous velocities of opposite sign, producing a valley Hall current with zero net charge Hall response when valleys are equally populated.  Spin–valley locking can suppress some scattering channels, but only while disorder lacks the large momentum needed to connect \(K\) and \(K&#39;\).</p>
+<h3 id="Dynamics-and-readout">Dynamics and readout</h3>
+<p>Valley polarization obeys a rate equation such as \(\dot P=G-P/\tau_v\), while coherent superpositions additionally dephase with \(T_2\).  Photoluminescence helicity mixes generation, recombination and relaxation and is not a direct measurement of equilibrium valley population.  Electrical claims need nonlocal geometry, reciprocity checks and separation from ordinary Hall or thermoelectric voltages.</p>
+<h2 id="Minimal-Model">Minimal Model</h2>
+<div class="math-display">\[H_τ,s includes τ-dependent Berry curvature and SOC splitting\]</div>
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>Optical selection, valley Hall transport and spin–valley locking provide extra state variables for sensing and information processing.</p>
+<h2 id="Device-Consequences">Device Consequences</h2>
+<p>Optical selection, valley Hall transport and spin–valley locking provide extra state variables for sensing and information processing.</p>
 <p>The correct comparison therefore follows the causal chain</p>
-<div class="math-display">\[ext{material and geometry}ightarrow	ext{states and barriers}ightarrow	ext{transport or switching}ightarrow	ext{terminal response}.\]</div>
-
-<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>Fast intervalley scattering, contacts and room-temperature depolarization limit device retention and readout. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Foundation. Connected concepts:</p>
+<div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
+<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
+<p>Fast intervalley scattering, contacts and room-temperature depolarization limit device retention and readout. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
+<p><strong>Maturity:</strong> Foundation. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/two-dimensional-quantum-foundations/">two-dimensional-quantum-foundations</a></li>
 <li><a href="/knowledge/nodes/berry-curvature-and-topological-transport/">berry-curvature-and-topological-transport</a></li>
 <li><a href="/knowledge/nodes/spin-and-valley-devices/">spin-and-valley-devices</a></li>
 <li><a href="/knowledge/nodes/interlayer-and-moire-excitons/">interlayer-and-moire-excitons</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
+<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://www.nature.com/articles/natrevmats201655" target="_blank" rel="noopener">Schaibley et al., Valleytronics in 2D materials</a></li>
 </ol>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
-<p>**核心结论：**单层 TMD 的反演对称性破缺与强自旋轨道耦合，使 K&#x2F;K′ 带谷与自旋及光学圆偏振发生关联。</p>
+<p>**核心结论：**单层 TMD 的反演对称性破缺与强自旋轨道耦合，使 K/K′ 带谷与自旋及光学圆偏振发生关联。</p>
 </blockquote>
-<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>单层 TMD 的反演对称性破缺与强自旋轨道耦合，使 K&#x2F;K′ 带谷与自旋及光学圆偏振发生关联。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[H_τ,s includes τ-dependent Berry curvature and SOC splitting\]</div>
-
+<h2 id="物理图像">物理图像</h2>
+<p>单层 TMD 的反演对称性破缺与强自旋轨道耦合，使 K/K′ 带谷与自旋及光学圆偏振发生关联。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
+<h3 id="单层-TMD-的有质量-Dirac-模型">单层 TMD 的有质量 Dirac 模型</h3>
+<p>一个紧凑的分谷哈密顿量为</p>
+<div class="math-display">\[H_{\tau s}=at(\tau k_x\sigma_x+k_y\sigma_y)+\frac{\Delta}{2}\sigma_z
+-\lambda\tau s\frac{\sigma_z-1}{2}.\]</div>
+<p>反演对称性破缺区分 \(\tau=\pm1\) 两个谷，自旋轨道耦合产生由时间反演联系的相反自旋劈裂。光学偶极矩阵元具有谷对比选择定则：\(K\) 与 \(K&#39;\) 优先耦合相反圆偏振。</p>
+<h3 id="Berry-曲率与耦合量子标记">Berry 曲率与耦合量子标记</h3>
+<p>能带本征态在两谷具有相反 Berry 曲率。面内电场因而驱动相反横向反常速度；两谷等占据时净电荷霍尔响应为零，但存在谷霍尔流。自旋—谷锁定能压制部分散射，前提是无序不含连接 \(K\) 与 \(K&#39;\) 所需的大动量分量。</p>
+<h3 id="动力学与读出">动力学与读出</h3>
+<p>谷极化可用 \(\dot P=G-P/\tau_v\) 描述，相干叠加还受 \(T_2\) 退相干。光致发光圆偏振度同时混合产生、复合与弛豫，并不直接等于平衡谷占据。电学证据需要非局域几何、互易性检查，并排除普通霍尔与热电电压。</p>
+<h2 id="最小模型">最小模型</h2>
+<div class="math-display">\[H_τ,s includes τ-dependent Berry curvature and SOC splitting\]</div>
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>光学选择定则、谷霍尔输运及自旋–谷锁定为传感和信息处理提供额外状态变量。</p>
+<h2 id="器件意义">器件意义</h2>
+<p>光学选择定则、谷霍尔输运及自旋–谷锁定为传感和信息处理提供额外状态变量。</p>
 <p>合理的分析顺序是</p>
-<div class="math-display">\[ext{材料与几何}ightarrow	ext{状态与势垒}ightarrow	ext{输运或翻转}ightarrow	ext{端口响应}.\]</div>
-
-<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>快速谷间散射、接触及室温退极化限制器件保持与读出。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Foundation。关联节点：</p>
+<div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
+<h2 id="限制与判据">限制与判据</h2>
+<p>快速谷间散射、接触及室温退极化限制器件保持与读出。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
+<p>**成熟度：**Foundation。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/two-dimensional-quantum-foundations/">two-dimensional-quantum-foundations</a></li>
 <li><a href="/knowledge/nodes/berry-curvature-and-topological-transport/">berry-curvature-and-topological-transport</a></li>
 <li><a href="/knowledge/nodes/spin-and-valley-devices/">spin-and-valley-devices</a></li>
 <li><a href="/knowledge/nodes/interlayer-and-moire-excitons/">interlayer-and-moire-excitons</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
+<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://www.nature.com/articles/natrevmats201655" target="_blank" rel="noopener">Schaibley et al., Valleytronics in 2D materials</a></li>
 </ol>
-</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Physical-Picture" data-toc-index="0">Physical Picture</a></li><li><a href="#Minimal-Model" data-toc-index="1">Minimal Model</a></li><li><a href="#Device-Consequences" data-toc-index="2">Device Consequences</a></li><li><a href="#Limits-and-Diagnostic-Tests" data-toc-index="3">Limits and Diagnostic Tests</a></li><li><a href="#Position-in-the-Atlas" data-toc-index="4">Position in the Atlas</a></li><li><a href="#Figure-and-Reading-Sources" data-toc-index="5">Figure and Reading Sources</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/two-dimensional-quantum-foundations/"><span data-lang="en">Two-Dimensional Quantum Foundations</span><span data-lang="zh" hidden>二维量子物理基础</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/berry-curvature-and-topological-transport/"><span data-lang="en">Berry Curvature and Topological Transport</span><span data-lang="zh" hidden>贝里曲率与拓扑输运</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/spin-and-valley-devices/"><span data-lang="en">Spin and Valley Devices</span><span data-lang="zh" hidden>自旋与谷器件</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/interlayer-and-moire-excitons/"><span data-lang="en">Interlayer and Moiré Excitons</span><span data-lang="zh" hidden>层间激子与莫尔激子</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li></ul></section></article></main>
+</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Physical-Picture" data-toc-index="0">Physical Picture</a></li><li><a href="#Deep-Derivation-and-Physical-Interpretation" data-toc-index="1">Deep Derivation and Physical Interpretation</a></li><li><a href="#Minimal-Model" data-toc-index="2">Minimal Model</a></li><li><a href="#Device-Consequences" data-toc-index="3">Device Consequences</a></li><li><a href="#Limits-and-Diagnostic-Tests" data-toc-index="4">Limits and Diagnostic Tests</a></li><li><a href="#Position-in-the-Atlas" data-toc-index="5">Position in the Atlas</a></li><li><a href="#Figure-and-Reading-Sources" data-toc-index="6">Figure and Reading Sources</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/two-dimensional-quantum-foundations/"><span data-lang="en">Two-Dimensional Quantum Foundations</span><span data-lang="zh" hidden>二维量子物理基础</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/berry-curvature-and-topological-transport/"><span data-lang="en">Berry Curvature and Topological Transport</span><span data-lang="zh" hidden>贝里曲率与拓扑输运</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/spin-and-valley-devices/"><span data-lang="en">Spin and Valley Devices</span><span data-lang="zh" hidden>自旋与谷器件</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/interlayer-and-moire-excitons/"><span data-lang="en">Interlayer and Moiré Excitons</span><span data-lang="zh" hidden>层间激子与莫尔激子</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li></ul></section></article></main>
 <footer class="node-footer"><span data-lang="en">A standalone note connected through the knowledge atlas.</span><span data-lang="zh" hidden>一个通过知识图谱与其他概念相连的独立知识节点。</span></footer><script>(function(){var buttons=Array.from(document.querySelectorAll('[data-lang-option]'));var panels=Array.from(document.querySelectorAll('[data-lang]'));function setLanguage(language){panels.forEach(function(panel){panel.hidden=panel.dataset.lang!==language;});buttons.forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.langOption===language));});document.documentElement.lang=language==='zh'?'zh-CN':'en';}buttons.forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.langOption);});});document.querySelectorAll('[data-toc-index]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();var active=document.querySelector('.node-content[data-lang]:not([hidden])');var heading=active&&active.querySelectorAll('h2')[Number(link.dataset.tocIndex)];if(heading){heading.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+heading.id);}});});setLanguage('en');})();</script></body></html>

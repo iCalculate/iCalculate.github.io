@@ -8,48 +8,78 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Moiré Quantum Matter and Correlated Flat Bands</span><span data-lang="zh" hidden>莫尔量子物质与关联平带</span></h1><p class="node-deck"><span data-lang="en">A small twist angle or lattice mismatch produces a long-period moiré potential that narrows bands and makes Coulomb interactions comparable to or larger than kinetic energy.</span><span data-lang="zh" hidden>小扭角或晶格失配产生长周期莫尔势，使能带变窄，并令库仑相互作用达到或超过动能尺度。</span></p><div class="node-tags"><span>Moiré Physics</span><span>Device Physics</span><span>2D Materials</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> A small twist angle or lattice mismatch produces a long-period moiré potential that narrows bands and makes Coulomb interactions comparable to or larger than kinetic energy.</p>
 </blockquote>
-<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>A small twist angle or lattice mismatch produces a long-period moiré potential that narrows bands and makes Coulomb interactions comparable to or larger than kinetic energy. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[L_m≈a/[2sin(θ/2)], U/W controls correlation strength\]</div>
-
+<h2 id="Physical-Picture">Physical Picture</h2>
+<p>A small twist angle or lattice mismatch produces a long-period moiré potential that narrows bands and makes Coulomb interactions comparable to or larger than kinetic energy. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
+<h3 id="Geometric-length-scale-and-flat-bands">Geometric length scale and flat bands</h3>
+<p>For two nearly matched hexagonal layers with small twist \(\theta\) and relative mismatch \(\delta\), the moiré period is approximately</p>
+<div class="math-display">\[L_M\simeq\frac{a}{\sqrt{\delta^2+\theta^2}}.\]</div>
+<p>The small reciprocal vectors fold bands into a mini Brillouin zone.  Interlayer hybridization competes with kinetic scale \(E_M\sim\hbar^2/(2m^*L_M^2)\); decreasing twist lowers \(E_M\) and can produce narrow bands.</p>
+<h3 id="Correlation-criterion">Correlation criterion</h3>
+<p>The characteristic interaction \(U\sim e^2/(4\pi\epsilon L_M)\) can exceed bandwidth \(W\).  The ratio</p>
+<div class="math-display">\[r=\frac{U}{W}\]</div>
+<p>organizes the crossover from itinerant minibands to correlated insulators, magnetism or superconductivity.  Integer carriers per moiré cell correspond to density \(n=\nu/A_M\), so phase boundaries should scale with independently measured \(A_M\).</p>
+<h3 id="Physical-image-and-falsification">Physical image and falsification</h3>
+<p>Twist converts atomic registry into a long-wavelength artificial lattice whose hopping, interaction and topology are gate tunable.  Yet “flat band” alone does not identify the ground state.  Correlated gaps should show thermodynamic incompressibility, transport activation and reproducible filling factors; disorder-induced localization can mimic resistive peaks but lacks the same entropy, magnetic or spectroscopic signatures.</p>
+<h2 id="Minimal-Model">Minimal Model</h2>
+<div class="math-display">\[L_m≈a/[2sin(θ/2)], U/W controls correlation strength\]</div>
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>Electrostatic gates tune filling through correlated insulators, magnetism, superconductivity and topological phases, making moiré devices programmable quantum simulators.</p>
+<h2 id="Device-Consequences">Device Consequences</h2>
+<p>Electrostatic gates tune filling through correlated insulators, magnetism, superconductivity and topological phases, making moiré devices programmable quantum simulators.</p>
 <p>The correct comparison therefore follows the causal chain</p>
-<div class="math-display">\[ext{material and geometry}ightarrow	ext{states and barriers}ightarrow	ext{transport or switching}ightarrow	ext{terminal response}.\]</div>
-
-<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>Twist disorder, strain and sample-specific reconstruction make reproducibility difficult; most phases remain research platforms rather than logic technologies. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Frontier. Connected concepts:</p>
+<div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
+<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
+<p>Twist disorder, strain and sample-specific reconstruction make reproducibility difficult; most phases remain research platforms rather than logic technologies. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
+<p><strong>Maturity:</strong> Frontier. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/two-dimensional-quantum-foundations/">two-dimensional-quantum-foundations</a></li>
 <li><a href="/knowledge/nodes/interlayer-and-moire-excitons/">interlayer-and-moire-excitons</a></li>
 <li><a href="/knowledge/nodes/berry-curvature-and-topological-transport/">berry-curvature-and-topological-transport</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-superconductivity/">two-dimensional-superconductivity</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
+<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41578-024-00682-1" target="_blank" rel="noopener">Nuckolls &amp; Yazdani, A microscopic perspective on moiré materials</a></li>
 </ol>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**小扭角或晶格失配产生长周期莫尔势，使能带变窄，并令库仑相互作用达到或超过动能尺度。</p>
 </blockquote>
-<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>小扭角或晶格失配产生长周期莫尔势，使能带变窄，并令库仑相互作用达到或超过动能尺度。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[L_m≈a/[2sin(θ/2)], U/W controls correlation strength\]</div>
-
+<h2 id="物理图像">物理图像</h2>
+<p>小扭角或晶格失配产生长周期莫尔势，使能带变窄，并令库仑相互作用达到或超过动能尺度。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
+<h3 id="几何长度尺度与平带">几何长度尺度与平带</h3>
+<p>对晶格近似匹配、扭角 \(\theta\) 很小且相对失配为 \(\delta\) 的六角双层，莫尔周期近似为</p>
+<div class="math-display">\[L_M\simeq\frac{a}{\sqrt{\delta^2+\theta^2}}.\]</div>
+<p>小倒格矢把能带折叠进迷你布里渊区。层间杂化与动能尺度 \(E_M\sim\hbar^2/(2m^*L_M^2)\) 竞争；减小扭角会降低 \(E_M\) 并产生窄带。</p>
+<h3 id="关联判据">关联判据</h3>
+<p>特征相互作用 \(U\sim e^2/(4\pi\epsilon L_M)\) 可超过带宽 \(W\)，比值</p>
+<div class="math-display">\[r=\frac{U}{W}\]</div>
+<p>组织了从巡游迷你能带到关联绝缘、磁性或超导的跨越。每个莫尔原胞的整数填充对应 \(n=\nu/A_M\)，因此相边界应与独立测得的 \(A_M\) 一致标度。</p>
+<h3 id="物理图像与证伪">物理图像与证伪</h3>
+<p>扭角把原子配准转化为长波人工晶格，其跃迁、相互作用和拓扑都可由栅极调节。但“平带”本身不能确定基态。关联能隙应同时表现热力学不可压缩性、输运激活及可重复填充因子；无序局域也能制造电阻峰，却不具有相同的熵、磁学或谱学特征。</p>
+<h2 id="最小模型">最小模型</h2>
+<div class="math-display">\[L_m≈a/[2sin(θ/2)], U/W controls correlation strength\]</div>
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>静电栅可调节填充并穿越关联绝缘、磁性、超导及拓扑相，使莫尔器件成为可编程量子模拟平台。</p>
+<h2 id="器件意义">器件意义</h2>
+<p>静电栅可调节填充并穿越关联绝缘、磁性、超导及拓扑相，使莫尔器件成为可编程量子模拟平台。</p>
 <p>合理的分析顺序是</p>
-<div class="math-display">\[ext{材料与几何}ightarrow	ext{状态与势垒}ightarrow	ext{输运或翻转}ightarrow	ext{端口响应}.\]</div>
-
-<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>扭角无序、应变及样品特定重构降低重复性，多数相仍是研究平台而非逻辑技术。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Frontier。关联节点：</p>
+<div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
+<h2 id="限制与判据">限制与判据</h2>
+<p>扭角无序、应变及样品特定重构降低重复性，多数相仍是研究平台而非逻辑技术。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
+<p>**成熟度：**Frontier。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/two-dimensional-quantum-foundations/">two-dimensional-quantum-foundations</a></li>
 <li><a href="/knowledge/nodes/interlayer-and-moire-excitons/">interlayer-and-moire-excitons</a></li>
 <li><a href="/knowledge/nodes/berry-curvature-and-topological-transport/">berry-curvature-and-topological-transport</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-superconductivity/">two-dimensional-superconductivity</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
+<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41578-024-00682-1" target="_blank" rel="noopener">Nuckolls &amp; Yazdani, A microscopic perspective on moiré materials</a></li>
 </ol>
-</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Physical-Picture" data-toc-index="0">Physical Picture</a></li><li><a href="#Minimal-Model" data-toc-index="1">Minimal Model</a></li><li><a href="#Device-Consequences" data-toc-index="2">Device Consequences</a></li><li><a href="#Limits-and-Diagnostic-Tests" data-toc-index="3">Limits and Diagnostic Tests</a></li><li><a href="#Position-in-the-Atlas" data-toc-index="4">Position in the Atlas</a></li><li><a href="#Figure-and-Reading-Sources" data-toc-index="5">Figure and Reading Sources</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/two-dimensional-quantum-foundations/"><span data-lang="en">Two-Dimensional Quantum Foundations</span><span data-lang="zh" hidden>二维量子物理基础</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/interlayer-and-moire-excitons/"><span data-lang="en">Interlayer and Moiré Excitons</span><span data-lang="zh" hidden>层间激子与莫尔激子</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/berry-curvature-and-topological-transport/"><span data-lang="en">Berry Curvature and Topological Transport</span><span data-lang="zh" hidden>贝里曲率与拓扑输运</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/two-dimensional-superconductivity/"><span data-lang="en">Two-Dimensional Superconductivity and Josephson Physics</span><span data-lang="zh" hidden>二维超导与约瑟夫森物理</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li></ul></section></article></main>
+</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Physical-Picture" data-toc-index="0">Physical Picture</a></li><li><a href="#Deep-Derivation-and-Physical-Interpretation" data-toc-index="1">Deep Derivation and Physical Interpretation</a></li><li><a href="#Minimal-Model" data-toc-index="2">Minimal Model</a></li><li><a href="#Device-Consequences" data-toc-index="3">Device Consequences</a></li><li><a href="#Limits-and-Diagnostic-Tests" data-toc-index="4">Limits and Diagnostic Tests</a></li><li><a href="#Position-in-the-Atlas" data-toc-index="5">Position in the Atlas</a></li><li><a href="#Figure-and-Reading-Sources" data-toc-index="6">Figure and Reading Sources</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/two-dimensional-quantum-foundations/"><span data-lang="en">Two-Dimensional Quantum Foundations</span><span data-lang="zh" hidden>二维量子物理基础</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/interlayer-and-moire-excitons/"><span data-lang="en">Interlayer and Moiré Excitons</span><span data-lang="zh" hidden>层间激子与莫尔激子</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/berry-curvature-and-topological-transport/"><span data-lang="en">Berry Curvature and Topological Transport</span><span data-lang="zh" hidden>贝里曲率与拓扑输运</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/two-dimensional-superconductivity/"><span data-lang="en">Two-Dimensional Superconductivity and Josephson Physics</span><span data-lang="zh" hidden>二维超导与约瑟夫森物理</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li></ul></section></article></main>
 <footer class="node-footer"><span data-lang="en">A standalone note connected through the knowledge atlas.</span><span data-lang="zh" hidden>一个通过知识图谱与其他概念相连的独立知识节点。</span></footer><script>(function(){var buttons=Array.from(document.querySelectorAll('[data-lang-option]'));var panels=Array.from(document.querySelectorAll('[data-lang]'));function setLanguage(language){panels.forEach(function(panel){panel.hidden=panel.dataset.lang!==language;});buttons.forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.langOption===language));});document.documentElement.lang=language==='zh'?'zh-CN':'en';}buttons.forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.langOption);});});document.querySelectorAll('[data-toc-index]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();var active=document.querySelector('.node-content[data-lang]:not([hidden])');var heading=active&&active.querySelectorAll('h2')[Number(link.dataset.tocIndex)];if(heading){heading.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+heading.id);}});});setLanguage('en');})();</script></body></html>
