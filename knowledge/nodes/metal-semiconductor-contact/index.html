@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Metal–Semiconductor Contacts and Schottky Barriers · Knowledge Atlas</title><meta name="description" content="Schottky and ohmic contacts from work-function alignment, electron affinity, thermionic emission, tunneling, and Fermi-level pinning.">
+<link rel="icon" href="/assets/favicon.ico"><link rel="stylesheet" href="/knowledge/graph.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
+<body class="knowledge-node-page"><header class="node-header"><a class="wordmark" href="/">iCalculate’s Studio</a><nav><a href="/archives/">Archive</a><a href="/knowledge/">Knowledge Atlas</a></nav></header>
+<main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Metal–Semiconductor Contacts and Schottky Barriers</span><span data-lang="zh" hidden>金属-半导体接触与肖特基势垒</span></h1><p class="node-deck"><span data-lang="en">Schottky and ohmic contacts from work-function alignment, electron affinity, thermionic emission, tunneling, and Fermi-level pinning.</span><span data-lang="zh" hidden>从功函数、电子亲和能和费米能级对齐理解肖特基与欧姆接触，并比较热发射、隧穿和界面钉扎。</span></p><div class="node-tags"><span>Interface Physics</span><span>Device Physics</span><span>Electronic Structure</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
+<p><strong>Core idea:</strong> A metal–semiconductor contact is governed by majority carriers crossing or tunneling through an interface barrier. The ideal work-function model is a starting point; real barriers also depend on interface states, metal-induced gap states, chemical reactions, and Fermi-level pinning.</p>
+</blockquote>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Metal_semiconductor_junction_Schottky_approximation.svg" alt="Metal–semiconductor band alignment in the Schottky approximation"></p>
+<p><em>Figure 1 | Idealized Ag&#x2F;Si alignment. Nanite; image and source-code licensing on the <a href="https://commons.wikimedia.org/wiki/File:Metal_semiconductor_junction_Schottky_approximation.svg" target="_blank" rel="noopener">file page</a>.</em></p>
+<h2 id="Ideal-Barrier"><a href="#Ideal-Barrier" class="headerlink" title="Ideal Barrier"></a>Ideal Barrier</h2><p>With metal work function \(\Phi_M=E_0-E_{FM}\) and semiconductor electron affinity \(\chi=E_0-E_C\), the ideal n-type electron barrier is</p>
+<div class="math-display">\[q\Phi_{Bn}=\Phi_M-\chi.\]</div>
+
+<p>The semiconductor-side built-in voltage is approximately</p>
+<div class="math-display">\[V_{bi}=\Phi_{Bn}-\frac{E_C-E_F}{q}.\]</div>
+
+<p>Barrier height controls thermionic emission exponentially; depletion width controls capacitance and tunneling. They are distinct quantities.</p>
+<h2 id="Current-Transport"><a href="#Current-Transport" class="headerlink" title="Current Transport"></a>Current Transport</h2><p>When thermionic emission dominates,</p>
+<div class="math-display">\[J=A^{**}T^2e^{-q\Phi_B/kT}\left(e^{qV/nkT}-1\right).\]</div>
+
+<p>Higher doping narrows the barrier, shifting transport from thermionic emission to thermionic-field emission and finally field emission.</p>
+<h2 id="Ohmic-Contacts-Still-Have-Interface-Physics"><a href="#Ohmic-Contacts-Still-Have-Interface-Physics" class="headerlink" title="Ohmic Contacts Still Have Interface Physics"></a>Ohmic Contacts Still Have Interface Physics</h2><p>An ohmic contact is approximately linear and sufficiently low-resistance over the operating range. It may require favorable work functions, a low-barrier interfacial phase, heavy contact doping for tunneling, and controlled annealing. As intrinsic channel resistance shrinks, contact resistance often becomes the dominant bottleneck.</p>
+<h2 id="Nonideal-Interfaces"><a href="#Nonideal-Interfaces" class="headerlink" title="Nonideal Interfaces"></a>Nonideal Interfaces</h2><p>Interface dipoles, defects, and metal-induced gap states weaken the ideal dependence of \(\Phi_B\) on metal work function. This Fermi-level pinning is why vacuum-level alignment alone rarely predicts a processed contact quantitatively.</p>
+<h2 id="Device-Connections"><a href="#Device-Connections" class="headerlink" title="Device Connections"></a>Device Connections</h2><p>Schottky diodes are majority-carrier devices and usually avoid PN-diode minority storage. MESFETs use a Schottky gate; MOSFET and two-dimensional FET contacts may be injection-limited; metal–semiconductor–metal photodetectors use back-to-back barriers.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapter 3.</li>
+<li>E. H. Rhoderick and R. H. Williams, <em>Metal–Semiconductor Contacts</em>.</li>
+</ol>
+</div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
+<p><strong>核心结论</strong>：金半接触的功能由多数载流子跨越或穿透界面势垒决定。理想功函数模型给出第一近似，真实势垒还受界面态、金属诱导禁带态、化学反应和费米能级钉扎控制。</p>
+</blockquote>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Metal_semiconductor_junction_Schottky_approximation.svg" alt="Schottky近似下金属-半导体接触的能带"></p>
+<p><em>图 1｜Ag&#x2F;Si 接触在理想 Schottky–Mott 近似下的能带对齐示例。原图：Nanite；源代码公有领域，图像许可见<a href="https://commons.wikimedia.org/wiki/File:Metal_semiconductor_junction_Schottky_approximation.svg" target="_blank" rel="noopener">文件页</a>。</em></p>
+<h2 id="1-理想势垒"><a href="#1-理想势垒" class="headerlink" title="1. 理想势垒"></a>1. 理想势垒</h2><p>金属功函数 \(\Phi_M=E_0-E_{FM}\)，半导体电子亲和能 \(\chi=E_0-E_C\)。理想 n 型接触的电子势垒为</p>
+<div class="math-display">\[q\Phi_{Bn}=\Phi_M-\chi,\]</div>
+
+<p>而半导体侧内建电势约为</p>
+<div class="math-display">\[V_{bi}=\Phi_{Bn}-\frac{E_C-E_F}{q}.\]</div>
+
+<p>接触后费米能级必须对齐，半导体能带因空间电荷而弯曲。势垒高度和耗尽宽度是两个不同量：前者主要控制热发射指数，后者决定隧穿概率和电容。</p>
+<h2 id="2-电流输运"><a href="#2-电流输运" class="headerlink" title="2. 电流输运"></a>2. 电流输运</h2><p>热发射主导、串联电阻可忽略时，Schottky 二极管近似满足</p>
+<div class="math-display">\[J=A^{**}T^2e^{-q\Phi_B/kT}
+\left(e^{qV/nkT}-1\right),\]</div>
+
+<p>其中 \(A^{**}\) 为有效 Richardson 常数，\(n\) 为理想因子。掺杂升高使势垒变窄，输运从热发射转向热场发射乃至直接场发射。</p>
+<h2 id="3-欧姆接触不是“没有接触物理”"><a href="#3-欧姆接触不是“没有接触物理”" class="headerlink" title="3. 欧姆接触不是“没有接触物理”"></a>3. 欧姆接触不是“没有接触物理”</h2><p>器件希望接触的 I–V 在工作范围近似线性且接触电阻低。常见策略是：</p>
+<ul>
+<li>选择有利功函数或形成低势垒相；</li>
+<li>接触区重掺杂，把耗尽层压窄以增强隧穿；</li>
+<li>退火形成硅化物或低电阻界面，同时控制扩散与缺陷。</li>
+</ul>
+<p>接触电阻可通过传输线法等测量；总器件电阻下降后，接触往往从“边缘问题”变成主导瓶颈。</p>
+<h2 id="4-非理想界面"><a href="#4-非理想界面" class="headerlink" title="4. 非理想界面"></a>4. 非理想界面</h2><p>真实界面常有界面偶极、缺陷和金属诱导禁带态，使 \(\Phi_B\) 对金属功函数的依赖弱于理想模型，即费米能级钉扎。图中的真空能级对齐只能作为概念起点，不能直接预测真实工艺的势垒。</p>
+<h2 id="5-与其他器件的关系"><a href="#5-与其他器件的关系" class="headerlink" title="5. 与其他器件的关系"></a>5. 与其他器件的关系</h2><ul>
+<li>Schottky 二极管是多数载流子器件，通常没有 PN 二极管那样的少子存储，因而开关快；</li>
+<li>MESFET 用 Schottky 栅控制耗尽层；</li>
+<li>MOSFET 源漏接触与二维材料 FET 的接触势垒会限制注入；</li>
+<li>光电探测中，金属–半导体–金属结构利用背靠背势垒收集光生载流子。</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapter 3.</li>
+<li>E. H. Rhoderick and R. H. Williams, <em>Metal–Semiconductor Contacts</em>.</li>
+</ol>
+</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Ideal-Barrier" data-toc-index="0">Ideal Barrier</a></li><li><a href="#Current-Transport" data-toc-index="1">Current Transport</a></li><li><a href="#Ohmic-Contacts-Still-Have-Interface-Physics" data-toc-index="2">Ohmic Contacts Still Have Interface Physics</a></li><li><a href="#Nonideal-Interfaces" data-toc-index="3">Nonideal Interfaces</a></li><li><a href="#Device-Connections" data-toc-index="4">Device Connections</a></li><li><a href="#References" data-toc-index="5">References</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/semiconductor-band-carrier-statistics/"><span data-lang="en">Energy Bands, Density of States, and Carrier Statistics</span><span data-lang="zh" hidden>能带、态密度与载流子统计</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/pn-junction-physics/"><span data-lang="en">The PN Junction: Space Charge, Band Bending, and Rectification</span><span data-lang="zh" hidden>PN结：空间电荷、能带与整流</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/heterojunction-and-fet-family/"><span data-lang="en">Heterojunctions, JFETs, MESFETs, and HEMTs</span><span data-lang="zh" hidden>异质结、JFET、MESFET与HEMT</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/mosfet-physics/"><span data-lang="en">The MOSFET: Gate-Controlled Charge and Channel Transport</span><span data-lang="zh" hidden>MOSFET：栅控电荷与沟道输运</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li></ul></section></article></main>
+<footer class="node-footer"><span data-lang="en">A standalone note connected through the knowledge atlas.</span><span data-lang="zh" hidden>一个通过知识图谱与其他概念相连的独立知识节点。</span></footer><script>(function(){var buttons=Array.from(document.querySelectorAll('[data-lang-option]'));var panels=Array.from(document.querySelectorAll('[data-lang]'));function setLanguage(language){panels.forEach(function(panel){panel.hidden=panel.dataset.lang!==language;});buttons.forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.langOption===language));});document.documentElement.lang=language==='zh'?'zh-CN':'en';}buttons.forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.langOption);});});document.querySelectorAll('[data-toc-index]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();var active=document.querySelector('.node-content[data-lang]:not([hidden])');var heading=active&&active.querySelectorAll('h2')[Number(link.dataset.tocIndex)];if(heading){heading.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+heading.id);}});});setLanguage('en');})();</script></body></html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Bipolar Junction Transistor: Minority-Carrier Injection and Gain · Knowledge Atlas</title><meta name="description" content="The BJT as two asymmetric coupled PN junctions, combining emitter injection, thin-base transport, and collector-field collection.">
+<link rel="icon" href="/assets/favicon.ico"><link rel="stylesheet" href="/knowledge/graph.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
+<body class="knowledge-node-page"><header class="node-header"><a class="wordmark" href="/">iCalculate’s Studio</a><nav><a href="/archives/">Archive</a><a href="/knowledge/">Knowledge Atlas</a></nav></header>
+<main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">The Bipolar Junction Transistor: Minority-Carrier Injection and Gain</span><span data-lang="zh" hidden>双极晶体管：少子注入与电流放大</span></h1><p class="node-deck"><span data-lang="en">The BJT as two asymmetric coupled PN junctions, combining emitter injection, thin-base transport, and collector-field collection.</span><span data-lang="zh" hidden>把BJT理解为两个非对称、相互耦合的PN结：发射结注入、薄基区输运、集电结收集共同产生电流增益。</span></p><div class="node-tags"><span>Bipolar Transistors</span><span>Junction Devices</span><span>Device Physics</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
+<p><strong>Core idea:</strong> BJT gain is not mysterious control by base current. The base–emitter voltage sets minority-carrier injection exponentially; a thin base lets most injected carriers reach the reverse-biased collector junction and be swept into the collector.</p>
+</blockquote>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bipolar_transistor.svg" alt="NPN bipolar transistor structure"></p>
+<p><em>Figure 1 | Emitter, base, and collector in an NPN BJT. Shaddack &#x2F; Predatorix, public domain; <a href="https://commons.wikimedia.org/wiki/File:Bipolar_transistor.svg" target="_blank" rel="noopener">source</a>. Real devices are strongly asymmetric in doping and geometry.</em></p>
+<h2 id="Why-the-Three-Regions-Are-Asymmetric"><a href="#Why-the-Three-Regions-Are-Asymmetric" class="headerlink" title="Why the Three Regions Are Asymmetric"></a>Why the Three Regions Are Asymmetric</h2><p>The emitter is heavily doped for injection efficiency; the base is thin and lighter doped to suppress recombination; the collector is lighter doped and physically larger to withstand reverse bias and dissipate heat. Two separate back-to-back diodes do not make a useful BJT because they lack a shared thin base.</p>
+<h2 id="Forward-Active-Operation"><a href="#Forward-Active-Operation" class="headerlink" title="Forward-Active Operation"></a>Forward-Active Operation</h2><p>The base–emitter junction is forward biased and the base–collector junction reverse biased. Ideally,</p>
+<div class="math-display">\[I_C\approx I_Se^{V_{BE}/V_T}.\]</div>
+
+<p>The common-base gain is</p>
+<div class="math-display">\[\alpha_F=\gamma\alpha_T,\]</div>
+
+<p>with emitter efficiency \(\gamma\) and base transport factor \(\alpha_T\). The common-emitter gain is</p>
+<div class="math-display">\[\beta_F=\frac{\alpha_F}{1-\alpha_F}.\]</div>
+
+<p>A value of \(\alpha_F\) only slightly below unity can therefore produce large but process-sensitive \(\beta\).</p>
+<h2 id="Four-Operating-Regions"><a href="#Four-Operating-Regions" class="headerlink" title="Four Operating Regions"></a>Four Operating Regions</h2><table>
+<thead>
+<tr>
+<th>BE junction</th>
+<th>BC junction</th>
+<th>Region</th>
+<th>Physical picture</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>reverse</td>
+<td>reverse</td>
+<td>cutoff</td>
+<td>leakage only</td>
+</tr>
+<tr>
+<td>forward</td>
+<td>reverse</td>
+<td>forward active</td>
+<td>injection, diffusion, collection</td>
+</tr>
+<tr>
+<td>forward</td>
+<td>forward</td>
+<td>saturation</td>
+<td>both junctions inject; large stored charge</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>forward</td>
+<td>reverse active</td>
+<td>emitter&#x2F;collector roles exchanged poorly</td>
+</tr>
+</tbody></table>
+<p>Ebers–Moll unifies all four regions. Gummel–Poon adds recombination, high injection, and base-width modulation.</p>
+<h2 id="Frequency-and-Nonideal-Effects"><a href="#Frequency-and-Nonideal-Effects" class="headerlink" title="Frequency and Nonideal Effects"></a>Frequency and Nonideal Effects</h2><p>Base transit time, emitter diffusion capacitance, and collector capacitance determine \(f_T\). Increasing collector bias narrows the effective base—the Early effect—and gives finite output conductance. At high current, conductivity modulation, current crowding, and the Kirk effect reduce gain.</p>
+<h2 id="Link-to-Power-Devices"><a href="#Link-to-Power-Devices" class="headerlink" title="Link to Power Devices"></a>Link to Power Devices</h2><p>An IGBT uses a MOS gate to control bipolar injection. Conductivity modulation lowers drift-region resistance but creates turn-off tail current; see <a href="/knowledge/nodes/power-semiconductor-devices/">Power Semiconductor Devices</a>.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapter 5.</li>
+<li><a href="https://www.cnblogs.com/TE4BR3K/p/19122003" target="_blank" rel="noopener">TE4BR3K: BJT notes</a> for review.</li>
+</ol>
+</div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
+<p><strong>核心结论</strong>：BJT 的放大不是“基极电流神秘控制集电极电流”，而是基极–发射极电压指数地设定发射结少子注入；薄基区让大多数注入载流子到达反偏集电结并被电场收集。</p>
+</blockquote>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bipolar_transistor.svg" alt="NPN双极晶体管结构"></p>
+<p><em>图 1｜NPN BJT 的发射极、基极和集电极结构。原图：Shaddack &#x2F; Predatorix，公有领域；<a href="https://commons.wikimedia.org/wiki/File:Bipolar_transistor.svg" target="_blank" rel="noopener">文件页</a>。实际器件的掺杂和几何高度不对称。</em></p>
+<h2 id="1-为什么三个区必须不对称"><a href="#1-为什么三个区必须不对称" class="headerlink" title="1. 为什么三个区必须不对称"></a>1. 为什么三个区必须不对称</h2><ul>
+<li>发射极重掺杂，提高电子注入效率；</li>
+<li>基区很薄且较轻掺杂，减小基区复合；</li>
+<li>集电区较轻掺杂且面积较大，以承受反偏并散热。</li>
+</ul>
+<p>若把两个普通二极管简单背靠背连接，并不会得到性能良好的 BJT，因为缺少共享的薄基区与少子连续输运。</p>
+<h2 id="2-正向有源区"><a href="#2-正向有源区" class="headerlink" title="2. 正向有源区"></a>2. 正向有源区</h2><p>NPN 管的基极–发射结正偏、基极–集电结反偏。理想情况下</p>
+<div class="math-display">\[I_C\approx I_Se^{V_{BE}/V_T},\qquad V_T=\frac{kT}{q}.\]</div>
+
+<p>共基电流增益</p>
+<div class="math-display">\[\alpha_F=\gamma\alpha_T,\]</div>
+
+<p>由发射效率 \(\gamma\) 和基区输运因子 \(\alpha_T\) 决定；共射增益</p>
+<div class="math-display">\[\beta_F=\frac{\alpha_F}{1-\alpha_F}.\]</div>
+
+<p>因此 \(\alpha_F\) 只比 1 小一点，便可产生很大的 \(\beta\)；同时也解释了为何增益对复合、基宽和工艺非常敏感。</p>
+<h2 id="3-四种工作区"><a href="#3-四种工作区" class="headerlink" title="3. 四种工作区"></a>3. 四种工作区</h2><table>
+<thead>
+<tr>
+<th>BE结</th>
+<th>BC结</th>
+<th>工作区</th>
+<th>物理图像</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>反偏</td>
+<td>反偏</td>
+<td>截止</td>
+<td>仅有漏电</td>
+</tr>
+<tr>
+<td>正偏</td>
+<td>反偏</td>
+<td>正向有源</td>
+<td>注入—扩散—收集，适合放大</td>
+</tr>
+<tr>
+<td>正偏</td>
+<td>正偏</td>
+<td>饱和</td>
+<td>两结同时注入，存储电荷大</td>
+</tr>
+<tr>
+<td>反偏</td>
+<td>正偏</td>
+<td>反向有源</td>
+<td>发射&#x2F;集电角色互换但性能差</td>
+</tr>
+</tbody></table>
+<p>Ebers–Moll 模型用两个耦合二极管统一描述四区；Gummel–Poon 模型进一步加入高注入、基区宽度调制和复合。</p>
+<h2 id="4-频率与非理想效应"><a href="#4-频率与非理想效应" class="headerlink" title="4. 频率与非理想效应"></a>4. 频率与非理想效应</h2><p>基区渡越时间、发射结扩散电容和集电结电容决定截止频率 \(f_T\)。集电结反偏增加会使有效基宽变窄，即 Early 效应，表现为输出电流随 \(V_{CE}\) 上升。高电流下基区电导调制、发射极拥挤和 Kirk 效应使增益下降。</p>
+<h2 id="5-与功率器件的联系"><a href="#5-与功率器件的联系" class="headerlink" title="5. 与功率器件的联系"></a>5. 与功率器件的联系</h2><p>IGBT 用 MOS 栅控制双极载流子注入，结合 MOSFET 高输入阻抗与 BJT 漂移区电导调制的低导通压降，但会引入关断尾电流。详见<a href="/knowledge/nodes/power-semiconductor-devices/">功率半导体器件</a>。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapter 5.</li>
+<li><a href="https://www.cnblogs.com/TE4BR3K/p/19122003" target="_blank" rel="noopener">TE4BR3K：BJT笔记</a>（交叉复习）。</li>
+</ol>
+</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Why-the-Three-Regions-Are-Asymmetric" data-toc-index="0">Why the Three Regions Are Asymmetric</a></li><li><a href="#Forward-Active-Operation" data-toc-index="1">Forward Active Operation</a></li><li><a href="#Four-Operating-Regions" data-toc-index="2">Four Operating Regions</a></li><li><a href="#Frequency-and-Nonideal-Effects" data-toc-index="3">Frequency and Nonideal Effects</a></li><li><a href="#Link-to-Power-Devices" data-toc-index="4">Link to Power Devices</a></li><li><a href="#References" data-toc-index="5">References</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/pn-junction-physics/"><span data-lang="en">The PN Junction: Space Charge, Band Bending, and Rectification</span><span data-lang="zh" hidden>PN结：空间电荷、能带与整流</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/non-equilibrium-carriers/"><span data-lang="en">Nonequilibrium Carriers: Generation, Recombination, and Quasi-Fermi Levels</span><span data-lang="zh" hidden>非平衡载流子：产生、复合与准费米能级</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/power-semiconductor-devices/"><span data-lang="en">Power Semiconductor Devices</span><span data-lang="zh" hidden>功率半导体器件</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/device-breakdown-and-scaling/"><span data-lang="en">Breakdown, Scaling, and Device Nonidealities</span><span data-lang="zh" hidden>击穿、缩放与器件非理想效应</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li></ul></section></article></main>
+<footer class="node-footer"><span data-lang="en">A standalone note connected through the knowledge atlas.</span><span data-lang="zh" hidden>一个通过知识图谱与其他概念相连的独立知识节点。</span></footer><script>(function(){var buttons=Array.from(document.querySelectorAll('[data-lang-option]'));var panels=Array.from(document.querySelectorAll('[data-lang]'));function setLanguage(language){panels.forEach(function(panel){panel.hidden=panel.dataset.lang!==language;});buttons.forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.langOption===language));});document.documentElement.lang=language==='zh'?'zh-CN':'en';}buttons.forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.langOption);});});document.querySelectorAll('[data-toc-index]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();var active=document.querySelector('.node-content[data-lang]:not([hidden])');var heading=active&&active.querySelectorAll('h2')[Number(link.dataset.tocIndex)];if(heading){heading.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+heading.id);}});});setLanguage('en');})();</script></body></html>

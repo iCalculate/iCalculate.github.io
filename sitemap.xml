@@ -673,6 +673,20 @@
   </url>
   
   <url>
+    <loc>http://www.icalculate.website/tags/Python/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.icalculate.website/tags/Research-Software/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.icalculate.website/tags/Personal-Essays/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -708,20 +722,6 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Python/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.icalculate.website/tags/Research-Software/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://www.icalculate.website/tags/Electrocatalysis/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -729,7 +729,7 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Materials-Design/</loc>
+    <loc>http://www.icalculate.website/tags/Active-Sites/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -750,7 +750,7 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Energy-Systems/</loc>
+    <loc>http://www.icalculate.website/tags/Materials-Design/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -764,6 +764,13 @@
   </url>
   
   <url>
+    <loc>http://www.icalculate.website/tags/Energy-Systems/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://www.icalculate.website/tags/Research-Workflow/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -771,21 +778,21 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Active-Sites/</loc>
+    <loc>http://www.icalculate.website/tags/Transport-Physics/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Thin-Film-Deposition/</loc>
+    <loc>http://www.icalculate.website/tags/Optical-Properties/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Lab-Protocols/</loc>
+    <loc>http://www.icalculate.website/tags/Fundamental-Models/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -806,28 +813,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Fundamental-Models/</loc>
+    <loc>http://www.icalculate.website/tags/Thin-Film-Deposition/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Quantum-Mechanics/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.icalculate.website/tags/Transport-Physics/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.icalculate.website/tags/Optical-Properties/</loc>
+    <loc>http://www.icalculate.website/tags/Lab-Protocols/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -855,14 +848,7 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Superconductivity/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.icalculate.website/tags/Topological-Matter/</loc>
+    <loc>http://www.icalculate.website/tags/Quantum-Mechanics/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -883,7 +869,7 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Technology-Roadmap/</loc>
+    <loc>http://www.icalculate.website/tags/Measurement-Methods/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -904,28 +890,21 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Measurement-Methods/</loc>
+    <loc>http://www.icalculate.website/tags/Technology-Roadmap/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Energy-Storage/</loc>
+    <loc>http://www.icalculate.website/tags/Superconductivity/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Origin/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.icalculate.website/tags/Mass-Transport/</loc>
+    <loc>http://www.icalculate.website/tags/Topological-Matter/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -940,6 +919,27 @@
   
   <url>
     <loc>http://www.icalculate.website/tags/Cryogenics/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.icalculate.website/tags/Energy-Storage/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.icalculate.website/tags/Mass-Transport/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.icalculate.website/tags/Origin/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -988,14 +988,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Language-Culture/</loc>
+    <loc>http://www.icalculate.website/tags/Academic-Publishing/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/tags/Academic-Publishing/</loc>
+    <loc>http://www.icalculate.website/tags/Language-Culture/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1046,14 +1046,7 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Scientific-Blog/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.icalculate.website/categories/Physics/Semiconductor-Devices/</loc>
+    <loc>http://www.icalculate.website/categories/Coding/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1067,7 +1060,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Coding/</loc>
+    <loc>http://www.icalculate.website/categories/Physics/Semiconductor-Devices/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.icalculate.website/categories/Scientific-Blog/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1081,14 +1081,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Coding/Scientific/Tutorials/</loc>
+    <loc>http://www.icalculate.website/categories/Physics/Semiconductor-Devices/Quantum-Transport/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Physics/Semiconductor-Devices/Quantum-Transport/</loc>
+    <loc>http://www.icalculate.website/categories/Coding/Scientific/Tutorials/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1109,14 +1109,14 @@
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Scientific/Perspective/</loc>
+    <loc>http://www.icalculate.website/categories/Physics/Quantum-Transport/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.icalculate.website/categories/Physics/Quantum-Transport/</loc>
+    <loc>http://www.icalculate.website/categories/Scientific/Perspective/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

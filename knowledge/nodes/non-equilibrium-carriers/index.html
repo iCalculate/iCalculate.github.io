@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nonequilibrium Carriers: Generation, Recombination, and Quasi-Fermi Levels · Knowledge Atlas</title><meta name="description" content="Carrier lifetime, diffusion length, generation–recombination mechanisms, and electron–hole quasi-Fermi-level splitting under optical or electrical injection.">
+<link rel="icon" href="/assets/favicon.ico"><link rel="stylesheet" href="/knowledge/graph.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
+<body class="knowledge-node-page"><header class="node-header"><a class="wordmark" href="/">iCalculate’s Studio</a><nav><a href="/archives/">Archive</a><a href="/knowledge/">Knowledge Atlas</a></nav></header>
+<main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Nonequilibrium Carriers: Generation, Recombination, and Quasi-Fermi Levels</span><span data-lang="zh" hidden>非平衡载流子：产生、复合与准费米能级</span></h1><p class="node-deck"><span data-lang="en">Carrier lifetime, diffusion length, generation–recombination mechanisms, and electron–hole quasi-Fermi-level splitting under optical or electrical injection.</span><span data-lang="zh" hidden>描述光生或电注入载流子的寿命、扩散长度、产生复合机制及电子空穴准费米能级分裂。</span></p><div class="node-tags"><span>Transport Physics</span><span>Optical Properties</span><span>Device Physics</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
+<p><strong>Core idea:</strong> Optical excitation, electrical injection, or impact ionization drives \(np\) away from its equilibrium value \(n_i^2\). Recombination restores equilibrium; lifetime and diffusion length then control diode injection, photodetector collection, and transistor gain.</p>
+</blockquote>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Elektron-Loch-Paar_im_Halbleiterkristall.svg" alt="Generation, motion, and recombination of an electron–hole pair in silicon"></p>
+<p><em>Figure 1 | Electron–hole generation, motion, and recombination in real-space and band representations. Cepheiden, CC BY-SA 3.0; <a href="https://commons.wikimedia.org/wiki/File:Elektron-Loch-Paar_im_Halbleiterkristall.svg" target="_blank" rel="noopener">source and license</a>.</em></p>
+<h2 id="Excess-Carriers-and-Low-Injection"><a href="#Excess-Carriers-and-Low-Injection" class="headerlink" title="Excess Carriers and Low Injection"></a>Excess Carriers and Low Injection</h2><p>Optical generation normally creates \(\Delta n=\Delta p\). In p-type material, \(\Delta n\ll p_0\approx N_A\) defines low injection. The majority-carrier density then changes little and minority-carrier dynamics can be linearized. Under high injection, conductivity, electric field, recombination, and neutrality must all be solved self-consistently.</p>
+<h2 id="Quasi-Fermi-Levels"><a href="#Quasi-Fermi-Levels" class="headerlink" title="Quasi-Fermi Levels"></a>Quasi-Fermi Levels</h2><p>If intraband thermalization is much faster than interband generation and recombination, each carrier population remains approximately thermal:</p>
+<div class="math-display">\[n=N_Ce^{-(E_C-E_{Fn})/kT},\qquad
+p=N_Ve^{-(E_{Fp}-E_V)/kT}.\]</div>
+
+<p>Therefore</p>
+<div class="math-display">\[np=n_i^2\exp\left(\frac{E_{Fn}-E_{Fp}}{kT}\right).\]</div>
+
+<p>The splitting \(E_{Fn}-E_{Fp}\) is the nonequilibrium chemical-potential difference. In an open-circuit solar cell it is closely related to the maximum obtainable terminal voltage.</p>
+<h2 id="Generation-and-Recombination-Mechanisms"><a href="#Generation-and-Recombination-Mechanisms" class="headerlink" title="Generation and Recombination Mechanisms"></a>Generation and Recombination Mechanisms</h2><table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Representative rate</th>
+<th>Typical regime</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Radiative</td>
+<td>\(R_{rad}=B(np-n_i^2)\)</td>
+<td>direct-gap emitters</td>
+</tr>
+<tr>
+<td>Shockley–Read–Hall</td>
+<td>\(U_{SRH}=\dfrac{np-n_i^2}{\tau_p(n+n_1)+\tau_n(p+p_1)}\)</td>
+<td>deep defects and traps</td>
+</tr>
+<tr>
+<td>Auger</td>
+<td>\(R_A=(C_nn+C_pp)(np-n_i^2)\)</td>
+<td>high injection or heavy doping</td>
+</tr>
+<tr>
+<td>Optical generation</td>
+<td>\(G(x)=\alpha\Phi_0e^{-\alpha x}\)</td>
+<td>absorption coefficient \(\alpha\)</td>
+</tr>
+</tbody></table>
+<p>Midgap traps are especially efficient SRH centers because they can successively capture both carrier types.</p>
+<h2 id="Lifetime-and-Diffusion-Length"><a href="#Lifetime-and-Diffusion-Length" class="headerlink" title="Lifetime and Diffusion Length"></a>Lifetime and Diffusion Length</h2><p>Under uniform low injection after generation is removed,</p>
+<div class="math-display">\[\Delta n(t)=\Delta n(0)e^{-t/\tau_n}.\]</div>
+
+<p>The characteristic travel distances before recombination are</p>
+<div class="math-display">\[L_n=\sqrt{D_n\tau_n},\qquad L_p=\sqrt{D_p\tau_p}.\]</div>
+
+<p>They enter PN-diode saturation current, BJT base transport, and photocarrier collection.</p>
+<h2 id="Common-Pitfalls"><a href="#Common-Pitfalls" class="headerlink" title="Common Pitfalls"></a>Common Pitfalls</h2><ul>
+<li>Lifetime is not an immutable property of an individual electron; it depends on injection, defects, temperature, and competing channels.</li>
+<li>A quasi-Fermi level is not an additional band. It parameterizes a nonequilibrium occupation.</li>
+<li>Strong light emission requires radiative recombination to dominate nonradiative loss, not merely a large total recombination rate.</li>
+</ul>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapters 1, 2, 12, and 13.</li>
+<li>W. Shockley and W. T. Read, “Statistics of the Recombinations of Holes and Electrons,” <em>Physical Review</em> <strong>87</strong>, 835 (1952).</li>
+</ol>
+</div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
+<p><strong>核心结论</strong>：外界注入、光吸收或碰撞电离使 \(np\) 偏离平衡值 \(n_i^2\)。系统随后通过复合趋向平衡；载流子寿命与扩散长度决定注入电流、光电响应和晶体管增益。</p>
+</blockquote>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Elektron-Loch-Paar_im_Halbleiterkristall.svg" alt="硅晶体中电子-空穴对的产生、运动与复合"></p>
+<p><em>图 1｜电子–空穴对的产生、运动与复合及其能带表示。原图：Cepheiden，CC BY-SA 3.0；<a href="https://commons.wikimedia.org/wiki/File:Elektron-Loch-Paar_im_Halbleiterkristall.svg" target="_blank" rel="noopener">文件页与许可</a>。</em></p>
+<h2 id="1-过剩载流子与小注入"><a href="#1-过剩载流子与小注入" class="headerlink" title="1. 过剩载流子与小注入"></a>1. 过剩载流子与小注入</h2><p>光生一对电子和空穴时通常有 \(\Delta n=\Delta p\)。在 p 型材料中若</p>
+<div class="math-display">\[\Delta n\ll p_0\approx N_A,\]</div>
+
+<p>称为小注入。此时多数载流子浓度几乎不变，少数载流子的复合动力学可线性化；大注入时电场、电导率、复合率和电中性条件都必须自洽求解。</p>
+<h2 id="2-准费米能级"><a href="#2-准费米能级" class="headerlink" title="2. 准费米能级"></a>2. 准费米能级</h2><p>若带内热化远快于带间产生复合，电子和空穴各自仍近似服从费米分布：</p>
+<div class="math-display">\[n=N_Ce^{-(E_C-E_{Fn})/kT},\qquad
+p=N_Ve^{-(E_{Fp}-E_V)/kT}.\]</div>
+
+<p>由此</p>
+<div class="math-display">\[np=n_i^2\exp\left(\frac{E_{Fn}-E_{Fp}}{kT}\right).\]</div>
+
+<p>准费米能级分裂 \(E_{Fn}-E_{Fp}\) 是非平衡“化学势差”；在太阳电池开路状态下，它给出可实现端电压的热力学上限之一。</p>
+<h2 id="3-产生与复合机制"><a href="#3-产生与复合机制" class="headerlink" title="3. 产生与复合机制"></a>3. 产生与复合机制</h2><table>
+<thead>
+<tr>
+<th>机制</th>
+<th>典型表达</th>
+<th>主导情形</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>辐射复合</td>
+<td>\(R_{rad}=B(np-n_i^2)\)</td>
+<td>直接带隙材料、LED&#x2F;激光器</td>
+</tr>
+<tr>
+<td>Shockley–Read–Hall</td>
+<td>\(U_{SRH}=\dfrac{np-n_i^2}{\tau_p(n+n_1)+\tau_n(p+p_1)}\)</td>
+<td>缺陷与深能级主导</td>
+</tr>
+<tr>
+<td>Auger 复合</td>
+<td>\(R_A=(C_nn+C_pp)(np-n_i^2)\)</td>
+<td>高注入、高掺杂</td>
+</tr>
+<tr>
+<td>光生</td>
+<td>\(G(x)=\alpha\Phi_0e^{-\alpha x}\)</td>
+<td>吸收系数为 \(\alpha\) 的均匀材料</td>
+</tr>
+</tbody></table>
+<p>SRH 公式说明：位于禁带中部附近的陷阱通常最有效，因为它能依次俘获电子和空穴。</p>
+<h2 id="4-寿命与扩散长度"><a href="#4-寿命与扩散长度" class="headerlink" title="4. 寿命与扩散长度"></a>4. 寿命与扩散长度</h2><p>均匀小注入、关断外部产生后，过剩少子近似满足</p>
+<div class="math-display">\[\Delta n(t)=\Delta n(0)e^{-t/\tau_n}.\]</div>
+
+<p>在空间输运问题中，扩散长度</p>
+<div class="math-display">\[L_n=\sqrt{D_n\tau_n},\qquad L_p=\sqrt{D_p\tau_p}\]</div>
+
+<p>给出少子在复合前扩散的典型距离。PN 二极管饱和电流、BJT 基区输运因子、光电探测器收集效率都依赖它。</p>
+<h2 id="5-常见误区"><a href="#5-常见误区" class="headerlink" title="5. 常见误区"></a>5. 常见误区</h2><ul>
+<li>“寿命”不是单个电子固有且固定的寿命；它取决于注入水平、陷阱、温度和复合通道。</li>
+<li>准费米能级不是新增能带，而是描述非平衡占据的热力学参数。</li>
+<li>发光强不等于总复合少；LED 需要让辐射复合相对非辐射复合占优。</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, Chapters 1, 2, 12 and 13.</li>
+<li>W. Shockley and W. T. Read, “Statistics of the Recombinations of Holes and Electrons,” <em>Physical Review</em> <strong>87</strong>, 835 (1952).</li>
+</ol>
+</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Excess-Carriers-and-Low-Injection" data-toc-index="0">Excess Carriers and Low Injection</a></li><li><a href="#Quasi-Fermi-Levels" data-toc-index="1">Quasi Fermi Levels</a></li><li><a href="#Generation-and-Recombination-Mechanisms" data-toc-index="2">Generation and Recombination Mechanisms</a></li><li><a href="#Lifetime-and-Diffusion-Length" data-toc-index="3">Lifetime and Diffusion Length</a></li><li><a href="#Common-Pitfalls" data-toc-index="4">Common Pitfalls</a></li><li><a href="#References" data-toc-index="5">References</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/semiconductor-band-carrier-statistics/"><span data-lang="en">Energy Bands, Density of States, and Carrier Statistics</span><span data-lang="zh" hidden>能带、态密度与载流子统计</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/semiconductor-carrier-transport/"><span data-lang="en">Drift, Diffusion, and Current in Semiconductors</span><span data-lang="zh" hidden>半导体中的漂移、扩散与电流</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/semiconductor-device-equations/"><span data-lang="en">The Governing Equations of Semiconductor Devices</span><span data-lang="zh" hidden>半导体器件的基本方程</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/pn-junction-physics/"><span data-lang="en">The PN Junction: Space Charge, Band Bending, and Rectification</span><span data-lang="zh" hidden>PN结：空间电荷、能带与整流</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/optoelectronic-semiconductor-devices/"><span data-lang="en">Optoelectronic Devices: LEDs, Photodiodes, and Solar Cells</span><span data-lang="zh" hidden>光电子器件：LED、光电二极管与太阳电池</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li></ul></section></article></main>
+<footer class="node-footer"><span data-lang="en">A standalone note connected through the knowledge atlas.</span><span data-lang="zh" hidden>一个通过知识图谱与其他概念相连的独立知识节点。</span></footer><script>(function(){var buttons=Array.from(document.querySelectorAll('[data-lang-option]'));var panels=Array.from(document.querySelectorAll('[data-lang]'));function setLanguage(language){panels.forEach(function(panel){panel.hidden=panel.dataset.lang!==language;});buttons.forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.langOption===language));});document.documentElement.lang=language==='zh'?'zh-CN':'en';}buttons.forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.langOption);});});document.querySelectorAll('[data-toc-index]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();var active=document.querySelector('.node-content[data-lang]:not([hidden])');var heading=active&&active.querySelectorAll('h2')[Number(link.dataset.tocIndex)];if(heading){heading.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+heading.id);}});});setLanguage('en');})();</script></body></html>

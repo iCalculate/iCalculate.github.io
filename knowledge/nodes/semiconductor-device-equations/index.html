@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Governing Equations of Semiconductor Devices · Knowledge Atlas</title><meta name="description" content="The self-consistent Poisson, carrier-statistics, drift–diffusion, and continuity system underlying classical semiconductor-device simulation.">
+<link rel="icon" href="/assets/favicon.ico"><link rel="stylesheet" href="/knowledge/graph.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
+<body class="knowledge-node-page"><header class="node-header"><a class="wordmark" href="/">iCalculate’s Studio</a><nav><a href="/archives/">Archive</a><a href="/knowledge/">Knowledge Atlas</a></nav></header>
+<main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">The Governing Equations of Semiconductor Devices</span><span data-lang="zh" hidden>半导体器件的基本方程</span></h1><p class="node-deck"><span data-lang="en">The self-consistent Poisson, carrier-statistics, drift–diffusion, and continuity system underlying classical semiconductor-device simulation.</span><span data-lang="zh" hidden>将泊松方程、载流子统计、漂移扩散电流与连续性方程闭合成经典器件模拟的自洽方程组。</span></p><div class="node-tags"><span>Fundamental Models</span><span>Transport Physics</span><span>Simulation</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
+<p><strong>Core idea:</strong> Classical device physics closes four loops: charge produces potential; potential and statistics determine carrier density; carrier motion produces current; and current divergence changes the carrier population.</p>
+</blockquote>
+<h2 id="Poisson’s-Equation-Charge-to-Potential"><a href="#Poisson’s-Equation-Charge-to-Potential" class="headerlink" title="Poisson’s Equation: Charge to Potential"></a>Poisson’s Equation: Charge to Potential</h2><div class="math-display">\[\nabla\cdot(\varepsilon\nabla\psi)=-\rho,\]</div>
+
+<p>with</p>
+<div class="math-display">\[\rho=q(p-n+N_D^+-N_A^-)+\rho_{trap}+\rho_{fixed}.\]</div>
+
+<p>The depletion approximation neglects mobile charge in a specified region, reducing Poisson’s equation to a piecewise fixed-charge problem.</p>
+<h2 id="State-Relations-Potential-to-Carrier-Density"><a href="#State-Relations-Potential-to-Carrier-Density" class="headerlink" title="State Relations: Potential to Carrier Density"></a>State Relations: Potential to Carrier Density</h2><p>For nondegenerate carriers,</p>
+<div class="math-display">\[n=n_i\exp\frac{E_{Fn}-E_i}{kT},\qquad
+p=n_i\exp\frac{E_i-E_{Fp}}{kT},\]</div>
+
+<p>where \(E_i=E_{i0}-q\psi\). Equilibrium uses one constant \(E_F\); nonequilibrium requires separate quasi-Fermi levels.</p>
+<h2 id="Constitutive-Relations-Carriers-to-Current"><a href="#Constitutive-Relations-Carriers-to-Current" class="headerlink" title="Constitutive Relations: Carriers to Current"></a>Constitutive Relations: Carriers to Current</h2><div class="math-display">\[\mathbf J_n=q\mu_n n\mathbf E+qD_n\nabla n,
+\qquad
+\mathbf J_p=q\mu_p p\mathbf E-qD_p\nabla p.\]</div>
+
+<p>Mobility, recombination, band gap, and dielectric constant may depend on position, temperature, field, and density. TCAD is therefore not merely a fixed-coefficient PDE solve.</p>
+<h2 id="Continuity-Local-Conservation"><a href="#Continuity-Local-Conservation" class="headerlink" title="Continuity: Local Conservation"></a>Continuity: Local Conservation</h2><div class="math-display">\[\frac{\partial n}{\partial t}=\frac{1}{q}\nabla\cdot\mathbf J_n+G_n-R_n,\]</div>
+
+<div class="math-display">\[\frac{\partial p}{\partial t}=-\frac{1}{q}\nabla\cdot\mathbf J_p+G_p-R_p.\]</div>
+
+<p>Steady state does not always imply \(\nabla\cdot J=0\): current may vary spatially when net generation or recombination is present.</p>
+<h2 id="Boundary-Conditions-Create-the-Device"><a href="#Boundary-Conditions-Create-the-Device" class="headerlink" title="Boundary Conditions Create the Device"></a>Boundary Conditions Create the Device</h2><ul>
+<li>Ohmic contacts fix carrier densities or quasi-Fermi potentials.</li>
+<li>Schottky contacts add thermionic emission and tunneling across a barrier.</li>
+<li>Insulating boundaries suppress normal particle flux but may contain fixed charge and interface states.</li>
+<li>Optical and thermal boundaries set photon flux and electrothermal feedback.</li>
+</ul>
+<h2 id="Hierarchy-of-Approximations"><a href="#Hierarchy-of-Approximations" class="headerlink" title="Hierarchy of Approximations"></a>Hierarchy of Approximations</h2><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Retained physics</th>
+<th>Failure signal</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Depletion approximation</td>
+<td>Poisson plus ionized dopants</td>
+<td>mobile charge cannot be neglected</td>
+</tr>
+<tr>
+<td>Drift–diffusion</td>
+<td>local equilibrium with frequent scattering</td>
+<td>length approaches mean free path</td>
+</tr>
+<tr>
+<td>Energy-balance&#x2F;hydrodynamic</td>
+<td>carrier temperature and high field</td>
+<td>strong coherence or tunneling</td>
+</tr>
+<tr>
+<td>NEGF&#x2F;quantum transport</td>
+<td>open-boundary quantum states and scattering</td>
+<td>high computational and model cost</td>
+</tr>
+</tbody></table>
+<p>Analytical models reveal scaling; numerical models retain geometry and nonlinear coupling. They should cross-check rather than replace one another.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., §1.8.</li>
+<li>S. Selberherr, <em>Analysis and Simulation of Semiconductor Devices</em>.</li>
+</ol>
+</div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
+<p><strong>核心结论</strong>：经典器件物理的最小闭合系统由“电荷产生电势、电势与统计决定载流子、载流子运动产生电流、电流散度改变载流子数”四个环节组成。</p>
+</blockquote>
+<h2 id="1-泊松方程：电荷与势"><a href="#1-泊松方程：电荷与势" class="headerlink" title="1. 泊松方程：电荷与势"></a>1. 泊松方程：电荷与势</h2><div class="math-display">\[\nabla\cdot(\varepsilon\nabla\psi)=-\rho,\]</div>
+
+<p>其中</p>
+<div class="math-display">\[\rho=q(p-n+N_D^+-N_A^-)+\rho_{trap}+\rho_{fixed}.\]</div>
+
+<p>在均匀介电常数的一维区域，\(d^2\psi/dx^2=-\rho/\varepsilon\)。耗尽近似通过把耗尽区内自由载流子忽略，将它化为分段常数电荷问题。</p>
+<h2 id="2-状态方程：势与载流子"><a href="#2-状态方程：势与载流子" class="headerlink" title="2. 状态方程：势与载流子"></a>2. 状态方程：势与载流子</h2><p>非简并条件下</p>
+<div class="math-display">\[n=n_i\exp\frac{E_{Fn}-E_i}{kT},\qquad
+p=n_i\exp\frac{E_i-E_{Fp}}{kT},\]</div>
+
+<p>而 \(E_i=E_{i0}-q\psi\)。平衡时 \(E_{Fn}=E_{Fp}=E_F\)；非平衡时两者必须分别求解。</p>
+<h2 id="3-本构关系：载流子与电流"><a href="#3-本构关系：载流子与电流" class="headerlink" title="3. 本构关系：载流子与电流"></a>3. 本构关系：载流子与电流</h2><div class="math-display">\[\mathbf J_n=q\mu_n n\mathbf E+qD_n\nabla n,
+\qquad
+\mathbf J_p=q\mu_p p\mathbf E-qD_p\nabla p.\]</div>
+
+<p>迁移率、复合率、带隙和介电常数可以依赖位置、温度、场强及载流子浓度，因此真实 TCAD 并非只求一个固定系数的偏微分方程。</p>
+<h2 id="4-连续性方程：局域守恒"><a href="#4-连续性方程：局域守恒" class="headerlink" title="4. 连续性方程：局域守恒"></a>4. 连续性方程：局域守恒</h2><div class="math-display">\[\frac{\partial n}{\partial t}=\frac{1}{q}\nabla\cdot\mathbf J_n+G_n-R_n,\]</div>
+
+<div class="math-display">\[\frac{\partial p}{\partial t}=-\frac{1}{q}\nabla\cdot\mathbf J_p+G_p-R_p.\]</div>
+
+<p>符号差来自电子和空穴电荷相反。稳态不意味着 \(\nabla\cdot J=0\) 总是成立；存在净产生复合时，电流可沿位置变化。</p>
+<h2 id="5-边界条件决定器件"><a href="#5-边界条件决定器件" class="headerlink" title="5. 边界条件决定器件"></a>5. 边界条件决定器件</h2><p>同一组体方程配上不同边界条件会生成不同器件行为：</p>
+<ul>
+<li>欧姆接触固定载流子浓度或准费米势；</li>
+<li>肖特基接触允许热发射&#x2F;隧穿并形成势垒；</li>
+<li>绝缘边界通常要求法向粒子流为零，但可含固定电荷和界面态；</li>
+<li>光学边界决定入射光子通量；热边界决定自热和热失控。</li>
+</ul>
+<h2 id="6-近似的层级"><a href="#6-近似的层级" class="headerlink" title="6. 近似的层级"></a>6. 近似的层级</h2><table>
+<thead>
+<tr>
+<th>模型</th>
+<th>保留内容</th>
+<th>失效信号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>耗尽近似</td>
+<td>泊松方程、离化杂质</td>
+<td>载流子不可忽略或强反型</td>
+</tr>
+<tr>
+<td>漂移–扩散</td>
+<td>局域准平衡、散射充分</td>
+<td>长度接近平均自由程</td>
+</tr>
+<tr>
+<td>能量平衡&#x2F;流体模型</td>
+<td>载流子温度与高场效应</td>
+<td>强量子相干或隧穿</td>
+</tr>
+<tr>
+<td>NEGF&#x2F;量子输运</td>
+<td>开放边界量子态与散射</td>
+<td>计算量大、需可靠自能模型</td>
+</tr>
+</tbody></table>
+<p>理想解析公式的价值在于揭示尺度关系；数值求解的价值在于保留几何、材料和非线性耦合。两者应相互校验，而不是相互替代。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., §1.8.</li>
+<li>S. Selberherr, <em>Analysis and Simulation of Semiconductor Devices</em>.</li>
+</ol>
+</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Poisson’s-Equation-Charge-to-Potential" data-toc-index="0">Poisson’s Equation: Charge to Potential</a></li><li><a href="#State-Relations-Potential-to-Carrier-Density" data-toc-index="1">State Relations: Potential to Carrier Density</a></li><li><a href="#Constitutive-Relations-Carriers-to-Current" data-toc-index="2">Constitutive Relations: Carriers to Current</a></li><li><a href="#Continuity-Local-Conservation" data-toc-index="3">Continuity: Local Conservation</a></li><li><a href="#Boundary-Conditions-Create-the-Device" data-toc-index="4">Boundary Conditions Create the Device</a></li><li><a href="#Hierarchy-of-Approximations" data-toc-index="5">Hierarchy of Approximations</a></li><li><a href="#References" data-toc-index="6">References</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/semiconductor-band-carrier-statistics/"><span data-lang="en">Energy Bands, Density of States, and Carrier Statistics</span><span data-lang="zh" hidden>能带、态密度与载流子统计</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/semiconductor-carrier-transport/"><span data-lang="en">Drift, Diffusion, and Current in Semiconductors</span><span data-lang="zh" hidden>半导体中的漂移、扩散与电流</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/non-equilibrium-carriers/"><span data-lang="en">Nonequilibrium Carriers: Generation, Recombination, and Quasi-Fermi Levels</span><span data-lang="zh" hidden>非平衡载流子：产生、复合与准费米能级</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/2025/07/03/MOSFET-Quantum-Transport-Simulation/"><span data-lang="en">MOSFET Quantum Transport Simulation</span><span data-lang="zh" hidden>MOSFET Quantum Transport Simulation</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li></ul></section></article></main>
+<footer class="node-footer"><span data-lang="en">A standalone note connected through the knowledge atlas.</span><span data-lang="zh" hidden>一个通过知识图谱与其他概念相连的独立知识节点。</span></footer><script>(function(){var buttons=Array.from(document.querySelectorAll('[data-lang-option]'));var panels=Array.from(document.querySelectorAll('[data-lang]'));function setLanguage(language){panels.forEach(function(panel){panel.hidden=panel.dataset.lang!==language;});buttons.forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.langOption===language));});document.documentElement.lang=language==='zh'?'zh-CN':'en';}buttons.forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.langOption);});});document.querySelectorAll('[data-toc-index]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();var active=document.querySelector('.node-content[data-lang]:not([hidden])');var heading=active&&active.querySelectorAll('h2')[Number(link.dataset.tocIndex)];if(heading){heading.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+heading.id);}});});setLanguage('en');})();</script></body></html>

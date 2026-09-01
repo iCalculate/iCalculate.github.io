@@ -72,7 +72,10 @@
     if (node.topicType === 'hierarchy-group') return 6.8;
     if (node.topicType === 'hierarchy-tag') return 4.6;
     if (node.type === 'topic') return 3.4 + Math.min(node.frequency || node.degree, 8) * .28;
-    return 5.2 + Math.min(node.degree, 12) * .32;
+    const articleRadius = 5.2 + Math.min(node.degree, 12) * .32;
+    // Notes are drawn as 45° diamonds, whose diagonal makes them look √2 larger
+    // than circular articles with the same radius. Compensate for that geometry.
+    return node.type === 'note' ? articleRadius * .72 : articleRadius;
   }
 
   function visible(node) {
