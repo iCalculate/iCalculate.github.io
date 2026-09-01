@@ -62,3 +62,34 @@ html,body{background:#e8eef0;color:#4b5960}
 .inspector-type,.open-node,#inspector-links button:hover{color:var(--active-domain)}
 .open-node{border-top-color:var(--active-domain)}
 .inspector[hidden],.open-node[hidden]{display:none!important}
+
+/* Dark index rail: a quiet archival counterpoint to the pale graph paper. */
+.atlas-panel{color:#dedede;background:radial-gradient(circle at 8% 0,rgba(255,255,255,.055),transparent 34%),linear-gradient(155deg,rgba(24,24,24,.99),rgba(39,39,39,.975));border-right-color:rgba(255,255,255,.12);box-shadow:12px 0 38px rgba(20,20,20,.22);scrollbar-color:rgba(255,255,255,.24) transparent}
+.atlas-panel .eyebrow{color:#f06c6e}
+.atlas-panel h1{color:#f0f0f0;text-shadow:0 1px 18px rgba(255,255,255,.045)}
+.atlas-panel .intro{color:#b3b3b3}
+.atlas-panel .search-box>span,.atlas-panel .layout-picker legend,.atlas-panel .filters legend{color:#858585}
+.atlas-panel .search-box input{background:rgba(255,255,255,.05);color:#ededed;border-color:rgba(255,255,255,.16)}
+.atlas-panel .search-box input:focus{background:rgba(255,255,255,.085);border-color:var(--active-domain);box-shadow:0 0 0 1px color-mix(in srgb,var(--active-domain) 20%,transparent)}
+.atlas-panel .search-box input::placeholder{color:#737373}
+.atlas-panel .search-box kbd{color:#929292;border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.025)}
+.atlas-panel .layout-picker,.atlas-panel .filters,.atlas-panel .atlas-actions{border-color:rgba(255,255,255,.1)}
+.atlas-panel .layout-picker button{color:#979797;background:rgba(255,255,255,.022);border-color:rgba(255,255,255,.13)}
+.atlas-panel .layout-picker button:last-child{border-right-color:rgba(255,255,255,.13)}
+.atlas-panel .layout-picker button:hover{color:#e2e2e2;background:rgba(255,255,255,.06)}
+.atlas-panel .layout-picker button.active{color:#f4f4f4;border-color:var(--active-domain);background:rgba(255,255,255,.085)}
+.atlas-panel .filters label{color:#c2c2c2}
+.atlas-panel .filters b,.atlas-panel .hint{color:#747474}
+.atlas-panel .filters .post-dot{color:#b8b8b8;background:#b8b8b8}
+.atlas-panel .filters .topic-dot{color:#a8a8a8}
+.atlas-panel .atlas-actions button{color:#999;border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.016)}
+.atlas-panel .atlas-actions button:hover{color:#f2f2f2;border-color:var(--active-domain);background:rgba(255,255,255,.06)}
+@media(max-width:850px){.atlas-panel{background:radial-gradient(circle at 8% 0,rgba(255,255,255,.055),transparent 34%),linear-gradient(155deg,rgba(24,24,24,.995),rgba(39,39,39,.99))}.panel-toggle{background:#252525;color:#f06c6e;border-color:rgba(255,255,255,.14)}}
+
+/* Bilingual knowledge notes: English-first editorial reading mode. */
+.node-shell-bilingual{width:min(1180px,calc(100% - 48px))}.node-language{display:flex;align-items:center;gap:0;margin:-24px 0 44px}.node-language>span{margin-right:14px;color:var(--muted);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}.node-language button{border:1px solid var(--line);background:transparent;color:var(--muted);padding:8px 13px;cursor:pointer;font-size:10px;letter-spacing:.1em;text-transform:uppercase;transition:background .2s,border-color .2s,color .2s}.node-language button+button{border-left:0}.node-language button:hover{color:var(--ink)}.node-language button[aria-pressed="true"]{border-color:#f75357;background:#f75357;color:#fff}.node-reading-grid{display:grid;grid-template-columns:minmax(0,820px) 220px;gap:80px;align-items:start}.node-languages{min-width:0}.node-toc{position:sticky;top:38px;border-left:1px solid #e5e5e5;padding:3px 0 4px 22px}.node-toc>span{display:block;margin-bottom:15px;color:var(--muted);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}.node-toc ol{list-style:none;margin:0;padding:0}.node-toc li{margin:0 0 10px}.node-toc a{display:block;color:#87949a;font-size:12px;line-height:1.35;transition:color .2s,transform .2s}.node-toc a:hover{color:var(--note);transform:translateX(3px)}[data-lang][hidden]{display:none!important}
+@media(max-width:1050px){.node-reading-grid{grid-template-columns:minmax(0,1fr) 190px;gap:45px}}
+@media(max-width:760px){.node-shell-bilingual{width:min(850px,calc(100% - 36px))}.node-reading-grid{display:block}.node-toc{position:static;margin:0 0 42px;border-left:0;border-top:1px solid var(--line);padding:18px 0 0}.node-toc ol{columns:2;column-gap:24px}.node-language{margin-top:-16px}.node-article h1{font-size:clamp(42px,14vw,66px)}}
+
+/* Scientific note primitives: responsive figures, data tables, and long equations. */
+.node-content img{display:block;width:100%;height:auto;margin:2.4em auto .8em;border:1px solid var(--line);background:#fff}.node-content table{display:block;width:100%;overflow-x:auto;border-collapse:collapse;margin:2em 0;font:15px/1.55 Arial,sans-serif}.node-content th,.node-content td{padding:10px 12px;border:1px solid var(--line);text-align:left;vertical-align:top}.node-content th{color:#555;background:#f3f3f3}.node-content mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:.5em 0}.node-content hr{border:0;border-top:1px solid var(--line);margin:3em 0}
