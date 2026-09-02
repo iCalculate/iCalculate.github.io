@@ -1,0 +1,2395 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNMSN3C9M8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MNMSN3C9M8');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="Du Xinchuan">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Du Xinchuan">
+    
+    <meta name="keywords" content="Xinchuan Du,Du Xinchuan,2D materials,optoelectronic devices,spectroscopy,semiconductor physics,photodetectors,quantum sensing">
+    
+    <meta name="description" content="Dr. Xinchuan Du's research notes and project documentation. 
+Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sensing.
+">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Electronic Quantum Condensed Matter: An Interactive Knowledge Directory · Xinchuan Du | Researcher in 2D Materials &amp; Optoelectronics</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("../../../../font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "../../../../css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "../../../../css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "../../../../assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="../../../../scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="../../../../font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', '[object Object]', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="../../../../index.html" >iCalculate’s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>iCalculate’s Studio</a>
+    <a class="knowledge-atlas-link" href="../../../../knowledge/">Knowledge Atlas</a>
+</header>
+<style>
+  .knowledge-atlas-link {
+    position: absolute; left: 4.5rem; right: auto; top: 1.55rem; z-index: 2;
+    color: rgba(255,255,255,.82); font-size: .72rem; letter-spacing: .13em;
+    text-transform: uppercase; border-bottom: 1px solid rgba(247,83,87,.85);
+    padding-bottom: .22rem; transition: color .2s ease, border-color .2s ease;
+  }
+  .knowledge-atlas-link:hover { color: #fff; border-color: #fff; }
+  @media (max-width: 680px) { .knowledge-atlas-link { left: 3.8rem; right: auto; top: 1.35rem; font-size: .62rem; } }
+</style>
+
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(../../../../intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Electronic Quantum Condensed Matter: An Interactive Knowledge Directory
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Research Resources">Research Resources</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Condensed Matter Foundations">Condensed Matter Foundations</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">4.4k</span>Reading time: <span class="post-count reading-time">20 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2026/09/02</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "../../../../lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="../../../../assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <link rel="stylesheet" href="/css/bilingual-post.css">
+<script defer src="/js/bilingual-post.js"></script>
+<nav class="language-switcher" aria-label="Article language">
+  <span class="language-switcher__label">Read in</span>
+  <button type="button" data-language="en" aria-pressed="true">English</button>
+  <button type="button" data-language="zh" aria-pressed="false">中文</button>
+</nav>
+<section class="lang-panel lang-en" lang="en">
+<link rel="stylesheet" href="/css/semiconductor-quantum-directory.css">
+<script defer src="/js/semiconductor-quantum-directory.js"></script>
+<h1>Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</h1>
+<p>Electronic condensed matter asks how many microscopic particles organize into robust collective behaviour. This directory follows a reconstructive path from crystals and bands to correlations, magnetic order, superconducting coherence and topological response, with explicit links to device consequences.</p>
+<!--more-->
+<div class="sq-directory" data-directory-lang="en">
+  <div class="sq-directory__mast"><div><span>Interactive field index</span><strong>41</strong><small>bilingual entry points</small></div><p>Move from symmetry and microscopic interactions to collective order, topology and coherent devices.</p></div>
+  <div class="sq-controls"><label class="sq-search"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search a concept, device, or physical mechanism" aria-label="Search a concept, device, or physical mechanism"><kbd>/</kbd></label>
+  <div class="sq-filter" role="group" aria-label="Maturity filter"><button type="button" data-maturity="all" aria-pressed="true">All maturity</button><button type="button" data-maturity="foundation" aria-pressed="false">Foundation</button><button type="button" data-maturity="engineering" aria-pressed="false">Engineering</button><button type="button" data-maturity="prototype" aria-pressed="false">Prototype</button><button type="button" data-maturity="frontier" aria-pressed="false">Frontier</button></div>
+  <div class="sq-paths"><span>Quick learning paths</span><button type="button" data-path="all" aria-pressed="true">Complete map</button><button type="button" data-path="foundations,correlations,magnetism">Magnetism</button><button type="button" data-path="foundations,correlations,superconductivity">Superconductivity</button><button type="button" data-path="foundations,topology,superconductivity">Topology</button></div>
+  <div class="sq-actions"><span class="sq-status" aria-live="polite"><b>41</b> visible entries</span><button type="button" data-expand>Expand all</button><button type="button" data-collapse>Collapse all</button></div></div>
+  <div class="sq-branches"><section class="sq-branch is-collapsed" data-branch="foundations">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">01</span>
+  <span><strong>Crystal and Electronic Foundations</strong><small>Symmetry, bands, quasiparticles, phonons and dimensional reduction.</small></span>
+  <em><span data-branch-count>9</span> entries</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="electronic quantum condensed matter knowledge network 电子量子凝聚态物理知识网络 electronic condensed matter connects crystal symmetry and microscopic interactions to quasiparticles, collective order, topology and experimentally accessible response. 电子凝聚态物理把晶体对称性与微观相互作用连接到准粒子、集体有序、拓扑及可实验测量的响应。 condensed matter foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>Condensed Matter Foundations · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Electronic Quantum Condensed Matter Knowledge Network</h3><p>Electronic condensed matter connects crystal symmetry and microscopic interactions to quasiparticles, collective order, topology and experimentally accessible response.</p>
+  <a href="/knowledge/nodes/electronic-quantum-condensed-matter-knowledge-network/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="crystal symmetry, reciprocal space and bloch states 晶体对称性、倒易空间与 bloch 状态 translation and point-group symmetry organize electronic states into crystal momentum, bands and irreducible representations that constrain degeneracy and allowed responses. 平移与点群对称性把电子态组织为晶体动量、能带和不可约表示，并约束简并与允许响应。 crystal &amp; band foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>Crystal &amp; Band Foundations · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Crystal Symmetry, Reciprocal Space and Bloch States</h3><p>Translation and point-group symmetry organize electronic states into crystal momentum, bands and irreducible representations that constrain degeneracy and allowed responses.</p>
+  <a href="/knowledge/nodes/crystal-symmetry-reciprocal-space-bloch-states/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="band structure, fermi surfaces, density of states and lifshitz transitions 能带、费米面、态密度与 lifshitz 转变 the fermi surface is the momentum-space boundary controlling low-energy metallic response, while a lifshitz transition changes its topology without necessarily breaking symmetry. 费米面是控制金属低能响应的动量空间边界；lifshitz 转变改变其拓扑，却不一定伴随对称性破缺。 crystal &amp; band foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>Crystal &amp; Band Foundations · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Band Structure, Fermi Surfaces, Density of States and Lifshitz Transitions</h3><p>The Fermi surface is the momentum-space boundary controlling low-energy metallic response, while a Lifshitz transition changes its topology without necessarily breaking symmetry.</p>
+  <a href="/knowledge/nodes/band-structure-fermi-surface-density-lifshitz/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="quasiparticles, self-energy and landau fermi liquids 准粒子、自能与朗道费米液体 a fermi liquid replaces interacting electrons by long-lived quasiparticles near the fermi surface, with renormalized energy, residue and scattering constrained by phase space. 费米液体把相互作用电子替换为费米面附近长寿命准粒子，其能量、谱重和散射受到相空间约束并被重整化。 quasiparticles foundation knowledge note">
+  <div class="sq-card__meta"><span>Quasiparticles · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Quasiparticles, Self-Energy and Landau Fermi Liquids</h3><p>A Fermi liquid replaces interacting electrons by long-lived quasiparticles near the Fermi surface, with renormalized energy, residue and scattering constrained by phase space.</p>
+  <a href="/knowledge/nodes/quasiparticles-self-energy-landau-fermi-liquid/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="phonons, lattice dynamics and electron–phonon coupling 声子、晶格动力学与电子–声子耦合 phonons quantize collective lattice motion and exchange energy and momentum with electrons, governing heat transport, resistance, structural instabilities and conventional pairing. 声子量子化晶格集体运动，并与电子交换能量和动量，从而控制热输运、电阻、结构不稳定与常规配对。 lattice dynamics foundation knowledge note">
+  <div class="sq-card__meta"><span>Lattice Dynamics · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Phonons, Lattice Dynamics and Electron–Phonon Coupling</h3><p>Phonons quantize collective lattice motion and exchange energy and momentum with electrons, governing heat transport, resistance, structural instabilities and conventional pairing.</p>
+  <a href="/knowledge/nodes/phonons-lattice-dynamics-electron-phonon-coupling/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="two-dimensional quantum foundations 二维量子物理基础 reducing a crystal to one or a few atomic layers changes screening, density of states, symmetry and available internal degrees of freedom; it does more than merely shrink a bulk semiconductor. 把晶体减薄到单层或少层会同时改变屏蔽、态密度、对称性和内部自由度，并非只是把体材料缩小。 2d quantum foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>2D Quantum Foundations · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Two-Dimensional Quantum Foundations</h3><p>Reducing a crystal to one or a few atomic layers changes screening, density of states, symmetry and available internal degrees of freedom; it does more than merely shrink a bulk semiconductor.</p>
+  <a href="/knowledge/nodes/two-dimensional-quantum-foundations/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="dirac fermions in two-dimensional materials 二维材料中的狄拉克费米子 in graphene-like systems two sublattices produce a low-energy pseudospin hamiltonian with approximately linear dispersion and chiral wavefunctions. 在石墨烯类体系中，两套亚晶格形成低能赝自旋哈密顿量，产生近似线性色散和手性波函数。 2d quantum foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>2D Quantum Foundations · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Dirac Fermions in Two-Dimensional Materials</h3><p>In graphene-like systems two sublattices produce a low-energy pseudospin Hamiltonian with approximately linear dispersion and chiral wavefunctions.</p>
+  <a href="/knowledge/nodes/dirac-fermions-in-two-dimensional-materials/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="landauer–büttiker quantum transport landauer–büttiker 量子输运 mesoscopic current is carried by quantum modes whose occupations are fixed by reservoirs and whose contribution is weighted by transmission. 介观电流由量子传输模式承载，模式占据由电极库决定，贡献由透射率加权。 mesoscopic transport foundation knowledge note">
+  <div class="sq-card__meta"><span>Mesoscopic Transport · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Landauer–Büttiker Quantum Transport</h3><p>Mesoscopic current is carried by quantum modes whose occupations are fixed by reservoirs and whose contribution is weighted by transmission.</p>
+  <a href="/knowledge/nodes/landauer-buttiker-transport/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="from an electron sea to quasiparticles: landau fermi-liquid theory (part ii) 从电子海到准粒子：朗道费米液体理论（下） why interactions do not necessarily destroy the electron picture: quasiparticles, landau parameters, response functions, zero sound and the routes beyond fermi-liquid theory. why interactions do not necessarily destroy the electron picture: quasiparticles, landau parameters, response functions, zero sound and the routes beyond fermi-liquid theory. electronic structure foundation article">
+  <div class="sq-card__meta"><span>Electronic Structure · Article</span><b data-tone="foundation">Foundation</b></div>
+  <h3>From an Electron Sea to Quasiparticles: Landau Fermi-Liquid Theory (Part II)</h3><p>Why interactions do not necessarily destroy the electron picture: quasiparticles, Landau parameters, response functions, zero sound and the routes beyond Fermi-liquid theory.</p>
+  <a href="/2026/09/01/Landau-Fermi-Liquid-Theory/">Open entry <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="correlations">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">02</span>
+  <span><strong>Correlations and Phase Transitions</strong><small>Symmetry breaking, quantum criticality, disorder, Mott physics and moiré matter.</small></span>
+  <em><span data-branch-count>7</span> entries</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="spontaneous symmetry breaking, order parameters and landau theory 自发对称性破缺、序参量与朗道理论 landau theory classifies phases by an order parameter and symmetry-allowed free energy, explaining universal transition structure without requiring every microscopic detail. 朗道理论用序参量与对称性允许的自由能分类物相，在不依赖全部微观细节的情况下解释普适相变结构。 symmetry breaking foundation knowledge note">
+  <div class="sq-card__meta"><span>Symmetry Breaking · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Spontaneous Symmetry Breaking, Order Parameters and Landau Theory</h3><p>Landau theory classifies phases by an order parameter and symmetry-allowed free energy, explaining universal transition structure without requiring every microscopic detail.</p>
+  <a href="/knowledge/nodes/spontaneous-symmetry-breaking-order-parameters-landau/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="quantum phase transitions, critical scaling and quantum fluctuations 量子相变、临界标度与量子涨落 a quantum phase transition is driven by a nonthermal control parameter at zero temperature, with quantum fluctuations generating finite-temperature scaling and unconventional dynamics. 量子相变由零温下的非热控制参数驱动，量子涨落产生有限温标度和非常规动力学。 quantum criticality frontier knowledge note">
+  <div class="sq-card__meta"><span>Quantum Criticality · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Quantum Phase Transitions, Critical Scaling and Quantum Fluctuations</h3><p>A quantum phase transition is driven by a nonthermal control parameter at zero temperature, with quantum fluctuations generating finite-temperature scaling and unconventional dynamics.</p>
+  <a href="/knowledge/nodes/quantum-phase-transitions-critical-scaling-fluctuations/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="disorder, weak localization and anderson localization 无序、弱局域化与 anderson 局域化 elastic disorder makes quantum paths interfere; weak interference corrects diffusion, while sufficiently strong disorder can localize eigenstates and suppress dc transport without a conventional gap. 弹性无序使量子路径相干干涉；弱干涉修正扩散，而足够强的无序可局域化本征态并在无传统能隙时抑制直流输运。 disorder &amp; localization foundation knowledge note">
+  <div class="sq-card__meta"><span>Disorder &amp; Localization · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Disorder, Weak Localization and Anderson Localization</h3><p>Elastic disorder makes quantum paths interfere; weak interference corrects diffusion, while sufficiently strong disorder can localize eigenstates and suppress DC transport without a conventional gap.</p>
+  <a href="/knowledge/nodes/disorder-weak-localization-anderson-localization/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the hubbard model, mott transitions and strongly correlated electrons hubbard 模型、mott 转变与强关联电子 when local coulomb repulsion competes with bandwidth, electron motion and occupancy cannot be treated independently, producing mott insulation, local moments and emergent exchange. 当局域库仑排斥与带宽竞争时，电子运动与占据不能独立处理，由此产生 mott 绝缘、局域磁矩和涌现交换。 strong correlations foundation knowledge note">
+  <div class="sq-card__meta"><span>Strong Correlations · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>The Hubbard Model, Mott Transitions and Strongly Correlated Electrons</h3><p>When local Coulomb repulsion competes with bandwidth, electron motion and occupancy cannot be treated independently, producing Mott insulation, local moments and emergent exchange.</p>
+  <a href="/knowledge/nodes/hubbard-model-mott-transition-strong-correlations/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="from symmetry to phase transitions: landau&#39;s art of ignoring details (part i) 从对称性到相变：朗道如何教我们忽略细节（上） how order parameters, symmetry and free-energy expansions explain continuous phase transitions—and why critical fluctuations eventually defeat mean-field theory. how order parameters, symmetry and free-energy expansions explain continuous phase transitions—and why critical fluctuations eventually defeat mean-field theory. phase transitions foundation article">
+  <div class="sq-card__meta"><span>Phase Transitions · Article</span><b data-tone="foundation">Foundation</b></div>
+  <h3>From Symmetry to Phase Transitions: Landau&#39;s Art of Ignoring Details (Part I)</h3><p>How order parameters, symmetry and free-energy expansions explain continuous phase transitions—and why critical fluctuations eventually defeat mean-field theory.</p>
+  <a href="/2026/09/01/Landau-Theory-From-Symmetry-to-Phase-Transitions/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="cdw and sdw cdw and sdw existing article connected to this knowledge path. 与该知识路径相连的已有文章。 phase transitions foundation article">
+  <div class="sq-card__meta"><span>Phase Transitions · Article</span><b data-tone="foundation">Foundation</b></div>
+  <h3>CDW and SDW</h3><p>Existing article connected to this knowledge path.</p>
+  <a href="/2020/03/03/CDW-and-SDW/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="moiré quantum matter and correlated flat bands 莫尔量子物质与关联平带 a small twist angle or lattice mismatch produces a long-period moiré potential that narrows bands and makes coulomb interactions comparable to or larger than kinetic energy. 小扭角或晶格失配产生长周期莫尔势，使能带变窄，并令库仑相互作用达到或超过动能尺度。 moiré physics frontier knowledge note">
+  <div class="sq-card__meta"><span>Moiré Physics · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Moiré Quantum Matter and Correlated Flat Bands</h3><p>A small twist angle or lattice mismatch produces a long-period moiré potential that narrows bands and makes Coulomb interactions comparable to or larger than kinetic energy.</p>
+  <a href="/knowledge/nodes/moire-quantum-matter/">Open entry <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="magnetism">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">03</span>
+  <span><strong>Magnetism and Spin</strong><small>Exchange, ferroic orders, antiferromagnets, altermagnets, magnons and spin torque.</small></span>
+  <em><span data-branch-count>10</span> entries</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="localized and itinerant magnetism with exchange interactions 局域/巡游磁性与交换相互作用 magnetic order emerges from exchange constrained by orbital overlap, band filling and symmetry; local-moment and itinerant pictures are complementary limits rather than universal alternatives. 磁序来自受轨道重叠、能带填充与对称性约束的交换作用；局域磁矩与巡游图像是互补极限，而非普适二选一。 exchange &amp; magnetic order foundation knowledge note">
+  <div class="sq-card__meta"><span>Exchange &amp; Magnetic Order · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Localized and Itinerant Magnetism with Exchange Interactions</h3><p>Magnetic order emerges from exchange constrained by orbital overlap, band filling and symmetry; local-moment and itinerant pictures are complementary limits rather than universal alternatives.</p>
+  <a href="/knowledge/nodes/magnetism-exchange-localized-itinerant-electrons/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="ferromagnets, ferrimagnets and compensated magnets 铁磁、亚铁磁与补偿磁体 ferromagnets align moments parallel, ferrimagnets oppose unequal sublattices, and compensation points can suppress net moment while retaining ordered spin-dependent dynamics. 铁磁体平行排列磁矩，亚铁磁体由不等子晶格反向排列；补偿点可压低净磁矩而保留有序的自旋相关动力学。 exchange &amp; magnetic order foundation knowledge note">
+  <div class="sq-card__meta"><span>Exchange &amp; Magnetic Order · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Ferromagnets, Ferrimagnets and Compensated Magnets</h3><p>Ferromagnets align moments parallel, ferrimagnets oppose unequal sublattices, and compensation points can suppress net moment while retaining ordered spin-dependent dynamics.</p>
+  <a href="/knowledge/nodes/ferromagnets-ferrimagnets-compensated-magnets/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="antiferromagnetic order, néel vectors and spin dynamics 反铁磁序、néel 矢量与自旋动力学 antiferromagnets have oppositely ordered sublattices described by a néel vector, producing weak stray fields and fast exchange-enhanced dynamics without eliminating spin structure. 反铁磁体由反向有序子晶格构成，以 néel 矢量描述；它们具有弱杂散场和交换增强的快速动力学，但并非没有自旋结构。 antiferromagnetism foundation knowledge note">
+  <div class="sq-card__meta"><span>Antiferromagnetism · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Antiferromagnetic Order, Néel Vectors and Spin Dynamics</h3><p>Antiferromagnets have oppositely ordered sublattices described by a Néel vector, producing weak stray fields and fast exchange-enhanced dynamics without eliminating spin structure.</p>
+  <a href="/knowledge/nodes/antiferromagnetic-order-neel-vector-spin-dynamics/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="altermagnetism: symmetry and spin-split bands 交错磁性：对称性与自旋劈裂能带 altermagnets combine compensated collinear magnetic order with crystal symmetries that permit momentum-dependent spin splitting even without net magnetization in the nonrelativistic limit. 交错磁体把补偿共线磁序与特定晶体对称性结合，使非相对论极限下即使净磁化为零也能出现动量依赖的自旋劈裂。 altermagnetism frontier knowledge note">
+  <div class="sq-card__meta"><span>Altermagnetism · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Altermagnetism: Symmetry and Spin-Split Bands</h3><p>Altermagnets combine compensated collinear magnetic order with crystal symmetries that permit momentum-dependent spin splitting even without net magnetization in the nonrelativistic limit.</p>
+  <a href="/knowledge/nodes/altermagnetism-symmetry-spin-splitting/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="noncollinear order, dzyaloshinskii–moriya interaction and chiral magnetism 非共线磁序、dmi 与手性磁性 broken inversion symmetry and spin–orbit coupling generate antisymmetric exchange that favours twisted spin configurations with a fixed handedness. 反演对称性破缺与自旋轨道耦合产生反对称交换，从而偏好具有固定手性的扭曲自旋构型。 chiral magnetism foundation knowledge note">
+  <div class="sq-card__meta"><span>Chiral Magnetism · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Noncollinear Order, Dzyaloshinskii–Moriya Interaction and Chiral Magnetism</h3><p>Broken inversion symmetry and spin–orbit coupling generate antisymmetric exchange that favours twisted spin configurations with a fixed handedness.</p>
+  <a href="/knowledge/nodes/noncollinear-dmi-chiral-magnetism/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="spin waves, magnons and magnonics 自旋波、磁振子与磁振子学 magnons are quantized collective precessions of ordered spins that carry energy, momentum and angular momentum without net charge transport. 磁振子是有序自旋集体进动的量子，能够在无净电荷输运时携带能量、动量与角动量。 magnonics prototype knowledge note">
+  <div class="sq-card__meta"><span>Magnonics · Knowledge Note</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Spin Waves, Magnons and Magnonics</h3><p>Magnons are quantized collective precessions of ordered spins that carry energy, momentum and angular momentum without net charge transport.</p>
+  <a href="/knowledge/nodes/magnons-spin-waves-magnonics/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="magnetic skyrmions and topological spin textures skyrmion 与拓扑自旋纹理 a magnetic skyrmion is a smoothly wrapped spin texture carrying an integer real-space topological charge, stabilized by competing interactions and finite barriers. 磁 skyrmion 是平滑包裹的自旋纹理，携带整数实空间拓扑荷，并由相互作用竞争和有限能垒稳定。 topological spin textures prototype knowledge note">
+  <div class="sq-card__meta"><span>Topological Spin Textures · Knowledge Note</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Magnetic Skyrmions and Topological Spin Textures</h3><p>A magnetic skyrmion is a smoothly wrapped spin texture carrying an integer real-space topological charge, stabilized by competing interactions and finite barriers.</p>
+  <a href="/knowledge/nodes/magnetic-skyrmions-topological-spin-textures/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="geometric frustration, quantum magnetism and spin liquids 几何阻挫、量子磁性与自旋液体 frustration prevents all local exchange preferences from being satisfied simultaneously, allowing strong quantum fluctuations and possibly long-range entangled spin-liquid ground states. 阻挫使局域交换偏好无法同时满足，从而保留强量子涨落，并可能形成具有长程纠缠的自旋液体基态。 quantum magnetism frontier knowledge note">
+  <div class="sq-card__meta"><span>Quantum Magnetism · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Geometric Frustration, Quantum Magnetism and Spin Liquids</h3><p>Frustration prevents all local exchange preferences from being satisfied simultaneously, allowing strong quantum fluctuations and possibly long-range entangled spin-liquid ground states.</p>
+  <a href="/knowledge/nodes/frustrated-quantum-magnetism-spin-liquids/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="spin transport, spin-transfer torque and spin–orbit torque 自旋输运、自旋转移力矩与自旋轨道力矩 spin accumulation and spin currents transfer angular momentum to magnetic order, enabling electrical control through spin-transfer and spin–orbit torques. 自旋积累与自旋流把角动量传递给磁序，并通过自旋转移力矩和自旋轨道力矩实现电控制。 spin transport &amp; torque engineering knowledge note">
+  <div class="sq-card__meta"><span>Spin Transport &amp; Torque · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Spin Transport, Spin-Transfer Torque and Spin–Orbit Torque</h3><p>Spin accumulation and spin currents transfer angular momentum to magnetic order, enabling electrical control through spin-transfer and spin–orbit torques.</p>
+  <a href="/knowledge/nodes/spin-transport-transfer-orbit-torques/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="two-dimensional magnetism and spin filtering 二维磁性与自旋过滤 magnetic anisotropy and spin–orbit coupling can stabilize order in atomically thin magnets, while vdw interfaces provide clean spin filters and proximity exchange. 磁各向异性和自旋轨道耦合可在原子级薄磁体中稳定有序，vdw 界面则提供洁净的自旋过滤和邻近交换。 2d ferroics prototype knowledge note">
+  <div class="sq-card__meta"><span>2D Ferroics · Knowledge Note</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Two-Dimensional Magnetism and Spin Filtering</h3><p>Magnetic anisotropy and spin–orbit coupling can stabilize order in atomically thin magnets, while vdW interfaces provide clean spin filters and proximity exchange.</p>
+  <a href="/knowledge/nodes/two-dimensional-magnetism/">Open entry <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="superconductivity">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">04</span>
+  <span><strong>Superconductivity and Quantum Coherence</strong><small>Pairing, vortices, unconventional platforms, hybrids and nonequilibrium dynamics.</small></span>
+  <em><span data-branch-count>9</span> entries</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="cooper pairing, bcs theory and the superconducting gap cooper 配对、bcs 理论与超导能隙 an arbitrarily weak attraction destabilizes a fermi surface toward paired time-reversed states, producing a coherent condensate and a gap for single-particle excitations. 任意弱吸引都可使费米面对时间反演态配对不稳定，形成相干凝聚并打开单粒子激发能隙。 superconducting foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>Superconducting Foundations · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Cooper Pairing, BCS Theory and the Superconducting Gap</h3><p>An arbitrarily weak attraction destabilizes a Fermi surface toward paired time-reversed states, producing a coherent condensate and a gap for single-particle excitations.</p>
+  <a href="/knowledge/nodes/bcs-cooper-pairing-superconducting-gap/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="ginzburg–landau theory, type-i/ii superconductivity and vortices ginzburg–landau 理论、i/ii 类超导与涡旋 ginzburg–landau theory couples a complex superconducting order parameter to electromagnetic fields, defining coherence, penetration and quantized-vortex scales. ginzburg–landau 理论把复超导序参量与电磁场耦合，定义相干长度、穿透深度和量子化涡旋尺度。 superconducting foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>Superconducting Foundations · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Ginzburg–Landau Theory, Type-I/II Superconductivity and Vortices</h3><p>Ginzburg–Landau theory couples a complex superconducting order parameter to electromagnetic fields, defining coherence, penetration and quantized-vortex scales.</p>
+  <a href="/knowledge/nodes/gln-type-i-ii-superconductivity-vortices/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="unconventional superconductivity and pairing symmetry 非常规超导与配对对称性 unconventional superconductors possess pairing structures not captured by a uniform phonon-mediated spin-singlet gap, often linking sign changes or nodes to electronic interactions. 非常规超导具有均匀声子介导自旋单态能隙无法描述的配对结构，常把符号变化或节点与电子相互作用联系起来。 unconventional superconductivity frontier knowledge note">
+  <div class="sq-card__meta"><span>Unconventional Superconductivity · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Unconventional Superconductivity and Pairing Symmetry</h3><p>Unconventional superconductors possess pairing structures not captured by a uniform phonon-mediated spin-singlet gap, often linking sign changes or nodes to electronic interactions.</p>
+  <a href="/knowledge/nodes/unconventional-superconductivity-pairing-symmetry/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="cuprate, iron-based and other high-temperature superconducting platforms 铜氧化物、铁基和其他高温超导平台 high-temperature superconductors emerge from correlated multiorbital or doped-mott backgrounds where magnetism, nematicity, pseudogaps and pairing interact. 高温超导产生于关联多轨道或掺杂 mott 背景，其中磁性、向列性、赝能隙和配对相互交织。 unconventional superconductivity frontier knowledge note">
+  <div class="sq-card__meta"><span>Unconventional Superconductivity · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Cuprate, Iron-Based and Other High-Temperature Superconducting Platforms</h3><p>High-temperature superconductors emerge from correlated multiorbital or doped-Mott backgrounds where magnetism, nematicity, pseudogaps and pairing interact.</p>
+  <a href="/knowledge/nodes/high-temperature-superconducting-platforms/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="josephson, andreev and superconducting proximity effects josephson、andreev 与超导邻近效应 superconducting phase coherence crosses weak links through pair tunnelling and andreev conversion, inducing pairing correlations in otherwise normal materials. 超导相位相干通过对隧穿与 andreev 转换跨越弱连接，并在原本正常的材料中诱导配对关联。 superconducting hybrids engineering knowledge note">
+  <div class="sq-card__meta"><span>Superconducting Hybrids · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Josephson, Andreev and Superconducting Proximity Effects</h3><p>Superconducting phase coherence crosses weak links through pair tunnelling and Andreev conversion, inducing pairing correlations in otherwise normal materials.</p>
+  <a href="/knowledge/nodes/josephson-andreev-superconducting-proximity-effects/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="nonequilibrium superconductivity, kinetic inductance and hotspot dynamics 非平衡超导、动能电感与热点动力学 driven superconductors contain nonequilibrium quasiparticles, phonons and order-parameter suppression whose coupled relaxation controls kinetic inductance, switching and photon detection. 受驱超导体包含非平衡准粒子、声子和序参量抑制，其耦合弛豫控制动能电感、开关与光子探测。 superconducting hybrids frontier knowledge note">
+  <div class="sq-card__meta"><span>Superconducting Hybrids · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Nonequilibrium Superconductivity, Kinetic Inductance and Hotspot Dynamics</h3><p>Driven superconductors contain nonequilibrium quasiparticles, phonons and order-parameter suppression whose coupled relaxation controls kinetic inductance, switching and photon detection.</p>
+  <a href="/knowledge/nodes/nonequilibrium-superconductivity-kinetic-inductance-hotspots/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="topological superconductivity and majorana candidate states 拓扑超导与 majorana 候选态 topological superconductors combine particle–hole-symmetric pairing with a nontrivial bulk invariant, requiring protected boundary quasiparticles that may realize majorana zero modes. 拓扑超导把粒子–空穴对称配对与非平庸体拓扑不变量结合，要求出现受保护边界准粒子，并可能实现 majorana 零模。 topological superconductivity frontier knowledge note">
+  <div class="sq-card__meta"><span>Topological Superconductivity · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Topological Superconductivity and Majorana Candidate States</h3><p>Topological superconductors combine particle–hole-symmetric pairing with a nontrivial bulk invariant, requiring protected boundary quasiparticles that may realize Majorana zero modes.</p>
+  <a href="/knowledge/nodes/topological-superconductivity-majorana-candidates/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="two-dimensional superconductivity and josephson physics 二维超导与约瑟夫森物理 two-dimensional superconductors combine phase fluctuations, strong spin–orbit coupling and gate-tunable carrier density; proximity coupling transfers pairing correlations into graphene or tmd channels. 二维超导体结合强相位涨落、自旋轨道耦合与可栅控载流子密度；邻近效应还能把配对关联引入石墨烯或 tmd 沟道。 2d ferroics frontier knowledge note">
+  <div class="sq-card__meta"><span>2D Ferroics · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Two-Dimensional Superconductivity and Josephson Physics</h3><p>Two-dimensional superconductors combine phase fluctuations, strong spin–orbit coupling and gate-tunable carrier density; proximity coupling transfers pairing correlations into graphene or TMD channels.</p>
+  <a href="/knowledge/nodes/two-dimensional-superconductivity/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="graphene and van der waals josephson devices 石墨烯与范德华约瑟夫森器件 superconducting electrodes induce pair correlations in a 2d weak link; gates tune carrier density, transmission and the current–phase relation. 超导电极在二维弱连接中诱导配对关联，栅极可调载流子密度、透射率和电流–相位关系。 quantum devices frontier knowledge note">
+  <div class="sq-card__meta"><span>Quantum Devices · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Graphene and van der Waals Josephson Devices</h3><p>Superconducting electrodes induce pair correlations in a 2D weak link; gates tune carrier density, transmission and the current–phase relation.</p>
+  <a href="/knowledge/nodes/graphene-and-van-der-waals-josephson-devices/">Open entry <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="topology">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">05</span>
+  <span><strong>Topology and Intertwined Order</strong><small>Topological bands, Chern response, fractional states and nematic/intertwined order.</small></span>
+  <em><span data-branch-count>6</span> entries</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="topological insulators and dirac/weyl semimetals 拓扑绝缘体、dirac/weyl 半金属 topological band materials are classified by global wavefunction structure: insulators host boundary states across a bulk gap, while dirac and weyl semimetals host symmetry-protected nodes and unusual surface connectivity. 拓扑能带材料由波函数的整体结构分类：拓扑绝缘体在体能隙中具有边界态，dirac/weyl 半金属则具有对称保护节点与特殊表面连接。 topological band matter foundation knowledge note">
+  <div class="sq-card__meta"><span>Topological Band Matter · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Topological Insulators and Dirac/Weyl Semimetals</h3><p>Topological band materials are classified by global wavefunction structure: insulators host boundary states across a bulk gap, while Dirac and Weyl semimetals host symmetry-protected nodes and unusual surface connectivity.</p>
+  <a href="/knowledge/nodes/topological-insulators-dirac-weyl-semimetals/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="chern, quantum anomalous hall and fractional topological states chern、量子反常霍尔与分数拓扑态 chern bands produce quantized hall response without external landau levels, and partial filling with strong interactions can generate fractionally charged topological order. chern 能带无需外部 landau 能级即可产生量子化 hall 响应；在部分填充和强相互作用下还可形成分数电荷拓扑序。 correlated topology frontier knowledge note">
+  <div class="sq-card__meta"><span>Correlated Topology · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Chern, Quantum Anomalous Hall and Fractional Topological States</h3><p>Chern bands produce quantized Hall response without external Landau levels, and partial filling with strong interactions can generate fractionally charged topological order.</p>
+  <a href="/knowledge/nodes/chern-qah-fractional-topological-states/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="electronic nematicity and intertwined orders 电子向列相与相互交织的有序态 electronic nematicity breaks rotational symmetry without requiring translation breaking, and it often couples cooperatively or competitively to charge, spin, lattice and superconducting orders. 电子向列性破坏旋转对称而不必破坏平移，并常与电荷、自旋、晶格及超导序协同或竞争耦合。 intertwined orders frontier knowledge note">
+  <div class="sq-card__meta"><span>Intertwined Orders · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Electronic Nematicity and Intertwined Orders</h3><p>Electronic nematicity breaks rotational symmetry without requiring translation breaking, and it often couples cooperatively or competitively to charge, spin, lattice and superconducting orders.</p>
+  <a href="/knowledge/nodes/electronic-nematicity-intertwined-orders/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="berry curvature and topological transport 贝里曲率与拓扑输运 berry curvature acts as a momentum-space magnetic field, producing anomalous transverse velocity and connecting local band geometry to global topological invariants. 贝里曲率类似动量空间中的磁场，产生反常横向速度，并把局域能带几何与整体拓扑不变量联系起来。 spin valley topology foundation knowledge note">
+  <div class="sq-card__meta"><span>Spin Valley Topology · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Berry Curvature and Topological Transport</h3><p>Berry curvature acts as a momentum-space magnetic field, producing anomalous transverse velocity and connecting local band geometry to global topological invariants.</p>
+  <a href="/knowledge/nodes/berry-curvature-and-topological-transport/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="quantum hall and topological edge states 量子霍尔与拓扑边缘态 landau quantization or nontrivial band topology can create bulk gaps with conducting boundary channels protected against selected scattering processes. 朗道量子化或非平庸能带拓扑可形成体能隙及边界导电通道，并对特定散射具有保护。 spin valley topology frontier knowledge note">
+  <div class="sq-card__meta"><span>Spin Valley Topology · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Quantum Hall and Topological Edge States</h3><p>Landau quantization or nontrivial band topology can create bulk gaps with conducting boundary channels protected against selected scattering processes.</p>
+  <a href="/knowledge/nodes/quantum-hall-and-topological-edge-states/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="quantum dots, spin–valley qubits and topological candidates 量子点、自旋–谷量子比特与拓扑候选器件 electrostatic confinement discretizes 2d electronic states; spin, valley, layer or parity can encode quantum information and couple to gates, resonators or superconductors. 静电限域使二维电子态离散化，自旋、谷、层或宇称可编码量子信息，并与栅极、谐振腔或超导体耦合。 quantum devices frontier knowledge note">
+  <div class="sq-card__meta"><span>Quantum Devices · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Quantum Dots, Spin–Valley Qubits and Topological Candidates</h3><p>Electrostatic confinement discretizes 2D electronic states; spin, valley, layer or parity can encode quantum information and couple to gates, resonators or superconductors.</p>
+  <a href="/knowledge/nodes/quantum-dots-spin-valley-qubits-and-topological-candidates/">Open entry <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section></div></div>
+<p>For a spatial view of the same relationships, open the <a href="/knowledge/">Knowledge Atlas</a>. This directory is optimized for deliberate reading; the Atlas is optimized for discovering unexpected neighbours.</p>
+
+</section>
+<!-- bilingual:zh -->
+<section class="lang-panel lang-zh" lang="zh-CN" hidden>
+<div class="zh-heading zh-h1" role="heading" aria-level="1">电子量子凝聚态物理：交互式知识目录</div>
+<p>电子凝聚态物理研究大量微观粒子如何组织成稳健的集体行为。本目录沿晶体与能带、强关联、磁序、超导相干和拓扑响应逐层重建，并明确连接器件意义。</p>
+<div class="sq-directory" data-directory-lang="zh">
+  <div class="sq-directory__mast"><div><span>交互式领域索引</span><strong>41</strong><small>个双语知识入口</small></div><p>从对称性和微观相互作用出发，走向集体有序、拓扑与相干器件。</p></div>
+  <div class="sq-controls"><label class="sq-search"><span aria-hidden="true">⌕</span><input type="search" placeholder="搜索概念、器件或物理机制" aria-label="搜索概念、器件或物理机制"><kbd>/</kbd></label>
+  <div class="sq-filter" role="group" aria-label="Maturity filter"><button type="button" data-maturity="all" aria-pressed="true">全部成熟度</button><button type="button" data-maturity="foundation" aria-pressed="false">基础</button><button type="button" data-maturity="engineering" aria-pressed="false">工程</button><button type="button" data-maturity="prototype" aria-pressed="false">原型</button><button type="button" data-maturity="frontier" aria-pressed="false">前沿</button></div>
+  <div class="sq-paths"><span>快速学习路径</span><button type="button" data-path="all" aria-pressed="true">完整地图</button><button type="button" data-path="foundations,correlations,magnetism">磁性</button><button type="button" data-path="foundations,correlations,superconductivity">超导</button><button type="button" data-path="foundations,topology,superconductivity">拓扑</button></div>
+  <div class="sq-actions"><span class="sq-status" aria-live="polite"><b>41</b> 个可见入口</span><button type="button" data-expand>全部展开</button><button type="button" data-collapse>全部折叠</button></div></div>
+  <div class="sq-branches"><section class="sq-branch is-collapsed" data-branch="foundations">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">01</span>
+  <span><strong>晶体与电子基础</strong><small>对称性、能带、准粒子、声子与降维。</small></span>
+  <em><span data-branch-count>9</span> 入口</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="electronic quantum condensed matter knowledge network 电子量子凝聚态物理知识网络 electronic condensed matter connects crystal symmetry and microscopic interactions to quasiparticles, collective order, topology and experimentally accessible response. 电子凝聚态物理把晶体对称性与微观相互作用连接到准粒子、集体有序、拓扑及可实验测量的响应。 condensed matter foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>Condensed Matter Foundations · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">电子量子凝聚态物理知识网络</div><p>电子凝聚态物理把晶体对称性与微观相互作用连接到准粒子、集体有序、拓扑及可实验测量的响应。</p>
+  <a href="/knowledge/nodes/electronic-quantum-condensed-matter-knowledge-network/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="crystal symmetry, reciprocal space and bloch states 晶体对称性、倒易空间与 bloch 状态 translation and point-group symmetry organize electronic states into crystal momentum, bands and irreducible representations that constrain degeneracy and allowed responses. 平移与点群对称性把电子态组织为晶体动量、能带和不可约表示，并约束简并与允许响应。 crystal &amp; band foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>Crystal &amp; Band Foundations · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">晶体对称性、倒易空间与 Bloch 状态</div><p>平移与点群对称性把电子态组织为晶体动量、能带和不可约表示，并约束简并与允许响应。</p>
+  <a href="/knowledge/nodes/crystal-symmetry-reciprocal-space-bloch-states/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="band structure, fermi surfaces, density of states and lifshitz transitions 能带、费米面、态密度与 lifshitz 转变 the fermi surface is the momentum-space boundary controlling low-energy metallic response, while a lifshitz transition changes its topology without necessarily breaking symmetry. 费米面是控制金属低能响应的动量空间边界；lifshitz 转变改变其拓扑，却不一定伴随对称性破缺。 crystal &amp; band foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>Crystal &amp; Band Foundations · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">能带、费米面、态密度与 Lifshitz 转变</div><p>费米面是控制金属低能响应的动量空间边界；Lifshitz 转变改变其拓扑，却不一定伴随对称性破缺。</p>
+  <a href="/knowledge/nodes/band-structure-fermi-surface-density-lifshitz/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="quasiparticles, self-energy and landau fermi liquids 准粒子、自能与朗道费米液体 a fermi liquid replaces interacting electrons by long-lived quasiparticles near the fermi surface, with renormalized energy, residue and scattering constrained by phase space. 费米液体把相互作用电子替换为费米面附近长寿命准粒子，其能量、谱重和散射受到相空间约束并被重整化。 quasiparticles foundation knowledge note">
+  <div class="sq-card__meta"><span>Quasiparticles · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">准粒子、自能与朗道费米液体</div><p>费米液体把相互作用电子替换为费米面附近长寿命准粒子，其能量、谱重和散射受到相空间约束并被重整化。</p>
+  <a href="/knowledge/nodes/quasiparticles-self-energy-landau-fermi-liquid/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="phonons, lattice dynamics and electron–phonon coupling 声子、晶格动力学与电子–声子耦合 phonons quantize collective lattice motion and exchange energy and momentum with electrons, governing heat transport, resistance, structural instabilities and conventional pairing. 声子量子化晶格集体运动，并与电子交换能量和动量，从而控制热输运、电阻、结构不稳定与常规配对。 lattice dynamics foundation knowledge note">
+  <div class="sq-card__meta"><span>Lattice Dynamics · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">声子、晶格动力学与电子–声子耦合</div><p>声子量子化晶格集体运动，并与电子交换能量和动量，从而控制热输运、电阻、结构不稳定与常规配对。</p>
+  <a href="/knowledge/nodes/phonons-lattice-dynamics-electron-phonon-coupling/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="two-dimensional quantum foundations 二维量子物理基础 reducing a crystal to one or a few atomic layers changes screening, density of states, symmetry and available internal degrees of freedom; it does more than merely shrink a bulk semiconductor. 把晶体减薄到单层或少层会同时改变屏蔽、态密度、对称性和内部自由度，并非只是把体材料缩小。 2d quantum foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>2D Quantum Foundations · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维量子物理基础</div><p>把晶体减薄到单层或少层会同时改变屏蔽、态密度、对称性和内部自由度，并非只是把体材料缩小。</p>
+  <a href="/knowledge/nodes/two-dimensional-quantum-foundations/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="dirac fermions in two-dimensional materials 二维材料中的狄拉克费米子 in graphene-like systems two sublattices produce a low-energy pseudospin hamiltonian with approximately linear dispersion and chiral wavefunctions. 在石墨烯类体系中，两套亚晶格形成低能赝自旋哈密顿量，产生近似线性色散和手性波函数。 2d quantum foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>2D Quantum Foundations · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维材料中的狄拉克费米子</div><p>在石墨烯类体系中，两套亚晶格形成低能赝自旋哈密顿量，产生近似线性色散和手性波函数。</p>
+  <a href="/knowledge/nodes/dirac-fermions-in-two-dimensional-materials/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="landauer–büttiker quantum transport landauer–büttiker 量子输运 mesoscopic current is carried by quantum modes whose occupations are fixed by reservoirs and whose contribution is weighted by transmission. 介观电流由量子传输模式承载，模式占据由电极库决定，贡献由透射率加权。 mesoscopic transport foundation knowledge note">
+  <div class="sq-card__meta"><span>Mesoscopic Transport · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">Landauer–Büttiker 量子输运</div><p>介观电流由量子传输模式承载，模式占据由电极库决定，贡献由透射率加权。</p>
+  <a href="/knowledge/nodes/landauer-buttiker-transport/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="from an electron sea to quasiparticles: landau fermi-liquid theory (part ii) 从电子海到准粒子：朗道费米液体理论（下） why interactions do not necessarily destroy the electron picture: quasiparticles, landau parameters, response functions, zero sound and the routes beyond fermi-liquid theory. why interactions do not necessarily destroy the electron picture: quasiparticles, landau parameters, response functions, zero sound and the routes beyond fermi-liquid theory. electronic structure foundation article">
+  <div class="sq-card__meta"><span>Electronic Structure · Article</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">从电子海到准粒子：朗道费米液体理论（下）</div><p>Why interactions do not necessarily destroy the electron picture: quasiparticles, Landau parameters, response functions, zero sound and the routes beyond Fermi-liquid theory.</p>
+  <a href="/2026/09/01/Landau-Fermi-Liquid-Theory/">打开内容 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="correlations">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">02</span>
+  <span><strong>关联与相变</strong><small>对称破缺、量子临界、无序、Mott 物理与莫尔物质。</small></span>
+  <em><span data-branch-count>7</span> 入口</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="spontaneous symmetry breaking, order parameters and landau theory 自发对称性破缺、序参量与朗道理论 landau theory classifies phases by an order parameter and symmetry-allowed free energy, explaining universal transition structure without requiring every microscopic detail. 朗道理论用序参量与对称性允许的自由能分类物相，在不依赖全部微观细节的情况下解释普适相变结构。 symmetry breaking foundation knowledge note">
+  <div class="sq-card__meta"><span>Symmetry Breaking · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">自发对称性破缺、序参量与朗道理论</div><p>朗道理论用序参量与对称性允许的自由能分类物相，在不依赖全部微观细节的情况下解释普适相变结构。</p>
+  <a href="/knowledge/nodes/spontaneous-symmetry-breaking-order-parameters-landau/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="quantum phase transitions, critical scaling and quantum fluctuations 量子相变、临界标度与量子涨落 a quantum phase transition is driven by a nonthermal control parameter at zero temperature, with quantum fluctuations generating finite-temperature scaling and unconventional dynamics. 量子相变由零温下的非热控制参数驱动，量子涨落产生有限温标度和非常规动力学。 quantum criticality frontier knowledge note">
+  <div class="sq-card__meta"><span>Quantum Criticality · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">量子相变、临界标度与量子涨落</div><p>量子相变由零温下的非热控制参数驱动，量子涨落产生有限温标度和非常规动力学。</p>
+  <a href="/knowledge/nodes/quantum-phase-transitions-critical-scaling-fluctuations/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="disorder, weak localization and anderson localization 无序、弱局域化与 anderson 局域化 elastic disorder makes quantum paths interfere; weak interference corrects diffusion, while sufficiently strong disorder can localize eigenstates and suppress dc transport without a conventional gap. 弹性无序使量子路径相干干涉；弱干涉修正扩散，而足够强的无序可局域化本征态并在无传统能隙时抑制直流输运。 disorder &amp; localization foundation knowledge note">
+  <div class="sq-card__meta"><span>Disorder &amp; Localization · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">无序、弱局域化与 Anderson 局域化</div><p>弹性无序使量子路径相干干涉；弱干涉修正扩散，而足够强的无序可局域化本征态并在无传统能隙时抑制直流输运。</p>
+  <a href="/knowledge/nodes/disorder-weak-localization-anderson-localization/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the hubbard model, mott transitions and strongly correlated electrons hubbard 模型、mott 转变与强关联电子 when local coulomb repulsion competes with bandwidth, electron motion and occupancy cannot be treated independently, producing mott insulation, local moments and emergent exchange. 当局域库仑排斥与带宽竞争时，电子运动与占据不能独立处理，由此产生 mott 绝缘、局域磁矩和涌现交换。 strong correlations foundation knowledge note">
+  <div class="sq-card__meta"><span>Strong Correlations · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">Hubbard 模型、Mott 转变与强关联电子</div><p>当局域库仑排斥与带宽竞争时，电子运动与占据不能独立处理，由此产生 Mott 绝缘、局域磁矩和涌现交换。</p>
+  <a href="/knowledge/nodes/hubbard-model-mott-transition-strong-correlations/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="from symmetry to phase transitions: landau&#39;s art of ignoring details (part i) 从对称性到相变：朗道如何教我们忽略细节（上） how order parameters, symmetry and free-energy expansions explain continuous phase transitions—and why critical fluctuations eventually defeat mean-field theory. how order parameters, symmetry and free-energy expansions explain continuous phase transitions—and why critical fluctuations eventually defeat mean-field theory. phase transitions foundation article">
+  <div class="sq-card__meta"><span>Phase Transitions · Article</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">从对称性到相变：朗道如何教我们忽略细节（上）</div><p>How order parameters, symmetry and free-energy expansions explain continuous phase transitions—and why critical fluctuations eventually defeat mean-field theory.</p>
+  <a href="/2026/09/01/Landau-Theory-From-Symmetry-to-Phase-Transitions/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="cdw and sdw cdw and sdw existing article connected to this knowledge path. 与该知识路径相连的已有文章。 phase transitions foundation article">
+  <div class="sq-card__meta"><span>Phase Transitions · Article</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">CDW and SDW</div><p>与该知识路径相连的已有文章。</p>
+  <a href="/2020/03/03/CDW-and-SDW/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="moiré quantum matter and correlated flat bands 莫尔量子物质与关联平带 a small twist angle or lattice mismatch produces a long-period moiré potential that narrows bands and makes coulomb interactions comparable to or larger than kinetic energy. 小扭角或晶格失配产生长周期莫尔势，使能带变窄，并令库仑相互作用达到或超过动能尺度。 moiré physics frontier knowledge note">
+  <div class="sq-card__meta"><span>Moiré Physics · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">莫尔量子物质与关联平带</div><p>小扭角或晶格失配产生长周期莫尔势，使能带变窄，并令库仑相互作用达到或超过动能尺度。</p>
+  <a href="/knowledge/nodes/moire-quantum-matter/">打开内容 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="magnetism">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">03</span>
+  <span><strong>磁性与自旋</strong><small>交换、各类磁序、反铁磁、交错磁性、磁振子与自旋力矩。</small></span>
+  <em><span data-branch-count>10</span> 入口</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="localized and itinerant magnetism with exchange interactions 局域/巡游磁性与交换相互作用 magnetic order emerges from exchange constrained by orbital overlap, band filling and symmetry; local-moment and itinerant pictures are complementary limits rather than universal alternatives. 磁序来自受轨道重叠、能带填充与对称性约束的交换作用；局域磁矩与巡游图像是互补极限，而非普适二选一。 exchange &amp; magnetic order foundation knowledge note">
+  <div class="sq-card__meta"><span>Exchange &amp; Magnetic Order · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">局域/巡游磁性与交换相互作用</div><p>磁序来自受轨道重叠、能带填充与对称性约束的交换作用；局域磁矩与巡游图像是互补极限，而非普适二选一。</p>
+  <a href="/knowledge/nodes/magnetism-exchange-localized-itinerant-electrons/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="ferromagnets, ferrimagnets and compensated magnets 铁磁、亚铁磁与补偿磁体 ferromagnets align moments parallel, ferrimagnets oppose unequal sublattices, and compensation points can suppress net moment while retaining ordered spin-dependent dynamics. 铁磁体平行排列磁矩，亚铁磁体由不等子晶格反向排列；补偿点可压低净磁矩而保留有序的自旋相关动力学。 exchange &amp; magnetic order foundation knowledge note">
+  <div class="sq-card__meta"><span>Exchange &amp; Magnetic Order · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">铁磁、亚铁磁与补偿磁体</div><p>铁磁体平行排列磁矩，亚铁磁体由不等子晶格反向排列；补偿点可压低净磁矩而保留有序的自旋相关动力学。</p>
+  <a href="/knowledge/nodes/ferromagnets-ferrimagnets-compensated-magnets/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="antiferromagnetic order, néel vectors and spin dynamics 反铁磁序、néel 矢量与自旋动力学 antiferromagnets have oppositely ordered sublattices described by a néel vector, producing weak stray fields and fast exchange-enhanced dynamics without eliminating spin structure. 反铁磁体由反向有序子晶格构成，以 néel 矢量描述；它们具有弱杂散场和交换增强的快速动力学，但并非没有自旋结构。 antiferromagnetism foundation knowledge note">
+  <div class="sq-card__meta"><span>Antiferromagnetism · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">反铁磁序、Néel 矢量与自旋动力学</div><p>反铁磁体由反向有序子晶格构成，以 Néel 矢量描述；它们具有弱杂散场和交换增强的快速动力学，但并非没有自旋结构。</p>
+  <a href="/knowledge/nodes/antiferromagnetic-order-neel-vector-spin-dynamics/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="altermagnetism: symmetry and spin-split bands 交错磁性：对称性与自旋劈裂能带 altermagnets combine compensated collinear magnetic order with crystal symmetries that permit momentum-dependent spin splitting even without net magnetization in the nonrelativistic limit. 交错磁体把补偿共线磁序与特定晶体对称性结合，使非相对论极限下即使净磁化为零也能出现动量依赖的自旋劈裂。 altermagnetism frontier knowledge note">
+  <div class="sq-card__meta"><span>Altermagnetism · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">交错磁性：对称性与自旋劈裂能带</div><p>交错磁体把补偿共线磁序与特定晶体对称性结合，使非相对论极限下即使净磁化为零也能出现动量依赖的自旋劈裂。</p>
+  <a href="/knowledge/nodes/altermagnetism-symmetry-spin-splitting/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="noncollinear order, dzyaloshinskii–moriya interaction and chiral magnetism 非共线磁序、dmi 与手性磁性 broken inversion symmetry and spin–orbit coupling generate antisymmetric exchange that favours twisted spin configurations with a fixed handedness. 反演对称性破缺与自旋轨道耦合产生反对称交换，从而偏好具有固定手性的扭曲自旋构型。 chiral magnetism foundation knowledge note">
+  <div class="sq-card__meta"><span>Chiral Magnetism · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">非共线磁序、DMI 与手性磁性</div><p>反演对称性破缺与自旋轨道耦合产生反对称交换，从而偏好具有固定手性的扭曲自旋构型。</p>
+  <a href="/knowledge/nodes/noncollinear-dmi-chiral-magnetism/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="spin waves, magnons and magnonics 自旋波、磁振子与磁振子学 magnons are quantized collective precessions of ordered spins that carry energy, momentum and angular momentum without net charge transport. 磁振子是有序自旋集体进动的量子，能够在无净电荷输运时携带能量、动量与角动量。 magnonics prototype knowledge note">
+  <div class="sq-card__meta"><span>Magnonics · Knowledge Note</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">自旋波、磁振子与磁振子学</div><p>磁振子是有序自旋集体进动的量子，能够在无净电荷输运时携带能量、动量与角动量。</p>
+  <a href="/knowledge/nodes/magnons-spin-waves-magnonics/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="magnetic skyrmions and topological spin textures skyrmion 与拓扑自旋纹理 a magnetic skyrmion is a smoothly wrapped spin texture carrying an integer real-space topological charge, stabilized by competing interactions and finite barriers. 磁 skyrmion 是平滑包裹的自旋纹理，携带整数实空间拓扑荷，并由相互作用竞争和有限能垒稳定。 topological spin textures prototype knowledge note">
+  <div class="sq-card__meta"><span>Topological Spin Textures · Knowledge Note</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">Skyrmion 与拓扑自旋纹理</div><p>磁 Skyrmion 是平滑包裹的自旋纹理，携带整数实空间拓扑荷，并由相互作用竞争和有限能垒稳定。</p>
+  <a href="/knowledge/nodes/magnetic-skyrmions-topological-spin-textures/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="geometric frustration, quantum magnetism and spin liquids 几何阻挫、量子磁性与自旋液体 frustration prevents all local exchange preferences from being satisfied simultaneously, allowing strong quantum fluctuations and possibly long-range entangled spin-liquid ground states. 阻挫使局域交换偏好无法同时满足，从而保留强量子涨落，并可能形成具有长程纠缠的自旋液体基态。 quantum magnetism frontier knowledge note">
+  <div class="sq-card__meta"><span>Quantum Magnetism · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">几何阻挫、量子磁性与自旋液体</div><p>阻挫使局域交换偏好无法同时满足，从而保留强量子涨落，并可能形成具有长程纠缠的自旋液体基态。</p>
+  <a href="/knowledge/nodes/frustrated-quantum-magnetism-spin-liquids/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="spin transport, spin-transfer torque and spin–orbit torque 自旋输运、自旋转移力矩与自旋轨道力矩 spin accumulation and spin currents transfer angular momentum to magnetic order, enabling electrical control through spin-transfer and spin–orbit torques. 自旋积累与自旋流把角动量传递给磁序，并通过自旋转移力矩和自旋轨道力矩实现电控制。 spin transport &amp; torque engineering knowledge note">
+  <div class="sq-card__meta"><span>Spin Transport &amp; Torque · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">自旋输运、自旋转移力矩与自旋轨道力矩</div><p>自旋积累与自旋流把角动量传递给磁序，并通过自旋转移力矩和自旋轨道力矩实现电控制。</p>
+  <a href="/knowledge/nodes/spin-transport-transfer-orbit-torques/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="two-dimensional magnetism and spin filtering 二维磁性与自旋过滤 magnetic anisotropy and spin–orbit coupling can stabilize order in atomically thin magnets, while vdw interfaces provide clean spin filters and proximity exchange. 磁各向异性和自旋轨道耦合可在原子级薄磁体中稳定有序，vdw 界面则提供洁净的自旋过滤和邻近交换。 2d ferroics prototype knowledge note">
+  <div class="sq-card__meta"><span>2D Ferroics · Knowledge Note</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维磁性与自旋过滤</div><p>磁各向异性和自旋轨道耦合可在原子级薄磁体中稳定有序，vdW 界面则提供洁净的自旋过滤和邻近交换。</p>
+  <a href="/knowledge/nodes/two-dimensional-magnetism/">打开内容 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="superconductivity">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">04</span>
+  <span><strong>超导与量子相干</strong><small>配对、涡旋、非常规平台、混合结构与非平衡动力学。</small></span>
+  <em><span data-branch-count>9</span> 入口</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="cooper pairing, bcs theory and the superconducting gap cooper 配对、bcs 理论与超导能隙 an arbitrarily weak attraction destabilizes a fermi surface toward paired time-reversed states, producing a coherent condensate and a gap for single-particle excitations. 任意弱吸引都可使费米面对时间反演态配对不稳定，形成相干凝聚并打开单粒子激发能隙。 superconducting foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>Superconducting Foundations · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">Cooper 配对、BCS 理论与超导能隙</div><p>任意弱吸引都可使费米面对时间反演态配对不稳定，形成相干凝聚并打开单粒子激发能隙。</p>
+  <a href="/knowledge/nodes/bcs-cooper-pairing-superconducting-gap/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="ginzburg–landau theory, type-i/ii superconductivity and vortices ginzburg–landau 理论、i/ii 类超导与涡旋 ginzburg–landau theory couples a complex superconducting order parameter to electromagnetic fields, defining coherence, penetration and quantized-vortex scales. ginzburg–landau 理论把复超导序参量与电磁场耦合，定义相干长度、穿透深度和量子化涡旋尺度。 superconducting foundations foundation knowledge note">
+  <div class="sq-card__meta"><span>Superconducting Foundations · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">Ginzburg–Landau 理论、I/II 类超导与涡旋</div><p>Ginzburg–Landau 理论把复超导序参量与电磁场耦合，定义相干长度、穿透深度和量子化涡旋尺度。</p>
+  <a href="/knowledge/nodes/gln-type-i-ii-superconductivity-vortices/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="unconventional superconductivity and pairing symmetry 非常规超导与配对对称性 unconventional superconductors possess pairing structures not captured by a uniform phonon-mediated spin-singlet gap, often linking sign changes or nodes to electronic interactions. 非常规超导具有均匀声子介导自旋单态能隙无法描述的配对结构，常把符号变化或节点与电子相互作用联系起来。 unconventional superconductivity frontier knowledge note">
+  <div class="sq-card__meta"><span>Unconventional Superconductivity · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">非常规超导与配对对称性</div><p>非常规超导具有均匀声子介导自旋单态能隙无法描述的配对结构，常把符号变化或节点与电子相互作用联系起来。</p>
+  <a href="/knowledge/nodes/unconventional-superconductivity-pairing-symmetry/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="cuprate, iron-based and other high-temperature superconducting platforms 铜氧化物、铁基和其他高温超导平台 high-temperature superconductors emerge from correlated multiorbital or doped-mott backgrounds where magnetism, nematicity, pseudogaps and pairing interact. 高温超导产生于关联多轨道或掺杂 mott 背景，其中磁性、向列性、赝能隙和配对相互交织。 unconventional superconductivity frontier knowledge note">
+  <div class="sq-card__meta"><span>Unconventional Superconductivity · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">铜氧化物、铁基和其他高温超导平台</div><p>高温超导产生于关联多轨道或掺杂 Mott 背景，其中磁性、向列性、赝能隙和配对相互交织。</p>
+  <a href="/knowledge/nodes/high-temperature-superconducting-platforms/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="josephson, andreev and superconducting proximity effects josephson、andreev 与超导邻近效应 superconducting phase coherence crosses weak links through pair tunnelling and andreev conversion, inducing pairing correlations in otherwise normal materials. 超导相位相干通过对隧穿与 andreev 转换跨越弱连接，并在原本正常的材料中诱导配对关联。 superconducting hybrids engineering knowledge note">
+  <div class="sq-card__meta"><span>Superconducting Hybrids · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">Josephson、Andreev 与超导邻近效应</div><p>超导相位相干通过对隧穿与 Andreev 转换跨越弱连接，并在原本正常的材料中诱导配对关联。</p>
+  <a href="/knowledge/nodes/josephson-andreev-superconducting-proximity-effects/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="nonequilibrium superconductivity, kinetic inductance and hotspot dynamics 非平衡超导、动能电感与热点动力学 driven superconductors contain nonequilibrium quasiparticles, phonons and order-parameter suppression whose coupled relaxation controls kinetic inductance, switching and photon detection. 受驱超导体包含非平衡准粒子、声子和序参量抑制，其耦合弛豫控制动能电感、开关与光子探测。 superconducting hybrids frontier knowledge note">
+  <div class="sq-card__meta"><span>Superconducting Hybrids · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">非平衡超导、动能电感与热点动力学</div><p>受驱超导体包含非平衡准粒子、声子和序参量抑制，其耦合弛豫控制动能电感、开关与光子探测。</p>
+  <a href="/knowledge/nodes/nonequilibrium-superconductivity-kinetic-inductance-hotspots/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="topological superconductivity and majorana candidate states 拓扑超导与 majorana 候选态 topological superconductors combine particle–hole-symmetric pairing with a nontrivial bulk invariant, requiring protected boundary quasiparticles that may realize majorana zero modes. 拓扑超导把粒子–空穴对称配对与非平庸体拓扑不变量结合，要求出现受保护边界准粒子，并可能实现 majorana 零模。 topological superconductivity frontier knowledge note">
+  <div class="sq-card__meta"><span>Topological Superconductivity · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">拓扑超导与 Majorana 候选态</div><p>拓扑超导把粒子–空穴对称配对与非平庸体拓扑不变量结合，要求出现受保护边界准粒子，并可能实现 Majorana 零模。</p>
+  <a href="/knowledge/nodes/topological-superconductivity-majorana-candidates/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="two-dimensional superconductivity and josephson physics 二维超导与约瑟夫森物理 two-dimensional superconductors combine phase fluctuations, strong spin–orbit coupling and gate-tunable carrier density; proximity coupling transfers pairing correlations into graphene or tmd channels. 二维超导体结合强相位涨落、自旋轨道耦合与可栅控载流子密度；邻近效应还能把配对关联引入石墨烯或 tmd 沟道。 2d ferroics frontier knowledge note">
+  <div class="sq-card__meta"><span>2D Ferroics · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维超导与约瑟夫森物理</div><p>二维超导体结合强相位涨落、自旋轨道耦合与可栅控载流子密度；邻近效应还能把配对关联引入石墨烯或 TMD 沟道。</p>
+  <a href="/knowledge/nodes/two-dimensional-superconductivity/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="graphene and van der waals josephson devices 石墨烯与范德华约瑟夫森器件 superconducting electrodes induce pair correlations in a 2d weak link; gates tune carrier density, transmission and the current–phase relation. 超导电极在二维弱连接中诱导配对关联，栅极可调载流子密度、透射率和电流–相位关系。 quantum devices frontier knowledge note">
+  <div class="sq-card__meta"><span>Quantum Devices · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">石墨烯与范德华约瑟夫森器件</div><p>超导电极在二维弱连接中诱导配对关联，栅极可调载流子密度、透射率和电流–相位关系。</p>
+  <a href="/knowledge/nodes/graphene-and-van-der-waals-josephson-devices/">打开内容 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="topology">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">05</span>
+  <span><strong>拓扑与交织序</strong><small>拓扑能带、Chern 响应、分数态与向列/交织序。</small></span>
+  <em><span data-branch-count>6</span> 入口</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="topological insulators and dirac/weyl semimetals 拓扑绝缘体、dirac/weyl 半金属 topological band materials are classified by global wavefunction structure: insulators host boundary states across a bulk gap, while dirac and weyl semimetals host symmetry-protected nodes and unusual surface connectivity. 拓扑能带材料由波函数的整体结构分类：拓扑绝缘体在体能隙中具有边界态，dirac/weyl 半金属则具有对称保护节点与特殊表面连接。 topological band matter foundation knowledge note">
+  <div class="sq-card__meta"><span>Topological Band Matter · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">拓扑绝缘体、Dirac/Weyl 半金属</div><p>拓扑能带材料由波函数的整体结构分类：拓扑绝缘体在体能隙中具有边界态，Dirac/Weyl 半金属则具有对称保护节点与特殊表面连接。</p>
+  <a href="/knowledge/nodes/topological-insulators-dirac-weyl-semimetals/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="chern, quantum anomalous hall and fractional topological states chern、量子反常霍尔与分数拓扑态 chern bands produce quantized hall response without external landau levels, and partial filling with strong interactions can generate fractionally charged topological order. chern 能带无需外部 landau 能级即可产生量子化 hall 响应；在部分填充和强相互作用下还可形成分数电荷拓扑序。 correlated topology frontier knowledge note">
+  <div class="sq-card__meta"><span>Correlated Topology · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">Chern、量子反常霍尔与分数拓扑态</div><p>Chern 能带无需外部 Landau 能级即可产生量子化 Hall 响应；在部分填充和强相互作用下还可形成分数电荷拓扑序。</p>
+  <a href="/knowledge/nodes/chern-qah-fractional-topological-states/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="electronic nematicity and intertwined orders 电子向列相与相互交织的有序态 electronic nematicity breaks rotational symmetry without requiring translation breaking, and it often couples cooperatively or competitively to charge, spin, lattice and superconducting orders. 电子向列性破坏旋转对称而不必破坏平移，并常与电荷、自旋、晶格及超导序协同或竞争耦合。 intertwined orders frontier knowledge note">
+  <div class="sq-card__meta"><span>Intertwined Orders · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">电子向列相与相互交织的有序态</div><p>电子向列性破坏旋转对称而不必破坏平移，并常与电荷、自旋、晶格及超导序协同或竞争耦合。</p>
+  <a href="/knowledge/nodes/electronic-nematicity-intertwined-orders/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="berry curvature and topological transport 贝里曲率与拓扑输运 berry curvature acts as a momentum-space magnetic field, producing anomalous transverse velocity and connecting local band geometry to global topological invariants. 贝里曲率类似动量空间中的磁场，产生反常横向速度，并把局域能带几何与整体拓扑不变量联系起来。 spin valley topology foundation knowledge note">
+  <div class="sq-card__meta"><span>Spin Valley Topology · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">贝里曲率与拓扑输运</div><p>贝里曲率类似动量空间中的磁场，产生反常横向速度，并把局域能带几何与整体拓扑不变量联系起来。</p>
+  <a href="/knowledge/nodes/berry-curvature-and-topological-transport/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="quantum hall and topological edge states 量子霍尔与拓扑边缘态 landau quantization or nontrivial band topology can create bulk gaps with conducting boundary channels protected against selected scattering processes. 朗道量子化或非平庸能带拓扑可形成体能隙及边界导电通道，并对特定散射具有保护。 spin valley topology frontier knowledge note">
+  <div class="sq-card__meta"><span>Spin Valley Topology · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">量子霍尔与拓扑边缘态</div><p>朗道量子化或非平庸能带拓扑可形成体能隙及边界导电通道，并对特定散射具有保护。</p>
+  <a href="/knowledge/nodes/quantum-hall-and-topological-edge-states/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="quantum dots, spin–valley qubits and topological candidates 量子点、自旋–谷量子比特与拓扑候选器件 electrostatic confinement discretizes 2d electronic states; spin, valley, layer or parity can encode quantum information and couple to gates, resonators or superconductors. 静电限域使二维电子态离散化，自旋、谷、层或宇称可编码量子信息，并与栅极、谐振腔或超导体耦合。 quantum devices frontier knowledge note">
+  <div class="sq-card__meta"><span>Quantum Devices · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">量子点、自旋–谷量子比特与拓扑候选器件</div><p>静电限域使二维电子态离散化，自旋、谷、层或宇称可编码量子信息，并与栅极、谐振腔或超导体耦合。</p>
+  <a href="/knowledge/nodes/quantum-dots-spin-valley-qubits-and-topological-candidates/">打开内容 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section></div></div>
+<p>若希望从空间关系发现意外关联，可进入 <a href="/knowledge/">Knowledge Atlas</a>；本目录适合有目的地阅读，Atlas 则适合探索邻近概念。</p>
+
+</section>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="http://www.iCalculate.website">Du Xinchuan</a>
+            <p>原文链接：<a href="http://www.icalculate.website/2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/">http://www.icalculate.website/2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/</a>
+            <p>发表日期：<a href="http://www.icalculate.website/2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/">September 2nd 2026, 12:00:00 pm</a>
+            <p>更新日期：<a href="http://www.icalculate.website/2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/">September 2nd 2026, 2:06:57 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "../Optoelectronic-Devices-Interactive-Knowledge-Directory/" title= "Optoelectronic Devices: An Interactive Knowledge Directory">
+                    <div class="prevTitle">Optoelectronic Devices: An Interactive Knowledge Directory</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:549174176@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/iCalculate" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/WeChat_QR.jpg" />
+                </span>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title=qq>
+                  
+                  <img class="profile-qr" src="/assets/QQ_QR.jpg" />
+                </span>
+            
+        
+    
+        
+            
+                <a href="https://t.me/chauncy_du" class="iconfont-archer telegram" target="_blank" title=telegram></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+            
+                <a href="https://www.linkedin.com/in/xinchuan-du-a4b0b51bb/" class="iconfont-archer linkedin" target="_blank" title=linkedin></a>
+            
+        
+    
+        
+            
+                <a href="https://steamcommunity.com/id/icalculate97/" class="iconfont-archer steam" target="_blank" title=steam></a>
+            
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+        
+            
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Electronic Quantum Condensed Matter Knowledge Network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Crystal Symmetry, Reciprocal Space and Bloch States</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Band Structure, Fermi Surfaces, Density of States and Lifshitz Transitions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Quasiparticles, Self-Energy and Landau Fermi Liquids</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Phonons, Lattice Dynamics and Electron–Phonon Coupling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Two-Dimensional Quantum Foundations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Dirac Fermions in Two-Dimensional Materials</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Landauer–Büttiker Quantum Transport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">From an Electron Sea to Quasiparticles: Landau Fermi-Liquid Theory (Part II)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Spontaneous Symmetry Breaking, Order Parameters and Landau Theory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Quantum Phase Transitions, Critical Scaling and Quantum Fluctuations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Disorder, Weak Localization and Anderson Localization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">The Hubbard Model, Mott Transitions and Strongly Correlated Electrons</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">From Symmetry to Phase Transitions: Landau&#39;s Art of Ignoring Details (Part I)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">CDW and SDW</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Moiré Quantum Matter and Correlated Flat Bands</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Localized and Itinerant Magnetism with Exchange Interactions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Ferromagnets, Ferrimagnets and Compensated Magnets</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Antiferromagnetic Order, Néel Vectors and Spin Dynamics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Altermagnetism: Symmetry and Spin-Split Bands</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Noncollinear Order, Dzyaloshinskii–Moriya Interaction and Chiral Magnetism</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Spin Waves, Magnons and Magnonics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Magnetic Skyrmions and Topological Spin Textures</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Geometric Frustration, Quantum Magnetism and Spin Liquids</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Spin Transport, Spin-Transfer Torque and Spin–Orbit Torque</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Two-Dimensional Magnetism and Spin Filtering</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Cooper Pairing, BCS Theory and the Superconducting Gap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Ginzburg–Landau Theory, Type-I&#x2F;II Superconductivity and Vortices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Unconventional Superconductivity and Pairing Symmetry</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Cuprate, Iron-Based and Other High-Temperature Superconducting Platforms</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Josephson, Andreev and Superconducting Proximity Effects</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Nonequilibrium Superconductivity, Kinetic Inductance and Hotspot Dynamics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Topological Superconductivity and Majorana Candidate States</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Two-Dimensional Superconductivity and Josephson Physics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Graphene and van der Waals Josephson Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Topological Insulators and Dirac&#x2F;Weyl Semimetals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Chern, Quantum Anomalous Hall and Fractional Topological States</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Electronic Nematicity and Intertwined Orders</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Berry Curvature and Topological Transport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Quantum Hall and Topological Edge States</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Quantum Dots, Spin–Valley Qubits and Topological Candidates</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 68
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2026 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/" >Optoelectronic Devices: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory/" >Semiconductor Devices & Quantum Physics: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Landau-Fermi-Liquid-Theory/" >From an Electron Sea to Quasiparticles: Landau Fermi-Liquid Theory (Part II)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Landau-Theory-From-Symmetry-to-Phase-Transitions/" >From Symmetry to Phase Transitions: Landau's Art of Ignoring Details (Part I)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/" >From Ballistic Transport to Hopping in FETs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/" >From Capacitors to FETs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href= "2026/05/17/What-Top-Journals-Really-Look-For/" >What Top Journals Really Look For</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/16</span><a class="archive-post-title" href= "2026/05/16/Research-Taste-in-the-Age-of-Vibe-Coding/" >Research Taste in the Age of Vibe Coding</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2025 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2025/08/18/Introducing-2D-material-based-devices-in-the-logic-scaling-roadmap/" >Introducing 2D-material based devices in the logic scaling roadmap</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "2025/07/16/Vortex-Avalanche/" >Vortex Avalanche</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "2025/07/16/The-RTS-Waveform-Evolution/" >The RTS Waveform Evolution</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET Quantum Transport Simulation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/" >Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/EBE-Deposition-Operation-Notes/" >EBE Deposition Operation Notes</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/01</span><a class="archive-post-title" href= "2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/" >Phase Transitions in Electronic Materials and Devices</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/28</span><a class="archive-post-title" href= "2025/06/28/When-a-Stranger-Becomes-Both-Guest-and-Enemy-Enantiosemy/" >When a Stranger Becomes Both Guest and Enemy: Enantiosemy</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/" >From Classical Mechanics to Quantum Theory</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2024 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "2024/11/17/Deck-of-Doctoral-Dissertation/" >Deck of Doctoral Dissertation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/Science-Communication/" >Science Communication</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/How-to-give-a-talk/" >How to give a talk</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2023 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2023/03/27/SR400-photon-counter-delay-scan-demo/" >SR400 photon counter delay scan demo</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/23</span><a class="archive-post-title" href= "2023/03/23/Python-library-for-SR400-Photon-counter/" >Python library for SR400 Photon counter</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href= "2023/03/21/COMSOL-script-for-random-object-generation/" >COMSOL script for random object generation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "2023/03/18/LakeShore-Model-335-Python-Script/" >LakeShore Model 335 Python控制脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2023/03/17/Python-script-for-Keithley-2400-current-sweep/" >Keithley2400源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "2023/03/16/Python-script-for-Keithley-2450-current-sweep/" >Keithley2450源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "2023/03/15/Frontiers-in-condensed-matter-physics/" >Frontiers in condensed matter physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2023/03/13/HER-auto-test-script/" >HER auto test script</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2021/02/15/Cmd%20Markdown%20Editor/" >Cmd Markdown Editor</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "2020/11/24/Introduction-for-CHI660e-Macro-Generator/" >Introduction for CHI660e Macro Generator</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/15</span><a class="archive-post-title" href= "2020/11/15/hello-world/" >Hello World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "2020/09/29/Why-movies-appeal-to-me/" >Why movies appeal to me</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/15</span><a class="archive-post-title" href= "2020/09/15/A-letter-from-the-middle-of-September/" >七月流火 春日迟迟</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2020/08/18/Understanding-of-Pseudocapacitance/" >Understanding of Pseudocapacitance</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "2020/06/18/Perspective-Blaming-China-is-Illegimate-and-Irresponsible/" >Blaming China is Illegimate and Irresponsible</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span><a class="archive-post-title" href= "2020/05/19/Side-by-Side-Battery-Technologies-with-Lithium%E2%80%90Ion-Based-Batteries/" >Side-by-Side-Battery-Technologies-with-Lithium‐Ion-Based-Batteries</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href= "2020/05/01/WHAT-IS-ATR-SEIRAS/" >WHAT IS ATR-SEIRAS?</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "2020/04/30/Microcell-Electrochemistry-Literature-Review/" >Microcell Electrochemistry Literature Review</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "2020/04/28/Mass-Transfer-in-Electrochemistry/" >Mass Transfer in Electrochemistry</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "2020/04/17/Drude-Model-in-Soild-State-Physics/" >Drude Model in Soild State Physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "2020/04/03/Is-the-World-Virtual/" >Is the World Virtual</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2020/03/27/Topological-two-dimensional-polymers/" >Topological two-dimensional polymers</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href= "2020/03/26/The-Configuration-to-the-Deep-Network/" >The Configuration to the Deep Network</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Artical-Dynamic-stability-of-active-sites-in-hydr(oxy)-oxides-for-the-oxygen-evolution-reaction/" >顶刊精读：动态平衡视角下的OER反应位点</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Literature-research-website/" >Literature research website</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2020/03/13/Advantages-of-microelectrode-system-in-electrochemical-science/" >Advantages of microelectrode system in electrochemical science</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "2020/03/11/Hertz-Knudsen-Equation-for-Evaporation-and-Condensation/" >Hertz-Knudsen Equation for Evaporation and Condensation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/How-to-measure-ECSA/" >How to measure ECSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/Li-Battery-Foundation/" >Li Battery Foundation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "2020/03/03/CDW-and-SDW/" >CDW and SDW</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "2020/02/27/3Dmax-Draw-Graphene-Grain-Boundaries/" >使用3Dmax绘制石墨烯晶格缺陷</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "2020/02/26/Anacoda-Introductory-Tutorail/" >Anaconda详细安装及使用教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Plugins-Density-Filter/" >Origin插件之：散点密度热图（Density Filter）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Python-Environment-Build-up/" >Origin+Python环境搭建</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "2020/02/24/Origin-Plugins-Graph-Maker/" >Origin插件之：快速作图（Graph Maker）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Venn-Diagram/" >Origin插件之：韦恩图生成插件（Venn Diagram）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Layer-Stack-Manager/" >Origin插件之：堆叠图小工具（Layer Stack Manager）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "2020/02/22/Origin-Plugins-Color-Editor/" >Origin插件之：配色编辑器(Color Editor)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "2020/02/21/Origin-Plugins-Tafel-Extrapolation/" >Origin插件之：LSV数据处理插件(Tafel Extrapolation)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/P5-js-new-journal/" >P5.js new journal</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/Katex-Test/" >Katex Test</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Artical-Current-and-future-role-of-Haber-Bosch-ammonia-in-a-carbon-free-energy-landscape/" >催化合成氨未来何去何从</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/4thYearAnniversary/" >写在第四年的Anniversary</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Group-Meeting/" >Group Meeting Backup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "2020/02/16/Artical-Precise-Anionic-Regulation-Assisted-by-Electrochemical-Reactions/" >张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/" >原子轨道耦合帮你分析固氮催化位点活性！</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "2020/02/14/Some-Useful-website/" >Some Useful website</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
+    
+        <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
+    
+        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
+    
+        <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
+    
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
+    
+        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
+    
+        <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Optical Properties"><span class="iconfont-archer">&#xe606;</span>Optical Properties</span>
+    
+        <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
+    
+        <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Device Physics"><span class="iconfont-archer">&#xe606;</span>Device Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+    
+        <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
+    
+        <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
+    
+        <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
+        <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
+    
+        <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
+        <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
+    
+        <span class="sidebar-tag-name" data-tags="AI-Assisted Research"><span class="iconfont-archer">&#xe606;</span>AI-Assisted Research</span>
+    
+        <span class="sidebar-tag-name" data-tags="Network Privacy"><span class="iconfont-archer">&#xe606;</span>Network Privacy</span>
+    
+        <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
+    
+        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+    
+        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
+    
+        <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
+    
+        <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Du Xinchuan"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="../../../../lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="../../../../scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="../../../../scripts/share.js" async></script>    
+     
+    <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['
+</html>
+
+
+, '
+</html>
+
+
+], ['\\(', '\\)']],
+    displayMath: [['$', '$'], ['\\[', '\\]']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
+
+

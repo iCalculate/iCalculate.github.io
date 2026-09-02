@@ -321,7 +321,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">761</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">767</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -452,14 +452,18 @@ height:50vh;
     <article class="article-entry">
         <p>Origin的绘图已经算是十分的方便，选中数据即可一键绘图，但是如果想切换绘图模式时就显得不太方便，同样在同一副图中调节每个数据点的颜色、大小、形状等也都显得操作繁琐，今天介绍的插件Graph Maker就针对这些问题实现了一键修改快速绘图。</p>
 <a id="more"></a>
-
-<h1 id="Origin插件之：快速作图（Graph-Maker）"><a href="#Origin插件之：快速作图（Graph-Maker）" class="headerlink" title="Origin插件之：快速作图（Graph Maker）"></a>Origin插件之：快速作图（Graph Maker）</h1><p>原创作者：iCalculate</p>
-<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>Origin的绘图已经算是十分的方便，选中数据即可一键绘图，但是如果想切换绘图模式时就显得不太方便，同样在同一副图中调节每个数据点的颜色、大小、形状等也都显得操作繁琐，今天介绍的插件Graph Maker就针对这些问题实现了一键修改快速绘图。</p>
-<h2 id="本期插件介绍："><a href="#本期插件介绍：" class="headerlink" title="本期插件介绍："></a>本期插件介绍：</h2><p>本期要介绍的插件是OriginLab官方技术支持团队提供的”<strong>Graph Maker</strong>“插件，这个插件可以通过直接拖曳数据绘制目标图片。插件支持的最低Origin版本为Origin2019(9.6)。</p>
+<h1>Origin插件之：快速作图（Graph Maker）</h1>
+<p>原创作者：iCalculate</p>
+<h2 id="前言：">前言：</h2>
+<p>Origin的绘图已经算是十分的方便，选中数据即可一键绘图，但是如果想切换绘图模式时就显得不太方便，同样在同一副图中调节每个数据点的颜色、大小、形状等也都显得操作繁琐，今天介绍的插件Graph Maker就针对这些问题实现了一键修改快速绘图。</p>
+<h2 id="本期插件介绍：">本期插件介绍：</h2>
+<p>本期要介绍的插件是OriginLab官方技术支持团队提供的&quot;<strong>Graph Maker</strong>&quot;插件，这个插件可以通过直接拖曳数据绘制目标图片。插件支持的最低Origin版本为Origin2019(9.6)。</p>
 <p>插件官方地址：<a href="https://www.originlab.com/fileExchange/details.aspx?fid=445" target="_blank" rel="noopener">https://www.originlab.com/fileExchange/details.aspx?fid=445</a></p>
-<p>插件下载备用：链接：<a href="https://pan.baidu.com/s/1VkMxz7Lu_5Y9iGDF87oxWQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1VkMxz7Lu_5Y9iGDF87oxWQ</a>  提取码：1pym </p>
-<h2 id="插件安装："><a href="#插件安装：" class="headerlink" title="插件安装："></a>插件安装：</h2><p>Origin插件下载完成后是后缀为”.opx”的文件，只需先打开Origin软件然后将”.opx”文件拖曳进Origin面板内即可完成安装，安装过程不会有提示出现，在面板右侧Apps窗口中如果有了相应的插件图标（图标灰色并非不可用）即说明安装成功。</p>
-<h2 id="具体介绍："><a href="#具体介绍：" class="headerlink" title="具体介绍："></a>具体介绍：</h2><p>首先我们初始化一个工作表单，A(X)类用行数填充作为X轴数据，B(Y)列用随机数创建X数据误差，C列数据用随机数填充作为Y轴数据，D列作为Y数据误差，E、F列分别用行数填充作为数据点的颜色大小数据。G列作为分区标识，前半部分用1填充后半部分用2填充，如下：</p>
+<p>插件下载备用：链接：<a href="https://pan.baidu.com/s/1VkMxz7Lu_5Y9iGDF87oxWQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1VkMxz7Lu_5Y9iGDF87oxWQ</a>  提取码：1pym</p>
+<h2 id="插件安装：">插件安装：</h2>
+<p>Origin插件下载完成后是后缀为&quot;.opx&quot;的文件，只需先打开Origin软件然后将&quot;.opx&quot;文件拖曳进Origin面板内即可完成安装，安装过程不会有提示出现，在面板右侧Apps窗口中如果有了相应的插件图标（图标灰色并非不可用）即说明安装成功。</p>
+<h2 id="具体介绍：">具体介绍：</h2>
+<p>首先我们初始化一个工作表单，A(X)类用行数填充作为X轴数据，B(Y)列用随机数创建X数据误差，C列数据用随机数填充作为Y轴数据，D列作为Y数据误差，E、F列分别用行数填充作为数据点的颜色大小数据。G列作为分区标识，前半部分用1填充后半部分用2填充，如下：</p>
 <p><img src="/2020/02/24/Origin-Plugins-Graph-Maker/Origin-Plugins-Graph-Maker%5Cimage-20200224140721991.png" alt="image-20200224140721991"></p>
 <p>打开Graph Maker插件，选择点线图，拖曳X、Y数据到相应位置即可实时得到图片输出：</p>
 <p><img src="/2020/02/24/Origin-Plugins-Graph-Maker/Origin-Plugins-Graph-Maker%5CG1.gif" alt="G1"></p>
@@ -470,7 +474,8 @@ height:50vh;
 <p>拖曳分区数据即可得到分区绘制的数据图：</p>
 <p><img src="/2020/02/24/Origin-Plugins-Graph-Maker/Origin-Plugins-Graph-Maker%5CG4.gif" alt="G4"></p>
 <p>同理也可以调节样点形状和内部结构，在插件内参数设置完成后即可点击确定生成图片。</p>
-<h2 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2><p>使用Graph Maker插件可以快速绘制简易图片并且方便的切换不同绘制模式，在绘制样点信息复杂（如在二维电线图中可以使样点颜色代表第三维度数据、样点大小代表第四维度数据等）的数据图是有着独特的优势，可以在一定程度上提高绘图效率。</p>
+<h2 id="小结：">小结：</h2>
+<p>使用Graph Maker插件可以快速绘制简易图片并且方便的切换不同绘制模式，在绘制样点信息复杂（如在二维电线图中可以使样点颜色代表第三维度数据、样点大小代表第四维度数据等）的数据图是有着独特的优势，可以在一定程度上提高绘图效率。</p>
 
     </article>
     <!-- license  -->
@@ -1340,9 +1345,33 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 66
+        Total : 68
         </div>
         <!-- search  -->
         
@@ -1355,6 +1384,16 @@ top:50vh;
     
     <div class="archive-year"> 2026 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/" >Optoelectronic Devices: An Interactive Knowledge Directory</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1740,23 +1779,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
     
+        <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
+    
+        <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
+    
         <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
     
         <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
-    
-        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
-    
-        <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
     
-        <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
+        <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
     
         <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
     
@@ -1764,21 +1801,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
+    
         <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
     
         <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
     
         <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
-    
-        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
-    
-        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
-    
-        <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
-    
-        <span class="sidebar-tag-name" data-tags="Device Physics"><span class="iconfont-archer">&#xe606;</span>Device Physics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
     
         <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
     
@@ -1792,31 +1821,41 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
     
+        <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Device Physics"><span class="iconfont-archer">&#xe606;</span>Device Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+    
         <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
     
         <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
-    
-        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
     
         <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
     
         <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
+        <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
+    
         <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
     
         <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
-    
-        <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
     
         <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
     
         <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
     
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
-    
         <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
     
         <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
         <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
     
@@ -1832,9 +1871,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
     
+        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
+    
         <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
     
-        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
+        <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1871,21 +1914,21 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
+        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+    
         <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+        <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
-        <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
         <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
-    
-        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     

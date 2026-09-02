@@ -1,0 +1,2378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNMSN3C9M8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MNMSN3C9M8');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="Du Xinchuan">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Du Xinchuan">
+    
+    <meta name="keywords" content="Xinchuan Du,Du Xinchuan,2D materials,optoelectronic devices,spectroscopy,semiconductor physics,photodetectors,quantum sensing">
+    
+    <meta name="description" content="Dr. Xinchuan Du's research notes and project documentation. 
+Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sensing.
+">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Optoelectronic Devices: An Interactive Knowledge Directory · Xinchuan Du | Researcher in 2D Materials &amp; Optoelectronics</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("../../../../font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "../../../../css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "../../../../css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "../../../../assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="../../../../scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="../../../../font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', '[object Object]', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="../../../../index.html" >iCalculate’s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Optoelectronic Devices: An Interactive Knowledge Directory</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>iCalculate’s Studio</a>
+    <a class="knowledge-atlas-link" href="../../../../knowledge/">Knowledge Atlas</a>
+</header>
+<style>
+  .knowledge-atlas-link {
+    position: absolute; left: 4.5rem; right: auto; top: 1.55rem; z-index: 2;
+    color: rgba(255,255,255,.82); font-size: .72rem; letter-spacing: .13em;
+    text-transform: uppercase; border-bottom: 1px solid rgba(247,83,87,.85);
+    padding-bottom: .22rem; transition: color .2s ease, border-color .2s ease;
+  }
+  .knowledge-atlas-link:hover { color: #fff; border-color: #fff; }
+  @media (max-width: 680px) { .knowledge-atlas-link { left: 3.8rem; right: auto; top: 1.35rem; font-size: .62rem; } }
+</style>
+
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(../../../../intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Optoelectronic Devices: An Interactive Knowledge Directory
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Research Resources">Research Resources</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Optoelectronic Systems">Optoelectronic Systems</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">4.3k</span>Reading time: <span class="post-count reading-time">19 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2026/09/02</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "../../../../lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="../../../../assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <link rel="stylesheet" href="/css/bilingual-post.css">
+<script defer src="/js/bilingual-post.js"></script>
+<nav class="language-switcher" aria-label="Article language">
+  <span class="language-switcher__label">Read in</span>
+  <button type="button" data-language="en" aria-pressed="true">English</button>
+  <button type="button" data-language="zh" aria-pressed="false">中文</button>
+</nav>
+<section class="lang-panel lang-en" lang="en">
+<link rel="stylesheet" href="/css/semiconductor-quantum-directory.css">
+<script defer src="/js/semiconductor-quantum-directory.js"></script>
+<h1>Optoelectronic Devices: An Interactive Knowledge Directory</h1>
+<p>Optoelectronics is best understood as a conversion network: electronic states and photons exchange energy, optical structures control modes, and contacts expose those microscopic processes as measurable signals. The directory keeps traditional devices and current quantum frontiers on the same causal map.</p>
+<!--more-->
+<div class="sq-directory" data-directory-lang="en">
+  <div class="sq-directory__mast"><div><span>Interactive field index</span><strong>37</strong><small>bilingual entry points</small></div><p>Follow photons from creation and confinement to conversion, detection and integrated control.</p></div>
+  <div class="sq-controls"><label class="sq-search"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search a concept, device, or physical mechanism" aria-label="Search a concept, device, or physical mechanism"><kbd>/</kbd></label>
+  <div class="sq-filter" role="group" aria-label="Maturity filter"><button type="button" data-maturity="all" aria-pressed="true">All maturity</button><button type="button" data-maturity="foundation" aria-pressed="false">Foundation</button><button type="button" data-maturity="engineering" aria-pressed="false">Engineering</button><button type="button" data-maturity="prototype" aria-pressed="false">Prototype</button><button type="button" data-maturity="frontier" aria-pressed="false">Frontier</button></div>
+  <div class="sq-paths"><span>Quick learning paths</span><button type="button" data-path="all" aria-pressed="true">Complete map</button><button type="button" data-path="foundations,emitters">Emission</button><button type="button" data-path="foundations,detectors,quantum">Detection</button><button type="button" data-path="foundations,integrated,quantum">Integrated photonics</button></div>
+  <div class="sq-actions"><span class="sq-status" aria-live="polite"><b>37</b> visible entries</span><button type="button" data-expand>Expand all</button><button type="button" data-collapse>Collapse all</button></div></div>
+  <div class="sq-branches"><section class="sq-branch is-collapsed" data-branch="foundations">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">01</span>
+  <span><strong>Physical Foundations</strong><small>Light–matter coupling, optical states, recombination, confinement and calibrated metrics.</small></span>
+  <em><span data-branch-count>11</span> entries</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="optoelectronic devices knowledge network 光电子器件知识网络 optoelectronic devices form a causal network in which electronic states absorb or emit photons, fields confine and route them, and contacts convert microscopic transitions into useful terminal signals. 光电子器件构成一张因果网络：电子态吸收或发射光子，电磁场限制并传输光，接触与读出把微观跃迁转换成可用端口信号。 optoelectronic systems foundation knowledge note">
+  <div class="sq-card__meta"><span>Optoelectronic Systems · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Optoelectronic Devices Knowledge Network</h3><p>Optoelectronic devices form a causal network in which electronic states absorb or emit photons, fields confine and route them, and contacts convert microscopic transitions into useful terminal signals.</p>
+  <a href="/knowledge/nodes/optoelectronic-devices-knowledge-network/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="light–matter interaction in semiconductors 半导体中的光–物质相互作用 interband and intraband optical transitions are controlled jointly by the electronic spectrum, photon modes and transition matrix elements rather than by the band gap alone. 带间与带内光学跃迁由电子能谱、光子模式和跃迁矩阵元共同控制，而不是仅由带隙决定。 light–matter interaction foundation knowledge note">
+  <div class="sq-card__meta"><span>Light–Matter Interaction · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Light–Matter Interaction in Semiconductors</h3><p>Interband and intraband optical transitions are controlled jointly by the electronic spectrum, photon modes and transition matrix elements rather than by the band gap alone.</p>
+  <a href="/knowledge/nodes/semiconductor-light-matter-interaction/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="optical absorption, joint density of states and selection rules 光学吸收、联合态密度与选择定则 an absorption edge is the product of available initial–final state pairs and their optical matrix elements, so dimensionality and symmetry shape the spectrum. 吸收边由可用初末态对与光学矩阵元共同决定，因此维度和对称性会直接塑造光谱。 light–matter interaction foundation knowledge note">
+  <div class="sq-card__meta"><span>Light–Matter Interaction · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Optical Absorption, Joint Density of States and Selection Rules</h3><p>An absorption edge is the product of available initial–final state pairs and their optical matrix elements, so dimensionality and symmetry shape the spectrum.</p>
+  <a href="/knowledge/nodes/optical-absorption-joint-density-selection-rules/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="spontaneous and stimulated emission with detailed balance 自发辐射、受激辐射与详细平衡 spontaneous emission seeds photons, stimulated emission copies an occupied mode, and detailed balance ties both processes to absorption in thermal equilibrium. 自发辐射产生初始光子，受激辐射复制已占据模式，而详细平衡在热平衡下把两者与吸收联系起来。 optical emission physics foundation knowledge note">
+  <div class="sq-card__meta"><span>Optical Emission Physics · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Spontaneous and Stimulated Emission with Detailed Balance</h3><p>Spontaneous emission seeds photons, stimulated emission copies an occupied mode, and detailed balance ties both processes to absorption in thermal equilibrium.</p>
+  <a href="/knowledge/nodes/spontaneous-stimulated-emission-detailed-balance/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="carrier generation, recombination and quantum efficiency 载流子产生、复合与量子效率 optoelectronic efficiency is set by competing radiative, defect-assisted, auger and transport rates, so lifetime alone never identifies the useful channel. 光电子效率由辐射、缺陷辅助、auger 与输运速率竞争决定，因此单独的寿命不能识别有用通道。 optical recombination foundation knowledge note">
+  <div class="sq-card__meta"><span>Optical Recombination · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Carrier Generation, Recombination and Quantum Efficiency</h3><p>Optoelectronic efficiency is set by competing radiative, defect-assisted, Auger and transport rates, so lifetime alone never identifies the useful channel.</p>
+  <a href="/knowledge/nodes/carrier-generation-recombination-quantum-efficiency/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="waveguides, microcavities, photonic density of states and the purcell effect 波导、微腔、光子态密度与 purcell 效应 optical boundaries reshape the allowed electromagnetic modes, controlling propagation, radiation, spontaneous-emission rate and collection without changing the bare electronic transition. 光学边界通过重塑允许的电磁模式控制传播、辐射、自发辐射速率和收集效率，而不必改变裸电子跃迁。 photonic confinement foundation knowledge note">
+  <div class="sq-card__meta"><span>Photonic Confinement · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Waveguides, Microcavities, Photonic Density of States and the Purcell Effect</h3><p>Optical boundaries reshape the allowed electromagnetic modes, controlling propagation, radiation, spontaneous-emission rate and collection without changing the bare electronic transition.</p>
+  <a href="/knowledge/nodes/waveguides-microcavities-photonic-density-purcell/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="photodetector responsivity, detectivity, noise, bandwidth and gain 响应率、探测率、噪声、带宽与增益权衡 a photodetector is defined by a calibrated chain from incident photons to output statistics; responsivity without bandwidth, noise, area and linearity is incomplete. 光探测器由入射光子到输出统计的完整校准链定义；脱离带宽、噪声、面积与线性的响应率没有完整意义。 photodetector physics foundation knowledge note">
+  <div class="sq-card__meta"><span>Photodetector Physics · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Photodetector Responsivity, Detectivity, Noise, Bandwidth and Gain</h3><p>A photodetector is defined by a calibrated chain from incident photons to output statistics; responsivity without bandwidth, noise, area and linearity is incomplete.</p>
+  <a href="/knowledge/nodes/photodetector-performance-noise-bandwidth/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="optoelectronic devices: leds, photodiodes, and solar cells 光电子器件：led、光电二极管与太阳电池 a unified account of light emission, detection, and photovoltaics through absorption, generation–recombination, junction separation, and quasi-fermi-level splitting. 以光吸收、载流子产生复合、结区分离和准费米能级分裂统一理解发光、探测与光伏器件。 optoelectronic devices foundation knowledge note">
+  <div class="sq-card__meta"><span>Optoelectronic Devices · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Optoelectronic Devices: LEDs, Photodiodes, and Solar Cells</h3><p>A unified account of light emission, detection, and photovoltaics through absorption, generation–recombination, junction separation, and quasi-Fermi-level splitting.</p>
+  <a href="/knowledge/nodes/optoelectronic-semiconductor-devices/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="nonequilibrium carriers: generation, recombination, and quasi-fermi levels 非平衡载流子：产生、复合与准费米能级 carrier lifetime, diffusion length, generation–recombination mechanisms, and electron–hole quasi-fermi-level splitting under optical or electrical injection. 描述光生或电注入载流子的寿命、扩散长度、产生复合机制及电子空穴准费米能级分裂。 transport physics foundation knowledge note">
+  <div class="sq-card__meta"><span>Transport Physics · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Nonequilibrium Carriers: Generation, Recombination, and Quasi-Fermi Levels</h3><p>Carrier lifetime, diffusion length, generation–recombination mechanisms, and electron–hole quasi-Fermi-level splitting under optical or electrical injection.</p>
+  <a href="/knowledge/nodes/non-equilibrium-carriers/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="excitons in two-dimensional semiconductors 二维半导体中的激子 reduced screening and quantum confinement bind electrons and holes strongly, so excitons, trions and many-body renormalization dominate optical spectra of monolayer tmds. 弱屏蔽和量子限域使电子与空穴强烈束缚，因此激子、三激子及多体重整化主导单层 tmd 光谱。 exciton physics foundation knowledge note">
+  <div class="sq-card__meta"><span>Exciton Physics · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Excitons in Two-Dimensional Semiconductors</h3><p>Reduced screening and quantum confinement bind electrons and holes strongly, so excitons, trions and many-body renormalization dominate optical spectra of monolayer TMDs.</p>
+  <a href="/knowledge/nodes/excitons-in-two-dimensional-semiconductors/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="interlayer and moiré excitons 层间激子与莫尔激子 in a type-ii vdw heterostructure the electron and hole can occupy different layers; the resulting dipole lengthens lifetime and makes the exciton sensitive to gate field, twist and moiré confinement. 在 ii 型 vdw 异质结中电子和空穴可分居不同层；由此产生的偶极延长寿命，并使激子对栅场、扭角及莫尔限域敏感。 exciton physics frontier knowledge note">
+  <div class="sq-card__meta"><span>Exciton Physics · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Interlayer and Moiré Excitons</h3><p>In a type-II vdW heterostructure the electron and hole can occupy different layers; the resulting dipole lengthens lifetime and makes the exciton sensitive to gate field, twist and moiré confinement.</p>
+  <a href="/knowledge/nodes/interlayer-and-moire-excitons/">Open entry <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="emitters">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">02</span>
+  <span><strong>Light Emitters and Lasers</strong><small>LEDs, semiconductor lasers, confined active regions and display emitters.</small></span>
+  <em><span data-branch-count>5</span> entries</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="engineering" data-search="led injection, radiative recombination and light extraction led 的注入、辐射复合与出光 an led converts balanced electron–hole injection into spontaneous emission, but its wall-plug efficiency is the product of injection, internal radiative and extraction efficiencies. led 把平衡的电子–空穴注入转化为自发辐射，但其插墙效率是注入效率、内部辐射效率与出光效率的乘积。 light emitters engineering knowledge note">
+  <div class="sq-card__meta"><span>Light Emitters · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>LED Injection, Radiative Recombination and Light Extraction</h3><p>An LED converts balanced electron–hole injection into spontaneous emission, but its wall-plug efficiency is the product of injection, internal radiative and extraction efficiencies.</p>
+  <a href="/knowledge/nodes/led-injection-radiative-recombination-extraction/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="semiconductor lasers, population inversion and threshold 半导体激光器、粒子数反转与阈值 a semiconductor laser oscillates when modal gain from an inverted electron–hole plasma balances internal and mirror loss for a permitted cavity mode. 当反转电子–空穴等离子体提供的模式增益补偿内部损耗与镜面损耗时，允许的腔模发生半导体激光振荡。 semiconductor lasers engineering knowledge note">
+  <div class="sq-card__meta"><span>Semiconductor Lasers · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Semiconductor Lasers, Population Inversion and Threshold</h3><p>A semiconductor laser oscillates when modal gain from an inverted electron–hole plasma balances internal and mirror loss for a permitted cavity mode.</p>
+  <a href="/knowledge/nodes/semiconductor-lasers-population-inversion-threshold/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="quantum-well and quantum-dot lasers with vcsels 量子阱、量子点激光器与 vcsel quantum confinement reshapes gain and carrier capture, while vertical cavities turn short resonators and distributed mirrors into compact, low-current laser arrays. 量子限域重塑增益与载流子俘获，垂直微腔则利用短腔和分布布拉格镜形成紧凑低电流激光阵列。 semiconductor lasers engineering knowledge note">
+  <div class="sq-card__meta"><span>Semiconductor Lasers · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Quantum-Well and Quantum-Dot Lasers with VCSELs</h3><p>Quantum confinement reshapes gain and carrier capture, while vertical cavities turn short resonators and distributed mirrors into compact, low-current laser arrays.</p>
+  <a href="/knowledge/nodes/quantum-well-quantum-dot-lasers-vcsel/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="micro-leds and high-speed display devices micro-led 与高速显示器件 shrinking iii–nitride leds improves current density and modulation speed but magnifies sidewall recombination, current spreading, transfer yield and colour-conversion constraints. 缩小 iii 族氮化物 led 可提高电流密度与调制速度，却会放大侧壁复合、电流扩展、巨量转移良率和颜色转换问题。 display emitters engineering knowledge note">
+  <div class="sq-card__meta"><span>Display Emitters · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Micro-LEDs and High-Speed Display Devices</h3><p>Shrinking III–nitride LEDs improves current density and modulation speed but magnifies sidewall recombination, current spreading, transfer yield and colour-conversion constraints.</p>
+  <a href="/knowledge/nodes/micro-led-high-speed-display-devices/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="oled, qled and perovskite light-emitting devices oled、qled 与钙钛矿发光器件 solution-processed and molecular emitters trade epitaxial perfection for tunable excitons, colour and manufacturing, making charge balance and excited-state loss central design variables. 溶液加工与分子发光材料用可调激子、色彩和制造方式换取外延完美性，因此电荷平衡和激发态损失成为核心设计变量。 display emitters prototype knowledge note">
+  <div class="sq-card__meta"><span>Display Emitters · Knowledge Note</span><b data-tone="prototype">Prototype</b></div>
+  <h3>OLED, QLED and Perovskite Light-Emitting Devices</h3><p>Solution-processed and molecular emitters trade epitaxial perfection for tunable excitons, colour and manufacturing, making charge balance and excited-state loss central design variables.</p>
+  <a href="/knowledge/nodes/solution-processed-oled-qled-perovskite-emitters/">Open entry <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="detectors">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">03</span>
+  <span><strong>Photodetection and Imaging</strong><small>Unity-gain, photoconductive, avalanche, imaging, thermal and low-dimensional detectors.</small></span>
+  <em><span data-branch-count>9</span> entries</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="engineering" data-search="photoconductors and phototransistors 光导体与光晶体管 photoconductive gain arises when one photocarrier circulates or controls a channel for longer than the transit time, inherently coupling high gain to memory, noise and limited speed. 当一个光生载流子的寿命或栅控时间长于渡越时间时产生光导增益，因此高增益天然与记忆、噪声和有限速度耦合。 photodetector physics engineering knowledge note">
+  <div class="sq-card__meta"><span>Photodetector Physics · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Photoconductors and Phototransistors</h3><p>Photoconductive gain arises when one photocarrier circulates or controls a channel for longer than the transit time, inherently coupling high gain to memory, noise and limited speed.</p>
+  <a href="/knowledge/nodes/photoconductors-and-phototransistors/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="pin photodiodes pin 光电二极管 a pin photodiode uses a wide depleted region to absorb light and sweep primary carriers to contacts with low gain, high linearity and predictable bandwidth. pin 光电二极管利用宽耗尽区吸光并漂移收集初级载流子，以低增益换取高线性和可预测带宽。 photodiodes engineering knowledge note">
+  <div class="sq-card__meta"><span>Photodiodes · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>PIN Photodiodes</h3><p>A PIN photodiode uses a wide depleted region to absorb light and sweep primary carriers to contacts with low gain, high linearity and predictable bandwidth.</p>
+  <a href="/knowledge/nodes/pin-photodiodes/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="avalanche photodiodes, spads and geiger-mode detection apd、spad 与 geiger 模式探测 avalanche photodiodes use impact ionization for internal gain, while spads bias above breakdown so one carrier triggers a macroscopic pulse that must be quenched and reset. 雪崩光电二极管利用碰撞电离获得内部增益；spad 工作在击穿以上，使单个载流子触发宏观脉冲，随后必须淬灭并复位。 single-photon detection engineering knowledge note">
+  <div class="sq-card__meta"><span>Single-Photon Detection · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Avalanche Photodiodes, SPADs and Geiger-Mode Detection</h3><p>Avalanche photodiodes use impact ionization for internal gain, while SPADs bias above breakdown so one carrier triggers a macroscopic pulse that must be quenched and reset.</p>
+  <a href="/knowledge/nodes/avalanche-spad-geiger-photodetection/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="ccd and cmos image sensors ccd 与 cmos 图像传感器 image sensors convert a spatial photon field into sampled charge packets; architecture determines how charge transfer, read noise, dynamic range and parallelism are traded. 图像传感器把空间光子场转换成采样电荷包；架构决定电荷转移、读出噪声、动态范围与并行度之间的权衡。 imaging sensors engineering knowledge note">
+  <div class="sq-card__meta"><span>Imaging Sensors · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>CCD and CMOS Image Sensors</h3><p>Image sensors convert a spatial photon field into sampled charge packets; architecture determines how charge transfer, read noise, dynamic range and parallelism are traded.</p>
+  <a href="/knowledge/nodes/ccd-cmos-image-sensors/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="bolometers, thermopiles and pyroelectric detectors 测辐射热计、热电堆与热释电探测器 thermal detectors first convert radiation into heat and then sense temperature, providing broadband response at the cost of a thermal time-constant–sensitivity trade-off. 热探测器先把辐射转化为热，再测量温度，因此获得宽光谱响应，同时受热时间常数–灵敏度权衡限制。 infrared &amp; thermal detection engineering knowledge note">
+  <div class="sq-card__meta"><span>Infrared &amp; Thermal Detection · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Bolometers, Thermopiles and Pyroelectric Detectors</h3><p>Thermal detectors first convert radiation into heat and then sense temperature, providing broadband response at the cost of a thermal time-constant–sensitivity trade-off.</p>
+  <a href="/knowledge/nodes/thermal-photon-detectors-bolometer-thermopile-pyroelectric/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="mct, qwip and qdip infrared detector architectures mct、qwip、qdip 与红外探测架构 infrared detectors choose between narrow-gap interband absorption and engineered intersubband transitions, trading operating temperature, dark current, uniformity and polarization response. 红外探测器在窄带隙带间吸收和人工设计的子带间跃迁之间选择，并权衡工作温度、暗电流、均匀性与偏振响应。 infrared &amp; thermal detection engineering knowledge note">
+  <div class="sq-card__meta"><span>Infrared &amp; Thermal Detection · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>MCT, QWIP and QDIP Infrared Detector Architectures</h3><p>Infrared detectors choose between narrow-gap interband absorption and engineered intersubband transitions, trading operating temperature, dark current, uniformity and polarization response.</p>
+  <a href="/knowledge/nodes/infrared-mct-qwip-qdip-detector-architectures/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="two-dimensional, perovskite and organic thin-film photodetectors 二维、钙钛矿和有机薄膜光探测器 emerging thin-film photodetectors offer strong absorption, spectral tunability and unconventional integration, but traps, contacts and environmental sensitivity often control their reported gain. 新兴薄膜光探测器具有强吸收、可调光谱和非常规集成优势，但其报告增益往往由陷阱、接触与环境敏感性控制。 emerging photodetectors prototype knowledge note">
+  <div class="sq-card__meta"><span>Emerging Photodetectors · Knowledge Note</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Two-Dimensional, Perovskite and Organic Thin-Film Photodetectors</h3><p>Emerging thin-film photodetectors offer strong absorption, spectral tunability and unconventional integration, but traps, contacts and environmental sensitivity often control their reported gain.</p>
+  <a href="/knowledge/nodes/emerging-2d-perovskite-organic-photodetectors/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the pn junction: space charge, band bending, and rectification pn结：空间电荷、能带与整流 from diffusion-built space charge and built-in potential to the diode equation, junction capacitance, transients, and breakdown. 从扩散建立空间电荷和内建电势，再由少数载流子边界条件推导二极管方程、结电容与击穿。 junction devices foundation knowledge note">
+  <div class="sq-card__meta"><span>Junction Devices · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>The PN Junction: Space Charge, Band Bending, and Rectification</h3><p>From diffusion-built space charge and built-in potential to the diode equation, junction capacitance, transients, and breakdown.</p>
+  <a href="/knowledge/nodes/pn-junction-physics/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="spin–valley physics in two-dimensional semiconductors 二维半导体中的自旋–谷物理 broken inversion symmetry and strong spin–orbit coupling in monolayer tmds tie spin, valley and optical helicity to the k and k′ band extrema. 单层 tmd 的反演对称性破缺与强自旋轨道耦合，使 k/k′ 带谷与自旋及光学圆偏振发生关联。 spin valley topology foundation knowledge note">
+  <div class="sq-card__meta"><span>Spin Valley Topology · Knowledge Note</span><b data-tone="foundation">Foundation</b></div>
+  <h3>Spin–Valley Physics in Two-Dimensional Semiconductors</h3><p>Broken inversion symmetry and strong spin–orbit coupling in monolayer TMDs tie spin, valley and optical helicity to the K and K′ band extrema.</p>
+  <a href="/knowledge/nodes/spin-valley-physics/">Open entry <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="photovoltaics">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">04</span>
+  <span><strong>Photovoltaic Energy Conversion</strong><small>Quasi-Fermi splitting, detailed balance and spectrum-splitting tandems.</small></span>
+  <em><span data-branch-count>2</span> entries</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="engineering" data-search="solar cells, quasi-fermi levels and the detailed-balance limit 太阳电池、准费米能级与详细平衡极限 a solar cell converts a nonequilibrium quasi-fermi-level splitting into electrical work; absorption gain competes with radiative, nonradiative, resistive and optical-entropy losses. 太阳电池把非平衡准费米能级分裂转换成电功；吸收增益与辐射、非辐射、电阻及光学熵损失竞争。 photovoltaics engineering knowledge note">
+  <div class="sq-card__meta"><span>Photovoltaics · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Solar Cells, Quasi-Fermi Levels and the Detailed-Balance Limit</h3><p>A solar cell converts a nonequilibrium quasi-Fermi-level splitting into electrical work; absorption gain competes with radiative, nonradiative, resistive and optical-entropy losses.</p>
+  <a href="/knowledge/nodes/photovoltaic-detailed-balance-limit/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="multijunction, perovskite-tandem and emerging photovoltaics 多结、钙钛矿叠层与新概念光伏 tandem photovoltaics divide the spectrum among band gaps to reduce thermalization and transmission losses, but optical current matching, interconnection and stability become coupled constraints. 叠层光伏用多个带隙分配太阳光谱以减少热化与透射损失，但光学电流匹配、互连和稳定性随之耦合。 photovoltaics prototype knowledge note">
+  <div class="sq-card__meta"><span>Photovoltaics · Knowledge Note</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Multijunction, Perovskite-Tandem and Emerging Photovoltaics</h3><p>Tandem photovoltaics divide the spectrum among band gaps to reduce thermalization and transmission losses, but optical current matching, interconnection and stability become coupled constraints.</p>
+  <a href="/knowledge/nodes/multijunction-perovskite-tandem-emerging-photovoltaics/">Open entry <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="integrated">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">05</span>
+  <span><strong>Integrated Modulation and Photonics</strong><small>Modulation mechanisms, silicon, ferroelectric and heterogeneous platforms.</small></span>
+  <em><span data-branch-count>5</span> entries</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="engineering" data-search="electro-optic, thermo-optic, electroabsorption and acousto-optic modulation 电光、热光、电吸收和声光调制 optical modulators map an electrical, thermal or acoustic control onto phase, amplitude, frequency or direction through a material susceptibility and a device transfer function. 光调制器通过材料响应率和器件传递函数，把电、热或声学控制映射为光的相位、振幅、频率或方向。 electro-optic modulation engineering knowledge note">
+  <div class="sq-card__meta"><span>Electro-Optic Modulation · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Electro-Optic, Thermo-Optic, Electroabsorption and Acousto-Optic Modulation</h3><p>Optical modulators map an electrical, thermal or acoustic control onto phase, amplitude, frequency or direction through a material susceptibility and a device transfer function.</p>
+  <a href="/knowledge/nodes/electro-thermo-electroabsorption-acousto-optic-modulation/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="silicon photonics and plasma-dispersion modulation 硅光子学与等离子色散调制 silicon photonics uses mature high-index waveguides and carrier-induced index changes, trading cmos-scale integration against indirect-gap light generation and free-carrier absorption. 硅光子学利用成熟高折射率波导与载流子引起的折射率变化，以 cmos 级集成为优势，同时面对间接带隙发光困难和自由载流子吸收。 silicon photonics engineering knowledge note">
+  <div class="sq-card__meta"><span>Silicon Photonics · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Silicon Photonics and Plasma-Dispersion Modulation</h3><p>Silicon photonics uses mature high-index waveguides and carrier-induced index changes, trading CMOS-scale integration against indirect-gap light generation and free-carrier absorption.</p>
+  <a href="/knowledge/nodes/silicon-photonics-plasma-dispersion-modulation/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="thin-film lithium niobate and ferroelectric integrated electro-optics 薄膜铌酸锂及铁电集成电光器件 thin-film lithium niobate combines a strong linear electro-optic tensor with tight confinement and low loss, enabling broadband phase control without carrier absorption. 薄膜铌酸锂把强线性电光张量、紧光场限制与低损耗结合，可在不依赖载流子吸收的情况下实现宽带相位控制。 ferroelectric photonics engineering knowledge note">
+  <div class="sq-card__meta"><span>Ferroelectric Photonics · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Thin-Film Lithium Niobate and Ferroelectric Integrated Electro-Optics</h3><p>Thin-film lithium niobate combines a strong linear electro-optic tensor with tight confinement and low loss, enabling broadband phase control without carrier absorption.</p>
+  <a href="/knowledge/nodes/thin-film-lithium-niobate-ferroelectric-electro-optics/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="heterogeneous integrated light sources, amplifiers and detectors 异质集成光源、放大器和探测器 heterogeneous photonics assigns gain, detection, modulation and routing to different materials and joins them through bonding, transfer printing, epitaxy or optical coupling. 异质光子学把增益、探测、调制与传输分配给不同材料，并通过键合、转移印刷、外延或光耦合组合。 heterogeneous photonics prototype knowledge note">
+  <div class="sq-card__meta"><span>Heterogeneous Photonics · Knowledge Note</span><b data-tone="prototype">Prototype</b></div>
+  <h3>Heterogeneous Integrated Light Sources, Amplifiers and Detectors</h3><p>Heterogeneous photonics assigns gain, detection, modulation and routing to different materials and joins them through bonding, transfer printing, epitaxy or optical coupling.</p>
+  <a href="/knowledge/nodes/heterogeneous-integrated-light-sources-amplifiers-detectors/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="optoelectronic memory, photomemristors and reconfigurable devices 光电存储、光忆阻与可重构器件 coupling photogeneration to trapped charge, ions, polarization or phase creates devices whose conductance remembers illumination and can combine sensing, memory and processing. 把光生载流子与陷阱电荷、离子、极化或物相耦合，可使器件电导记住光照并融合感知、存储与处理。 neuromorphic hardware frontier knowledge note">
+  <div class="sq-card__meta"><span>Neuromorphic Hardware · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Optoelectronic Memory, Photomemristors and Reconfigurable Devices</h3><p>Coupling photogeneration to trapped charge, ions, polarization or phase creates devices whose conductance remembers illumination and can combine sensing, memory and processing.</p>
+  <a href="/knowledge/nodes/optoelectronic-memory-and-reconfigurable-devices/">Open entry <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="quantum">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">06</span>
+  <span><strong>Single-Photon and Quantum Optoelectronics</strong><small>Superconducting detectors, quantum emitters and nonlinear quantum circuits.</small></span>
+  <em><span data-branch-count>5</span> entries</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="engineering" data-search="superconducting nanowire single-photon detectors 超导纳米线单光子探测器 snspd an snspd biases a narrow superconducting wire near its critical current so absorption of one photon can nucleate a resistive region and produce a fast electrical pulse. snspd 把窄超导线偏置在临界电流附近，使单个光子的吸收能够成核电阻区并产生快速电脉冲。 single-photon detection engineering knowledge note">
+  <div class="sq-card__meta"><span>Single-Photon Detection · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Superconducting Nanowire Single-Photon Detectors</h3><p>An SNSPD biases a narrow superconducting wire near its critical current so absorption of one photon can nucleate a resistive region and produce a fast electrical pulse.</p>
+  <a href="/knowledge/nodes/superconducting-nanowire-single-photon-detectors/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="transition-edge sensors and microwave kinetic-inductance detectors tes 与 mkid 超导光子探测器 tes devices calorimetrically measure the temperature rise from absorbed energy, whereas mkids measure a resonator shift caused by broken cooper pairs and changed kinetic inductance. tes 通过量热方式测量吸收能量引起的温升，mkid 则测量 cooper 对破裂和动能电感变化造成的谐振频移。 single-photon detection engineering knowledge note">
+  <div class="sq-card__meta"><span>Single-Photon Detection · Knowledge Note</span><b data-tone="engineering">Engineering</b></div>
+  <h3>Transition-Edge Sensors and Microwave Kinetic-Inductance Detectors</h3><p>TES devices calorimetrically measure the temperature rise from absorbed energy, whereas MKIDs measure a resonator shift caused by broken Cooper pairs and changed kinetic inductance.</p>
+  <a href="/knowledge/nodes/tes-mkid-superconducting-photon-detectors/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="integrated nonlinear photonics, microcombs and quantum photonic circuits 非线性、微梳与集成量子光子学 integrated nonlinear and quantum photonics uses confined modes to enhance weak optical interactions, generating new frequencies, correlated photon pairs and programmable interference on chip. 集成非线性与量子光子学利用受限光模增强弱光学相互作用，在芯片上产生新频率、关联光子对和可编程干涉。 nonlinear &amp; quantum photonics frontier knowledge note">
+  <div class="sq-card__meta"><span>Nonlinear &amp; Quantum Photonics · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Integrated Nonlinear Photonics, Microcombs and Quantum Photonic Circuits</h3><p>Integrated nonlinear and quantum photonics uses confined modes to enhance weak optical interactions, generating new frequencies, correlated photon pairs and programmable interference on chip.</p>
+  <a href="/knowledge/nodes/integrated-nonlinear-and-quantum-photonics/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="excitonic and single-photon devices 激子与单光子器件 localized excitons in defects, strain potentials or moiré cells can emit one photon at a time, while interlayer excitons provide electrically tunable dipoles and transport. 缺陷、应变势或莫尔晶格中的局域激子可逐次发射单光子，层间激子则提供电可调偶极和输运。 quantum devices frontier knowledge note">
+  <div class="sq-card__meta"><span>Quantum Devices · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Excitonic and Single-Photon Devices</h3><p>Localized excitons in defects, strain potentials or moiré cells can emit one photon at a time, while interlayer excitons provide electrically tunable dipoles and transport.</p>
+  <a href="/knowledge/nodes/excitonic-and-single-photon-devices/">Open entry <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="two-dimensional superconductivity and josephson physics 二维超导与约瑟夫森物理 two-dimensional superconductors combine phase fluctuations, strong spin–orbit coupling and gate-tunable carrier density; proximity coupling transfers pairing correlations into graphene or tmd channels. 二维超导体结合强相位涨落、自旋轨道耦合与可栅控载流子密度；邻近效应还能把配对关联引入石墨烯或 tmd 沟道。 2d ferroics frontier knowledge note">
+  <div class="sq-card__meta"><span>2D Ferroics · Knowledge Note</span><b data-tone="frontier">Frontier</b></div>
+  <h3>Two-Dimensional Superconductivity and Josephson Physics</h3><p>Two-dimensional superconductors combine phase fluctuations, strong spin–orbit coupling and gate-tunable carrier density; proximity coupling transfers pairing correlations into graphene or TMD channels.</p>
+  <a href="/knowledge/nodes/two-dimensional-superconductivity/">Open entry <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section></div></div>
+<p>For a spatial view of the same relationships, open the <a href="/knowledge/">Knowledge Atlas</a>. This directory is optimized for deliberate reading; the Atlas is optimized for discovering unexpected neighbours.</p>
+
+</section>
+<!-- bilingual:zh -->
+<section class="lang-panel lang-zh" lang="zh-CN" hidden>
+<div class="zh-heading zh-h1" role="heading" aria-level="1">光电子器件：交互式知识目录</div>
+<p>光电子学更适合被理解为能量转换网络：电子态与光子交换能量，光学结构控制模式，接触与读出把微观过程呈现为可测信号。本目录把传统器件与当前量子前沿放在同一张因果图中。</p>
+<div class="sq-directory" data-directory-lang="zh">
+  <div class="sq-directory__mast"><div><span>交互式领域索引</span><strong>37</strong><small>个双语知识入口</small></div><p>沿着光子的产生、限制、转换、探测与集成控制逐层阅读。</p></div>
+  <div class="sq-controls"><label class="sq-search"><span aria-hidden="true">⌕</span><input type="search" placeholder="搜索概念、器件或物理机制" aria-label="搜索概念、器件或物理机制"><kbd>/</kbd></label>
+  <div class="sq-filter" role="group" aria-label="Maturity filter"><button type="button" data-maturity="all" aria-pressed="true">全部成熟度</button><button type="button" data-maturity="foundation" aria-pressed="false">基础</button><button type="button" data-maturity="engineering" aria-pressed="false">工程</button><button type="button" data-maturity="prototype" aria-pressed="false">原型</button><button type="button" data-maturity="frontier" aria-pressed="false">前沿</button></div>
+  <div class="sq-paths"><span>快速学习路径</span><button type="button" data-path="all" aria-pressed="true">完整地图</button><button type="button" data-path="foundations,emitters">发光</button><button type="button" data-path="foundations,detectors,quantum">探测</button><button type="button" data-path="foundations,integrated,quantum">集成光子</button></div>
+  <div class="sq-actions"><span class="sq-status" aria-live="polite"><b>37</b> 个可见入口</span><button type="button" data-expand>全部展开</button><button type="button" data-collapse>全部折叠</button></div></div>
+  <div class="sq-branches"><section class="sq-branch is-collapsed" data-branch="foundations">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">01</span>
+  <span><strong>物理基础</strong><small>光–物质耦合、光学态、复合、限制及校准指标。</small></span>
+  <em><span data-branch-count>11</span> 入口</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="foundation" data-search="optoelectronic devices knowledge network 光电子器件知识网络 optoelectronic devices form a causal network in which electronic states absorb or emit photons, fields confine and route them, and contacts convert microscopic transitions into useful terminal signals. 光电子器件构成一张因果网络：电子态吸收或发射光子，电磁场限制并传输光，接触与读出把微观跃迁转换成可用端口信号。 optoelectronic systems foundation knowledge note">
+  <div class="sq-card__meta"><span>Optoelectronic Systems · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">光电子器件知识网络</div><p>光电子器件构成一张因果网络：电子态吸收或发射光子，电磁场限制并传输光，接触与读出把微观跃迁转换成可用端口信号。</p>
+  <a href="/knowledge/nodes/optoelectronic-devices-knowledge-network/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="light–matter interaction in semiconductors 半导体中的光–物质相互作用 interband and intraband optical transitions are controlled jointly by the electronic spectrum, photon modes and transition matrix elements rather than by the band gap alone. 带间与带内光学跃迁由电子能谱、光子模式和跃迁矩阵元共同控制，而不是仅由带隙决定。 light–matter interaction foundation knowledge note">
+  <div class="sq-card__meta"><span>Light–Matter Interaction · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">半导体中的光–物质相互作用</div><p>带间与带内光学跃迁由电子能谱、光子模式和跃迁矩阵元共同控制，而不是仅由带隙决定。</p>
+  <a href="/knowledge/nodes/semiconductor-light-matter-interaction/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="optical absorption, joint density of states and selection rules 光学吸收、联合态密度与选择定则 an absorption edge is the product of available initial–final state pairs and their optical matrix elements, so dimensionality and symmetry shape the spectrum. 吸收边由可用初末态对与光学矩阵元共同决定，因此维度和对称性会直接塑造光谱。 light–matter interaction foundation knowledge note">
+  <div class="sq-card__meta"><span>Light–Matter Interaction · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">光学吸收、联合态密度与选择定则</div><p>吸收边由可用初末态对与光学矩阵元共同决定，因此维度和对称性会直接塑造光谱。</p>
+  <a href="/knowledge/nodes/optical-absorption-joint-density-selection-rules/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="spontaneous and stimulated emission with detailed balance 自发辐射、受激辐射与详细平衡 spontaneous emission seeds photons, stimulated emission copies an occupied mode, and detailed balance ties both processes to absorption in thermal equilibrium. 自发辐射产生初始光子，受激辐射复制已占据模式，而详细平衡在热平衡下把两者与吸收联系起来。 optical emission physics foundation knowledge note">
+  <div class="sq-card__meta"><span>Optical Emission Physics · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">自发辐射、受激辐射与详细平衡</div><p>自发辐射产生初始光子，受激辐射复制已占据模式，而详细平衡在热平衡下把两者与吸收联系起来。</p>
+  <a href="/knowledge/nodes/spontaneous-stimulated-emission-detailed-balance/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="carrier generation, recombination and quantum efficiency 载流子产生、复合与量子效率 optoelectronic efficiency is set by competing radiative, defect-assisted, auger and transport rates, so lifetime alone never identifies the useful channel. 光电子效率由辐射、缺陷辅助、auger 与输运速率竞争决定，因此单独的寿命不能识别有用通道。 optical recombination foundation knowledge note">
+  <div class="sq-card__meta"><span>Optical Recombination · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">载流子产生、复合与量子效率</div><p>光电子效率由辐射、缺陷辅助、Auger 与输运速率竞争决定，因此单独的寿命不能识别有用通道。</p>
+  <a href="/knowledge/nodes/carrier-generation-recombination-quantum-efficiency/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="waveguides, microcavities, photonic density of states and the purcell effect 波导、微腔、光子态密度与 purcell 效应 optical boundaries reshape the allowed electromagnetic modes, controlling propagation, radiation, spontaneous-emission rate and collection without changing the bare electronic transition. 光学边界通过重塑允许的电磁模式控制传播、辐射、自发辐射速率和收集效率，而不必改变裸电子跃迁。 photonic confinement foundation knowledge note">
+  <div class="sq-card__meta"><span>Photonic Confinement · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">波导、微腔、光子态密度与 Purcell 效应</div><p>光学边界通过重塑允许的电磁模式控制传播、辐射、自发辐射速率和收集效率，而不必改变裸电子跃迁。</p>
+  <a href="/knowledge/nodes/waveguides-microcavities-photonic-density-purcell/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="photodetector responsivity, detectivity, noise, bandwidth and gain 响应率、探测率、噪声、带宽与增益权衡 a photodetector is defined by a calibrated chain from incident photons to output statistics; responsivity without bandwidth, noise, area and linearity is incomplete. 光探测器由入射光子到输出统计的完整校准链定义；脱离带宽、噪声、面积与线性的响应率没有完整意义。 photodetector physics foundation knowledge note">
+  <div class="sq-card__meta"><span>Photodetector Physics · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">响应率、探测率、噪声、带宽与增益权衡</div><p>光探测器由入射光子到输出统计的完整校准链定义；脱离带宽、噪声、面积与线性的响应率没有完整意义。</p>
+  <a href="/knowledge/nodes/photodetector-performance-noise-bandwidth/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="optoelectronic devices: leds, photodiodes, and solar cells 光电子器件：led、光电二极管与太阳电池 a unified account of light emission, detection, and photovoltaics through absorption, generation–recombination, junction separation, and quasi-fermi-level splitting. 以光吸收、载流子产生复合、结区分离和准费米能级分裂统一理解发光、探测与光伏器件。 optoelectronic devices foundation knowledge note">
+  <div class="sq-card__meta"><span>Optoelectronic Devices · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">光电子器件：LED、光电二极管与太阳电池</div><p>以光吸收、载流子产生复合、结区分离和准费米能级分裂统一理解发光、探测与光伏器件。</p>
+  <a href="/knowledge/nodes/optoelectronic-semiconductor-devices/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="nonequilibrium carriers: generation, recombination, and quasi-fermi levels 非平衡载流子：产生、复合与准费米能级 carrier lifetime, diffusion length, generation–recombination mechanisms, and electron–hole quasi-fermi-level splitting under optical or electrical injection. 描述光生或电注入载流子的寿命、扩散长度、产生复合机制及电子空穴准费米能级分裂。 transport physics foundation knowledge note">
+  <div class="sq-card__meta"><span>Transport Physics · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">非平衡载流子：产生、复合与准费米能级</div><p>描述光生或电注入载流子的寿命、扩散长度、产生复合机制及电子空穴准费米能级分裂。</p>
+  <a href="/knowledge/nodes/non-equilibrium-carriers/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="excitons in two-dimensional semiconductors 二维半导体中的激子 reduced screening and quantum confinement bind electrons and holes strongly, so excitons, trions and many-body renormalization dominate optical spectra of monolayer tmds. 弱屏蔽和量子限域使电子与空穴强烈束缚，因此激子、三激子及多体重整化主导单层 tmd 光谱。 exciton physics foundation knowledge note">
+  <div class="sq-card__meta"><span>Exciton Physics · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维半导体中的激子</div><p>弱屏蔽和量子限域使电子与空穴强烈束缚，因此激子、三激子及多体重整化主导单层 TMD 光谱。</p>
+  <a href="/knowledge/nodes/excitons-in-two-dimensional-semiconductors/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="interlayer and moiré excitons 层间激子与莫尔激子 in a type-ii vdw heterostructure the electron and hole can occupy different layers; the resulting dipole lengthens lifetime and makes the exciton sensitive to gate field, twist and moiré confinement. 在 ii 型 vdw 异质结中电子和空穴可分居不同层；由此产生的偶极延长寿命，并使激子对栅场、扭角及莫尔限域敏感。 exciton physics frontier knowledge note">
+  <div class="sq-card__meta"><span>Exciton Physics · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">层间激子与莫尔激子</div><p>在 II 型 vdW 异质结中电子和空穴可分居不同层；由此产生的偶极延长寿命，并使激子对栅场、扭角及莫尔限域敏感。</p>
+  <a href="/knowledge/nodes/interlayer-and-moire-excitons/">打开内容 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="emitters">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">02</span>
+  <span><strong>发光与激光</strong><small>LED、半导体激光、限域有源区与显示发光器件。</small></span>
+  <em><span data-branch-count>5</span> 入口</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="engineering" data-search="led injection, radiative recombination and light extraction led 的注入、辐射复合与出光 an led converts balanced electron–hole injection into spontaneous emission, but its wall-plug efficiency is the product of injection, internal radiative and extraction efficiencies. led 把平衡的电子–空穴注入转化为自发辐射，但其插墙效率是注入效率、内部辐射效率与出光效率的乘积。 light emitters engineering knowledge note">
+  <div class="sq-card__meta"><span>Light Emitters · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">LED 的注入、辐射复合与出光</div><p>LED 把平衡的电子–空穴注入转化为自发辐射，但其插墙效率是注入效率、内部辐射效率与出光效率的乘积。</p>
+  <a href="/knowledge/nodes/led-injection-radiative-recombination-extraction/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="semiconductor lasers, population inversion and threshold 半导体激光器、粒子数反转与阈值 a semiconductor laser oscillates when modal gain from an inverted electron–hole plasma balances internal and mirror loss for a permitted cavity mode. 当反转电子–空穴等离子体提供的模式增益补偿内部损耗与镜面损耗时，允许的腔模发生半导体激光振荡。 semiconductor lasers engineering knowledge note">
+  <div class="sq-card__meta"><span>Semiconductor Lasers · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">半导体激光器、粒子数反转与阈值</div><p>当反转电子–空穴等离子体提供的模式增益补偿内部损耗与镜面损耗时，允许的腔模发生半导体激光振荡。</p>
+  <a href="/knowledge/nodes/semiconductor-lasers-population-inversion-threshold/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="quantum-well and quantum-dot lasers with vcsels 量子阱、量子点激光器与 vcsel quantum confinement reshapes gain and carrier capture, while vertical cavities turn short resonators and distributed mirrors into compact, low-current laser arrays. 量子限域重塑增益与载流子俘获，垂直微腔则利用短腔和分布布拉格镜形成紧凑低电流激光阵列。 semiconductor lasers engineering knowledge note">
+  <div class="sq-card__meta"><span>Semiconductor Lasers · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">量子阱、量子点激光器与 VCSEL</div><p>量子限域重塑增益与载流子俘获，垂直微腔则利用短腔和分布布拉格镜形成紧凑低电流激光阵列。</p>
+  <a href="/knowledge/nodes/quantum-well-quantum-dot-lasers-vcsel/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="micro-leds and high-speed display devices micro-led 与高速显示器件 shrinking iii–nitride leds improves current density and modulation speed but magnifies sidewall recombination, current spreading, transfer yield and colour-conversion constraints. 缩小 iii 族氮化物 led 可提高电流密度与调制速度，却会放大侧壁复合、电流扩展、巨量转移良率和颜色转换问题。 display emitters engineering knowledge note">
+  <div class="sq-card__meta"><span>Display Emitters · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">Micro-LED 与高速显示器件</div><p>缩小 III 族氮化物 LED 可提高电流密度与调制速度，却会放大侧壁复合、电流扩展、巨量转移良率和颜色转换问题。</p>
+  <a href="/knowledge/nodes/micro-led-high-speed-display-devices/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="oled, qled and perovskite light-emitting devices oled、qled 与钙钛矿发光器件 solution-processed and molecular emitters trade epitaxial perfection for tunable excitons, colour and manufacturing, making charge balance and excited-state loss central design variables. 溶液加工与分子发光材料用可调激子、色彩和制造方式换取外延完美性，因此电荷平衡和激发态损失成为核心设计变量。 display emitters prototype knowledge note">
+  <div class="sq-card__meta"><span>Display Emitters · Knowledge Note</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">OLED、QLED 与钙钛矿发光器件</div><p>溶液加工与分子发光材料用可调激子、色彩和制造方式换取外延完美性，因此电荷平衡和激发态损失成为核心设计变量。</p>
+  <a href="/knowledge/nodes/solution-processed-oled-qled-perovskite-emitters/">打开内容 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="detectors">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">03</span>
+  <span><strong>探测与成像</strong><small>单位增益、光导、雪崩、成像、热学及低维探测器。</small></span>
+  <em><span data-branch-count>9</span> 入口</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="engineering" data-search="photoconductors and phototransistors 光导体与光晶体管 photoconductive gain arises when one photocarrier circulates or controls a channel for longer than the transit time, inherently coupling high gain to memory, noise and limited speed. 当一个光生载流子的寿命或栅控时间长于渡越时间时产生光导增益，因此高增益天然与记忆、噪声和有限速度耦合。 photodetector physics engineering knowledge note">
+  <div class="sq-card__meta"><span>Photodetector Physics · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">光导体与光晶体管</div><p>当一个光生载流子的寿命或栅控时间长于渡越时间时产生光导增益，因此高增益天然与记忆、噪声和有限速度耦合。</p>
+  <a href="/knowledge/nodes/photoconductors-and-phototransistors/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="pin photodiodes pin 光电二极管 a pin photodiode uses a wide depleted region to absorb light and sweep primary carriers to contacts with low gain, high linearity and predictable bandwidth. pin 光电二极管利用宽耗尽区吸光并漂移收集初级载流子，以低增益换取高线性和可预测带宽。 photodiodes engineering knowledge note">
+  <div class="sq-card__meta"><span>Photodiodes · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">PIN 光电二极管</div><p>PIN 光电二极管利用宽耗尽区吸光并漂移收集初级载流子，以低增益换取高线性和可预测带宽。</p>
+  <a href="/knowledge/nodes/pin-photodiodes/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="avalanche photodiodes, spads and geiger-mode detection apd、spad 与 geiger 模式探测 avalanche photodiodes use impact ionization for internal gain, while spads bias above breakdown so one carrier triggers a macroscopic pulse that must be quenched and reset. 雪崩光电二极管利用碰撞电离获得内部增益；spad 工作在击穿以上，使单个载流子触发宏观脉冲，随后必须淬灭并复位。 single-photon detection engineering knowledge note">
+  <div class="sq-card__meta"><span>Single-Photon Detection · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">APD、SPAD 与 Geiger 模式探测</div><p>雪崩光电二极管利用碰撞电离获得内部增益；SPAD 工作在击穿以上，使单个载流子触发宏观脉冲，随后必须淬灭并复位。</p>
+  <a href="/knowledge/nodes/avalanche-spad-geiger-photodetection/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="ccd and cmos image sensors ccd 与 cmos 图像传感器 image sensors convert a spatial photon field into sampled charge packets; architecture determines how charge transfer, read noise, dynamic range and parallelism are traded. 图像传感器把空间光子场转换成采样电荷包；架构决定电荷转移、读出噪声、动态范围与并行度之间的权衡。 imaging sensors engineering knowledge note">
+  <div class="sq-card__meta"><span>Imaging Sensors · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">CCD 与 CMOS 图像传感器</div><p>图像传感器把空间光子场转换成采样电荷包；架构决定电荷转移、读出噪声、动态范围与并行度之间的权衡。</p>
+  <a href="/knowledge/nodes/ccd-cmos-image-sensors/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="bolometers, thermopiles and pyroelectric detectors 测辐射热计、热电堆与热释电探测器 thermal detectors first convert radiation into heat and then sense temperature, providing broadband response at the cost of a thermal time-constant–sensitivity trade-off. 热探测器先把辐射转化为热，再测量温度，因此获得宽光谱响应，同时受热时间常数–灵敏度权衡限制。 infrared &amp; thermal detection engineering knowledge note">
+  <div class="sq-card__meta"><span>Infrared &amp; Thermal Detection · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">测辐射热计、热电堆与热释电探测器</div><p>热探测器先把辐射转化为热，再测量温度，因此获得宽光谱响应，同时受热时间常数–灵敏度权衡限制。</p>
+  <a href="/knowledge/nodes/thermal-photon-detectors-bolometer-thermopile-pyroelectric/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="mct, qwip and qdip infrared detector architectures mct、qwip、qdip 与红外探测架构 infrared detectors choose between narrow-gap interband absorption and engineered intersubband transitions, trading operating temperature, dark current, uniformity and polarization response. 红外探测器在窄带隙带间吸收和人工设计的子带间跃迁之间选择，并权衡工作温度、暗电流、均匀性与偏振响应。 infrared &amp; thermal detection engineering knowledge note">
+  <div class="sq-card__meta"><span>Infrared &amp; Thermal Detection · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">MCT、QWIP、QDIP 与红外探测架构</div><p>红外探测器在窄带隙带间吸收和人工设计的子带间跃迁之间选择，并权衡工作温度、暗电流、均匀性与偏振响应。</p>
+  <a href="/knowledge/nodes/infrared-mct-qwip-qdip-detector-architectures/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="two-dimensional, perovskite and organic thin-film photodetectors 二维、钙钛矿和有机薄膜光探测器 emerging thin-film photodetectors offer strong absorption, spectral tunability and unconventional integration, but traps, contacts and environmental sensitivity often control their reported gain. 新兴薄膜光探测器具有强吸收、可调光谱和非常规集成优势，但其报告增益往往由陷阱、接触与环境敏感性控制。 emerging photodetectors prototype knowledge note">
+  <div class="sq-card__meta"><span>Emerging Photodetectors · Knowledge Note</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维、钙钛矿和有机薄膜光探测器</div><p>新兴薄膜光探测器具有强吸收、可调光谱和非常规集成优势，但其报告增益往往由陷阱、接触与环境敏感性控制。</p>
+  <a href="/knowledge/nodes/emerging-2d-perovskite-organic-photodetectors/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="the pn junction: space charge, band bending, and rectification pn结：空间电荷、能带与整流 from diffusion-built space charge and built-in potential to the diode equation, junction capacitance, transients, and breakdown. 从扩散建立空间电荷和内建电势，再由少数载流子边界条件推导二极管方程、结电容与击穿。 junction devices foundation knowledge note">
+  <div class="sq-card__meta"><span>Junction Devices · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">PN结：空间电荷、能带与整流</div><p>从扩散建立空间电荷和内建电势，再由少数载流子边界条件推导二极管方程、结电容与击穿。</p>
+  <a href="/knowledge/nodes/pn-junction-physics/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="foundation" data-search="spin–valley physics in two-dimensional semiconductors 二维半导体中的自旋–谷物理 broken inversion symmetry and strong spin–orbit coupling in monolayer tmds tie spin, valley and optical helicity to the k and k′ band extrema. 单层 tmd 的反演对称性破缺与强自旋轨道耦合，使 k/k′ 带谷与自旋及光学圆偏振发生关联。 spin valley topology foundation knowledge note">
+  <div class="sq-card__meta"><span>Spin Valley Topology · Knowledge Note</span><b data-tone="foundation">基础</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维半导体中的自旋–谷物理</div><p>单层 TMD 的反演对称性破缺与强自旋轨道耦合，使 K/K′ 带谷与自旋及光学圆偏振发生关联。</p>
+  <a href="/knowledge/nodes/spin-valley-physics/">打开内容 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="photovoltaics">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">04</span>
+  <span><strong>光伏能量转换</strong><small>准费米分裂、详细平衡与光谱分配叠层。</small></span>
+  <em><span data-branch-count>2</span> 入口</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="engineering" data-search="solar cells, quasi-fermi levels and the detailed-balance limit 太阳电池、准费米能级与详细平衡极限 a solar cell converts a nonequilibrium quasi-fermi-level splitting into electrical work; absorption gain competes with radiative, nonradiative, resistive and optical-entropy losses. 太阳电池把非平衡准费米能级分裂转换成电功；吸收增益与辐射、非辐射、电阻及光学熵损失竞争。 photovoltaics engineering knowledge note">
+  <div class="sq-card__meta"><span>Photovoltaics · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">太阳电池、准费米能级与详细平衡极限</div><p>太阳电池把非平衡准费米能级分裂转换成电功；吸收增益与辐射、非辐射、电阻及光学熵损失竞争。</p>
+  <a href="/knowledge/nodes/photovoltaic-detailed-balance-limit/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="multijunction, perovskite-tandem and emerging photovoltaics 多结、钙钛矿叠层与新概念光伏 tandem photovoltaics divide the spectrum among band gaps to reduce thermalization and transmission losses, but optical current matching, interconnection and stability become coupled constraints. 叠层光伏用多个带隙分配太阳光谱以减少热化与透射损失，但光学电流匹配、互连和稳定性随之耦合。 photovoltaics prototype knowledge note">
+  <div class="sq-card__meta"><span>Photovoltaics · Knowledge Note</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">多结、钙钛矿叠层与新概念光伏</div><p>叠层光伏用多个带隙分配太阳光谱以减少热化与透射损失，但光学电流匹配、互连和稳定性随之耦合。</p>
+  <a href="/knowledge/nodes/multijunction-perovskite-tandem-emerging-photovoltaics/">打开内容 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="integrated">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">05</span>
+  <span><strong>集成调制与光子学</strong><small>调制机制、硅、铁电与异质集成平台。</small></span>
+  <em><span data-branch-count>5</span> 入口</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="engineering" data-search="electro-optic, thermo-optic, electroabsorption and acousto-optic modulation 电光、热光、电吸收和声光调制 optical modulators map an electrical, thermal or acoustic control onto phase, amplitude, frequency or direction through a material susceptibility and a device transfer function. 光调制器通过材料响应率和器件传递函数，把电、热或声学控制映射为光的相位、振幅、频率或方向。 electro-optic modulation engineering knowledge note">
+  <div class="sq-card__meta"><span>Electro-Optic Modulation · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">电光、热光、电吸收和声光调制</div><p>光调制器通过材料响应率和器件传递函数，把电、热或声学控制映射为光的相位、振幅、频率或方向。</p>
+  <a href="/knowledge/nodes/electro-thermo-electroabsorption-acousto-optic-modulation/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="silicon photonics and plasma-dispersion modulation 硅光子学与等离子色散调制 silicon photonics uses mature high-index waveguides and carrier-induced index changes, trading cmos-scale integration against indirect-gap light generation and free-carrier absorption. 硅光子学利用成熟高折射率波导与载流子引起的折射率变化，以 cmos 级集成为优势，同时面对间接带隙发光困难和自由载流子吸收。 silicon photonics engineering knowledge note">
+  <div class="sq-card__meta"><span>Silicon Photonics · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">硅光子学与等离子色散调制</div><p>硅光子学利用成熟高折射率波导与载流子引起的折射率变化，以 CMOS 级集成为优势，同时面对间接带隙发光困难和自由载流子吸收。</p>
+  <a href="/knowledge/nodes/silicon-photonics-plasma-dispersion-modulation/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="thin-film lithium niobate and ferroelectric integrated electro-optics 薄膜铌酸锂及铁电集成电光器件 thin-film lithium niobate combines a strong linear electro-optic tensor with tight confinement and low loss, enabling broadband phase control without carrier absorption. 薄膜铌酸锂把强线性电光张量、紧光场限制与低损耗结合，可在不依赖载流子吸收的情况下实现宽带相位控制。 ferroelectric photonics engineering knowledge note">
+  <div class="sq-card__meta"><span>Ferroelectric Photonics · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">薄膜铌酸锂及铁电集成电光器件</div><p>薄膜铌酸锂把强线性电光张量、紧光场限制与低损耗结合，可在不依赖载流子吸收的情况下实现宽带相位控制。</p>
+  <a href="/knowledge/nodes/thin-film-lithium-niobate-ferroelectric-electro-optics/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="prototype" data-search="heterogeneous integrated light sources, amplifiers and detectors 异质集成光源、放大器和探测器 heterogeneous photonics assigns gain, detection, modulation and routing to different materials and joins them through bonding, transfer printing, epitaxy or optical coupling. 异质光子学把增益、探测、调制与传输分配给不同材料，并通过键合、转移印刷、外延或光耦合组合。 heterogeneous photonics prototype knowledge note">
+  <div class="sq-card__meta"><span>Heterogeneous Photonics · Knowledge Note</span><b data-tone="prototype">原型</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">异质集成光源、放大器和探测器</div><p>异质光子学把增益、探测、调制与传输分配给不同材料，并通过键合、转移印刷、外延或光耦合组合。</p>
+  <a href="/knowledge/nodes/heterogeneous-integrated-light-sources-amplifiers-detectors/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="optoelectronic memory, photomemristors and reconfigurable devices 光电存储、光忆阻与可重构器件 coupling photogeneration to trapped charge, ions, polarization or phase creates devices whose conductance remembers illumination and can combine sensing, memory and processing. 把光生载流子与陷阱电荷、离子、极化或物相耦合，可使器件电导记住光照并融合感知、存储与处理。 neuromorphic hardware frontier knowledge note">
+  <div class="sq-card__meta"><span>Neuromorphic Hardware · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">光电存储、光忆阻与可重构器件</div><p>把光生载流子与陷阱电荷、离子、极化或物相耦合，可使器件电导记住光照并融合感知、存储与处理。</p>
+  <a href="/knowledge/nodes/optoelectronic-memory-and-reconfigurable-devices/">打开内容 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section><section class="sq-branch is-collapsed" data-branch="quantum">
+  <button class="sq-branch__head" type="button" aria-expanded="false"><span class="sq-branch__index">06</span>
+  <span><strong>单光子与量子光电子</strong><small>超导探测器、量子发射源与非线性量子光路。</small></span>
+  <em><span data-branch-count>5</span> 入口</em></button>
+  <div class="sq-branch__body"><div class="sq-card-grid"><article class="sq-card" data-maturity="engineering" data-search="superconducting nanowire single-photon detectors 超导纳米线单光子探测器 snspd an snspd biases a narrow superconducting wire near its critical current so absorption of one photon can nucleate a resistive region and produce a fast electrical pulse. snspd 把窄超导线偏置在临界电流附近，使单个光子的吸收能够成核电阻区并产生快速电脉冲。 single-photon detection engineering knowledge note">
+  <div class="sq-card__meta"><span>Single-Photon Detection · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">超导纳米线单光子探测器 SNSPD</div><p>SNSPD 把窄超导线偏置在临界电流附近，使单个光子的吸收能够成核电阻区并产生快速电脉冲。</p>
+  <a href="/knowledge/nodes/superconducting-nanowire-single-photon-detectors/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="engineering" data-search="transition-edge sensors and microwave kinetic-inductance detectors tes 与 mkid 超导光子探测器 tes devices calorimetrically measure the temperature rise from absorbed energy, whereas mkids measure a resonator shift caused by broken cooper pairs and changed kinetic inductance. tes 通过量热方式测量吸收能量引起的温升，mkid 则测量 cooper 对破裂和动能电感变化造成的谐振频移。 single-photon detection engineering knowledge note">
+  <div class="sq-card__meta"><span>Single-Photon Detection · Knowledge Note</span><b data-tone="engineering">工程</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">TES 与 MKID 超导光子探测器</div><p>TES 通过量热方式测量吸收能量引起的温升，MKID 则测量 Cooper 对破裂和动能电感变化造成的谐振频移。</p>
+  <a href="/knowledge/nodes/tes-mkid-superconducting-photon-detectors/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="integrated nonlinear photonics, microcombs and quantum photonic circuits 非线性、微梳与集成量子光子学 integrated nonlinear and quantum photonics uses confined modes to enhance weak optical interactions, generating new frequencies, correlated photon pairs and programmable interference on chip. 集成非线性与量子光子学利用受限光模增强弱光学相互作用，在芯片上产生新频率、关联光子对和可编程干涉。 nonlinear &amp; quantum photonics frontier knowledge note">
+  <div class="sq-card__meta"><span>Nonlinear &amp; Quantum Photonics · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">非线性、微梳与集成量子光子学</div><p>集成非线性与量子光子学利用受限光模增强弱光学相互作用，在芯片上产生新频率、关联光子对和可编程干涉。</p>
+  <a href="/knowledge/nodes/integrated-nonlinear-and-quantum-photonics/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="excitonic and single-photon devices 激子与单光子器件 localized excitons in defects, strain potentials or moiré cells can emit one photon at a time, while interlayer excitons provide electrically tunable dipoles and transport. 缺陷、应变势或莫尔晶格中的局域激子可逐次发射单光子，层间激子则提供电可调偶极和输运。 quantum devices frontier knowledge note">
+  <div class="sq-card__meta"><span>Quantum Devices · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">激子与单光子器件</div><p>缺陷、应变势或莫尔晶格中的局域激子可逐次发射单光子，层间激子则提供电可调偶极和输运。</p>
+  <a href="/knowledge/nodes/excitonic-and-single-photon-devices/">打开内容 <span aria-hidden="true">↗</span></a>
+</article><article class="sq-card" data-maturity="frontier" data-search="two-dimensional superconductivity and josephson physics 二维超导与约瑟夫森物理 two-dimensional superconductors combine phase fluctuations, strong spin–orbit coupling and gate-tunable carrier density; proximity coupling transfers pairing correlations into graphene or tmd channels. 二维超导体结合强相位涨落、自旋轨道耦合与可栅控载流子密度；邻近效应还能把配对关联引入石墨烯或 tmd 沟道。 2d ferroics frontier knowledge note">
+  <div class="sq-card__meta"><span>2D Ferroics · Knowledge Note</span><b data-tone="frontier">前沿</b></div>
+  <div class="zh-heading zh-h3" role="heading" aria-level="3">二维超导与约瑟夫森物理</div><p>二维超导体结合强相位涨落、自旋轨道耦合与可栅控载流子密度；邻近效应还能把配对关联引入石墨烯或 TMD 沟道。</p>
+  <a href="/knowledge/nodes/two-dimensional-superconductivity/">打开内容 <span aria-hidden="true">↗</span></a>
+</article></div></div>
+</section></div></div>
+<p>若希望从空间关系发现意外关联，可进入 <a href="/knowledge/">Knowledge Atlas</a>；本目录适合有目的地阅读，Atlas 则适合探索邻近概念。</p>
+
+</section>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="http://www.iCalculate.website">Du Xinchuan</a>
+            <p>原文链接：<a href="http://www.icalculate.website/2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/">http://www.icalculate.website/2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/</a>
+            <p>发表日期：<a href="http://www.icalculate.website/2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/">September 2nd 2026, 12:00:00 pm</a>
+            <p>更新日期：<a href="http://www.icalculate.website/2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/">September 2nd 2026, 2:06:57 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "../Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" title= "Electronic Quantum Condensed Matter: An Interactive Knowledge Directory">
+                    <div class="nextTitle">Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "../../01/Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory/" title= "Semiconductor Devices & Quantum Physics: An Interactive Knowledge Directory">
+                    <div class="prevTitle">Semiconductor Devices & Quantum Physics: An Interactive Knowledge Directory</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:549174176@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/iCalculate" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/WeChat_QR.jpg" />
+                </span>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title=qq>
+                  
+                  <img class="profile-qr" src="/assets/QQ_QR.jpg" />
+                </span>
+            
+        
+    
+        
+            
+                <a href="https://t.me/chauncy_du" class="iconfont-archer telegram" target="_blank" title=telegram></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+            
+                <a href="https://www.linkedin.com/in/xinchuan-du-a4b0b51bb/" class="iconfont-archer linkedin" target="_blank" title=linkedin></a>
+            
+        
+    
+        
+            
+                <a href="https://steamcommunity.com/id/icalculate97/" class="iconfont-archer steam" target="_blank" title=steam></a>
+            
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+        
+            
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Optoelectronic Devices Knowledge Network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Light–Matter Interaction in Semiconductors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Optical Absorption, Joint Density of States and Selection Rules</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Spontaneous and Stimulated Emission with Detailed Balance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Carrier Generation, Recombination and Quantum Efficiency</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Waveguides, Microcavities, Photonic Density of States and the Purcell Effect</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Photodetector Responsivity, Detectivity, Noise, Bandwidth and Gain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Optoelectronic Devices: LEDs, Photodiodes, and Solar Cells</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Nonequilibrium Carriers: Generation, Recombination, and Quasi-Fermi Levels</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Excitons in Two-Dimensional Semiconductors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Interlayer and Moiré Excitons</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">LED Injection, Radiative Recombination and Light Extraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Semiconductor Lasers, Population Inversion and Threshold</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Quantum-Well and Quantum-Dot Lasers with VCSELs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Micro-LEDs and High-Speed Display Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">OLED, QLED and Perovskite Light-Emitting Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Photoconductors and Phototransistors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">PIN Photodiodes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Avalanche Photodiodes, SPADs and Geiger-Mode Detection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">CCD and CMOS Image Sensors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Bolometers, Thermopiles and Pyroelectric Detectors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">MCT, QWIP and QDIP Infrared Detector Architectures</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Two-Dimensional, Perovskite and Organic Thin-Film Photodetectors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">The PN Junction: Space Charge, Band Bending, and Rectification</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Spin–Valley Physics in Two-Dimensional Semiconductors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Solar Cells, Quasi-Fermi Levels and the Detailed-Balance Limit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Multijunction, Perovskite-Tandem and Emerging Photovoltaics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Electro-Optic, Thermo-Optic, Electroabsorption and Acousto-Optic Modulation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Silicon Photonics and Plasma-Dispersion Modulation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Thin-Film Lithium Niobate and Ferroelectric Integrated Electro-Optics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Heterogeneous Integrated Light Sources, Amplifiers and Detectors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Optoelectronic Memory, Photomemristors and Reconfigurable Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Superconducting Nanowire Single-Photon Detectors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Transition-Edge Sensors and Microwave Kinetic-Inductance Detectors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Integrated Nonlinear Photonics, Microcombs and Quantum Photonic Circuits</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Excitonic and Single-Photon Devices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Two-Dimensional Superconductivity and Josephson Physics</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 68
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2026 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/" >Optoelectronic Devices: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory/" >Semiconductor Devices & Quantum Physics: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Landau-Fermi-Liquid-Theory/" >From an Electron Sea to Quasiparticles: Landau Fermi-Liquid Theory (Part II)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Landau-Theory-From-Symmetry-to-Phase-Transitions/" >From Symmetry to Phase Transitions: Landau's Art of Ignoring Details (Part I)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/" >From Ballistic Transport to Hopping in FETs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/" >From Capacitors to FETs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href= "2026/05/17/What-Top-Journals-Really-Look-For/" >What Top Journals Really Look For</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/16</span><a class="archive-post-title" href= "2026/05/16/Research-Taste-in-the-Age-of-Vibe-Coding/" >Research Taste in the Age of Vibe Coding</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2025 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2025/08/18/Introducing-2D-material-based-devices-in-the-logic-scaling-roadmap/" >Introducing 2D-material based devices in the logic scaling roadmap</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "2025/07/16/Vortex-Avalanche/" >Vortex Avalanche</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "2025/07/16/The-RTS-Waveform-Evolution/" >The RTS Waveform Evolution</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET Quantum Transport Simulation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/" >Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/EBE-Deposition-Operation-Notes/" >EBE Deposition Operation Notes</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/01</span><a class="archive-post-title" href= "2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/" >Phase Transitions in Electronic Materials and Devices</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/28</span><a class="archive-post-title" href= "2025/06/28/When-a-Stranger-Becomes-Both-Guest-and-Enemy-Enantiosemy/" >When a Stranger Becomes Both Guest and Enemy: Enantiosemy</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/" >From Classical Mechanics to Quantum Theory</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2024 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "2024/11/17/Deck-of-Doctoral-Dissertation/" >Deck of Doctoral Dissertation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/Science-Communication/" >Science Communication</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/How-to-give-a-talk/" >How to give a talk</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2023 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2023/03/27/SR400-photon-counter-delay-scan-demo/" >SR400 photon counter delay scan demo</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/23</span><a class="archive-post-title" href= "2023/03/23/Python-library-for-SR400-Photon-counter/" >Python library for SR400 Photon counter</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href= "2023/03/21/COMSOL-script-for-random-object-generation/" >COMSOL script for random object generation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "2023/03/18/LakeShore-Model-335-Python-Script/" >LakeShore Model 335 Python控制脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2023/03/17/Python-script-for-Keithley-2400-current-sweep/" >Keithley2400源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "2023/03/16/Python-script-for-Keithley-2450-current-sweep/" >Keithley2450源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "2023/03/15/Frontiers-in-condensed-matter-physics/" >Frontiers in condensed matter physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2023/03/13/HER-auto-test-script/" >HER auto test script</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2021/02/15/Cmd%20Markdown%20Editor/" >Cmd Markdown Editor</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "2020/11/24/Introduction-for-CHI660e-Macro-Generator/" >Introduction for CHI660e Macro Generator</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/15</span><a class="archive-post-title" href= "2020/11/15/hello-world/" >Hello World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "2020/09/29/Why-movies-appeal-to-me/" >Why movies appeal to me</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/15</span><a class="archive-post-title" href= "2020/09/15/A-letter-from-the-middle-of-September/" >七月流火 春日迟迟</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2020/08/18/Understanding-of-Pseudocapacitance/" >Understanding of Pseudocapacitance</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "2020/06/18/Perspective-Blaming-China-is-Illegimate-and-Irresponsible/" >Blaming China is Illegimate and Irresponsible</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span><a class="archive-post-title" href= "2020/05/19/Side-by-Side-Battery-Technologies-with-Lithium%E2%80%90Ion-Based-Batteries/" >Side-by-Side-Battery-Technologies-with-Lithium‐Ion-Based-Batteries</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href= "2020/05/01/WHAT-IS-ATR-SEIRAS/" >WHAT IS ATR-SEIRAS?</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "2020/04/30/Microcell-Electrochemistry-Literature-Review/" >Microcell Electrochemistry Literature Review</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "2020/04/28/Mass-Transfer-in-Electrochemistry/" >Mass Transfer in Electrochemistry</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "2020/04/17/Drude-Model-in-Soild-State-Physics/" >Drude Model in Soild State Physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "2020/04/03/Is-the-World-Virtual/" >Is the World Virtual</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2020/03/27/Topological-two-dimensional-polymers/" >Topological two-dimensional polymers</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href= "2020/03/26/The-Configuration-to-the-Deep-Network/" >The Configuration to the Deep Network</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Artical-Dynamic-stability-of-active-sites-in-hydr(oxy)-oxides-for-the-oxygen-evolution-reaction/" >顶刊精读：动态平衡视角下的OER反应位点</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Literature-research-website/" >Literature research website</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2020/03/13/Advantages-of-microelectrode-system-in-electrochemical-science/" >Advantages of microelectrode system in electrochemical science</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "2020/03/11/Hertz-Knudsen-Equation-for-Evaporation-and-Condensation/" >Hertz-Knudsen Equation for Evaporation and Condensation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/How-to-measure-ECSA/" >How to measure ECSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/Li-Battery-Foundation/" >Li Battery Foundation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "2020/03/03/CDW-and-SDW/" >CDW and SDW</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "2020/02/27/3Dmax-Draw-Graphene-Grain-Boundaries/" >使用3Dmax绘制石墨烯晶格缺陷</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "2020/02/26/Anacoda-Introductory-Tutorail/" >Anaconda详细安装及使用教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Plugins-Density-Filter/" >Origin插件之：散点密度热图（Density Filter）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Python-Environment-Build-up/" >Origin+Python环境搭建</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "2020/02/24/Origin-Plugins-Graph-Maker/" >Origin插件之：快速作图（Graph Maker）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Venn-Diagram/" >Origin插件之：韦恩图生成插件（Venn Diagram）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Layer-Stack-Manager/" >Origin插件之：堆叠图小工具（Layer Stack Manager）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "2020/02/22/Origin-Plugins-Color-Editor/" >Origin插件之：配色编辑器(Color Editor)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "2020/02/21/Origin-Plugins-Tafel-Extrapolation/" >Origin插件之：LSV数据处理插件(Tafel Extrapolation)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/P5-js-new-journal/" >P5.js new journal</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/Katex-Test/" >Katex Test</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Artical-Current-and-future-role-of-Haber-Bosch-ammonia-in-a-carbon-free-energy-landscape/" >催化合成氨未来何去何从</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/4thYearAnniversary/" >写在第四年的Anniversary</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Group-Meeting/" >Group Meeting Backup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "2020/02/16/Artical-Precise-Anionic-Regulation-Assisted-by-Electrochemical-Reactions/" >张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/" >原子轨道耦合帮你分析固氮催化位点活性！</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "2020/02/14/Some-Useful-website/" >Some Useful website</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
+    
+        <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
+    
+        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
+    
+        <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
+    
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
+    
+        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
+    
+        <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Optical Properties"><span class="iconfont-archer">&#xe606;</span>Optical Properties</span>
+    
+        <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
+    
+        <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Device Physics"><span class="iconfont-archer">&#xe606;</span>Device Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+    
+        <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
+    
+        <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
+    
+        <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
+        <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
+    
+        <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
+        <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
+    
+        <span class="sidebar-tag-name" data-tags="AI-Assisted Research"><span class="iconfont-archer">&#xe606;</span>AI-Assisted Research</span>
+    
+        <span class="sidebar-tag-name" data-tags="Network Privacy"><span class="iconfont-archer">&#xe606;</span>Network Privacy</span>
+    
+        <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
+    
+        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+    
+        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
+    
+        <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
+    
+        <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Du Xinchuan"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="../../../../lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="../../../../scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="../../../../scripts/share.js" async></script>    
+     
+    <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['
+</html>
+
+
+, '
+</html>
+
+
+], ['\\(', '\\)']],
+    displayMath: [['$', '$'], ['\\[', '\\]']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Waveguides, Microcavities, Photonic Density of States and the Purcell Effect · Knowledge Atlas</title><meta name="description" content="Optical boundaries reshape the allowed electromagnetic modes, controlling propagation, radiation, spontaneous-emission rate and collection without changing the bare electronic transition.">
+<link rel="icon" href="/assets/favicon.ico"><link rel="stylesheet" href="/knowledge/graph.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
+<body class="knowledge-node-page"><header class="node-header"><a class="wordmark" href="/">iCalculate’s Studio</a><nav><a href="/archives/">Archive</a><a href="/knowledge/">Knowledge Atlas</a></nav></header>
+<main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Waveguides, Microcavities, Photonic Density of States and the Purcell Effect</span><span data-lang="zh" hidden>波导、微腔、光子态密度与 Purcell 效应</span></h1><p class="node-deck"><span data-lang="en">Optical boundaries reshape the allowed electromagnetic modes, controlling propagation, radiation, spontaneous-emission rate and collection without changing the bare electronic transition.</span><span data-lang="zh" hidden>光学边界通过重塑允许的电磁模式控制传播、辐射、自发辐射速率和收集效率，而不必改变裸电子跃迁。</span></p><div class="node-tags"><span>Photonic Confinement</span><span>Optical Properties</span><span>Electronic Structure</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
+<p><strong>Core idea:</strong> Optical boundaries reshape the allowed electromagnetic modes, controlling propagation, radiation, spontaneous-emission rate and collection without changing the bare electronic transition.</p>
+</blockquote>
+<h2 id="Physical-Picture">Physical Picture</h2>
+<p>Total internal reflection, index contrast or periodicity creates guided and resonant modes. A dipole couples according to local field polarization, spatial overlap and spectral detuning. High quality factor increases dwell time, whereas small mode volume increases vacuum field strength.</p>
+<p>The useful description begins by separating the externally controlled variables from the internal state. Geometry, material composition, temperature, optical or electrical drive and boundary conditions are controls; occupations, order parameters, fields and quasiparticle distributions are the state. A measured terminal signal is credible only when the path from control to state and from state to observable is explicit. This prevents a familiar mistake: assigning every change in current or spectrum to the named intrinsic effect while leaving contacts, heating, disorder and the readout chain outside the model.</p>
+<p>The relevant energy and time scales must be compared before choosing an approximation. Typical energies include band offsets, interaction energies, excitation gaps, disorder broadening and \(k_BT\); typical times include injection, relaxation, recombination, escape and instrument response. A mechanism dominates only in a declared hierarchy of these scales. Consequently the same material can display distinct regimes as thickness, carrier density, field, optical power or device size changes.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
+<h3 id="Governing-relations">Governing relations</h3>
+<p>The first organizing relation is</p>
+<div class="math-display">\[\nabla\times\nabla\times\mathbf E=\frac{\omega^2}{c^2}\epsilon(\mathbf r,\omega)\mathbf E\]</div>
+<p>and the complementary response or evolution relation is</p>
+<div class="math-display">\[F_P=\frac{3}{4\pi^2}\left(\frac{\lambda}{n}\right)^3\frac{Q}{V_m}\]</div>
+<p>Solving Maxwell eigenmodes with boundary continuity gives propagation constants and resonances. Fermi golden rule expressed through the electromagnetic Green tensor shows that spontaneous emission samples the local photonic density of states. The textbook Purcell factor is recovered only for a narrow, aligned emitter resonant with a single weak-coupling mode.</p>
+<p>These equations are not interchangeable empirical fitting laws. Their variables, dimensionality, equilibrium assumptions and boundary conditions must be stated. When a coefficient is extracted from data, the measured quantity should be calculated through the same geometry and bandwidth used in the experiment. Otherwise a physically plausible parameter can compensate for an omitted series resistance, collection loss, thermal gradient or inhomogeneous region.</p>
+<h3 id="Energy-flow-and-information-flow-view">Energy-flow and information-flow view</h3>
+<p>The causal chain is</p>
+<div class="math-display">\[\text{drive}\rightarrow\text{internal excitation or order}\rightarrow\text{transport / conversion}\rightarrow\text{measured signal}.\]</div>
+<p>This view distinguishes conversion efficiency from amplification, and intrinsic lifetime from the electrical or optical response time of the complete device. It also makes reciprocity tests possible: if two experiments claim to probe the same microscopic process, parameters inferred from their spectra, dynamics and transport should agree after known selection rules and transfer functions are included.</p>
+<h2 id="Experimental-Signatures-and-Diagnostics">Experimental Signatures and Diagnostics</h2>
+<p>Measure loaded and intrinsic Q, propagation loss, mode profile, polarization and lifetime versus detuning. Brightness enhancement without lifetime change indicates improved collection rather than a modified emission rate.</p>
+<p>A strong assignment uses at least two independent observables—for example a spectrum plus a time-domain response, or transport plus a thermodynamic or spatial probe. Controls should vary thickness, temperature, excitation density, field orientation, contact layout or device area whenever those variables distinguish competing explanations. Null tests, dark/background measurements and instrument-response deconvolution are part of the physics rather than optional presentation details.</p>
+<h2 id="Device-and-System-Consequences">Device and System Consequences</h2>
+<p>This physics supports low-threshold lasers, efficient LEDs, resonant detectors, filters, modulators and deterministic single-photon interfaces.</p>
+<p>Benchmarking must keep operating conditions visible. Energy, speed, bandwidth, noise, retention, footprint, temperature and fabrication yield are coupled rather than independent headline numbers. A useful comparison therefore reports the complete operating point and distinguishes internal, external and system-level efficiency. For emerging platforms, a convincing device demonstration should also explain initialization, control, readout, reset and compatibility with the surrounding circuit.</p>
+<h2 id="Limits-Failure-Modes-and-Open-Questions">Limits, Failure Modes and Open Questions</h2>
+<p>Sidewall scattering, absorption, fabrication disorder and spectral diffusion reduce usable Q and indistinguishability; large Purcell factors do not guarantee high external efficiency.</p>
+<p>Idealized models commonly fail through disorder, parasitic absorption or capacitance, finite contacts, nonuniform current density, self-heating, environmental coupling and device-to-device variation. A frontier effect should be labelled as a candidate when its decisive signature has not been separated from these alternatives. Conversely, engineering maturity requires reproducible statistics, calibrated measurement bandwidth and a realistic accounting of auxiliary hardware.</p>
+<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
+<p><strong>Maturity:</strong> Foundation. Connected concepts:</p>
+<ul>
+<li><a href="/knowledge/nodes/semiconductor-light-matter-interaction/">semiconductor-light-matter-interaction</a></li>
+<li><a href="/knowledge/nodes/quantum-well-quantum-dot-lasers-vcsel/">quantum-well-quantum-dot-lasers-vcsel</a></li>
+<li><a href="/knowledge/nodes/integrated-nonlinear-and-quantum-photonics/">integrated-nonlinear-and-quantum-photonics</a></li>
+</ul>
+<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
+<p>The linked sources contain conceptual diagrams or representative experiments. Reuse of a particular figure requires checking the author or publisher licence.</p>
+<ol>
+<li><a href="https://doi.org/10.1017/CBO9780511794193" target="_blank" rel="noopener">Novotny &amp; Hecht, Principles of Nano-Optics</a></li>
+<li><a href="https://onlinelibrary.wiley.com/doi/book/10.1002/0471213748" target="_blank" rel="noopener">Saleh &amp; Teich, Fundamentals of Photonics, 3rd ed.</a></li>
+</ol>
+</div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
+<p>**核心结论：**光学边界通过重塑允许的电磁模式控制传播、辐射、自发辐射速率和收集效率，而不必改变裸电子跃迁。</p>
+</blockquote>
+<h2 id="物理图像">物理图像</h2>
+<p>全反射、折射率差或周期结构产生导模与共振模。偶极耦合取决于局域场偏振、空间重叠和光谱失谐；高品质因子增加驻留时间，小模式体积提高真空场强。</p>
+<p>可靠的描述必须先把外部控制量与内部状态分开。材料组成、几何、温度、光学或电学驱动及边界条件属于控制量；粒子占据、序参量、局域场和准粒子分布属于内部状态。只有明确“控制量如何改变状态、状态又如何成为可测端口信号”，才能避免把接触、加热、无序或读出链造成的变化误判为材料本征效应。</p>
+<p>选取近似前还要比较能量与时间尺度。能量尺度包括带阶、相互作用能、激发能隙、无序展宽及 \(k_BT\)；时间尺度包括注入、弛豫、复合、逃逸和仪器响应。一个机制只有在明确的尺度层级中才可能占主导，因此同一种材料在不同厚度、载流子密度、外场、光功率和器件尺寸下可能进入完全不同的工作区间。</p>
+<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
+<h3 id="控制方程">控制方程</h3>
+<p>第一条组织关系为</p>
+<div class="math-display">\[\nabla\times\nabla\times\mathbf E=\frac{\omega^2}{c^2}\epsilon(\mathbf r,\omega)\mathbf E\]</div>
+<p>与之互补的响应或演化关系为</p>
+<div class="math-display">\[F_P=\frac{3}{4\pi^2}\left(\frac{\lambda}{n}\right)^3\frac{Q}{V_m}\]</div>
+<p>求解满足边界连续条件的 Maxwell 本征模得到传播常数与共振。用电磁 Green 张量重写费米黄金律可见，自发辐射采样的是局域光子态密度；只有窄线宽、取向匹配并与单个弱耦合模共振时才恢复教科书 Purcell 因子。</p>
+<p>这些式子不能脱离条件当作通用拟合公式。必须说明变量定义、维度、平衡假设与边界条件；从实验提取参数时，还应使用与实际器件几何及测量带宽一致的端口模型。否则一个看似合理的参数可能只是补偿了未建模的串联电阻、收集损失、温度梯度或空间不均匀区域。</p>
+<h3 id="能量流与信息流">能量流与信息流</h3>
+<p>适合比较不同平台的因果链是</p>
+<div class="math-display">\[\text{驱动}\rightarrow\text{内部激发或有序}\rightarrow\text{输运 / 转换}\rightarrow\text{测量信号}.\]</div>
+<p>这一区分能量转换与增益，也区分本征寿命和完整器件的电学或光学响应时间。它还能建立互易检验：如果两类实验声称探测同一微观过程，那么在纳入选择定则和传递函数后，由光谱、动力学和输运得到的参数应相互一致。</p>
+<h2 id="实验特征与诊断">实验特征与诊断</h2>
+<p>应测量负载/本征 Q、传播损耗、模场、偏振及寿命随失谐的变化。亮度增强但寿命不变通常表示收集改善，而不是辐射速率改变。</p>
+<p>有说服力的归因至少需要两种独立观测量，例如光谱与时域响应、输运与热力学探针，或电学信号与空间成像。凡厚度、温度、激发密度、磁场方向、接触布局和器件面积能区分竞争机制，都应成为对照变量。暗态、背景、空白器件和仪器响应去卷积属于物理证据的一部分。</p>
+<h2 id="器件与系统意义">器件与系统意义</h2>
+<p>该物理支撑低阈值激光器、高效 LED、共振探测器、滤波器、调制器和确定性单光子接口。</p>
+<p>性能比较必须保留完整工作条件。能耗、速度、带宽、噪声、保持、面积、温度和工艺良率相互耦合，不能只取其中一个最优数字。应区分内部效率、外部效率和系统效率；对前沿器件还要解释初始化、控制、读出、复位以及与外围电路的兼容方式。</p>
+<h2 id="限制、失效机制与开放问题">限制、失效机制与开放问题</h2>
+<p>侧壁散射、吸收、工艺无序与光谱漂移会降低有效 Q 和不可区分度；高 Purcell 因子也不保证高外部效率。</p>
+<p>理想模型常因无序、寄生吸收或电容、有限接触、非均匀电流、自热、环境耦合及器件间变异而失效。若决定性判据尚未排除这些替代解释，就应把结论写成候选机制；若要称为工程成熟，则还需可重复统计、校准后的测量带宽以及对制冷、驱动和读出等辅助硬件的真实核算。</p>
+<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
+<p>**成熟度：**Foundation。关联节点：</p>
+<ul>
+<li><a href="/knowledge/nodes/semiconductor-light-matter-interaction/">semiconductor-light-matter-interaction</a></li>
+<li><a href="/knowledge/nodes/quantum-well-quantum-dot-lasers-vcsel/">quantum-well-quantum-dot-lasers-vcsel</a></li>
+<li><a href="/knowledge/nodes/integrated-nonlinear-and-quantum-photonics/">integrated-nonlinear-and-quantum-photonics</a></li>
+</ul>
+<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
+<p>下列来源包含概念示意图或代表性实验；转载具体图片前仍需核对作者或出版方许可。</p>
+<ol>
+<li><a href="https://doi.org/10.1017/CBO9780511794193" target="_blank" rel="noopener">Novotny &amp; Hecht, Principles of Nano-Optics</a></li>
+<li><a href="https://onlinelibrary.wiley.com/doi/book/10.1002/0471213748" target="_blank" rel="noopener">Saleh &amp; Teich, Fundamentals of Photonics, 3rd ed.</a></li>
+</ol>
+</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Physical-Picture" data-toc-index="0">Physical Picture</a></li><li><a href="#Deep-Derivation-and-Physical-Interpretation" data-toc-index="1">Deep Derivation and Physical Interpretation</a></li><li><a href="#Experimental-Signatures-and-Diagnostics" data-toc-index="2">Experimental Signatures and Diagnostics</a></li><li><a href="#Device-and-System-Consequences" data-toc-index="3">Device and System Consequences</a></li><li><a href="#Limits-Failure-Modes-and-Open-Questions" data-toc-index="4">Limits, Failure Modes and Open Questions</a></li><li><a href="#Position-in-the-Atlas" data-toc-index="5">Position in the Atlas</a></li><li><a href="#Figure-and-Reading-Sources" data-toc-index="6">Figure and Reading Sources</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/semiconductor-light-matter-interaction/"><span data-lang="en">Light–Matter Interaction in Semiconductors</span><span data-lang="zh" hidden>半导体中的光–物质相互作用</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/quantum-well-quantum-dot-lasers-vcsel/"><span data-lang="en">Quantum-Well and Quantum-Dot Lasers with VCSELs</span><span data-lang="zh" hidden>量子阱、量子点激光器与 VCSEL</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/integrated-nonlinear-and-quantum-photonics/"><span data-lang="en">Integrated Nonlinear Photonics, Microcombs and Quantum Photonic Circuits</span><span data-lang="zh" hidden>非线性、微梳与集成量子光子学</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li></ul></section></article></main>
+<footer class="node-footer"><span data-lang="en">A standalone note connected through the knowledge atlas.</span><span data-lang="zh" hidden>一个通过知识图谱与其他概念相连的独立知识节点。</span></footer><script>(function(){var buttons=Array.from(document.querySelectorAll('[data-lang-option]'));var panels=Array.from(document.querySelectorAll('[data-lang]'));function setLanguage(language){panels.forEach(function(panel){panel.hidden=panel.dataset.lang!==language;});buttons.forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.langOption===language));});document.documentElement.lang=language==='zh'?'zh-CN':'en';}buttons.forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.langOption);});});document.querySelectorAll('[data-toc-index]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();var active=document.querySelector('.node-content[data-lang]:not([hidden])');var heading=active&&active.querySelectorAll('h2')[Number(link.dataset.tocIndex)];if(heading){heading.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+heading.id);}});});setLanguage('en');})();</script></body></html>

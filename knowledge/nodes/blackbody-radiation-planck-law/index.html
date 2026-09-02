@@ -8,7 +8,8 @@
 <main class="node-shell"><a class="node-back" href="/knowledge/">← Back to the atlas</a><article class="node-article"><div class="node-kicker">KNOWLEDGE NOTE</div><h1>黑体辐射与普朗克公式：从腔模计数到量子化</h1><p class="node-deck">从热辐射的历史危机出发，逐步推导普朗克黑体谱，并由此得到维恩位移律与斯特藩–玻尔兹曼定律。</p><div class="node-tags"><span>Fundamental Models</span><span>Quantum Mechanics</span><span>Optical Properties</span><span>Scientific Visualization</span></div><div class="node-content"><blockquote>
 <p><strong>核心结论</strong>：黑体谱可以拆成两个彼此独立的部分——电磁学给出的“单位频率内有多少个腔模”，以及统计物理给出的“每个模平均携带多少能量”。经典理论在第二步取值为 \(k_{\mathrm B}T\)，因而产生紫外灾难；普朗克把模能量取为 \(nh\nu\)，高频模的热激发被指数抑制，遂得到有限且与实验一致的谱。</p>
 </blockquote>
-<h2 id="1-背景：为什么研究一个“完美的黑体”？"><a href="#1-背景：为什么研究一个“完美的黑体”？" class="headerlink" title="1. 背景：为什么研究一个“完美的黑体”？"></a>1. 背景：为什么研究一个“完美的黑体”？</h2><p>黑体是理想化物体：它吸收所有入射电磁辐射，并在热平衡时以只由温度决定的方式发射辐射。真实材料的发射率会随波长、方向和偏振变化，而黑体给出了远场热辐射的基准上限。</p>
+<h2 id="1-背景：为什么研究一个“完美的黑体”？">1. 背景：为什么研究一个“完美的黑体”？</h2>
+<p>黑体是理想化物体：它吸收所有入射电磁辐射，并在热平衡时以只由温度决定的方式发射辐射。真实材料的发射率会随波长、方向和偏振变化，而黑体给出了远场热辐射的基准上限。</p>
 <p>实验上最接近黑体的装置不是一块涂黑的平板，而是一个带小孔的恒温空腔。进入小孔的光经过多次反射后几乎不可能逃出；反过来，从小孔逸出的辐射也近似代表腔内的平衡电磁场。Kirchhoff 的普适性思想说明：只要腔体达到热平衡，谱形与腔壁材料细节无关，只依赖温度 \(T\)。</p>
 <p>十九世纪末，实验已经勾勒出一条有峰值的连续谱，但经典理论无法在全波段同时解释它：</p>
 <table>
@@ -19,7 +20,8 @@
 <th>留下的问题</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Kirchhoff（1859–1860）</td>
 <td>黑体谱具有普适性</td>
 <td>普适函数的具体形式未知</td>
@@ -44,9 +46,11 @@
 <td>能量交换以 \(h\nu\) 为单位</td>
 <td>开启量子理论</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>这场危机的历史意义在于：需要修改的并不是 Maxwell 电磁波的传播规律，而是物质与辐射达到热平衡时的能量统计。可把它视为 <a href="/2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/">从经典物理到量子理论</a> 的一个最清晰入口。</p>
-<h2 id="2-先把“谱”说清楚"><a href="#2-先把“谱”说清楚" class="headerlink" title="2. 先把“谱”说清楚"></a>2. 先把“谱”说清楚</h2><p>不同教材常把几个量都简称为“黑体辐射强度”，容易造成差一个 \(\pi\) 或 \(c\) 的错误。本文使用：</p>
+<h2 id="2-先把“谱”说清楚">2. 先把“谱”说清楚</h2>
+<p>不同教材常把几个量都简称为“黑体辐射强度”，容易造成差一个 \(\pi\) 或 \(c\) 的错误。本文使用：</p>
 <ul>
 <li>\(u_\nu(T)\)：单位体积、单位频率的谱能量密度，单位 \(\mathrm{J\,m^{-3}\,Hz^{-1}}\)；</li>
 <li>\(B_\nu(T)\)：谱辐亮度，单位 \(\mathrm{W\,m^{-2}\,sr^{-1}\,Hz^{-1}}\)；</li>
@@ -54,99 +58,88 @@
 </ul>
 <p>对各向同性辐射场，三者满足</p>
 <div class="math-display">\[B_\nu=\frac{c}{4\pi}u_\nu, \qquad M_\nu=\pi B_\nu=\frac{c}{4}u_\nu.\]</div>
-
 <p>下面先推导腔内的 \(u_\nu\)，再换成实验中常用的 \(B_\nu\) 与 \(B_\lambda\)。</p>
-<h2 id="3-第一步：数出频率在-\(\nu\)-到-\(\nu+d\nu\)-之间的腔模"><a href="#3-第一步：数出频率在-KNOWLEDGEMATHINLINE17TOKEN-到-KNOWLEDGEMATHINLINE18TOKEN-之间的腔模" class="headerlink" title="3. 第一步：数出频率在 KNOWLEDGEMATHINLINE17TOKEN 到 KNOWLEDGEMATHINLINE18TOKEN 之间的腔模"></a>3. 第一步：数出频率在 KNOWLEDGEMATHINLINE17TOKEN 到 KNOWLEDGEMATHINLINE18TOKEN 之间的腔模</h2><p>设边长为 \(L\) 的立方腔体积为 \(V=L^3\)。为了方便计数，可采用周期性边界条件。允许波矢在 \(k\) 空间形成间距为 \(2\pi/L\) 的点阵，因此每个态占据的 \(k\) 空间体积为 \((2\pi)^3/V\)。</p>
+<h2 id="3-第一步：数出频率在-\(\nu\)-到-\(\nu+d\nu\)-之间的腔模">3. 第一步：数出频率在 KNOWLEDGEMATHINLINE17TOKEN 到 KNOWLEDGEMATHINLINE18TOKEN 之间的腔模</h2>
+<p>设边长为 \(L\) 的立方腔体积为 \(V=L^3\)。为了方便计数，可采用周期性边界条件。允许波矢在 \(k\) 空间形成间距为 \(2\pi/L\) 的点阵，因此每个态占据的 \(k\) 空间体积为 \((2\pi)^3/V\)。</p>
 <p>半径为 \(k\)、厚度为 \(dk\) 的球壳体积是 \(4\pi k^2dk\)。再乘上两个独立横向偏振，模态数为</p>
 <div class="math-display">\[dN =2\frac{V}{(2\pi)^3}4\pi k^2dk =\frac{V k^2}{\pi^2}dk.\]</div>
-
 <p>真空中 \(\omega=ck\)、\(\nu=\omega/(2\pi)\)，所以</p>
 <div class="math-display">\[k=\frac{2\pi\nu}{c}, \qquad dk=\frac{2\pi}{c}d\nu.\]</div>
-
 <p>代入并除以体积，得到单位体积的频率态密度</p>
 <div class="math-display">\[\boxed{g(\nu)d\nu=\frac{1}{V}dN =\frac{8\pi\nu^2}{c^3}d\nu.}\]</div>
-
 <p>这一步完全来自经典电磁学与几何计数；量子假设还没有出现。它也揭示了一个重要事实：频率越高，可用的电磁模按 \(\nu^2\) 急剧增多。</p>
-<h2 id="4-第二步：求一个频率为-\(\nu\)-的模的平均热能"><a href="#4-第二步：求一个频率为-KNOWLEDGEMATHINLINE31TOKEN-的模的平均热能" class="headerlink" title="4. 第二步：求一个频率为 KNOWLEDGEMATHINLINE31TOKEN 的模的平均热能"></a>4. 第二步：求一个频率为 KNOWLEDGEMATHINLINE31TOKEN 的模的平均热能</h2><h3 id="4-1-经典答案为什么失败"><a href="#4-1-经典答案为什么失败" class="headerlink" title="4.1 经典答案为什么失败"></a>4.1 经典答案为什么失败</h3><p>经典能量均分定理给每个谐振模平均能量</p>
+<h2 id="4-第二步：求一个频率为-\(\nu\)-的模的平均热能">4. 第二步：求一个频率为 KNOWLEDGEMATHINLINE31TOKEN 的模的平均热能</h2>
+<h3 id="4-1-经典答案为什么失败">4.1 经典答案为什么失败</h3>
+<p>经典能量均分定理给每个谐振模平均能量</p>
 <div class="math-display">\[\langle E\rangle_{\mathrm{cl}}=k_{\mathrm B}T.\]</div>
-
 <p>将它与态密度相乘，得到瑞利–金斯定律</p>
 <div class="math-display">\[u_\nu^{\mathrm{RJ}}(T) =\frac{8\pi\nu^2}{c^3}k_{\mathrm B}T.\]</div>
-
 <p>当 \(\nu\to\infty\) 时它按 \(\nu^2\) 增长，故总能量 \(\int_0^\infty u_\nu^{\mathrm{RJ}}d\nu\) 发散。这意味着任何有限温度的腔体都应含有无限能量，与实验和能量守恒都冲突；这就是紫外灾难。</p>
-<h3 id="4-2-普朗克量子化与配分函数"><a href="#4-2-普朗克量子化与配分函数" class="headerlink" title="4.2 普朗克量子化与配分函数"></a>4.2 普朗克量子化与配分函数</h3><p>普朗克的关键假设是：频率为 \(\nu\) 的振子只能以离散能量交换，能级为</p>
+<h3 id="4-2-普朗克量子化与配分函数">4.2 普朗克量子化与配分函数</h3>
+<p>普朗克的关键假设是：频率为 \(\nu\) 的振子只能以离散能量交换，能级为</p>
 <div class="math-display">\[E_n=nh\nu,\qquad n=0,1,2,\ldots\]</div>
-
 <p>令 \(\beta=1/(k_{\mathrm B}T)\)。单模的正则配分函数是一个等比级数：</p>
 <div class="math-display">\[Z_\nu =\sum_{n=0}^{\infty}e^{-\beta nh\nu} =\frac{1}{1-e^{-\beta h\nu}}.\]</div>
-
 <p>平均能量可由 \(-\partial\ln Z/\partial\beta\) 得到：</p>
 <div class="math-display">\[\begin{aligned} \langle E\rangle &amp;=-\frac{\partial}{\partial\beta}\ln Z_\nu\\ &amp;=-\frac{\partial}{\partial\beta}\left[-\ln\left(1-e^{-\beta h\nu}\right)\right]\\ &amp;=\boxed{\frac{h\nu}{e^{h\nu/(k_{\mathrm B}T)}-1}}. \end{aligned}\]</div>
-
 <p>现代量子谐振子还含零点能 \(h\nu/2\)。它与温度无关，不参与两个同温物体之间的净热辐射，因此通常不写入热黑体谱。这里的分母也等于 Bose–Einstein 平均光子数的倒数：</p>
 <div class="math-display">\[\bar n(\nu,T)=\frac{1}{e^{h\nu/(k_{\mathrm B}T)}-1}, \qquad \langle E\rangle=h\nu\bar n.\]</div>
-
-<h2 id="5-第三步：态密度-×-单模平均能量"><a href="#5-第三步：态密度-×-单模平均能量" class="headerlink" title="5. 第三步：态密度 × 单模平均能量"></a>5. 第三步：态密度 × 单模平均能量</h2><p>将第 3 节与第 4 节相乘，得到普朗克频率谱的能量密度：</p>
+<h2 id="5-第三步：态密度-×-单模平均能量">5. 第三步：态密度 × 单模平均能量</h2>
+<p>将第 3 节与第 4 节相乘，得到普朗克频率谱的能量密度：</p>
 <p><img src="/images/blackbody-radiation/planck-derivation-flow.svg" alt="普朗克定律的两个组成部分：腔体电磁模态密度与单模平均热能相乘，得到谱能量密度。"></p>
 <p><em>图 1｜普朗克谱的结构。左侧为空腔中的电磁驻波；右侧将经典电磁学给出的模态密度与量子统计给出的单模平均能量分开呈现。</em></p>
 <div class="math-display">\[\boxed{u_\nu(T)=\frac{8\pi h\nu^3}{c^3}\frac{1}{e^{h\nu/(k_{\mathrm B}T)}-1}}.\]</div>
-
 <p>相应的频率谱辐亮度为</p>
 <div class="math-display">\[\boxed{B_\nu(T)=\frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/(k_{\mathrm B}T)}-1}}.\]</div>
-
-<h3 id="从频率谱变到波长谱：不能只代入-\(\nu=c/\lambda\)"><a href="#从频率谱变到波长谱：不能只代入-KNOWLEDGEMATHINLINE39TOKEN" class="headerlink" title="从频率谱变到波长谱：不能只代入 KNOWLEDGEMATHINLINE39TOKEN"></a>从频率谱变到波长谱：不能只代入 KNOWLEDGEMATHINLINE39TOKEN</h3><p>谱密度必须保持同一小区间内的能量不变：</p>
+<h3 id="从频率谱变到波长谱：不能只代入-\(\nu=c/\lambda\)">从频率谱变到波长谱：不能只代入 KNOWLEDGEMATHINLINE39TOKEN</h3>
+<p>谱密度必须保持同一小区间内的能量不变：</p>
 <div class="math-display">\[B_\lambda\,|d\lambda|=B_\nu\,|d\nu|.\]</div>
-
 <p>由于 \(\nu=c/\lambda\)，有 \(|d\nu/d\lambda|=c/\lambda^2\)。因此</p>
 <div class="math-display">\[\begin{aligned} B_\lambda(T) &amp;=B_\nu(T)\left|\frac{d\nu}{d\lambda}\right|\\ &amp;=\boxed{\frac{2hc^2}{\lambda^5}\frac{1}{e^{hc/(\lambda k_{\mathrm B}T)}-1}}. \end{aligned}\]</div>
-
 <p>这个雅可比因子使波长谱含 \(\lambda^{-5}\)。因此 \(B_\nu\) 的峰与 \(B_\lambda\) 的峰描述的是不同的谱坐标密度，不能简单用 \(\nu=c/\lambda\) 把一个峰的位置换成另一个峰的位置。</p>
-<h2 id="6-两个极限：旧理论为何又“局部正确”"><a href="#6-两个极限：旧理论为何又“局部正确”" class="headerlink" title="6. 两个极限：旧理论为何又“局部正确”"></a>6. 两个极限：旧理论为何又“局部正确”</h2><p>令 \(x=h\nu/(k_{\mathrm B}T)\)。在低频、长波极限 \(x\ll1\)，利用 \(e^x-1\approx x\)：</p>
+<h2 id="6-两个极限：旧理论为何又“局部正确”">6. 两个极限：旧理论为何又“局部正确”</h2>
+<p>令 \(x=h\nu/(k_{\mathrm B}T)\)。在低频、长波极限 \(x\ll1\)，利用 \(e^x-1\approx x\)：</p>
 <div class="math-display">\[u_\nu\approx\frac{8\pi h\nu^3}{c^3}\frac{1}{x}=\frac{8\pi\nu^2}{c^3}k_{\mathrm B}T,\]</div>
-
 <p>恰好回到瑞利–金斯定律。此时 \(h\nu\) 远小于热能尺度 \(k_{\mathrm B}T\)，能级间隔看起来近似连续。</p>
 <p>在高频、短波极限 \(x\gg1\)，\(e^x-1\approx e^x\)：</p>
 <div class="math-display">\[B_\lambda\approx\frac{2hc^2}{\lambda^5}e^{-hc/(\lambda k_{\mathrm B}T)},\]</div>
-
 <p>这正是维恩分布近似。指数项抑制了高频模，消除了紫外灾难。</p>
 <p><img src="/images/blackbody-radiation/classical-versus-planck.svg" alt="在 3000 K 下比较普朗克定律、瑞利–金斯定律与维恩近似。瑞利–金斯谱在短波端发散，维恩近似则在短波端贴近普朗克谱。"></p>
 <p><em>图 2｜经典理论的适用边界。瑞利–金斯定律只在长波端成立；维恩近似只在短波端成立；普朗克定律连接二者并在全波段保持有限。</em></p>
-<h2 id="7-从普朗克定律推出两个宏观定律"><a href="#7-从普朗克定律推出两个宏观定律" class="headerlink" title="7. 从普朗克定律推出两个宏观定律"></a>7. 从普朗克定律推出两个宏观定律</h2><h3 id="7-1-维恩位移律"><a href="#7-1-维恩位移律" class="headerlink" title="7.1 维恩位移律"></a>7.1 维恩位移律</h3><p>固定 \(T\)，令 \(B_\lambda\) 对 \(\lambda\) 的导数为零。定义 \(x=hc/(\lambda k_{\mathrm B}T)\)，整理后得到超越方程</p>
+<h2 id="7-从普朗克定律推出两个宏观定律">7. 从普朗克定律推出两个宏观定律</h2>
+<h3 id="7-1-维恩位移律">7.1 维恩位移律</h3>
+<p>固定 \(T\)，令 \(B_\lambda\) 对 \(\lambda\) 的导数为零。定义 \(x=hc/(\lambda k_{\mathrm B}T)\)，整理后得到超越方程</p>
 <div class="math-display">\[5(1-e^{-x})=x.\]</div>
-
 <p>其非零根为 \(x=4.965114\ldots\)，故</p>
 <div class="math-display">\[\boxed{\lambda_{\max}T=\frac{hc}{k_{\mathrm B}x}=b=2.897771955\ldots\times10^{-3}\ \mathrm{m\,K}}.\]</div>
-
 <p>例如太阳光球温度约 \(5800\ \mathrm K\)，据此得到 \(\lambda_{\max}\approx500\ \mathrm{nm}\)，位于可见光范围。注意：若改对 \(B_\nu\) 求极值，方程变为 \(3(1-e^{-x})=x\)，所得频率峰并不是上述波长峰的简单倒数。</p>
 <p><img src="/images/blackbody-radiation/temperature-dependent-spectrum.svg" alt="3000 K、4500 K 与 6000 K 的黑体谱。温度升高时谱峰向更短波长移动，辐亮度同时显著增大。"></p>
 <p><em>图 3｜温度对黑体谱的影响。圆点标出各波长谱的峰值；升温同时带来峰值蓝移和辐射增强。</em></p>
-<h3 id="7-2-斯特藩–玻尔兹曼定律"><a href="#7-2-斯特藩–玻尔兹曼定律" class="headerlink" title="7.2 斯特藩–玻尔兹曼定律"></a>7.2 斯特藩–玻尔兹曼定律</h3><p>黑体表面对所有频率、整个出射半球积分：</p>
+<h3 id="7-2-斯特藩–玻尔兹曼定律">7.2 斯特藩–玻尔兹曼定律</h3>
+<p>黑体表面对所有频率、整个出射半球积分：</p>
 <div class="math-display">\[\begin{aligned} M(T)&amp;=\int_0^\infty M_\nu(T)d\nu\\ &amp;=\frac{2\pi h}{c^2}\int_0^\infty\frac{\nu^3}{e^{h\nu/(k_{\mathrm B}T)}-1}d\nu. \end{aligned}\]</div>
-
 <p>作变量替换 \(x=h\nu/(k_{\mathrm B}T)\)，并使用</p>
 <div class="math-display">\[\int_0^\infty\frac{x^3}{e^x-1}dx=\frac{\pi^4}{15},\]</div>
-
 <p>便得到</p>
 <div class="math-display">\[\boxed{M(T)=\sigma T^4},\]</div>
-
 <p>其中</p>
 <div class="math-display">\[\boxed{\sigma=\frac{2\pi^5k_{\mathrm B}^4}{15h^3c^2}=5.670374419\ldots\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}}}.\]</div>
-
 <p>因此升温不仅让峰向短波移动，总出射功率还按 \(T^4\) 快速增长。</p>
-<h2 id="8-真实物体、实验检验与应用"><a href="#8-真实物体、实验检验与应用" class="headerlink" title="8. 真实物体、实验检验与应用"></a>8. 真实物体、实验检验与应用</h2><p>真实表面的谱辐亮度通常写为</p>
+<h2 id="8-真实物体、实验检验与应用">8. 真实物体、实验检验与应用</h2>
+<p>真实表面的谱辐亮度通常写为</p>
 <div class="math-display">\[L_\lambda(\lambda,T,\theta,\phi,p)=\varepsilon_\lambda(\lambda,T,\theta,\phi,p)B_\lambda(\lambda,T),\]</div>
-
 <p>其中发射率 \(0\le\varepsilon_\lambda\le1\) 可依赖波长、温度、方向与偏振 \(p\)。在热平衡且满足互易性的通常条件下，Kirchhoff 定律把发射率与对应通道的吸收率联系起来。</p>
 <p>普朗克谱已成为跨尺度的测量基准：</p>
 <ul>
 <li><strong>恒星与高温测量</strong>：用谱形、颜色温度或辐射测温反演温度；</li>
-<li><strong>宇宙学</strong>：COBE&#x2F;FIRAS 测得宇宙微波背景与约 \(2.725\ \mathrm K\) 的黑体谱高度一致，对早期宇宙能量注入施加严格限制；</li>
+<li><strong>宇宙学</strong>：COBE/FIRAS 测得宇宙微波背景与约 \(2.725\ \mathrm K\) 的黑体谱高度一致，对早期宇宙能量注入施加严格限制；</li>
 <li><strong>红外成像与遥感</strong>：把传感器响应、发射率和大气窗口共同纳入温度反演；</li>
 <li><strong>照明与能源</strong>：理解白炽灯的大量红外损耗，并为热光伏选择与带隙匹配的发射波段；</li>
 <li><strong>材料光学</strong>：结合介电函数与 <a href="/2020/04/17/Drude-Model-in-Soild-State-Physics/">Drude 模型</a>，计算金属或半导体的吸收率与发射率。</li>
 </ul>
-<p>另一个深层联系是“通道计数”：本推导数的是光子腔模，而 <a href="/2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/">量子电导</a> 数的是电子输运通道。二者都把宏观流量拆成“可用通道数 × 每通道占据&#x2F;传输”。</p>
-<h2 id="9-展望：从服从黑体极限到设计热辐射"><a href="#9-展望：从服从黑体极限到设计热辐射" class="headerlink" title="9. 展望：从服从黑体极限到设计热辐射"></a>9. 展望：从服从黑体极限到设计热辐射</h2><p>普朗克定律没有过时；它是判断新效应究竟改变了材料发射率、可用光学通道，还是改变了系统边界条件的基线。</p>
+<p>另一个深层联系是“通道计数”：本推导数的是光子腔模，而 <a href="/2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/">量子电导</a> 数的是电子输运通道。二者都把宏观流量拆成“可用通道数 × 每通道占据/传输”。</p>
+<h2 id="9-展望：从服从黑体极限到设计热辐射">9. 展望：从服从黑体极限到设计热辐射</h2>
+<p>普朗克定律没有过时；它是判断新效应究竟改变了材料发射率、可用光学通道，还是改变了系统边界条件的基线。</p>
 <ol>
 <li><strong>超表面与选择性热发射</strong>：亚波长结构可在特定波长、角度或偏振上塑造 \(\varepsilon\)，服务于热光伏、红外光源、气体传感与被动辐射制冷。目标不是让普通远场表面在同一通道上“超过黑体”，而是更精确地分配谱功率。</li>
 <li><strong>近场超普朗克热传输</strong>：当两物体间距小于热波长时，倏逝波与表面极化激元可以隧穿间隙，开启远场公式未计入的高横向波矢通道，使热流超过远场黑体值。这不违反普朗克定律，而是超出了它的远场传播模假设。</li>
@@ -154,7 +147,8 @@
 <li><strong>精密宇宙学</strong>：未来对宇宙微波背景微小谱畸变的测量，将在“近乎完美的黑体”上寻找早期宇宙能量释放、结构形成与新粒子过程留下的偏差。</li>
 <li><strong>量子尺度热管理</strong>：二维材料、纳米间隙和强耦合体系把热辐射、电子输运与声子输运连在一起，推动片上能量转换和量子器件散热的新模型。</li>
 </ol>
-<h2 id="10-常见误区与自检"><a href="#10-常见误区与自检" class="headerlink" title="10. 常见误区与自检"></a>10. 常见误区与自检</h2><ul>
+<h2 id="10-常见误区与自检">10. 常见误区与自检</h2>
+<ul>
 <li><strong>把黑色物体等同于黑体</strong>：可见光下很黑，不代表在红外也有接近 1 的发射率。</li>
 <li><strong>把 \(B_\nu\) 直接代换成 \(B_\lambda\)</strong>：必须乘 \(|d\nu/d\lambda|=c/\lambda^2\)。</li>
 <li><strong>漏掉两个偏振</strong>：模态密度中的系数 \(8\pi\) 已包含两个横向偏振。</li>
@@ -162,17 +156,17 @@
 <li><strong>认为能量量子化发生在传播路径上</strong>：推导的关键是每个场模的能级与热占据；Maxwell 方程仍决定自由空间中的模结构。</li>
 <li><strong>把近场超普朗克传热说成违反黑体定律</strong>：近场系统增加了倏逝通道，比较对象已不再是同一远场问题。</li>
 </ul>
-<h2 id="11-公式地图"><a href="#11-公式地图" class="headerlink" title="11. 公式地图"></a>11. 公式地图</h2><div class="math-display">\[\boxed{ \underbrace{\frac{8\pi\nu^2}{c^3}}_{\text{每体积每频率的模态数}} \times \underbrace{\frac{h\nu}{e^{h\nu/(k_{\mathrm B}T)}-1}}_{\text{每个模的平均热能}} = \underbrace{\frac{8\pi h\nu^3}{c^3}\frac{1}{e^{h\nu/(k_{\mathrm B}T)}-1}}_{u_\nu(T)} }\]</div>
-
+<h2 id="11-公式地图">11. 公式地图</h2>
+<div class="math-display">\[\boxed{ \underbrace{\frac{8\pi\nu^2}{c^3}}_{\text{每体积每频率的模态数}} \times \underbrace{\frac{h\nu}{e^{h\nu/(k_{\mathrm B}T)}-1}}_{\text{每个模的平均热能}} = \underbrace{\frac{8\pi h\nu^3}{c^3}\frac{1}{e^{h\nu/(k_{\mathrm B}T)}-1}}_{u_\nu(T)} }\]</div>
 <p>从这一个式子，经由几何因子、变量变换、求极值和全谱积分，依次得到</p>
 <div class="math-display">\[u_\nu\longrightarrow B_\nu\xrightarrow{|d\nu/d\lambda|}B_\lambda \xrightarrow{\partial B_\lambda/\partial\lambda=0}\lambda_{\max}T=b \xrightarrow{\int_0^\infty M_\nu d\nu}M=\sigma T^4.\]</div>
-
-<h2 id="参考资料与延伸阅读"><a href="#参考资料与延伸阅读" class="headerlink" title="参考资料与延伸阅读"></a>参考资料与延伸阅读</h2><ol>
+<h2 id="参考资料与延伸阅读">参考资料与延伸阅读</h2>
+<ol>
 <li>M. Planck, <em>The Theory of Heat Radiation</em>：普朗克热辐射理论的历史原典。</li>
 <li><a href="https://www.aps.org/apsnews/2002/10/this-month-in-physics-history" target="_blank" rel="noopener">APS：October 1900—Planck’s Formula for Black Body Radiation</a>：黑体问题与量子化思想的历史背景。</li>
 <li><a href="https://www.bipm.org/en/measurement-units/si-defining-constants" target="_blank" rel="noopener">BIPM：SI defining constants</a>：本文所用 \(h\)、\(k_{\mathrm B}\) 与 \(c\) 的 SI 定义值。</li>
 <li><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote910-8.pdf" target="_blank" rel="noopener">NIST：Optical Radiation Measurements, Chapter 12</a>：普朗克定律、维恩位移律与辐射度量学约定。</li>
-<li><a href="https://lambda.gsfc.nasa.gov/product/cobe/about_firas.html" target="_blank" rel="noopener">NASA LAMBDA：COBE&#x2F;FIRAS instrument and results</a>：宇宙微波背景黑体谱的精密测量。</li>
+<li><a href="https://lambda.gsfc.nasa.gov/product/cobe/about_firas.html" target="_blank" rel="noopener">NASA LAMBDA：COBE/FIRAS instrument and results</a>：宇宙微波背景黑体谱的精密测量。</li>
 <li><a href="https://lambda.gsfc.nasa.gov/product/cobe/firas_monopole_spect.html" target="_blank" rel="noopener">NASA LAMBDA：CMB monopole spectrum data</a>：FIRAS 数据与 \(2.725\ \mathrm K\) 黑体拟合。</li>
 <li>S. Lang <em>et al.</em>, <a href="https://www.nature.com/articles/s41598-017-14242-x" target="_blank" rel="noopener">Dynamic measurement of near-field radiative heat transfer</a>, <em>Scientific Reports</em> <strong>7</strong>, 13916 (2017)：实验观测近场超普朗克热流。</li>
 <li>Y. Qu <em>et al.</em>, <a href="https://www.nature.com/articles/s41586-026-10595-4" target="_blank" rel="noopener">Metamaterial-enhanced near-field radiative heat transfer</a>, <em>Nature</em> <strong>654</strong>, 64–68 (2026)：利用人工电磁结构增强并调控近场辐射换热。</li>
