@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Operando Electrochemistry and Mechanism Inference · Knowledge Atlas</title><meta name="description" content="Operando methods correlate structure and intermediates with catalytic performance under the same working state, but correlation alone does not establish causal activity.">
+<link rel="icon" href="/assets/favicon.ico"><link rel="stylesheet" href="/knowledge/graph.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
+<body class="knowledge-node-page"><header class="node-header"><a class="wordmark" href="/">iCalculate’s Studio</a><nav><a href="/archives/">Archive</a><a href="/knowledge/">Knowledge Atlas</a></nav></header>
+<main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Operando Electrochemistry and Mechanism Inference</span><span data-lang="zh" hidden>工况电化学与机理推断</span></h1><p class="node-deck"><span data-lang="en">Operando methods correlate structure and intermediates with catalytic performance under the same working state, but correlation alone does not establish causal activity.</span><span data-lang="zh" hidden>工况方法在同一工作状态下关联结构、中间体与催化性能，但相关本身不能建立因果活性。</span></p><div class="node-tags"><span>Operando Electrochemistry</span><span>Electrocatalysis</span><span>Energy Systems</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
+<p><strong>Core idea:</strong> Operando methods correlate structure and intermediates with catalytic performance under the same working state, but correlation alone does not establish causal activity.</p>
+</blockquote>
+<h2 id="Thermodynamic-and-Molecular-Picture"><a href="#Thermodynamic-and-Molecular-Picture" class="headerlink" title="Thermodynamic and Molecular Picture"></a>Thermodynamic and Molecular Picture</h2><p>Potential, current, mass flow and photons perturb a dynamic interface while spectroscopy or microscopy observes a convolution of active, spectator and degrading populations.</p>
+<p>A useful chemical model separates thermodynamic driving force, kinetic accessibility and transport. Temperature, pressure, composition, potential, illumination and flow are controls; chemical potentials, coverages, concentrations, phase fractions and interfacial fields are internal state variables. A measured current, spectrum or product rate is mechanistic evidence only after the path from control to state and from state to observation is explicit. This guards against assigning changes caused by surface area, ohmic loss, mass transfer, impurities or reactor geometry to an intrinsic molecular step.</p>
+<p>Relevant scales span bond and adsorption energies, activation barriers, solvation and electrostatic energies, \(k_BT\), diffusion lengths and residence times. Their hierarchy determines whether equilibrium thermodynamics, microkinetics, continuum transport or atomistic dynamics is the appropriate description. The same composition may therefore operate in a reaction-limited, transport-limited, phase-transforming or degradation-dominated regime as loading and operating conditions change.</p>
+<h2 id="Deep-Derivation-and-Mechanistic-Interpretation"><a href="#Deep-Derivation-and-Mechanistic-Interpretation" class="headerlink" title="Deep Derivation and Mechanistic Interpretation"></a>Deep Derivation and Mechanistic Interpretation</h2><h3 id="Governing-relations"><a href="#Governing-relations" class="headerlink" title="Governing relations"></a>Governing relations</h3><p>The first organizing relation is</p>
+<div class="math-display">\[S(\omega,t)=\sum_j c_j(t)\sigma_j(\omega)+B(\omega,t)\]</div>
+
+<p>A complementary rate, transport or balance relation is</p>
+<div class="math-display">\[\frac{dc_j}{dt}=\sum_k S_{jk}r_k(c,E,T)\]</div>
+
+<p>A spectrum is a linear or nonlinear mixture of species responses, while kinetic balances govern their populations. Mechanism inference is therefore an inverse problem requiring perturbations and identifiability analysis.</p>
+<p>These relations become predictive only after activities, standard states, reference electrodes, surface area conventions and boundary conditions are declared. Apparent rate constants or overpotentials can otherwise absorb uncompensated resistance, roughness, bubbles, crossover or concentration gradients. Dimensionless groups and limiting-current checks should be used before fitting a detailed mechanism.</p>
+<h3 id="Causal-and-systems-view"><a href="#Causal-and-systems-view" class="headerlink" title="Causal and systems view"></a>Causal and systems view</h3><p>The auditable chain is</p>
+<div class="math-display">\[\text{feed and energy}\rightarrow\text{molecular/interfacial state}\rightarrow\text{reaction and transport}\rightarrow\text{product and measured signal}.\]</div>
+
+<p>Following this chain separates an intrinsic mechanism or learned capability from losses introduced by transport, sampling, interfaces, readout or orchestration. It also enables consistency tests: parameters inferred at one stage should predict independent observations downstream without being silently refitted.</p>
+<h2 id="Experimental-Signatures-and-Mechanism-Tests"><a href="#Experimental-Signatures-and-Mechanism-Tests" class="headerlink" title="Experimental Signatures and Mechanism Tests"></a>Experimental Signatures and Mechanism Tests</h2><p>Potential steps, modulation excitation, isotope exchange and synchronized product analysis help separate spectators from kinetically connected intermediates.</p>
+<p>A strong assignment combines at least two independent probes, such as product quantification with operando spectroscopy, isotope labelling with kinetic order, or microscopy with impedance. Blank substrates, contamination controls, mass balances, calibration standards and replicated devices are part of the chemical argument rather than optional reporting details.</p>
+<h2 id="Technology-and-Energy-System-Consequences"><a href="#Technology-and-Energy-System-Consequences" class="headerlink" title="Technology and Energy-System Consequences"></a>Technology and Energy-System Consequences</h2><p>Validated operando models guide active-state stabilization, accelerated degradation diagnosis and closed-loop catalyst optimization.</p>
+<p>Performance must be reported at a complete operating point: conversion, selectivity, Faradaic or energetic efficiency, productivity, lifetime, materials intensity, safety and balance-of-plant are coupled. Laboratory activity is not yet a scalable energy technology unless feed purification, separation, thermal management, manufacturing yield and end-of-life pathways are included.</p>
+<h2 id="Limits-Failure-Modes-and-Open-Questions"><a href="#Limits-Failure-Modes-and-Open-Questions" class="headerlink" title="Limits, Failure Modes and Open Questions"></a>Limits, Failure Modes and Open Questions</h2><p>Beam damage, window absorption, spatial averaging, time resolution and multicollinearity can produce persuasive but nonunique assignments.</p>
+<p>Ideal models commonly fail through dynamic reconstruction, poisoning, phase segregation, electrolyte decomposition, wetting changes, porous-electrode gradients and coupled mechanical stress. Frontier claims should distinguish a calculated descriptor, an observed correlation, a validated mechanism, a device demonstration and a bankable system; those are different maturity levels.</p>
+<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Engineering. Connected concepts:</p>
+<ul>
+<li><a href="/knowledge/nodes/surface-adsorption-heterogeneous-catalysis/">surface-adsorption-heterogeneous-catalysis</a></li>
+<li><a href="/2020/05/01/WHAT-IS-ATR-SEIRAS/">WHAT-IS-ATR-SEIRAS</a></li>
+<li><a href="/knowledge/nodes/ai-for-materials-chemistry-autonomous-laboratories/">ai-for-materials-chemistry-autonomous-laboratories</a></li>
+</ul>
+<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked sources provide derivations, benchmark protocols, conceptual diagrams or representative experiments. Reusing a particular figure still requires checking the author or publisher licence.</p>
+<ol>
+<li><a href="https://doi.org/10.1016/j.cattod.2004.09.017" target="_blank" rel="noopener">Bañares, Operando Methodology: Combination of Spectroscopic Methods and Catalytic Performance</a></li>
+<li><a href="https://doi.org/10.1007/s11244-012-9801-6" target="_blank" rel="noopener">Campbell, The Degree of Rate Control</a></li>
+</ol>
+</div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
+<p>**核心结论：**工况方法在同一工作状态下关联结构、中间体与催化性能，但相关本身不能建立因果活性。</p>
+</blockquote>
+<h2 id="热力学与分子图像"><a href="#热力学与分子图像" class="headerlink" title="热力学与分子图像"></a>热力学与分子图像</h2><p>电势、电流、物料流和光子扰动动态界面，光谱或显微观察到的是活性、旁观与衰减种群的卷积。</p>
+<p>可靠的化学模型必须区分热力学驱动力、动力学可达性与传质限制。温度、压力、组成、电势、光照和流量是控制量；化学势、覆盖度、浓度、相分数及界面电场是内部状态。只有明确控制量如何改变状态、状态又如何形成电流、光谱或产物速率，测量结果才构成机理证据，也才能避免把比表面积、欧姆损失、传质、杂质或反应器几何的影响误判为本征分子步骤。</p>
+<p>相关尺度包括化学键与吸附能、活化势垒、溶剂化和静电能、\(k_BT\)、扩散长度及停留时间。它们的层级决定应采用平衡热力学、微观动力学、连续传输还是原子尺度动力学。因此同一组成随载量和工作条件变化，可能分别进入反应控制、传质控制、相变控制或衰减主导区间。</p>
+<h2 id="深入推导与机理解释"><a href="#深入推导与机理解释" class="headerlink" title="深入推导与机理解释"></a>深入推导与机理解释</h2><h3 id="控制方程"><a href="#控制方程" class="headerlink" title="控制方程"></a>控制方程</h3><p>第一条组织关系为</p>
+<div class="math-display">\[S(\omega,t)=\sum_j c_j(t)\sigma_j(\omega)+B(\omega,t)\]</div>
+
+<p>与之互补的速率、传输或守恒关系为</p>
+<div class="math-display">\[\frac{dc_j}{dt}=\sum_k S_{jk}r_k(c,E,T)\]</div>
+
+<p>光谱是多个物种响应的线性或非线性混合，动力学守恒控制其种群；因此机理推断是需要扰动和可辨识性分析的反问题。</p>
+<p>只有声明活度、标准态、参比电极、面积归一方式与边界条件，这些关系才具有预测性。否则表观速率常数或过电位可能只是吸收了未补偿电阻、粗糙度、气泡、交叉渗透或浓度梯度。拟合复杂机理前，应先进行无量纲分析和极限电流检验。</p>
+<h3 id="因果链与系统视角"><a href="#因果链与系统视角" class="headerlink" title="因果链与系统视角"></a>因果链与系统视角</h3><p>可审计的因果链为</p>
+<div class="math-display">\[\text{物料与能量输入}\rightarrow\text{分子或界面状态}\rightarrow\text{反应与传输}\rightarrow\text{产物及测量信号}.\]</div>
+
+<p>沿这条链可以把本征机理或学习能力与传质、采样、界面、读出或编排引入的损失区分开，也能建立一致性检验：在一个环节推断出的参数，应在不暗中重新拟合的前提下预测下游独立观测。</p>
+<h2 id="实验特征与机理检验"><a href="#实验特征与机理检验" class="headerlink" title="实验特征与机理检验"></a>实验特征与机理检验</h2><p>电势阶跃、调制激发、同位素交换及同步产物分析有助于区分旁观物种和动力学关联中间体。</p>
+<p>有说服力的归因应结合至少两种独立探针，例如产物定量与工况光谱、同位素标记与反应级数，或显微成像与阻抗。空白基底、污染控制、物料衡算、校准标准和重复器件属于化学论证的一部分，而不是可选的报告细节。</p>
+<h2 id="技术与能源系统意义"><a href="#技术与能源系统意义" class="headerlink" title="技术与能源系统意义"></a>技术与能源系统意义</h2><p>经验证的工况模型可指导活性态稳定、加速衰减诊断与闭环催化优化。</p>
+<p>性能必须在完整工作点报告：转化率、选择性、法拉第或能量效率、生产率、寿命、材料强度、安全与辅助系统相互耦合。若未纳入原料净化、产物分离、热管理、制造良率和寿命终结路径，实验室活性尚不能等同于可规模化能源技术。</p>
+<h2 id="限制、失效机制与开放问题"><a href="#限制、失效机制与开放问题" class="headerlink" title="限制、失效机制与开放问题"></a>限制、失效机制与开放问题</h2><p>束流损伤、窗口吸收、空间平均、时间分辨与多重共线性会产生看似可信却非唯一的归因。</p>
+<p>理想模型常因动态重构、中毒、相分离、电解液分解、润湿变化、多孔电极梯度及耦合机械应力而失效。前沿结论必须区分计算描述符、观测相关性、已验证机理、器件演示和可融资系统；它们对应不同成熟度。</p>
+<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Engineering。关联节点：</p>
+<ul>
+<li><a href="/knowledge/nodes/surface-adsorption-heterogeneous-catalysis/">surface-adsorption-heterogeneous-catalysis</a></li>
+<li><a href="/2020/05/01/WHAT-IS-ATR-SEIRAS/">WHAT-IS-ATR-SEIRAS</a></li>
+<li><a href="/knowledge/nodes/ai-for-materials-chemistry-autonomous-laboratories/">ai-for-materials-chemistry-autonomous-laboratories</a></li>
+</ul>
+<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列来源包含推导、基准协议、概念示意或代表性实验；转载具体图片前仍需核对作者或出版方许可。</p>
+<ol>
+<li><a href="https://doi.org/10.1016/j.cattod.2004.09.017" target="_blank" rel="noopener">Bañares, Operando Methodology: Combination of Spectroscopic Methods and Catalytic Performance</a></li>
+<li><a href="https://doi.org/10.1007/s11244-012-9801-6" target="_blank" rel="noopener">Campbell, The Degree of Rate Control</a></li>
+</ol>
+</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#Thermodynamic-and-Molecular-Picture" data-toc-index="0">Thermodynamic and Molecular Picture</a></li><li><a href="#Deep-Derivation-and-Mechanistic-Interpretation" data-toc-index="1">Deep Derivation and Mechanistic Interpretation</a></li><li><a href="#Experimental-Signatures-and-Mechanism-Tests" data-toc-index="2">Experimental Signatures and Mechanism Tests</a></li><li><a href="#Technology-and-Energy-System-Consequences" data-toc-index="3">Technology and Energy System Consequences</a></li><li><a href="#Limits-Failure-Modes-and-Open-Questions" data-toc-index="4">Limits, Failure Modes and Open Questions</a></li><li><a href="#Position-in-the-Atlas" data-toc-index="5">Position in the Atlas</a></li><li><a href="#Figure-and-Reading-Sources" data-toc-index="6">Figure and Reading Sources</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/surface-adsorption-heterogeneous-catalysis/"><span data-lang="en">Surface Science, Adsorption and Heterogeneous Catalysis</span><span data-lang="zh" hidden>表面科学、吸附与多相催化</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/2020/05/01/WHAT-IS-ATR-SEIRAS/"><span data-lang="en">WHAT IS ATR-SEIRAS?</span><span data-lang="zh" hidden>WHAT IS ATR-SEIRAS?</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li><li><a href="/knowledge/nodes/ai-for-materials-chemistry-autonomous-laboratories/"><span data-lang="en">AI for Materials, Chemistry and Autonomous Laboratories</span><span data-lang="zh" hidden>材料、化学与自主实验室中的 AI</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li></ul></section></article></main>
+<footer class="node-footer"><span data-lang="en">A standalone note connected through the knowledge atlas.</span><span data-lang="zh" hidden>一个通过知识图谱与其他概念相连的独立知识节点。</span></footer><script>(function(){var buttons=Array.from(document.querySelectorAll('[data-lang-option]'));var panels=Array.from(document.querySelectorAll('[data-lang]'));function setLanguage(language){panels.forEach(function(panel){panel.hidden=panel.dataset.lang!==language;});buttons.forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.langOption===language));});document.documentElement.lang=language==='zh'?'zh-CN':'en';}buttons.forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.langOption);});});document.querySelectorAll('[data-toc-index]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();var active=document.querySelector('.node-content[data-lang]:not([hidden])');var heading=active&&active.querySelectorAll('h2')[Number(link.dataset.tocIndex)];if(heading){heading.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+heading.id);}});});setLanguage('en');})();</script></body></html>

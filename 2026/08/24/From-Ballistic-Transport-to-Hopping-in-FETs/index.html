@@ -454,182 +454,96 @@ height:50vh;
     <article class="article-entry">
         <p>Ballistic conduction, Schottky injection, tunneling, and hopping are often treated as separate transport models. This article connects them through one question: which electronic states are available, and how likely is an injected carrier to reach the drain? Starting from one-dimensional quantum states, it derives carrier flux and the Landauer formula, then follows transmission through Schottky barriers into thermionic emission, field emission, and thermionic-field emission. It concludes with localized-state transport, nearest-neighbor and variable-range hopping, mobility edges, and practical signatures for identifying the dominant mechanism in real FETs.</p>
 <a id="more"></a>
+
 <p>Semiconductor transport is often taught as a collection of separate models: ballistic transport, Schottky emission, tunneling, thermionic-field emission, nearest-neighbor hopping, and variable-range hopping.</p>
 <p>A more useful picture is to connect them through one question:</p>
 <blockquote>
 <p><strong>What electronic states are available, and what is the probability that an electron injected from the source can reach the drain?</strong></p>
 </blockquote>
 <p>This leads to the hierarchy</p>
-<p>[<br>
-\boxed{\text{Quantum states}\rightarrow\text{1D carrier flux}\rightarrow\text{Landauer transport}\rightarrow\mathcal T(E)\rightarrow\text{Schottky barrier}\rightarrow\text{TE/TFE/FE}\rightarrow\text{localized states}\rightarrow\text{hopping}}<br>
-]</p>
+<p>[<br>\boxed{\text{Quantum states}\rightarrow\text{1D carrier flux}\rightarrow\text{Landauer transport}\rightarrow\mathcal T(E)\rightarrow\text{Schottky barrier}\rightarrow\text{TE&#x2F;TFE&#x2F;FE}\rightarrow\text{localized states}\rightarrow\text{hopping}}<br>]</p>
 <p>Here, (\mathcal T(E)) is the energy-dependent transmission probability.</p>
 <hr>
-<h2 id="1-Quantum-states-and-one-dimensional-carrier-flux">1. Quantum states and one-dimensional carrier flux</h2>
-<p>Consider an ideal one-dimensional conductor of length (L). For a plane wave</p>
-<p>[<br>
-\psi(x)=e^{ikx},<br>
-]</p>
+<h2 id="1-Quantum-states-and-one-dimensional-carrier-flux"><a href="#1-Quantum-states-and-one-dimensional-carrier-flux" class="headerlink" title="1. Quantum states and one-dimensional carrier flux"></a>1. Quantum states and one-dimensional carrier flux</h2><p>Consider an ideal one-dimensional conductor of length (L). For a plane wave</p>
+<p>[<br>\psi(x)&#x3D;e^{ikx},<br>]</p>
 <p>periodic boundary conditions require</p>
-<p>[<br>
-\psi(x+L)=\psi(x),<br>
-]</p>
+<p>[<br>\psi(x+L)&#x3D;\psi(x),<br>]</p>
 <p>so</p>
-<p>[<br>
-e^{ikL}=1,<br>
-\qquad<br>
-kL=2\pi n.<br>
-]</p>
+<p>[<br>e^{ikL}&#x3D;1,<br>\qquad<br>kL&#x3D;2\pi n.<br>]</p>
 <p>Therefore</p>
-<p>[<br>
-\boxed{k_n=\frac{2\pi n}{L}}<br>
-]</p>
+<p>[<br>\boxed{k_n&#x3D;\frac{2\pi n}{L}}<br>]</p>
 <p>and</p>
-<p>[<br>
-\boxed{\Delta k=\frac{2\pi}{L}}.<br>
-]</p>
+<p>[<br>\boxed{\Delta k&#x3D;\frac{2\pi}{L}}.<br>]</p>
 <p>For one spin species, the number of states between (k) and (k+dk) is</p>
-<p>[<br>
-dN=\frac{L}{2\pi}dk.<br>
-]</p>
+<p>[<br>dN&#x3D;\frac{L}{2\pi}dk.<br>]</p>
 <p>This counts states. Transport instead asks how many states cross a section per unit time.</p>
 <hr>
-<h3 id="1-1-Why-a-1D-mode-carries-dE-h-states-per-second">1.1 Why a 1D mode carries (dE/h) states per second</h3>
-<p>The group velocity is</p>
-<p>[<br>
-v(k)=\frac{1}{\hbar}\frac{dE}{dk}.<br>
-]</p>
-<p>An electron moving with speed (v) through a system of length (L) crosses a given point at a rate (v/L). Hence</p>
-<p>[<br>
-d\dot N=dN\frac{v}{L}.<br>
-]</p>
-<p>Using (dN=Ldk/(2\pi)),</p>
-<p>[<br>
-d\dot N=\frac{v}{2\pi}dk.<br>
-]</p>
+<h3 id="1-1-Why-a-1D-mode-carries-dE-h-states-per-second"><a href="#1-1-Why-a-1D-mode-carries-dE-h-states-per-second" class="headerlink" title="1.1 Why a 1D mode carries (dE&#x2F;h) states per second"></a>1.1 Why a 1D mode carries (dE&#x2F;h) states per second</h3><p>The group velocity is</p>
+<p>[<br>v(k)&#x3D;\frac{1}{\hbar}\frac{dE}{dk}.<br>]</p>
+<p>An electron moving with speed (v) through a system of length (L) crosses a given point at a rate (v&#x2F;L). Hence</p>
+<p>[<br>d\dot N&#x3D;dN\frac{v}{L}.<br>]</p>
+<p>Using (dN&#x3D;Ldk&#x2F;(2\pi)),</p>
+<p>[<br>d\dot N&#x3D;\frac{v}{2\pi}dk.<br>]</p>
 <p>Since</p>
-<p>[<br>
-v,dk=\frac{dE}{\hbar},<br>
-]</p>
+<p>[<br>v,dk&#x3D;\frac{dE}{\hbar},<br>]</p>
 <p>we obtain</p>
-<p>[<br>
-d\dot N=\frac{dE}{2\pi\hbar}=\boxed{\frac{dE}{h}}.<br>
-]</p>
-<p>Thus a single propagating 1D quantum mode, for one spin and one propagation direction, carries (dE/h) available states per unit time in an energy interval (dE).</p>
+<p>[<br>d\dot N&#x3D;\frac{dE}{2\pi\hbar}&#x3D;\boxed{\frac{dE}{h}}.<br>]</p>
+<p>Thus a single propagating 1D quantum mode, for one spin and one propagation direction, carries (dE&#x2F;h) available states per unit time in an energy interval (dE).</p>
 <p>The result is independent of the detailed band dispersion because in one dimension</p>
-<p>[<br>
-D_{1D}(E)\propto \frac{1}{v(E)},<br>
-]</p>
+<p>[<br>D_{1D}(E)\propto \frac{1}{v(E)},<br>]</p>
 <p>so (D_{1D}(E)v(E)) is constant.</p>
 <hr>
-<h2 id="2-Landauer-current-and-transport-dimensionality">2. Landauer current and transport dimensionality</h2>
-<p>Connect the channel between source and drain reservoirs with Fermi functions (f_S(E)) and (f_D(E)). If an electron at energy (E) has transmission probability (\mathcal T(E)), then for one non-degenerate mode</p>
-<p>[<br>
-dI=q\frac{dE}{h}\mathcal T(E)[f_S(E)-f_D(E)].<br>
-]</p>
+<h2 id="2-Landauer-current-and-transport-dimensionality"><a href="#2-Landauer-current-and-transport-dimensionality" class="headerlink" title="2. Landauer current and transport dimensionality"></a>2. Landauer current and transport dimensionality</h2><p>Connect the channel between source and drain reservoirs with Fermi functions (f_S(E)) and (f_D(E)). If an electron at energy (E) has transmission probability (\mathcal T(E)), then for one non-degenerate mode</p>
+<p>[<br>dI&#x3D;q\frac{dE}{h}\mathcal T(E)[f_S(E)-f_D(E)].<br>]</p>
 <p>Therefore</p>
-<p>[<br>
-\boxed{I=\frac{q}{h}\int \mathcal T(E)[f_S-f_D]dE}.<br>
-]</p>
+<p>[<br>\boxed{I&#x3D;\frac{q}{h}\int \mathcal T(E)[f_S-f_D]dE}.<br>]</p>
 <p>Including spin degeneracy gives</p>
-<p>[<br>
-\boxed{I=\frac{2q}{h}\int \mathcal T(E)[f_S-f_D]dE}.<br>
-]</p>
+<p>[<br>\boxed{I&#x3D;\frac{2q}{h}\int \mathcal T(E)[f_S-f_D]dE}.<br>]</p>
 <p>For (M(E)) transverse modes,</p>
-<p>[<br>
-\boxed{I=\frac{2q}{h}\int M(E)\mathcal T(E)[f_S-f_D]dE}.<br>
-]</p>
+<p>[<br>\boxed{I&#x3D;\frac{2q}{h}\int M(E)\mathcal T(E)[f_S-f_D]dE}.<br>]</p>
 <p>At low temperature and small bias,</p>
-<p>[<br>
-\mu_S-\mu_D=qV,<br>
-]</p>
+<p>[<br>\mu_S-\mu_D&#x3D;qV,<br>]</p>
 <p>so</p>
-<p>[<br>
-I\approx \frac{2q^2}{h}M(E_F)\mathcal T(E_F)V.<br>
-]</p>
+<p>[<br>I\approx \frac{2q^2}{h}M(E_F)\mathcal T(E_F)V.<br>]</p>
 <p>Hence</p>
-<p>[<br>
-\boxed{G=\frac{2q^2}{h}M\mathcal T}.<br>
-]</p>
+<p>[<br>\boxed{G&#x3D;\frac{2q^2}{h}M\mathcal T}.<br>]</p>
 <p>For one perfectly transmitting spin-degenerate mode,</p>
-<p>[<br>
-\boxed{G_0=\frac{2q^2}{h}\approx 77.5\ \mu\mathrm{S}}<br>
-]</p>
+<p>[<br>\boxed{G_0&#x3D;\frac{2q^2}{h}\approx 77.5\ \mu\mathrm{S}}<br>]</p>
 <p>and</p>
-<p>[<br>
-\boxed{R_0=\frac{h}{2q^2}\approx 12.9\ \mathrm{k\Omega}}.<br>
-]</p>
+<p>[<br>\boxed{R_0&#x3D;\frac{h}{2q^2}\approx 12.9\ \mathrm{k\Omega}}.<br>]</p>
 <p>This is the conductance quantum.</p>
 <hr>
-<h3 id="2-1-From-one-dimension-to-two-and-three-dimensions">2.1 From one dimension to two and three dimensions</h3>
-<p>Higher-dimensional transport can be viewed as many parallel one-dimensional longitudinal modes.</p>
-<h4 id="2-1-1-One-dimension">2.1.1 One dimension</h4>
-<p>A strictly 1D conductor has no transverse momentum. The Fermi surface consists of two points, (\pm k_F). With total degeneracy (g),</p>
-<p>[<br>
-\boxed{n_{1D}=\frac{gk_F}{\pi}}.<br>
-]</p>
-<h4 id="2-1-2-Two-dimensions">2.1.2 Two dimensions</h4>
-<p>For an isotropic 2D parabolic band,</p>
-<p>[<br>
-E=\frac{\hbar^2}{2m^*}(k_x^2+k_y^2).<br>
-]</p>
-<p>At (T=0), occupied states form a Fermi disk,</p>
-<p>[<br>
-k_x^2+k_y^2\le k_F^2.<br>
-]</p>
+<h3 id="2-1-From-one-dimension-to-two-and-three-dimensions"><a href="#2-1-From-one-dimension-to-two-and-three-dimensions" class="headerlink" title="2.1 From one dimension to two and three dimensions"></a>2.1 From one dimension to two and three dimensions</h3><p>Higher-dimensional transport can be viewed as many parallel one-dimensional longitudinal modes.</p>
+<h4 id="2-1-1-One-dimension"><a href="#2-1-1-One-dimension" class="headerlink" title="2.1.1 One dimension"></a>2.1.1 One dimension</h4><p>A strictly 1D conductor has no transverse momentum. The Fermi surface consists of two points, (\pm k_F). With total degeneracy (g),</p>
+<p>[<br>\boxed{n_{1D}&#x3D;\frac{gk_F}{\pi}}.<br>]</p>
+<h4 id="2-1-2-Two-dimensions"><a href="#2-1-2-Two-dimensions" class="headerlink" title="2.1.2 Two dimensions"></a>2.1.2 Two dimensions</h4><p>For an isotropic 2D parabolic band,</p>
+<p>[<br>E&#x3D;\frac{\hbar^2}{2m^*}(k_x^2+k_y^2).<br>]</p>
+<p>At (T&#x3D;0), occupied states form a Fermi disk,</p>
+<p>[<br>k_x^2+k_y^2\le k_F^2.<br>]</p>
 <p>For a channel of width (W), periodic boundary conditions give</p>
-<p>[<br>
-\Delta k_y=\frac{2\pi}{W}.<br>
-]</p>
+<p>[<br>\Delta k_y&#x3D;\frac{2\pi}{W}.<br>]</p>
 <p>The allowed transverse interval is approximately (-k_F&lt;k_y&lt;k_F), therefore</p>
-<p>[<br>
-M\approx\frac{2k_F}{2\pi/W}=\boxed{\frac{Wk_F}{\pi}}.<br>
-]</p>
+<p>[<br>M\approx\frac{2k_F}{2\pi&#x2F;W}&#x3D;\boxed{\frac{Wk_F}{\pi}}.<br>]</p>
 <p>Including degeneracy,</p>
-<p>[<br>
-\boxed{M_{2D}=g\frac{Wk_F}{\pi}}.<br>
-]</p>
-<p>Each (k)-state occupies an area ((2\pi)^2/A) in 2D momentum space. Thus</p>
-<p>[<br>
-N=g\frac{A}{(2\pi)^2}\pi k_F^2,<br>
-]</p>
+<p>[<br>\boxed{M_{2D}&#x3D;g\frac{Wk_F}{\pi}}.<br>]</p>
+<p>Each (k)-state occupies an area ((2\pi)^2&#x2F;A) in 2D momentum space. Thus</p>
+<p>[<br>N&#x3D;g\frac{A}{(2\pi)^2}\pi k_F^2,<br>]</p>
 <p>and</p>
-<p>[<br>
-\boxed{n_{2D}=\frac{gk_F^2}{4\pi}}.<br>
-]</p>
+<p>[<br>\boxed{n_{2D}&#x3D;\frac{gk_F^2}{4\pi}}.<br>]</p>
 <p>Therefore</p>
-<p>[<br>
-k_F=\sqrt{\frac{4\pi n_{2D}}{g}},<br>
-\qquad<br>
-M_{2D}\propto W\sqrt{n_{2D}}.<br>
-]</p>
+<p>[<br>k_F&#x3D;\sqrt{\frac{4\pi n_{2D}}{g}},<br>\qquad<br>M_{2D}\propto W\sqrt{n_{2D}}.<br>]</p>
 <p>Hence the width-normalized quantum contact resistance scales as</p>
-<p>[<br>
-\boxed{R_QW\propto n_{2D}^{-1/2}}.<br>
-]</p>
-<h4 id="2-1-3-Three-dimensions">2.1.3 Three dimensions</h4>
-<p>For a 3D parabolic band,</p>
-<p>[<br>
-E=\frac{\hbar^2}{2m^*}(k_x^2+k_y^2+k_z^2).<br>
-]</p>
-<p>The occupied states form a Fermi sphere. Each (k)-state occupies ((2\pi)^3/V), so</p>
-<p>[<br>
-N=g\frac{V}{(2\pi)^3}\frac{4\pi k_F^3}{3}<br>
-]</p>
+<p>[<br>\boxed{R_QW\propto n_{2D}^{-1&#x2F;2}}.<br>]</p>
+<h4 id="2-1-3-Three-dimensions"><a href="#2-1-3-Three-dimensions" class="headerlink" title="2.1.3 Three dimensions"></a>2.1.3 Three dimensions</h4><p>For a 3D parabolic band,</p>
+<p>[<br>E&#x3D;\frac{\hbar^2}{2m^*}(k_x^2+k_y^2+k_z^2).<br>]</p>
+<p>The occupied states form a Fermi sphere. Each (k)-state occupies ((2\pi)^3&#x2F;V), so</p>
+<p>[<br>N&#x3D;g\frac{V}{(2\pi)^3}\frac{4\pi k_F^3}{3}<br>]</p>
 <p>and</p>
-<p>[<br>
-\boxed{n_{3D}=\frac{gk_F^3}{6\pi^2}}.<br>
-]</p>
+<p>[<br>\boxed{n_{3D}&#x3D;\frac{gk_F^3}{6\pi^2}}.<br>]</p>
 <p>For transport along (x), each allowed pair ((k_y,k_z)) defines one longitudinal mode. For cross-sectional area (A),</p>
-<p>[<br>
-\boxed{M_{3D}=g\frac{Ak_F^2}{4\pi}}.<br>
-]</p>
-<p>Because (k_F\propto n_{3D}^{1/3}),</p>
-<p>[<br>
-\boxed{M_{3D}\propto A n_{3D}^{2/3}},<br>
-\qquad<br>
-\boxed{R_QA\propto n_{3D}^{-2/3}}.<br>
-]</p>
+<p>[<br>\boxed{M_{3D}&#x3D;g\frac{Ak_F^2}{4\pi}}.<br>]</p>
+<p>Because (k_F\propto n_{3D}^{1&#x2F;3}),</p>
+<p>[<br>\boxed{M_{3D}\propto A n_{3D}^{2&#x2F;3}},<br>\qquad<br>\boxed{R_QA\propto n_{3D}^{-2&#x2F;3}}.<br>]</p>
 <p>A compact summary is:</p>
 <table>
 <thead>
@@ -640,8 +554,7 @@ N=g\frac{V}{(2\pi)^3}\frac{4\pi k_F^3}{3}<br>
 <th>Transport modes</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>1D</td>
 <td>two points</td>
 <td>(n_{1D}\propto k_F)</td>
@@ -659,26 +572,17 @@ N=g\frac{V}{(2\pi)^3}\frac{4\pi k_F^3}{3}<br>
 <td>(n_{3D}\propto k_F^3)</td>
 <td>(M\propto Ak_F^2)</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
-<h2 id="3-Transmission-and-Schottky-barriers">3. Transmission and Schottky barriers</h2>
-<p>In the ideal ballistic limit,</p>
-<p>[<br>
-\mathcal T(E)=1.<br>
-]</p>
+<h2 id="3-Transmission-and-Schottky-barriers"><a href="#3-Transmission-and-Schottky-barriers" class="headerlink" title="3. Transmission and Schottky barriers"></a>3. Transmission and Schottky barriers</h2><p>In the ideal ballistic limit,</p>
+<p>[<br>\mathcal T(E)&#x3D;1.<br>]</p>
 <p>In a real FET,</p>
-<p>[<br>
-0\le \mathcal T(E)\le 1.<br>
-]</p>
-<p>Transmission can be reduced by metal/semiconductor barriers, wavefunction mismatch, interface disorder, phonons, impurities, localization, and grain boundaries.</p>
+<p>[<br>0\le \mathcal T(E)\le 1.<br>]</p>
+<p>Transmission can be reduced by metal&#x2F;semiconductor barriers, wavefunction mismatch, interface disorder, phonons, impurities, localization, and grain boundaries.</p>
 <p>A Schottky barrier is one especially important mechanism that makes (\mathcal T(E)) strongly energy dependent.</p>
 <hr>
-<h3 id="3-1-From-Landauer-transmission-to-a-Schottky-barrier">3.1 From Landauer transmission to a Schottky barrier</h3>
-<p>For an ideal metal/n-type-semiconductor contact, the Schottky-Mott barrier height is</p>
-<p>[<br>
-\boxed{\Phi_{Bn}=\Phi_M-\chi},<br>
-]</p>
+<h3 id="3-1-From-Landauer-transmission-to-a-Schottky-barrier"><a href="#3-1-From-Landauer-transmission-to-a-Schottky-barrier" class="headerlink" title="3.1 From Landauer transmission to a Schottky barrier"></a>3.1 From Landauer transmission to a Schottky barrier</h3><p>For an ideal metal&#x2F;n-type-semiconductor contact, the Schottky-Mott barrier height is</p>
+<p>[<br>\boxed{\Phi_{Bn}&#x3D;\Phi_M-\chi},<br>]</p>
 <p>where (\Phi_M) is the metal work function and (\chi) is the semiconductor electron affinity.</p>
 <p>Real interfaces may exhibit Fermi-level pinning, interface states, and metal-induced gap states, so the actual barrier can differ substantially from this ideal value.</p>
 <p>The essential transport consequence is:</p>
@@ -688,209 +592,113 @@ N=g\frac{V}{(2\pi)^3}\frac{4\pi k_F^3}{3}<br>
 </ul>
 <p>This leads naturally to thermionic emission (TE), thermionic-field emission (TFE), and field emission (FE).</p>
 <hr>
-<h2 id="4-Thermionic-emission-field-emission-and-TFE">4. Thermionic emission, field emission, and TFE</h2>
-<p>For a 3D non-degenerate semiconductor, the forward carrier flux over the barrier is obtained by integrating the occupied states with positive velocity normal to the interface:</p>
-<p>[<br>
-J=q\int_{v_x&gt;v_{\min}} v_x f(E)D(\mathbf k)d^3k.<br>
-]</p>
+<h2 id="4-Thermionic-emission-field-emission-and-TFE"><a href="#4-Thermionic-emission-field-emission-and-TFE" class="headerlink" title="4. Thermionic emission, field emission, and TFE"></a>4. Thermionic emission, field emission, and TFE</h2><p>For a 3D non-degenerate semiconductor, the forward carrier flux over the barrier is obtained by integrating the occupied states with positive velocity normal to the interface:</p>
+<p>[<br>J&#x3D;q\int_{v_x&gt;v_{\min}} v_x f(E)D(\mathbf k)d^3k.<br>]</p>
 <p>Using the Maxwell-Boltzmann approximation</p>
-<p>[<br>
-f(E)\approx\exp\left[-\frac{E-E_F}{k_BT}\right]<br>
-]</p>
+<p>[<br>f(E)\approx\exp\left[-\frac{E-E_F}{k_BT}\right]<br>]</p>
 <p>and the condition that the normal kinetic energy exceeds the barrier,</p>
-<p>[<br>
-\frac{\hbar^2k_x^2}{2m^*}&gt;q\Phi_B,<br>
-]</p>
+<p>[<br>\frac{\hbar^2k_x^2}{2m^*}&gt;q\Phi_B,<br>]</p>
 <p>one obtains the Richardson equation</p>
-<p>[<br>
-\boxed{J_S=A^*T^2\exp\left(-\frac{q\Phi_B}{k_BT}\right)}<br>
-]</p>
+<p>[<br>\boxed{J_S&#x3D;A^*T^2\exp\left(-\frac{q\Phi_B}{k_BT}\right)}<br>]</p>
 <p>with</p>
-<p>[<br>
-\boxed{A^*=\frac{4\pi qm^*k_B^2}{h^3}}.<br>
-]</p>
+<p>[<br>\boxed{A^*&#x3D;\frac{4\pi qm^*k_B^2}{h^3}}.<br>]</p>
 <p>Under applied bias,</p>
-<p>[<br>
-\boxed{J=A^*T^2\exp\left(-\frac{q\Phi_B}{k_BT}\right)\left[\exp\left(\frac{qV}{nk_BT}\right)-1\right]}.<br>
-]</p>
+<p>[<br>\boxed{J&#x3D;A^*T^2\exp\left(-\frac{q\Phi_B}{k_BT}\right)\left[\exp\left(\frac{qV}{nk_BT}\right)-1\right]}.<br>]</p>
 <p>The key factor</p>
-<p>[<br>
-\exp\left(-\frac{q\Phi_B}{k_BT}\right)<br>
-]</p>
+<p>[<br>\exp\left(-\frac{q\Phi_B}{k_BT}\right)<br>]</p>
 <p>is the fraction of the thermal distribution capable of reaching the top of the barrier.</p>
 <p>For an ideal parabolic system of dimensionality (d), the thermionic prefactor scales approximately as</p>
-<p>[<br>
-J_d\propto T^{(d+1)/2}e^{-q\Phi_B/k_BT}.<br>
-]</p>
+<p>[<br>J_d\propto T^{(d+1)&#x2F;2}e^{-q\Phi_B&#x2F;k_BT}.<br>]</p>
 <p>Thus, ideally,</p>
-<p>[<br>
-1D:\ I\propto T e^{-q\Phi_B/k_BT},<br>
-]</p>
-<p>[<br>
-2D:\ I/W\propto T^{3/2}e^{-q\Phi_B/k_BT},<br>
-]</p>
-<p>[<br>
-3D:\ J\propto T^2e^{-q\Phi_B/k_BT}.<br>
-]</p>
+<p>[<br>1D:\ I\propto T e^{-q\Phi_B&#x2F;k_BT},<br>]</p>
+<p>[<br>2D:\ I&#x2F;W\propto T^{3&#x2F;2}e^{-q\Phi_B&#x2F;k_BT},<br>]</p>
+<p>[<br>3D:\ J\propto T^2e^{-q\Phi_B&#x2F;k_BT}.<br>]</p>
 <p>For atomically thin materials, the exact prefactor depends on contact geometry, momentum conservation, and band structure, so the conventional 3D Richardson form should not be used blindly.</p>
 <hr>
-<h3 id="4-1-Tunneling-through-the-Schottky-barrier">4.1 Tunneling through the Schottky barrier</h3>
-<p>For a classically forbidden region (U(x)&gt;E), the WKB transmission probability is</p>
-<p>[<br>
-\boxed{\mathcal T(E)\approx\exp\left[-2\int_{x_1}^{x_2}\kappa(x)dx\right]}<br>
-]</p>
+<h3 id="4-1-Tunneling-through-the-Schottky-barrier"><a href="#4-1-Tunneling-through-the-Schottky-barrier" class="headerlink" title="4.1 Tunneling through the Schottky barrier"></a>4.1 Tunneling through the Schottky barrier</h3><p>For a classically forbidden region (U(x)&gt;E), the WKB transmission probability is</p>
+<p>[<br>\boxed{\mathcal T(E)\approx\exp\left[-2\int_{x_1}^{x_2}\kappa(x)dx\right]}<br>]</p>
 <p>with</p>
-<p>[<br>
-\boxed{\kappa(x)=\frac{\sqrt{2m^*[U(x)-E]}}{\hbar}}.<br>
-]</p>
+<p>[<br>\boxed{\kappa(x)&#x3D;\frac{\sqrt{2m^*[U(x)-E]}}{\hbar}}.<br>]</p>
 <p>For a rectangular barrier of width (w),</p>
-<p>[<br>
-\boxed{\mathcal T(E)\approx\exp\left[-\frac{2w}{\hbar}\sqrt{2m^*(U_0-E)}\right]}.<br>
-]</p>
+<p>[<br>\boxed{\mathcal T(E)\approx\exp\left[-\frac{2w}{\hbar}\sqrt{2m^*(U_0-E)}\right]}.<br>]</p>
 <p>Thus, barrier width is as important as barrier height.</p>
 <p>For a triangular barrier created by a strong electric field,</p>
-<p>[<br>
-U(x)=U_0-qFx,<br>
-]</p>
+<p>[<br>U(x)&#x3D;U_0-qFx,<br>]</p>
 <p>WKB gives</p>
-<p>[<br>
-\boxed{\mathcal T_{FE}\approx\exp\left[-\frac{4\sqrt{2m^*}(U_0-E)^{3/2}}{3q\hbar F}\right]}.<br>
-]</p>
+<p>[<br>\boxed{\mathcal T_{FE}\approx\exp\left[-\frac{4\sqrt{2m^*}(U_0-E)^{3&#x2F;2}}{3q\hbar F}\right]}.<br>]</p>
 <p>Hence larger electric field or stronger contact doping can dramatically increase transmission.</p>
 <hr>
-<h3 id="4-2-TE-TFE-and-FE-as-one-Landauer-problem">4.2 TE, TFE, and FE as one Landauer problem</h3>
-<p>The same Landauer integral describes all three regimes:</p>
-<p>[<br>
-\boxed{I=\frac{2q}{h}\int M(E)\mathcal T(E)[f_S-f_D]dE}.<br>
-]</p>
+<h3 id="4-2-TE-TFE-and-FE-as-one-Landauer-problem"><a href="#4-2-TE-TFE-and-FE-as-one-Landauer-problem" class="headerlink" title="4.2 TE, TFE, and FE as one Landauer problem"></a>4.2 TE, TFE, and FE as one Landauer problem</h3><p>The same Landauer integral describes all three regimes:</p>
+<p>[<br>\boxed{I&#x3D;\frac{2q}{h}\int M(E)\mathcal T(E)[f_S-f_D]dE}.<br>]</p>
 <p>The difference is the dominant energy window.</p>
-<h4 id="4-2-1-Thermionic-emission-TE">4.2.1 Thermionic emission (TE)</h4>
-<p>Electrons mainly occupy states above the barrier:</p>
-<p>[<br>
-E\gtrsim U_B.<br>
-]</p>
-<h4 id="4-2-2-Field-emission-FE">4.2.2 Field emission (FE)</h4>
-<p>Electrons remain close to the Fermi energy,</p>
-<p>[<br>
-E\approx E_F&lt;U_B,<br>
-]</p>
+<h4 id="4-2-1-Thermionic-emission-TE"><a href="#4-2-1-Thermionic-emission-TE" class="headerlink" title="4.2.1 Thermionic emission (TE)"></a>4.2.1 Thermionic emission (TE)</h4><p>Electrons mainly occupy states above the barrier:</p>
+<p>[<br>E\gtrsim U_B.<br>]</p>
+<h4 id="4-2-2-Field-emission-FE"><a href="#4-2-2-Field-emission-FE" class="headerlink" title="4.2.2 Field emission (FE)"></a>4.2.2 Field emission (FE)</h4><p>Electrons remain close to the Fermi energy,</p>
+<p>[<br>E\approx E_F&lt;U_B,<br>]</p>
 <p>and tunnel directly through a thin barrier.</p>
-<h4 id="4-2-3-Thermionic-field-emission-TFE">4.2.3 Thermionic-field emission (TFE)</h4>
-<p>Electrons first gain thermal energy but do not reach the barrier top, then tunnel through the remaining barrier:</p>
-<p>[<br>
-E_F&lt;E&lt;U_B.<br>
-]</p>
+<h4 id="4-2-3-Thermionic-field-emission-TFE"><a href="#4-2-3-Thermionic-field-emission-TFE" class="headerlink" title="4.2.3 Thermionic-field emission (TFE)"></a>4.2.3 Thermionic-field emission (TFE)</h4><p>Electrons first gain thermal energy but do not reach the barrier top, then tunnel through the remaining barrier:</p>
+<p>[<br>E_F&lt;E&lt;U_B.<br>]</p>
 <p>Thus TE, TFE, and FE are not three unrelated mechanisms; they are different parts of the same energy-resolved transmission integral.</p>
 <hr>
-<h2 id="5-Carrier-density-and-contact-resistance">5. Carrier density and contact resistance</h2>
-<p>Increasing carrier density near a FET contact has two distinct effects.</p>
+<h2 id="5-Carrier-density-and-contact-resistance"><a href="#5-Carrier-density-and-contact-resistance" class="headerlink" title="5. Carrier density and contact resistance"></a>5. Carrier density and contact resistance</h2><p>Increasing carrier density near a FET contact has two distinct effects.</p>
 <p>First,</p>
-<p>[<br>
-n\uparrow\Rightarrow k_F\uparrow\Rightarrow M\uparrow,<br>
-]</p>
+<p>[<br>n\uparrow\Rightarrow k_F\uparrow\Rightarrow M\uparrow,<br>]</p>
 <p>so the quantum contact resistance decreases.</p>
 <p>Second,</p>
-<p>[<br>
-n\uparrow\Rightarrow w_B\downarrow\Rightarrow \mathcal T\uparrow,<br>
-]</p>
+<p>[<br>n\uparrow\Rightarrow w_B\downarrow\Rightarrow \mathcal T\uparrow,<br>]</p>
 <p>so the actual contact approaches the quantum limit more closely.</p>
 <p>Therefore</p>
-<p>[<br>
-\boxed{n\uparrow\Rightarrow{M\uparrow,\ \mathcal T\uparrow}\Rightarrow R_c\downarrow}.<br>
-]</p>
+<p>[<br>\boxed{n\uparrow\Rightarrow{M\uparrow,\ \mathcal T\uparrow}\Rightarrow R_c\downarrow}.<br>]</p>
 <hr>
-<h2 id="6-Localized-states-and-hopping-transport">6. Localized states and hopping transport</h2>
-<p>The Schottky picture assumes that once the carrier enters the semiconductor, it can occupy extended states. Disorder, defects, structural randomness, strong electron-phonon coupling, or band-tail states may instead produce localized states.</p>
+<h2 id="6-Localized-states-and-hopping-transport"><a href="#6-Localized-states-and-hopping-transport" class="headerlink" title="6. Localized states and hopping transport"></a>6. Localized states and hopping transport</h2><p>The Schottky picture assumes that once the carrier enters the semiconductor, it can occupy extended states. Disorder, defects, structural randomness, strong electron-phonon coupling, or band-tail states may instead produce localized states.</p>
 <p>A localized wavefunction decays approximately as</p>
-<p>[<br>
-|\psi®|\propto e^{-r/\xi},<br>
-]</p>
+<p>[<br>|\psi(r)|\propto e^{-r&#x2F;\xi},<br>]</p>
 <p>where (\xi) is the localization length.</p>
 <p>Two localized states separated by distance (R) have overlap approximately</p>
-<p>[<br>
-e^{-R/\xi},<br>
-]</p>
+<p>[<br>e^{-R&#x2F;\xi},<br>]</p>
 <p>so the transition probability contains</p>
-<p>[<br>
-\boxed{P_{\rm overlap}\propto e^{-2R/\xi}}.<br>
-]</p>
+<p>[<br>\boxed{P_{\rm overlap}\propto e^{-2R&#x2F;\xi}}.<br>]</p>
 <p>At this point the relevant transport process is no longer coherent propagation through an extended band, but hopping between localized states.</p>
 <hr>
-<h3 id="6-1-Phonon-assisted-hopping">6.1 Phonon-assisted hopping</h3>
-<p>Consider localized states (i) and (j), separated by (R_{ij}), with energy difference (\Delta E=E_j-E_i&gt;0). A simplified hopping rate is</p>
-<p>[<br>
-\boxed{\Gamma_{ij}\sim\Gamma_0\exp\left(-\frac{2R_{ij}}{\xi}\right)\exp\left(-\frac{\Delta E}{k_BT}\right)}.<br>
-]</p>
+<h3 id="6-1-Phonon-assisted-hopping"><a href="#6-1-Phonon-assisted-hopping" class="headerlink" title="6.1 Phonon-assisted hopping"></a>6.1 Phonon-assisted hopping</h3><p>Consider localized states (i) and (j), separated by (R_{ij}), with energy difference (\Delta E&#x3D;E_j-E_i&gt;0). A simplified hopping rate is</p>
+<p>[<br>\boxed{\Gamma_{ij}\sim\Gamma_0\exp\left(-\frac{2R_{ij}}{\xi}\right)\exp\left(-\frac{\Delta E}{k_BT}\right)}.<br>]</p>
 <p>The first exponential is the spatial-overlap penalty; the second is the thermal activation penalty.</p>
 <p>The electron therefore trades spatial distance against energy difference.</p>
 <hr>
-<h3 id="6-2-Nearest-neighbor-hopping">6.2 Nearest-neighbor hopping</h3>
-<p>At relatively high temperature, the electron mainly hops to nearby sites. If the characteristic activation energy is (E_A),</p>
-<p>[<br>
-\boxed{\sigma=\sigma_0\exp\left(-\frac{E_A}{k_BT}\right)}.<br>
-]</p>
+<h3 id="6-2-Nearest-neighbor-hopping"><a href="#6-2-Nearest-neighbor-hopping" class="headerlink" title="6.2 Nearest-neighbor hopping"></a>6.2 Nearest-neighbor hopping</h3><p>At relatively high temperature, the electron mainly hops to nearby sites. If the characteristic activation energy is (E_A),</p>
+<p>[<br>\boxed{\sigma&#x3D;\sigma_0\exp\left(-\frac{E_A}{k_BT}\right)}.<br>]</p>
 <p>Therefore</p>
-<p>[<br>
-\ln\sigma\propto -\frac{1}{T}.<br>
-]</p>
+<p>[<br>\ln\sigma\propto -\frac{1}{T}.<br>]</p>
 <p>At lower temperature, it can be favorable to hop farther in real space to find a state closer in energy. This produces variable-range hopping.</p>
 <hr>
-<h3 id="6-3-Mott-variable-range-hopping">6.3 Mott variable-range hopping</h3>
-<p>Assume that localized states near the Fermi energy have an approximately constant density of states (g(E_F)).</p>
+<h3 id="6-3-Mott-variable-range-hopping"><a href="#6-3-Mott-variable-range-hopping" class="headerlink" title="6.3 Mott variable-range hopping"></a>6.3 Mott variable-range hopping</h3><p>Assume that localized states near the Fermi energy have an approximately constant density of states (g(E_F)).</p>
 <p>If the electron searches within radius (R) and energy interval (\Delta E), the number of candidate states in (d) dimensions scales as</p>
-<p>[<br>
-N\sim g(E_F)\Delta E R^d.<br>
-]</p>
+<p>[<br>N\sim g(E_F)\Delta E R^d.<br>]</p>
 <p>For approximately one available state,</p>
-<p>[<br>
-N\sim 1,<br>
-]</p>
+<p>[<br>N\sim 1,<br>]</p>
 <p>so</p>
-<p>[<br>
-\boxed{\Delta E\sim\frac{1}{g(E_F)R^d}}.<br>
-]</p>
+<p>[<br>\boxed{\Delta E\sim\frac{1}{g(E_F)R^d}}.<br>]</p>
 <p>The hopping exponent is</p>
-<p>[<br>
-S®=\frac{2R}{\xi}+\frac{\Delta E}{k_BT}<br>
-]</p>
+<p>[<br>S(R)&#x3D;\frac{2R}{\xi}+\frac{\Delta E}{k_BT}<br>]</p>
 <p>or</p>
-<p>[<br>
-S®=\frac{2R}{\xi}+\frac{1}{g(E_F)k_BTR^d}.<br>
-]</p>
-<p>The optimum hop minimizes (S®):</p>
-<p>[<br>
-\frac{dS}{dR}=0.<br>
-]</p>
+<p>[<br>S(R)&#x3D;\frac{2R}{\xi}+\frac{1}{g(E_F)k_BTR^d}.<br>]</p>
+<p>The optimum hop minimizes (S(R)):</p>
+<p>[<br>\frac{dS}{dR}&#x3D;0.<br>]</p>
 <p>Therefore</p>
-<p>[<br>
-R_{\rm opt}^{d+1}\propto\frac{\xi}{g(E_F)k_BT},<br>
-]</p>
+<p>[<br>R_{\rm opt}^{d+1}\propto\frac{\xi}{g(E_F)k_BT},<br>]</p>
 <p>so</p>
-<p>[<br>
-R_{\rm opt}\propto T^{-1/(d+1)}.<br>
-]</p>
+<p>[<br>R_{\rm opt}\propto T^{-1&#x2F;(d+1)}.<br>]</p>
 <p>Substitution back into the exponent gives Mott’s law:</p>
-<p>[<br>
-\boxed{\sigma(T)=\sigma_0\exp\left[-\left(\frac{T_0}{T}\right)^{1/(d+1)}\right]}.<br>
-]</p>
+<p>[<br>\boxed{\sigma(T)&#x3D;\sigma_0\exp\left[-\left(\frac{T_0}{T}\right)^{1&#x2F;(d+1)}\right]}.<br>]</p>
 <p>Here</p>
-<p>[<br>
-\boxed{T_0\sim\frac{\beta_d}{k_Bg(E_F)\xi^d}}.<br>
-]</p>
+<p>[<br>\boxed{T_0\sim\frac{\beta_d}{k_Bg(E_F)\xi^d}}.<br>]</p>
 <hr>
-<h3 id="6-4-Hopping-in-one-two-and-three-dimensions">6.4 Hopping in one, two, and three dimensions</h3>
-<p>For 1D Mott VRH,</p>
-<p>[<br>
-\boxed{\sigma=\sigma_0\exp\left[-\left(\frac{T_0}{T}\right)^{1/2}\right]}.<br>
-]</p>
+<h3 id="6-4-Hopping-in-one-two-and-three-dimensions"><a href="#6-4-Hopping-in-one-two-and-three-dimensions" class="headerlink" title="6.4 Hopping in one, two, and three dimensions"></a>6.4 Hopping in one, two, and three dimensions</h3><p>For 1D Mott VRH,</p>
+<p>[<br>\boxed{\sigma&#x3D;\sigma_0\exp\left[-\left(\frac{T_0}{T}\right)^{1&#x2F;2}\right]}.<br>]</p>
 <p>For 2D Mott VRH,</p>
-<p>[<br>
-\boxed{\sigma=\sigma_0\exp\left[-\left(\frac{T_0}{T}\right)^{1/3}\right]}.<br>
-]</p>
+<p>[<br>\boxed{\sigma&#x3D;\sigma_0\exp\left[-\left(\frac{T_0}{T}\right)^{1&#x2F;3}\right]}.<br>]</p>
 <p>For 3D Mott VRH,</p>
-<p>[<br>
-\boxed{\sigma=\sigma_0\exp\left[-\left(\frac{T_0}{T}\right)^{1/4}\right]}.<br>
-]</p>
+<p>[<br>\boxed{\sigma&#x3D;\sigma_0\exp\left[-\left(\frac{T_0}{T}\right)^{1&#x2F;4}\right]}.<br>]</p>
 <table>
 <thead>
 <tr>
@@ -898,54 +706,38 @@ R_{\rm opt}\propto T^{-1/(d+1)}.<br>
 <th>Mott exponent</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>1D</td>
-<td>(1/2)</td>
+<td>(1&#x2F;2)</td>
 </tr>
 <tr>
 <td>2D</td>
-<td>(1/3)</td>
+<td>(1&#x2F;3)</td>
 </tr>
 <tr>
 <td>3D</td>
-<td>(1/4)</td>
+<td>(1&#x2F;4)</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>The exponent decreases with dimension because a higher-dimensional system offers more spatial possibilities for finding an energetically favorable destination.</p>
-<p>A (T^{-1/2}) law does not automatically prove 1D hopping. Electron-electron interactions can create a Coulomb gap and produce Efros-Shklovskii VRH,</p>
-<p>[<br>
-\boxed{\sigma=\sigma_0\exp\left[-\left(\frac{T_{ES}}{T}\right)^{1/2}\right]},<br>
-]</p>
+<p>A (T^{-1&#x2F;2}) law does not automatically prove 1D hopping. Electron-electron interactions can create a Coulomb gap and produce Efros-Shklovskii VRH,</p>
+<p>[<br>\boxed{\sigma&#x3D;\sigma_0\exp\left[-\left(\frac{T_{ES}}{T}\right)^{1&#x2F;2}\right]},<br>]</p>
 <p>in multiple dimensions.</p>
 <hr>
-<h2 id="7-Mobility-edges-and-transport-in-real-FETs">7. Mobility edges and transport in real FETs</h2>
-<p>Disorder can create localized tail states near a band edge. A useful picture is</p>
-<p>[<br>
-\text{deep gap}\rightarrow\text{localized tail states}\rightarrow E_M\rightarrow\text{extended states},<br>
-]</p>
+<h2 id="7-Mobility-edges-and-transport-in-real-FETs"><a href="#7-Mobility-edges-and-transport-in-real-FETs" class="headerlink" title="7. Mobility edges and transport in real FETs"></a>7. Mobility edges and transport in real FETs</h2><p>Disorder can create localized tail states near a band edge. A useful picture is</p>
+<p>[<br>\text{deep gap}\rightarrow\text{localized tail states}\rightarrow E_M\rightarrow\text{extended states},<br>]</p>
 <p>where (E_M) is the mobility edge.</p>
 <p>If the Fermi level lies below (E_M), carriers may thermally activate to extended states,</p>
-<p>[<br>
-\boxed{\sigma\propto\exp\left[-\frac{E_M-E_F}{k_BT}\right]},<br>
-]</p>
+<p>[<br>\boxed{\sigma\propto\exp\left[-\frac{E_M-E_F}{k_BT}\right]},<br>]</p>
 <p>or hop through localized states,</p>
-<p>[<br>
-\boxed{\sigma\propto\exp\left[-\left(\frac{T_0}{T}\right)^p\right]}.<br>
-]</p>
+<p>[<br>\boxed{\sigma\propto\exp\left[-\left(\frac{T_0}{T}\right)^p\right]}.<br>]</p>
 <p>For Mott VRH,</p>
-<p>[<br>
-p=\frac{1}{d+1}.<br>
-]</p>
+<p>[<br>p&#x3D;\frac{1}{d+1}.<br>]</p>
 <p>A gate voltage can therefore move a FET through qualitatively different transport regimes by shifting (E_F) relative to localized and extended states.</p>
 <hr>
-<h3 id="7-1-The-full-transport-picture-of-a-real-FET">7.1 The full transport picture of a real FET</h3>
-<p>A two-terminal FET generally contains at least three regions:</p>
-<p>[<br>
-\boxed{R_{\rm total}=R_{c,S}+R_{\rm channel}+R_{c,D}}.<br>
-]</p>
-<p>The source contact may be dominated by TE, TFE, or FE. The channel may be ballistic, diffusive, thermally activated, or hopping dominated. The drain introduces a second injection/extraction process.</p>
+<h3 id="7-1-The-full-transport-picture-of-a-real-FET"><a href="#7-1-The-full-transport-picture-of-a-real-FET" class="headerlink" title="7.1 The full transport picture of a real FET"></a>7.1 The full transport picture of a real FET</h3><p>A two-terminal FET generally contains at least three regions:</p>
+<p>[<br>\boxed{R_{\rm total}&#x3D;R_{c,S}+R_{\rm channel}+R_{c,D}}.<br>]</p>
+<p>The source contact may be dominated by TE, TFE, or FE. The channel may be ballistic, diffusive, thermally activated, or hopping dominated. The drain introduces a second injection&#x2F;extraction process.</p>
 <p>Therefore a measured (I_D-V_G) curve may contain multiple mechanisms simultaneously:</p>
 <ul>
 <li>Schottky injection,</li>
@@ -957,22 +749,20 @@ p=\frac{1}{d+1}.<br>
 </ul>
 <p>This is especially important in atomically thin FETs.</p>
 <hr>
-<h2 id="8-Experimental-signatures-and-unified-picture">8. Experimental signatures and unified picture</h2>
-<table>
+<h2 id="8-Experimental-signatures-and-unified-picture"><a href="#8-Experimental-signatures-and-unified-picture" class="headerlink" title="8. Experimental signatures and unified picture"></a>8. Experimental signatures and unified picture</h2><table>
 <thead>
 <tr>
 <th>Mechanism</th>
 <th>Typical temperature dependence</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>3D thermionic emission</td>
-<td>(J/T^2\propto e^{-q\Phi_B/k_BT})</td>
+<td>(J&#x2F;T^2\propto e^{-q\Phi_B&#x2F;k_BT})</td>
 </tr>
 <tr>
 <td>Ideal 2D thermionic emission</td>
-<td>(J/T^{3/2}\propto e^{-q\Phi_B/k_BT})</td>
+<td>(J&#x2F;T^{3&#x2F;2}\propto e^{-q\Phi_B&#x2F;k_BT})</td>
 </tr>
 <tr>
 <td>Field emission</td>
@@ -984,51 +774,26 @@ p=\frac{1}{d+1}.<br>
 </tr>
 <tr>
 <td>1D Mott VRH</td>
-<td>(\ln\sigma\propto-T^{-1/2})</td>
+<td>(\ln\sigma\propto-T^{-1&#x2F;2})</td>
 </tr>
 <tr>
 <td>2D Mott VRH</td>
-<td>(\ln\sigma\propto-T^{-1/3})</td>
+<td>(\ln\sigma\propto-T^{-1&#x2F;3})</td>
 </tr>
 <tr>
 <td>3D Mott VRH</td>
-<td>(\ln\sigma\propto-T^{-1/4})</td>
+<td>(\ln\sigma\propto-T^{-1&#x2F;4})</td>
 </tr>
 <tr>
 <td>Efros-Shklovskii VRH</td>
-<td>(\ln\sigma\propto-T^{-1/2})</td>
+<td>(\ln\sigma\propto-T^{-1&#x2F;2})</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>One linearized fit is rarely sufficient to establish a transport mechanism.</p>
 <p>Useful complementary experiments include channel-length scaling, four-probe measurements, TLM, gate-dependent activation-energy analysis, bias-dependent temperature measurements, contact-metal comparison, Hall measurements, STS, and KPFM.</p>
 <hr>
-<h3 id="8-1-A-unified-view-from-mathcal-T-1-to-hopping">8.1 A unified view: from (\mathcal T=1) to hopping</h3>
-<p>The complete hierarchy is</p>
-<p>[<br>
-\boxed{<br>
-\begin{aligned}<br>
-&amp;\text{quantization of }k\<br>
-&amp;\downarrow\<br>
-&amp;d\dot N=\frac{dE}{h}\<br>
-&amp;\downarrow\<br>
-&amp;G_0=\frac{2q^2}{h}\<br>
-&amp;\downarrow\<br>
-&amp;G=\frac{2q^2}{h}\sum_n\mathcal T_n\<br>
-&amp;\downarrow\<br>
-&amp;\text{energy-dependent }\mathcal T(E)\<br>
-&amp;\downarrow\<br>
-&amp;\text{Schottky barrier}\<br>
-&amp;\downarrow\<br>
-&amp;\text{TE/TFE/FE}\<br>
-&amp;\downarrow\<br>
-&amp;\text{localized band-tail states}\<br>
-&amp;\downarrow\<br>
-&amp;\Gamma_{ij}\sim e^{-2R/\xi-\Delta E/k_BT}\<br>
-&amp;\downarrow\<br>
-&amp;\text{NNH/Mott VRH/ES-VRH}.<br>
-\end{aligned}}<br>
-]</p>
+<h3 id="8-1-A-unified-view-from-mathcal-T-1-to-hopping"><a href="#8-1-A-unified-view-from-mathcal-T-1-to-hopping" class="headerlink" title="8.1 A unified view: from (\mathcal T&#x3D;1) to hopping"></a>8.1 A unified view: from (\mathcal T&#x3D;1) to hopping</h3><p>The complete hierarchy is</p>
+<p>[<br>\boxed{<br>\begin{aligned}<br>&amp;\text{quantization of }k\<br>&amp;\downarrow\<br>&amp;d\dot N&#x3D;\frac{dE}{h}\<br>&amp;\downarrow\<br>&amp;G_0&#x3D;\frac{2q^2}{h}\<br>&amp;\downarrow\<br>&amp;G&#x3D;\frac{2q^2}{h}\sum_n\mathcal T_n\<br>&amp;\downarrow\<br>&amp;\text{energy-dependent }\mathcal T(E)\<br>&amp;\downarrow\<br>&amp;\text{Schottky barrier}\<br>&amp;\downarrow\<br>&amp;\text{TE&#x2F;TFE&#x2F;FE}\<br>&amp;\downarrow\<br>&amp;\text{localized band-tail states}\<br>&amp;\downarrow\<br>&amp;\Gamma_{ij}\sim e^{-2R&#x2F;\xi-\Delta E&#x2F;k_BT}\<br>&amp;\downarrow\<br>&amp;\text{NNH&#x2F;Mott VRH&#x2F;ES-VRH}.<br>\end{aligned}}<br>]</p>
 <p>The two central quantities are:</p>
 <ol>
 <li><strong>Phase space:</strong> how many electronic states are available? This determines the number of Landauer modes and the quantum conductance limit.</li>
@@ -1929,9 +1694,31 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 68
+        Total : 70
         </div>
         <!-- search  -->
         
@@ -1947,12 +1734,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" >Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/" >Optoelectronic Devices: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
         </li>
     
     
@@ -2339,15 +2136,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
     
+        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
+    
+        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
+    
         <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
     
         <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
     
         <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
-    
-        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
-    
-        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
@@ -2359,15 +2156,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
     
-        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
-    
         <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
         <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
     
         <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
-    
-        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
     
         <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
     
@@ -2375,11 +2170,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
     
+        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
+    
         <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
     
         <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
-    
-        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
     
@@ -2387,33 +2182,35 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
     
-        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
-    
-        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
-    
-        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
     
         <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
     
         <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
     
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+    
         <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
     
         <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
         <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
-    
         <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
     
         <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
     
         <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
     
-        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
-    
         <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
     
         <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
@@ -2429,15 +2226,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
     
-        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
-    
         <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
     
+        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+    
         <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
+    
+        <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -2474,21 +2275,21 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
-    
         <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
-    
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
@@ -2496,9 +2297,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
-    
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
     
@@ -2506,7 +2307,13 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
+        <span class="sidebar-category-name" data-categories="Scientific/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Scientific/Artificial-Intelligence</span>
+    
         <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Chemistry/Energy"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry/Energy</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

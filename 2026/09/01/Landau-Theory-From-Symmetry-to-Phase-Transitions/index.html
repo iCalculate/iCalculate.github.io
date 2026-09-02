@@ -323,7 +323,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">3.8k</span>Reading time: <span class="post-count reading-time">17 min</span></span>
+                        <span>Word count: <span class="post-count word-count">3.9k</span>Reading time: <span class="post-count reading-time">17 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -460,88 +460,51 @@ height:50vh;
   <button type="button" data-language="zh" aria-pressed="false">中文</button>
 </nav>
 <section class="lang-panel lang-en" lang="en">
-<h1>From Symmetry to Phase Transitions: Landau’s Art of Ignoring Details (Part I)</h1>
-<p>Ferromagnets, superconductors, liquid crystals and charge-density waves have almost nothing in common microscopically. Yet near a phase transition they can often be described by remarkably similar mathematics. This is the deepest lesson of Landau’s approach: <strong>to understand a macroscopic state of matter, we do not always have to solve the motion of every microscopic particle. We first have to identify which degree of freedom remains important at low energy.</strong></p>
+<h1 id="From-Symmetry-to-Phase-Transitions-Landau’s-Art-of-Ignoring-Details-Part-I"><a href="#From-Symmetry-to-Phase-Transitions-Landau’s-Art-of-Ignoring-Details-Part-I" class="headerlink" title="From Symmetry to Phase Transitions: Landau’s Art of Ignoring Details (Part I)"></a>From Symmetry to Phase Transitions: Landau’s Art of Ignoring Details (Part I)</h1><p>Ferromagnets, superconductors, liquid crystals and charge-density waves have almost nothing in common microscopically. Yet near a phase transition they can often be described by remarkably similar mathematics. This is the deepest lesson of Landau’s approach: <strong>to understand a macroscopic state of matter, we do not always have to solve the motion of every microscopic particle. We first have to identify which degree of freedom remains important at low energy.</strong></p>
 <p>This article develops Landau’s theory of phase transitions. <a href="/2026/09/01/Landau-Fermi-Liquid-Theory/">Part II</a> follows the same philosophy into metals, where interacting electrons reorganize into long-lived quasiparticles.</p>
 <!--more-->
-<h2 id="1-What-changes-when-matter-crosses-a-phase-transition">1. What changes when matter crosses a phase transition?</h2>
-<p>Consider a ferromagnet. At high temperature its local magnetic moments point in random directions, so the macroscopic magnetization vanishes. Below the Curie temperature they spontaneously select a common direction and the magnetization becomes nonzero. Landau called the macroscopic quantity that distinguishes the two phases the <strong>order parameter</strong>:</p>
-<p>$$<br>
-\phi=M.<br>
-$$</p>
-<p>An order parameter need not be a single real number. It may be the vector magnetization $\mathbf M$ of a ferromagnet, the complex condensate $\psi=|\psi|e^{i\theta}$ of a superfluid or superconductor, a structural displacement mode, the complex amplitude of a density wave, or a tensor describing a nematic liquid crystal.</p>
+
+<h2 id="1-What-changes-when-matter-crosses-a-phase-transition"><a href="#1-What-changes-when-matter-crosses-a-phase-transition" class="headerlink" title="1. What changes when matter crosses a phase transition?"></a>1. What changes when matter crosses a phase transition?</h2><p>Consider a ferromagnet. At high temperature its local magnetic moments point in random directions, so the macroscopic magnetization vanishes. Below the Curie temperature they spontaneously select a common direction and the magnetization becomes nonzero. Landau called the macroscopic quantity that distinguishes the two phases the <strong>order parameter</strong>:</p>
+<p>$$<br>\phi&#x3D;M.<br>$$</p>
+<p>An order parameter need not be a single real number. It may be the vector magnetization $\mathbf M$ of a ferromagnet, the complex condensate $\psi&#x3D;|\psi|e^{i\theta}$ of a superfluid or superconductor, a structural displacement mode, the complex amplitude of a density wave, or a tensor describing a nematic liquid crystal.</p>
 <p>Choosing an order parameter means answering two questions:</p>
 <ol>
 <li>Which symmetry is lost at the transition?</li>
 <li>Which low-energy field records that loss?</li>
 </ol>
-<p>In zero magnetic field, a simple ferromagnet is invariant under $M\rightarrow-M$. The high-temperature state, $M=0$, respects this symmetry. The low-temperature state chooses either $+M_0$ or $-M_0$. The microscopic law remains symmetric while the equilibrium state does not: this is <strong>spontaneous symmetry breaking</strong>.</p>
-<h2 id="2-Why-is-a-free-energy-expansion-allowed">2. Why is a free-energy expansion allowed?</h2>
-<p>Landau assumes that the order parameter is small near a continuous transition and that the free energy is analytic in it. For a uniform system with $\phi\rightarrow-\phi$ symmetry, odd powers are forbidden:</p>
-<p>$$<br>
-f(\phi)=f_0+\frac{r}{2}\phi^2+\frac{u}{4}\phi^4-h\phi+\cdots.<br>
-$$</p>
-<p>Here $f$ is the free-energy density, $h$ is the field conjugate to $\phi$, $u&gt;0$ keeps the energy bounded, and the simplest temperature dependence is $r=a(T-T_c)$ with $a&gt;0$.</p>
+<p>In zero magnetic field, a simple ferromagnet is invariant under $M\rightarrow-M$. The high-temperature state, $M&#x3D;0$, respects this symmetry. The low-temperature state chooses either $+M_0$ or $-M_0$. The microscopic law remains symmetric while the equilibrium state does not: this is <strong>spontaneous symmetry breaking</strong>.</p>
+<h2 id="2-Why-is-a-free-energy-expansion-allowed"><a href="#2-Why-is-a-free-energy-expansion-allowed" class="headerlink" title="2. Why is a free-energy expansion allowed?"></a>2. Why is a free-energy expansion allowed?</h2><p>Landau assumes that the order parameter is small near a continuous transition and that the free energy is analytic in it. For a uniform system with $\phi\rightarrow-\phi$ symmetry, odd powers are forbidden:</p>
+<p>$$<br>f(\phi)&#x3D;f_0+\frac{r}{2}\phi^2+\frac{u}{4}\phi^4-h\phi+\cdots.<br>$$</p>
+<p>Here $f$ is the free-energy density, $h$ is the field conjugate to $\phi$, $u&gt;0$ keeps the energy bounded, and the simplest temperature dependence is $r&#x3D;a(T-T_c)$ with $a&gt;0$.</p>
 <p>This expression is not an exact solution of the atomic orbitals of a particular material. It is the lowest-order <strong>effective theory</strong> permitted by symmetry, stability and analyticity. Most microscopic information has been compressed into a few coefficients such as $a$ and $u$.</p>
-<p>At $h=0$, equilibrium requires</p>
-<p>$$<br>
-\frac{\partial f}{\partial\phi}=r\phi+u\phi^3=0,<br>
-$$</p>
+<p>At $h&#x3D;0$, equilibrium requires</p>
+<p>$$<br>\frac{\partial f}{\partial\phi}&#x3D;r\phi+u\phi^3&#x3D;0,<br>$$</p>
 <p>and therefore</p>
-<p>$$<br>
-\phi_0=<br>
-\begin{cases}<br>
-0, &amp; T&gt;T_c,\[4pt]<br>
-\pm\sqrt{-r/u}, &amp; T&lt;T_c.<br>
-\end{cases}<br>
-$$</p>
+<p>$$<br>\phi_0&#x3D;<br>\begin{cases}<br>0, &amp; T&gt;T_c,\[4pt]<br>\pm\sqrt{-r&#x2F;u}, &amp; T&lt;T_c.<br>\end{cases}<br>$$</p>
 <p>For $r&gt;0$ the free energy has one minimum at the origin. For $r&lt;0$ the origin becomes unstable and two symmetry-related minima appear. The fundamental laws did not suddenly change; the <strong>landscape of stable states</strong> did.</p>
-<h2 id="3-Where-do-mean-field-critical-exponents-come-from">3. Where do mean-field critical exponents come from?</h2>
-<p>Below $T_c$, $|\phi_0|\propto(T_c-T)^{1/2}$, so $\beta=1/2$. The susceptibility</p>
-<p>$$<br>
-\chi=\left.\frac{\partial\phi}{\partial h}\right|_{h\rightarrow0}<br>
-$$</p>
-<p>is $1/r$ above $T_c$ and $1/(2|r|)$ below it. Hence $\gamma=1$. Exactly at $T_c$, $h=u\phi^3$ gives $\delta=3$. The same calculation predicts a finite heat-capacity jump, conventionally written as $\alpha=0$.</p>
+<h2 id="3-Where-do-mean-field-critical-exponents-come-from"><a href="#3-Where-do-mean-field-critical-exponents-come-from" class="headerlink" title="3. Where do mean-field critical exponents come from?"></a>3. Where do mean-field critical exponents come from?</h2><p>Below $T_c$, $|\phi_0|\propto(T_c-T)^{1&#x2F;2}$, so $\beta&#x3D;1&#x2F;2$. The susceptibility</p>
+<p>$$<br>\chi&#x3D;\left.\frac{\partial\phi}{\partial h}\right|_{h\rightarrow0}<br>$$</p>
+<p>is $1&#x2F;r$ above $T_c$ and $1&#x2F;(2|r|)$ below it. Hence $\gamma&#x3D;1$. Exactly at $T_c$, $h&#x3D;u\phi^3$ gives $\delta&#x3D;3$. The same calculation predicts a finite heat-capacity jump, conventionally written as $\alpha&#x3D;0$.</p>
 <p>These numbers express the claim that very different materials can share critical behaviour. Real exponents often differ from the mean-field values, however, because the minimization above has ignored fluctuations.</p>
-<h2 id="4-From-a-number-to-a-field-fluctuations-and-correlation-length">4. From a number to a field: fluctuations and correlation length</h2>
-<p>An order parameter is not truly uniform. Promoting it to a field $\phi(\mathbf r)$ and assigning an energy cost to rapid spatial variation gives the Landau–Ginzburg functional</p>
-<p>$$<br>
-F[\phi]=\int d^dr\left[<br>
-\frac{K}{2}(\nabla\phi)^2+<br>
-\frac{r}{2}\phi^2+<br>
-\frac{u}{4}\phi^4-h\phi<br>
-\right].<br>
-$$</p>
+<h2 id="4-From-a-number-to-a-field-fluctuations-and-correlation-length"><a href="#4-From-a-number-to-a-field-fluctuations-and-correlation-length" class="headerlink" title="4. From a number to a field: fluctuations and correlation length"></a>4. From a number to a field: fluctuations and correlation length</h2><p>An order parameter is not truly uniform. Promoting it to a field $\phi(\mathbf r)$ and assigning an energy cost to rapid spatial variation gives the Landau–Ginzburg functional</p>
+<p>$$<br>F[\phi]&#x3D;\int d^dr\left[<br>\frac{K}{2}(\nabla\phi)^2+<br>\frac{r}{2}\phi^2+<br>\frac{u}{4}\phi^4-h\phi<br>\right].<br>$$</p>
 <p>In the Gaussian approximation, the static response is</p>
-<p>$$<br>
-\chi(q)=\frac{1}{r+Kq^2},<br>
-$$</p>
+<p>$$<br>\chi(q)&#x3D;\frac{1}{r+Kq^2},<br>$$</p>
 <p>which defines the correlation length</p>
-<p>$$<br>
-\xi=\sqrt{\frac{K}{r}}\propto|T-T_c|^{-1/2}.<br>
-$$</p>
+<p>$$<br>\xi&#x3D;\sqrt{\frac{K}{r}}\propto|T-T_c|^{-1&#x2F;2}.<br>$$</p>
 <p>As $T\rightarrow T_c$, $\xi$ diverges. Regions separated by many microscopic spacings fluctuate collectively and the system becomes approximately scale invariant. This is why different materials can belong to the same <strong>universality class</strong>. The decisive information is usually the spatial dimension, the number of order-parameter components, the broken symmetry, and whether interactions are short- or long-ranged—not the detailed chemistry.</p>
-<h2 id="5-Why-does-mean-field-theory-fail-near-criticality">5. Why does mean-field theory fail near criticality?</h2>
-<p>Minimizing $F[\phi]$ replaces a statistical sum over all field configurations by its most probable configuration. Far from criticality, fluctuations in many small regions average out. Close to $T_c$, the correlation length becomes large and fluctuations extend across many scales, so the approximation fails.</p>
+<h2 id="5-Why-does-mean-field-theory-fail-near-criticality"><a href="#5-Why-does-mean-field-theory-fail-near-criticality" class="headerlink" title="5. Why does mean-field theory fail near criticality?"></a>5. Why does mean-field theory fail near criticality?</h2><p>Minimizing $F[\phi]$ replaces a statistical sum over all field configurations by its most probable configuration. Far from criticality, fluctuations in many small regions average out. Close to $T_c$, the correlation length becomes large and fluctuations extend across many scales, so the approximation fails.</p>
 <p>The Ginzburg criterion compares fluctuations inside a correlation volume $\xi^d$ with the mean order parameter. For the ordinary short-range $\phi^4$ theory, the upper critical dimension is</p>
-<p>$$<br>
-d_c=4.<br>
-$$</p>
-<p>Above four dimensions, mean-field exponents are generally valid. Below four, fluctuations change them. The three-dimensional Ising model, for example, has $\beta\approx0.326$, not $1/2$.</p>
+<p>$$<br>d_c&#x3D;4.<br>$$</p>
+<p>Above four dimensions, mean-field exponents are generally valid. Below four, fluctuations change them. The three-dimensional Ising model, for example, has $\beta\approx0.326$, not $1&#x2F;2$.</p>
 <p>The renormalization group explains this universality more deeply. When the observation scale is enlarged, many microscopic couplings become irrelevant and only a few relevant variables control long-distance physics. Landau theory tells us which terms symmetry allows; renormalization tells us which survive at large scales.</p>
-<h2 id="6-Continuous-transitions-are-not-the-only-possibility">6. Continuous transitions are not the only possibility</h2>
-<p>If symmetry permits a cubic term, or if the quartic coefficient becomes negative while a sixth-order term restores stability, the free energy may be</p>
-<p>$$<br>
-f(\phi)=f_0+\frac{r}{2}\phi^2+\frac{w}{3}\phi^3+<br>
-\frac{u}{4}\phi^4+\frac{v}{6}\phi^6+\cdots.<br>
-$$</p>
+<h2 id="6-Continuous-transitions-are-not-the-only-possibility"><a href="#6-Continuous-transitions-are-not-the-only-possibility" class="headerlink" title="6. Continuous transitions are not the only possibility"></a>6. Continuous transitions are not the only possibility</h2><p>If symmetry permits a cubic term, or if the quartic coefficient becomes negative while a sixth-order term restores stability, the free energy may be</p>
+<p>$$<br>f(\phi)&#x3D;f_0+\frac{r}{2}\phi^2+\frac{w}{3}\phi^3+<br>\frac{u}{4}\phi^4+\frac{v}{6}\phi^6+\cdots.<br>$$</p>
 <p>Its global minimum can jump discontinuously as a control parameter changes. The order parameter then jumps, producing a first-order transition with possible metastability, hysteresis and latent heat.</p>
 <p>Finding an order parameter therefore does not prove that a transition is continuous. One must list every symmetry-allowed term, impose stability, compare competing minima, and ask whether fluctuations alter the mean-field result.</p>
-<h2 id="7-The-boundary-of-the-Landau-paradigm">7. The boundary of the Landau paradigm</h2>
-<p>Landau theory is extraordinarily successful, but it is not a theory of all phases. The BKT transition is controlled by vortex–antivortex unbinding rather than a conventional local order parameter. Topological order distinguishes states through long-range entanglement, topological degeneracy and fractionalized excitations. A quantum critical point contains quantum as well as thermal fluctuations; imaginary time acts as an extra dimension and the dynamical exponent $z$ relates temporal and spatial scales. Coupling an order parameter to gapless fermions, gauge fields or topological defects can also invalidate a naive local expansion or drive an apparently continuous transition first order.</p>
+<h2 id="7-The-boundary-of-the-Landau-paradigm"><a href="#7-The-boundary-of-the-Landau-paradigm" class="headerlink" title="7. The boundary of the Landau paradigm"></a>7. The boundary of the Landau paradigm</h2><p>Landau theory is extraordinarily successful, but it is not a theory of all phases. The BKT transition is controlled by vortex–antivortex unbinding rather than a conventional local order parameter. Topological order distinguishes states through long-range entanglement, topological degeneracy and fractionalized excitations. A quantum critical point contains quantum as well as thermal fluctuations; imaginary time acts as an extra dimension and the dynamical exponent $z$ relates temporal and spatial scales. Coupling an order parameter to gapless fermions, gauge fields or topological defects can also invalidate a naive local expansion or drive an apparently continuous transition first order.</p>
 <p>The accurate statement is therefore not that every transition obeys Landau theory. Rather, <strong>Landau established the default language of phase transitions; when it fails, we must identify exactly which assumption has failed.</strong></p>
-<h2 id="8-From-phase-transitions-to-metals-one-philosophy-two-theories">8. From phase transitions to metals: one philosophy, two theories</h2>
-<p>Landau’s theory of phase transitions and Landau Fermi-liquid theory are distinct theories.</p>
+<h2 id="8-From-phase-transitions-to-metals-one-philosophy-two-theories"><a href="#8-From-phase-transitions-to-metals-one-philosophy-two-theories" class="headerlink" title="8. From phase transitions to metals: one philosophy, two theories"></a>8. From phase transitions to metals: one philosophy, two theories</h2><p>Landau’s theory of phase transitions and Landau Fermi-liquid theory are distinct theories.</p>
 <table>
 <thead>
 <tr>
@@ -549,8 +512,7 @@ $$</p>
 <th>Landau Fermi-liquid theory</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Distinguishes phases with an order parameter</td>
 <td>Describes low-energy excitations with quasiparticles</td>
 </tr>
@@ -566,12 +528,10 @@ $$</p>
 <td>Uses fields such as $\phi(\mathbf r)$</td>
 <td>Uses distortions $\delta n_{\mathbf p\sigma}$ of the Fermi surface</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>Their shared philosophy is unmistakable: identify the stable low-energy degrees of freedom, then write the most general effective theory allowed by symmetry and conservation laws.</p>
 <p>Continue to <a href="/2026/09/01/Landau-Fermi-Liquid-Theory/">Part II: From an Electron Sea to Quasiparticles</a>.</p>
-<h2 id="Further-reading">Further reading</h2>
-<ol>
+<h2 id="Further-reading"><a href="#Further-reading" class="headerlink" title="Further reading"></a>Further reading</h2><ol>
 <li>L. D. Landau and E. M. Lifshitz, <em>Statistical Physics, Part 1</em>.</li>
 <li>N. Goldenfeld, <em>Lectures on Phase Transitions and the Renormalization Group</em>.</li>
 <li>P. M. Chaikin and T. C. Lubensky, <em>Principles of Condensed Matter Physics</em>.</li>
@@ -579,21 +539,19 @@ $$</p>
 </ol>
 
 </section>
+
 <!-- bilingual:zh -->
 <section class="lang-panel lang-zh" lang="zh-CN" hidden>
-<div class="zh-heading zh-h1" role="heading" aria-level="1">从对称性到相变：朗道如何教我们忽略细节（上）</div>
-<p>铁磁体、超导体、液晶和电荷密度波在微观上几乎毫无相似之处，但它们发生相变时，却可以用非常相似的数学语言描述。朗道理论最深刻的地方正在这里：<strong>理解宏观物态，未必需要先解出所有微观粒子的运动；更重要的是找出低能尺度上真正会变化的自由度。</strong></p>
+<div class="zh-heading zh-h1" role="heading" aria-level="1" id="从对称性到相变：朗道如何教我们忽略细节（上）"><a href="#从对称性到相变：朗道如何教我们忽略细节（上）" class="headerlink" title="从对称性到相变：朗道如何教我们忽略细节（上）"></a>从对称性到相变：朗道如何教我们忽略细节（上）</div><p>铁磁体、超导体、液晶和电荷密度波在微观上几乎毫无相似之处，但它们发生相变时，却可以用非常相似的数学语言描述。朗道理论最深刻的地方正在这里：<strong>理解宏观物态，未必需要先解出所有微观粒子的运动；更重要的是找出低能尺度上真正会变化的自由度。</strong></p>
 <p>这篇文章讨论朗道关于相变的思想。下一篇将沿着同一条方法论进入金属，解释为什么强烈相互作用的电子仍可能表现为近乎自由的“准粒子”，以及什么是朗道费米液体。</p>
 <!--more-->
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="1-朗道的核心问题：相变前后，什么发生了本质改变？">1. 朗道的核心问题：相变前后，什么发生了本质改变？</div>
-<p>考虑一块铁磁体。高温时，局域磁矩的方向杂乱无章，宏观磁化强度为零；低温时，它们自发选择一个共同方向，体系出现非零磁化强度。朗道把这个能够区分两种物态的宏观量称为<strong>序参量</strong>（order parameter）：</p>
-<p>$$<br>
-\phi = M.<br>
-$$</p>
+
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="1-朗道的核心问题：相变前后，什么发生了本质改变？"><a href="#1-朗道的核心问题：相变前后，什么发生了本质改变？" class="headerlink" title="1. 朗道的核心问题：相变前后，什么发生了本质改变？"></a>1. 朗道的核心问题：相变前后，什么发生了本质改变？</div><p>考虑一块铁磁体。高温时，局域磁矩的方向杂乱无章，宏观磁化强度为零；低温时，它们自发选择一个共同方向，体系出现非零磁化强度。朗道把这个能够区分两种物态的宏观量称为<strong>序参量</strong>（order parameter）：</p>
+<p>$$<br>\phi &#x3D; M.<br>$$</p>
 <p>序参量不一定是一个实数。它可以是：</p>
 <ul>
 <li>铁磁体的矢量磁化强度 $\mathbf M$；</li>
-<li>超流或超导凝聚态的复数波函数 $\psi=|\psi|e^{i\theta}$；</li>
+<li>超流或超导凝聚态的复数波函数 $\psi&#x3D;|\psi|e^{i\theta}$；</li>
 <li>晶体结构相变中的位移模式；</li>
 <li>电荷密度波在特定波矢处的复振幅；</li>
 <li>向列相液晶的二阶张量。</li>
@@ -603,69 +561,38 @@ $$</p>
 <li>相变破坏了什么对称性？</li>
 <li>哪个低能自由度记录了这种对称性的破缺？</li>
 </ol>
-<p>铁磁体在没有外磁场时，能量对 $M\rightarrow -M$ 不变。高温相的平均磁化 $M=0$ 保留这个对称性；低温相却从 $+M_0$ 与 $-M_0$ 中自发选择一个。哈密顿量仍然对称，基态不再对称，这就是<strong>自发对称性破缺</strong>。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="2-为什么可以展开自由能？">2. 为什么可以展开自由能？</div>
-<p>朗道的关键假设是：连续相变附近序参量很小，自由能可以写成序参量的解析展开。对具有 $\phi\rightarrow-\phi$ 对称性的均匀体系，奇次项被禁止，于是</p>
-<p>$$<br>
-f(\phi)=f_0+\frac{r}{2}\phi^2+\frac{u}{4}\phi^4-h\phi+\cdots,<br>
-$$</p>
+<p>铁磁体在没有外磁场时，能量对 $M\rightarrow -M$ 不变。高温相的平均磁化 $M&#x3D;0$ 保留这个对称性；低温相却从 $+M_0$ 与 $-M_0$ 中自发选择一个。哈密顿量仍然对称，基态不再对称，这就是<strong>自发对称性破缺</strong>。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="2-为什么可以展开自由能？"><a href="#2-为什么可以展开自由能？" class="headerlink" title="2. 为什么可以展开自由能？"></a>2. 为什么可以展开自由能？</div><p>朗道的关键假设是：连续相变附近序参量很小，自由能可以写成序参量的解析展开。对具有 $\phi\rightarrow-\phi$ 对称性的均匀体系，奇次项被禁止，于是</p>
+<p>$$<br>f(\phi)&#x3D;f_0+\frac{r}{2}\phi^2+\frac{u}{4}\phi^4-h\phi+\cdots,<br>$$</p>
 <p>其中：</p>
 <ul>
 <li>$f$ 是单位体积自由能；</li>
 <li>$h$ 是与序参量共轭的外场，例如磁场；</li>
 <li>$u&gt;0$ 保证大 $|\phi|$ 时自由能有下界；</li>
-<li>$r$ 随温度改变，最简单地取 $r=a(T-T_c)$，且 $a&gt;0$。</li>
+<li>$r$ 随温度改变，最简单地取 $r&#x3D;a(T-T_c)$，且 $a&gt;0$。</li>
 </ul>
 <p>这不是从某个特定材料的原子轨道精确推导出来的公式。它是由<strong>对称性、稳定性和解析性</strong>共同限定的最低阶有效理论。微观细节被压缩进 $a$、$u$ 等少数系数中。</p>
-<p>当 $h=0$ 时，平衡态满足</p>
-<p>$$<br>
-\frac{\partial f}{\partial\phi}=r\phi+u\phi^3=0.<br>
-$$</p>
+<p>当 $h&#x3D;0$ 时，平衡态满足</p>
+<p>$$<br>\frac{\partial f}{\partial\phi}&#x3D;r\phi+u\phi^3&#x3D;0.<br>$$</p>
 <p>因此：</p>
-<p>$$<br>
-\phi_0=<br>
-\begin{cases}<br>
-0, &amp; T&gt;T_c,\[4pt]<br>
-\pm\sqrt{-r/u}, &amp; T&lt;T_c.<br>
-\end{cases}<br>
-$$</p>
+<p>$$<br>\phi_0&#x3D;<br>\begin{cases}<br>0, &amp; T&gt;T_c,\[4pt]<br>\pm\sqrt{-r&#x2F;u}, &amp; T&lt;T_c.<br>\end{cases}<br>$$</p>
 <p>高温时 $r&gt;0$，自由能只有一个位于原点的最低点；低温时 $r&lt;0$，原点变成极大值，并出现两个等价的最低点。相变的图像因此非常直观：<strong>不是体系的基本定律突然改变了，而是自由能地形改变了稳定点的结构。</strong></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="3-平均场临界指数从哪里来？">3. 平均场临界指数从哪里来？</div>
-<p>在 $T_c$ 下方，序参量随温度的行为为</p>
-<p>$$<br>
-|\phi_0|\propto (T_c-T)^{1/2}.<br>
-$$</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="3-平均场临界指数从哪里来？"><a href="#3-平均场临界指数从哪里来？" class="headerlink" title="3. 平均场临界指数从哪里来？"></a>3. 平均场临界指数从哪里来？</div><p>在 $T_c$ 下方，序参量随温度的行为为</p>
+<p>$$<br>|\phi_0|\propto (T_c-T)^{1&#x2F;2}.<br>$$</p>
 <p>按临界指数的定义 $|\phi_0|\propto (T_c-T)^\beta$，朗道理论给出</p>
-<p>$$<br>
-\beta=\frac12.<br>
-$$</p>
+<p>$$<br>\beta&#x3D;\frac12.<br>$$</p>
 <p>外场响应率为</p>
-<p>$$<br>
-\chi=\left.\frac{\partial\phi}{\partial h}\right|_{h\rightarrow0}.<br>
-$$</p>
-<p>在 $T_c$ 上方有 $\chi=1/r$，在下方有 $\chi=1/(2|r|)$，所以两侧都满足 $\chi\propto |T-T_c|^{-1}$，即</p>
-<p>$$<br>
-\gamma=1.<br>
-$$</p>
-<p>恰好在 $T=T_c$，状态方程变成 $h=u\phi^3$，因此 $\delta=3$。同样可以得到比热指数 $\alpha=0$：平均场理论预言比热发生有限跳变，而不是幂律发散。</p>
+<p>$$<br>\chi&#x3D;\left.\frac{\partial\phi}{\partial h}\right|_{h\rightarrow0}.<br>$$</p>
+<p>在 $T_c$ 上方有 $\chi&#x3D;1&#x2F;r$，在下方有 $\chi&#x3D;1&#x2F;(2|r|)$，所以两侧都满足 $\chi\propto |T-T_c|^{-1}$，即</p>
+<p>$$<br>\gamma&#x3D;1.<br>$$</p>
+<p>恰好在 $T&#x3D;T_c$，状态方程变成 $h&#x3D;u\phi^3$，因此 $\delta&#x3D;3$。同样可以得到比热指数 $\alpha&#x3D;0$：平均场理论预言比热发生有限跳变，而不是幂律发散。</p>
 <p>这些结果的重要性不只在于数值，而在于它们说明：许多相变的临界行为可以不依赖材料的化学细节。不过，真实体系的临界指数常常偏离这些平均场数值。原因将在后面出现。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="4-从一个数到一个场：空间涨落与关联长度">4. 从一个数到一个场：空间涨落与关联长度</div>
-<p>真实体系的序参量不会处处相同。把 $\phi$ 提升为空间场 $\phi(\mathbf r)$，并惩罚剧烈的空间变化，就得到朗道—金兹堡自由能：</p>
-<p>$$<br>
-F[\phi]=\int d^dr\left[<br>
-\frac{K}{2}(\nabla\phi)^2+<br>
-\frac{r}{2}\phi^2+<br>
-\frac{u}{4}\phi^4-h\phi<br>
-\right].<br>
-$$</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="4-从一个数到一个场：空间涨落与关联长度"><a href="#4-从一个数到一个场：空间涨落与关联长度" class="headerlink" title="4. 从一个数到一个场：空间涨落与关联长度"></a>4. 从一个数到一个场：空间涨落与关联长度</div><p>真实体系的序参量不会处处相同。把 $\phi$ 提升为空间场 $\phi(\mathbf r)$，并惩罚剧烈的空间变化，就得到朗道—金兹堡自由能：</p>
+<p>$$<br>F[\phi]&#x3D;\int d^dr\left[<br>\frac{K}{2}(\nabla\phi)^2+<br>\frac{r}{2}\phi^2+<br>\frac{u}{4}\phi^4-h\phi<br>\right].<br>$$</p>
 <p>梯度项的物理意义很朴素：相邻区域若选择完全不同的序，通常需要付出能量。在线性响应或高斯近似下，波矢空间中的静态响应为</p>
-<p>$$<br>
-\chi(q)=\frac{1}{r+Kq^2}.<br>
-$$</p>
+<p>$$<br>\chi(q)&#x3D;\frac{1}{r+Kq^2}.<br>$$</p>
 <p>由此定义关联长度</p>
-<p>$$<br>
-\xi=\sqrt{\frac{K}{r}}\propto |T-T_c|^{-1/2}.<br>
-$$</p>
+<p>$$<br>\xi&#x3D;\sqrt{\frac{K}{r}}\propto |T-T_c|^{-1&#x2F;2}.<br>$$</p>
 <p>当 $T\rightarrow T_c$ 时，$\xi$ 发散。体系中相距很远的区域开始协同涨落，显微尺度不再重要，宏观上出现近似的尺度不变性。这正是不同材料能够共享同一组临界指数——即属于同一<strong>普适类</strong>（universality class）——的根源。</p>
 <p>决定普适类的通常不是化学成分，而是：</p>
 <ul>
@@ -674,20 +601,13 @@ $$</p>
 <li>被破缺的对称性；</li>
 <li>相互作用是短程还是长程。</li>
 </ul>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="5-平均场理论为什么会在临界点附近失效？">5. 平均场理论为什么会在临界点附近失效？</div>
-<p>前面的求解用自由能最低点代替了对所有可能的 $\phi(\mathbf r)$ 构型求统计平均，也就是忽略了涨落。远离临界点时，许多小区域的涨落互相平均，这往往是好近似；但在临界点附近，关联长度变得巨大，涨落跨越多个尺度，简单平均不再可靠。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="5-平均场理论为什么会在临界点附近失效？"><a href="#5-平均场理论为什么会在临界点附近失效？" class="headerlink" title="5. 平均场理论为什么会在临界点附近失效？"></a>5. 平均场理论为什么会在临界点附近失效？</div><p>前面的求解用自由能最低点代替了对所有可能的 $\phi(\mathbf r)$ 构型求统计平均，也就是忽略了涨落。远离临界点时，许多小区域的涨落互相平均，这往往是好近似；但在临界点附近，关联长度变得巨大，涨落跨越多个尺度，简单平均不再可靠。</p>
 <p>Ginzburg 判据用来估计平均场理论失效的温度窗口。其核心比较是：一个关联体积 $\xi^d$ 内序参量的涨落，是否已经可与平均序参量本身相比。对短程相互作用的普通 $\phi^4$ 理论，上临界维数为</p>
-<p>$$<br>
-d_c=4.<br>
-$$</p>
-<p>当 $d&gt;4$ 时，平均场临界指数通常成立；当 $d&lt;4$ 时，涨落会系统性地修正临界指数。三维 Ising 模型的 $\beta$ 约为 $0.326$，而不是 $1/2$，就是典型例子。</p>
+<p>$$<br>d_c&#x3D;4.<br>$$</p>
+<p>当 $d&gt;4$ 时，平均场临界指数通常成立；当 $d&lt;4$ 时，涨落会系统性地修正临界指数。三维 Ising 模型的 $\beta$ 约为 $0.326$，而不是 $1&#x2F;2$，就是典型例子。</p>
 <p>重整化群进一步解释了这种普适性：不断放大观察尺度时，大量微观耦合会变得无关，只有少数“相关”变量控制长距离行为。朗道理论给出了允许写下什么，重整化群则告诉我们这些项在不同尺度下谁真正重要。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="6-连续相变不是唯一可能">6. 连续相变不是唯一可能</div>
-<p>如果对称性允许三次项，或者四次项变为负而由六次项维持稳定，自由能可以写成</p>
-<p>$$<br>
-f(\phi)=f_0+\frac{r}{2}\phi^2+\frac{w}{3}\phi^3+<br>
-\frac{u}{4}\phi^4+\frac{v}{6}\phi^6+cdots.<br>
-$$</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="6-连续相变不是唯一可能"><a href="#6-连续相变不是唯一可能" class="headerlink" title="6. 连续相变不是唯一可能"></a>6. 连续相变不是唯一可能</div><p>如果对称性允许三次项，或者四次项变为负而由六次项维持稳定，自由能可以写成</p>
+<p>$$<br>f(\phi)&#x3D;f_0+\frac{r}{2}\phi^2+\frac{w}{3}\phi^3+<br>\frac{u}{4}\phi^4+\frac{v}{6}\phi^6+cdots.<br>$$</p>
 <p>此时全局最低点可能在参数变化时突然从一个位置跳到另一个位置，序参量不再连续出现，而是发生跃变。这对应一级相变，通常伴随亚稳态、滞后和潜热。</p>
 <p>因此，“找到序参量”并不自动等于“相变必然连续”。真正要做的是：</p>
 <ol>
@@ -696,15 +616,13 @@ $$</p>
 <li>比较各局域极小值的自由能；</li>
 <li>再考虑涨落是否改变平均场结论。</li>
 </ol>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="7-朗道范式的边界">7. 朗道范式的边界</div>
-<p>朗道理论极其成功，但它不是所有物态的总理论。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="7-朗道范式的边界"><a href="#7-朗道范式的边界" class="headerlink" title="7. 朗道范式的边界"></a>7. 朗道范式的边界</div><p>朗道理论极其成功，但它不是所有物态的总理论。</p>
 <p>第一，某些相变没有局域序参量。例如 Berezinskii—Kosterlitz—Thouless 相变由涡旋—反涡旋的解缚控制，不能用普通的局域序参量获得完整描述。</p>
 <p>第二，拓扑序可在不破坏常规对称性的情况下区分不同量子态，其核心是长程量子纠缠、拓扑简并和分数化激发，而不是一个局域平均量。</p>
 <p>第三，量子临界点不仅有热涨落，还有由不确定性原理产生的量子涨落。此时虚时间成为额外维度，动力学临界指数 $z$ 决定时间与空间尺度的关系。</p>
 <p>第四，即使存在序参量，序参量与无能隙费米子、规范场或拓扑缺陷的耦合也可能使朴素的局域展开失效，甚至把原本的连续相变推成一级相变。</p>
 <p>所以更准确的说法不是“所有相变都服从朗道理论”，而是：<strong>朗道建立了描述相变的默认语言；偏离它时，我们必须明确指出究竟是哪条假设被打破。</strong></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="8-从相变到金属：同一种思想，不同的理论">8. 从相变到金属：同一种思想，不同的理论</div>
-<p>“朗道相变理论”和“朗道费米液体理论”经常被一起提到，但二者并不是同一个公式的两个版本。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="8-从相变到金属：同一种思想，不同的理论"><a href="#8-从相变到金属：同一种思想，不同的理论" class="headerlink" title="8. 从相变到金属：同一种思想，不同的理论"></a>8. 从相变到金属：同一种思想，不同的理论</div><p>“朗道相变理论”和“朗道费米液体理论”经常被一起提到，但二者并不是同一个公式的两个版本。</p>
 <table>
 <thead>
 <tr>
@@ -712,8 +630,7 @@ $$</p>
 <th>朗道费米液体理论</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>用序参量区分物态</td>
 <td>用准粒子描述低能激发</td>
 </tr>
@@ -729,12 +646,10 @@ $$</p>
 <td>典型变量是 $\phi(\mathbf r)$</td>
 <td>典型变量是 $\delta n_{\mathbf p\sigma}$</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>二者共享的精神却高度一致：不要追踪全部微观细节，而要辨认低能尺度上稳定存在的自由度，再写出由对称性和守恒律允许的最一般有效理论。</p>
 <p>下一期：<a href="/2026/09/01/Landau-Fermi-Liquid-Theory/" title="从电子海到准粒子：朗道费米液体理论（下）">从电子海到准粒子：朗道费米液体理论（下）</a>。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="延伸阅读">延伸阅读</div>
-<ol>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="延伸阅读"><a href="#延伸阅读" class="headerlink" title="延伸阅读"></a>延伸阅读</div><ol>
 <li>L. D. Landau and E. M. Lifshitz, <em>Statistical Physics, Part 1</em>.</li>
 <li>N. Goldenfeld, <em>Lectures on Phase Transitions and the Renormalization Group</em>.</li>
 <li>P. M. Chaikin and T. C. Lubensky, <em>Principles of Condensed Matter Physics</em>.</li>
@@ -1637,9 +1552,31 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 68
+        Total : 70
         </div>
         <!-- search  -->
         
@@ -1655,12 +1592,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" >Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/" >Optoelectronic Devices: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
         </li>
     
     
@@ -2047,15 +1994,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
     
+        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
+    
+        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
+    
         <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
     
         <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
     
         <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
-    
-        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
-    
-        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
@@ -2067,15 +2014,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
     
-        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
-    
         <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
         <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
     
         <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
-    
-        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
     
         <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
     
@@ -2083,11 +2028,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
     
+        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
+    
         <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
     
         <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
-    
-        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
     
@@ -2095,33 +2040,35 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
     
-        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
-    
-        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
-    
-        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
     
         <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
     
         <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
     
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+    
         <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
     
         <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
         <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
-    
         <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
     
         <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
     
         <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
     
-        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
-    
         <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
     
         <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
@@ -2137,15 +2084,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
     
-        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
-    
         <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
     
+        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+    
         <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
+    
+        <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -2182,21 +2133,21 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
-    
         <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
-    
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
@@ -2204,9 +2155,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
-    
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
     
@@ -2214,7 +2165,13 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
+        <span class="sidebar-category-name" data-categories="Scientific/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Scientific/Artificial-Intelligence</span>
+    
         <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Chemistry/Energy"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry/Energy</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
