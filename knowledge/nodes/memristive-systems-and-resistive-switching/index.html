@@ -8,29 +8,36 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Memristive Systems and Resistive Switching</span><span data-lang="zh" hidden>忆阻系统与阻变物理</span></h1><p class="node-deck"><span data-lang="en">A memristive system has conductance controlled by internal state variables with their own dynamics; physical implementations include ionic redox, phase, ferroelectric and spin configurations.</span><span data-lang="zh" hidden>忆阻系统的电导由具有自身动力学的内部状态变量控制；物理实现包括离子氧化还原、物相、铁电和自旋构型。</span></p><div class="node-tags"><span>Memristive Devices</span><span>Device Physics</span><span>Technology Roadmap</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> A memristive system has conductance controlled by internal state variables with their own dynamics; physical implementations include ionic redox, phase, ferroelectric and spin configurations.</p>
 </blockquote>
-<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>A memristive system has conductance controlled by internal state variables with their own dynamics; physical implementations include ionic redox, phase, ferroelectric and spin configurations. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="What-makes-a-system-memristive"><a href="#What-makes-a-system-memristive" class="headerlink" title="What makes a system memristive"></a>What makes a system memristive</h3><p>A general current-controlled memristive system is</p>
+<h2 id="Physical-Picture">Physical Picture</h2>
+<p>A memristive system has conductance controlled by internal state variables with their own dynamics; physical implementations include ionic redox, phase, ferroelectric and spin configurations. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
+<h3 id="What-makes-a-system-memristive">What makes a system memristive</h3>
+<p>A general current-controlled memristive system is</p>
 <div class="math-display">\[V=R(\mathbf x,I,t)I,\qquad \dot{\mathbf x}=\mathbf f(\mathbf x,I,t).\]</div>
-
 <p>The pinched hysteresis loop follows from state evolution and normally shrinks as frequency becomes too high for \(\mathbf x\) to respond.  A pinched loop alone is not proof of an ideal charge-controlled memristor; capacitive currents, electrochemistry and thermal lag can produce similar shapes.</p>
-<h3 id="Spatial-state-variables"><a href="#Spatial-state-variables" class="headerlink" title="Spatial state variables"></a>Spatial state variables</h3><p>In resistive switching, \(\mathbf x\) may include vacancy concentration, filament radius, interface barrier and temperature.  Drift–diffusion–reaction equations couple to Poisson and heat flow.  Reducing these fields to one gap coordinate is useful for circuits only after calibrating its domain of validity.</p>
-<h3 id="Causality-tests"><a href="#Causality-tests" class="headerlink" title="Causality tests"></a>Causality tests</h3><p>State evolution should depend predictably on pulse amplitude, width and polarity; the zero-bias state should persist for a nonvolatile device; energy and charge accounting should be consistent.  Use current compliance and series resistance explicitly, because the measurement circuit participates in filament formation and can create apparent intrinsic thresholds.</p>
-<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[I=G(x,V,t)V, dx/dt=f(x,V,t)\]</div>
-
+<h3 id="Spatial-state-variables">Spatial state variables</h3>
+<p>In resistive switching, \(\mathbf x\) may include vacancy concentration, filament radius, interface barrier and temperature.  Drift–diffusion–reaction equations couple to Poisson and heat flow.  Reducing these fields to one gap coordinate is useful for circuits only after calibrating its domain of validity.</p>
+<h3 id="Causality-tests">Causality tests</h3>
+<p>State evolution should depend predictably on pulse amplitude, width and polarity; the zero-bias state should persist for a nonvolatile device; energy and charge accounting should be consistent.  Use current compliance and series resistance explicitly, because the measurement circuit participates in filament formation and can create apparent intrinsic thresholds.</p>
+<h2 id="Minimal-Model">Minimal Model</h2>
+<div class="math-display">\[I=G(x,V,t)V, dx/dt=f(x,V,t)\]</div>
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>The framework connects nonvolatile memory, analogue weights, adaptive dynamics and compute-in-memory.</p>
+<h2 id="Device-Consequences">Device Consequences</h2>
+<p>The framework connects nonvolatile memory, analogue weights, adaptive dynamics and compute-in-memory.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-
-<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>The ideal Chua memristor, generic hysteretic resistor and commercial RRAM are related but not synonymous. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Engineering. Connected concepts:</p>
+<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
+<p>The ideal Chua memristor, generic hysteretic resistor and commercial RRAM are related but not synonymous. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
+<p><strong>Maturity:</strong> Engineering. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/advanced-nonvolatile-memory-physics/">advanced-nonvolatile-memory-physics</a></li>
 <li><a href="/knowledge/nodes/resistive-random-access-memory/">resistive-random-access-memory</a></li>
 <li><a href="/knowledge/nodes/artificial-synapses-and-neuromorphic-dynamics/">artificial-synapses-and-neuromorphic-dynamics</a></li>
 <li><a href="/knowledge/nodes/compute-in-memory/">compute-in-memory</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
+<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41467-019-11411-6" target="_blank" rel="noopener">Yang et al., Understanding memristive switching</a></li>
 <li><a href="https://www.nature.com/articles/s41578-019-0159-3" target="_blank" rel="noopener">Zhang et al., Resistive switching materials for information processing</a></li>
@@ -38,29 +45,36 @@
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**忆阻系统的电导由具有自身动力学的内部状态变量控制；物理实现包括离子氧化还原、物相、铁电和自旋构型。</p>
 </blockquote>
-<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>忆阻系统的电导由具有自身动力学的内部状态变量控制；物理实现包括离子氧化还原、物相、铁电和自旋构型。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="什么才构成忆阻系统"><a href="#什么才构成忆阻系统" class="headerlink" title="什么才构成忆阻系统"></a>什么才构成忆阻系统</h3><p>一般电流控制忆阻系统写成</p>
+<h2 id="物理图像">物理图像</h2>
+<p>忆阻系统的电导由具有自身动力学的内部状态变量控制；物理实现包括离子氧化还原、物相、铁电和自旋构型。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
+<h3 id="什么才构成忆阻系统">什么才构成忆阻系统</h3>
+<p>一般电流控制忆阻系统写成</p>
 <div class="math-display">\[V=R(\mathbf x,I,t)I,\qquad \dot{\mathbf x}=\mathbf f(\mathbf x,I,t).\]</div>
-
 <p>夹钳滞回来自内部状态演化；当频率高到 \(\mathbf x\) 来不及响应时，回线通常收缩。只有夹钳回线并不能证明理想电荷控制忆阻器，电容电流、电化学和热滞后也能产生类似形状。</p>
-<h3 id="空间状态变量"><a href="#空间状态变量" class="headerlink" title="空间状态变量"></a>空间状态变量</h3><p>阻变器件的 \(\mathbf x\) 可包含空位浓度、细丝半径、界面势垒和温度。漂移—扩散—反应方程与泊松、热流耦合。把这些场压缩为一个“间隙坐标”便于电路仿真，但必须先校准适用范围。</p>
-<h3 id="因果性检验"><a href="#因果性检验" class="headerlink" title="因果性检验"></a>因果性检验</h3><p>状态演化应按可预测方式依赖脉冲幅值、宽度和极性；非易失器件在零偏压下应保持状态；能量和电荷核算应自洽。必须明确电流限制与串联电阻，因为测量电路参与细丝形成，并可能制造表观本征阈值。</p>
-<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[I=G(x,V,t)V, dx/dt=f(x,V,t)\]</div>
-
+<h3 id="空间状态变量">空间状态变量</h3>
+<p>阻变器件的 \(\mathbf x\) 可包含空位浓度、细丝半径、界面势垒和温度。漂移—扩散—反应方程与泊松、热流耦合。把这些场压缩为一个“间隙坐标”便于电路仿真，但必须先校准适用范围。</p>
+<h3 id="因果性检验">因果性检验</h3>
+<p>状态演化应按可预测方式依赖脉冲幅值、宽度和极性；非易失器件在零偏压下应保持状态；能量和电荷核算应自洽。必须明确电流限制与串联电阻，因为测量电路参与细丝形成，并可能制造表观本征阈值。</p>
+<h2 id="最小模型">最小模型</h2>
+<div class="math-display">\[I=G(x,V,t)V, dx/dt=f(x,V,t)\]</div>
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>该框架连接非易失存储、模拟权重、自适应动力学和存内计算。</p>
+<h2 id="器件意义">器件意义</h2>
+<p>该框架连接非易失存储、模拟权重、自适应动力学和存内计算。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-
-<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>理想 Chua 忆阻器、一般滞回电阻与商业 RRAM 彼此相关但并非同义。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Engineering。关联节点：</p>
+<h2 id="限制与判据">限制与判据</h2>
+<p>理想 Chua 忆阻器、一般滞回电阻与商业 RRAM 彼此相关但并非同义。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
+<p>**成熟度：**Engineering。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/advanced-nonvolatile-memory-physics/">advanced-nonvolatile-memory-physics</a></li>
 <li><a href="/knowledge/nodes/resistive-random-access-memory/">resistive-random-access-memory</a></li>
 <li><a href="/knowledge/nodes/artificial-synapses-and-neuromorphic-dynamics/">artificial-synapses-and-neuromorphic-dynamics</a></li>
 <li><a href="/knowledge/nodes/compute-in-memory/">compute-in-memory</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
+<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41467-019-11411-6" target="_blank" rel="noopener">Yang et al., Understanding memristive switching</a></li>
 <li><a href="https://www.nature.com/articles/s41578-019-0159-3" target="_blank" rel="noopener">Zhang et al., Resistive switching materials for information processing</a></li>

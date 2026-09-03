@@ -8,25 +8,30 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Benchmarking Steep-Slope Devices</span><span data-lang="zh" hidden>陡峭亚阈值器件的基准比较</span></h1><p class="node-deck"><span data-lang="en">A credible comparison must place current, slope, capacitance, voltage, delay, energy, area, temperature and hysteresis on the same operating point and footprint.</span><span data-lang="zh" hidden>可信比较必须在相同工作点和面积尺度下同时考虑电流、斜率、电容、电压、延迟、能量、温度和滞回。</span></p><div class="node-tags"><span>Steep-Slope Devices</span><span>Device Physics</span><span>Technology Roadmap</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> A credible comparison must place current, slope, capacitance, voltage, delay, energy, area, temperature and hysteresis on the same operating point and footprint.</p>
 </blockquote>
-<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>A credible comparison must place current, slope, capacitance, voltage, delay, energy, area, temperature and hysteresis on the same operating point and footprint. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="Derivatives-noise-and-honest-extraction"><a href="#Derivatives-noise-and-honest-extraction" class="headerlink" title="Derivatives, noise and honest extraction"></a>Derivatives, noise and honest extraction</h3><p>Subthreshold swing is a derivative of logarithmic current.  Numerical differentiation amplifies current noise and smoothing can manufacture a low minimum.  Prefer local linear fits over declared windows and report both minimum and average</p>
+<h2 id="Physical-Picture">Physical Picture</h2>
+<p>A credible comparison must place current, slope, capacitance, voltage, delay, energy, area, temperature and hysteresis on the same operating point and footprint. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
+<h3 id="Derivatives-noise-and-honest-extraction">Derivatives, noise and honest extraction</h3>
+<p>Subthreshold swing is a derivative of logarithmic current.  Numerical differentiation amplifies current noise and smoothing can manufacture a low minimum.  Prefer local linear fits over declared windows and report both minimum and average</p>
 <div class="math-display">\[SS_{avg}=\frac{V_{G,2}-V_{G,1}}{\log_{10}I_2-\log_{10}I_1}.\]</div>
-
 <p>The chosen interval should be tied to an application-relevant current density, not selected after seeing the curve.</p>
-<h3 id="Common-comparison-plane"><a href="#Common-comparison-plane" class="headerlink" title="Common comparison plane"></a>Common comparison plane</h3><p>Compare at fixed \(V_{DD}\), off-current and footprint.  Report \(I_{on}\), \(I_{off}\), \(g_m\), output conductance, total gate charge \(Q_G\), hysteresis and variability.  Circuit-relevant delay and energy are</p>
+<h3 id="Common-comparison-plane">Common comparison plane</h3>
+<p>Compare at fixed \(V_{DD}\), off-current and footprint.  Report \(I_{on}\), \(I_{off}\), \(g_m\), output conductance, total gate charge \(Q_G\), hysteresis and variability.  Circuit-relevant delay and energy are</p>
 <div class="math-display">\[\tau\approx\frac{Q_G}{I_{on}},\qquad E\approx Q_GV_{DD},\]</div>
-
 <p>which expose a steep but capacitive or low-current device.</p>
-<h3 id="Statistical-and-dynamic-proof"><a href="#Statistical-and-dynamic-proof" class="headerlink" title="Statistical and dynamic proof"></a>Statistical and dynamic proof</h3><p>Forward&#x2F;reverse and multiple sweep rates reveal traps or ferroelectric kinetics.  Pulsed measurements separate steady switching from transient overshoot.  Temperature series identify thermal, tunnelling and activated leakage components.  Publish distributions across devices and cycles; the median and tail, not the champion curve, determine manufacturability.</p>
-<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[τ≈C_load V_DD/I_on, E_switch≈C_load V_DD²\]</div>
-
+<h3 id="Statistical-and-dynamic-proof">Statistical and dynamic proof</h3>
+<p>Forward/reverse and multiple sweep rates reveal traps or ferroelectric kinetics.  Pulsed measurements separate steady switching from transient overshoot.  Temperature series identify thermal, tunnelling and activated leakage components.  Publish distributions across devices and cycles; the median and tail, not the champion curve, determine manufacturability.</p>
+<h2 id="Minimal-Model">Minimal Model</h2>
+<div class="math-display">\[τ≈C_load V_DD/I_on, E_switch≈C_load V_DD²\]</div>
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>The node provides a common scorecard for MOSFET, TFET, NCFET and cold-source FET claims.</p>
+<h2 id="Device-Consequences">Device Consequences</h2>
+<p>The node provides a common scorecard for MOSFET, TFET, NCFET and cold-source FET claims.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-
-<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>Minimum point SS, simulated ballistic current or one exceptional device should not be mixed with average circuit-ready data. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Engineering. Connected concepts:</p>
+<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
+<p>Minimum point SS, simulated ballistic current or one exceptional device should not be mixed with average circuit-ready data. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
+<p><strong>Maturity:</strong> Engineering. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/emerging-steep-slope-transistors/">emerging-steep-slope-transistors</a></li>
 <li><a href="/knowledge/nodes/mosfet-physics/">mosfet-physics</a></li>
@@ -34,7 +39,8 @@
 <li><a href="/knowledge/nodes/negative-capacitance-field-effect-transistor/">negative-capacitance-field-effect-transistor</a></li>
 <li><a href="/knowledge/nodes/cold-source-field-effect-transistor/">cold-source-field-effect-transistor</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
+<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://onlinelibrary.wiley.com/doi/book/10.1002/0470068329" target="_blank" rel="noopener">Sze &amp; Ng, Physics of Semiconductor Devices, 3rd ed.</a></li>
 <li><a href="https://www.nature.com/articles/s41699-022-00352-2" target="_blank" rel="noopener">Kanungo et al., 2D materials-based nanoscale TFETs</a></li>
@@ -43,25 +49,30 @@
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**可信比较必须在相同工作点和面积尺度下同时考虑电流、斜率、电容、电压、延迟、能量、温度和滞回。</p>
 </blockquote>
-<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>可信比较必须在相同工作点和面积尺度下同时考虑电流、斜率、电容、电压、延迟、能量、温度和滞回。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="导数、噪声与诚实提取"><a href="#导数、噪声与诚实提取" class="headerlink" title="导数、噪声与诚实提取"></a>导数、噪声与诚实提取</h3><p>亚阈值摆幅是对数电流的导数，数值微分会放大电流噪声，平滑又可能人为制造极低最小值。应在预先声明的窗口内做局域线性拟合，并同时报告最小与平均摆幅</p>
+<h2 id="物理图像">物理图像</h2>
+<p>可信比较必须在相同工作点和面积尺度下同时考虑电流、斜率、电容、电压、延迟、能量、温度和滞回。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
+<h3 id="导数、噪声与诚实提取">导数、噪声与诚实提取</h3>
+<p>亚阈值摆幅是对数电流的导数，数值微分会放大电流噪声，平滑又可能人为制造极低最小值。应在预先声明的窗口内做局域线性拟合，并同时报告最小与平均摆幅</p>
 <div class="math-display">\[SS_{avg}=\frac{V_{G,2}-V_{G,1}}{\log_{10}I_2-\log_{10}I_1}.\]</div>
-
 <p>电流区间应由应用所需电流密度确定，而不是观察曲线后挑选。</p>
-<h3 id="统一比较平面"><a href="#统一比较平面" class="headerlink" title="统一比较平面"></a>统一比较平面</h3><p>应固定 \(V_{DD}\)、关态电流和占地面积，报告 \(I_{on}\)、\(I_{off}\)、\(g_m\)、输出电导、总栅电荷 \(Q_G\)、滞回与变异。电路相关延迟和能量为</p>
+<h3 id="统一比较平面">统一比较平面</h3>
+<p>应固定 \(V_{DD}\)、关态电流和占地面积，报告 \(I_{on}\)、\(I_{off}\)、\(g_m\)、输出电导、总栅电荷 \(Q_G\)、滞回与变异。电路相关延迟和能量为</p>
 <div class="math-display">\[\tau\approx\frac{Q_G}{I_{on}},\qquad E\approx Q_GV_{DD},\]</div>
-
 <p>可暴露“斜率很陡但电容过大或电流过低”的器件。</p>
-<h3 id="统计与动态证据"><a href="#统计与动态证据" class="headerlink" title="统计与动态证据"></a>统计与动态证据</h3><p>正反扫描及多扫描速率揭示陷阱或铁电动力学；脉冲测量区分稳态开关与瞬态过冲；温度序列区分热发射、隧穿和激活泄漏。应发表跨器件、跨循环分布；决定可制造性的不是冠军曲线，而是中位数和尾部。</p>
-<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[τ≈C_load V_DD/I_on, E_switch≈C_load V_DD²\]</div>
-
+<h3 id="统计与动态证据">统计与动态证据</h3>
+<p>正反扫描及多扫描速率揭示陷阱或铁电动力学；脉冲测量区分稳态开关与瞬态过冲；温度序列区分热发射、隧穿和激活泄漏。应发表跨器件、跨循环分布；决定可制造性的不是冠军曲线，而是中位数和尾部。</p>
+<h2 id="最小模型">最小模型</h2>
+<div class="math-display">\[τ≈C_load V_DD/I_on, E_switch≈C_load V_DD²\]</div>
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>该节点为 MOSFET、TFET、NCFET 和冷源 FET 提供统一评价表。</p>
+<h2 id="器件意义">器件意义</h2>
+<p>该节点为 MOSFET、TFET、NCFET 和冷源 FET 提供统一评价表。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-
-<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>不能把最小点 SS、理想弹道模拟或单个最佳器件与平均电路级数据混合比较。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Engineering。关联节点：</p>
+<h2 id="限制与判据">限制与判据</h2>
+<p>不能把最小点 SS、理想弹道模拟或单个最佳器件与平均电路级数据混合比较。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
+<p>**成熟度：**Engineering。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/emerging-steep-slope-transistors/">emerging-steep-slope-transistors</a></li>
 <li><a href="/knowledge/nodes/mosfet-physics/">mosfet-physics</a></li>
@@ -69,7 +80,8 @@
 <li><a href="/knowledge/nodes/negative-capacitance-field-effect-transistor/">negative-capacitance-field-effect-transistor</a></li>
 <li><a href="/knowledge/nodes/cold-source-field-effect-transistor/">cold-source-field-effect-transistor</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
+<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://onlinelibrary.wiley.com/doi/book/10.1002/0470068329" target="_blank" rel="noopener">Sze &amp; Ng, Physics of Semiconductor Devices, 3rd ed.</a></li>
 <li><a href="https://www.nature.com/articles/s41699-022-00352-2" target="_blank" rel="noopener">Kanungo et al., 2D materials-based nanoscale TFETs</a></li>
