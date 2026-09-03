@@ -460,132 +460,65 @@ height:50vh;
   <button type="button" data-language="zh" aria-pressed="false">中文</button>
 </nav>
 <section class="lang-panel lang-en" lang="en">
-<h1>From an Electron Sea to Quasiparticles: Landau Fermi-Liquid Theory (Part II)</h1>
-<p>A free electron gas is simple: electrons fill momentum states up to the Fermi energy, and at low temperature only states near the Fermi surface can be excited. Real electrons, however, carry charge and interact through the Coulomb force. If every electron continually pushes on every other electron, why does the free-electron picture not collapse completely?</p>
+<h1 id="From-an-Electron-Sea-to-Quasiparticles-Landau-Fermi-Liquid-Theory-Part-II"><a href="#From-an-Electron-Sea-to-Quasiparticles-Landau-Fermi-Liquid-Theory-Part-II" class="headerlink" title="From an Electron Sea to Quasiparticles: Landau Fermi-Liquid Theory (Part II)"></a>From an Electron Sea to Quasiparticles: Landau Fermi-Liquid Theory (Part II)</h1><p>A free electron gas is simple: electrons fill momentum states up to the Fermi energy, and at low temperature only states near the Fermi surface can be excited. Real electrons, however, carry charge and interact through the Coulomb force. If every electron continually pushes on every other electron, why does the free-electron picture not collapse completely?</p>
 <p>Landau’s answer is remarkable: <strong>a bare electron is no longer a low-energy eigenstate, but together with the polarization cloud it creates, it can become a long-lived quasiparticle. The interactions have not disappeared; they have been recoded into renormalized quasiparticle properties and residual interactions between quasiparticles.</strong></p>
 <!--more-->
+
 <p>This is Part II of the series. For order parameters, broken symmetry and the logic of effective theory, begin with <a href="/2026/09/01/Landau-Theory-From-Symmetry-to-Phase-Transitions/">Part I</a>.</p>
-<h2 id="1-Why-is-the-Fermi-surface-so-important">1. Why is the Fermi surface so important?</h2>
-<p>At zero temperature, a free Fermi gas fills its single-particle states according to</p>
-<p>$$<br>
-n_{\mathbf p\sigma}=\Theta(p_F-p).<br>
-$$</p>
+<h2 id="1-Why-is-the-Fermi-surface-so-important"><a href="#1-Why-is-the-Fermi-surface-so-important" class="headerlink" title="1. Why is the Fermi surface so important?"></a>1. Why is the Fermi surface so important?</h2><p>At zero temperature, a free Fermi gas fills its single-particle states according to</p>
+<p>$$<br>n_{\mathbf p\sigma}&#x3D;\Theta(p_F-p).<br>$$</p>
 <p>The Pauli principle blocks almost every nearby final state for an electron deep inside the Fermi sea. Only a thin shell of width set by $k_BT$ or the excitation energy $\xi$ remains active. As temperature falls, the available scattering phase space shrinks rapidly. Interactions remain present, but they cannot necessarily make an excitation near the Fermi surface decay quickly. This kinematic protection is the first reason a Fermi liquid can exist.</p>
-<h2 id="2-Adiabatic-continuity-from-a-Fermi-gas-to-an-interacting-metal">2. Adiabatic continuity: from a Fermi gas to an interacting metal</h2>
-<p>Landau imagined starting from a free Fermi gas and slowly turning on interactions. If no phase transition occurs, each free-particle state evolves continuously into an interacting quasiparticle state with corresponding momentum, spin and charge. This is <strong>adiabatic continuity</strong>.</p>
+<h2 id="2-Adiabatic-continuity-from-a-Fermi-gas-to-an-interacting-metal"><a href="#2-Adiabatic-continuity-from-a-Fermi-gas-to-an-interacting-metal" class="headerlink" title="2. Adiabatic continuity: from a Fermi gas to an interacting metal"></a>2. Adiabatic continuity: from a Fermi gas to an interacting metal</h2><p>Landau imagined starting from a free Fermi gas and slowly turning on interactions. If no phase transition occurs, each free-particle state evolves continuously into an interacting quasiparticle state with corresponding momentum, spin and charge. This is <strong>adiabatic continuity</strong>.</p>
 <p>It does not require weak interactions. It says that the organization of low-energy states has not changed qualitatively. A quasiparticle is an electron dressed by the response of the many-body environment, with a renormalized mass $m^<em>$, velocity $v_F^</em>$ and lifetime $\tau$.</p>
 <p>Near the Fermi surface, the coherent part of the one-electron Green function has the pole form</p>
-<p>$$<br>
-G(\mathbf k,\omega)\simeq<br>
-\frac{Z}{\omega-v_F^*(k-k_F)+i/(2\tau)}+G_{\mathrm{inc}}.<br>
-$$</p>
+<p>$$<br>G(\mathbf k,\omega)\simeq<br>\frac{Z}{\omega-v_F^*(k-k_F)+i&#x2F;(2\tau)}+G_{\mathrm{inc}}.<br>$$</p>
 <p>$Z$ is the quasiparticle residue and $G_{\mathrm{inc}}$ the incoherent background. A small $Z$ means that adding an electron has a small overlap with a single coherent quasiparticle, but the quasiparticle remains meaningful as long as the pole is sharp.</p>
 <p>In an ordinary three-dimensional Fermi liquid,</p>
-<p>$$<br>
-\frac{\hbar}{\tau(\xi,T)}\propto\xi^2+(\pi k_BT)^2.<br>
-$$</p>
-<p>The linewidth therefore vanishes quadratically while the excitation energy vanishes linearly. Sufficiently close to the Fermi surface, $\hbar/\tau\ll|\xi|$. Two dimensions often add logarithmic corrections, but quasiparticles can still become well defined at low energy.</p>
-<h2 id="3-The-Landau-energy-functional-where-did-the-interaction-go">3. The Landau energy functional: where did the interaction go?</h2>
-<p>Near the ground state, Landau writes the energy as a functional of changes in the quasiparticle distribution:</p>
-<p>$$<br>
-\delta E=<br>
-\sum_{\mathbf p\sigma}\varepsilon_{\mathbf p}^{*}\delta n_{\mathbf p\sigma}<br>
-+\frac{1}{2V}<br>
-\sum_{\mathbf p\sigma,\mathbf p’\sigma’}<br>
-f_{\mathbf p\sigma,\mathbf p’\sigma’}<br>
-\delta n_{\mathbf p\sigma}\delta n_{\mathbf p’\sigma’}+\cdots.<br>
-$$</p>
+<p>$$<br>\frac{\hbar}{\tau(\xi,T)}\propto\xi^2+(\pi k_BT)^2.<br>$$</p>
+<p>The linewidth therefore vanishes quadratically while the excitation energy vanishes linearly. Sufficiently close to the Fermi surface, $\hbar&#x2F;\tau\ll|\xi|$. Two dimensions often add logarithmic corrections, but quasiparticles can still become well defined at low energy.</p>
+<h2 id="3-The-Landau-energy-functional-where-did-the-interaction-go"><a href="#3-The-Landau-energy-functional-where-did-the-interaction-go" class="headerlink" title="3. The Landau energy functional: where did the interaction go?"></a>3. The Landau energy functional: where did the interaction go?</h2><p>Near the ground state, Landau writes the energy as a functional of changes in the quasiparticle distribution:</p>
+<p>$$<br>\delta E&#x3D;<br>\sum_{\mathbf p\sigma}\varepsilon_{\mathbf p}^{*}\delta n_{\mathbf p\sigma}<br>+\frac{1}{2V}<br>\sum_{\mathbf p\sigma,\mathbf p’\sigma’}<br>f_{\mathbf p\sigma,\mathbf p’\sigma’}<br>\delta n_{\mathbf p\sigma}\delta n_{\mathbf p’\sigma’}+\cdots.<br>$$</p>
 <p>The first term describes individual quasiparticles. The interaction function $f$ in the second term describes how a change in one part of the Fermi surface shifts the energy elsewhere. Indeed,</p>
-<p>$$<br>
-\varepsilon_{\mathbf p\sigma}[n]<br>
-=\frac{\delta E}{\delta n_{\mathbf p\sigma}}.<br>
-$$</p>
+<p>$$<br>\varepsilon_{\mathbf p\sigma}[n]<br>&#x3D;\frac{\delta E}{\delta n_{\mathbf p\sigma}}.<br>$$</p>
 <p>Quasiparticles are therefore not simply independent heavy electrons. Landau’s simplification is to replace the history of microscopic collisions by an interaction function defined near the Fermi surface.</p>
-<h2 id="4-Landau-parameters-resolving-interactions-into-measurable-channels">4. Landau parameters: resolving interactions into measurable channels</h2>
-<p>For an isotropic, spin-rotation-invariant system, the interaction depends only on the angle $\theta$ between two momenta on the Fermi surface. Its spin-symmetric and spin-antisymmetric parts can be expanded as</p>
-<p>$$<br>
-f^{s,a}(\cos\theta)=<br>
-\sum_{\ell=0}^{\infty}f_\ell^{s,a}P_\ell(\cos\theta).<br>
-$$</p>
+<h2 id="4-Landau-parameters-resolving-interactions-into-measurable-channels"><a href="#4-Landau-parameters-resolving-interactions-into-measurable-channels" class="headerlink" title="4. Landau parameters: resolving interactions into measurable channels"></a>4. Landau parameters: resolving interactions into measurable channels</h2><p>For an isotropic, spin-rotation-invariant system, the interaction depends only on the angle $\theta$ between two momenta on the Fermi surface. Its spin-symmetric and spin-antisymmetric parts can be expanded as</p>
+<p>$$<br>f^{s,a}(\cos\theta)&#x3D;<br>\sum_{\ell&#x3D;0}^{\infty}f_\ell^{s,a}P_\ell(\cos\theta).<br>$$</p>
 <p>Multiplying by the quasiparticle density of states gives dimensionless parameters</p>
-<p>$$<br>
-F_\ell^{s,a}=N^*(0)f_\ell^{s,a}.<br>
-$$</p>
-<p>$\ell=0$ describes isotropic density or spin polarization, $\ell=1$ is related to flow and effective mass, $\ell=2$ describes a quadrupolar deformation associated with electronic nematicity, and higher $\ell$ values resolve progressively finer angular distortions. The symmetric and antisymmetric sectors control density and spin responses, respectively.</p>
-<h2 id="5-From-parameters-to-experiments-heat-capacity-compressibility-and-susceptibility">5. From parameters to experiments: heat capacity, compressibility and susceptibility</h2>
-<p>The low-temperature electronic heat capacity remains linear:</p>
-<p>$$<br>
-C_V=\gamma T,<br>
-\qquad<br>
-\gamma=\frac{\pi^2}{3}k_B^2N^*(0).<br>
-$$</p>
-<p>For a three-dimensional parabolic band, $N^<em>(0)\propto m^</em>$. The Sommerfeld coefficient therefore measures mass enhancement. This is why heavy-fermion compounds, with $m^*/m$ reaching tens or hundreds, have exceptionally large low-temperature heat capacities.</p>
+<p>$$<br>F_\ell^{s,a}&#x3D;N^*(0)f_\ell^{s,a}.<br>$$</p>
+<p>$\ell&#x3D;0$ describes isotropic density or spin polarization, $\ell&#x3D;1$ is related to flow and effective mass, $\ell&#x3D;2$ describes a quadrupolar deformation associated with electronic nematicity, and higher $\ell$ values resolve progressively finer angular distortions. The symmetric and antisymmetric sectors control density and spin responses, respectively.</p>
+<h2 id="5-From-parameters-to-experiments-heat-capacity-compressibility-and-susceptibility"><a href="#5-From-parameters-to-experiments-heat-capacity-compressibility-and-susceptibility" class="headerlink" title="5. From parameters to experiments: heat capacity, compressibility and susceptibility"></a>5. From parameters to experiments: heat capacity, compressibility and susceptibility</h2><p>The low-temperature electronic heat capacity remains linear:</p>
+<p>$$<br>C_V&#x3D;\gamma T,<br>\qquad<br>\gamma&#x3D;\frac{\pi^2}{3}k_B^2N^*(0).<br>$$</p>
+<p>For a three-dimensional parabolic band, $N^<em>(0)\propto m^</em>$. The Sommerfeld coefficient therefore measures mass enhancement. This is why heavy-fermion compounds, with $m^*&#x2F;m$ reaching tens or hundreds, have exceptionally large low-temperature heat capacities.</p>
 <p>The density and spin responses contain vertex corrections:</p>
-<p>$$<br>
-\kappa=\frac{N^<em>(0)}{n^2(1+F_0^s)},<br>
-\qquad<br>
-\chi_s=\frac{\mu_B^2N^</em>(0)}{1+F_0^a},<br>
-$$</p>
+<p>$$<br>\kappa&#x3D;\frac{N^<em>(0)}{n^2(1+F_0^s)},<br>\qquad<br>\chi_s&#x3D;\frac{\mu_B^2N^</em>(0)}{1+F_0^a},<br>$$</p>
 <p>up to conventions and material-specific factors such as an effective $g$ factor. Heat capacity measures the enhanced density of states, whereas compressibility and susceptibility separately expose the density and spin interaction channels.</p>
 <p>For a Galilean-invariant three-dimensional continuum,</p>
-<p>$$<br>
-\frac{m^*}{m}=1+\frac{F_1^s}{3}.<br>
-$$</p>
+<p>$$<br>\frac{m^*}{m}&#x3D;1+\frac{F_1^s}{3}.<br>$$</p>
 <p>A crystal is not Galilean invariant, so this simple identity cannot be transferred unchanged to every solid. Band structure and the many-body self-energy both contribute to the measured effective mass.</p>
-<h2 id="6-Collective-motion-sound-without-local-collisions">6. Collective motion: sound without local collisions</h2>
-<p>Ordinary first sound relies on collisions to establish local equilibrium. At very low temperature, collisions may be too rare for this mechanism, yet a self-consistent deformation of the Fermi surface can still propagate through the mean interaction field. This collisionless mode is <strong>zero sound</strong>.</p>
-<p>Keeping only the three-dimensional density parameter $F_0^s$ and defining $s=\omega/(qv_F)&gt;1$, its velocity obeys</p>
-<p>$$<br>
-1=\frac{F_0^s}{2}<br>
-\left[s\ln\left(\frac{s+1}{s-1}\right)-2\right].<br>
-$$</p>
+<h2 id="6-Collective-motion-sound-without-local-collisions"><a href="#6-Collective-motion-sound-without-local-collisions" class="headerlink" title="6. Collective motion: sound without local collisions"></a>6. Collective motion: sound without local collisions</h2><p>Ordinary first sound relies on collisions to establish local equilibrium. At very low temperature, collisions may be too rare for this mechanism, yet a self-consistent deformation of the Fermi surface can still propagate through the mean interaction field. This collisionless mode is <strong>zero sound</strong>.</p>
+<p>Keeping only the three-dimensional density parameter $F_0^s$ and defining $s&#x3D;\omega&#x2F;(qv_F)&gt;1$, its velocity obeys</p>
+<p>$$<br>1&#x3D;\frac{F_0^s}{2}<br>\left[s\ln\left(\frac{s+1}{s-1}\right)-2\right].<br>$$</p>
 <p>$s&gt;1$ places the mode outside the particle–hole continuum and protects it from Landau damping. First and zero sound are two dynamical limits of the same liquid:</p>
-<p>$$<br>
-\omega\tau\ll1\quad\text{first sound},<br>
-\qquad<br>
-\omega\tau\gg1\quad\text{zero sound}.<br>
-$$</p>
+<p>$$<br>\omega\tau\ll1\quad\text{first sound},<br>\qquad<br>\omega\tau\gg1\quad\text{zero sound}.<br>$$</p>
 <p>Liquid $^3\mathrm{He}$ is the classic laboratory for these collective modes.</p>
-<h2 id="7-Stability-the-Fermi-surface-can-undergo-a-deformation-transition">7. Stability: the Fermi surface can undergo a deformation transition</h2>
-<p>Not every set of Landau parameters describes a stable liquid. In a three-dimensional isotropic system, the Pomeranchuk conditions are</p>
-<p>$$<br>
-F_\ell^{s,a}&gt;-(2\ell+1).<br>
-$$</p>
-<p>Crossing a boundary makes a particular Fermi-surface deformation energetically favourable. $F_0^s\rightarrow-1$ signals a density instability, $F_0^a\rightarrow-1$ a ferromagnetic instability, and an $\ell=2$ instability can generate an electronic nematic phase that lowers rotational symmetry.</p>
+<h2 id="7-Stability-the-Fermi-surface-can-undergo-a-deformation-transition"><a href="#7-Stability-the-Fermi-surface-can-undergo-a-deformation-transition" class="headerlink" title="7. Stability: the Fermi surface can undergo a deformation transition"></a>7. Stability: the Fermi surface can undergo a deformation transition</h2><p>Not every set of Landau parameters describes a stable liquid. In a three-dimensional isotropic system, the Pomeranchuk conditions are</p>
+<p>$$<br>F_\ell^{s,a}&gt;-(2\ell+1).<br>$$</p>
+<p>Crossing a boundary makes a particular Fermi-surface deformation energetically favourable. $F_0^s\rightarrow-1$ signals a density instability, $F_0^a\rightarrow-1$ a ferromagnetic instability, and an $\ell&#x3D;2$ instability can generate an electronic nematic phase that lowers rotational symmetry.</p>
 <p>This is where the two parts of the series meet. Fermi-liquid theory supplies the normal state and its low-energy parameters; when one channel becomes unstable, a new order parameter appears and the theory of phase transitions describes the broken-symmetry state. BCS superconductivity can likewise be viewed as a Cooper-channel instability of the Fermi surface.</p>
-<h2 id="8-The-T-2-resistivity—and-an-important-caveat">8. The $T^2$ resistivity—and an important caveat</h2>
-<p>The restricted scattering phase space often produces</p>
-<p>$$<br>
-\rho(T)=\rho_0+AT^2.<br>
-$$</p>
+<h2 id="8-The-T-2-resistivity—and-an-important-caveat"><a href="#8-The-T-2-resistivity—and-an-important-caveat" class="headerlink" title="8. The $T^2$ resistivity—and an important caveat"></a>8. The $T^2$ resistivity—and an important caveat</h2><p>The restricted scattering phase space often produces</p>
+<p>$$<br>\rho(T)&#x3D;\rho_0+AT^2.<br>$$</p>
 <p>But electron–electron collisions conserve total momentum in a perfectly translation-invariant continuum and cannot by themselves produce a finite dc resistivity. A real crystal also needs momentum relaxation through Umklapp processes, impurities, the lattice or multiband mechanisms.</p>
 <p>A $T^2$ law is therefore strong evidence, not sufficient proof, of a Fermi liquid. A convincing identification combines linear heat capacity, a renormalized Pauli susceptibility, sharp low-energy photoemission peaks, closed Fermi surfaces and effective masses from quantum oscillations, an $\omega^2+T^2$ scattering rate, and agreement of several responses with one set of Landau parameters.</p>
-<h2 id="9-Does-interaction-change-the-Fermi-surface-volume">9. Does interaction change the Fermi-surface volume?</h2>
-<p>Under the usual assumptions of particle-number conservation, translation symmetry and no relevant topological reconstruction, Luttinger’s theorem relates the interacting Fermi volume to the particle density:</p>
-<p>$$<br>
-\frac{2V_F}{(2\pi)^d}=n<br>
-$$</p>
+<h2 id="9-Does-interaction-change-the-Fermi-surface-volume"><a href="#9-Does-interaction-change-the-Fermi-surface-volume" class="headerlink" title="9. Does interaction change the Fermi-surface volume?"></a>9. Does interaction change the Fermi-surface volume?</h2><p>Under the usual assumptions of particle-number conservation, translation symmetry and no relevant topological reconstruction, Luttinger’s theorem relates the interacting Fermi volume to the particle density:</p>
+<p>$$<br>\frac{2V_F}{(2\pi)^d}&#x3D;n<br>$$</p>
 <p>for the simple spin-degenerate case. Interactions may strongly change $m^*$, $Z$, velocity and lifetime, but they do not arbitrarily change this density count. The topology and volume of the Fermi surface remain constrained while its local dynamics are heavily renormalized.</p>
-<h2 id="10-When-does-Fermi-liquid-theory-fail">10. When does Fermi-liquid theory fail?</h2>
-<p>Strong interaction alone is not the criterion: liquid $^3\mathrm{He}$ and many heavy-fermion compounds are strongly interacting Fermi liquids. The real question is whether low energy still contains quasiparticles satisfying $\hbar/\tau\ll|\xi|$, and whether the ground state is adiabatically connected to a Fermi gas.</p>
-<p>Important routes to failure include one-dimensional Luttinger liquids with spin–charge separation; the loss of quasiparticle weight near a Mott insulator; quantum-critical metals scattered by gapless fluctuations; Fermi surfaces coupled to emergent gauge fields; and strange metals whose scattering rate is of order $k_BT/\hbar$ and whose resistivity is often nearly linear in temperature.</p>
+<h2 id="10-When-does-Fermi-liquid-theory-fail"><a href="#10-When-does-Fermi-liquid-theory-fail" class="headerlink" title="10. When does Fermi-liquid theory fail?"></a>10. When does Fermi-liquid theory fail?</h2><p>Strong interaction alone is not the criterion: liquid $^3\mathrm{He}$ and many heavy-fermion compounds are strongly interacting Fermi liquids. The real question is whether low energy still contains quasiparticles satisfying $\hbar&#x2F;\tau\ll|\xi|$, and whether the ground state is adiabatically connected to a Fermi gas.</p>
+<p>Important routes to failure include one-dimensional Luttinger liquids with spin–charge separation; the loss of quasiparticle weight near a Mott insulator; quantum-critical metals scattered by gapless fluctuations; Fermi surfaces coupled to emergent gauge fields; and strange metals whose scattering rate is of order $k_BT&#x2F;\hbar$ and whose resistivity is often nearly linear in temperature.</p>
 <p>“Non-Fermi liquid” is not one theory. It is a family name for many distinct ways in which the Landau quasiparticle paradigm can fail.</p>
-<h2 id="11-The-larger-picture-what-did-Landau-leave-us">11. The larger picture: what did Landau leave us?</h2>
-<p>The two articles can be summarized as a sequence:</p>
-<p>$$<br>
-\text{complex microscopic system}<br>
-\longrightarrow<br>
-\text{low-energy degrees of freedom}<br>
-\longrightarrow<br>
-\text{effective theory from symmetry and conservation}<br>
-\longrightarrow<br>
-\text{observable responses}<br>
-\longrightarrow<br>
-\text{boundary of validity}.<br>
-$$</p>
+<h2 id="11-The-larger-picture-what-did-Landau-leave-us"><a href="#11-The-larger-picture-what-did-Landau-leave-us" class="headerlink" title="11. The larger picture: what did Landau leave us?"></a>11. The larger picture: what did Landau leave us?</h2><p>The two articles can be summarized as a sequence:</p>
+<p>$$<br>\text{complex microscopic system}<br>\longrightarrow<br>\text{low-energy degrees of freedom}<br>\longrightarrow<br>\text{effective theory from symmetry and conservation}<br>\longrightarrow<br>\text{observable responses}<br>\longrightarrow<br>\text{boundary of validity}.<br>$$</p>
 <p>For phase transitions, the low-energy degree of freedom is the order parameter. For a Fermi liquid, it is the quasiparticle distribution near the Fermi surface. Landau’s most durable legacy is not a single equation but a method for compressing complexity: <strong>first ask which details survive at low energy, and only then decide what must be calculated.</strong></p>
-<h2 id="Further-reading">Further reading</h2>
-<ol>
+<h2 id="Further-reading"><a href="#Further-reading" class="headerlink" title="Further reading"></a>Further reading</h2><ol>
 <li>L. D. Landau, “The Theory of a Fermi Liquid,” <em>Soviet Physics JETP</em> (1957).</li>
 <li>L. D. Landau, “Oscillations in a Fermi Liquid,” <em>Soviet Physics JETP</em> (1957).</li>
 <li>G. Baym and C. Pethick, <em>Landau Fermi-Liquid Theory</em>.</li>
@@ -594,125 +527,73 @@ $$</p>
 </ol>
 
 </section>
+
 <!-- bilingual:zh -->
 <section class="lang-panel lang-zh" lang="zh-CN" hidden>
-<div class="zh-heading zh-h1" role="heading" aria-level="1">从电子海到准粒子：朗道费米液体理论（下）</div>
-<p>自由电子气很容易理解：电子逐个填满动量态，直到费米能 $E_F$；低温时只有费米面附近的电子能够被激发。但真实金属中的电子带电，彼此之间存在库仑相互作用。若每个电子都持续推挤所有其他电子，自由电子图像为什么没有彻底崩溃？</p>
+<div class="zh-heading zh-h1" role="heading" aria-level="1" id="从电子海到准粒子：朗道费米液体理论（下）"><a href="#从电子海到准粒子：朗道费米液体理论（下）" class="headerlink" title="从电子海到准粒子：朗道费米液体理论（下）"></a>从电子海到准粒子：朗道费米液体理论（下）</div><p>自由电子气很容易理解：电子逐个填满动量态，直到费米能 $E_F$；低温时只有费米面附近的电子能够被激发。但真实金属中的电子带电，彼此之间存在库仑相互作用。若每个电子都持续推挤所有其他电子，自由电子图像为什么没有彻底崩溃？</p>
 <p>朗道费米液体理论给出了一个惊人的回答：<strong>裸电子虽然不再是低能本征激发，但它可以连同周围介质的极化云一起，变成一个长寿命准粒子。相互作用没有消失，而是被重新编码进准粒子的参数及其残余相互作用。</strong></p>
 <!--more-->
+
 <p>本文是两期系列的下篇。关于序参量、对称性破缺与有效理论的出发点，见 <a href="/2026/09/01/Landau-Theory-From-Symmetry-to-Phase-Transitions/" title="从对称性到相变：朗道如何教我们忽略细节（上）">从对称性到相变：朗道如何教我们忽略细节（上）</a>。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="1-费米面为什么如此重要？">1. 费米面为什么如此重要？</div>
-<p>在零温自由费米气中，单粒子态按能量由低到高填充：</p>
-<p>$$<br>
-n_{\mathbf p\sigma}=\Theta(p_F-p).<br>
-$$</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="1-费米面为什么如此重要？"><a href="#1-费米面为什么如此重要？" class="headerlink" title="1. 费米面为什么如此重要？"></a>1. 费米面为什么如此重要？</div><p>在零温自由费米气中，单粒子态按能量由低到高填充：</p>
+<p>$$<br>n_{\mathbf p\sigma}&#x3D;\Theta(p_F-p).<br>$$</p>
 <p>泡利不相容原理使费米球内部的态全部占满。一个深埋在费米海中的电子几乎无法改变状态，因为附近的末态已经被占据；只有厚度约为 $k_BT$ 或激发能 $\xi$ 的费米面薄壳参与低能物理。</p>
 <p>这带来一个极强的运动学约束：温度越低，可用的散射相空间越小。相互作用当然存在，却未必能让费米面附近的激发迅速衰变。这是费米液体能够成立的第一层原因。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="2-绝热连续性：从自由费米气到相互作用金属">2. 绝热连续性：从自由费米气到相互作用金属</div>
-<p>朗道设想，从自由费米气出发缓慢打开相互作用。如果过程中没有发生相变，每个自由粒子态可以一一演化为相互作用体系中的准粒子态，量子数——动量、自旋和电荷——保持对应。这称为<strong>绝热连续性</strong>。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="2-绝热连续性：从自由费米气到相互作用金属"><a href="#2-绝热连续性：从自由费米气到相互作用金属" class="headerlink" title="2. 绝热连续性：从自由费米气到相互作用金属"></a>2. 绝热连续性：从自由费米气到相互作用金属</div><p>朗道设想，从自由费米气出发缓慢打开相互作用。如果过程中没有发生相变，每个自由粒子态可以一一演化为相互作用体系中的准粒子态，量子数——动量、自旋和电荷——保持对应。这称为<strong>绝热连续性</strong>。</p>
 <p>它不表示相互作用很弱。它表示低能激发的组织方式没有发生质变。准粒子不是孤立电子，而是“电子加上周围多体环境的响应”。它具有重整化后的有效质量 $m^<em>$、速度 $v_F^</em>$ 和有限寿命 $\tau$。</p>
 <p>从单粒子格林函数看，费米面附近的相干部分具有极点形式：</p>
-<p>$$<br>
-G(\mathbf k,\omega)\simeq<br>
-\frac{Z}{\omega-v_F^*(k-k_F)+i/(2\tau)}+G_{\mathrm{inc}}.<br>
-$$</p>
+<p>$$<br>G(\mathbf k,\omega)\simeq<br>\frac{Z}{\omega-v_F^*(k-k_F)+i&#x2F;(2\tau)}+G_{\mathrm{inc}}.<br>$$</p>
 <p>$Z$ 是准粒子权重，满足 $0&lt;Z&lt;1$；$G_{\mathrm{inc}}$ 是非相干背景。$Z$ 变小意味着加入一个电子时，产生单一长寿命准粒子的概率下降，但只要极点仍清晰，准粒子概念就有意义。</p>
 <p>关键不在于 $\tau$ 是否无限长，而在于激发越靠近费米面时，寿命是否比自身振荡时间增长得更快。在普通三维费米液体中，低能衰减率满足</p>
-<p>$$<br>
-\frac{\hbar}{\tau(\xi,T)}\propto<br>
-\xi^2+(\pi k_BT)^2,<br>
-$$</p>
-<p>其中 $\xi=\varepsilon-\mu$。因此当 $\xi,T\rightarrow0$ 时，线宽以二次方式收窄，而激发能只以一次方式减小，最终有 $\hbar/\tau\ll|\xi|$。二维中常出现对数修正，但准粒子在足够低能处仍可良好定义。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="3-朗道能量泛函：相互作用被放到了哪里？">3. 朗道能量泛函：相互作用被放到了哪里？</div>
-<p>自由费米气的能量由各占据态能量相加得到。费米液体则把基态附近的能量变化写成准粒子分布偏离 $\delta n_{\mathbf p\sigma}$ 的泛函：</p>
-<p>$$<br>
-\delta E=<br>
-\sum_{\mathbf p\sigma}\varepsilon_{\mathbf p}^{*},<br>
-\delta n_{\mathbf p\sigma}<br>
-+\frac{1}{2V}<br>
-\sum_{\mathbf p\sigma,\mathbf p’\sigma’}<br>
-f_{\mathbf p\sigma,\mathbf p’\sigma’}<br>
-\delta n_{\mathbf p\sigma}\delta n_{\mathbf p’\sigma’}+cdots.<br>
-$$</p>
+<p>$$<br>\frac{\hbar}{\tau(\xi,T)}\propto<br>\xi^2+(\pi k_BT)^2,<br>$$</p>
+<p>其中 $\xi&#x3D;\varepsilon-\mu$。因此当 $\xi,T\rightarrow0$ 时，线宽以二次方式收窄，而激发能只以一次方式减小，最终有 $\hbar&#x2F;\tau\ll|\xi|$。二维中常出现对数修正，但准粒子在足够低能处仍可良好定义。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="3-朗道能量泛函：相互作用被放到了哪里？"><a href="#3-朗道能量泛函：相互作用被放到了哪里？" class="headerlink" title="3. 朗道能量泛函：相互作用被放到了哪里？"></a>3. 朗道能量泛函：相互作用被放到了哪里？</div><p>自由费米气的能量由各占据态能量相加得到。费米液体则把基态附近的能量变化写成准粒子分布偏离 $\delta n_{\mathbf p\sigma}$ 的泛函：</p>
+<p>$$<br>\delta E&#x3D;<br>\sum_{\mathbf p\sigma}\varepsilon_{\mathbf p}^{*},<br>\delta n_{\mathbf p\sigma}<br>+\frac{1}{2V}<br>\sum_{\mathbf p\sigma,\mathbf p’\sigma’}<br>f_{\mathbf p\sigma,\mathbf p’\sigma’}<br>\delta n_{\mathbf p\sigma}\delta n_{\mathbf p’\sigma’}+cdots.<br>$$</p>
 <p>第一项描述单个准粒子的能量；第二项中的 $f$ 描述两个准粒子分布变化之间的残余相互作用。这里有一个容易忽略的微妙之处：准粒子能量本身依赖整个分布，</p>
-<p>$$<br>
-\varepsilon_{\mathbf p\sigma}[n]<br>
-=\frac{\delta E}{\delta n_{\mathbf p\sigma}}.<br>
-$$</p>
+<p>$$<br>\varepsilon_{\mathbf p\sigma}[n]<br>&#x3D;\frac{\delta E}{\delta n_{\mathbf p\sigma}}.<br>$$</p>
 <p>所以准粒子不是彼此完全独立的“重电子”。改变费米面某处的占据，会改变其他方向上准粒子的能量。朗道理论的高明之处，是不去计算每一次微观碰撞，而是用一个靠近费米面的相互作用函数 $f$ 概括它们的低能后果。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="4-朗道参数：把复杂相互作用分解成可测通道">4. 朗道参数：把复杂相互作用分解成可测通道</div>
-<p>对各向同性且自旋旋转对称的体系，费米面上的相互作用只依赖两个动量方向的夹角 $\theta$，并可分成自旋对称与自旋反对称通道：</p>
-<p>$$<br>
-f^{s,a}(\cos\theta)=<br>
-\sum_{\ell=0}^{\infty} f_{\ell}^{s,a}P_\ell(\cos\theta).<br>
-$$</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="4-朗道参数：把复杂相互作用分解成可测通道"><a href="#4-朗道参数：把复杂相互作用分解成可测通道" class="headerlink" title="4. 朗道参数：把复杂相互作用分解成可测通道"></a>4. 朗道参数：把复杂相互作用分解成可测通道</div><p>对各向同性且自旋旋转对称的体系，费米面上的相互作用只依赖两个动量方向的夹角 $\theta$，并可分成自旋对称与自旋反对称通道：</p>
+<p>$$<br>f^{s,a}(\cos\theta)&#x3D;<br>\sum_{\ell&#x3D;0}^{\infty} f_{\ell}^{s,a}P_\ell(\cos\theta).<br>$$</p>
 <p>再乘以费米能处的准粒子态密度 $N^*(0)$，定义无量纲朗道参数</p>
-<p>$$<br>
-F_\ell^{s,a}=N^*(0)f_\ell^{s,a}.<br>
-$$</p>
+<p>$$<br>F_\ell^{s,a}&#x3D;N^*(0)f_\ell^{s,a}.<br>$$</p>
 <p>不同 $\ell$ 对应费米面的不同角向形变：</p>
 <ul>
-<li>$\ell=0$ 是各向同性的膨胀或自旋极化；</li>
-<li>$\ell=1$ 与整体流动和有效质量有关；</li>
-<li>$\ell=2$ 对应四极形变，常与电子向列序联系起来；</li>
+<li>$\ell&#x3D;0$ 是各向同性的膨胀或自旋极化；</li>
+<li>$\ell&#x3D;1$ 与整体流动和有效质量有关；</li>
+<li>$\ell&#x3D;2$ 对应四极形变，常与电子向列序联系起来；</li>
 <li>更高 $\ell$ 描述更细的角向畸变。</li>
 </ul>
-<p>“对称”与“反对称”指交换两种自旋时密度变化是同向还是反向，分别控制电荷/密度响应和自旋响应。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="5-从参数到实验：比热、压缩率与磁化率">5. 从参数到实验：比热、压缩率与磁化率</div>
-<p>费米液体理论的力量在于，它把一组多体响应归结为少数朗道参数。</p>
+<p>“对称”与“反对称”指交换两种自旋时密度变化是同向还是反向，分别控制电荷&#x2F;密度响应和自旋响应。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="5-从参数到实验：比热、压缩率与磁化率"><a href="#5-从参数到实验：比热、压缩率与磁化率" class="headerlink" title="5. 从参数到实验：比热、压缩率与磁化率"></a>5. 从参数到实验：比热、压缩率与磁化率</div><p>费米液体理论的力量在于，它把一组多体响应归结为少数朗道参数。</p>
 <p>低温电子比热保持线性：</p>
-<p>$$<br>
-C_V=\gamma T,<br>
-\qquad<br>
-\gamma=\frac{\pi^2}{3}k_B^2N^*(0).<br>
-$$</p>
-<p>在三维抛物能带近似下，$N^<em>(0)\propto m^</em>$，所以比热系数直接测量有效质量增强。重费米子材料中的 $m^*/m$ 可达数十乃至数百，正因如此，它们的低温比热远大于普通金属。</p>
+<p>$$<br>C_V&#x3D;\gamma T,<br>\qquad<br>\gamma&#x3D;\frac{\pi^2}{3}k_B^2N^*(0).<br>$$</p>
+<p>在三维抛物能带近似下，$N^<em>(0)\propto m^</em>$，所以比热系数直接测量有效质量增强。重费米子材料中的 $m^*&#x2F;m$ 可达数十乃至数百，正因如此，它们的低温比热远大于普通金属。</p>
 <p>密度响应还受到 $F_0^s$ 的顶角修正。忽略符号约定差异，可写成</p>
-<p>$$<br>
-\kappa=\frac{N^*(0)}{n^2(1+F_0^s)}.<br>
-$$</p>
+<p>$$<br>\kappa&#x3D;\frac{N^*(0)}{n^2(1+F_0^s)}.<br>$$</p>
 <p>同理，自旋磁化率为</p>
-<p>$$<br>
-\chi_s=\frac{\mu_B^2N^*(0)}{1+F_0^a},<br>
-$$</p>
+<p>$$<br>\chi_s&#x3D;\frac{\mu_B^2N^*(0)}{1+F_0^a},<br>$$</p>
 <p>其中实际材料还需计入有效 $g$ 因子等修正。于是比热测到的是态密度增强，而压缩率和磁化率进一步辨认准粒子之间的密度通道与自旋通道相互作用。</p>
 <p>对具有伽利略不变性的三维连续体系，还有</p>
-<p>$$<br>
-\frac{m^*}{m}=1+\frac{F_1^s}{3}.<br>
-$$</p>
+<p>$$<br>\frac{m^*}{m}&#x3D;1+\frac{F_1^s}{3}.<br>$$</p>
 <p>晶格会破坏伽利略不变性，因此这条简单关系不能不加修改地搬到所有固体。<strong>有效质量来自能带与多体自能的共同重整化，朗道参数也依赖所采用的归一化约定。</strong></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="6-集体激发：没有频繁碰撞，也能传播声音">6. 集体激发：没有频繁碰撞，也能传播声音</div>
-<p>普通声波依赖局域碰撞建立热平衡，称为第一声。在极低温、碰撞时间很长的费米液体中，准粒子来不及局域热化，但费米面的自洽形变仍可通过平均场相互作用传播，这就是<strong>零声</strong>（zero sound）。</p>
-<p>对只保留三维密度通道 $F_0^s$ 的简化模型，令 $s=\omega/(qv_F)&gt;1$，零声速度由</p>
-<p>$$<br>
-1=\frac{F_0^s}{2}<br>
-\left[s\ln\left(\frac{s+1}{s-1}\right)-2\right]<br>
-$$</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="6-集体激发：没有频繁碰撞，也能传播声音"><a href="#6-集体激发：没有频繁碰撞，也能传播声音" class="headerlink" title="6. 集体激发：没有频繁碰撞，也能传播声音"></a>6. 集体激发：没有频繁碰撞，也能传播声音</div><p>普通声波依赖局域碰撞建立热平衡，称为第一声。在极低温、碰撞时间很长的费米液体中，准粒子来不及局域热化，但费米面的自洽形变仍可通过平均场相互作用传播，这就是<strong>零声</strong>（zero sound）。</p>
+<p>对只保留三维密度通道 $F_0^s$ 的简化模型，令 $s&#x3D;\omega&#x2F;(qv_F)&gt;1$，零声速度由</p>
+<p>$$<br>1&#x3D;\frac{F_0^s}{2}<br>\left[s\ln\left(\frac{s+1}{s-1}\right)-2\right]<br>$$</p>
 <p>确定。$s&gt;1$ 意味着集体模式位于粒子—空穴连续谱之外，从而避开朗道阻尼。液态 $^3\mathrm{He}$ 是观察和检验费米液体集体模式的经典体系。</p>
 <p>第一声与零声并非两种材料，而是同一费米液体在不同频率—碰撞率极限中的两种动力学：</p>
-<p>$$<br>
-\omega\tau\ll1 \quad \text{第一声},<br>
-\qquad<br>
-\omega\tau\gg1 \quad \text{零声}.<br>
-$$</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="7-稳定性：费米面也会“变形相变”">7. 稳定性：费米面也会“变形相变”</div>
-<p>并非任意朗道参数都对应稳定液体。对三维各向同性体系，Pomeranchuk 稳定性条件为</p>
-<p>$$<br>
-F_\ell^{s,a}&gt;-(2\ell+1).<br>
-$$</p>
+<p>$$<br>\omega\tau\ll1 \quad \text{第一声},<br>\qquad<br>\omega\tau\gg1 \quad \text{零声}.<br>$$</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="7-稳定性：费米面也会“变形相变”"><a href="#7-稳定性：费米面也会“变形相变”" class="headerlink" title="7. 稳定性：费米面也会“变形相变”"></a>7. 稳定性：费米面也会“变形相变”</div><p>并非任意朗道参数都对应稳定液体。对三维各向同性体系，Pomeranchuk 稳定性条件为</p>
+<p>$$<br>F_\ell^{s,a}&gt;-(2\ell+1).<br>$$</p>
 <p>当某个通道越过边界，某种费米面形变会降低能量，原费米液体发生不稳定：</p>
 <ul>
 <li>$F_0^s\rightarrow-1$：密度或相分离倾向；</li>
 <li>$F_0^a\rightarrow-1$：铁磁不稳定性；</li>
-<li>$\ell=2$ 对称通道失稳：可能产生电子向列相，旋转对称性被自发降低。</li>
+<li>$\ell&#x3D;2$ 对称通道失稳：可能产生电子向列相，旋转对称性被自发降低。</li>
 </ul>
 <p>这正是上下两篇理论的交汇点：费米液体提供正常态及其低能参数；当某个相互作用通道失稳时，新的序参量出现，再由相变理论描述对称性破缺后的物态。</p>
 <p>BCS 超导也可从费米面的配对不稳定性理解。哪怕吸引作用很弱，费米面附近的 Cooper 通道也会产生对数增强，使正常费米液体在足够低温下对配对不稳定。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="8-输运中的-T-2-，以及一个常见误区">8. 输运中的 $T^2$，以及一个常见误区</div>
-<p>准粒子散射率的相空间限制常导致低温电阻率</p>
-<p>$$<br>
-\rho(T)=\rho_0+AT^2.<br>
-$$</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="8-输运中的-T-2-，以及一个常见误区"><a href="#8-输运中的-T-2-，以及一个常见误区" class="headerlink" title="8. 输运中的 $T^2$，以及一个常见误区"></a>8. 输运中的 $T^2$，以及一个常见误区</div><p>准粒子散射率的相空间限制常导致低温电阻率</p>
+<p>$$<br>\rho(T)&#x3D;\rho_0+AT^2.<br>$$</p>
 <p>但必须加上一条重要限定：在完全平移不变的连续体系中，电子—电子碰撞守恒总动量，单靠它不能弛豫电流并产生有限直流电阻。真实晶体中的 $T^2$ 电阻还需要 Umklapp 散射、多带效应、杂质或晶格提供动量弛豫渠道。</p>
 <p>因此，“观察到 $T^2$”是费米液体的有力线索，却不是单独充分的证明。更完整的判断通常结合：</p>
 <ul>
@@ -723,41 +604,25 @@ $$</p>
 <li>光学或输运散射率的 $\omega^2+T^2$ 标度；</li>
 <li>多个响应量能否由一组自洽的朗道参数解释。</li>
 </ul>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="9-相互作用后，费米面体积变了吗？">9. 相互作用后，费米面体积变了吗？</div>
-<p>Luttinger 定理指出，在满足粒子数守恒、平移对称且未发生相关拓扑重构等通常条件时，相互作用体系的费米面所包围体积仍由粒子密度决定：</p>
-<p>$$<br>
-\frac{2V_F}{(2\pi)^d}=n<br>
-$$</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="9-相互作用后，费米面体积变了吗？"><a href="#9-相互作用后，费米面体积变了吗？" class="headerlink" title="9. 相互作用后，费米面体积变了吗？"></a>9. 相互作用后，费米面体积变了吗？</div><p>Luttinger 定理指出，在满足粒子数守恒、平移对称且未发生相关拓扑重构等通常条件时，相互作用体系的费米面所包围体积仍由粒子密度决定：</p>
+<p>$$<br>\frac{2V_F}{(2\pi)^d}&#x3D;n<br>$$</p>
 <p>（这里写的是自旋简并为二的简单情形）。相互作用可以显著改变 $m^*$、$Z$、速度和寿命，却不任意改变由粒子数约束的费米体积。</p>
 <p>这解释了为什么费米液体既可以与自由费米气连续相连，又能拥有极其不同的热力学性质：<strong>费米面的拓扑计数保持稳定，费米面附近的动力学参数则被强烈重整化。</strong></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="10-费米液体何时失效？">10. 费米液体何时失效？</div>
-<p>判据不是“体系存在强相互作用”，因为液态 $^3\mathrm{He}$ 和许多重费米子材料都具有强相互作用，却仍可形成费米液体。真正的问题是：低能处是否还存在满足 $\hbar/\tau\ll|\xi|$ 的长寿命准粒子，以及相互作用基态是否与费米气绝热连续。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="10-费米液体何时失效？"><a href="#10-费米液体何时失效？" class="headerlink" title="10. 费米液体何时失效？"></a>10. 费米液体何时失效？</div><p>判据不是“体系存在强相互作用”，因为液态 $^3\mathrm{He}$ 和许多重费米子材料都具有强相互作用，却仍可形成费米液体。真正的问题是：低能处是否还存在满足 $\hbar&#x2F;\tau\ll|\xi|$ 的长寿命准粒子，以及相互作用基态是否与费米气绝热连续。</p>
 <p>典型失效情形包括：</p>
 <ol>
 <li><strong>一维电子体系</strong>：任意低能激发都强烈受到集体涨落影响，电子发生自旋—电荷分离，形成 Luttinger 液体而非朗道费米液体。</li>
 <li><strong>Mott 绝缘体附近</strong>：局域排斥可使电荷自由度冻结，准粒子权重趋近于零，不能再从能带填充理解绝缘态。</li>
 <li><strong>量子临界金属</strong>：无能隙临界涨落散射整个或部分费米面，寿命可能不再按能量平方增长。</li>
 <li><strong>与涌现规范场耦合的费米面</strong>：奇异自能可摧毁准粒子极点，产生非费米液体。</li>
-<li><strong>“奇异金属”</strong>：电阻率常接近温度线性，散射尺度可能与 $k_BT/\hbar$ 同阶，传统准粒子图像受到挑战。</li>
+<li><strong>“奇异金属”</strong>：电阻率常接近温度线性，散射尺度可能与 $k_BT&#x2F;\hbar$ 同阶，传统准粒子图像受到挑战。</li>
 </ol>
 <p>需要谨慎的是，“非费米液体”不是一种唯一理论，而是对朗道准粒子范式失效的一大类现象的统称。不同材料中，失效机制可能完全不同。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="11-一张图景：朗道究竟留下了什么？">11. 一张图景：朗道究竟留下了什么？</div>
-<p>把两期文章合起来，可以看到朗道式思考的一条主线：</p>
-<p>$$<br>
-\text{复杂微观体系}<br>
-\longrightarrow<br>
-\text{识别低能自由度}<br>
-\longrightarrow<br>
-\text{由对称性和守恒律写有效理论}<br>
-\longrightarrow<br>
-\text{计算可观测响应}<br>
-\longrightarrow<br>
-\text{明确理论失效的边界}.<br>
-$$</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="11-一张图景：朗道究竟留下了什么？"><a href="#11-一张图景：朗道究竟留下了什么？" class="headerlink" title="11. 一张图景：朗道究竟留下了什么？"></a>11. 一张图景：朗道究竟留下了什么？</div><p>把两期文章合起来，可以看到朗道式思考的一条主线：</p>
+<p>$$<br>\text{复杂微观体系}<br>\longrightarrow<br>\text{识别低能自由度}<br>\longrightarrow<br>\text{由对称性和守恒律写有效理论}<br>\longrightarrow<br>\text{计算可观测响应}<br>\longrightarrow<br>\text{明确理论失效的边界}.<br>$$</p>
 <p>在相变理论中，低能自由度是序参量；在费米液体中，它是费米面附近的准粒子分布。前者告诉我们不同物态如何因对称性破缺而分开，后者告诉我们一个相互作用多体系统为何仍能保留类似自由粒子的低能结构。</p>
 <p>朗道理论最持久的遗产并不是某一条公式，而是一种压缩复杂性的能力：<strong>先问哪些细节在低能处仍然重要，再决定应该计算什么。</strong></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="延伸阅读">延伸阅读</div>
-<ol>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="延伸阅读"><a href="#延伸阅读" class="headerlink" title="延伸阅读"></a>延伸阅读</div><ol>
 <li>L. D. Landau, “The Theory of a Fermi Liquid,” <em>Soviet Physics JETP</em> (1957).</li>
 <li>L. D. Landau, “Oscillations in a Fermi Liquid,” <em>Soviet Physics JETP</em> (1957).</li>
 <li>G. Baym and C. Pethick, <em>Landau Fermi-Liquid Theory</em>.</li>
@@ -1683,9 +1548,24 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 70
+        Total : 71
         </div>
         <!-- search  -->
         
@@ -1698,6 +1578,11 @@ top:50vh;
     
     <div class="archive-year"> 2026 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "2026/09/03/Persistent-Homology-From-Point-Clouds-to-Topological-Signatures/" >Persistent Homology: Watching Shape Emerge from a Point Cloud</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2103,14 +1988,6 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
     
-        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
-    
-        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
-    
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
-        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
-    
         <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
     
         <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
@@ -2119,27 +1996,35 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
     
-        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
-    
         <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
     
-        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
+    
+        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
     
         <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
     
-        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
     
         <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
     
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
+    
         <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
-    
-        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
-    
-        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
     
         <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
     
         <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
     
         <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
     
@@ -2155,21 +2040,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
     
-        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
-    
-        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
-    
         <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
     
         <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
     
-        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
     
         <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
     
         <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
         <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
     
@@ -2177,11 +2062,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
     
-        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
-    
         <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
+        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
+    
         <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Topological Data Analysis"><span class="iconfont-archer">&#xe606;</span>Topological Data Analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Persistent Homology"><span class="iconfont-archer">&#xe606;</span>Persistent Homology</span>
+    
+        <span class="sidebar-tag-name" data-tags="Data Science"><span class="iconfont-archer">&#xe606;</span>Data Science</span>
     
         <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
     
@@ -2242,15 +2133,13 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
-    
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
-    
-        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
@@ -2258,15 +2147,19 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
-        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
     
