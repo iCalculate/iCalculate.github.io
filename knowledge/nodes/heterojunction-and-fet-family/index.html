@@ -8,20 +8,16 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Heterojunctions, JFETs, MESFETs, and HEMTs</span><span data-lang="zh" hidden>异质结、JFET、MESFET与HEMT</span></h1><p class="node-deck"><span data-lang="en">A unified view of JFETs, MESFETs, MODFETs/HEMTs, and two-dimensional carrier gases through depletion control and heterojunction band engineering.</span><span data-lang="zh" hidden>用耗尽层控制和异质结能带工程统一理解JFET、MESFET、MODFET/HEMT及二维电子气。</span></p><div class="node-tags"><span>Field-Effect Transistors</span><span>Interface Physics</span><span>2D Materials</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Every field-effect transistor uses a terminal voltage to reshape a barrier or channel charge. The differences are whether the gate barrier is a PN junction, Schottky contact, or insulator, and whether the channel comes from bulk doping or a heterojunction interface.</p>
 </blockquote>
-<h2 id="JFET-A-PN-Depletion-Gate">JFET: A PN-Depletion Gate</h2>
-<p>A reverse-biased gate junction expands its depletion region and narrows the conductive channel. A JFET is a majority-carrier device with low ideal gate current, but it retains junction leakage and capacitance.</p>
-<h2 id="MESFET-A-Schottky-Gate">MESFET: A Schottky Gate</h2>
-<p>MESFETs suit III–V materials lacking a high-quality native oxide. Reverse bias on the Schottky gate controls channel thickness. Forward gate swing is limited by Schottky conduction.</p>
-<h2 id="Heterojunction-Band-Offsets">Heterojunction Band Offsets</h2>
-<p>Two semiconductors generally form conduction- and valence-band discontinuities \(\Delta E_C\) and \(\Delta E_V\). These offsets create selective contacts, quantum wells, spatial separation between dopants and channels, and enhanced emitter efficiency in HBTs. Strain, polarization, lattice mismatch, and interface states modify the ideal lineup.</p>
-<h2 id="MODFET-HEMT-and-the-Two-Dimensional-Electron-Gas">MODFET/HEMT and the Two-Dimensional Electron Gas</h2>
-<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/HEMT-band_structure_scheme-en.svg" alt="HEMT band structure and 2DEG"></p>
+<h2 id="JFET-A-PN-Depletion-Gate"><a href="#JFET-A-PN-Depletion-Gate" class="headerlink" title="JFET: A PN-Depletion Gate"></a>JFET: A PN-Depletion Gate</h2><p>A reverse-biased gate junction expands its depletion region and narrows the conductive channel. A JFET is a majority-carrier device with low ideal gate current, but it retains junction leakage and capacitance.</p>
+<h2 id="MESFET-A-Schottky-Gate"><a href="#MESFET-A-Schottky-Gate" class="headerlink" title="MESFET: A Schottky Gate"></a>MESFET: A Schottky Gate</h2><p>MESFETs suit III–V materials lacking a high-quality native oxide. Reverse bias on the Schottky gate controls channel thickness. Forward gate swing is limited by Schottky conduction.</p>
+<h2 id="Heterojunction-Band-Offsets"><a href="#Heterojunction-Band-Offsets" class="headerlink" title="Heterojunction Band Offsets"></a>Heterojunction Band Offsets</h2><p>Two semiconductors generally form conduction- and valence-band discontinuities \(\Delta E_C\) and \(\Delta E_V\). These offsets create selective contacts, quantum wells, spatial separation between dopants and channels, and enhanced emitter efficiency in HBTs. Strain, polarization, lattice mismatch, and interface states modify the ideal lineup.</p>
+<h2 id="MODFET-HEMT-and-the-Two-Dimensional-Electron-Gas"><a href="#MODFET-HEMT-and-the-Two-Dimensional-Electron-Gas" class="headerlink" title="MODFET&#x2F;HEMT and the Two-Dimensional Electron Gas"></a>MODFET&#x2F;HEMT and the Two-Dimensional Electron Gas</h2><p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/HEMT-band_structure_scheme-en.svg" alt="HEMT band structure and 2DEG"></p>
 <p><em>Figure 1 | A heterojunction well confines a 2DEG while a spacer separates it from ionized dopants. Sfu et al., CC BY-SA 3.0; <a href="https://commons.wikimedia.org/wiki/File:HEMT-band_structure_scheme-en.svg" target="_blank" rel="noopener">source</a>.</em></p>
 <p>Electrons transfer from a wide-gap barrier into a narrow-gap channel, forming a triangular quantum well. Vertical motion is quantized while in-plane motion remains free. To first order,</p>
 <div class="math-display">\[Q_{2D}\approx-C_{eff}(V_G-V_T),\]</div>
-<p>where \(C_{eff}\) may include barrier, quantum, and interface-state capacitances. In AlGaN/GaN, spontaneous and piezoelectric polarization can create a dense 2DEG without conventional modulation doping.</p>
-<h2 id="Unified-Comparison">Unified Comparison</h2>
-<table>
+
+<p>where \(C_{eff}\) may include barrier, quantum, and interface-state capacitances. In AlGaN&#x2F;GaN, spontaneous and piezoelectric polarization can create a dense 2DEG without conventional modulation doping.</p>
+<h2 id="Unified-Comparison"><a href="#Unified-Comparison" class="headerlink" title="Unified Comparison"></a>Unified Comparison</h2><table>
 <thead>
 <tr>
 <th>Device</th>
@@ -31,8 +27,7 @@
 <th>Typical limit</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>JFET</td>
 <td>reverse PN</td>
 <td>doped bulk</td>
@@ -49,41 +44,38 @@
 <tr>
 <td>MOSFET</td>
 <td>insulator</td>
-<td>inversion/accumulation</td>
+<td>inversion&#x2F;accumulation</td>
 <td>strong control</td>
 <td>interface and oxide leakage</td>
 </tr>
 <tr>
 <td>HEMT</td>
-<td>Schottky/MIS + heterojunction</td>
-<td>2DEG/2DHG</td>
+<td>Schottky&#x2F;MIS + heterojunction</td>
+<td>2DEG&#x2F;2DHG</td>
 <td>mobility and high-frequency power</td>
 <td>traps, contacts, self-heating</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>All can be analyzed through voltage → potential → charge → transport, as developed in <a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/">From Capacitors to FETs</a>.</p>
 <!--deep-classical:en-->
-<h2 id="Band-offsets-as-confinement-and-barriers">Band offsets as confinement and barriers</h2>
-<p>At a heterojunction, band-gap difference partitions into \(\Delta E_C\) and \(\Delta E_V\).  These offsets confine one carrier while permitting another to cross, but interface dipoles and strain can shift the lineup away from simple electron-affinity rules.</p>
+
+<h2 id="Band-offsets-as-confinement-and-barriers"><a href="#Band-offsets-as-confinement-and-barriers" class="headerlink" title="Band offsets as confinement and barriers"></a>Band offsets as confinement and barriers</h2><p>At a heterojunction, band-gap difference partitions into \(\Delta E_C\) and \(\Delta E_V\).  These offsets confine one carrier while permitting another to cross, but interface dipoles and strain can shift the lineup away from simple electron-affinity rules.</p>
 <p>In a modulation-doped HEMT, remote donors transfer electrons into a quantum well, separating carriers from ionized impurities.  Sheet charge is approximately controlled by</p>
 <div class="math-display">\[qn_s\simeq C_{barrier}(V_G-V_T),\]</div>
+
 <p>while subband energy and quantum capacitance refine this relation.  JFETs control a conducting channel by depletion; MESFETs use a Schottky gate; HEMTs use a heterointerface 2DEG.  Comparing them requires separating the common electrostatic principle from different injection, confinement and contact physics.</p>
 <!--/deep-classical:en-->
-<h2 id="References">References</h2>
-<ol>
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapters 1 and 7.</li>
 <li>T. Mimura et al., <em>Jpn. J. Appl. Phys.</em> <strong>19</strong>, L225 (1980).</li>
 </ol>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p><strong>核心结论</strong>：场效应管的共同机制是“端电压改变势垒或沟道电荷”。区别只在于栅势垒由 PN 结、Schottky 结还是绝缘层提供，以及沟道由体掺杂还是异质结界面形成。</p>
 </blockquote>
-<h2 id="1-JFET：PN结耗尽层挤压沟道">1. JFET：PN结耗尽层挤压沟道</h2>
-<p>JFET 的反偏栅结耗尽层随 \(|V_G|\) 增宽，逐步缩窄导电沟道。它是多数载流子器件，栅电流理想上很小，但仍存在反偏结漏电与结电容。与 MOSFET 相比，JFET 没有栅氧界面，却无法通过简单绝缘层获得同样强的栅电容控制。</p>
-<h2 id="2-MESFET：Schottky栅替代PN栅">2. MESFET：Schottky栅替代PN栅</h2>
-<p>MESFET 常用于没有高质量本征氧化层的 III–V 材料。金属 Schottky 栅的反偏耗尽区控制沟道厚度。正向栅压受 Schottky 导通限制，因此可用栅压范围小于理想 MOS 结构。</p>
-<h2 id="3-异质结的带阶">3. 异质结的带阶</h2>
-<p>两种半导体接触后，导带与价带通常不连续，形成 \(\Delta E_C\) 与 \(\Delta E_V\)。带阶可实现：</p>
+<h2 id="1-JFET：PN结耗尽层挤压沟道"><a href="#1-JFET：PN结耗尽层挤压沟道" class="headerlink" title="1. JFET：PN结耗尽层挤压沟道"></a>1. JFET：PN结耗尽层挤压沟道</h2><p>JFET 的反偏栅结耗尽层随 \(|V_G|\) 增宽，逐步缩窄导电沟道。它是多数载流子器件，栅电流理想上很小，但仍存在反偏结漏电与结电容。与 MOSFET 相比，JFET 没有栅氧界面，却无法通过简单绝缘层获得同样强的栅电容控制。</p>
+<h2 id="2-MESFET：Schottky栅替代PN栅"><a href="#2-MESFET：Schottky栅替代PN栅" class="headerlink" title="2. MESFET：Schottky栅替代PN栅"></a>2. MESFET：Schottky栅替代PN栅</h2><p>MESFET 常用于没有高质量本征氧化层的 III–V 材料。金属 Schottky 栅的反偏耗尽区控制沟道厚度。正向栅压受 Schottky 导通限制，因此可用栅压范围小于理想 MOS 结构。</p>
+<h2 id="3-异质结的带阶"><a href="#3-异质结的带阶" class="headerlink" title="3. 异质结的带阶"></a>3. 异质结的带阶</h2><p>两种半导体接触后，导带与价带通常不连续，形成 \(\Delta E_C\) 与 \(\Delta E_V\)。带阶可实现：</p>
 <ul>
 <li>只允许一种载流子越过的选择性接触；</li>
 <li>将电子或空穴限制在量子阱；</li>
@@ -91,14 +83,13 @@
 <li>在 HBT 中提高发射效率。</li>
 </ul>
 <p>材料晶格失配、极化电荷、界面态和应变会共同改变理想带阶图。</p>
-<h2 id="4-MODFET-HEMT与二维电子气">4. MODFET/HEMT与二维电子气</h2>
-<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/HEMT-band_structure_scheme-en.svg" alt="HEMT异质结能带与二维电子气"></p>
+<h2 id="4-MODFET-HEMT与二维电子气"><a href="#4-MODFET-HEMT与二维电子气" class="headerlink" title="4. MODFET&#x2F;HEMT与二维电子气"></a>4. MODFET&#x2F;HEMT与二维电子气</h2><p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/HEMT-band_structure_scheme-en.svg" alt="HEMT异质结能带与二维电子气"></p>
 <p><em>图 1｜调制掺杂异质结中，势阱容纳二维电子气，间隔层将沟道与离化杂质分开。原图：Sfu 等，CC BY-SA 3.0；<a href="https://commons.wikimedia.org/wiki/File:HEMT-band_structure_scheme-en.svg" target="_blank" rel="noopener">文件页与许可</a>。</em></p>
 <p>宽禁带势垒层中的施主向窄禁带沟道转移电子，导带不连续形成三角势阱。电子在垂直方向量子化、平面内自由运动，形成 2DEG。片电荷与栅电压的第一近似仍是</p>
 <div class="math-display">\[Q_{2D}\approx-C_{eff}(V_G-V_T),\]</div>
-<p>但 \(C_{eff}\) 可能由势垒几何电容、量子电容和界面态共同决定。AlGaN/GaN HEMT 中自发极化与压电极化也可在无传统调制掺杂时产生高密度 2DEG。</p>
-<h2 id="5-统一比较">5. 统一比较</h2>
-<table>
+
+<p>但 \(C_{eff}\) 可能由势垒几何电容、量子电容和界面态共同决定。AlGaN&#x2F;GaN HEMT 中自发极化与压电极化也可在无传统调制掺杂时产生高密度 2DEG。</p>
+<h2 id="5-统一比较"><a href="#5-统一比较" class="headerlink" title="5. 统一比较"></a>5. 统一比较</h2><table>
 <thead>
 <tr>
 <th>器件</th>
@@ -108,8 +99,7 @@
 <th>典型限制</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>JFET</td>
 <td>反偏PN结</td>
 <td>掺杂体沟道</td>
@@ -126,31 +116,31 @@
 <tr>
 <td>MOSFET</td>
 <td>绝缘层</td>
-<td>反型/积累层</td>
+<td>反型&#x2F;积累层</td>
 <td>栅控制强、可缩放</td>
 <td>界面态、氧化层漏电</td>
 </tr>
 <tr>
 <td>HEMT</td>
-<td>Schottky/MIS栅+异质结</td>
-<td>2DEG/2DHG</td>
-<td>高迁移率、高频/高功率</td>
+<td>Schottky&#x2F;MIS栅+异质结</td>
+<td>2DEG&#x2F;2DHG</td>
+<td>高迁移率、高频&#x2F;高功率</td>
 <td>陷阱、接触、自热</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>这组器件与二维材料 FET 可继续沿<a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/">From Capacitors to FETs</a>中的“电压 → 势 → 电荷 → 输运”统一分析。</p>
 <!--deep-classical:zh-->
-<h2 id="能带偏移既是限域也是势垒">能带偏移既是限域也是势垒</h2>
-<p>异质结带隙差分配为 \(\Delta E_C\) 与 \(\Delta E_V\)。这些偏移可限域一种载流子并允许另一种越过，但界面偶极与应变会使实际排列偏离简单电子亲和势规则。</p>
+
+<h2 id="能带偏移既是限域也是势垒"><a href="#能带偏移既是限域也是势垒" class="headerlink" title="能带偏移既是限域也是势垒"></a>能带偏移既是限域也是势垒</h2><p>异质结带隙差分配为 \(\Delta E_C\) 与 \(\Delta E_V\)。这些偏移可限域一种载流子并允许另一种越过，但界面偶极与应变会使实际排列偏离简单电子亲和势规则。</p>
 <p>调制掺杂 HEMT 中，远程施主把电子转移到量子阱，使载流子与离化杂质空间分离。面电荷近似满足</p>
 <div class="math-display">\[qn_s\simeq C_{barrier}(V_G-V_T),\]</div>
+
 <p>更精确时还需加入子带能与量子电容。JFET 用耗尽控制导电沟道，MESFET 使用 Schottky 栅，HEMT 使用异质界面二维电子气。比较它们时，应把共同静电原理与不同注入、限域和接触物理解耦。</p>
 <!--/deep-classical:zh-->
-<h2 id="参考">参考</h2>
-<ol>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapters 1 and 7.</li>
-<li>T. Mimura et al., “A New Field-Effect Transistor with Selectively Doped GaAs/n-AlxGa1−xAs Heterojunctions,” <em>Jpn. J. Appl. Phys.</em> <strong>19</strong>, L225 (1980).</li>
+<li>T. Mimura et al., “A New Field-Effect Transistor with Selectively Doped GaAs&#x2F;n-AlxGa1−xAs Heterojunctions,” <em>Jpn. J. Appl. Phys.</em> <strong>19</strong>, L225 (1980).</li>
 </ol>
-</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#JFET-A-PN-Depletion-Gate" data-toc-index="0">JFET: A PN Depletion Gate</a></li><li><a href="#MESFET-A-Schottky-Gate" data-toc-index="1">MESFET: A Schottky Gate</a></li><li><a href="#Heterojunction-Band-Offsets" data-toc-index="2">Heterojunction Band Offsets</a></li><li><a href="#MODFET-HEMT-and-the-Two-Dimensional-Electron-Gas" data-toc-index="3">MODFET/HEMT and the Two Dimensional Electron Gas</a></li><li><a href="#Unified-Comparison" data-toc-index="4">Unified Comparison</a></li><li><a href="#Band-offsets-as-confinement-and-barriers" data-toc-index="5">Band offsets as confinement and barriers</a></li><li><a href="#References" data-toc-index="6">References</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/metal-semiconductor-contact/"><span data-lang="en">Metal–Semiconductor Contacts and Schottky Barriers</span><span data-lang="zh" hidden>金属-半导体接触与肖特基势垒</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/pn-junction-physics/"><span data-lang="en">The PN Junction: Space Charge, Band Bending, and Rectification</span><span data-lang="zh" hidden>PN结：空间电荷、能带与整流</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/mosfet-physics/"><span data-lang="en">The MOSFET: Gate-Controlled Charge and Channel Transport</span><span data-lang="zh" hidden>MOSFET：栅控电荷与沟道输运</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/"><span data-lang="en">From Capacitors to FETs</span><span data-lang="zh" hidden>From Capacitors to FETs</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li><li><a href="/2025/08/18/Introducing-2D-material-based-devices-in-the-logic-scaling-roadmap/"><span data-lang="en">Introducing 2D-material based devices in the logic scaling roadmap</span><span data-lang="zh" hidden>Introducing 2D-material based devices in the logic scaling roadmap</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li></ul></section></article></main>
+</div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#JFET-A-PN-Depletion-Gate" data-toc-index="0">JFET: A PN Depletion Gate</a></li><li><a href="#MESFET-A-Schottky-Gate" data-toc-index="1">MESFET: A Schottky Gate</a></li><li><a href="#Heterojunction-Band-Offsets" data-toc-index="2">Heterojunction Band Offsets</a></li><li><a href="#MODFET-HEMT-and-the-Two-Dimensional-Electron-Gas" data-toc-index="3">MODFET&amp; x2F;HEMT and the Two Dimensional Electron Gas</a></li><li><a href="#Unified-Comparison" data-toc-index="4">Unified Comparison</a></li><li><a href="#Band-offsets-as-confinement-and-barriers" data-toc-index="5">Band offsets as confinement and barriers</a></li><li><a href="#References" data-toc-index="6">References</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/metal-semiconductor-contact/"><span data-lang="en">Metal–Semiconductor Contacts and Schottky Barriers</span><span data-lang="zh" hidden>金属-半导体接触与肖特基势垒</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/pn-junction-physics/"><span data-lang="en">The PN Junction: Space Charge, Band Bending, and Rectification</span><span data-lang="zh" hidden>PN结：空间电荷、能带与整流</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/mosfet-physics/"><span data-lang="en">The MOSFET: Gate-Controlled Charge and Channel Transport</span><span data-lang="zh" hidden>MOSFET：栅控电荷与沟道输运</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/"><span data-lang="en">From Capacitors to FETs</span><span data-lang="zh" hidden>From Capacitors to FETs</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li><li><a href="/2025/08/18/Introducing-2D-material-based-devices-in-the-logic-scaling-roadmap/"><span data-lang="en">Introducing 2D-material based devices in the logic scaling roadmap</span><span data-lang="zh" hidden>Introducing 2D-material based devices in the logic scaling roadmap</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li></ul></section></article></main>
 <footer class="node-footer"><span data-lang="en">A standalone note connected through the knowledge atlas.</span><span data-lang="zh" hidden>一个通过知识图谱与其他概念相连的独立知识节点。</span></footer><script>(function(){var buttons=Array.from(document.querySelectorAll('[data-lang-option]'));var panels=Array.from(document.querySelectorAll('[data-lang]'));function setLanguage(language){panels.forEach(function(panel){panel.hidden=panel.dataset.lang!==language;});buttons.forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.langOption===language));});document.documentElement.lang=language==='zh'?'zh-CN':'en';}buttons.forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.langOption);});});document.querySelectorAll('[data-toc-index]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();var active=document.querySelector('.node-content[data-lang]:not([hidden])');var heading=active&&active.querySelectorAll('h2')[Number(link.dataset.tocIndex)];if(heading){heading.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+heading.id);}});});setLanguage('en');})();</script></body></html>

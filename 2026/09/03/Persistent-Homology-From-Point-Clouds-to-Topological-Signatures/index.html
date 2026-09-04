@@ -457,6 +457,7 @@ height:50vh;
     <article class="article-entry">
         <link rel="stylesheet" href="/css/persistent-homology.css">
 <script defer src="/js/persistent-homology.js"></script>
+
 <link rel="stylesheet" href="/css/bilingual-post.css">
 <script defer src="/js/bilingual-post.js"></script>
 <nav class="language-switcher" aria-label="Article language">
@@ -466,10 +467,12 @@ height:50vh;
 </nav>
 <section class="lang-panel lang-en" lang="en">
 <div class="ph-page">
-<h1>Persistent homology: watching shape emerge from a point cloud</h1>
-<p>Data usually reaches us as coordinates, not as a clean geometric object. A scanner returns points on a surface; a simulation returns states in a high-dimensional space; an experiment returns samples whose shape is hidden by noise. <strong>Persistent homology asks which topological features survive when we change the scale at which the points are connected.</strong></p>
+
+<h1 id="Persistent-homology-watching-shape-emerge-from-a-point-cloud"><a href="#Persistent-homology-watching-shape-emerge-from-a-point-cloud" class="headerlink" title="Persistent homology: watching shape emerge from a point cloud"></a>Persistent homology: watching shape emerge from a point cloud</h1><p>Data usually reaches us as coordinates, not as a clean geometric object. A scanner returns points on a surface; a simulation returns states in a high-dimensional space; an experiment returns samples whose shape is hidden by noise. <strong>Persistent homology asks which topological features survive when we change the scale at which the points are connected.</strong></p>
 <!--more-->
+
 <p class="ph-lede">The key move is simple: place a ball of radius <em>r</em> around every point and let all balls grow together. What matters is not one arbitrarily chosen radius, but the entire movie.</p>
+
 <div class="ph-lab" data-ph-lab>
   <div class="ph-lab__top"><div><span class="ph-lab__eyebrow">Interactive filtration</span><h2>Turn the radius. Watch topology change.</h2></div><span class="ph-live">LIVE COMPUTATION</span></div>
   <div class="ph-shapes"><span class="ph-shapes__label">Point distribution</span><div class="ph-shapes__buttons" role="group" aria-label="Choose point distribution">
@@ -493,66 +496,53 @@ height:50vh;
     </div>
   </div>
 </div>
-<h2 id="1-A-shape-is-not-attached-to-a-single-scale">1. A shape is not attached to a single scale</h2>
-<p>At very small $r$, every sample is isolated, so $\beta_0$ — the number of connected components — is close to the number of points. As the balls touch, components merge. At an intermediate radius the points around the ring form one component while leaving a central hole, so $\beta_0=1$ and $\beta_1=1$. At a large radius the hole is covered and $\beta_1$ returns to zero.</p>
+
+<h2 id="1-A-shape-is-not-attached-to-a-single-scale"><a href="#1-A-shape-is-not-attached-to-a-single-scale" class="headerlink" title="1. A shape is not attached to a single scale"></a>1. A shape is not attached to a single scale</h2><p>At very small $r$, every sample is isolated, so $\beta_0$ — the number of connected components — is close to the number of points. As the balls touch, components merge. At an intermediate radius the points around the ring form one component while leaving a central hole, so $\beta_0&#x3D;1$ and $\beta_1&#x3D;1$. At a large radius the hole is covered and $\beta_1$ returns to zero.</p>
 <div class="ph-concept-grid">
   <article class="ph-concept" data-step="01"><h3>Birth</h3><p>A feature first appears at a critical radius. Components exist at the beginning; loops are born when a cycle closes.</p></article>
   <article class="ph-concept" data-step="02"><h3>Persistence</h3><p>A feature that survives a wide interval of radii is less likely to be a small geometric accident.</p></article>
   <article class="ph-concept" data-step="03"><h3>Death</h3><p>A component dies when it merges into an older one; a one-dimensional loop dies when triangles fill it.</p></article>
 </div>
-<h2 id="2-From-balls-to-a-computable-simplicial-complex">2. From balls to a computable simplicial complex</h2>
-<p>The union of balls is intuitive but awkward to store. We replace it with a simplicial complex. In the Vietoris–Rips construction, two vertices receive an edge when their distance is at most $2r$; three mutually connected vertices form a filled triangle, and the rule continues in higher dimensions:</p>
+
+<h2 id="2-From-balls-to-a-computable-simplicial-complex"><a href="#2-From-balls-to-a-computable-simplicial-complex" class="headerlink" title="2. From balls to a computable simplicial complex"></a>2. From balls to a computable simplicial complex</h2><p>The union of balls is intuitive but awkward to store. We replace it with a simplicial complex. In the Vietoris–Rips construction, two vertices receive an edge when their distance is at most $2r$; three mutually connected vertices form a filled triangle, and the rule continues in higher dimensions:</p>
 <div class="ph-equation">
 $$
 \mathrm{VR}(X,r)=\left\{\sigma\subseteq X:\ d(x_i,x_j)\le 2r\ \text{for every}\ x_i,x_j\in\sigma\right\}.
 $$
 </div>
+
 <p>Increasing $r$ can only add simplices, so the complexes are nested:</p>
-<p>$$<br>
-r_1\le r_2 \quad\Longrightarrow\quad<br>
-\mathrm{VR}(X,r_1)\subseteq\mathrm{VR}(X,r_2).<br>
-$$</p>
+<p>$$<br>r_1\le r_2 \quad\Longrightarrow\quad<br>\mathrm{VR}(X,r_1)\subseteq\mathrm{VR}(X,r_2).<br>$$</p>
 <p>This nested sequence is a <strong>filtration</strong>. Homology turns every frame into algebra, while persistence tracks how homology classes map from one frame to the next.</p>
-<h2 id="3-Reading-the-barcode-and-the-curves">3. Reading the barcode and the curves</h2>
-<p>Each horizontal barcode segment is a lifetime $[r_{\text{birth}},r_{\text{death}})$. The many short cyan $H_0$ bars show components quickly merging. One cyan bar remains forever because the final object is still one connected component. The coral $H_1$ bar records the ring-shaped hole.</p>
+<h2 id="3-Reading-the-barcode-and-the-curves"><a href="#3-Reading-the-barcode-and-the-curves" class="headerlink" title="3. Reading the barcode and the curves"></a>3. Reading the barcode and the curves</h2><p>Each horizontal barcode segment is a lifetime $[r_{\text{birth}},r_{\text{death}})$. The many short cyan $H_0$ bars show components quickly merging. One cyan bar remains forever because the final object is still one connected component. The coral $H_1$ bar records the ring-shaped hole.</p>
 <p>The Betti curves are a different summary of the same information:</p>
-<p>$$<br>
-\beta_k®=\operatorname{count}{\text{bars in }H_k\text{ crossing }r}.<br>
-$$</p>
+<p>$$<br>\beta_k(r)&#x3D;\operatorname{count}{\text{bars in }H_k\text{ crossing }r}.<br>$$</p>
 <p>Barcodes retain each lifetime; Betti curves retain only the number alive at each radius. A persistence diagram gives the same lifetimes as points $(r_{\text{birth}},r_{\text{death}})$: distance from the diagonal becomes persistence.</p>
 <aside class="ph-callout"><strong>Topological signal is not simply “the longest bar.”</strong> Sampling density, metric, coefficient field, filtration and domain knowledge determine what counts as meaningful. Persistence provides a stable multiscale descriptor, not an automatic interpretation.</aside>
-<h2 id="4-What-is-actually-computed">4. What is actually computed?</h2>
-<p>For a simplicial complex with boundary maps $\partial_k:C_k\to C_{k-1}$, the $k$-th homology group is</p>
-<p>$$<br>
-H_k=\ker \partial_k/\operatorname{im}\partial_{k+1},<br>
-\qquad<br>
-\beta_k=\dim H_k.<br>
-$$</p>
+
+<h2 id="4-What-is-actually-computed"><a href="#4-What-is-actually-computed" class="headerlink" title="4. What is actually computed?"></a>4. What is actually computed?</h2><p>For a simplicial complex with boundary maps $\partial_k:C_k\to C_{k-1}$, the $k$-th homology group is</p>
+<p>$$<br>H_k&#x3D;\ker \partial_k&#x2F;\operatorname{im}\partial_{k+1},<br>\qquad<br>\beta_k&#x3D;\dim H_k.<br>$$</p>
 <p>This page constructs edges and triangles at the selected radius and performs Gaussian elimination over $\mathbb F_2$. Consequently,</p>
-<p>$$<br>
-\beta_0=n-\operatorname{rank}\partial_1,<br>
-\qquad<br>
-\beta_1=m-\operatorname{rank}\partial_1-\operatorname{rank}\partial_2,<br>
-$$</p>
+<p>$$<br>\beta_0&#x3D;n-\operatorname{rank}\partial_1,<br>\qquad<br>\beta_1&#x3D;m-\operatorname{rank}\partial_1-\operatorname{rank}\partial_2,<br>$$</p>
 <p>where $n$ and $m$ are the numbers of vertices and edges. Working over $\mathbb F_2$ makes orientation signs disappear; for applications sensitive to torsion, the coefficient choice matters.</p>
-<h2 id="5-A-practical-workflow">5. A practical workflow</h2>
-<ol>
+<h2 id="5-A-practical-workflow"><a href="#5-A-practical-workflow" class="headerlink" title="5. A practical workflow"></a>5. A practical workflow</h2><ol>
 <li>Choose a meaningful representation and metric. Topology is only as relevant as the distances supplied to it.</li>
 <li>Select a filtration: Vietoris–Rips for general point clouds, Čech for an exact nerve of balls, alpha complexes for efficient Euclidean geometry, or sublevel filtrations for scalar fields and images.</li>
 <li>Compute persistence in the dimensions justified by the problem.</li>
 <li>Compare diagrams with bottleneck or Wasserstein distance, vectorize them for statistics, or test stability against resampling.</li>
 <li>Return to the domain: a long $H_1$ bar may represent a physical cycle, a periodic coordinate, a sampling boundary, or a preprocessing artefact.</li>
 </ol>
-<h2 id="Closing-perspective">Closing perspective</h2>
-<p>Clustering asks which points belong together at a chosen resolution. Persistent homology asks a broader question: <strong>which connected components, loops and voids remain coherent across resolutions?</strong> Its power comes from refusing to choose $r$ too early. The answer is not a single shape, but a history of shapes.</p>
+<h2 id="Closing-perspective"><a href="#Closing-perspective" class="headerlink" title="Closing perspective"></a>Closing perspective</h2><p>Clustering asks which points belong together at a chosen resolution. Persistent homology asks a broader question: <strong>which connected components, loops and voids remain coherent across resolutions?</strong> Its power comes from refusing to choose $r$ too early. The answer is not a single shape, but a history of shapes.</p>
 </div>
 </section>
+
 <!-- bilingual:zh -->
 <section class="lang-panel lang-zh" lang="zh-CN" hidden>
 <div class="ph-page">
-<div class="zh-heading zh-h1" role="heading" aria-level="1">持久同调：看形状如何从点云中浮现</div>
-<p>数据到达我们手里时，通常只是坐标，而不是一个干净的几何对象：扫描仪给出表面上的点，模拟给出高维状态空间中的采样，实验给出被噪声遮住形状的观测。<strong>持久同调关心的是：当我们改变连接数据点的尺度时，哪些拓扑特征仍然存在？</strong></p>
+
+<div class="zh-heading zh-h1" role="heading" aria-level="1" id="持久同调：看形状如何从点云中浮现"><a href="#持久同调：看形状如何从点云中浮现" class="headerlink" title="持久同调：看形状如何从点云中浮现"></a>持久同调：看形状如何从点云中浮现</div><p>数据到达我们手里时，通常只是坐标，而不是一个干净的几何对象：扫描仪给出表面上的点，模拟给出高维状态空间中的采样，实验给出被噪声遮住形状的观测。<strong>持久同调关心的是：当我们改变连接数据点的尺度时，哪些拓扑特征仍然存在？</strong></p>
 <p class="ph-lede">核心动作很简单：以每个数据点为圆心，画一个半径为 <em>r</em> 的圆盘，再让所有圆盘同时长大。真正重要的不是任意挑中的某一个半径，而是整段“生长电影”。</p>
+
 <div class="ph-lab" data-ph-lab>
   <div class="ph-lab__top"><div><span class="ph-lab__eyebrow">Interactive filtration · 交互式过滤</span><div class="zh-heading zh-h2" role="heading" aria-level="2">拖动半径，看拓扑结构改变</div></div><span class="ph-live">实时计算</span></div>
   <div class="ph-shapes"><span class="ph-shapes__label">散点分布</span><div class="ph-shapes__buttons" role="group" aria-label="选择散点分布">
@@ -576,58 +566,43 @@ $$</p>
     </div>
   </div>
 </div>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="1-形状并不依附于唯一尺度">1. 形状并不依附于唯一尺度</div>
-<p>当 $r$ 很小时，每个样本都彼此孤立，所以表示连通分量数量的 $\beta_0$ 接近数据点总数。圆盘逐渐相碰后，分量开始合并。在中等半径下，环形排列的点已经连成一个整体，但中央仍留下孔洞，此时 $\beta_0=1,\ \beta_1=1$。当半径足够大，中央被覆盖，$\beta_1$ 又回到零。</p>
+
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="1-形状并不依附于唯一尺度"><a href="#1-形状并不依附于唯一尺度" class="headerlink" title="1. 形状并不依附于唯一尺度"></a>1. 形状并不依附于唯一尺度</div><p>当 $r$ 很小时，每个样本都彼此孤立，所以表示连通分量数量的 $\beta_0$ 接近数据点总数。圆盘逐渐相碰后，分量开始合并。在中等半径下，环形排列的点已经连成一个整体，但中央仍留下孔洞，此时 $\beta_0&#x3D;1,\ \beta_1&#x3D;1$。当半径足够大，中央被覆盖，$\beta_1$ 又回到零。</p>
 <div class="ph-concept-grid">
   <article class="ph-concept" data-step="01"><div class="zh-heading zh-h3" role="heading" aria-level="3">出生 Birth</div><p>特征在某个临界半径第一次出现。连通分量从起点就存在；边首尾闭合时，一维环出生。</p></article>
   <article class="ph-concept" data-step="02"><div class="zh-heading zh-h3" role="heading" aria-level="3">持续 Persistence</div><p>如果一个结构能跨越很宽的半径区间，它通常不太可能只是局部几何抖动造成的偶然现象。</p></article>
   <article class="ph-concept" data-step="03"><div class="zh-heading zh-h3" role="heading" aria-level="3">死亡 Death</div><p>一个分量并入更早出生的分量时死亡；组成孔洞的环被三角形填满时，一维同调类死亡。</p></article>
 </div>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="2-从圆盘并集到可计算的单纯复形">2. 从圆盘并集到可计算的单纯复形</div>
-<p>圆盘并集很直观，却不适合直接存储。我们用单纯复形把它离散化。在 Vietoris–Rips 构造中，两个顶点距离不超过 $2r$ 时连边；三个顶点两两相连时填入三角形；更高维依此类推：</p>
+
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="2-从圆盘并集到可计算的单纯复形"><a href="#2-从圆盘并集到可计算的单纯复形" class="headerlink" title="2. 从圆盘并集到可计算的单纯复形"></a>2. 从圆盘并集到可计算的单纯复形</div><p>圆盘并集很直观，却不适合直接存储。我们用单纯复形把它离散化。在 Vietoris–Rips 构造中，两个顶点距离不超过 $2r$ 时连边；三个顶点两两相连时填入三角形；更高维依此类推：</p>
 <div class="ph-equation">
 $$
 \mathrm{VR}(X,r)=\left\{\sigma\subseteq X:\ d(x_i,x_j)\le 2r\ \text{对任意}\ x_i,x_j\in\sigma\right\}.
 $$
 </div>
+
 <p>增大 $r$ 只会增加单形，不会删除已有单形，因此得到一串彼此嵌套的复形：</p>
-<p>$$<br>
-r_1\le r_2 \quad\Longrightarrow\quad<br>
-\mathrm{VR}(X,r_1)\subseteq\mathrm{VR}(X,r_2).<br>
-$$</p>
+<p>$$<br>r_1\le r_2 \quad\Longrightarrow\quad<br>\mathrm{VR}(X,r_1)\subseteq\mathrm{VR}(X,r_2).<br>$$</p>
 <p>这串嵌套结构叫作<strong>过滤</strong>（filtration）。同调把每一帧转化为代数对象，持久性则追踪同调类如何从一帧映射到下一帧。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="3-如何读条形码和数据曲线？">3. 如何读条形码和数据曲线？</div>
-<p>条形码中的每条横线都是一个寿命区间 $[r_{\text{birth}},r_{\text{death}})$。许多短青色 $H_0$ 条带表示连通分量很快互相合并；最终保留一条，是因为整体始终还有一个连通分量。珊瑚色 $H_1$ 长条则记录环形孔洞。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="3-如何读条形码和数据曲线？"><a href="#3-如何读条形码和数据曲线？" class="headerlink" title="3. 如何读条形码和数据曲线？"></a>3. 如何读条形码和数据曲线？</div><p>条形码中的每条横线都是一个寿命区间 $[r_{\text{birth}},r_{\text{death}})$。许多短青色 $H_0$ 条带表示连通分量很快互相合并；最终保留一条，是因为整体始终还有一个连通分量。珊瑚色 $H_1$ 长条则记录环形孔洞。</p>
 <p>Betti 曲线是对同一份信息的另一种压缩：</p>
-<p>$$<br>
-\beta_k®=\operatorname{count}{\text{在半径 }r\text{ 处仍存活的 }H_k\text{ 条带}}.<br>
-$$</p>
+<p>$$<br>\beta_k(r)&#x3D;\operatorname{count}{\text{在半径 }r\text{ 处仍存活的 }H_k\text{ 条带}}.<br>$$</p>
 <p>条形码保留每个特征的寿命；Betti 曲线只保留每个半径处还活着多少个特征。持久图则把同样的寿命画成点 $(r_{\text{birth}},r_{\text{death}})$，点到对角线的距离就是持久性。</p>
 <aside class="ph-callout"><strong>“拓扑信号”并不简单等于“最长的条”。</strong>采样密度、距离度量、系数域、过滤方式和领域知识都会改变解释。持久性给出稳定的多尺度描述符，却不会自动替我们解释数据。</aside>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="4-页面实际计算了什么？">4. 页面实际计算了什么？</div>
-<p>对于边界映射为 $\partial_k:C_k\to C_{k-1}$ 的单纯复形，第 $k$ 阶同调群为</p>
-<p>$$<br>
-H_k=\ker \partial_k/\operatorname{im}\partial_{k+1},<br>
-\qquad<br>
-\beta_k=\dim H_k.<br>
-$$</p>
+
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="4-页面实际计算了什么？"><a href="#4-页面实际计算了什么？" class="headerlink" title="4. 页面实际计算了什么？"></a>4. 页面实际计算了什么？</div><p>对于边界映射为 $\partial_k:C_k\to C_{k-1}$ 的单纯复形，第 $k$ 阶同调群为</p>
+<p>$$<br>H_k&#x3D;\ker \partial_k&#x2F;\operatorname{im}\partial_{k+1},<br>\qquad<br>\beta_k&#x3D;\dim H_k.<br>$$</p>
 <p>上面的交互图会在当前半径下真实构造边和三角形，并在 $\mathbb F_2$ 上对边界矩阵做高斯消元。因此</p>
-<p>$$<br>
-\beta_0=n-\operatorname{rank}\partial_1,<br>
-\qquad<br>
-\beta_1=m-\operatorname{rank}\partial_1-\operatorname{rank}\partial_2,<br>
-$$</p>
+<p>$$<br>\beta_0&#x3D;n-\operatorname{rank}\partial_1,<br>\qquad<br>\beta_1&#x3D;m-\operatorname{rank}\partial_1-\operatorname{rank}\partial_2,<br>$$</p>
 <p>其中 $n,m$ 分别是顶点数与边数。在 $\mathbb F_2$ 上计算可省略定向的正负号；若问题涉及扭结（torsion），系数选择就会很重要。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="5-一个可靠的分析流程">5. 一个可靠的分析流程</div>
-<ol>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="5-一个可靠的分析流程"><a href="#5-一个可靠的分析流程" class="headerlink" title="5. 一个可靠的分析流程"></a>5. 一个可靠的分析流程</div><ol>
 <li><strong>选择有意义的表征和度量。</strong> 输入距离没有科学意义，得到的拓扑也不会自动获得意义。</li>
 <li><strong>选择过滤。</strong> 一般点云常用 Vietoris–Rips；Čech 复形严格对应圆盘并集的神经；欧氏空间可用更高效的 alpha 复形；图像和标量场常用下水平集过滤。</li>
 <li><strong>计算问题真正需要的维度。</strong> $H_0$ 看簇，$H_1$ 看环，$H_2$ 看空腔；维度越高，代价增长越快。</li>
 <li><strong>检验稳定性。</strong> 用 bottleneck 或 Wasserstein 距离比较持久图，向量化后做统计，或通过重采样检查条带是否稳定。</li>
 <li><strong>回到领域解释。</strong> 一条很长的 $H_1$ 可能是物理周期、周期坐标、采样边界，也可能只是预处理伪影。</li>
 </ol>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="结语：不要过早选定-r">结语：不要过早选定 $r$</div>
-<p>聚类往往在一个选定分辨率下追问“哪些点属于同一组”；持久同调问得更宽：<strong>哪些连通分量、环和空腔能跨越多个分辨率保持一致？</strong> 它最有力量的地方，是拒绝过早选定某个 $r$。答案不是一个形状，而是一段形状的历史。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="结语：不要过早选定-r"><a href="#结语：不要过早选定-r" class="headerlink" title="结语：不要过早选定 $r$"></a>结语：不要过早选定 $r$</div><p>聚类往往在一个选定分辨率下追问“哪些点属于同一组”；持久同调问得更宽：<strong>哪些连通分量、环和空腔能跨越多个分辨率保持一致？</strong> 它最有力量的地方，是拒绝过早选定某个 $r$。答案不是一个形状，而是一段形状的历史。</p>
 </div>
 </section>
 
@@ -655,8 +630,8 @@ $$</p>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "../../02/Energy-Chemistry-Interactive-Knowledge-Directory/" title= "Energy and Chemistry: An Interactive Knowledge Directory">
-                    <div class="prevTitle">Energy and Chemistry: An Interactive Knowledge Directory</div>
+                <a href= "../../02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" title= "Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory">
+                    <div class="prevTitle">Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</div>
                 </a>
             
         </li>
@@ -1569,9 +1544,26 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 72
+        Total : 73
         </div>
         <!-- search  -->
         
@@ -1587,6 +1579,11 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "2026/09/04/Dark-Channel-Prior-Research-Taste-and-Perception-Hardware/" >Dark Channel Prior: From Research Taste to Perception Hardware</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "2026/09/04/From-Greens-Theorem-to-the-Residue-Theorem/" >From Green's Theorem to the Residue Theorem: Boundary Integrals, Singularities, and Sources</a>
         </li>
     
@@ -1597,17 +1594,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" >Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
         </li>
     
     
@@ -1995,17 +1992,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
-    
-        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
-    
         <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
     
         <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
-    
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
-        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
     
         <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
     
@@ -2013,17 +2002,25 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
     
+        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
+    
+        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
+    
         <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
-    
-        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
         <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
     
-        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
         <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
+    
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
     
         <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
     
@@ -2035,13 +2032,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
     
-        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
-    
-        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
-    
         <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
     
         <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Dark Channel Prior"><span class="iconfont-archer">&#xe606;</span>Dark Channel Prior</span>
+    
+        <span class="sidebar-tag-name" data-tags="Image Dehazing"><span class="iconfont-archer">&#xe606;</span>Image Dehazing</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Taste"><span class="iconfont-archer">&#xe606;</span>Research Taste</span>
+    
+        <span class="sidebar-tag-name" data-tags="FPGA"><span class="iconfont-archer">&#xe606;</span>FPGA</span>
+    
+        <span class="sidebar-tag-name" data-tags="Edge Perception"><span class="iconfont-archer">&#xe606;</span>Edge Perception</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
     
@@ -2049,17 +2054,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
     
-        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
     
         <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
     
         <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
-    
-        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
-    
-        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
-    
-        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
         <span class="sidebar-tag-name" data-tags="complex analysis"><span class="iconfont-archer">&#xe606;</span>complex analysis</span>
     
@@ -2069,17 +2070,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="field theory"><span class="iconfont-archer">&#xe606;</span>field theory</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
         <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
     
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+    
         <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
     
         <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
     
         <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
     
         <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
     
@@ -2087,33 +2094,33 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
     
+        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
+    
         <span class="sidebar-tag-name" data-tags="Topological Data Analysis"><span class="iconfont-archer">&#xe606;</span>Topological Data Analysis</span>
     
         <span class="sidebar-tag-name" data-tags="Persistent Homology"><span class="iconfont-archer">&#xe606;</span>Persistent Homology</span>
     
         <span class="sidebar-tag-name" data-tags="Data Science"><span class="iconfont-archer">&#xe606;</span>Data Science</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
-    
         <span class="sidebar-tag-name" data-tags="AI-Assisted Research"><span class="iconfont-archer">&#xe606;</span>AI-Assisted Research</span>
     
         <span class="sidebar-tag-name" data-tags="Network Privacy"><span class="iconfont-archer">&#xe606;</span>Network Privacy</span>
     
-        <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
-    
         <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
     
-        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
-    
-        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+        <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
     
         <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
     
-        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
+        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+    
+        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
     
         <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
     
@@ -2150,49 +2157,51 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
-    
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Computer-Vision"><span class="iconfont-archer">&#xe60a;</span>Scientific/Computer-Vision</span>
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
         <span class="sidebar-category-name" data-categories="Mathematical-Physics"><span class="iconfont-archer">&#xe60a;</span>Mathematical-Physics</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
-    
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
-    
-        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+    
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
-    
         <span class="sidebar-category-name" data-categories="Scientific/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Scientific/Artificial-Intelligence</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Chemistry/Energy"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry/Energy</span>
     

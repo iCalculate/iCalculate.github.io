@@ -8,8 +8,7 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Semiconductor Device Physics Knowledge Network: From Energy Bands to Device Functions</span><span data-lang="zh" hidden>半导体器件物理知识网络：从能带到器件功能</span></h1><p class="node-deck"><span data-lang="en">A causal map of semiconductor device physics, organized around physical dependencies rather than textbook page order and scoped to Sze&#39;s third edition.</span><span data-lang="zh" hidden>以施敏《半导体器件物理》第三版为范围，以物理因果链而非教材页码组织的器件物理入口。</span></p><div class="node-tags"><span>Device Physics</span><span>Fundamental Models</span><span>Technology Roadmap</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Thesis:</strong> Semiconductor devices are not an unrelated catalog of structures. They all implement the same mapping: <strong>materials and geometry establish the band structure; terminal voltages reshape the electrostatic potential; the potential redistributes charge; carrier transport produces terminal current; and nonideal processes set the ultimate function and performance.</strong></p>
 </blockquote>
-<h2 id="A-Reconstructive-Chain">A Reconstructive Chain</h2>
-<div class="math-display">\[\boxed{
+<h2 id="A-Reconstructive-Chain"><a href="#A-Reconstructive-Chain" class="headerlink" title="A Reconstructive Chain"></a>A Reconstructive Chain</h2><div class="math-display">\[\boxed{
 \text{materials/geometry}
 \rightarrow \text{bands and barriers}
 \rightarrow \text{charge distribution}
@@ -17,6 +16,7 @@
 \rightarrow \text{terminal }I,Q,C
 \rightarrow \text{device function}
 }\]</div>
+
 <p>The goal is not to memorize one formula set per device, but to answer six questions:</p>
 <ol>
 <li><strong>What are the active degrees of freedom?</strong> Electrons, holes, ionized dopants, interface states, or photons?</li>
@@ -26,28 +26,21 @@
 <li><strong>Which approximation is being used?</strong> Nondegenerate statistics, low injection, depletion, gradual channel, or quasistatic response?</li>
 <li><strong>What breaks the ideal model?</strong> Recombination, series resistance, breakdown, velocity saturation, short-channel electrostatics, or self-heating?</li>
 </ol>
-<h2 id="Five-Layers-of-the-Network">Five Layers of the Network</h2>
-<h3 id="Materials-and-Statistics">Materials and Statistics</h3>
-<p><a href="/knowledge/nodes/semiconductor-band-carrier-statistics/">Energy Bands, Density of States, and Carrier Statistics</a> determines which states exist and how they are occupied. Doping moves the Fermi level through charge neutrality and thereby establishes the equilibrium electron and hole reservoirs.</p>
-<h3 id="Dynamics-and-Field-Equations">Dynamics and Field Equations</h3>
-<p><a href="/knowledge/nodes/semiconductor-carrier-transport/">Drift, Diffusion, and Current in Semiconductors</a> connects fields and concentration gradients to current. <a href="/knowledge/nodes/non-equilibrium-carriers/">Nonequilibrium Carriers</a> describes generation, recombination, lifetime, and quasi-Fermi levels. <a href="/knowledge/nodes/semiconductor-device-equations/">The Governing Equations of Semiconductor Devices</a> closes Poisson, carrier statistics, drift–diffusion, and continuity into one self-consistent problem.</p>
-<h3 id="Device-Building-Blocks">Device Building Blocks</h3>
-<ul>
+<h2 id="Five-Layers-of-the-Network"><a href="#Five-Layers-of-the-Network" class="headerlink" title="Five Layers of the Network"></a>Five Layers of the Network</h2><h3 id="Materials-and-Statistics"><a href="#Materials-and-Statistics" class="headerlink" title="Materials and Statistics"></a>Materials and Statistics</h3><p><a href="/knowledge/nodes/semiconductor-band-carrier-statistics/">Energy Bands, Density of States, and Carrier Statistics</a> determines which states exist and how they are occupied. Doping moves the Fermi level through charge neutrality and thereby establishes the equilibrium electron and hole reservoirs.</p>
+<h3 id="Dynamics-and-Field-Equations"><a href="#Dynamics-and-Field-Equations" class="headerlink" title="Dynamics and Field Equations"></a>Dynamics and Field Equations</h3><p><a href="/knowledge/nodes/semiconductor-carrier-transport/">Drift, Diffusion, and Current in Semiconductors</a> connects fields and concentration gradients to current. <a href="/knowledge/nodes/non-equilibrium-carriers/">Nonequilibrium Carriers</a> describes generation, recombination, lifetime, and quasi-Fermi levels. <a href="/knowledge/nodes/semiconductor-device-equations/">The Governing Equations of Semiconductor Devices</a> closes Poisson, carrier statistics, drift–diffusion, and continuity into one self-consistent problem.</p>
+<h3 id="Device-Building-Blocks"><a href="#Device-Building-Blocks" class="headerlink" title="Device Building Blocks"></a>Device Building Blocks</h3><ul>
 <li><a href="/knowledge/nodes/pn-junction-physics/">The PN Junction</a> creates a barrier through spatially patterned doping.</li>
 <li><a href="/knowledge/nodes/metal-semiconductor-contact/">Metal–Semiconductor Contacts</a> use work-function alignment and interface physics to control majority carriers.</li>
 <li><a href="/knowledge/nodes/mos-capacitor-physics/">The MOS Capacitor</a> controls semiconductor surface charge through an insulating gate.</li>
 <li>Heterojunctions use material band offsets for carrier selection, confinement, and high-mobility channels.</li>
 </ul>
-<h3 id="Three-Terminal-Devices">Three-Terminal Devices</h3>
-<ul>
+<h3 id="Three-Terminal-Devices"><a href="#Three-Terminal-Devices" class="headerlink" title="Three-Terminal Devices"></a>Three-Terminal Devices</h3><ul>
 <li><a href="/knowledge/nodes/bipolar-junction-transistor-physics/">The Bipolar Junction Transistor</a> couples two PN junctions through minority-carrier injection and transport.</li>
 <li><a href="/knowledge/nodes/mosfet-physics/">The MOSFET</a> extends MOS electrostatics laterally so that gate-controlled inversion charge carries source–drain current.</li>
 <li><a href="/knowledge/nodes/heterojunction-and-fet-family/">Heterojunctions, JFETs, MESFETs, and HEMTs</a> compare depletion-controlled channels with heterojunction-generated two-dimensional carrier gases.</li>
 </ul>
-<h3 id="Limits-and-Functions">Limits and Functions</h3>
-<p><a href="/knowledge/nodes/device-breakdown-and-scaling/">Breakdown, Scaling, and Nonideal Effects</a> cuts across every device. <a href="/knowledge/nodes/power-semiconductor-devices/">Power Devices</a>, <a href="/knowledge/nodes/optoelectronic-semiconductor-devices/">Optoelectronic Devices</a>, and <a href="/knowledge/nodes/nonvolatile-memory-device-physics/">Nonvolatile Memories</a> turn the same physics into energy switching, light conversion, and information retention.</p>
-<h3 id="Emerging-Quantum-and-Functional-Branches">Emerging Quantum and Functional Branches</h3>
-<p>The extended atlas grows from this classical trunk through five causal gateways:</p>
+<h3 id="Limits-and-Functions"><a href="#Limits-and-Functions" class="headerlink" title="Limits and Functions"></a>Limits and Functions</h3><p><a href="/knowledge/nodes/device-breakdown-and-scaling/">Breakdown, Scaling, and Nonideal Effects</a> cuts across every device. <a href="/knowledge/nodes/power-semiconductor-devices/">Power Devices</a>, <a href="/knowledge/nodes/optoelectronic-semiconductor-devices/">Optoelectronic Devices</a>, and <a href="/knowledge/nodes/nonvolatile-memory-device-physics/">Nonvolatile Memories</a> turn the same physics into energy switching, light conversion, and information retention.</p>
+<h3 id="Emerging-Quantum-and-Functional-Branches"><a href="#Emerging-Quantum-and-Functional-Branches" class="headerlink" title="Emerging Quantum and Functional Branches"></a>Emerging Quantum and Functional Branches</h3><p>The extended atlas grows from this classical trunk through five causal gateways:</p>
 <ul>
 <li><a href="/knowledge/nodes/two-dimensional-quantum-foundations/">Two-Dimensional Quantum Foundations</a> rebuilds electrostatics, transport and optical response for atomically thin matter.</li>
 <li><a href="/knowledge/nodes/emerging-steep-slope-transistors/">Emerging Steep-Slope Transistors</a> compares TFET, NCFET and cold-source injection without treating a minimum subthreshold slope as a complete device metric.</li>
@@ -57,51 +50,48 @@
 <li><a href="/knowledge/nodes/optoelectronic-devices-knowledge-network/">Optoelectronic Devices Knowledge Network</a> connects traditional emitters, detectors and photovoltaics to integrated photonics and superconducting single-photon detection.</li>
 <li><a href="/knowledge/nodes/electronic-quantum-condensed-matter-knowledge-network/">Electronic Quantum Condensed Matter Knowledge Network</a> rebuilds the path from crystal symmetry and correlations to magnetic, superconducting and topological order.</li>
 </ul>
-<h2 id="Recommended-Learning-Paths">Recommended Learning Paths</h2>
-<table>
+<h2 id="Recommended-Learning-Paths"><a href="#Recommended-Learning-Paths" class="headerlink" title="Recommended Learning Paths"></a>Recommended Learning Paths</h2><table>
 <thead>
 <tr>
 <th>Goal</th>
 <th>Path</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>CMOS and integrated circuits</td>
 <td>statistics → governing equations → PN junction → MOS capacitor → MOSFET → scaling → memory</td>
 </tr>
 <tr>
 <td>Power electronics</td>
-<td>transport → PN junction and breakdown → MOSFET/BJT → power structures → electrothermal limits</td>
+<td>transport → PN junction and breakdown → MOSFET&#x2F;BJT → power structures → electrothermal limits</td>
 </tr>
 <tr>
 <td>Optoelectronics</td>
-<td>bands → nonequilibrium carriers → PN junction → generation/recombination → emitters, detectors, and solar cells</td>
+<td>bands → nonequilibrium carriers → PN junction → generation&#x2F;recombination → emitters, detectors, and solar cells</td>
 </tr>
-</tbody>
-</table>
-<h2 id="How-to-Read-the-Figures">How to Read the Figures</h2>
-<ul>
+</tbody></table>
+<h2 id="How-to-Read-the-Figures"><a href="#How-to-Read-the-Figures" class="headerlink" title="How to Read the Figures"></a>How to Read the Figures</h2><ul>
 <li>The vertical axis of a band diagram is usually <strong>electron energy</strong>. Because electron potential energy is \(-q\psi\), a rising electrostatic potential lowers the electron bands.</li>
 <li>The equilibrium Fermi level is spatially constant. Under nonequilibrium conditions, electrons and holes require separate \(E_{Fn}\) and \(E_{Fp}\).</li>
 <li>A cross-section shows geometry and doping; a band diagram shows barriers; an I–V or C–V graph shows terminal response. They are complementary, not interchangeable.</li>
 </ul>
 <!--deep-classical:en-->
-<h2 id="Governing-closure-from-state-to-terminal-response">Governing closure: from state to terminal response</h2>
-<p>Every device chapter closes the same mathematical loop.  Electrostatics converts charge into potential,</p>
+
+<h2 id="Governing-closure-from-state-to-terminal-response"><a href="#Governing-closure-from-state-to-terminal-response" class="headerlink" title="Governing closure: from state to terminal response"></a>Governing closure: from state to terminal response</h2><p>Every device chapter closes the same mathematical loop.  Electrostatics converts charge into potential,</p>
 <div class="math-display">\[\nabla\cdot(\epsilon\nabla\phi)=-q(p-n+N_D^+-N_A^-+\rho_t/q),\]</div>
+
 <p>statistics converts potential into occupation, and transport converts occupation gradients into current.  Continuity then updates charge:</p>
 <div class="math-display">\[\frac{\partial n}{\partial t}=\frac{1}{q}\nabla\cdot\mathbf J_n+G-R,\qquad
 \frac{\partial p}{\partial t}=-\frac{1}{q}\nabla\cdot\mathbf J_p+G-R.\]</div>
+
 <p>The terminal current is a boundary flux plus displacement current.  A device model is physically closed only after material relations, geometry, contacts, initial state and external circuit are specified.  This is why the Atlas uses causal links: changing a material parameter propagates through states, fields, transport and finally the measured port.</p>
 <!--/deep-classical:en-->
-<h2 id="Scope-and-Sources">Scope and Sources</h2>
-<p>The coverage follows S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed.; the Chinese table of contents is available from the <a href="https://bdt.semi.ac.cn/library/contents/756/8783.html" target="_blank" rel="noopener">Institute of Semiconductors, Chinese Academy of Sciences</a>. Sze’s lecture sequence—semiconductor physics → PN junction → MOS capacitor → MOSFET → nonvolatile memory—provides the central route. Blog notes are used only as explanatory cross-checks; definitions and validity conditions follow the textbook and the self-consistency of the governing equations.</p>
+
+<h2 id="Scope-and-Sources"><a href="#Scope-and-Sources" class="headerlink" title="Scope and Sources"></a>Scope and Sources</h2><p>The coverage follows S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed.; the Chinese table of contents is available from the <a href="https://bdt.semi.ac.cn/library/contents/756/8783.html" target="_blank" rel="noopener">Institute of Semiconductors, Chinese Academy of Sciences</a>. Sze’s lecture sequence—semiconductor physics → PN junction → MOS capacitor → MOSFET → nonvolatile memory—provides the central route. Blog notes are used only as explanatory cross-checks; definitions and validity conditions follow the textbook and the self-consistency of the governing equations.</p>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p><strong>总纲</strong>：半导体器件不是彼此独立的结构清单。它们都在实现同一条映射：<strong>材料与几何结构决定能带，端电压改变静电势，静电势重排载流子，载流子输运形成端口电流，非理想过程最终限制功能与性能。</strong></p>
 </blockquote>
-<h2 id="1-一条可以重建公式的主线">1. 一条可以重建公式的主线</h2>
-<div class="math-display">\[\boxed{
+<h2 id="1-一条可以重建公式的主线"><a href="#1-一条可以重建公式的主线" class="headerlink" title="1. 一条可以重建公式的主线"></a>1. 一条可以重建公式的主线</h2><div class="math-display">\[\boxed{
 \text{材料/结构}
 \rightarrow \text{能带与势垒}
 \rightarrow \text{电荷分布}
@@ -109,6 +99,7 @@
 \rightarrow \text{端口 }I,Q,C
 \rightarrow \text{器件功能}
 }\]</div>
+
 <p>学习器件物理的目标不是记住每种器件的一组公式，而是能够回答六个问题：</p>
 <ol>
 <li><strong>自由度是什么？</strong> 电子、空穴、离化杂质、界面态还是光子？</li>
@@ -118,28 +109,21 @@
 <li><strong>采用了什么近似？</strong> 非简并、小注入、耗尽近似、缓变沟道或准静态？</li>
 <li><strong>什么效应使理想模型失效？</strong> 复合、串联电阻、击穿、速度饱和、短沟道或自热？</li>
 </ol>
-<h2 id="2-网络的五个层次">2. 网络的五个层次</h2>
-<h3 id="A-材料与统计基础">A. 材料与统计基础</h3>
-<p><a href="/knowledge/nodes/semiconductor-band-carrier-statistics/">能带、态密度与载流子统计</a>回答“有多少可用状态、这些状态被占据多少”。掺杂通过电中性条件移动费米能级，由此决定平衡电子和空穴浓度。</p>
-<h3 id="B-动力学与场方程">B. 动力学与场方程</h3>
-<p><a href="/knowledge/nodes/semiconductor-carrier-transport/">半导体中的漂移、扩散与电流</a>给出电场和浓度梯度如何产生电流；<a href="/knowledge/nodes/non-equilibrium-carriers/">非平衡载流子：产生、复合与准费米能级</a>给出受光、电注入后的载流子演化；<a href="/knowledge/nodes/semiconductor-device-equations/">半导体器件的基本方程</a>把泊松方程、漂移—扩散关系和连续性方程闭合成一个自洽问题。</p>
-<h3 id="C-器件的基本构件">C. 器件的基本构件</h3>
-<ul>
+<h2 id="2-网络的五个层次"><a href="#2-网络的五个层次" class="headerlink" title="2. 网络的五个层次"></a>2. 网络的五个层次</h2><h3 id="A-材料与统计基础"><a href="#A-材料与统计基础" class="headerlink" title="A. 材料与统计基础"></a>A. 材料与统计基础</h3><p><a href="/knowledge/nodes/semiconductor-band-carrier-statistics/">能带、态密度与载流子统计</a>回答“有多少可用状态、这些状态被占据多少”。掺杂通过电中性条件移动费米能级，由此决定平衡电子和空穴浓度。</p>
+<h3 id="B-动力学与场方程"><a href="#B-动力学与场方程" class="headerlink" title="B. 动力学与场方程"></a>B. 动力学与场方程</h3><p><a href="/knowledge/nodes/semiconductor-carrier-transport/">半导体中的漂移、扩散与电流</a>给出电场和浓度梯度如何产生电流；<a href="/knowledge/nodes/non-equilibrium-carriers/">非平衡载流子：产生、复合与准费米能级</a>给出受光、电注入后的载流子演化；<a href="/knowledge/nodes/semiconductor-device-equations/">半导体器件的基本方程</a>把泊松方程、漂移—扩散关系和连续性方程闭合成一个自洽问题。</p>
+<h3 id="C-器件的基本构件"><a href="#C-器件的基本构件" class="headerlink" title="C. 器件的基本构件"></a>C. 器件的基本构件</h3><ul>
 <li><a href="/knowledge/nodes/pn-junction-physics/">PN结：空间电荷、能带与整流</a>：同一材料内用掺杂制造势垒；</li>
 <li><a href="/knowledge/nodes/metal-semiconductor-contact/">金属-半导体接触与肖特基势垒</a>：用功函数差和界面控制多数载流子；</li>
 <li><a href="/knowledge/nodes/mos-capacitor-physics/">MOS电容：积累、耗尽与反型</a>：用绝缘栅静电控制半导体表面电荷；</li>
 <li>异质结：用材料带阶实现载流子选择、限制或高迁移率沟道。</li>
 </ul>
-<h3 id="D-三端与多端器件">D. 三端与多端器件</h3>
-<ul>
+<h3 id="D-三端与多端器件"><a href="#D-三端与多端器件" class="headerlink" title="D. 三端与多端器件"></a>D. 三端与多端器件</h3><ul>
 <li><a href="/knowledge/nodes/bipolar-junction-transistor-physics/">双极晶体管：少子注入与电流放大</a>把两个耦合 PN 结组成受控输运器件；</li>
 <li><a href="/knowledge/nodes/mosfet-physics/">MOSFET：栅控电荷与沟道输运</a>把 MOS 电容沿横向展开，令栅压控制源漏电流；</li>
 <li><a href="/knowledge/nodes/heterojunction-and-fet-family/">异质结、JFET、MESFET与HEMT</a>展示“耗尽层控制沟道”和“异质结生成二维电子气”两条路线。</li>
 </ul>
-<h3 id="E-限制与应用">E. 限制与应用</h3>
-<p><a href="/knowledge/nodes/device-breakdown-and-scaling/">击穿、缩放与器件非理想效应</a>横向连接所有器件；<a href="/knowledge/nodes/power-semiconductor-devices/">功率半导体器件</a>、<a href="/knowledge/nodes/optoelectronic-semiconductor-devices/">光电子器件：LED、光电二极管与太阳电池</a>和<a href="/knowledge/nodes/nonvolatile-memory-device-physics/">非易失存储器的器件物理</a>分别把输运转化为能量开关、光电转换和信息保存。</p>
-<h3 id="F-新兴量子与功能分支">F. 新兴量子与功能分支</h3>
-<p>扩展后的 Atlas 从经典主干通过五个因果入口继续生长：</p>
+<h3 id="E-限制与应用"><a href="#E-限制与应用" class="headerlink" title="E. 限制与应用"></a>E. 限制与应用</h3><p><a href="/knowledge/nodes/device-breakdown-and-scaling/">击穿、缩放与器件非理想效应</a>横向连接所有器件；<a href="/knowledge/nodes/power-semiconductor-devices/">功率半导体器件</a>、<a href="/knowledge/nodes/optoelectronic-semiconductor-devices/">光电子器件：LED、光电二极管与太阳电池</a>和<a href="/knowledge/nodes/nonvolatile-memory-device-physics/">非易失存储器的器件物理</a>分别把输运转化为能量开关、光电转换和信息保存。</p>
+<h3 id="F-新兴量子与功能分支"><a href="#F-新兴量子与功能分支" class="headerlink" title="F. 新兴量子与功能分支"></a>F. 新兴量子与功能分支</h3><p>扩展后的 Atlas 从经典主干通过五个因果入口继续生长：</p>
 <ul>
 <li><a href="/knowledge/nodes/two-dimensional-quantum-foundations/">二维量子物理基础</a>针对原子级薄材料重建静电、输运和光学响应；</li>
 <li><a href="/knowledge/nodes/emerging-steep-slope-transistors/">新兴陡峭亚阈值晶体管</a>统一比较 TFET、NCFET 与冷源注入，避免只用最小亚阈值摆幅评价器件；</li>
@@ -149,45 +133,43 @@
 <li><a href="/knowledge/nodes/optoelectronic-devices-knowledge-network/">光电子器件知识网络</a>把传统发光、探测和光伏器件连接到集成光子学与超导单光子探测。</li>
 <li><a href="/knowledge/nodes/electronic-quantum-condensed-matter-knowledge-network/">电子量子凝聚态物理知识网络</a>从晶体对称性和关联出发，重建通往磁性、超导和拓扑有序的路径。</li>
 </ul>
-<h2 id="3-三条推荐学习路径">3. 三条推荐学习路径</h2>
-<table>
+<h2 id="3-三条推荐学习路径"><a href="#3-三条推荐学习路径" class="headerlink" title="3. 三条推荐学习路径"></a>3. 三条推荐学习路径</h2><table>
 <thead>
 <tr>
 <th>目标</th>
 <th>路径</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>CMOS/集成电路</td>
+<tbody><tr>
+<td>CMOS&#x2F;集成电路</td>
 <td>能带统计 → 基本方程 → PN结 → MOS电容 → MOSFET → 缩放效应 → 存储器</td>
 </tr>
 <tr>
 <td>功率电子</td>
-<td>输运 → PN结与击穿 → MOSFET/BJT → 功率器件 → 自热与可靠性</td>
+<td>输运 → PN结与击穿 → MOSFET&#x2F;BJT → 功率器件 → 自热与可靠性</td>
 </tr>
 <tr>
 <td>光电子</td>
-<td>能带 → 非平衡载流子 → PN结 → 产生复合 → LED/激光器/探测器/太阳电池</td>
+<td>能带 → 非平衡载流子 → PN结 → 产生复合 → LED&#x2F;激光器&#x2F;探测器&#x2F;太阳电池</td>
 </tr>
-</tbody>
-</table>
-<h2 id="4-读图约定">4. 读图约定</h2>
-<ul>
+</tbody></table>
+<h2 id="4-读图约定"><a href="#4-读图约定" class="headerlink" title="4. 读图约定"></a>4. 读图约定</h2><ul>
 <li>能带图纵轴通常是<strong>电子能量</strong>，电势升高时电子势能 \(-q\psi\) 降低；不要把能带弯曲方向直接当成电场方向。</li>
 <li>平衡态费米能级必须处处相等；非平衡时电子与空穴分别由 \(E_{Fn}\)、\(E_{Fp}\) 描述。</li>
-<li>器件剖面图表达几何和掺杂，能带图表达势垒，I–V/C–V 图表达端口响应；三者不能互相替代。</li>
+<li>器件剖面图表达几何和掺杂，能带图表达势垒，I–V&#x2F;C–V 图表达端口响应；三者不能互相替代。</li>
 </ul>
 <!--deep-classical:zh-->
-<h2 id="控制方程的闭合：从内部状态到端口响应">控制方程的闭合：从内部状态到端口响应</h2>
-<p>每一类器件最终都闭合到同一数学回路。静电把电荷转换为电势：</p>
+
+<h2 id="控制方程的闭合：从内部状态到端口响应"><a href="#控制方程的闭合：从内部状态到端口响应" class="headerlink" title="控制方程的闭合：从内部状态到端口响应"></a>控制方程的闭合：从内部状态到端口响应</h2><p>每一类器件最终都闭合到同一数学回路。静电把电荷转换为电势：</p>
 <div class="math-display">\[\nabla\cdot(\epsilon\nabla\phi)=-q(p-n+N_D^+-N_A^-+\rho_t/q),\]</div>
+
 <p>统计关系把电势转换为占据，输运关系再把占据梯度转换为电流，连续性方程更新电荷：</p>
 <div class="math-display">\[\frac{\partial n}{\partial t}=\frac{1}{q}\nabla\cdot\mathbf J_n+G-R,\qquad
 \frac{\partial p}{\partial t}=-\frac{1}{q}\nabla\cdot\mathbf J_p+G-R.\]</div>
+
 <p>端口电流是边界粒子通量与位移电流之和。只有给出材料关系、几何、接触、初态和外电路，器件模型才真正闭合。这也是 Atlas 采用因果链接的原因：材料参数变化会依次传播到状态、场、输运，最终才到达测量端口。</p>
 <!--/deep-classical:zh-->
-<h2 id="5-范围与来源">5. 范围与来源</h2>
-<p>知识范围按 S. M. Sze 与 K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed. 的结构组织；中文第三版目录可在<a href="https://bdt.semi.ac.cn/library/contents/756/8783.html" target="_blank" rel="noopener">中国科学院半导体研究所图书馆</a>核对。施敏本人课程的主线为“半导体物理 → PN结 → MOS电容 → MOSFET → 非挥发存储器”，可参见<a href="https://training.eeworld.com.cn/course/5729" target="_blank" rel="noopener">课程目录</a>。博客笔记只作为解释线索，定义、符号和适用条件以教材与方程自洽性为准。</p>
+
+<h2 id="5-范围与来源"><a href="#5-范围与来源" class="headerlink" title="5. 范围与来源"></a>5. 范围与来源</h2><p>知识范围按 S. M. Sze 与 K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed. 的结构组织；中文第三版目录可在<a href="https://bdt.semi.ac.cn/library/contents/756/8783.html" target="_blank" rel="noopener">中国科学院半导体研究所图书馆</a>核对。施敏本人课程的主线为“半导体物理 → PN结 → MOS电容 → MOSFET → 非挥发存储器”，可参见<a href="https://training.eeworld.com.cn/course/5729" target="_blank" rel="noopener">课程目录</a>。博客笔记只作为解释线索，定义、符号和适用条件以教材与方程自洽性为准。</p>
 </div></div><aside class="node-toc" aria-label="On this page"><span>Contents</span><ol><li><a href="#A-Reconstructive-Chain" data-toc-index="0">A Reconstructive Chain</a></li><li><a href="#Five-Layers-of-the-Network" data-toc-index="1">Five Layers of the Network</a></li><li><a href="#Recommended-Learning-Paths" data-toc-index="2">Recommended Learning Paths</a></li><li><a href="#How-to-Read-the-Figures" data-toc-index="3">How to Read the Figures</a></li><li><a href="#Governing-closure-from-state-to-terminal-response" data-toc-index="4">Governing closure: from state to terminal response</a></li><li><a href="#Scope-and-Sources" data-toc-index="5">Scope and Sources</a></li></ol></aside></div><section class="node-links"><h2><span data-lang="en">Connected notes</span><span data-lang="zh" hidden>关联知识</span></h2><ul><li><a href="/knowledge/nodes/semiconductor-band-carrier-statistics/"><span data-lang="en">Energy Bands, Density of States, and Carrier Statistics</span><span data-lang="zh" hidden>能带、态密度与载流子统计</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/semiconductor-carrier-transport/"><span data-lang="en">Drift, Diffusion, and Current in Semiconductors</span><span data-lang="zh" hidden>半导体中的漂移、扩散与电流</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/non-equilibrium-carriers/"><span data-lang="en">Nonequilibrium Carriers: Generation, Recombination, and Quasi-Fermi Levels</span><span data-lang="zh" hidden>非平衡载流子：产生、复合与准费米能级</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/semiconductor-device-equations/"><span data-lang="en">The Governing Equations of Semiconductor Devices</span><span data-lang="zh" hidden>半导体器件的基本方程</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/pn-junction-physics/"><span data-lang="en">The PN Junction: Space Charge, Band Bending, and Rectification</span><span data-lang="zh" hidden>PN结：空间电荷、能带与整流</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/metal-semiconductor-contact/"><span data-lang="en">Metal–Semiconductor Contacts and Schottky Barriers</span><span data-lang="zh" hidden>金属-半导体接触与肖特基势垒</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/mos-capacitor-physics/"><span data-lang="en">The MOS Capacitor: Accumulation, Depletion, and Inversion</span><span data-lang="zh" hidden>MOS电容：积累、耗尽与反型</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/bipolar-junction-transistor-physics/"><span data-lang="en">The Bipolar Junction Transistor: Minority-Carrier Injection and Gain</span><span data-lang="zh" hidden>双极晶体管：少子注入与电流放大</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/mosfet-physics/"><span data-lang="en">The MOSFET: Gate-Controlled Charge and Channel Transport</span><span data-lang="zh" hidden>MOSFET：栅控电荷与沟道输运</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/heterojunction-and-fet-family/"><span data-lang="en">Heterojunctions, JFETs, MESFETs, and HEMTs</span><span data-lang="zh" hidden>异质结、JFET、MESFET与HEMT</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/device-breakdown-and-scaling/"><span data-lang="en">Breakdown, Scaling, and Device Nonidealities</span><span data-lang="zh" hidden>击穿、缩放与器件非理想效应</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/power-semiconductor-devices/"><span data-lang="en">Power Semiconductor Devices</span><span data-lang="zh" hidden>功率半导体器件</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/optoelectronic-semiconductor-devices/"><span data-lang="en">Optoelectronic Devices: LEDs, Photodiodes, and Solar Cells</span><span data-lang="zh" hidden>光电子器件：LED、光电二极管与太阳电池</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/nonvolatile-memory-device-physics/"><span data-lang="en">Device Physics of Nonvolatile Memory</span><span data-lang="zh" hidden>非易失存储器的器件物理</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/two-dimensional-quantum-foundations/"><span data-lang="en">Two-Dimensional Quantum Foundations</span><span data-lang="zh" hidden>二维量子物理基础</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/emerging-steep-slope-transistors/"><span data-lang="en">Emerging Steep-Slope Transistors</span><span data-lang="zh" hidden>新兴陡峭亚阈值晶体管</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/advanced-nonvolatile-memory-physics/"><span data-lang="en">Advanced Nonvolatile Memory Physics</span><span data-lang="zh" hidden>先进非易失存储器物理</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/functional-and-neuromorphic-devices/"><span data-lang="en">Functional and Neuromorphic Devices</span><span data-lang="zh" hidden>功能与神经形态器件</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/two-dimensional-quantum-devices/"><span data-lang="en">Two-Dimensional Quantum Devices</span><span data-lang="zh" hidden>二维量子器件</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/optoelectronic-devices-knowledge-network/"><span data-lang="en">Optoelectronic Devices Knowledge Network</span><span data-lang="zh" hidden>光电子器件知识网络</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/knowledge/nodes/electronic-quantum-condensed-matter-knowledge-network/"><span data-lang="en">Electronic Quantum Condensed Matter Knowledge Network</span><span data-lang="zh" hidden>电子量子凝聚态物理知识网络</span></a><small><span data-lang="en">note</span><span data-lang="zh" hidden>知识节点</span></small></li><li><a href="/2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/"><span data-lang="en">Optoelectronic Devices: An Interactive Knowledge Directory</span><span data-lang="zh" hidden>光电子器件：交互式知识目录</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li><li><a href="/2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/"><span data-lang="en">Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</span><span data-lang="zh" hidden>电子量子凝聚态物理：交互式知识目录</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li><li><a href="/2026/09/01/Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory/"><span data-lang="en">Semiconductor Devices &amp; Quantum Physics: An Interactive Knowledge Directory</span><span data-lang="zh" hidden>半导体器件与量子物理：交互式知识目录</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li><li><a href="/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/"><span data-lang="en">From Capacitors to FETs</span><span data-lang="zh" hidden>From Capacitors to FETs</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li><li><a href="/2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/"><span data-lang="en">From Ballistic Transport to Hopping in FETs</span><span data-lang="zh" hidden>From Ballistic Transport to Hopping in FETs</span></a><small><span data-lang="en">post</span><span data-lang="zh" hidden>文章</span></small></li></ul></section></article></main>
 <footer class="node-footer"><span data-lang="en">A standalone note connected through the knowledge atlas.</span><span data-lang="zh" hidden>一个通过知识图谱与其他概念相连的独立知识节点。</span></footer><script>(function(){var buttons=Array.from(document.querySelectorAll('[data-lang-option]'));var panels=Array.from(document.querySelectorAll('[data-lang]'));function setLanguage(language){panels.forEach(function(panel){panel.hidden=panel.dataset.lang!==language;});buttons.forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.langOption===language));});document.documentElement.lang=language==='zh'?'zh-CN':'en';}buttons.forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.langOption);});});document.querySelectorAll('[data-toc-index]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();var active=document.querySelector('.node-content[data-lang]:not([hidden])');var heading=active&&active.querySelectorAll('h2')[Number(link.dataset.tocIndex)];if(heading){heading.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'','#'+heading.id);}});});setLanguage('en');})();</script></body></html>

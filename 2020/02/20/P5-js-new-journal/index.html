@@ -451,28 +451,28 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1>p5.js新手入门</h1>
-<p>38 人赞同了该文章</p>
-<p>p5.js这个JavaScript库设计之初就与<a href="https://link.zhihu.com/?target=https%3A//processing.org/">Processing</a>有着共同的目标：让艺术家、设计师、教育工作者和初学者等都能够进行编码，并且是为现代web重新打造。它有着完整的一套作画功能，但并不意味着你能做的只是在canvas上画画。事实上，你可以把整个浏览器都当成你的“画布”，利用<a href="https://link.zhihu.com/?target=https%3A//p5js.org/libraries/">插件库</a>你可以很方便地与其他html5元素（如文本，输入框，视频，摄像头和音频）进行交互。</p>
-<p>这儿有个p5.js的<a href="https://link.zhihu.com/?target=http%3A//hello.p5js.org/">演示</a>。</p>
-<p>接下来这篇文章会指导你搭建一个p5.js项目，以及第一次用它进行绘图。Processing的用户也许会想看下<a href="https://link.zhihu.com/?target=https%3A//github.com/processing/p5.js/wiki/Processing-transition">Processing迁移教程</a>。</p>
-<h2 id="下载及文件配置">下载及文件配置</h2>
-<p>最简单的开始方式是使用<a href="https://link.zhihu.com/?target=https%3A//p5js.org/download/">p5.js完整下载包</a>中附带的空例子。</p>
+        <h1 id="p5-js新手入门"><a href="#p5-js新手入门" class="headerlink" title="p5.js新手入门"></a>p5.js新手入门</h1><p>38 人赞同了该文章</p>
+<p>p5.js这个JavaScript库设计之初就与<a href="https://link.zhihu.com/?target=https://processing.org/">Processing</a>有着共同的目标：让艺术家、设计师、教育工作者和初学者等都能够进行编码，并且是为现代web重新打造。它有着完整的一套作画功能，但并不意味着你能做的只是在canvas上画画。事实上，你可以把整个浏览器都当成你的“画布”，利用<a href="https://link.zhihu.com/?target=https://p5js.org/libraries/">插件库</a>你可以很方便地与其他html5元素（如文本，输入框，视频，摄像头和音频）进行交互。</p>
+<p>这儿有个p5.js的<a href="https://link.zhihu.com/?target=http://hello.p5js.org/">演示</a>。</p>
+<p>接下来这篇文章会指导你搭建一个p5.js项目，以及第一次用它进行绘图。Processing的用户也许会想看下<a href="https://link.zhihu.com/?target=https://github.com/processing/p5.js/wiki/Processing-transition">Processing迁移教程</a>。</p>
+<h2 id="下载及文件配置"><a href="#下载及文件配置" class="headerlink" title="下载及文件配置"></a>下载及文件配置</h2><p>最简单的开始方式是使用<a href="https://link.zhihu.com/?target=https://p5js.org/download/">p5.js完整下载包</a>中附带的空例子。</p>
 <p>如果你查看index.html文件，你会发现它链接到文件p5.js。如果你想用压缩后的（为了更快的加载速度）版本，就将链接地址改为p5.min.js。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../p5.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>另外，你也可以使用在线托管的p5.js。p5.js的所有版本都部署到一个CDN（内容分发网络）上了。你可以在<a href="https://link.zhihu.com/?target=https%3A//cdnjs.com/libraries/p5.js">p5.js CDN</a>上查看它的历史版本。这时，你可以把链接地址改成：</p>
+
+<p>另外，你也可以使用在线托管的p5.js。p5.js的所有版本都部署到一个CDN（内容分发网络）上了。你可以在<a href="https://link.zhihu.com/?target=https://cdnjs.com/libraries/p5.js">p5.js CDN</a>上查看它的历史版本。这时，你可以把链接地址改成：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>示例的HTML文件看起来可能会是这样：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"sketch.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="环境">环境</h2>
-<p>你可以使用任何你喜欢的<a href="https://link.zhihu.com/?target=https%3A//en.wikipedia.org/wiki/Source_code_editor">源码编辑器</a>。下面会包含<a href="https://link.zhihu.com/?target=http%3A//www.sublimetext.com/2">Sublime Text 2</a>的使用指南，其他好用的编辑器有<a href="https://link.zhihu.com/?target=http%3A//brackets.io/">Brackets</a>、<a href="https://link.zhihu.com/?target=https%3A//atom.io/">Atom</a>和<a href="https://link.zhihu.com/?target=http%3A//openprocessing.org/">OpenProcessing</a>。</p>
+
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>你可以使用任何你喜欢的<a href="https://link.zhihu.com/?target=https://en.wikipedia.org/wiki/Source_code_editor">源码编辑器</a>。下面会包含<a href="https://link.zhihu.com/?target=http://www.sublimetext.com/2">Sublime Text 2</a>的使用指南，其他好用的编辑器有<a href="https://link.zhihu.com/?target=http://brackets.io/">Brackets</a>、<a href="https://link.zhihu.com/?target=https://atom.io/">Atom</a>和<a href="https://link.zhihu.com/?target=http://openprocessing.org/">OpenProcessing</a>。</p>
 <p>打开Sublime，转到File菜单并且选择<code>Open...</code>，然后选择你的html和js所在的文件夹。在左边栏，你应当可以看到顶部显示了文件夹的名字，跟着显示了该文件夹包含的文件列表。</p>
 <p>单击sketch.js文件，接着它会在右边的可编辑区域打开。</p>
 <p><img src="https://pic2.zhimg.com/80/v2-183bc9e06bfb72852dbf1a6ca47809ed_hd.png" alt="img"></p>
 <p>为了查看画图的效果，你需要在浏览器打开index.html文件，这可以通过在文件管理器双击index.html文件，或者在浏览器地址栏输入<code>file:///the/file/path/to/your/html</code>达到。</p>
-<h2 id="首次绘画">首次绘画</h2>
-<p>在编辑器输入如下内容：</p>
+<h2 id="首次绘画"><a href="#首次绘画" class="headerlink" title="首次绘画"></a>首次绘画</h2><p>在编辑器输入如下内容：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setup</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  ellipse(<span class="number">50</span>, <span class="number">50</span>, <span class="number">80</span>, <span class="number">80</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这行代码的意思是“画一个中点距离左边50像素、距离顶部50像素，高和宽都是80像素的圆”。</p>
 <p>保存你的sketch.js文件，然后刷新浏览器中的页面。如果你都输入准确了，你可以看到窗口显示如下：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-678ee9313885d3854c065cb14dedbdb7_hd.png" alt="img"></p>
@@ -480,13 +480,13 @@ height:50vh;
 <p>开始编程最困难的事情之一是你必须对语法非常明确。浏览器并不是都能够弄清楚你的意图，并且它会对标点符号的位置非常苛刻。经过一些训练后你会慢慢适应它。视你所使用的浏览器而定，你可以在JavaScript “console”中查看错误信息。以Chrome为例，是在<code>View &gt; Developer &gt; JavaScript Console</code>。</p>
 <p>接下来，我们画一个更有意思些的图。删除上例中的文本，然后试试这个：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setup</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  createCanvas(<span class="number">640</span>, <span class="number">480</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (mouseIsPressed) &#123;</span><br><span class="line">    fill(<span class="number">0</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    fill(<span class="number">255</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  ellipse(mouseX, mouseY, <span class="number">80</span>, <span class="number">80</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这段代码首先会创建一个640像素宽和480像素高的绘画区域，然后会在鼠标所在的位置画白色的圆圈。当按下鼠标的按键时，圆圈的颜色会变成黑色。我们会在之后更加详细的解释这段代码。当前，运行这段代码，移动鼠标并单击来实际体验一下。</p>
 <p><img src="https://pic4.zhimg.com/80/v2-358c03b6b1ac89f2162c613aa8dc3aff_hd.png" alt="img"></p>
-<h2 id="下一步">下一步</h2>
-<ul>
-<li>阅读<a href="https://link.zhihu.com/?target=https%3A//github.com/processing/p5.js/wiki/Processing-transition">Processing迁移教程</a>以学习如何从Processing转到p5.js，以及两者的区别；</li>
-<li>完整文档请查看<a href="https://link.zhihu.com/?target=https%3A//p5js.org/reference/">reference</a>；</li>
-<li>查看<a href="https://link.zhihu.com/?target=https%3A//p5js.org/tutorials/">教程</a>和<a href="https://link.zhihu.com/?target=https%3A//p5js.org/examples/">示例</a>获取更多信息。</li>
+<h2 id="下一步"><a href="#下一步" class="headerlink" title="下一步"></a>下一步</h2><ul>
+<li>阅读<a href="https://link.zhihu.com/?target=https://github.com/processing/p5.js/wiki/Processing-transition">Processing迁移教程</a>以学习如何从Processing转到p5.js，以及两者的区别；</li>
+<li>完整文档请查看<a href="https://link.zhihu.com/?target=https://p5js.org/reference/">reference</a>；</li>
+<li>查看<a href="https://link.zhihu.com/?target=https://p5js.org/tutorials/">教程</a>和<a href="https://link.zhihu.com/?target=https://p5js.org/examples/">示例</a>获取更多信息。</li>
 </ul>
 
     </article>
@@ -1425,9 +1425,26 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 72
+        Total : 73
         </div>
         <!-- search  -->
         
@@ -1443,6 +1460,11 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "2026/09/04/Dark-Channel-Prior-Research-Taste-and-Perception-Hardware/" >Dark Channel Prior: From Research Taste to Perception Hardware</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "2026/09/04/From-Greens-Theorem-to-the-Residue-Theorem/" >From Green's Theorem to the Residue Theorem: Boundary Integrals, Singularities, and Sources</a>
         </li>
     
@@ -1453,17 +1475,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" >Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
         </li>
     
     
@@ -1851,17 +1873,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
-    
-        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
-    
         <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
     
         <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
-    
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
-        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
     
         <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
     
@@ -1869,17 +1883,25 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
     
+        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
+    
+        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
+    
         <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
-    
-        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
         <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
     
-        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
         <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
+    
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
     
         <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
     
@@ -1891,13 +1913,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
     
-        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
-    
-        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
-    
         <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
     
         <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Dark Channel Prior"><span class="iconfont-archer">&#xe606;</span>Dark Channel Prior</span>
+    
+        <span class="sidebar-tag-name" data-tags="Image Dehazing"><span class="iconfont-archer">&#xe606;</span>Image Dehazing</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Taste"><span class="iconfont-archer">&#xe606;</span>Research Taste</span>
+    
+        <span class="sidebar-tag-name" data-tags="FPGA"><span class="iconfont-archer">&#xe606;</span>FPGA</span>
+    
+        <span class="sidebar-tag-name" data-tags="Edge Perception"><span class="iconfont-archer">&#xe606;</span>Edge Perception</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
     
@@ -1905,17 +1935,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
     
-        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
     
         <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
     
         <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
-    
-        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
-    
-        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
-    
-        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
         <span class="sidebar-tag-name" data-tags="complex analysis"><span class="iconfont-archer">&#xe606;</span>complex analysis</span>
     
@@ -1925,17 +1951,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="field theory"><span class="iconfont-archer">&#xe606;</span>field theory</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
         <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
     
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+    
         <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
     
         <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
     
         <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
     
         <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
     
@@ -1943,33 +1975,33 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
     
+        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
+    
         <span class="sidebar-tag-name" data-tags="Topological Data Analysis"><span class="iconfont-archer">&#xe606;</span>Topological Data Analysis</span>
     
         <span class="sidebar-tag-name" data-tags="Persistent Homology"><span class="iconfont-archer">&#xe606;</span>Persistent Homology</span>
     
         <span class="sidebar-tag-name" data-tags="Data Science"><span class="iconfont-archer">&#xe606;</span>Data Science</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
-    
         <span class="sidebar-tag-name" data-tags="AI-Assisted Research"><span class="iconfont-archer">&#xe606;</span>AI-Assisted Research</span>
     
         <span class="sidebar-tag-name" data-tags="Network Privacy"><span class="iconfont-archer">&#xe606;</span>Network Privacy</span>
     
-        <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
-    
         <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
     
-        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
-    
-        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+        <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
     
         <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
     
-        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
+        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+    
+        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
     
         <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
     
@@ -2006,49 +2038,51 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
-    
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Computer-Vision"><span class="iconfont-archer">&#xe60a;</span>Scientific/Computer-Vision</span>
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
         <span class="sidebar-category-name" data-categories="Mathematical-Physics"><span class="iconfont-archer">&#xe60a;</span>Mathematical-Physics</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
-    
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
-    
-        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+    
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
-    
         <span class="sidebar-category-name" data-categories="Scientific/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Scientific/Artificial-Intelligence</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Chemistry/Energy"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry/Energy</span>
     

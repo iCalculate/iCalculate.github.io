@@ -455,38 +455,22 @@ height:50vh;
     <article class="article-entry">
         <p>MOSFETs, 2D FETs, ambipolar transistors, and HEMTs look different, but they share one modeling chain: voltage controls potential, potential controls charge, and charge transport sets current. Starting from the parallel-plate capacitor, this article derives MOS electrostatics, channel current, subthreshold swing, quantum capacitance, ambipolar injection, and HEMT 2DEG transport. The goal is practical: identify the controlling potential, charge reservoir, and transport bottleneck so transistor equations can be reconstructed rather than memorized.</p>
 <a id="more"></a>
+
 <p>Field-effect transistors are often taught through separate formulas for MOS capacitors, MOSFET operating regimes, subthreshold swing, quantum capacitance, ambipolar transport, and the 2DEG in a HEMT.</p>
 <p>These topics are more closely connected than they first appear. Almost every field-effect transistor can be understood through the same sequence:</p>
-<p>$$<br>
-\boxed{<br>
-\text{terminal voltage}<br>
-\rightarrow \text{local potential}<br>
-\rightarrow \text{local charge}<br>
-\rightarrow \text{carrier motion}<br>
-\rightarrow I_D<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>\text{terminal voltage}<br>\rightarrow \text{local potential}<br>\rightarrow \text{local charge}<br>\rightarrow \text{carrier motion}<br>\rightarrow I_D<br>}<br>$$</p>
 <p>The microscopic origin of the channel may change, but the derivation strategy does not.</p>
 <p>We first solve the <strong>electrostatics problem</strong>—how terminal voltages determine the channel potential and charge—and then close the model with a <strong>transport relation</strong>—how that charge moves from source to drain.</p>
 <blockquote>
 <p><strong>Central idea.</strong> A gate voltage does not control drain current in a single step. It is divided among the work-function offset, dielectric voltage drop, semiconductor surface potential, interface-state charging, quantum capacitance, and other electrostatic degrees of freedom. Only the remaining gate-controlled mobile charge contributes directly to channel conduction.</p>
 </blockquote>
 <hr>
-<h2 id="1-The-reusable-framework-electrostatics-first-transport-second">1. The reusable framework: electrostatics first, transport second</h2>
-<p>A general FET model can be written schematically as two coupled equations.</p>
-<h3 id="1-1-Charge-control">1.1 Charge control</h3>
-<p>$$<br>
-F!\left[V_G,V(x),\psi,Q\right]=0.<br>
-$$</p>
+<h2 id="1-The-reusable-framework-electrostatics-first-transport-second"><a href="#1-The-reusable-framework-electrostatics-first-transport-second" class="headerlink" title="1. The reusable framework: electrostatics first, transport second"></a>1. The reusable framework: electrostatics first, transport second</h2><p>A general FET model can be written schematically as two coupled equations.</p>
+<h3 id="1-1-Charge-control"><a href="#1-1-Charge-control" class="headerlink" title="1.1 Charge control"></a>1.1 Charge control</h3><p>$$<br>F!\left[V_G,V(x),\psi,Q\right]&#x3D;0.<br>$$</p>
 <p>This relation is determined by capacitance, Poisson’s equation, electronic density of states, trap occupancy, fixed charges, and electrostatic boundary conditions.</p>
-<h3 id="1-2-Current-closure">1.2 Current closure</h3>
-<p>$$<br>
-I_D=WQ(x)v(x)+I_{\mathrm{diff}}.<br>
-$$</p>
+<h3 id="1-2-Current-closure"><a href="#1-2-Current-closure" class="headerlink" title="1.2 Current closure"></a>1.2 Current closure</h3><p>$$<br>I_D&#x3D;WQ(x)v(x)+I_{\mathrm{diff}}.<br>$$</p>
 <p>For a long-channel device at low electric field,</p>
-<p>$$<br>
-v=\mu E.<br>
-$$</p>
+<p>$$<br>v&#x3D;\mu E.<br>$$</p>
 <p>At high field or short channel length, this relation must be replaced by velocity saturation, quasi-ballistic transport, or a Landauer description.</p>
 <p>The most transferable habit in transistor physics is therefore:</p>
 <ol>
@@ -496,30 +480,17 @@ $$</p>
 <li>integrate or solve self-consistently.</li>
 </ol>
 <hr>
-<h2 id="2-From-a-parallel-plate-capacitor-to-a-MOS-capacitor">2. From a parallel-plate capacitor to a MOS capacitor</h2>
-<h3 id="2-1-The-geometric-capacitance">2.1 The geometric capacitance</h3>
-<p>For an ideal parallel-plate capacitor with dielectric thickness $t_{\mathrm{ox}}$ and permittivity $\varepsilon_{\mathrm{ox}}$, the capacitance per unit area is</p>
-<p>$$<br>
-C_{\mathrm{ox}}=\frac{\varepsilon_{\mathrm{ox}}}{t_{\mathrm{ox}}}.<br>
-$$</p>
+<h2 id="2-From-a-parallel-plate-capacitor-to-a-MOS-capacitor"><a href="#2-From-a-parallel-plate-capacitor-to-a-MOS-capacitor" class="headerlink" title="2. From a parallel-plate capacitor to a MOS capacitor"></a>2. From a parallel-plate capacitor to a MOS capacitor</h2><h3 id="2-1-The-geometric-capacitance"><a href="#2-1-The-geometric-capacitance" class="headerlink" title="2.1 The geometric capacitance"></a>2.1 The geometric capacitance</h3><p>For an ideal parallel-plate capacitor with dielectric thickness $t_{\mathrm{ox}}$ and permittivity $\varepsilon_{\mathrm{ox}}$, the capacitance per unit area is</p>
+<p>$$<br>C_{\mathrm{ox}}&#x3D;\frac{\varepsilon_{\mathrm{ox}}}{t_{\mathrm{ox}}}.<br>$$</p>
 <p>The corresponding charge density is</p>
-<p>$$<br>
-Q=C_{\mathrm{ox}}V.<br>
-$$</p>
+<p>$$<br>Q&#x3D;C_{\mathrm{ox}}V.<br>$$</p>
 <p>This is the origin of the familiar statement that a thinner dielectric or a higher dielectric constant produces stronger gate control.</p>
 <p>If the semiconductor channel behaved as an ideal metal, we could immediately write</p>
-<p>$$<br>
-Q=C_{\mathrm{ox}}(V_G-V_0).<br>
-$$</p>
+<p>$$<br>Q&#x3D;C_{\mathrm{ox}}(V_G-V_0).<br>$$</p>
 <p>A semiconductor, however, is not an equipotential charge reservoir with infinite density of states. Part of the applied voltage is consumed by band bending, depletion, interface charging, and the movement of the Fermi level.</p>
 <p>We therefore need a voltage-partition equation.</p>
-<h3 id="2-2-The-MOS-electrostatic-balance">2.2 The MOS electrostatic balance</h3>
-<p>For a conventional MOS capacitor,</p>
-<p>$$<br>
-\boxed{<br>
-V_G=V_{\mathrm{FB}}+\psi_s-\frac{Q_s}{C_{\mathrm{ox}}}<br>
-}<br>
-$$</p>
+<h3 id="2-2-The-MOS-electrostatic-balance"><a href="#2-2-The-MOS-electrostatic-balance" class="headerlink" title="2.2 The MOS electrostatic balance"></a>2.2 The MOS electrostatic balance</h3><p>For a conventional MOS capacitor,</p>
+<p>$$<br>\boxed{<br>V_G&#x3D;V_{\mathrm{FB}}+\psi_s-\frac{Q_s}{C_{\mathrm{ox}}}<br>}<br>$$</p>
 <p>where</p>
 <ul>
 <li>$V_{\mathrm{FB}}$ is the flat-band voltage;</li>
@@ -527,379 +498,137 @@ $$</p>
 <li>$Q_s$ is the total semiconductor-side charge per unit area.</li>
 </ul>
 <p>The exact signs depend on the adopted convention, but the structure of the equation is universal:</p>
-<p>$$<br>
-\text{gate voltage}<br>
-=\text{offset}<br>
-+\text{semiconductor potential}<br>
-+\text{dielectric voltage drop}.<br>
-$$</p>
+<p>$$<br>\text{gate voltage}<br>&#x3D;\text{offset}<br>+\text{semiconductor potential}<br>+\text{dielectric voltage drop}.<br>$$</p>
 <p>For a p-type Si substrate under positive gate bias, holes are first repelled, producing a depletion region. Under the depletion approximation,</p>
-<p>$$<br>
-Q_{\mathrm{dep}}(\psi_s)<br>
-\approx<br>
--\sqrt{2q\varepsilon_sN_A\psi_s}.<br>
-$$</p>
+<p>$$<br>Q_{\mathrm{dep}}(\psi_s)<br>\approx<br>-\sqrt{2q\varepsilon_sN_A\psi_s}.<br>$$</p>
 <p>The depletion charge depends nonlinearly on surface potential. A MOS capacitor is therefore not simply a linear oxide capacitor.</p>
 <p>Define the Fermi potential as</p>
-<p>$$<br>
-\phi_F=\frac{kT}{q}\ln\left(\frac{N_A}{n_i}\right).<br>
-$$</p>
+<p>$$<br>\phi_F&#x3D;\frac{kT}{q}\ln\left(\frac{N_A}{n_i}\right).<br>$$</p>
 <p>Using the conventional strong-inversion criterion $\psi_s \approx 2\phi_F$, the threshold voltage becomes</p>
-<p>$$<br>
-\boxed{<br>
-V_{\mathrm{TH}}<br>
-=V_{\mathrm{FB}}+2\phi_F<br>
-+\frac{\sqrt{4q\varepsilon_sN_A\phi_F}}{C_{\mathrm{ox}}}<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>V_{\mathrm{TH}}<br>&#x3D;V_{\mathrm{FB}}+2\phi_F<br>+\frac{\sqrt{4q\varepsilon_sN_A\phi_F}}{C_{\mathrm{ox}}}<br>}<br>$$</p>
 <p>This equation reveals an important point: <strong>threshold voltage is not a fundamental material constant</strong>.</p>
 <p>It is a device operating point determined jointly by work functions, doping, dielectric capacitance, fixed charge, and the chosen threshold criterion.</p>
 <blockquote>
 <p><strong>Flat band is not threshold.</strong> At $V_{\mathrm{FB}}$, the semiconductor bands are flat. At $V_{\mathrm{TH}}$, the surface has reached a prescribed inversion condition. The two voltages are related, but physically distinct.</p>
 </blockquote>
-<h3 id="2-3-Why-surface-potential-is-the-essential-intermediate-variable">2.3 Why surface potential is the essential intermediate variable</h3>
-<p>The surface potential connects terminal voltage to carrier statistics. In the nondegenerate limit, the minority-carrier concentration changes approximately as</p>
-<p>$$<br>
-n_s\propto \exp\left(\frac{q\psi_s}{kT}\right).<br>
-$$</p>
+<h3 id="2-3-Why-surface-potential-is-the-essential-intermediate-variable"><a href="#2-3-Why-surface-potential-is-the-essential-intermediate-variable" class="headerlink" title="2.3 Why surface potential is the essential intermediate variable"></a>2.3 Why surface potential is the essential intermediate variable</h3><p>The surface potential connects terminal voltage to carrier statistics. In the nondegenerate limit, the minority-carrier concentration changes approximately as</p>
+<p>$$<br>n_s\propto \exp\left(\frac{q\psi_s}{kT}\right).<br>$$</p>
 <p>Consequently, the current begins to rise exponentially before a strong inversion layer has formed. This is the physical origin of the subthreshold regime.</p>
 <p>The gate-to-surface-potential coupling can be expressed as</p>
-<p>$$<br>
-\alpha_G<br>
-\equiv<br>
-\frac{d\psi_s}{dV_G}<br>
-\mathrel{=}<br>
-\frac{1}{1+(C_{\mathrm{dep}}+C_{\mathrm{it}}+\cdots)/C_{\mathrm{ox}}}.<br>
-$$</p>
+<p>$$<br>\alpha_G<br>\equiv<br>\frac{d\psi_s}{dV_G}<br>\mathrel{&#x3D;}<br>\frac{1}{1+(C_{\mathrm{dep}}+C_{\mathrm{it}}+\cdots)&#x2F;C_{\mathrm{ox}}}.<br>$$</p>
 <p>Any charge reservoir whose occupancy responds to $\psi_s$ contributes a differential capacitance and weakens the gate coupling.</p>
 <p>By contrast, a frozen fixed charge mainly shifts the voltage axis and does not necessarily degrade the local slope.</p>
 <hr>
-<h2 id="3-From-local-channel-charge-to-the-MOSFET-current">3. From local channel charge to the MOSFET current</h2>
-<h3 id="3-1-Treating-the-channel-as-a-continuous-series-of-local-capacitors">3.1 Treating the channel as a continuous series of local capacitors</h3>
-<p>When a drain voltage is applied, the channel potential $V(x)$ rises from</p>
-<p>$$<br>
-V(0)=0<br>
-$$</p>
+<h2 id="3-From-local-channel-charge-to-the-MOSFET-current"><a href="#3-From-local-channel-charge-to-the-MOSFET-current" class="headerlink" title="3. From local channel charge to the MOSFET current"></a>3. From local channel charge to the MOSFET current</h2><h3 id="3-1-Treating-the-channel-as-a-continuous-series-of-local-capacitors"><a href="#3-1-Treating-the-channel-as-a-continuous-series-of-local-capacitors" class="headerlink" title="3.1 Treating the channel as a continuous series of local capacitors"></a>3.1 Treating the channel as a continuous series of local capacitors</h3><p>When a drain voltage is applied, the channel potential $V(x)$ rises from</p>
+<p>$$<br>V(0)&#x3D;0<br>$$</p>
 <p>at the source to</p>
-<p>$$<br>
-V(L)=V_{\mathrm{DS}}<br>
-$$</p>
+<p>$$<br>V(L)&#x3D;V_{\mathrm{DS}}<br>$$</p>
 <p>at the drain. The local gate overdrive is therefore not simply $V_{\mathrm{GS}}-V_{\mathrm{TH}}$, but</p>
-<p>$$<br>
-V_{\mathrm{GS}}-V_{\mathrm{TH}}-V(x).<br>
-$$</p>
+<p>$$<br>V_{\mathrm{GS}}-V_{\mathrm{TH}}-V(x).<br>$$</p>
 <p>Under strong inversion and the gradual-channel approximation, the local inversion charge is</p>
-<p>$$<br>
-\boxed{<br>
-Q_i(x)<br>
-=-C_{\mathrm{ox}}<br>
-\left[V_{\mathrm{GS}}-V_{\mathrm{TH}}-V(x)\right]<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>Q_i(x)<br>&#x3D;-C_{\mathrm{ox}}<br>\left[V_{\mathrm{GS}}-V_{\mathrm{TH}}-V(x)\right]<br>}<br>$$</p>
 <p>This is the key step in the long-channel MOSFET derivation. The drain bias modifies the current because $V(x)$ locally reduces the effective gate overdrive.</p>
-<h3 id="3-2-Drift-transport-and-channel-integration">3.2 Drift transport and channel integration</h3>
-<p>The longitudinal electric field is</p>
-<p>$$<br>
-E_x=-\frac{dV}{dx},<br>
-$$</p>
+<h3 id="3-2-Drift-transport-and-channel-integration"><a href="#3-2-Drift-transport-and-channel-integration" class="headerlink" title="3.2 Drift transport and channel integration"></a>3.2 Drift transport and channel integration</h3><p>The longitudinal electric field is</p>
+<p>$$<br>E_x&#x3D;-\frac{dV}{dx},<br>$$</p>
 <p>and the drift velocity is</p>
-<p>$$<br>
-v_x=\mu E_x.<br>
-$$</p>
+<p>$$<br>v_x&#x3D;\mu E_x.<br>$$</p>
 <p>Using the conventional positive drain-current direction,</p>
-<p>$$<br>
-I_D<br>
-=\mu W[-Q_i(x)]\frac{dV}{dx}.<br>
-$$</p>
+<p>$$<br>I_D<br>&#x3D;\mu W[-Q_i(x)]\frac{dV}{dx}.<br>$$</p>
 <p>Because $I_D$ is independent of $x$ in steady state, we integrate from source to drain:</p>
-<p>$$<br>
-I_D\int_0^L dx<br>
-\mathrel{=}<br>
-\mu C_{\mathrm{ox}}W<br>
-\int_0^{V_{\mathrm{DS}}}<br>
-\left(V_{\mathrm{GS}}-V_{\mathrm{TH}}-V\right)dV.<br>
-$$</p>
+<p>$$<br>I_D\int_0^L dx<br>\mathrel{&#x3D;}<br>\mu C_{\mathrm{ox}}W<br>\int_0^{V_{\mathrm{DS}}}<br>\left(V_{\mathrm{GS}}-V_{\mathrm{TH}}-V\right)dV.<br>$$</p>
 <p>The result is</p>
-<p>$$<br>
-\boxed{<br>
-I_D<br>
-=\mu C_{\mathrm{ox}}\frac{W}{L}<br>
-\left[<br>
-(V_{\mathrm{GS}}-V_{\mathrm{TH}})V_{\mathrm{DS}}<br>
--\frac{V_{\mathrm{DS}}^2}{2}<br>
-\right]<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>I_D<br>&#x3D;\mu C_{\mathrm{ox}}\frac{W}{L}<br>\left[<br>(V_{\mathrm{GS}}-V_{\mathrm{TH}})V_{\mathrm{DS}}<br>-\frac{V_{\mathrm{DS}}^2}{2}<br>\right]<br>}<br>$$</p>
 <p>for</p>
-<p>$$<br>
-0\le V_{\mathrm{DS}}\le V_{\mathrm{GS}}-V_{\mathrm{TH}}.<br>
-$$</p>
+<p>$$<br>0\le V_{\mathrm{DS}}\le V_{\mathrm{GS}}-V_{\mathrm{TH}}.<br>$$</p>
 <p>This expression assumes a long channel, low electric field, constant mobility, negligible contact resistance, and a well-established inversion layer.</p>
-<h3 id="3-3-Linear-regime-pinch-off-and-saturation">3.3 Linear regime, pinch-off, and saturation</h3>
-<p>At small $V_{\mathrm{DS}}$, the channel charge is approximately uniform and the device behaves as a gate-controlled resistor.</p>
+<h3 id="3-3-Linear-regime-pinch-off-and-saturation"><a href="#3-3-Linear-regime-pinch-off-and-saturation" class="headerlink" title="3.3 Linear regime, pinch-off, and saturation"></a>3.3 Linear regime, pinch-off, and saturation</h3><p>At small $V_{\mathrm{DS}}$, the channel charge is approximately uniform and the device behaves as a gate-controlled resistor.</p>
 <p>As $V_{\mathrm{DS}}$ increases, the inversion charge near the drain decreases. The drain end reaches pinch-off when</p>
-<p>$$<br>
-V(L)=V_{\mathrm{GS}}-V_{\mathrm{TH}}.<br>
-$$</p>
+<p>$$<br>V(L)&#x3D;V_{\mathrm{GS}}-V_{\mathrm{TH}}.<br>$$</p>
 <p>Thus,</p>
-<p>$$<br>
-\boxed{<br>
-V_{\mathrm{DS,sat}}=V_{\mathrm{OV}}<br>
-\equiv V_{\mathrm{GS}}-V_{\mathrm{TH}}<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>V_{\mathrm{DS,sat}}&#x3D;V_{\mathrm{OV}}<br>\equiv V_{\mathrm{GS}}-V_{\mathrm{TH}}<br>}<br>$$</p>
 <p>and the ideal saturation current is</p>
-<p>$$<br>
-\boxed{<br>
-I_{\mathrm{D,sat}}<br>
-=\frac{1}{2}\mu C_{\mathrm{ox}}\frac{W}{L}V_{\mathrm{OV}}^2.<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>I_{\mathrm{D,sat}}<br>&#x3D;\frac{1}{2}\mu C_{\mathrm{ox}}\frac{W}{L}V_{\mathrm{OV}}^2.<br>}<br>$$</p>
 <p>Pinch-off does <strong>not</strong> mean that carrier transport stops. It means that additional drain voltage falls mainly across the high-field region near the drain, while injection from the source continues.</p>
 <p>The saturation transconductance is</p>
-<p>$$<br>
-g_m<br>
-=\frac{\partial I_D}{\partial V_{\mathrm{GS}}}<br>
-=\mu C_{\mathrm{ox}}\frac{W}{L}V_{\mathrm{OV}}.<br>
-$$</p>
+<p>$$<br>g_m<br>&#x3D;\frac{\partial I_D}{\partial V_{\mathrm{GS}}}<br>&#x3D;\mu C_{\mathrm{ox}}\frac{W}{L}V_{\mathrm{OV}}.<br>$$</p>
 <p>With an approximate total gate capacitance</p>
-<p>$$<br>
-C_g\approx C_{\mathrm{ox}}WL,<br>
-$$</p>
+<p>$$<br>C_g\approx C_{\mathrm{ox}}WL,<br>$$</p>
 <p>the current-gain cutoff frequency scales as</p>
-<p>$$<br>
-\boxed{<br>
-f_T<br>
-\approx\frac{g_m}{2\pi C_g}<br>
-\approx\frac{\mu V_{\mathrm{OV}}}{2\pi L^2}.<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>f_T<br>\approx\frac{g_m}{2\pi C_g}<br>\approx\frac{\mu V_{\mathrm{OV}}}{2\pi L^2}.<br>}<br>$$</p>
 <p>This $L^{-2}$ scaling applies only before strong velocity saturation. In the high-field or short-channel limit,</p>
-<p>$$<br>
-f_T\approx\frac{v_{\mathrm{eff}}}{2\pi L}.<br>
-$$</p>
+<p>$$<br>f_T\approx\frac{v_{\mathrm{eff}}}{2\pi L}.<br>$$</p>
 <blockquote>
 <p><strong>Derivation habit.</strong> Always write $Q_i(x)$ first, then write the local drift-current equation, and only then integrate. Memorizing separate linear- and saturation-region formulas hides the role of $V(x)$ as the bridge between electrostatics and transport.</p>
 </blockquote>
 <hr>
-<h2 id="4-Subthreshold-transport-viewed-through-surface-potential-and-band-modulation">4. Subthreshold transport viewed through surface potential and band modulation</h2>
-<p>The usual subthreshold-current equation is compact, but it can hide the physical sequence that produces the exponential dependence. The more useful derivation is:</p>
-<p>$$<br>
-\boxed{<br>
-V_G<br>
-\longrightarrow<br>
-\psi_s<br>
-\longrightarrow<br>
-E_C(0)-E_F<br>
-\longrightarrow<br>
-\Phi_{\mathrm{SB}}<br>
-\longrightarrow<br>
-n_s<br>
-\longrightarrow<br>
-I_D<br>
-}<br>
-$$</p>
+<h2 id="4-Subthreshold-transport-viewed-through-surface-potential-and-band-modulation"><a href="#4-Subthreshold-transport-viewed-through-surface-potential-and-band-modulation" class="headerlink" title="4. Subthreshold transport viewed through surface potential and band modulation"></a>4. Subthreshold transport viewed through surface potential and band modulation</h2><p>The usual subthreshold-current equation is compact, but it can hide the physical sequence that produces the exponential dependence. The more useful derivation is:</p>
+<p>$$<br>\boxed{<br>V_G<br>\longrightarrow<br>\psi_s<br>\longrightarrow<br>E_C(0)-E_F<br>\longrightarrow<br>\Phi_{\mathrm{SB}}<br>\longrightarrow<br>n_s<br>\longrightarrow<br>I_D<br>}<br>$$</p>
 <p>Here, <strong>Φ_SB</strong> denotes the effective source-to-channel barrier that carriers must overcome.</p>
-<p>In a conventional long-channel MOSFET, this is an electrostatic barrier inside the semiconductor, not necessarily a metal/semiconductor Schottky barrier.</p>
-<h3 id="4-1-How-surface-potential-moves-the-energy-bands">4.1 How surface potential moves the energy bands</h3>
-<p>The electron potential energy changes oppositely to the electrostatic potential. If the surface potential increases by an amount <strong>Δψ_s</strong>, the conduction- and valence-band edges at the surface shift downward by</p>
-<p>$$<br>
-\Delta E_C=\Delta E_V=-q\Delta\psi_s.<br>
-$$</p>
+<p>In a conventional long-channel MOSFET, this is an electrostatic barrier inside the semiconductor, not necessarily a metal&#x2F;semiconductor Schottky barrier.</p>
+<h3 id="4-1-How-surface-potential-moves-the-energy-bands"><a href="#4-1-How-surface-potential-moves-the-energy-bands" class="headerlink" title="4.1 How surface potential moves the energy bands"></a>4.1 How surface potential moves the energy bands</h3><p>The electron potential energy changes oppositely to the electrostatic potential. If the surface potential increases by an amount <strong>Δψ_s</strong>, the conduction- and valence-band edges at the surface shift downward by</p>
+<p>$$<br>\Delta E_C&#x3D;\Delta E_V&#x3D;-q\Delta\psi_s.<br>$$</p>
 <p>Taking the bulk band edge as the reference, the surface conduction-band edge may be written as</p>
-<p>$$<br>
-E_{C,s}=E_{C,b}-q\psi_s.<br>
-$$</p>
+<p>$$<br>E_{C,s}&#x3D;E_{C,b}-q\psi_s.<br>$$</p>
 <p>For an n-channel MOSFET on a p-type substrate, a positive gate bias increases the surface potential. The conduction-band edge at the surface therefore moves closer to the Fermi level.</p>
 <p>The source-to-channel barrier for electrons is lowered by approximately</p>
-<p>$$<br>
-\Delta\Phi_{\mathrm{SB}}=-q\Delta\psi_s.<br>
-$$</p>
+<p>$$<br>\Delta\Phi_{\mathrm{SB}}&#x3D;-q\Delta\psi_s.<br>$$</p>
 <p>This is the energy-band meaning of gate control in the subthreshold regime: the gate does not yet create a dense inversion sheet; it primarily lowers the energetic barrier separating source electrons from the channel.</p>
-<h3 id="4-2-From-band-edge-displacement-to-exponential-carrier-density">4.2 From band-edge displacement to exponential carrier density</h3>
-<p>Before degeneracy and strong inversion, the surface electron density follows Boltzmann statistics:</p>
-<p>$$<br>
-n_s<br>
-\propto<br>
-\exp\left[-\frac{E_{C,s}-E_F}{kT}\right].<br>
-$$</p>
+<h3 id="4-2-From-band-edge-displacement-to-exponential-carrier-density"><a href="#4-2-From-band-edge-displacement-to-exponential-carrier-density" class="headerlink" title="4.2 From band-edge displacement to exponential carrier density"></a>4.2 From band-edge displacement to exponential carrier density</h3><p>Before degeneracy and strong inversion, the surface electron density follows Boltzmann statistics:</p>
+<p>$$<br>n_s<br>\propto<br>\exp\left[-\frac{E_{C,s}-E_F}{kT}\right].<br>$$</p>
 <p>Substituting the surface-band relation gives</p>
-<p>$$<br>
-n_s<br>
-\propto<br>
-\exp\left(\frac{q\psi_s}{kT}\right).<br>
-$$</p>
+<p>$$<br>n_s<br>\propto<br>\exp\left(\frac{q\psi_s}{kT}\right).<br>$$</p>
 <p>The same result can be expressed through thermionic injection over the source barrier:</p>
-<p>$$<br>
-I_S<br>
-\propto<br>
-\exp\left(-\frac{\Phi_{\mathrm{SB}}}{kT}\right).<br>
-$$</p>
+<p>$$<br>I_S<br>\propto<br>\exp\left(-\frac{\Phi_{\mathrm{SB}}}{kT}\right).<br>$$</p>
 <p>Because increasing <strong>ψ_s</strong> lowers <strong>Φ_SB</strong> by <strong>qψ_s</strong>, the injected current becomes</p>
-<p>$$<br>
-I_S<br>
-\propto<br>
-\exp\left(\frac{q\psi_s}{kT}\right).<br>
-$$</p>
+<p>$$<br>I_S<br>\propto<br>\exp\left(\frac{q\psi_s}{kT}\right).<br>$$</p>
 <p>This is the first origin of the exponential transfer characteristic. It comes from thermal carrier statistics applied to an electrostatically controlled energy barrier.</p>
-<h3 id="4-3-Why-gate-voltage-and-surface-potential-are-not-identical">4.3 Why gate voltage and surface potential are not identical</h3>
-<p>The gate does not transfer its full voltage to the semiconductor surface. Differentiating the MOS electrostatic balance gives</p>
-<p>$$<br>
-dV_G<br>
-\mathrel{=}<br>
-d\psi_s<br>
--\frac{dQ_s}{C_{\mathrm{ox}}}.<br>
-$$</p>
+<h3 id="4-3-Why-gate-voltage-and-surface-potential-are-not-identical"><a href="#4-3-Why-gate-voltage-and-surface-potential-are-not-identical" class="headerlink" title="4.3 Why gate voltage and surface potential are not identical"></a>4.3 Why gate voltage and surface potential are not identical</h3><p>The gate does not transfer its full voltage to the semiconductor surface. Differentiating the MOS electrostatic balance gives</p>
+<p>$$<br>dV_G<br>\mathrel{&#x3D;}<br>d\psi_s<br>-\frac{dQ_s}{C_{\mathrm{ox}}}.<br>$$</p>
 <p>In subthreshold, the dominant responsive semiconductor charge consists of depletion charge and interface-trap charge. Define</p>
-<p>$$<br>
-C_{\mathrm{dep}}<br>
-\equiv<br>
--\frac{dQ_{\mathrm{dep}}}{d\psi_s},<br>
-\qquad<br>
-C_{\mathrm{it}}<br>
-\equiv<br>
--\frac{dQ_{\mathrm{it}}}{d\psi_s}.<br>
-$$</p>
+<p>$$<br>C_{\mathrm{dep}}<br>\equiv<br>-\frac{dQ_{\mathrm{dep}}}{d\psi_s},<br>\qquad<br>C_{\mathrm{it}}<br>\equiv<br>-\frac{dQ_{\mathrm{it}}}{d\psi_s}.<br>$$</p>
 <p>Then</p>
-<p>$$<br>
-dV_G<br>
-\mathrel{=}<br>
-\left(<br>
-1+\frac{C_{\mathrm{dep}}+C_{\mathrm{it}}}{C_{\mathrm{ox}}}<br>
-\right)d\psi_s.<br>
-$$</p>
+<p>$$<br>dV_G<br>\mathrel{&#x3D;}<br>\left(<br>1+\frac{C_{\mathrm{dep}}+C_{\mathrm{it}}}{C_{\mathrm{ox}}}<br>\right)d\psi_s.<br>$$</p>
 <p>The subthreshold factor is therefore</p>
-<p>$$<br>
-\boxed{<br>
-n<br>
-\equiv<br>
-\frac{dV_G}{d\psi_s}<br>
-\mathrel{=}<br>
-1+\frac{C_{\mathrm{dep}}+C_{\mathrm{it}}}{C_{\mathrm{ox}}}.<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>n<br>\equiv<br>\frac{dV_G}{d\psi_s}<br>\mathrel{&#x3D;}<br>1+\frac{C_{\mathrm{dep}}+C_{\mathrm{it}}}{C_{\mathrm{ox}}}.<br>}<br>$$</p>
 <p>Equivalently, the gate-coupling factor is</p>
-<p>$$<br>
-\alpha_G<br>
-\equiv<br>
-\frac{d\psi_s}{dV_G}<br>
-=\frac{1}{n}.<br>
-$$</p>
+<p>$$<br>\alpha_G<br>\equiv<br>\frac{d\psi_s}{dV_G}<br>&#x3D;\frac{1}{n}.<br>$$</p>
 <p>Thus, a gate-voltage increment <strong>ΔV_G</strong> changes the source barrier by only</p>
-<p>$$<br>
-\Delta\Phi_{\mathrm{SB}}<br>
-\mathrel{=}<br>
--q\alpha_G\Delta V_G.<br>
-$$</p>
+<p>$$<br>\Delta\Phi_{\mathrm{SB}}<br>\mathrel{&#x3D;}<br>-q\alpha_G\Delta V_G.<br>$$</p>
 <p>A large oxide capacitance improves <strong>α_G</strong>, while depletion and interface-state capacitances divert part of the gate voltage away from useful band-edge motion.</p>
-<h3 id="4-4-Deriving-the-subthreshold-current-and-subthreshold-swing">4.4 Deriving the subthreshold current and subthreshold swing</h3>
-<p>Combining the Boltzmann factor with the electrostatic coupling gives</p>
-<p>$$<br>
-I_D<br>
-\propto<br>
-\exp\left(<br>
-\frac{q\psi_s}{kT}<br>
-\right)<br>
-\mathrel{=}<br>
-\exp\left(<br>
-\frac{qV_G}{nkT}<br>
-\right).<br>
-$$</p>
+<h3 id="4-4-Deriving-the-subthreshold-current-and-subthreshold-swing"><a href="#4-4-Deriving-the-subthreshold-current-and-subthreshold-swing" class="headerlink" title="4.4 Deriving the subthreshold current and subthreshold swing"></a>4.4 Deriving the subthreshold current and subthreshold swing</h3><p>Combining the Boltzmann factor with the electrostatic coupling gives</p>
+<p>$$<br>I_D<br>\propto<br>\exp\left(<br>\frac{q\psi_s}{kT}<br>\right)<br>\mathrel{&#x3D;}<br>\exp\left(<br>\frac{qV_G}{nkT}<br>\right).<br>$$</p>
 <p>After introducing a reference voltage and accounting for injection from both source and drain, a common long-channel form is</p>
-<p>$$<br>
-\boxed{<br>
-I_D<br>
-\approx<br>
-I_0<br>
-\exp\left(<br>
-\frac{V_{\mathrm{GS}}-V_{\mathrm{TH}}}{nV_T}<br>
-\right)<br>
-\left[<br>
-1-\exp\left(<br>
--\frac{V_{\mathrm{DS}}}{V_T}<br>
-\right)<br>
-\right],<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>I_D<br>\approx<br>I_0<br>\exp\left(<br>\frac{V_{\mathrm{GS}}-V_{\mathrm{TH}}}{nV_T}<br>\right)<br>\left[<br>1-\exp\left(<br>-\frac{V_{\mathrm{DS}}}{V_T}<br>\right)<br>\right],<br>}<br>$$</p>
 <p>with</p>
-<p>$$<br>
-V_T=\frac{kT}{q}.<br>
-$$</p>
+<p>$$<br>V_T&#x3D;\frac{kT}{q}.<br>$$</p>
 <p>The bracketed term has a simple physical interpretation. Source carriers inject toward the drain, while drain carriers inject in the reverse direction. Their difference produces</p>
-<p>$$<br>
-I_D\propto I_S-I_D^{(\mathrm{reverse})}.<br>
-$$</p>
+<p>$$<br>I_D\propto I_S-I_D^{(\mathrm{reverse})}.<br>$$</p>
 <p>Once the drain bias exceeds a few thermal voltages, reverse injection becomes negligible and the drain-current dependence approximately saturates.</p>
 <p>The subthreshold swing is the gate-voltage change needed to change current by one decade:</p>
-<p>$$<br>
-SS<br>
-\equiv<br>
-\frac{dV_G}{d\log_{10}I_D}.<br>
-$$</p>
+<p>$$<br>SS<br>\equiv<br>\frac{dV_G}{d\log_{10}I_D}.<br>$$</p>
 <p>Since one current decade corresponds to a barrier change of <strong>kT ln(10)</strong>,</p>
-<p>$$<br>
-\boxed{<br>
-SS<br>
-=(\ln 10)\frac{kT}{q}n<br>
-\mathrel{=}<br>
-(\ln 10)\frac{kT}{q}<br>
-\left(<br>
-1+\frac{C_{\mathrm{dep}}+C_{\mathrm{it}}}{C_{\mathrm{ox}}}<br>
-\right).<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>SS<br>&#x3D;(\ln 10)\frac{kT}{q}n<br>\mathrel{&#x3D;}<br>(\ln 10)\frac{kT}{q}<br>\left(<br>1+\frac{C_{\mathrm{dep}}+C_{\mathrm{it}}}{C_{\mathrm{ox}}}<br>\right).<br>}<br>$$</p>
 <p>At 300 K,</p>
-<p>$$<br>
-(\ln 10)\frac{kT}{q}<br>
-\approx<br>
-59.6\ \mathrm{mV,dec^{-1}}.<br>
-$$</p>
-<p>The celebrated 60 mV/dec value therefore contains two separate limits:</p>
+<p>$$<br>(\ln 10)\frac{kT}{q}<br>\approx<br>59.6\ \mathrm{mV,dec^{-1}}.<br>$$</p>
+<p>The celebrated 60 mV&#x2F;dec value therefore contains two separate limits:</p>
 <ol>
 <li><strong>thermal limit:</strong> changing a Boltzmann population by one decade requires an energy change of <strong>kT ln(10)</strong>;</li>
 <li><strong>electrostatic limit:</strong> the gate must couple perfectly to the surface, so that <strong>n → 1</strong>.</li>
 </ol>
 <p>The first is a carrier-statistics statement. The second is a capacitance-divider statement.</p>
-<h3 id="4-5-How-the-same-band-picture-changes-in-a-2D-FET">4.5 How the same band picture changes in a 2D FET</h3>
-<p>An atomically thin semiconductor has no extended bulk region in which the bands bend continuously through depth. Nevertheless, the same subthreshold logic survives. The channel potential shifts the band edges of the entire 2D layer:</p>
-<p>$$<br>
-\Delta E_C<br>
-\approx<br>
--q\Delta\psi_{\mathrm{ch}}.<br>
-$$</p>
+<h3 id="4-5-How-the-same-band-picture-changes-in-a-2D-FET"><a href="#4-5-How-the-same-band-picture-changes-in-a-2D-FET" class="headerlink" title="4.5 How the same band picture changes in a 2D FET"></a>4.5 How the same band picture changes in a 2D FET</h3><p>An atomically thin semiconductor has no extended bulk region in which the bands bend continuously through depth. Nevertheless, the same subthreshold logic survives. The channel potential shifts the band edges of the entire 2D layer:</p>
+<p>$$<br>\Delta E_C<br>\approx<br>-q\Delta\psi_{\mathrm{ch}}.<br>$$</p>
 <p>The source-side injection barrier is then modulated by the channel potential:</p>
-<p>$$<br>
-\Delta\Phi_{\mathrm{inj}}<br>
-\approx<br>
--q\Delta\psi_{\mathrm{ch}}.<br>
-$$</p>
+<p>$$<br>\Delta\Phi_{\mathrm{inj}}<br>\approx<br>-q\Delta\psi_{\mathrm{ch}}.<br>$$</p>
 <p>What changes is the electrostatic divider. A 2D channel generally has little or no classical bulk depletion capacitance.</p>
 <p>Instead, the relevant responsive charge reservoirs may include quantum capacitance, interface states, adsorbates, and band-tail states:</p>
-<p>$$<br>
-\frac{dV_G}{d\psi_{\mathrm{ch}}}<br>
-\approx<br>
-1+<br>
-\frac{<br>
-C_q+C_{\mathrm{it}}+C_{\mathrm{ads}}+C_{\mathrm{tail}}<br>
-}{<br>
-C_{\mathrm{ox}}<br>
-}.<br>
-$$</p>
+<p>$$<br>\frac{dV_G}{d\psi_{\mathrm{ch}}}<br>\approx<br>1+<br>\frac{<br>C_q+C_{\mathrm{it}}+C_{\mathrm{ads}}+C_{\mathrm{tail}}<br>}{<br>C_{\mathrm{ox}}<br>}.<br>$$</p>
 <p>Deep in the ideal bandgap, mobile-state quantum capacitance can be small, potentially improving gate coupling. In a real device, however, interface and tail states may dominate the differential charge.</p>
 <p>The measured slope can then be much worse than the ideal thermal limit even without a bulk depletion layer.</p>
 <p>In a Schottky-contacted 2D FET, the gate may also modulate the contact barrier width and height. The measured subthreshold current can therefore reflect both channel band motion and contact injection.</p>
 <p>A clean straight line on a semilogarithmic transfer curve does not by itself prove an ideal MOS diffusion mechanism.</p>
-<h3 id="4-6-A-real-transfer-curve-may-contain-several-transport-regimes">4.6 A real transfer curve may contain several transport regimes</h3>
-<p>In a 2D FET or a defect-rich device, the sequence</p>
-<p>$$<br>
-\mathrm{OFF}<br>
-\rightarrow<br>
-\mathrm{subthreshold}<br>
-\rightarrow<br>
-\mathrm{turn!-!on}<br>
-\rightarrow<br>
-\mathrm{ON}<br>
-$$</p>
+<h3 id="4-6-A-real-transfer-curve-may-contain-several-transport-regimes"><a href="#4-6-A-real-transfer-curve-may-contain-several-transport-regimes" class="headerlink" title="4.6 A real transfer curve may contain several transport regimes"></a>4.6 A real transfer curve may contain several transport regimes</h3><p>In a 2D FET or a defect-rich device, the sequence</p>
+<p>$$<br>\mathrm{OFF}<br>\rightarrow<br>\mathrm{subthreshold}<br>\rightarrow<br>\mathrm{turn!-!on}<br>\rightarrow<br>\mathrm{ON}<br>$$</p>
 <p>may involve different dominant mechanisms:</p>
 <ul>
 <li>instrumental floor and parasitic leakage;</li>
@@ -911,7 +640,7 @@ $$</p>
 <p>An extracted <strong>SS</strong> value should therefore always be reported together with the fitted current range, drain bias, temperature, sweep direction, and measurement history.</p>
 <p><strong>Diagnostic patterns</strong></p>
 <ul>
-<li><strong>SS much larger than 60 mV/dec:</strong> examine interface states, depletion charge, contact barriers, band tails, and gate coupling before attributing everything to the dielectric.</li>
+<li><strong>SS much larger than 60 mV&#x2F;dec:</strong> examine interface states, depletion charge, contact barriers, band tails, and gate coupling before attributing everything to the dielectric.</li>
 <li><strong>Threshold changes with sweep direction:</strong> examine trap occupancy, adsorbates, mobile ions, and photocharging rather than treating the shift as fixed chemical doping.</li>
 <li><strong>Weak exponential current or a low-temperature plateau:</strong> consider hopping, trap-assisted tunneling, field emission, or parallel leakage rather than applying a purely thermal diffusion model.</li>
 <li><strong>Apparent threshold shift with increasing drain voltage:</strong> test for drain-induced barrier lowering or contact-barrier lowering.</li>
@@ -920,52 +649,23 @@ $$</p>
 <p><strong>Interpretation.</strong> Subthreshold swing is not an isolated material parameter. It measures how efficiently gate voltage moves an energy barrier, and whether the current responds to that barrier through ideal thermal statistics or through additional trap-, contact-, or tunneling-controlled processes.</p>
 </blockquote>
 <hr>
-<h2 id="5-Two-dimensional-material-and-ambipolar-FETs">5. Two-dimensional-material and ambipolar FETs</h2>
-<h3 id="5-1-Where-does-“band-bending”-occur-in-an-atomically-thin-semiconductor">5.1 Where does “band bending” occur in an atomically thin semiconductor?</h3>
-<p>In a monolayer semiconductor, there is little physical space for the continuous depth-dependent band bending familiar from a bulk Si MOS capacitor.</p>
+<h2 id="5-Two-dimensional-material-and-ambipolar-FETs"><a href="#5-Two-dimensional-material-and-ambipolar-FETs" class="headerlink" title="5. Two-dimensional-material and ambipolar FETs"></a>5. Two-dimensional-material and ambipolar FETs</h2><h3 id="5-1-Where-does-“band-bending”-occur-in-an-atomically-thin-semiconductor"><a href="#5-1-Where-does-“band-bending”-occur-in-an-atomically-thin-semiconductor" class="headerlink" title="5.1 Where does “band bending” occur in an atomically thin semiconductor?"></a>5.1 Where does “band bending” occur in an atomically thin semiconductor?</h3><p>In a monolayer semiconductor, there is little physical space for the continuous depth-dependent band bending familiar from a bulk Si MOS capacitor.</p>
 <p>A more appropriate description is that the bands of the entire 2D layer shift relative to the electrochemical potential.</p>
 <p>The induced charge is then determined by the finite density of states, interface traps, adsorbates, and the top- and bottom-gate capacitances.</p>
 <p>Band tilting and a position-dependent potential $V(x)$ still exist <strong>along the channel</strong>.</p>
 <p>Conventional Si also has a quantum capacitance. It is often not emphasized because the bulk density of states is large and the oxide and depletion capacitances dominate under many operating conditions.</p>
 <p>In an atomically thin channel, the finite electronic density of states can make quantum capacitance a central part of the electrostatics.</p>
 <p>The quantum capacitance per unit area is</p>
-<p>$$<br>
-\boxed{<br>
-C_q=q^2D(E_F).<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>C_q&#x3D;q^2D(E_F).<br>}<br>$$</p>
 <p>In a simple series picture,</p>
-<p>$$<br>
-\boxed{<br>
-\frac{1}{C_G}<br>
-\approx<br>
-\frac{1}{C_{\mathrm{ox}}}<br>
-+\frac{1}{C_q}.<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>\frac{1}{C_G}<br>\approx<br>\frac{1}{C_{\mathrm{ox}}}<br>+\frac{1}{C_q}.<br>}<br>$$</p>
 <p>A small $C_q$ means that a larger fraction of the applied gate voltage is consumed in moving the channel Fermi level rather than dropping across the dielectric.</p>
 <p>A useful charge-conservation equation for a 2D FET is</p>
-<p>$$<br>
-\boxed{<br>
-C_{\mathrm{ox}}(V_G-V_{\mathrm{FB}}-\psi_{\mathrm{ch}})<br>
-=-<br>
-\left(<br>
-Q_{\mathrm{mobile}}+Q_{\mathrm{it}}+Q_{\mathrm{ads}}+Q_{\mathrm{fix}}<br>
-\right).<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>C_{\mathrm{ox}}(V_G-V_{\mathrm{FB}}-\psi_{\mathrm{ch}})<br>&#x3D;-<br>\left(<br>Q_{\mathrm{mobile}}+Q_{\mathrm{it}}+Q_{\mathrm{ads}}+Q_{\mathrm{fix}}<br>\right).<br>}<br>$$</p>
 <p>The corresponding gate-coupling efficiency is schematically</p>
-<p>$$<br>
-\alpha_G<br>
-=\frac{d\psi_{\mathrm{ch}}}{dV_G}<br>
-\mathrel{=}<br>
-\left[<br>
-1+\frac{C_q+C_{\mathrm{it}}+C_{\mathrm{ads}}}{C_{\mathrm{ox}}}<br>
-\right]^{-1}.<br>
-$$</p>
+<p>$$<br>\alpha_G<br>&#x3D;\frac{d\psi_{\mathrm{ch}}}{dV_G}<br>\mathrel{&#x3D;}<br>\left[<br>1+\frac{C_q+C_{\mathrm{it}}+C_{\mathrm{ads}}}{C_{\mathrm{ox}}}<br>\right]^{-1}.<br>$$</p>
 <p>Only charge components that respond to $\psi_{\mathrm{ch}}$ contribute directly to the differential capacitance. A frozen $Q_{\mathrm{fix}}$ primarily shifts the voltage axis.</p>
-<h3 id="5-2-The-MOSFET-current-formula-can-survive-but-its-assumptions-often-do-not">5.2 The MOSFET current formula can survive, but its assumptions often do not</h3>
-<p>If a 2D channel is long, the contacts are approximately ohmic, and transport is diffusive, the same local-charge integration used for a MOSFET remains valid.</p>
+<h3 id="5-2-The-MOSFET-current-formula-can-survive-but-its-assumptions-often-do-not"><a href="#5-2-The-MOSFET-current-formula-can-survive-but-its-assumptions-often-do-not" class="headerlink" title="5.2 The MOSFET current formula can survive, but its assumptions often do not"></a>5.2 The MOSFET current formula can survive, but its assumptions often do not</h3><p>If a 2D channel is long, the contacts are approximately ohmic, and transport is diffusive, the same local-charge integration used for a MOSFET remains valid.</p>
 <p>The square-law expression is not unique to silicon; it follows from three assumptions:</p>
 <ol>
 <li>capacitance-controlled mobile charge;</li>
@@ -974,147 +674,60 @@ $$</p>
 </ol>
 <p>Two-dimensional FETs frequently violate these assumptions through:</p>
 <ul>
-<li><strong>Contacts:</strong> a metal/2D-semiconductor Schottky barrier may be modulated by the gate together with the channel. The extracted field-effect mobility can therefore contain a strong contact contribution.</li>
+<li><strong>Contacts:</strong> a metal&#x2F;2D-semiconductor Schottky barrier may be modulated by the gate together with the channel. The extracted field-effect mobility can therefore contain a strong contact contribution.</li>
 <li><strong>Band tails and traps:</strong> defect, adsorbate, and disorder states near the band edge may be filled before extended-state transport dominates.</li>
 <li><strong>Density-dependent scattering:</strong> remote phonons, charged impurities, defects, and lattice phonons make mobility dependent on temperature and carrier density.</li>
 <li><strong>Short-channel transport:</strong> drain-induced barrier lowering, velocity saturation, quasi-ballistic motion, and direct tunneling progressively replace the constant-mobility model.</li>
 </ul>
 <p>A more general transport expression is the Landauer form</p>
-<p>$$<br>
-\boxed{<br>
-I<br>
-=\frac{gq}{h}<br>
-\int T(E)<br>
-\left[f_S(E)-f_D(E)\right]dE.<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>I<br>&#x3D;\frac{gq}{h}<br>\int T(E)<br>\left[f_S(E)-f_D(E)\right]dE.<br>}<br>$$</p>
 <p>Here $T(E)$ includes contact injection, channel transmission, and quantum-mechanical tunneling.</p>
 <p>Contact thermionic emission or tunneling and channel drift are usually <strong>serial bottlenecks of the same main current path</strong>. They should not be added mechanically as independent currents.</p>
 <p>A parallel-current decomposition is appropriate only for genuinely separate leakage paths:</p>
-<p>$$<br>
-I_D<br>
-=I_{\mathrm{main}}<br>
-+I_{\mathrm{TAT}}<br>
-+I_{\mathrm{PF}}<br>
-+I_{\mathrm{gate}}<br>
-+I_{\mathrm{BTBT}}<br>
-+\cdots.<br>
-$$</p>
+<p>$$<br>I_D<br>&#x3D;I_{\mathrm{main}}<br>+I_{\mathrm{TAT}}<br>+I_{\mathrm{PF}}<br>+I_{\mathrm{gate}}<br>+I_{\mathrm{BTBT}}<br>+\cdots.<br>$$</p>
 <hr>
-<h3 id="5-3-Ambipolar-FETs-opening-electron-and-hole-branches-with-one-gate">5.3 Ambipolar FETs: opening electron and hole branches with one gate</h3>
-<p>Here, <strong>ambipolar</strong> refers to ambipolar field-effect transport, not to a bipolar junction transistor.</p>
+<h3 id="5-3-Ambipolar-FETs-opening-electron-and-hole-branches-with-one-gate"><a href="#5-3-Ambipolar-FETs-opening-electron-and-hole-branches-with-one-gate" class="headerlink" title="5.3 Ambipolar FETs: opening electron and hole branches with one gate"></a>5.3 Ambipolar FETs: opening electron and hole branches with one gate</h3><p>Here, <strong>ambipolar</strong> refers to ambipolar field-effect transport, not to a bipolar junction transistor.</p>
 <p>The central physics is that the gate moves the channel electrochemical potential across the bandgap—or through the Dirac point in a zero-gap material—so that the dominant carriers can change from holes to electrons.</p>
 <p>Ambipolar behavior therefore requires two ingredients:</p>
 <ol>
 <li>the channel Fermi level must be tunable over a sufficiently wide energy range;</li>
 <li>the source and drain contacts must allow both electron and hole injection.</li>
 </ol>
-<h4 id="5-3-1-Three-gate-voltage-regimes-in-the-energy-band-picture">5.3.1 Three gate-voltage regimes in the energy-band picture</h4>
-<p>Consider a narrow-bandgap semiconductor contacted by the same metal at source and drain.</p>
-<h5 id="Hole-branch">Hole branch</h5>
-<p>Under sufficiently negative gate bias, the channel bands move upward relative to the contact Fermi level. The valence-band edge approaches the Fermi level, the hole density increases, and the effective hole-injection barrier is reduced:</p>
-<p>$$<br>
-\Phi_{Bp,\mathrm{eff}}<br>
-\downarrow<br>
-\qquad\Rightarrow\qquad<br>
-p<br>
-\uparrow.<br>
-$$</p>
+<h4 id="5-3-1-Three-gate-voltage-regimes-in-the-energy-band-picture"><a href="#5-3-1-Three-gate-voltage-regimes-in-the-energy-band-picture" class="headerlink" title="5.3.1 Three gate-voltage regimes in the energy-band picture"></a>5.3.1 Three gate-voltage regimes in the energy-band picture</h4><p>Consider a narrow-bandgap semiconductor contacted by the same metal at source and drain.</p>
+<h5 id="Hole-branch"><a href="#Hole-branch" class="headerlink" title="Hole branch"></a>Hole branch</h5><p>Under sufficiently negative gate bias, the channel bands move upward relative to the contact Fermi level. The valence-band edge approaches the Fermi level, the hole density increases, and the effective hole-injection barrier is reduced:</p>
+<p>$$<br>\Phi_{Bp,\mathrm{eff}}<br>\downarrow<br>\qquad\Rightarrow\qquad<br>p<br>\uparrow.<br>$$</p>
 <p>The channel behaves predominantly as a p-type FET.</p>
-<h5 id="Charge-neutrality-or-minimum-conductance-region">Charge-neutrality or minimum-conductance region</h5>
-<p>At an intermediate gate bias, the Fermi level lies in the bandgap or near the charge-neutrality energy. Both electron and hole populations are small:</p>
-<p>$$<br>
-n\approx p\approx \mathrm{minimum}.<br>
-$$</p>
+<h5 id="Charge-neutrality-or-minimum-conductance-region"><a href="#Charge-neutrality-or-minimum-conductance-region" class="headerlink" title="Charge-neutrality or minimum-conductance region"></a>Charge-neutrality or minimum-conductance region</h5><p>At an intermediate gate bias, the Fermi level lies in the bandgap or near the charge-neutrality energy. Both electron and hole populations are small:</p>
+<p>$$<br>n\approx p\approx \mathrm{minimum}.<br>$$</p>
 <p>The measured minimum current is then determined by residual carriers, band-tail states, contact leakage, thermal generation, tunneling, and spatial charge inhomogeneity.</p>
-<h5 id="Electron-branch">Electron branch</h5>
-<p>Under sufficiently positive gate bias, the channel bands move downward. The conduction-band edge approaches the Fermi level, the electron density rises, and the electron-injection barrier is reduced:</p>
-<p>$$<br>
-\Phi_{Bn,\mathrm{eff}}<br>
-\downarrow<br>
-\qquad\Rightarrow\qquad<br>
-n<br>
-\uparrow.<br>
-$$</p>
+<h5 id="Electron-branch"><a href="#Electron-branch" class="headerlink" title="Electron branch"></a>Electron branch</h5><p>Under sufficiently positive gate bias, the channel bands move downward. The conduction-band edge approaches the Fermi level, the electron density rises, and the electron-injection barrier is reduced:</p>
+<p>$$<br>\Phi_{Bn,\mathrm{eff}}<br>\downarrow<br>\qquad\Rightarrow\qquad<br>n<br>\uparrow.<br>$$</p>
 <p>The channel behaves predominantly as an n-type FET.</p>
 <p>The resulting transfer characteristic often has two branches separated by a current minimum.</p>
 <p>A symmetric V shape is not generally expected because the electron and hole effective masses, densities of states, contact barriers, and mobilities need not be equal.</p>
-<h4 id="5-3-2-Charge-control-for-the-two-carrier-branches">5.3.2 Charge control for the two carrier branches</h4>
-<p>The net mobile channel charge is</p>
-<p>$$<br>
-Q_{\mathrm{mobile}}<br>
-=q(p-n).<br>
-$$</p>
+<h4 id="5-3-2-Charge-control-for-the-two-carrier-branches"><a href="#5-3-2-Charge-control-for-the-two-carrier-branches" class="headerlink" title="5.3.2 Charge control for the two carrier branches"></a>5.3.2 Charge control for the two carrier branches</h4><p>The net mobile channel charge is</p>
+<p>$$<br>Q_{\mathrm{mobile}}<br>&#x3D;q(p-n).<br>$$</p>
 <p>The gate electrostatics can be written as</p>
-<p>$$<br>
-C_G<br>
-\left(<br>
-V_G-V_{\mathrm{CNP}}-\psi_{\mathrm{ch}}<br>
-\right)<br>
-\mathrel{=}<br>
--Q_{\mathrm{mobile}}<br>
--Q_{\mathrm{trap}},<br>
-$$</p>
+<p>$$<br>C_G<br>\left(<br>V_G-V_{\mathrm{CNP}}-\psi_{\mathrm{ch}}<br>\right)<br>\mathrel{&#x3D;}<br>-Q_{\mathrm{mobile}}<br>-Q_{\mathrm{trap}},<br>$$</p>
 <p>where <strong>V_CNP</strong> is a convenient charge-neutrality reference voltage.</p>
 <p>On the electron-dominated side,</p>
-<p>$$<br>
-Q_n\approx-qn,<br>
-$$</p>
+<p>$$<br>Q_n\approx-qn,<br>$$</p>
 <p>whereas on the hole-dominated side,</p>
-<p>$$<br>
-Q_p\approx+qp.<br>
-$$</p>
+<p>$$<br>Q_p\approx+qp.<br>$$</p>
 <p>Far from the neutrality region, each branch may be approximated by a unipolar charge-control model. In a long, diffusive channel with nearly ohmic contacts, one may write schematically</p>
-<p>$$<br>
-I_n<br>
-\approx<br>
-\mu_n C_G\frac{W}{L}<br>
-\left[<br>
-(V_G-V_{T,n})V_{\mathrm{DS}}<br>
--\frac{V_{\mathrm{DS}}^2}{2}<br>
-\right]<br>
-$$</p>
+<p>$$<br>I_n<br>\approx<br>\mu_n C_G\frac{W}{L}<br>\left[<br>(V_G-V_{T,n})V_{\mathrm{DS}}<br>-\frac{V_{\mathrm{DS}}^2}{2}<br>\right]<br>$$</p>
 <p>for the electron branch, and an analogous expression with the appropriate voltage signs for the hole branch:</p>
-<p>$$<br>
-|I_p|<br>
-\approx<br>
-\mu_p C_G\frac{W}{L}<br>
-\left[<br>
-(V_{T,p}-V_G)|V_{\mathrm{DS}}|<br>
--\frac{V_{\mathrm{DS}}^2}{2}<br>
-\right].<br>
-$$</p>
+<p>$$<br>|I_p|<br>\approx<br>\mu_p C_G\frac{W}{L}<br>\left[<br>(V_{T,p}-V_G)|V_{\mathrm{DS}}|<br>-\frac{V_{\mathrm{DS}}^2}{2}<br>\right].<br>$$</p>
 <p>The total terminal current may be written as</p>
-<p>$$<br>
-\boxed{<br>
-I_D<br>
-\approx<br>
-I_n+I_p+I_{\mathrm{leak}}.<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>I_D<br>\approx<br>I_n+I_p+I_{\mathrm{leak}}.<br>}<br>$$</p>
 <p>This sum is a useful terminal-level description, but the two branches do not necessarily correspond to two independent, spatially uniform channels. Under finite drain bias, the carrier type can vary along the channel.</p>
-<h4 id="5-3-3-Why-contacts-often-determine-ambipolarity">5.3.3 Why contacts often determine ambipolarity</h4>
-<p>For an ideal, unpinned metal/semiconductor interface,</p>
-<p>$$<br>
-\Phi_{Bn}+\Phi_{Bp}\approx E_g.<br>
-$$</p>
+<h4 id="5-3-3-Why-contacts-often-determine-ambipolarity"><a href="#5-3-3-Why-contacts-often-determine-ambipolarity" class="headerlink" title="5.3.3 Why contacts often determine ambipolarity"></a>5.3.3 Why contacts often determine ambipolarity</h4><p>For an ideal, unpinned metal&#x2F;semiconductor interface,</p>
+<p>$$<br>\Phi_{Bn}+\Phi_{Bp}\approx E_g.<br>$$</p>
 <p>Lowering one barrier usually raises the other. A midgap metal contact can therefore permit both carrier types, but neither branch may have a truly ohmic contact.</p>
 <p>The injection current over a thermionic barrier scales approximately as</p>
-<p>$$<br>
-I_{\mathrm{inj}}<br>
-\propto<br>
-\exp\left(<br>
--\frac{\Phi_B}{kT}<br>
-\right).<br>
-$$</p>
+<p>$$<br>I_{\mathrm{inj}}<br>\propto<br>\exp\left(<br>-\frac{\Phi_B}{kT}<br>\right).<br>$$</p>
 <p>For a thin barrier, thermionic-field emission and field emission also depend strongly on barrier width. Gate voltage may therefore control both the channel charge and the contact transmission:</p>
-<p>$$<br>
-I_D<br>
-\sim<br>
-T_{\mathrm{contact}}(V_G)<br>
-\times<br>
-G_{\mathrm{channel}}(V_G).<br>
-$$</p>
+<p>$$<br>I_D<br>\sim<br>T_{\mathrm{contact}}(V_G)<br>\times<br>G_{\mathrm{channel}}(V_G).<br>$$</p>
 <p>This is why the two branch slopes cannot always be interpreted as intrinsic electron and hole mobilities.</p>
 <p>Real interfaces are further modified by:</p>
 <ul>
@@ -1126,15 +739,10 @@ $$</p>
 <li>tunneling-layer thickness;</li>
 <li>asymmetric source and drain processing.</li>
 </ul>
-<h4 id="5-3-4-Spatially-varying-carrier-polarity-at-finite-drain-bias">5.3.4 Spatially varying carrier polarity at finite drain bias</h4>
-<p>At finite drain bias, the local electrostatic overdrive is</p>
-<p>$$<br>
-V_G-V(x)-V_{\mathrm{CNP}}.<br>
-$$</p>
+<h4 id="5-3-4-Spatially-varying-carrier-polarity-at-finite-drain-bias"><a href="#5-3-4-Spatially-varying-carrier-polarity-at-finite-drain-bias" class="headerlink" title="5.3.4 Spatially varying carrier polarity at finite drain bias"></a>5.3.4 Spatially varying carrier polarity at finite drain bias</h4><p>At finite drain bias, the local electrostatic overdrive is</p>
+<p>$$<br>V_G-V(x)-V_{\mathrm{CNP}}.<br>$$</p>
 <p>Because the local channel potential changes from source to drain, one end of the channel can be electron-rich while the other is hole-rich. The position at which the local charge changes sign satisfies</p>
-<p>$$<br>
-V_G-V(x_0)-V_{\mathrm{CNP}}=0.<br>
-$$</p>
+<p>$$<br>V_G-V(x_0)-V_{\mathrm{CNP}}&#x3D;0.<br>$$</p>
 <p>This creates an electrostatically defined p-n transition inside a nominally uniform material.</p>
 <p>Several consequences follow:</p>
 <ul>
@@ -1144,17 +752,16 @@ $$</p>
 <li>in a direct-gap semiconductor, recombination may produce gate-tunable electroluminescence;</li>
 <li>output curves can show kinks or nonstandard saturation that cannot be captured by one unipolar threshold.</li>
 </ul>
-<h4 id="5-3-5-Zero-gap-and-finite-gap-ambipolar-devices-are-not-equivalent">5.3.5 Zero-gap and finite-gap ambipolar devices are not equivalent</h4>
-<p><strong>Graphene FET</strong></p>
+<h4 id="5-3-5-Zero-gap-and-finite-gap-ambipolar-devices-are-not-equivalent"><a href="#5-3-5-Zero-gap-and-finite-gap-ambipolar-devices-are-not-equivalent" class="headerlink" title="5.3.5 Zero-gap and finite-gap ambipolar devices are not equivalent"></a>5.3.5 Zero-gap and finite-gap ambipolar devices are not equivalent</h4><p><strong>Graphene FET</strong></p>
 <ul>
 <li>The neutrality point is the Dirac point rather than a bandgap.</li>
 <li>Residual electron-hole puddles prevent the carrier density from vanishing.</li>
-<li>Ambipolar transport is continuous, but the on/off ratio is intrinsically limited.</li>
+<li>Ambipolar transport is continuous, but the on&#x2F;off ratio is intrinsically limited.</li>
 </ul>
 <p><strong>Finite-gap 2D semiconductor</strong></p>
 <ul>
 <li>The neutrality region lies in a true bandgap or band-tail region.</li>
-<li>A large on/off ratio is possible.</li>
+<li>A large on&#x2F;off ratio is possible.</li>
 <li>The two branches are frequently contact-limited and strongly asymmetric.</li>
 </ul>
 <p><strong>Heterojunction or tunneling device</strong></p>
@@ -1163,8 +770,7 @@ $$</p>
 <li>Current depends on band alignment, tunneling probability, and recombination.</li>
 <li>Negative differential resistance, steep switching, or light emission may appear.</li>
 </ul>
-<h4 id="5-3-6-Experimental-checks-for-an-ambipolar-interpretation">5.3.6 Experimental checks for an ambipolar interpretation</h4>
-<p>An ambipolar claim is more convincing when the following observations are mutually consistent:</p>
+<h4 id="5-3-6-Experimental-checks-for-an-ambipolar-interpretation"><a href="#5-3-6-Experimental-checks-for-an-ambipolar-interpretation" class="headerlink" title="5.3.6 Experimental checks for an ambipolar interpretation"></a>5.3.6 Experimental checks for an ambipolar interpretation</h4><p>An ambipolar claim is more convincing when the following observations are mutually consistent:</p>
 <ul>
 <li>both current branches shift systematically with gate bias;</li>
 <li>Hall coefficient or thermopower changes sign;</li>
@@ -1177,216 +783,82 @@ $$</p>
 <p><strong>Useful shift in viewpoint.</strong> A unipolar MOSFET is often discussed using “one carrier type and one threshold.” An ambipolar device is better understood from the complete band diagram, with electron and hole injection barriers, local charge, and serial bottlenecks tracked separately.</p>
 </blockquote>
 <hr>
-<h2 id="6-HEMTs-moving-the-channel-into-a-heterostructure-2DEG">6. HEMTs: moving the channel into a heterostructure 2DEG</h2>
-<h3 id="6-1-Formation-of-the-two-dimensional-electron-gas">6.1 Formation of the two-dimensional electron gas</h3>
-<p>A high-electron-mobility transistor uses a heterojunction between a wide-bandgap barrier and a narrower-bandgap channel. The conduction-band offset creates a triangular quantum well at the interface.</p>
+<h2 id="6-HEMTs-moving-the-channel-into-a-heterostructure-2DEG"><a href="#6-HEMTs-moving-the-channel-into-a-heterostructure-2DEG" class="headerlink" title="6. HEMTs: moving the channel into a heterostructure 2DEG"></a>6. HEMTs: moving the channel into a heterostructure 2DEG</h2><h3 id="6-1-Formation-of-the-two-dimensional-electron-gas"><a href="#6-1-Formation-of-the-two-dimensional-electron-gas" class="headerlink" title="6.1 Formation of the two-dimensional electron gas"></a>6.1 Formation of the two-dimensional electron gas</h3><p>A high-electron-mobility transistor uses a heterojunction between a wide-bandgap barrier and a narrower-bandgap channel. The conduction-band offset creates a triangular quantum well at the interface.</p>
 <p>Electrons are confined in the vertical direction but remain free to move in the interface plane, forming a two-dimensional electron gas, or 2DEG.</p>
 <p>Let the wide-bandgap barrier be material 1 and the channel be material 2. Their conduction-band discontinuity is</p>
-<p>$$<br>
-\Delta E_C<br>
-\mathrel{=}<br>
-\chi_2-\chi_1<br>
-$$</p>
+<p>$$<br>\Delta E_C<br>\mathrel{&#x3D;}<br>\chi_2-\chi_1<br>$$</p>
 <p>under the electron-affinity convention. A positive conduction-band offset confines electrons on the channel side of the interface.</p>
 <p>The vertical potential near the interface is approximately triangular:</p>
-<p>$$<br>
-U(z)\approx qF_z z,<br>
-\qquad z&gt;0.<br>
-$$</p>
+<p>$$<br>U(z)\approx qF_z z,<br>\qquad z&gt;0.<br>$$</p>
 <p>Solving the Schrödinger equation in this potential produces discrete subbands. Their energies scale approximately as</p>
-<p>$$<br>
-E_i<br>
-\propto<br>
-\left(<br>
-\frac{\hbar^2}{2m_z^\ast}<br>
-\right)^{1/3}<br>
-(qF_z)^{2/3}.<br>
-$$</p>
+<p>$$<br>E_i<br>\propto<br>\left(<br>\frac{\hbar^2}{2m_z^\ast}<br>\right)^{1&#x2F;3}<br>(qF_z)^{2&#x2F;3}.<br>$$</p>
 <p>The carriers are quantized in the vertical direction but retain an in-plane dispersion:</p>
-<p>$$<br>
-E_i(k_x,k_y)<br>
-\mathrel{=}<br>
-E_i<br>
-+\frac{\hbar^2(k_x^2+k_y^2)}{2m_\parallel^\ast}.<br>
-$$</p>
+<p>$$<br>E_i(k_x,k_y)<br>\mathrel{&#x3D;}<br>E_i<br>+\frac{\hbar^2(k_x^2+k_y^2)}{2m_\parallel^\ast}.<br>$$</p>
 <p>This is the microscopic meaning of a 2DEG: discrete motion along the confinement direction and continuous motion in the interface plane.</p>
-<h3 id="6-2-Where-the-electrons-come-from">6.2 Where the electrons come from</h3>
-<p>The electron source may be:</p>
+<h3 id="6-2-Where-the-electrons-come-from"><a href="#6-2-Where-the-electrons-come-from" class="headerlink" title="6.2 Where the electrons come from"></a>6.2 Where the electrons come from</h3><p>The electron source may be:</p>
 <ul>
-<li>remote modulation doping, as in AlGaAs/GaAs heterostructures; or</li>
-<li>spontaneous and piezoelectric polarization charge, as in AlGaN/GaN heterostructures.</li>
+<li>remote modulation doping, as in AlGaAs&#x2F;GaAs heterostructures; or</li>
+<li>spontaneous and piezoelectric polarization charge, as in AlGaN&#x2F;GaN heterostructures.</li>
 </ul>
-<h4 id="Modulation-doped-HEMT">Modulation-doped HEMT</h4>
-<p>Donors are introduced into the barrier rather than directly into the channel. Electrons transfer into the lower-energy channel well until the resulting electric field and Fermi-level alignment reach equilibrium.</p>
-<p>The donor ions remain spatially separated from the mobile electrons. This reduces ionized-impurity scattering, which is the original physical basis of the high mobility in AlGaAs/GaAs HEMTs.</p>
-<h4 id="Polarization-induced-GaN-HEMT">Polarization-induced GaN HEMT</h4>
-<p>In wurtzite III-nitrides, spontaneous and piezoelectric polarizations change across the heterointerface. The discontinuity creates a bound sheet charge:</p>
-<p>$$<br>
-\sigma_{\mathrm{pol}}<br>
-\mathrel{=}<br>
-P_{\mathrm{barrier}}<br>
--P_{\mathrm{channel}}.<br>
-$$</p>
-<p>For the usual AlGaN/GaN orientation and layer sequence, the interfacial polarization charge attracts electrons and can form a high-density 2DEG even without intentional donor doping.</p>
+<h4 id="Modulation-doped-HEMT"><a href="#Modulation-doped-HEMT" class="headerlink" title="Modulation-doped HEMT"></a>Modulation-doped HEMT</h4><p>Donors are introduced into the barrier rather than directly into the channel. Electrons transfer into the lower-energy channel well until the resulting electric field and Fermi-level alignment reach equilibrium.</p>
+<p>The donor ions remain spatially separated from the mobile electrons. This reduces ionized-impurity scattering, which is the original physical basis of the high mobility in AlGaAs&#x2F;GaAs HEMTs.</p>
+<h4 id="Polarization-induced-GaN-HEMT"><a href="#Polarization-induced-GaN-HEMT" class="headerlink" title="Polarization-induced GaN HEMT"></a>Polarization-induced GaN HEMT</h4><p>In wurtzite III-nitrides, spontaneous and piezoelectric polarizations change across the heterointerface. The discontinuity creates a bound sheet charge:</p>
+<p>$$<br>\sigma_{\mathrm{pol}}<br>\mathrel{&#x3D;}<br>P_{\mathrm{barrier}}<br>-P_{\mathrm{channel}}.<br>$$</p>
+<p>For the usual AlGaN&#x2F;GaN orientation and layer sequence, the interfacial polarization charge attracts electrons and can form a high-density 2DEG even without intentional donor doping.</p>
 <p>The word “two-dimensional” does not automatically imply high mobility. High mobility depends on the quality of the heterointerface, wave-function location, alloy disorder, phonons, dislocations, remote charges, and surface or buffer traps.</p>
-<h3 id="6-3-Electrostatic-determination-of-the-sheet-density">6.3 Electrostatic determination of the sheet density</h3>
-<p>Gauss’s law connects the electric field in the barrier to the total sheet charge:</p>
-<p>$$<br>
-\varepsilon_{\mathrm{bar}}F_{\mathrm{bar}}<br>
-\mathrel{=}<br>
-\sigma_{\mathrm{pol}}<br>
-+Q_{\mathrm{dop}}<br>
-+Q_{\mathrm{surf}}<br>
--qn_s.<br>
-$$</p>
+<h3 id="6-3-Electrostatic-determination-of-the-sheet-density"><a href="#6-3-Electrostatic-determination-of-the-sheet-density" class="headerlink" title="6.3 Electrostatic determination of the sheet density"></a>6.3 Electrostatic determination of the sheet density</h3><p>Gauss’s law connects the electric field in the barrier to the total sheet charge:</p>
+<p>$$<br>\varepsilon_{\mathrm{bar}}F_{\mathrm{bar}}<br>\mathrel{&#x3D;}<br>\sigma_{\mathrm{pol}}<br>+Q_{\mathrm{dop}}<br>+Q_{\mathrm{surf}}<br>-qn_s.<br>$$</p>
 <p>Rearranging,</p>
-<p>$$<br>
-qn_s<br>
-\mathrel{=}<br>
-\sigma_{\mathrm{pol}}<br>
-+Q_{\mathrm{dop}}<br>
-+Q_{\mathrm{surf}}<br>
--\varepsilon_{\mathrm{bar}}F_{\mathrm{bar}}.<br>
-$$</p>
+<p>$$<br>qn_s<br>\mathrel{&#x3D;}<br>\sigma_{\mathrm{pol}}<br>+Q_{\mathrm{dop}}<br>+Q_{\mathrm{surf}}<br>-\varepsilon_{\mathrm{bar}}F_{\mathrm{bar}}.<br>$$</p>
 <p>The barrier field is related to the potential drop across the barrier:</p>
-<p>$$<br>
-F_{\mathrm{bar}}<br>
-\approx<br>
-\frac{V_{\mathrm{bar}}}{t_{\mathrm{bar}}}.<br>
-$$</p>
+<p>$$<br>F_{\mathrm{bar}}<br>\approx<br>\frac{V_{\mathrm{bar}}}{t_{\mathrm{bar}}}.<br>$$</p>
 <p>The exact expression for the equilibrium sheet density depends on surface potential, gate work function, barrier thickness, conduction-band offset, occupied subband energy, and Fermi level.</p>
 <p>For circuit-level charge control, these constant energy terms are collected into an effective threshold voltage.</p>
 <p>Treating the barrier as an effective gate dielectric gives</p>
-<p>$$<br>
-\boxed{<br>
-Q_{\mathrm{2DEG}}<br>
-=-qn_s<br>
-\approx<br>
--C_{\mathrm{bar}}<br>
-\left[V_G-V_{\mathrm{TH}}-V(x)\right].<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>Q_{\mathrm{2DEG}}<br>&#x3D;-qn_s<br>\approx<br>-C_{\mathrm{bar}}<br>\left[V_G-V_{\mathrm{TH}}-V(x)\right].<br>}<br>$$</p>
 <p>Polarization charge, conduction-band offset, surface potential, fixed charge, and equilibrium sheet density are absorbed into the effective threshold voltage and zero-bias boundary conditions.</p>
 <p>The barrier capacitance per unit area is approximately</p>
-<p>$$<br>
-C_{\mathrm{bar}}<br>
-\approx<br>
-\frac{\varepsilon_{\mathrm{bar}}}{t_{\mathrm{bar}}}.<br>
-$$</p>
+<p>$$<br>C_{\mathrm{bar}}<br>\approx<br>\frac{\varepsilon_{\mathrm{bar}}}{t_{\mathrm{bar}}}.<br>$$</p>
 <p>Therefore,</p>
-<p>$$<br>
-\frac{dn_s}{dV_G}<br>
-\approx<br>
-\frac{C_{\mathrm{bar}}}{q}<br>
-$$</p>
+<p>$$<br>\frac{dn_s}{dV_G}<br>\approx<br>\frac{C_{\mathrm{bar}}}{q}<br>$$</p>
 <p>before quantum capacitance, interface states, and parasitic electrostatics become important.</p>
-<h3 id="6-4-Depletion-mode-and-enhancement-mode-operation">6.4 Depletion-mode and enhancement-mode operation</h3>
-<p>If a substantial $n_s$ exists at $V_G=0$, the transistor is normally on, or depletion mode.</p>
+<h3 id="6-4-Depletion-mode-and-enhancement-mode-operation"><a href="#6-4-Depletion-mode-and-enhancement-mode-operation" class="headerlink" title="6.4 Depletion-mode and enhancement-mode operation"></a>6.4 Depletion-mode and enhancement-mode operation</h3><p>If a substantial $n_s$ exists at $V_G&#x3D;0$, the transistor is normally on, or depletion mode.</p>
 <p>If the 2DEG is depleted at zero gate bias through a p-GaN gate, gate recess, fluorine treatment, or another electrostatic modification, the device becomes normally off, or enhancement mode.</p>
 <p>Enhancement and depletion therefore describe whether a conducting channel exists at zero gate bias. The terminology is not restricted to conventionally doped silicon channels.</p>
 <p>The gate-voltage sequence is:</p>
-<p>$$<br>
-\text{negative }V_G<br>
-\rightarrow<br>
-\text{2DEG depletion}<br>
-\rightarrow<br>
-n_s\rightarrow0,<br>
-$$</p>
+<p>$$<br>\text{negative }V_G<br>\rightarrow<br>\text{2DEG depletion}<br>\rightarrow<br>n_s\rightarrow0,<br>$$</p>
 <p>and</p>
-<p>$$<br>
-\text{positive }V_G<br>
-\rightarrow<br>
-\text{larger interfacial field}<br>
-\rightarrow<br>
-\text{larger }n_s.<br>
-$$</p>
+<p>$$<br>\text{positive }V_G<br>\rightarrow<br>\text{larger interfacial field}<br>\rightarrow<br>\text{larger }n_s.<br>$$</p>
 <p>Unlike a classical Si inversion-mode MOSFET, a depletion-mode HEMT starts with a pre-existing channel. The gate mainly removes or restores the 2DEG rather than creating an inversion layer from a bulk substrate.</p>
-<p>In a p-GaN gate HEMT, the p-type cap depletes the AlGaN/GaN interface at zero bias. A sufficiently positive gate bias reduces the depletion and restores the 2DEG.</p>
+<p>In a p-GaN gate HEMT, the p-type cap depletes the AlGaN&#x2F;GaN interface at zero bias. A sufficiently positive gate bias reduces the depletion and restores the 2DEG.</p>
 <p>The threshold is therefore controlled by the p-GaN electrostatics, barrier layer, interface charge, and gate stack—not by the conventional silicon condition of surface potential reaching twice the Fermi potential.</p>
-<h3 id="6-5-Why-the-long-channel-HEMT-equation-resembles-the-MOSFET-equation">6.5 Why the long-channel HEMT equation resembles the MOSFET equation</h3>
-<p>Substituting the 2DEG charge relation into</p>
-<p>$$<br>
-I_D=Wqn_sv<br>
-$$</p>
-<p>and using the low-field relation $v=\mu E$ gives</p>
-<p>$$<br>
-\boxed{<br>
-I_D<br>
-=\mu C_{\mathrm{bar}}\frac{W}{L}<br>
-\left[<br>
-(V_G-V_{\mathrm{TH}})V_{\mathrm{DS}}<br>
--\frac{V_{\mathrm{DS}}^2}{2}<br>
-\right].<br>
-}<br>
-$$</p>
+<h3 id="6-5-Why-the-long-channel-HEMT-equation-resembles-the-MOSFET-equation"><a href="#6-5-Why-the-long-channel-HEMT-equation-resembles-the-MOSFET-equation" class="headerlink" title="6.5 Why the long-channel HEMT equation resembles the MOSFET equation"></a>6.5 Why the long-channel HEMT equation resembles the MOSFET equation</h3><p>Substituting the 2DEG charge relation into</p>
+<p>$$<br>I_D&#x3D;Wqn_sv<br>$$</p>
+<p>and using the low-field relation $v&#x3D;\mu E$ gives</p>
+<p>$$<br>\boxed{<br>I_D<br>&#x3D;\mu C_{\mathrm{bar}}\frac{W}{L}<br>\left[<br>(V_G-V_{\mathrm{TH}})V_{\mathrm{DS}}<br>-\frac{V_{\mathrm{DS}}^2}{2}<br>\right].<br>}<br>$$</p>
 <p>The corresponding long-channel saturation approximation is</p>
-<p>$$<br>
-I_{\mathrm{D,sat}}<br>
-\approx<br>
-\frac{1}{2}<br>
-\mu C_{\mathrm{bar}}\frac{W}{L}<br>
-(V_G-V_{\mathrm{TH}})^2.<br>
-$$</p>
+<p>$$<br>I_{\mathrm{D,sat}}<br>\approx<br>\frac{1}{2}<br>\mu C_{\mathrm{bar}}\frac{W}{L}<br>(V_G-V_{\mathrm{TH}})^2.<br>$$</p>
 <p>The mathematical similarity to a MOSFET does not imply identical microscopic physics. It arises because both devices are being described using the same charge-control and gradual-channel approximations.</p>
 <p>The low-field linear-regime transconductance is approximately</p>
-<p>$$<br>
-g_m<br>
-\approx<br>
-\mu C_{\mathrm{bar}}\frac{W}{L}V_{\mathrm{DS}},<br>
-$$</p>
+<p>$$<br>g_m<br>\approx<br>\mu C_{\mathrm{bar}}\frac{W}{L}V_{\mathrm{DS}},<br>$$</p>
 <p>while the ideal long-channel saturation transconductance is</p>
-<p>$$<br>
-g_m<br>
-\approx<br>
-\mu C_{\mathrm{bar}}\frac{W}{L}<br>
-(V_G-V_{\mathrm{TH}}).<br>
-$$</p>
+<p>$$<br>g_m<br>\approx<br>\mu C_{\mathrm{bar}}\frac{W}{L}<br>(V_G-V_{\mathrm{TH}}).<br>$$</p>
 <p>These expressions show that large mobility, strong barrier capacitance, short gate length, and wide gate width increase intrinsic transconductance.</p>
-<h3 id="6-6-High-field-transport-and-velocity-saturation">6.6 High-field transport and velocity saturation</h3>
-<p>Practical RF and power HEMTs enter the high-field regime quickly. The drift velocity no longer increases linearly with electric field. A simple interpolation is</p>
-<p>$$<br>
-v(E)<br>
-\approx<br>
-\frac{\mu E}{1+\mu E/v_{\mathrm{sat}}}.<br>
-$$</p>
+<h3 id="6-6-High-field-transport-and-velocity-saturation"><a href="#6-6-High-field-transport-and-velocity-saturation" class="headerlink" title="6.6 High-field transport and velocity saturation"></a>6.6 High-field transport and velocity saturation</h3><p>Practical RF and power HEMTs enter the high-field regime quickly. The drift velocity no longer increases linearly with electric field. A simple interpolation is</p>
+<p>$$<br>v(E)<br>\approx<br>\frac{\mu E}{1+\mu E&#x2F;v_{\mathrm{sat}}}.<br>$$</p>
 <p>When the channel is strongly velocity-saturated,</p>
-<p>$$<br>
-I_{\mathrm{D,sat}}<br>
-\approx Wqn_sv_{\mathrm{sat}},<br>
-$$</p>
+<p>$$<br>I_{\mathrm{D,sat}}<br>\approx Wqn_sv_{\mathrm{sat}},<br>$$</p>
 <p>and the transconductance approaches a charge-control form:</p>
-<p>$$<br>
-g_m<br>
-\approx<br>
-Wv_{\mathrm{eff}}<br>
-\frac{d(qn_s)}{dV_G}<br>
-\approx<br>
-WC_{\mathrm{bar}}v_{\mathrm{eff}}.<br>
-$$</p>
+<p>$$<br>g_m<br>\approx<br>Wv_{\mathrm{eff}}<br>\frac{d(qn_s)}{dV_G}<br>\approx<br>WC_{\mathrm{bar}}v_{\mathrm{eff}}.<br>$$</p>
 <p>Using a gate capacitance of order</p>
-<p>$$<br>
-C_g\approx C_{\mathrm{bar}}WL_g,<br>
-$$</p>
+<p>$$<br>C_g\approx C_{\mathrm{bar}}WL_g,<br>$$</p>
 <p>gives</p>
-<p>$$<br>
-\boxed{<br>
-f_T\approx\frac{v_{\mathrm{eff}}}{2\pi L_g}.<br>
-}<br>
-$$</p>
+<p>$$<br>\boxed{<br>f_T\approx\frac{v_{\mathrm{eff}}}{2\pi L_g}.<br>}<br>$$</p>
 <p>This is the transit-time interpretation of the HEMT cutoff frequency.</p>
-<h3 id="6-7-Why-RF-HEMTs-use-narrow-gates">6.7 Why RF HEMTs use narrow gates</h3>
-<p>Reducing the gate length decreases the time required for carriers to cross the gate-controlled region:</p>
-<p>$$<br>
-\tau_{\mathrm{tr}}<br>
-\sim<br>
-\frac{L_g}{v_{\mathrm{eff}}}.<br>
-$$</p>
+<h3 id="6-7-Why-RF-HEMTs-use-narrow-gates"><a href="#6-7-Why-RF-HEMTs-use-narrow-gates" class="headerlink" title="6.7 Why RF HEMTs use narrow gates"></a>6.7 Why RF HEMTs use narrow gates</h3><p>Reducing the gate length decreases the time required for carriers to cross the gate-controlled region:</p>
+<p>$$<br>\tau_{\mathrm{tr}}<br>\sim<br>\frac{L_g}{v_{\mathrm{eff}}}.<br>$$</p>
 <p>Therefore,</p>
-<p>$$<br>
-f_T<br>
-\sim<br>
-\frac{1}{2\pi\tau_{\mathrm{tr}}}.<br>
-$$</p>
+<p>$$<br>f_T<br>\sim<br>\frac{1}{2\pi\tau_{\mathrm{tr}}}.<br>$$</p>
 <p>A short gate also reduces the intrinsic gate capacitance. However, gate-length scaling introduces several penalties:</p>
 <ul>
 <li>stronger drain-induced barrier lowering;</li>
@@ -1398,44 +870,20 @@ $$</p>
 <li>increased self-heating and current collapse.</li>
 </ul>
 <p>The external measured cutoff frequency is smaller than the intrinsic value because the source resistance reduces the effective transconductance:</p>
-<p>$$<br>
-g_{m,\mathrm{ext}}<br>
-\approx<br>
-\frac{g_{m,\mathrm{int}}}{<br>
-1+g_{m,\mathrm{int}}R_s<br>
-}.<br>
-$$</p>
+<p>$$<br>g_{m,\mathrm{ext}}<br>\approx<br>\frac{g_{m,\mathrm{int}}}{<br>1+g_{m,\mathrm{int}}R_s<br>}.<br>$$</p>
 <p>Parasitic gate-source and gate-drain capacitances also increase the effective charging time. This is why contact resistance and layout parasitics become increasingly important as the intrinsic gate is shortened.</p>
-<h3 id="6-8-Subthreshold-behavior-in-a-HEMT">6.8 Subthreshold behavior in a HEMT</h3>
-<p>A HEMT can show a semilogarithmic subthreshold region even though its channel is not a classical silicon inversion layer.</p>
+<h3 id="6-8-Subthreshold-behavior-in-a-HEMT"><a href="#6-8-Subthreshold-behavior-in-a-HEMT" class="headerlink" title="6.8 Subthreshold behavior in a HEMT"></a>6.8 Subthreshold behavior in a HEMT</h3><p>A HEMT can show a semilogarithmic subthreshold region even though its channel is not a classical silicon inversion layer.</p>
 <p>The gate raises the interfacial conduction-band edge, reduces the occupied 2DEG sheet density, and increases the source-to-channel barrier.</p>
 <p>The same general barrier relation applies:</p>
-<p>$$<br>
-I_D<br>
-\propto<br>
-\exp\left(<br>
--\frac{\Phi_{\mathrm{ch}}}{kT}<br>
-\right).<br>
-$$</p>
+<p>$$<br>I_D<br>\propto<br>\exp\left(<br>-\frac{\Phi_{\mathrm{ch}}}{kT}<br>\right).<br>$$</p>
 <p>If the gate changes the channel barrier with an efficiency <strong>α_HEMT</strong>,</p>
-<p>$$<br>
-\Delta\Phi_{\mathrm{ch}}<br>
-\approx<br>
--q\alpha_{\mathrm{HEMT}}\Delta V_G,<br>
-$$</p>
+<p>$$<br>\Delta\Phi_{\mathrm{ch}}<br>\approx<br>-q\alpha_{\mathrm{HEMT}}\Delta V_G,<br>$$</p>
 <p>then</p>
-<p>$$<br>
-SS_{\mathrm{HEMT}}<br>
-\approx<br>
-\frac{\ln(10)kT}{<br>
-q\alpha_{\mathrm{HEMT}}<br>
-}.<br>
-$$</p>
-<p>The effective gate coupling is degraded by barrier/interface states, surface states, buffer traps, finite quantum capacitance, and short-channel electrostatics.</p>
+<p>$$<br>SS_{\mathrm{HEMT}}<br>\approx<br>\frac{\ln(10)kT}{<br>q\alpha_{\mathrm{HEMT}}<br>}.<br>$$</p>
+<p>The effective gate coupling is degraded by barrier&#x2F;interface states, surface states, buffer traps, finite quantum capacitance, and short-channel electrostatics.</p>
 <p>In GaN HEMTs, gate leakage, buffer leakage, and trap-assisted transport can also dominate the low-current region.</p>
 <p>Consequently, a measured HEMT subthreshold swing should not automatically be interpreted using the ideal bulk-Si depletion-capacitance model.</p>
-<h3 id="6-9-RF-HEMT-versus-power-HEMT-the-same-channel-different-priorities">6.9 RF HEMT versus power HEMT: the same channel, different priorities</h3>
-<p><strong>RF HEMT</strong></p>
+<h3 id="6-9-RF-HEMT-versus-power-HEMT-the-same-channel-different-priorities"><a href="#6-9-RF-HEMT-versus-power-HEMT-the-same-channel-different-priorities" class="headerlink" title="6.9 RF HEMT versus power HEMT: the same channel, different priorities"></a>6.9 RF HEMT versus power HEMT: the same channel, different priorities</h3><p><strong>RF HEMT</strong></p>
 <ul>
 <li>minimizes gate length and parasitic capacitance;</li>
 <li>prioritizes high transconductance, high cutoff frequency, and low noise;</li>
@@ -1449,9 +897,7 @@ $$</p>
 </ul>
 <p>Both rely on the same 2DEG charge-control physics, but they optimize different parts of the electrostatic and transport landscape.</p>
 <hr>
-<h2 id="7-Device-comparison-and-diagnostic-workflow">7. Device comparison and diagnostic workflow</h2>
-<h3 id="7-1-Comparing-the-four-device-families">7.1 Comparing the four device families</h3>
-<p><strong>Bulk-silicon MOSFET.</strong> The gate voltage is divided among oxide, depletion, and interface-state capacitances. The mobile channel is a surface inversion layer.</p>
+<h2 id="7-Device-comparison-and-diagnostic-workflow"><a href="#7-Device-comparison-and-diagnostic-workflow" class="headerlink" title="7. Device comparison and diagnostic workflow"></a>7. Device comparison and diagnostic workflow</h2><h3 id="7-1-Comparing-the-four-device-families"><a href="#7-1-Comparing-the-four-device-families" class="headerlink" title="7.1 Comparing the four device families"></a>7.1 Comparing the four device families</h3><p><strong>Bulk-silicon MOSFET.</strong> The gate voltage is divided among oxide, depletion, and interface-state capacitances. The mobile channel is a surface inversion layer.</p>
 <p>Important departures from the ideal model include mobility degradation, short-channel electrostatics, and interface traps.</p>
 <p><strong>2D-material FET.</strong> The gate acts through the oxide capacitance, quantum capacitance, interface or band-tail states, and environmental charge. Mobile carriers occupy the atomically thin semiconductor itself.</p>
 <p>Contacts, finite density of states, disorder, and adsorbates can be as important as the intrinsic channel.</p>
@@ -1466,90 +912,62 @@ $$</p>
 <li>Is the main current limited by channel transport, contact injection, or another serial bottleneck?</li>
 </ol>
 <hr>
-<h3 id="7-2-A-reusable-derivation-and-diagnostic-procedure">7.2 A reusable derivation and diagnostic procedure</h3>
-<ol>
+<h3 id="7-2-A-reusable-derivation-and-diagnostic-procedure"><a href="#7-2-A-reusable-derivation-and-diagnostic-procedure" class="headerlink" title="7.2 A reusable derivation and diagnostic procedure"></a>7.2 A reusable derivation and diagnostic procedure</h3><ol>
 <li><strong>Define every potential and sign convention.</strong> Specify the reference for $V_{\mathrm{GS}}$, $V_{\mathrm{DS}}$, $\psi_s$, $\psi_{\mathrm{ch}}$, and $V(x)$.</li>
 <li><strong>Write the voltage-partition equation.</strong> Begin from work functions, fixed charge, channel potential, and dielectric voltage drop. Do not jump directly to a threshold-shifted capacitor law.</li>
 <li><strong>List all charge reservoirs that respond to the channel potential.</strong> These may include depletion charge, mobile carriers, interface states, adsorbates, band-tail states, and the finite electronic density of states.</li>
 <li><strong>Derive the local $Q(x)$.</strong> The drain bias must enter through $V(x)$; otherwise pinch-off and saturation cannot emerge naturally.</li>
-<li><strong>Choose the transport closure.</strong> Use $v=\mu E$ at low field, diffusion or barrier statistics in subthreshold, velocity saturation at high field, and Landauer or injection models for short channels and strong barriers.</li>
+<li><strong>Choose the transport closure.</strong> Use $v&#x3D;\mu E$ at low field, diffusion or barrier statistics in subthreshold, velocity saturation at high field, and Landauer or injection models for short channels and strong barriers.</li>
 <li><strong>Separate serial bottlenecks from parallel leakage.</strong> Contact injection and channel conduction belong to one main path. TAT, gate leakage, and BTBT may form additional parallel paths.</li>
 <li><strong>Extract parameters only after the regime is identified.</strong> Definitions of $V_{\mathrm{TH}}$, $\mu_{\mathrm{FE}}$, $SS$, $g_m$, and $R_c$ should be reported with the fitting range, $V_{\mathrm{DS}}$, temperature, and sweep history.</li>
 </ol>
 <hr>
-<h2 id="8-Key-equations-conclusions-and-scope">8. Key equations, conclusions, and scope</h2>
-<h3 id="8-1-Eight-equations-worth-remembering">8.1 Eight equations worth remembering</h3>
-<ol>
+<h2 id="8-Key-equations-conclusions-and-scope"><a href="#8-Key-equations-conclusions-and-scope" class="headerlink" title="8. Key equations, conclusions, and scope"></a>8. Key equations, conclusions, and scope</h2><h3 id="8-1-Eight-equations-worth-remembering"><a href="#8-1-Eight-equations-worth-remembering" class="headerlink" title="8.1 Eight equations worth remembering"></a>8.1 Eight equations worth remembering</h3><ol>
 <li><strong>Geometric gate capacitance — how strongly does the gate couple through the dielectric?</strong></li>
 </ol>
-<p>$$<br>
-C_{\mathrm{ox}}=\frac{\varepsilon_{\mathrm{ox}}}{t_{\mathrm{ox}}}<br>
-$$</p>
+<p>$$<br>C_{\mathrm{ox}}&#x3D;\frac{\varepsilon_{\mathrm{ox}}}{t_{\mathrm{ox}}}<br>$$</p>
 <ol start="2">
 <li><strong>MOS voltage partition — where is the applied gate voltage spent?</strong></li>
 </ol>
-<p>$$<br>
-V_G=V_{\mathrm{FB}}+\psi_s-\frac{Q_s}{C_{\mathrm{ox}}}<br>
-$$</p>
+<p>$$<br>V_G&#x3D;V_{\mathrm{FB}}+\psi_s-\frac{Q_s}{C_{\mathrm{ox}}}<br>$$</p>
 <ol start="3">
 <li><strong>Local inversion charge — how much mobile charge exists at each channel position?</strong></li>
 </ol>
-<p>$$<br>
-Q_i(x)=-C_{\mathrm{ox}}\left[V_{\mathrm{GS}}-V_{\mathrm{TH}}-V(x)\right]<br>
-$$</p>
+<p>$$<br>Q_i(x)&#x3D;-C_{\mathrm{ox}}\left[V_{\mathrm{GS}}-V_{\mathrm{TH}}-V(x)\right]<br>$$</p>
 <ol start="4">
 <li><strong>Drift current — how does local charge become terminal current?</strong></li>
 </ol>
-<p>$$<br>
-I_D=\mu W\left[-Q_i(x)\right]\frac{dV}{dx}<br>
-$$</p>
+<p>$$<br>I_D&#x3D;\mu W\left[-Q_i(x)\right]\frac{dV}{dx}<br>$$</p>
 <ol start="5">
 <li><strong>Long-channel saturation — how does ideal strong-inversion current scale?</strong></li>
 </ol>
-<p>$$<br>
-I_{\mathrm{D,sat}}=\frac{\mu C_{\mathrm{ox}}W}{2L}V_{\mathrm{OV}}^2<br>
-$$</p>
+<p>$$<br>I_{\mathrm{D,sat}}&#x3D;\frac{\mu C_{\mathrm{ox}}W}{2L}V_{\mathrm{OV}}^2<br>$$</p>
 <ol start="6">
 <li><strong>Subthreshold swing — how much gate voltage is required per current decade?</strong></li>
 </ol>
-<p>$$<br>
-SS=(\ln 10)\frac{kT}{q}n<br>
-$$</p>
+<p>$$<br>SS&#x3D;(\ln 10)\frac{kT}{q}n<br>$$</p>
 <ol start="7">
 <li><strong>Quantum capacitance — how does a finite density of states consume gate voltage?</strong></li>
 </ol>
-<p>$$<br>
-C_q=q^2D(E_F)<br>
-$$</p>
+<p>$$<br>C_q&#x3D;q^2D(E_F)<br>$$</p>
 <ol start="8">
 <li><strong>Transit-frequency estimate — how do velocity and gate length limit RF performance?</strong></li>
 </ol>
-<p>$$<br>
-f_T\approx\frac{v_{\mathrm{eff}}}{2\pi L_g}<br>
-$$</p>
+<p>$$<br>f_T\approx\frac{v_{\mathrm{eff}}}{2\pi L_g}<br>$$</p>
 <hr>
-<h3 id="8-2-Conclusion-the-formulas-are-unified-by-their-assumptions">8.2 Conclusion: the formulas are unified by their assumptions</h3>
-<p>MOSFETs, 2D-material FETs, and HEMTs can exhibit similar square-law equations not because their materials, band structures, or carrier sources are identical, but because they can all enter a regime approximated by</p>
-<p>$$<br>
-\text{linear capacitive charge control}<br>
-+\text{gradual channel}<br>
-+\text{low-field drift}.<br>
-$$</p>
+<h3 id="8-2-Conclusion-the-formulas-are-unified-by-their-assumptions"><a href="#8-2-Conclusion-the-formulas-are-unified-by-their-assumptions" class="headerlink" title="8.2 Conclusion: the formulas are unified by their assumptions"></a>8.2 Conclusion: the formulas are unified by their assumptions</h3><p>MOSFETs, 2D-material FETs, and HEMTs can exhibit similar square-law equations not because their materials, band structures, or carrier sources are identical, but because they can all enter a regime approximated by</p>
+<p>$$<br>\text{linear capacitive charge control}<br>+\text{gradual channel}<br>+\text{low-field drift}.<br>$$</p>
 <p>When quantum capacitance, contact barriers, band tails, high-field velocity saturation, or ballistic transport becomes dominant, the formula changes—but the method of derivation remains valid.</p>
 <blockquote>
-<p><strong>Final method.</strong> For any unfamiliar transistor, ask three questions in order:<br>
-<strong>Which potential does the gate actually change?</strong><br>
-<strong>Which reservoir of charge responds to that potential?</strong><br>
-<strong>Through which bottleneck does that charge produce current?</strong></p>
+<p><strong>Final method.</strong> For any unfamiliar transistor, ask three questions in order:<br><strong>Which potential does the gate actually change?</strong><br><strong>Which reservoir of charge responds to that potential?</strong><br><strong>Through which bottleneck does that charge produce current?</strong></p>
 </blockquote>
 <p>Once these three questions are answered, most FET equations can be reconstructed rather than memorized.</p>
 <hr>
-<h3 id="8-3-Symbols-and-scope">8.3 Symbols and scope</h3>
-<ul>
+<h3 id="8-3-Symbols-and-scope"><a href="#8-3-Symbols-and-scope" class="headerlink" title="8.3 Symbols and scope"></a>8.3 Symbols and scope</h3><ul>
 <li>$C_{\mathrm{ox}}$ and $C_{\mathrm{bar}}$: gate-dielectric and HEMT-barrier capacitance per unit area, measured in F m^-2.</li>
 <li>$\psi_s$ and $\psi_{\mathrm{ch}}$: semiconductor surface potential and 2D-channel potential, defined relative to the bulk or another stated reference.</li>
 <li>$Q_i$ and $Q_s$: inversion charge and total semiconductor-side charge per unit area, measured in C m^-2. The sign convention must always be stated.</li>
-<li>$V_T$: thermal voltage, equal to $kT/q$; approximately 25.85 mV at 300 K. It is not the threshold voltage $V_{\mathrm{TH}}$.</li>
+<li>$V_T$: thermal voltage, equal to $kT&#x2F;q$; approximately 25.85 mV at 300 K. It is not the threshold voltage $V_{\mathrm{TH}}$.</li>
 <li>$\mu$ and $v_{\mathrm{sat}}$: mobility and saturation velocity; both may depend on temperature, field, and carrier density.</li>
 <li>$n_s$: 2DEG or 2D-channel sheet density, commonly measured in m^-2 or cm^-2.</li>
 </ul>
@@ -2492,9 +1910,26 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 72
+        Total : 73
         </div>
         <!-- search  -->
         
@@ -2510,6 +1945,11 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "2026/09/04/Dark-Channel-Prior-Research-Taste-and-Perception-Hardware/" >Dark Channel Prior: From Research Taste to Perception Hardware</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "2026/09/04/From-Greens-Theorem-to-the-Residue-Theorem/" >From Green's Theorem to the Residue Theorem: Boundary Integrals, Singularities, and Sources</a>
         </li>
     
@@ -2520,17 +1960,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" >Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
         </li>
     
     
@@ -2918,17 +2358,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
-    
-        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
-    
         <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
     
         <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
-    
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
-        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
     
         <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
     
@@ -2936,17 +2368,25 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
     
+        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
+    
+        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
+    
         <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
-    
-        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
         <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
     
-        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
         <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
+    
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
     
         <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
     
@@ -2958,13 +2398,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
     
-        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
-    
-        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
-    
         <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
     
         <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Dark Channel Prior"><span class="iconfont-archer">&#xe606;</span>Dark Channel Prior</span>
+    
+        <span class="sidebar-tag-name" data-tags="Image Dehazing"><span class="iconfont-archer">&#xe606;</span>Image Dehazing</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Taste"><span class="iconfont-archer">&#xe606;</span>Research Taste</span>
+    
+        <span class="sidebar-tag-name" data-tags="FPGA"><span class="iconfont-archer">&#xe606;</span>FPGA</span>
+    
+        <span class="sidebar-tag-name" data-tags="Edge Perception"><span class="iconfont-archer">&#xe606;</span>Edge Perception</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
     
@@ -2972,17 +2420,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
     
-        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
     
         <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
     
         <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
-    
-        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
-    
-        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
-    
-        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
         <span class="sidebar-tag-name" data-tags="complex analysis"><span class="iconfont-archer">&#xe606;</span>complex analysis</span>
     
@@ -2992,17 +2436,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="field theory"><span class="iconfont-archer">&#xe606;</span>field theory</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
         <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
     
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+    
         <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
     
         <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
     
         <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
     
         <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
     
@@ -3010,33 +2460,33 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
     
+        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
+    
         <span class="sidebar-tag-name" data-tags="Topological Data Analysis"><span class="iconfont-archer">&#xe606;</span>Topological Data Analysis</span>
     
         <span class="sidebar-tag-name" data-tags="Persistent Homology"><span class="iconfont-archer">&#xe606;</span>Persistent Homology</span>
     
         <span class="sidebar-tag-name" data-tags="Data Science"><span class="iconfont-archer">&#xe606;</span>Data Science</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
-    
         <span class="sidebar-tag-name" data-tags="AI-Assisted Research"><span class="iconfont-archer">&#xe606;</span>AI-Assisted Research</span>
     
         <span class="sidebar-tag-name" data-tags="Network Privacy"><span class="iconfont-archer">&#xe606;</span>Network Privacy</span>
     
-        <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
-    
         <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
     
-        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
-    
-        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+        <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
     
         <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
     
-        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
+        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+    
+        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
     
         <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
     
@@ -3073,49 +2523,51 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
-    
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Computer-Vision"><span class="iconfont-archer">&#xe60a;</span>Scientific/Computer-Vision</span>
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
         <span class="sidebar-category-name" data-categories="Mathematical-Physics"><span class="iconfont-archer">&#xe60a;</span>Mathematical-Physics</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
-    
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
-    
-        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
         <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+    
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
-    
         <span class="sidebar-category-name" data-categories="Scientific/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Scientific/Artificial-Intelligence</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Chemistry/Energy"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry/Energy</span>
     
