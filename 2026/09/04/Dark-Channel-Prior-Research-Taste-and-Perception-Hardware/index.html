@@ -459,6 +459,7 @@ height:50vh;
     <article class="article-entry">
         <link rel="stylesheet" href="/css/dark-channel-prior.css">
 <script defer src="/js/dark-channel-prior-lab.js"></script>
+
 <link rel="stylesheet" href="/css/bilingual-post.css">
 <script defer src="/js/bilingual-post.js"></script>
 <nav class="language-switcher" aria-label="Article language">
@@ -468,30 +469,30 @@ height:50vh;
 </nav>
 <section class="lang-panel lang-en" lang="en">
 <div class="dcp-page">
+
 <p class="dcp-kicker">Computer vision · inverse problems · edge hardware</p>
-<h1>Dark channel prior: from research taste to perception hardware</h1>
-<p>The dark channel prior is more than a celebrated dehazing algorithm. It is a compact lesson in how a sharp empirical observation, coupled to a modest physical model, can turn an ill-posed inverse problem into a practical system. This article derives the method, lets you operate it on real pixels, and then follows its computation into FPGA pipelines and sensor-side perception.</p>
+
+<h1 id="Dark-channel-prior-from-research-taste-to-perception-hardware"><a href="#Dark-channel-prior-from-research-taste-to-perception-hardware" class="headerlink" title="Dark channel prior: from research taste to perception hardware"></a>Dark channel prior: from research taste to perception hardware</h1><p>The dark channel prior is more than a celebrated dehazing algorithm. It is a compact lesson in how a sharp empirical observation, coupled to a modest physical model, can turn an ill-posed inverse problem into a practical system. This article derives the method, lets you operate it on real pixels, and then follows its computation into FPGA pipelines and sensor-side perception.</p>
 <!--more-->
+
 <figure class="dcp-hero">
   <img src="/images/dark-channel-prior/haze-to-clarity-hero.png" alt="A mountain road transitioning continuously from dense atmospheric haze to clear air">
   <figcaption>Haze does not merely reduce contrast. It mixes scene radiance with atmospheric light in a depth-dependent way.</figcaption>
 </figure>
-<h2 id="1-What-does-a-hazy-photograph-lose">1. What does a hazy photograph lose?</h2>
-<p>In 2009, Kaiming He, Jian Sun and Xiaoou Tang published <em>Single Image Haze Removal Using Dark Channel Prior</em> at CVPR. The paper won the Best Paper Award, but its lasting beauty is not simply that it removed haze. It demonstrated a research pattern: notice a humble statistic in natural images, name it precisely, and insert it into a physical model so that an underdetermined problem becomes solvable.</p>
+
+<h2 id="1-What-does-a-hazy-photograph-lose"><a href="#1-What-does-a-hazy-photograph-lose" class="headerlink" title="1. What does a hazy photograph lose?"></a>1. What does a hazy photograph lose?</h2><p>In 2009, Kaiming He, Jian Sun and Xiaoou Tang published <em>Single Image Haze Removal Using Dark Channel Prior</em> at CVPR. The paper won the Best Paper Award, but its lasting beauty is not simply that it removed haze. It demonstrated a research pattern: notice a humble statistic in natural images, name it precisely, and insert it into a physical model so that an underdetermined problem becomes solvable.</p>
 <p>The standard atmospheric scattering model is</p>
 <div class="dcp-equation">
 $$
 I(x)=J(x)t(x)+A\left(1-t(x)\right).
 $$
 </div>
+
 <p>$I(x)$ is the observed hazy image, $J(x)$ the unknown haze-free scene radiance, $A$ the global atmospheric light, and $t(x)$ the transmission. In a homogeneous medium,</p>
-<p>$$<br>
-t(x)=e^{-\beta d(x)},<br>
-$$</p>
+<p>$$<br>t(x)&#x3D;e^{-\beta d(x)},<br>$$</p>
 <p>where $\beta$ is the scattering coefficient and $d(x)$ is scene depth. Distant objects have lower transmission: less of their own radiance reaches the camera, while atmospheric light contributes more. A transmission map is therefore also a coarse, monotonic depth cue.</p>
 <p>One RGB pixel supplies three measurements, yet $J$, $t$ and $A$ are all unknown. The image-formation equation alone cannot determine a unique solution. The missing ingredient is a prior.</p>
-<h2 id="2-The-small-observation-that-estimates-transmission">2. The small observation that estimates transmission</h2>
-<p>For a haze-free image $J$, define the dark channel</p>
+<h2 id="2-The-small-observation-that-estimates-transmission"><a href="#2-The-small-observation-that-estimates-transmission" class="headerlink" title="2. The small observation that estimates transmission"></a>2. The small observation that estimates transmission</h2><p>For a haze-free image $J$, define the dark channel</p>
 <div class="dcp-equation">
 $$
 J^{\mathrm{dark}}(x)=
@@ -501,10 +502,9 @@ J^{\mathrm{dark}}(x)=
 \right).
 $$
 </div>
+
 <p>First take the minimum across RGB channels at every pixel, then take a local minimum over patch $\Omega(x)$. The key observation is that in most non-sky outdoor patches, at least one pixel is very dark in at least one channel:</p>
-<p>$$<br>
-J^{\mathrm{dark}}(x)\approx 0.<br>
-$$</p>
+<p>$$<br>J^{\mathrm{dark}}(x)\approx 0.<br>$$</p>
 <p>Shadows, coloured surfaces, texture and occlusion all create such values. Haze adds airlight and lifts those dark pixels. How far the local minimum has been lifted therefore contains information about haze thickness.</p>
 <p>Assume transmission is locally constant and normalize the input by atmospheric light. The coarse transmission becomes</p>
 <div class="dcp-equation">
@@ -516,11 +516,10 @@ $$
 \right).
 $$
 </div>
+
 <p>$\omega$ is usually slightly below one. Leaving a trace of aerial perspective often looks more natural than removing every hint of atmosphere. Atmospheric light $A$ is estimated by taking pixels with the largest dark-channel values and selecting a bright corresponding pixel in the original image. This is more robust than blindly choosing the brightest source pixel, which might be a white car or a lamp.</p>
 <p>The patch minimum makes $\tilde t$ blocky near depth edges. The original CVPR method used soft matting; guided filtering later provided an efficient, edge-preserving refinement. The final reconstruction is</p>
-<p>$$<br>
-J(x)=\frac{I(x)-A}{\max\left(t(x),t_0\right)}+A.<br>
-$$</p>
+<p>$$<br>J(x)&#x3D;\frac{I(x)-A}{\max\left(t(x),t_0\right)}+A.<br>$$</p>
 <p>where $t_0$ prevents noise and quantization errors from exploding in nearly opaque regions.</p>
 <div class="dcp-flow" aria-label="Five-stage dark channel prior pipeline">
   <div class="dcp-flow__step"><i class="dcp-flow__icon">min</i><b>Dark channel</b><span>channel min + patch min</span></div>
@@ -529,8 +528,8 @@ $$</p>
   <div class="dcp-flow__step"><i class="dcp-flow__icon">GF</i><b>Refinement</b><span>edge-aware local model</span></div>
   <div class="dcp-flow__step"><i class="dcp-flow__icon">J</i><b>Recovery</b><span>radiance inversion + clamp</span></div>
 </div>
-<h2 id="Interactive-lab-operate-the-prior">Interactive lab: operate the prior</h2>
-<p>The module below runs the actual pipeline in your browser. Change the patch, removal strength, transmission floor or refinement switch. Inspect the dark channel and transmission map, then drag the comparison boundary. A larger patch strengthens the prior but can erase small structures; a higher $\omega$ removes more haze; a lower $t_0$ recovers more contrast while amplifying uncertainty.</p>
+
+<h2 id="Interactive-lab-operate-the-prior"><a href="#Interactive-lab-operate-the-prior" class="headerlink" title="Interactive lab: operate the prior"></a>Interactive lab: operate the prior</h2><p>The module below runs the actual pipeline in your browser. Change the patch, removal strength, transmission floor or refinement switch. Inspect the dark channel and transmission map, then drag the comparison boundary. A larger patch strengthens the prior but can erase small structures; a higher $\omega$ removes more haze; a lower $t_0$ recovers more contrast while amplifying uncertainty.</p>
 <div class="dcp-lab" data-dcp-lab>
   <div class="dcp-lab__head"><div><span class="dcp-lab__eyebrow">Live pixel laboratory</span><h2>See the prior become an image</h2></div><span class="dcp-lab__status" data-dcp-status>REAL-TIME DCP</span></div>
   <div class="dcp-controls">
@@ -548,18 +547,19 @@ $$</p>
     <div class="dcp-metrics"><div class="dcp-metric"><span>Atmospheric light · RGB</span><strong><i class="dcp-swatch" data-dcp-swatch></i><b data-dcp-a>—</b></strong></div><div class="dcp-metric"><span>Mean transmission</span><strong data-dcp-t>—</strong></div><div class="dcp-metric"><span>Steady-state target</span><strong>1 px / cycle</strong></div></div>
   </div>
 </div>
+
 <aside class="dcp-callout"><strong>Try this:</strong> disable guided refinement and increase the patch size. The strong, block-shaped transitions reveal why estimating transmission is not enough; its spatial structure must also respect scene edges.</aside>
-<h2 id="3-Why-this-algorithm-is-a-lesson-in-research-taste">3. Why this algorithm is a lesson in research taste</h2>
-<p>I previously argued in <a href="/2026/05/16/Research-Taste-in-the-Age-of-Vibe-Coding/">Research Taste in the Age of Vibe Coding</a> that taste is the ability to see transferable structure inside a specific problem. The dark channel prior is an unusually clean example.</p>
+
+<h2 id="3-Why-this-algorithm-is-a-lesson-in-research-taste"><a href="#3-Why-this-algorithm-is-a-lesson-in-research-taste" class="headerlink" title="3. Why this algorithm is a lesson in research taste"></a>3. Why this algorithm is a lesson in research taste</h2><p>I previously argued in <a href="/2026/05/16/Research-Taste-in-the-Age-of-Vibe-Coding/">Research Taste in the Age of Vibe Coding</a> that taste is the ability to see transferable structure inside a specific problem. The dark channel prior is an unusually clean example.</p>
 <div class="dcp-taste-grid">
   <article class="dcp-taste-card" data-index="01"><h3>Notice an observation worth naming</h3><p>Everyone has seen shadows and dark pixels. Turning “one channel is often nearly zero somewhere in a natural patch” into a measurable image statistic required a different kind of attention.</p></article>
   <article class="dcp-taste-card" data-index="02"><h3>Make data and physics interlock</h3><p>The statistic alone is merely a feature; the scattering equation alone is underdetermined. Together, the prior supplies the missing constraint and the physics gives the statistic meaning.</p></article>
   <article class="dcp-taste-card" data-index="03"><h3>Choose just enough complexity</h3><p>The method does not simulate every aerosol or camera response. It retains the variables that control the inversion, then adds interpretable brakes such as ω and t₀.</p></article>
   <article class="dcp-taste-card" data-index="04"><h3>Know where the promise breaks</h3><p>A prior is not a law. Sky, snow, white walls, night lighting and spatially varying haze violate its assumptions. Stating the domain of validity is part of the contribution.</p></article>
 </div>
+
 <p>The algorithm remains valuable even when a neural network achieves a better average score. It exposes intermediate quantities, offers a clear failure model, and maps naturally onto streaming hardware. In safety-critical perception, those properties are not nostalgia; they are engineering leverage.</p>
-<h2 id="4-From-equations-to-FPGA-change-the-computation-graph-first">4. From equations to FPGA: change the computation graph first</h2>
-<p>Translating a MATLAB loop directly into RTL rarely produces a good accelerator. Hardware design asks different questions: Can pixels stream without returning to external memory? Can window data be reused? Does a global statistic force a second frame pass? The comparisons themselves are cheap; movement and storage dominate.</p>
+<h2 id="4-From-equations-to-FPGA-change-the-computation-graph-first"><a href="#4-From-equations-to-FPGA-change-the-computation-graph-first" class="headerlink" title="4. From equations to FPGA: change the computation graph first"></a>4. From equations to FPGA: change the computation graph first</h2><p>Translating a MATLAB loop directly into RTL rarely produces a good accelerator. Hardware design asks different questions: Can pixels stream without returning to external memory? Can window data be reused? Does a global statistic force a second frame pass? The comparisons themselves are cheap; movement and storage dominate.</p>
 <p>The RGB minimum needs only a few comparators. A $k\times k$ local minimum, however, should not reread $k^2$ pixels for every output. Line buffers and shift registers move the window with the stream. Because rectangular erosion is separable, horizontal and vertical sliding minima can be cascaded; a monotonic queue further removes redundant comparisons.</p>
 <p>Atmospheric light creates a system-level conflict: it is known only after observing the frame, but recovery needs it before producing that frame. A design can buffer and process twice, estimate $A$ from a downsampled histogram or Top-K stream, or use the previous frame’s temporally filtered $A$. Each choice changes latency, DDR traffic and behaviour during scene cuts.</p>
 <p>Guided filtering consists mainly of local means, variances and covariances. Box statistics become add-subtract sliding sums. Accumulators need guard bits; variance must be clamped against negative fixed-point round-off. Expensive divisions can be replaced by reciprocal lookup tables, piecewise approximations, or a LUT seed followed by one Newton–Raphson iteration.</p>
@@ -576,52 +576,51 @@ $$</p>
   </div>
   <p class="dcp-hw__note">Select a concern to reveal where it lives in the stream. “Real time” should report first-frame latency, external-memory traffic, state across frames and worst-case timing—not FPS alone.</p>
 </div>
+
 <p>A 2014 FPGA accelerator combining DCP and guided filtering reported 13.74 ms for a $720\times576$ frame at 100 MHz. Later work continues to trade image fidelity, resources and power through HLS dataflow, loop unrolling, fixed-point arithmetic and approximate atmospheric-light estimation. Numbers across devices are not directly comparable, but they confirm that DCP’s window operations and per-pixel reconstruction are highly streamable.</p>
-<h2 id="5-Sensor-side-integration-clarity-is-not-the-final-objective">5. Sensor-side integration: clarity is not the final objective</h2>
-<p>For autonomous driving, drones or surveillance, dehazing should not be a cosmetic display filter. Its placement inside the image signal processor matters. The scattering model assumes approximately linear scene radiance, so dehazing belongs after black-level correction, defect correction, lens shading and demosaicing, but before nonlinear gamma, local tone mapping and sharpening. White balance and colour correction alter channel ratios and must be calibrated together with the estimate of $A$.</p>
+<h2 id="5-Sensor-side-integration-clarity-is-not-the-final-objective"><a href="#5-Sensor-side-integration-clarity-is-not-the-final-objective" class="headerlink" title="5. Sensor-side integration: clarity is not the final objective"></a>5. Sensor-side integration: clarity is not the final objective</h2><p>For autonomous driving, drones or surveillance, dehazing should not be a cosmetic display filter. Its placement inside the image signal processor matters. The scattering model assumes approximately linear scene radiance, so dehazing belongs after black-level correction, defect correction, lens shading and demosaicing, but before nonlinear gamma, local tone mapping and sharpening. White balance and colour correction alter channel ratios and must be calibrated together with the estimate of $A$.</p>
 <p>The recovered RGB image should not be the only output. Transmission $t(x)$ is also a confidence or coarse-depth signal. It can enter a detector or segmenter as an additional channel, modulate denoising, or reduce downstream confidence where information is physically unrecoverable. Strong contrast must never be mistaken for new evidence.</p>
 <p>A robust front end also needs a bypass and arbiter. Dark-channel statistics, estimated haze density, sky fraction and temporal stability of $A$ can decide whether to disable, weaken or strengthen dehazing. A classical DCP path, a lightweight network and the original image may coexist. The goal is not to trust DCP everywhere; it is to know when it deserves trust.</p>
-<p>Evaluation must therefore extend beyond PSNR, SSIM and appearance. Does foggy-scene detection mAP improve? Do distant false negatives fall? Is clear weather damaged? Does flicker break tracking identity? What are end-to-end latency, peak bandwidth, on-chip memory, FPS/W and worst-frame time? A prettier image that shifts traffic-light colour or invents edges is not a better perception front end.</p>
+<p>Evaluation must therefore extend beyond PSNR, SSIM and appearance. Does foggy-scene detection mAP improve? Do distant false negatives fall? Is clear weather damaged? Does flicker break tracking identity? What are end-to-end latency, peak bandwidth, on-chip memory, FPS&#x2F;W and worst-frame time? A prettier image that shifts traffic-light colour or invents edges is not a better perception front end.</p>
 <p>The most practical hybrid is to treat DCP as an <strong>interpretable physical-prior layer</strong>. It can provide a deterministic low-latency baseline, an initial transmission map, a training loss or a confidence field. A small learned model can then focus on the places where the prior fails: sky, night scenes and non-uniform illumination. Classical and learned methods become complementary inductive biases rather than rival camps.</p>
-<h2 id="Closing-perspective">Closing perspective</h2>
-<p>The dark channel prior begins with a tiny statistic, gains force from a physical equation, and naturally grows into questions of line buffers, fixed-point reciprocals, temporal state and ISP coordination. That trajectory is itself a definition of research taste: see the structure beyond one dataset, understand where the assumption breaks, and imagine how the idea behaves inside a real system.</p>
+<h2 id="Closing-perspective"><a href="#Closing-perspective" class="headerlink" title="Closing perspective"></a>Closing perspective</h2><p>The dark channel prior begins with a tiny statistic, gains force from a physical equation, and naturally grows into questions of line buffers, fixed-point reciprocals, temporal state and ISP coordination. That trajectory is itself a definition of research taste: see the structure beyond one dataset, understand where the assumption breaks, and imagine how the idea behaves inside a real system.</p>
 <p>A strong research idea does not have to begin with complexity. It may begin by looking harder at something everyone has seen, then choosing the right model to make that observation computationally powerful. Once placed at the perception edge, the endpoint is no longer a clearer picture. It is a system that understands the world more reliably.</p>
-<h2 id="References">References</h2>
-<ol class="dcp-reference-list">
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol class="dcp-reference-list">
   <li>Kaiming He, Jian Sun, Xiaoou Tang, <a href="https://people.csail.mit.edu/kaiming/publications/cvpr09.pdf" target="_blank" rel="noopener">Single Image Haze Removal Using Dark Channel Prior</a>, CVPR 2009.</li>
   <li>Kaiming He, Jian Sun, Xiaoou Tang, <a href="https://people.csail.mit.edu/kaiming/publications/pami10dehaze.pdf" target="_blank" rel="noopener">Single Image Haze Removal Using Dark Channel Prior</a>, IEEE TPAMI 2011.</li>
   <li>Kaiming He, Jian Sun, Xiaoou Tang, <a href="https://people.csail.mit.edu/kaiming/publications/eccv10guidedfilter.pdf" target="_blank" rel="noopener">Guided Image Filtering</a>, ECCV 2010.</li>
   <li>Wenqi Ren et al., <a href="https://www.jstage.jst.go.jp/article/elex/11/24/11_11.20141002/_article" target="_blank" rel="noopener">Real-time hardware accelerator for single image haze removal using dark channel prior and guided filter</a>, IEICE Electronics Express 2014.</li>
   <li>Jose-Luis Lisani, Charles Hessel, <a href="https://www.ipol.im/pub/art/2024/530/" target="_blank" rel="noopener">Dehazing with Dark Channel Prior: Analysis and Implementation</a>, IPOL 2024.</li>
 </ol>
+
 </div>
 </section>
+
 <!-- bilingual:zh -->
 <section class="lang-panel lang-zh" lang="zh-CN" hidden>
 <div class="dcp-page">
+
 <p class="dcp-kicker">计算机视觉 · 逆问题 · 边缘硬件</p>
-<div class="zh-heading zh-h1" role="heading" aria-level="1">从暗通道先验到感知硬件：何恺明的去雾算法与科研品味</div>
-<p>暗通道先验不只是一种著名的去雾算法。它展示了如何把一个敏锐的经验观察与克制的物理模型结合起来，将欠定逆问题变成可用系统。本文先推导算法，再让读者直接操作真实像素，最后沿计算链走进 FPGA 流水线和感知端集成。</p>
+
+<div class="zh-heading zh-h1" role="heading" aria-level="1" id="从暗通道先验到感知硬件：何恺明的去雾算法与科研品味"><a href="#从暗通道先验到感知硬件：何恺明的去雾算法与科研品味" class="headerlink" title="从暗通道先验到感知硬件：何恺明的去雾算法与科研品味"></a>从暗通道先验到感知硬件：何恺明的去雾算法与科研品味</div><p>暗通道先验不只是一种著名的去雾算法。它展示了如何把一个敏锐的经验观察与克制的物理模型结合起来，将欠定逆问题变成可用系统。本文先推导算法，再让读者直接操作真实像素，最后沿计算链走进 FPGA 流水线和感知端集成。</p>
 <figure class="dcp-hero">
   <img src="/images/dark-channel-prior/haze-to-clarity-hero.png" alt="一条山路从浓重的大气雾霾连续过渡到清晰空气">
   <figcaption>雾不只是降低对比度；它以与深度相关的方式，把场景辐射和大气光混合在一起。</figcaption>
 </figure>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="1-一张有雾的照片，到底丢失了什么？">1. 一张有雾的照片，到底丢失了什么？</div>
-<p>2009 年，何恺明、孙剑和汤晓鸥在 CVPR 发表了 <em>Single Image Haze Removal Using Dark Channel Prior</em>。论文获得当年的 Best Paper Award，但它真正耐看的地方并不只是“把雾去掉了”，而是它展示了一种漂亮的研究路径：先观察真实世界图像中一个极其朴素的统计规律，再把它嵌入物理模型，让原本欠定的问题突然变得可解。</p>
+
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="1-一张有雾的照片，到底丢失了什么？"><a href="#1-一张有雾的照片，到底丢失了什么？" class="headerlink" title="1. 一张有雾的照片，到底丢失了什么？"></a>1. 一张有雾的照片，到底丢失了什么？</div><p>2009 年，何恺明、孙剑和汤晓鸥在 CVPR 发表了 <em>Single Image Haze Removal Using Dark Channel Prior</em>。论文获得当年的 Best Paper Award，但它真正耐看的地方并不只是“把雾去掉了”，而是它展示了一种漂亮的研究路径：先观察真实世界图像中一个极其朴素的统计规律，再把它嵌入物理模型，让原本欠定的问题突然变得可解。</p>
 <p>大气散射模型通常写成</p>
 <div class="dcp-equation">
 $$
 I(x)=J(x)t(x)+A\left(1-t(x)\right).
 $$
 </div>
+
 <p>$I(x)$ 是相机观测到的有雾图像，$J(x)$ 是希望恢复的无雾场景辐射，$A$ 是全局大气光，$t(x)$ 是透射率。若介质近似均匀，</p>
-<p>$$<br>
-t(x)=e^{-\beta d(x)},<br>
-$$</p>
+<p>$$<br>t(x)&#x3D;e^{-\beta d(x)},<br>$$</p>
 <p>其中 $\beta$ 是散射系数，$d(x)$ 是场景深度。距离越远，$t(x)$ 越小，来自物体本身的光越弱，大气光占比越高。因此，透射率图也是一张与深度单调相关的粗糙线索。</p>
 <p>一枚 RGB 像素只给出三个观测值，$J$、$t$ 和 $A$ 却都是未知量。仅靠成像方程无法唯一反演，缺失的条件必须由先验补上。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="2-从一个“小观察”得到透射率">2. 从一个“小观察”得到透射率</div>
-<p>对无雾图像 $J$，暗通道定义为</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="2-从一个“小观察”得到透射率"><a href="#2-从一个“小观察”得到透射率" class="headerlink" title="2. 从一个“小观察”得到透射率"></a>2. 从一个“小观察”得到透射率</div><p>对无雾图像 $J$，暗通道定义为</p>
 <div class="dcp-equation">
 $$
 J^{\mathrm{dark}}(x)=
@@ -631,10 +630,9 @@ J^{\mathrm{dark}}(x)=
 \right).
 $$
 </div>
+
 <p>也就是先在每个像素的 RGB 三通道中取最小值，再在局部窗口 $\Omega(x)$ 内取最小值。何恺明等人的关键观察是：多数不含天空的室外无雾图像块中，总能找到一个像素，使它的至少一个颜色通道非常暗：</p>
-<p>$$<br>
-J^{\mathrm{dark}}(x)\approx 0.<br>
-$$</p>
+<p>$$<br>J^{\mathrm{dark}}(x)\approx 0.<br>$$</p>
 <p>阴影、彩色物体、表面纹理和几何遮挡都容易产生暗值。雾却会叠加大气光，把本应很暗的像素整体抬亮。局部最小值被抬高多少，因此携带了雾有多厚的信息。</p>
 <p>在局部窗口内假设透射率近似不变，并用各通道大气光对输入归一化，可得粗透射率</p>
 <div class="dcp-equation">
@@ -646,11 +644,10 @@ $$
 \right).
 $$
 </div>
+
 <p>$\omega$ 通常略小于 1。现实远景本来就应保留少量空气透视，完全消除雾感反而容易显得不自然。估计 $A$ 时，原方法先在暗通道中寻找最亮的一小部分像素，再从对应原图像素中选取亮者。这比直接寻找原图最亮像素更可靠，因为白色汽车或灯光也可能很亮，却不代表大气光。</p>
 <p>局部最小滤波会让粗透射率在深度边界附近产生块效应。CVPR 版本采用 soft matting，后续引导滤波则以更高效率完成边缘保持精修。最终恢复式为</p>
-<p>$$<br>
-J(x)=\frac{I(x)-A}{\max\left(t(x),t_0\right)}+A.<br>
-$$</p>
+<p>$$<br>J(x)&#x3D;\frac{I(x)-A}{\max\left(t(x),t_0\right)}+A.<br>$$</p>
 <p>其中 $t_0$ 防止极低透射率区域的噪声和量化误差被无限放大。</p>
 <div class="dcp-flow" aria-label="暗通道先验五级计算流程">
   <div class="dcp-flow__step"><i class="dcp-flow__icon">min</i><b>暗通道</b><span>通道最小 + 邻域最小</span></div>
@@ -659,8 +656,8 @@ $$</p>
   <div class="dcp-flow__step"><i class="dcp-flow__icon">GF</i><b>边缘精修</b><span>局部线性引导模型</span></div>
   <div class="dcp-flow__step"><i class="dcp-flow__icon">J</i><b>场景恢复</b><span>辐射反演 + 饱和裁剪</span></div>
 </div>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="交互实验：亲手操作这个先验">交互实验：亲手操作这个先验</div>
-<p>下面的模块会在浏览器中真实运行 DCP 流水线。你可以改变局部窗口、去雾强度、透射率下限和精修开关，观察暗通道与透射率图，再拖动前后对比线。窗口越大，先验越强，却越容易吞掉小结构；$\omega$ 越高，去雾越激进；$t_0$ 越低，远处对比度越强，不确定性也越容易被放大。</p>
+
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="交互实验：亲手操作这个先验"><a href="#交互实验：亲手操作这个先验" class="headerlink" title="交互实验：亲手操作这个先验"></a>交互实验：亲手操作这个先验</div><p>下面的模块会在浏览器中真实运行 DCP 流水线。你可以改变局部窗口、去雾强度、透射率下限和精修开关，观察暗通道与透射率图，再拖动前后对比线。窗口越大，先验越强，却越容易吞掉小结构；$\omega$ 越高，去雾越激进；$t_0$ 越低，远处对比度越强，不确定性也越容易被放大。</p>
 <div class="dcp-lab" data-dcp-lab>
   <div class="dcp-lab__head"><div><span class="dcp-lab__eyebrow">实时像素实验室</span><div class="zh-heading zh-h2" role="heading" aria-level="2">看见先验如何变成图像</div></div><span class="dcp-lab__status" data-dcp-status>实时 DCP</span></div>
   <div class="dcp-controls">
@@ -678,18 +675,19 @@ $$</p>
     <div class="dcp-metrics"><div class="dcp-metric"><span>估计大气光 · RGB</span><strong><i class="dcp-swatch" data-dcp-swatch></i><b data-dcp-a>—</b></strong></div><div class="dcp-metric"><span>平均透射率</span><strong data-dcp-t>—</strong></div><div class="dcp-metric"><span>硬件稳态目标</span><strong>1 px / cycle</strong></div></div>
   </div>
 </div>
+
 <aside class="dcp-callout"><strong>可以这样试：</strong>关闭引导滤波，再增大局部窗口。图中块状的深度跃迁会直接说明：估计出透射率还不够，它的空间结构还必须服从场景边缘。</aside>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="3-它为什么体现科研品味？">3. 它为什么体现科研品味？</div>
-<p>我在<a href="/2026/05/16/Research-Taste-in-the-Age-of-Vibe-Coding/">《Research Taste in the Age of Vibe Coding》</a>里写过，研究品味并不等于选择听起来宏大的题目，而是能否从具体问题中看见可迁移的结构。暗通道先验恰好提供了一个干净的案例。</p>
+
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="3-它为什么体现科研品味？"><a href="#3-它为什么体现科研品味？" class="headerlink" title="3. 它为什么体现科研品味？"></a>3. 它为什么体现科研品味？</div><p>我在<a href="/2026/05/16/Research-Taste-in-the-Age-of-Vibe-Coding/">《Research Taste in the Age of Vibe Coding》</a>里写过，研究品味并不等于选择听起来宏大的题目，而是能否从具体问题中看见可迁移的结构。暗通道先验恰好提供了一个干净的案例。</p>
 <div class="dcp-taste-grid">
   <article class="dcp-taste-card" data-index="01"><div class="zh-heading zh-h3" role="heading" aria-level="3">看见值得命名的观察</div><p>每个人都见过阴影和深色像素，但把“自然图像块里通常有一个通道接近零”提升为可验证的统计先验，需要另一种注意力。</p></article>
   <article class="dcp-taste-card" data-index="02"><div class="zh-heading zh-h3" role="heading" aria-level="3">让数据先验与物理咬合</div><p>暗通道单独存在只是图像特征，散射方程单独存在又是欠定模型。两者结合后，先验补上约束，物理则赋予统计量明确含义。</p></article>
   <article class="dcp-taste-card" data-index="03"><div class="zh-heading zh-h3" role="heading" aria-level="3">选择刚刚够用的复杂度</div><p>方法没有模拟每一种气溶胶和相机响应，而是保留决定反演的变量，再加入 ω 与 t₀ 这样可解释的“刹车”。</p></article>
   <article class="dcp-taste-card" data-index="04"><div class="zh-heading zh-h3" role="heading" aria-level="3">知道承诺在哪里失效</div><p>先验不是定律。天空、雪地、白墙、夜间光源和非均匀雾都会破坏假设。清楚说明适用域，本身就是贡献的一部分。</p></article>
 </div>
+
 <p>即使神经网络获得更高的平均指标，暗通道先验依然有价值。它暴露中间量、给出明确失效模型，还能直接映射到流式硬件。在安全关键感知中，这些属性不是怀旧，而是工程杠杆。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="4-从公式到-FPGA：先改变计算图，再谈并行">4. 从公式到 FPGA：先改变计算图，再谈并行</div>
-<p>把 MATLAB 循环逐句翻译成 RTL，通常得不到好的加速器。硬件首先要问：像素能否连续流动而不回写外存？窗口数据能否复用？全局统计是否迫使整帧处理两遍？比较运算本身很便宜，移动与存储才是主要成本。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="4-从公式到-FPGA：先改变计算图，再谈并行"><a href="#4-从公式到-FPGA：先改变计算图，再谈并行" class="headerlink" title="4. 从公式到 FPGA：先改变计算图，再谈并行"></a>4. 从公式到 FPGA：先改变计算图，再谈并行</div><p>把 MATLAB 循环逐句翻译成 RTL，通常得不到好的加速器。硬件首先要问：像素能否连续流动而不回写外存？窗口数据能否复用？全局统计是否迫使整帧处理两遍？比较运算本身很便宜，移动与存储才是主要成本。</p>
 <p>RGB 通道最小值只需要少量比较器，但 $k\times k$ 局部最小值不应为每个输出重新读取 $k^2$ 个像素。行缓存和移位寄存器能让窗口随像素流移动。矩形腐蚀具有可分离结构，可串联水平和垂直滑动最小值；单调队列还能消除重复比较。</p>
 <p>大气光带来一个系统级矛盾：只有看完整帧才能确定 $A$，恢复这一帧却需要提前知道它。可选方案包括缓存整帧做两遍处理、从降采样直方图或 Top-K 流中近似估计，或使用经过时间滤波的上一帧 $A$。每种选择都会改变延迟、DDR 流量和镜头切换时的行为。</p>
 <p>引导滤波主要计算局部均值、方差和协方差。盒式统计可以变成“新值进入就加、旧值离开就减”的滑动和。累加器需要保护位，方差要防止定点舍入后出现负数；昂贵的除法则可用倒数 LUT、分段近似，或 LUT 初值加一次 Newton–Raphson 迭代。</p>
@@ -706,26 +704,26 @@ $$</p>
   </div>
   <p class="dcp-hw__note">点击关注点，可以看到它位于像素流的哪一段。“实时”不能只报告 FPS，还应说明首帧延迟、外部内存流量、跨帧状态和最坏时序。</p>
 </div>
+
 <p>2014 年一项结合 DCP 与引导滤波的 FPGA 加速器报告：在 100 MHz 下处理 $720\times576$ 图像约需 13.74 ms。后续工作继续通过 HLS dataflow、循环展开、定点化和近似大气光估计，在画质、资源与功耗之间权衡。不同器件的数字不能直接横比，但它们共同证明，DCP 的窗口操作与逐像素恢复非常适合流式并行。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="5-放进感知端：目标不应只是“看起来更清楚”">5. 放进感知端：目标不应只是“看起来更清楚”</div>
-<p>若模块服务于自动驾驶、无人机或监控系统，去雾就不应只是显示链路上的美容滤镜。它在 ISP 中的插入位置很重要。散射模型假设近似线性的场景辐射，因此去雾最好位于黑电平、坏点、镜头阴影和去马赛克之后，非线性的 Gamma、局部色调映射和锐化之前。白平衡与颜色校正会改变通道比例，需要与 $A$ 的估计共同标定。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="5-放进感知端：目标不应只是“看起来更清楚”"><a href="#5-放进感知端：目标不应只是“看起来更清楚”" class="headerlink" title="5. 放进感知端：目标不应只是“看起来更清楚”"></a>5. 放进感知端：目标不应只是“看起来更清楚”</div><p>若模块服务于自动驾驶、无人机或监控系统，去雾就不应只是显示链路上的美容滤镜。它在 ISP 中的插入位置很重要。散射模型假设近似线性的场景辐射，因此去雾最好位于黑电平、坏点、镜头阴影和去马赛克之后，非线性的 Gamma、局部色调映射和锐化之前。白平衡与颜色校正会改变通道比例，需要与 $A$ 的估计共同标定。</p>
 <p>恢复后的 RGB 图像不应是唯一输出。透射率 $t(x)$ 本身也是置信度或粗深度信号，可作为检测、分割网络的附加通道，也可调节降噪强度。在极低透射率区域，系统应承认“信息已经不可恢复”并降低下游置信度，而不是用强对比度制造虚假证据。</p>
 <p>可靠的前端还需要旁路与仲裁。暗通道分布、估计雾密度、天空占比和 $A$ 的时间稳定性，可以决定关闭、减弱或加强去雾。经典 DCP、轻量网络和原始图像可以并存。核心不是让 DCP 永远运行，而是让系统知道什么时候值得信任它。</p>
-<p>评价指标因此必须超越 PSNR、SSIM 和主观观感：雾天检测 mAP 是否提高？远距离漏检是否减少？晴天会不会被误处理？视频闪烁是否破坏跟踪 ID？端到端延迟、峰值带宽、片上存储、FPS/W 和最坏帧时间分别是多少？如果画面更讨喜，却让交通灯颜色偏移或凭空制造边缘，它就不是更好的感知前端。</p>
+<p>评价指标因此必须超越 PSNR、SSIM 和主观观感：雾天检测 mAP 是否提高？远距离漏检是否减少？晴天会不会被误处理？视频闪烁是否破坏跟踪 ID？端到端延迟、峰值带宽、片上存储、FPS&#x2F;W 和最坏帧时间分别是多少？如果画面更讨喜，却让交通灯颜色偏移或凭空制造边缘，它就不是更好的感知前端。</p>
 <p>更现实的混合路线，是把 DCP 当作一个<strong>可解释的物理先验层</strong>。它可以提供确定、低延迟的基线，也可以生成透射率初值、训练损失或置信度场；小型学习模型则专门处理天空、夜景和非均匀照明等先验失效区域。传统算法与深度学习不是二选一，而是两种放在合适位置的归纳偏置。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="结语：好算法会自然地长出系统问题">结语：好算法会自然地长出系统问题</div>
-<p>暗通道先验从一个微小的图像统计开始，借物理方程获得力量，又自然生长出行缓存、定点倒数、跨帧状态与 ISP 协同等工程问题。这条路径本身就是科研品味的一种定义：看见单一数据集之外的结构，理解假设在哪里断裂，并想象它进入真实系统后的行为。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="结语：好算法会自然地长出系统问题"><a href="#结语：好算法会自然地长出系统问题" class="headerlink" title="结语：好算法会自然地长出系统问题"></a>结语：好算法会自然地长出系统问题</div><p>暗通道先验从一个微小的图像统计开始，借物理方程获得力量，又自然生长出行缓存、定点倒数、跨帧状态与 ISP 协同等工程问题。这条路径本身就是科研品味的一种定义：看见单一数据集之外的结构，理解假设在哪里断裂，并想象它进入真实系统后的行为。</p>
 <p>一个好的研究想法不必以复杂开始。它常常只是把人人见过的现象看得更认真，再选择恰当模型，让观察获得计算上的力量。真正把它带到感知端之后，终点不再是一张更清晰的图，而是一个更可靠地理解世界的系统。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="参考资料">参考资料</div>
-<ol class="dcp-reference-list">
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</div><ol class="dcp-reference-list">
   <li>何恺明、孙剑、汤晓鸥，<a href="https://people.csail.mit.edu/kaiming/publications/cvpr09.pdf" target="_blank" rel="noopener">Single Image Haze Removal Using Dark Channel Prior</a>，CVPR 2009。</li>
   <li>何恺明、孙剑、汤晓鸥，<a href="https://people.csail.mit.edu/kaiming/publications/pami10dehaze.pdf" target="_blank" rel="noopener">Single Image Haze Removal Using Dark Channel Prior</a>，IEEE TPAMI 2011。</li>
   <li>何恺明、孙剑、汤晓鸥，<a href="https://people.csail.mit.edu/kaiming/publications/eccv10guidedfilter.pdf" target="_blank" rel="noopener">Guided Image Filtering</a>，ECCV 2010。</li>
   <li>Wenqi Ren 等，<a href="https://www.jstage.jst.go.jp/article/elex/11/24/11_11.20141002/_article" target="_blank" rel="noopener">Real-time hardware accelerator for single image haze removal using dark channel prior and guided filter</a>，IEICE Electronics Express 2014。</li>
   <li>Jose-Luis Lisani、Charles Hessel，<a href="https://www.ipol.im/pub/art/2024/530/" target="_blank" rel="noopener">Dehazing with Dark Channel Prior: Analysis and Implementation</a>，IPOL 2024。</li>
 </ol>
+
 </div>
 </section>
+
 
     </article>
     <!-- license  -->
@@ -1710,17 +1708,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" >Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" >Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</a>
         </li>
     
     
@@ -2108,6 +2106,16 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
+    
+        <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
+    
+        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
+    
         <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
     
         <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
@@ -2116,51 +2124,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
     
-        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
-    
-        <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
-    
         <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
-    
-        <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
-    
-        <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
-    
-        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
     
         <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
     
         <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
-        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
-    
-        <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
-    
-        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
     
         <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
+        <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
     
-        <span class="sidebar-tag-name" data-tags="Optical Properties"><span class="iconfont-archer">&#xe606;</span>Optical Properties</span>
+        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
     
-        <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
-    
-        <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
-    
-        <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
-    
-        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
-    
-        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
-    
-        <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
-    
-        <span class="sidebar-tag-name" data-tags="Device Physics"><span class="iconfont-archer">&#xe606;</span>Device Physics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
+        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
     
         <span class="sidebar-tag-name" data-tags="Dark Channel Prior"><span class="iconfont-archer">&#xe606;</span>Dark Channel Prior</span>
     
@@ -2172,7 +2150,27 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Edge Perception"><span class="iconfont-archer">&#xe606;</span>Edge Perception</span>
     
+        <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
+    
+        <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Optical Properties"><span class="iconfont-archer">&#xe606;</span>Optical Properties</span>
+    
+        <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+    
         <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Device Physics"><span class="iconfont-archer">&#xe606;</span>Device Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
     
         <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
     
@@ -2190,13 +2188,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
     
-        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
-    
-        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
-    
         <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
     
         <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
         <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
     
@@ -2222,21 +2220,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Network Privacy"><span class="iconfont-archer">&#xe606;</span>Network Privacy</span>
     
-        <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
-    
         <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
     
-        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
+        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
     
         <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
     
-        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+        <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
+    
+        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
+    
+        <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
-    
-        <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
     
@@ -2273,33 +2271,33 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Computer-Vision"><span class="iconfont-archer">&#xe60a;</span>Scientific/Computer-Vision</span>
     
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Computer-Vision"><span class="iconfont-archer">&#xe60a;</span>Scientific/Computer-Vision</span>
-    
         <span class="sidebar-category-name" data-categories="Mathematical-Physics"><span class="iconfont-archer">&#xe60a;</span>Mathematical-Physics</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
         <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
     
@@ -2313,11 +2311,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
+        <span class="sidebar-category-name" data-categories="Scientific/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Scientific/Artificial-Intelligence</span>
+    
         <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
-    
-        <span class="sidebar-category-name" data-categories="Scientific/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Scientific/Artificial-Intelligence</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Chemistry/Energy"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry/Energy</span>
     
