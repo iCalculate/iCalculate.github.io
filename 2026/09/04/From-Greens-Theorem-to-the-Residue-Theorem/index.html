@@ -327,7 +327,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">1.7k</span>Reading time: <span class="post-count reading-time">10 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1.6k</span>Reading time: <span class="post-count reading-time">10 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -458,75 +458,159 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <p>A line integral around a boundary can look like a purely one-dimensional measurement. Yet its value is often determined by something spread throughout the enclosed region—or concentrated at a few points where the field ceases to be regular. Green’s theorem, Gauss’s law, Stokes’ theorem, and the residue theorem all express this same piece of geometry: <strong>a boundary reports what the interior contains</strong>.</p>
-<p>$$<br>\int_{\partial M}\omega&#x3D;\int_M d\omega.<br>$$</p>
+<p>$$<br>
+\int_{\partial M}\omega=\int_M d\omega.<br>
+$$</p>
 <p>The notation is compact, but the idea is physical. The differential form $\omega$ is what we measure along the boundary; $d\omega$ is the local source, circulation, or failure of exact cancellation in the interior. Complex analysis adds one remarkable twist: away from singularities the source vanishes identically, so the entire answer collapses onto isolated points and the topology of how the contour winds around them.</p>
-<h2 id="One-theorem-seen-at-several-dimensions"><a href="#One-theorem-seen-at-several-dimensions" class="headerlink" title="One theorem, seen at several dimensions"></a>One theorem, seen at several dimensions</h2><p>The fundamental theorem of calculus is the one-dimensional prototype. If $F$ is differentiable on an interval, then</p>
-<p>$$<br>\int_a^b F’(x),dx&#x3D;F(b)-F(a).<br>$$</p>
+<h2 id="One-theorem-seen-at-several-dimensions">One theorem, seen at several dimensions</h2>
+<p>The fundamental theorem of calculus is the one-dimensional prototype. If $F$ is differentiable on an interval, then</p>
+<p>$$<br>
+\int_a^b F’(x),dx=F(b)-F(a).<br>
+$$</p>
 <p>The right-hand side is an integral over the oriented boundary of $[a,b]$: the endpoint $b$ enters positively and $a$ negatively. In other words, integrating a derivative through the interior leaves only boundary data.</p>
-<p>Green’s theorem lifts the same logic to a planar region $D$. For a vector field $\mathbf F&#x3D;(P,Q)$,</p>
-<p>$$<br>\oint_{\partial D} P,dx+Q,dy<br>{}&#x3D;<br>\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dA.<br>$$</p>
+<p>Green’s theorem lifts the same logic to a planar region $D$. For a vector field $\mathbf F=(P,Q)$,</p>
+<p>$$<br>
+\oint_{\partial D} P,dx+Q,dy<br>
+{}=<br>
+\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dA.<br>
+$$</p>
 <p>Here the boundary integral measures the accumulated scalar curl inside. Rotate the field by ninety degrees and the circulation form becomes the flux form,</p>
-<p>$$<br>\oint_{\partial D}\mathbf F\cdot\mathbf n,ds<br>{}&#x3D;<br>\iint_D \nabla\cdot\mathbf F,dA,<br>$$</p>
+<p>$$<br>
+\oint_{\partial D}\mathbf F\cdot\mathbf n,ds<br>
+{}=<br>
+\iint_D \nabla\cdot\mathbf F,dA,<br>
+$$</p>
 <p>which is the two-dimensional Gauss theorem: outward flux counts sources minus sinks. In three dimensions, Stokes’ theorem integrates curl over a surface and reads it as circulation around the edge; Gauss’s theorem integrates divergence through a volume and reads it as flux through the enclosing surface.</p>
 <p>Differential forms remove the accidental differences among these formulas. An oriented manifold $M$ has an oriented boundary $\partial M$; the exterior derivative $d$ raises degree by one; and all of the theorems become</p>
-<p>$$<br>\boxed{\displaystyle \int_{\partial M}\omega&#x3D;\int_M d\omega.}<br>$$</p>
+<p>$$<br>
+\boxed{\displaystyle \int_{\partial M}\omega=\int_M d\omega.}<br>
+$$</p>
 <p>The formula is less a trick for evaluating integrals than a conservation statement: interior contributions cancel pairwise, leaving only what reaches the boundary.</p>
-<h2 id="A-complex-contour-integral-is-two-real-line-integrals"><a href="#A-complex-contour-integral-is-two-real-line-integrals" class="headerlink" title="A complex contour integral is two real line integrals"></a>A complex contour integral is two real line integrals</h2><p>Let $z&#x3D;x+iy$ and write a complex function as $f(z)&#x3D;u(x,y)+iv(x,y)$. Since $dz&#x3D;dx+i,dy$,</p>
-<p>$$<br>f(z),dz&#x3D;(u,dx-v,dy)+i(v,dx+u,dy).<br>$$</p>
+<h2 id="A-complex-contour-integral-is-two-real-line-integrals">A complex contour integral is two real line integrals</h2>
+<p>Let $z=x+iy$ and write a complex function as $f(z)=u(x,y)+iv(x,y)$. Since $dz=dx+i,dy$,</p>
+<p>$$<br>
+f(z),dz=(u,dx-v,dy)+i(v,dx+u,dy).<br>
+$$</p>
 <p>Thus the complex contour integral is not alien to Green’s theorem. It packages two ordinary real line integrals:</p>
-<p>$$<br>\oint_C f(z),dz<br>{}&#x3D;<br>\oint_C(u,dx-v,dy)<br>+i\oint_C(v,dx+u,dy).<br>$$</p>
+<p>$$<br>
+\oint_C f(z),dz<br>
+{}=<br>
+\oint_C(u,dx-v,dy)<br>
++i\oint_C(v,dx+u,dy).<br>
+$$</p>
 <p>Applying Green’s theorem to each part gives</p>
-<p>$$<br>\oint_C f(z),dz<br>{}&#x3D;<br>\iint_D(-v_x-u_y),dA<br>+i\iint_D(u_x-v_y),dA.<br>$$</p>
+<p>$$<br>
+\oint_C f(z),dz<br>
+{}=<br>
+\iint_D(-v_x-u_y),dA<br>
++i\iint_D(u_x-v_y),dA.<br>
+$$</p>
 <p>This is the bridge from planar vector calculus to complex analysis. The two interior densities are precisely the combinations that the Cauchy–Riemann equations control.</p>
-<h2 id="Analyticity-means-no-local-source"><a href="#Analyticity-means-no-local-source" class="headerlink" title="Analyticity means no local source"></a>Analyticity means no local source</h2><p>If $f$ is holomorphic, its real and imaginary parts satisfy</p>
-<p>$$<br>u_x&#x3D;v_y,<br>\qquad<br>u_y&#x3D;-v_x.<br>$$</p>
-<p>Both integrands above therefore vanish point by point. In differential-form language, the complex one-form $\omega&#x3D;f(z),dz$ is closed:</p>
-<p>$$<br>d\omega&#x3D;0.<br>$$</p>
+<h2 id="Analyticity-means-no-local-source">Analyticity means no local source</h2>
+<p>If $f$ is holomorphic, its real and imaginary parts satisfy</p>
+<p>$$<br>
+u_x=v_y,<br>
+\qquad<br>
+u_y=-v_x.<br>
+$$</p>
+<p>Both integrands above therefore vanish point by point. In differential-form language, the complex one-form $\omega=f(z),dz$ is closed:</p>
+<p>$$<br>
+d\omega=0.<br>
+$$</p>
 <p>So for a region where $f$ is regular and Green’s theorem applies,</p>
-<p>$$<br>\oint_{\partial D}f(z),dz&#x3D;0.<br>$$</p>
+<p>$$<br>
+\oint_{\partial D}f(z),dz=0.<br>
+$$</p>
 <p>This is Cauchy’s theorem viewed as a source-free field law. It is stronger than saying that positive and negative contributions happen to balance after integration. The local density that could have produced circulation vanishes everywhere. No small patch of a holomorphic region contributes anything.</p>
-<p>There is a useful physical analogy. An electrostatic flux integral vanishes around a charge-free region because the divergence is zero there. A holomorphic contour integral vanishes around a singularity-free region because its complex analogue of curl&#x2F;source is zero there. In both cases, a nonzero boundary measurement demands an obstruction in the interior.</p>
-<h2 id="Puncture-the-domain-and-the-missing-point-becomes-a-boundary"><a href="#Puncture-the-domain-and-the-missing-point-becomes-a-boundary" class="headerlink" title="Puncture the domain, and the missing point becomes a boundary"></a>Puncture the domain, and the missing point becomes a boundary</h2><p>Suppose $f$ has an isolated singularity at $z_0$ inside a positively oriented contour $C$. Green’s theorem cannot be applied across that point: the hypotheses fail exactly where $f$ diverges or ceases to be holomorphic. The right response is geometric. Remove a small disk $B_\epsilon(z_0)$ and work on the punctured domain</p>
-<p>$$<br>D_\epsilon&#x3D;D\setminus B_\epsilon(z_0).<br>$$</p>
+<p>There is a useful physical analogy. An electrostatic flux integral vanishes around a charge-free region because the divergence is zero there. A holomorphic contour integral vanishes around a singularity-free region because its complex analogue of curl/source is zero there. In both cases, a nonzero boundary measurement demands an obstruction in the interior.</p>
+<h2 id="Puncture-the-domain-and-the-missing-point-becomes-a-boundary">Puncture the domain, and the missing point becomes a boundary</h2>
+<p>Suppose $f$ has an isolated singularity at $z_0$ inside a positively oriented contour $C$. Green’s theorem cannot be applied across that point: the hypotheses fail exactly where $f$ diverges or ceases to be holomorphic. The right response is geometric. Remove a small disk $B_\epsilon(z_0)$ and work on the punctured domain</p>
+<p>$$<br>
+D_\epsilon=D\setminus B_\epsilon(z_0).<br>
+$$</p>
 <blockquote>
 <p><strong>Geometric picture.</strong> Removing the singular point creates a new inner boundary: a small circle around the puncture, oriented oppositely to the outer contour.</p>
 </blockquote>
-<p>On $D_\epsilon$, the function is holomorphic, so $d\omega&#x3D;0$. But the boundary of the punctured region now has two pieces. Its outer boundary is $C$, oriented counterclockwise; the new inner boundary is the small circle $C_\epsilon$, oriented clockwise relative to the remaining domain. Stokes’ theorem says</p>
-<p>$$<br>0&#x3D;\int_{D_\epsilon}d\omega<br>&#x3D;\oint_C f(z),dz-\oint_{C_\epsilon}^{\mathrm{ccw}}f(z),dz.<br>$$</p>
+<p>On $D_\epsilon$, the function is holomorphic, so $d\omega=0$. But the boundary of the punctured region now has two pieces. Its outer boundary is $C$, oriented counterclockwise; the new inner boundary is the small circle $C_\epsilon$, oriented clockwise relative to the remaining domain. Stokes’ theorem says</p>
+<p>$$<br>
+0=\int_{D_\epsilon}d\omega<br>
+=\oint_C f(z),dz-\oint_{C_\epsilon}^{\mathrm{ccw}}f(z),dz.<br>
+$$</p>
 <p>Therefore</p>
-<p>$$<br>\oint_C f(z),dz<br>&#x3D;\oint_{C_\epsilon}^{\mathrm{ccw}}f(z),dz.<br>$$</p>
+<p>$$<br>
+\oint_C f(z),dz<br>
+=\oint_{C_\epsilon}^{\mathrm{ccw}}f(z),dz.<br>
+$$</p>
 <p>The large contour can be shrunk until it tightly surrounds the obstruction. Everything in the regular annulus cancels; only the boundary created by the missing point survives.</p>
 <p>Near $z_0$, write the Laurent expansion</p>
-<p>$$<br>f(z)&#x3D;\cdots+\frac{a_{-2}}{(z-z_0)^2}<br>+\frac{a_{-1}}{z-z_0}+a_0+a_1(z-z_0)+\cdots.<br>$$</p>
-<p>Parameterizing the small circle by $z-z_0&#x3D;\epsilon e^{i\theta}$ shows why only one coefficient matters. Every Laurent mode integrates to zero except $(z-z_0)^{-1}$:</p>
-<p>$$<br>\oint_{C_\epsilon}f(z),dz<br>\longrightarrow 2\pi i,a_{-1}<br>&#x3D;2\pi i,\operatorname{Res}(f,z_0).<br>$$</p>
+<p>$$<br>
+f(z)=\cdots+\frac{a_{-2}}{(z-z_0)^2}<br>
++\frac{a_{-1}}{z-z_0}+a_0+a_1(z-z_0)+\cdots.<br>
+$$</p>
+<p>Parameterizing the small circle by $z-z_0=\epsilon e^{i\theta}$ shows why only one coefficient matters. Every Laurent mode integrates to zero except $(z-z_0)^{-1}$:</p>
+<p>$$<br>
+\oint_{C_\epsilon}f(z),dz<br>
+\longrightarrow 2\pi i,a_{-1}<br>
+=2\pi i,\operatorname{Res}(f,z_0).<br>
+$$</p>
 <p>With several isolated singularities, puncture a disk around each one. The same boundary bookkeeping yields</p>
-<p>$$<br>\boxed{\displaystyle<br>\oint_C f(z),dz<br>&#x3D;2\pi i\sum_k \operatorname{Res}(f,z_k).}<br>$$</p>
+<p>$$<br>
+\boxed{\displaystyle<br>
+\oint_C f(z),dz<br>
+=2\pi i\sum_k \operatorname{Res}(f,z_k).}<br>
+$$</p>
 <p>The residue is therefore not merely a coefficient selected by a clever series manipulation. It is the irreducible boundary signal left by a singular point.</p>
-<h2 id="The-residue-as-a-delta-function-source"><a href="#The-residue-as-a-delta-function-source" class="headerlink" title="The residue as a delta-function source"></a>The residue as a delta-function source</h2><p>The cleanest example is</p>
-<p>$$<br>\oint_{|z|&#x3D;R}\frac{dz}{z}&#x3D;2\pi i.<br>$$</p>
-<p>At every point with $z\neq0$, the function $1&#x2F;z$ is holomorphic. Locally there is no source at all. Nevertheless every contour winding once around the origin detects the same nonzero value. The source must be concentrated at the one excluded point.</p>
+<h2 id="The-residue-as-a-delta-function-source">The residue as a delta-function source</h2>
+<p>The cleanest example is</p>
+<p>$$<br>
+\oint_{|z|=R}\frac{dz}{z}=2\pi i.<br>
+$$</p>
+<p>At every point with $z\neq0$, the function $1/z$ is holomorphic. Locally there is no source at all. Nevertheless every contour winding once around the origin detects the same nonzero value. The source must be concentrated at the one excluded point.</p>
 <p>Wirtinger differentiation makes this statement precise. Define</p>
-<p>$$<br>\frac{\partial}{\partial\bar z}<br>&#x3D;\frac12\left(\frac{\partial}{\partial x}<br>+i\frac{\partial}{\partial y}\right).<br>$$</p>
-<p>For an ordinary function, holomorphicity is equivalent to $\partial_{\bar z}f&#x3D;0$. The function $1&#x2F;z$ satisfies that equation away from the origin, but as a distribution on the whole plane,</p>
-<p>$$<br>\boxed{\displaystyle<br>\frac{\partial}{\partial\bar z}\frac{1}{z}<br>&#x3D;\pi\delta^{(2)}(z).}<br>$$</p>
+<p>$$<br>
+\frac{\partial}{\partial\bar z}<br>
+=\frac12\left(\frac{\partial}{\partial x}<br>
++i\frac{\partial}{\partial y}\right).<br>
+$$</p>
+<p>For an ordinary function, holomorphicity is equivalent to $\partial_{\bar z}f=0$. The function $1/z$ satisfies that equation away from the origin, but as a distribution on the whole plane,</p>
+<p>$$<br>
+\boxed{\displaystyle<br>
+\frac{\partial}{\partial\bar z}\frac{1}{z}<br>
+=\pi\delta^{(2)}(z).}<br>
+$$</p>
 <p>The apparent contradiction disappears once we distinguish pointwise calculus from distributional calculus. A point carries zero area, yet a delta function supported there has a finite integral. This is exactly how a point charge produces nonzero total flux even though the divergence of its field vanishes everywhere except at the charge.</p>
 <p>For a simple pole with residue $a_{-1}$,</p>
-<p>$$<br>\partial_{\bar z}f<br>&#x3D;\pi a_{-1},\delta^{(2)}(z-z_0)<br>+\text{regular terms}.<br>$$</p>
+<p>$$<br>
+\partial_{\bar z}f<br>
+=\pi a_{-1},\delta^{(2)}(z-z_0)<br>
++\text{regular terms}.<br>
+$$</p>
 <blockquote>
 <p><strong>Complex-plane Gauss law.</strong> The contour integral measures the total singular source enclosed by the boundary. The residue is the strength—and complex phase—of that two-dimensional point source.</p>
 </blockquote>
 <p>This is the field-theory picture behind the residue theorem. Holomorphic regions are source-free. Poles are localized defects. Integrating around the boundary totals their charges.</p>
-<h2 id="Winding-number-the-topological-multiplier"><a href="#Winding-number-the-topological-multiplier" class="headerlink" title="Winding number: the topological multiplier"></a>Winding number: the topological multiplier</h2><p>Source strength is only half the answer. A contour also records how it travels around the source. For any closed curve $C$ that avoids $z_0$,</p>
-<p>$$<br>\oint_C\frac{dz}{z-z_0}<br>&#x3D;2\pi i,\operatorname{Wind}(C,z_0),<br>$$</p>
+<h2 id="Winding-number-the-topological-multiplier">Winding number: the topological multiplier</h2>
+<p>Source strength is only half the answer. A contour also records how it travels around the source. For any closed curve $C$ that avoids $z_0$,</p>
+<p>$$<br>
+\oint_C\frac{dz}{z-z_0}<br>
+=2\pi i,\operatorname{Wind}(C,z_0),<br>
+$$</p>
 <p>where</p>
-<p>$$<br>\operatorname{Wind}(C,z_0)<br>&#x3D;\frac{1}{2\pi i}\oint_C\frac{dz}{z-z_0}<br>$$</p>
+<p>$$<br>
+\operatorname{Wind}(C,z_0)<br>
+=\frac{1}{2\pi i}\oint_C\frac{dz}{z-z_0}<br>
+$$</p>
 <p>is an integer. Counterclockwise turns count positively, clockwise turns negatively, and a contour that does not enclose the point has winding number zero. The value cannot change under a smooth deformation of $C$ that never crosses $z_0$. Geometry may vary continuously; the integer does not.</p>
 <p>For a general meromorphic function, the fully topological form is</p>
-<p>$$<br>\oint_C f(z),dz<br>&#x3D;2\pi i\sum_k<br>\operatorname{Wind}(C,z_k)\operatorname{Res}(f,z_k).<br>$$</p>
+<p>$$<br>
+\oint_C f(z),dz<br>
+=2\pi i\sum_k<br>
+\operatorname{Wind}(C,z_k)\operatorname{Res}(f,z_k).<br>
+$$</p>
 <p>Each singularity contributes its local analytic data—the residue—weighted by the global topological relation between the curve and the point. This is why the residue theorem is more than an integration technique. It couples <strong>local analysis</strong> to <strong>global topology</strong>.</p>
-<p>One can now see why a contour may be freely deformed through regular regions. Since $d\omega&#x3D;0$ there, sweeping the contour across such a region adds no integral. The value changes only when the deformation crosses a singularity; at that moment the winding number jumps, and a quantized boundary contribution enters or leaves.</p>
-<h2 id="What-the-boundary-knows"><a href="#What-the-boundary-knows" class="headerlink" title="What the boundary knows"></a>What the boundary knows</h2><p>The route from the fundamental theorem of calculus to residues is not a chain of analogies. It is one theorem acquiring richer interiors:</p>
+<p>One can now see why a contour may be freely deformed through regular regions. Since $d\omega=0$ there, sweeping the contour across such a region adds no integral. The value changes only when the deformation crosses a singularity; at that moment the winding number jumps, and a quantized boundary contribution enters or leaves.</p>
+<h2 id="What-the-boundary-knows">What the boundary knows</h2>
+<p>The route from the fundamental theorem of calculus to residues is not a chain of analogies. It is one theorem acquiring richer interiors:</p>
 <ul>
 <li>In one dimension, the boundary remembers endpoint values.</li>
 <li>In vector calculus, flux or circulation measures distributed divergence or curl.</li>
@@ -536,7 +620,7 @@ height:50vh;
 </ul>
 <p>The result is a conservation law with both analytic and topological content. Regular interior structure cancels. Singular structure cannot be canceled, only enclosed or excluded.</p>
 <blockquote>
-<p><strong>Boundary integrals detect what cannot be removed from the interior: local differential sources in ordinary vector calculus, and singular&#x2F;topological sources in complex analysis.</strong></p>
+<p><strong>Boundary integrals detect what cannot be removed from the interior: local differential sources in ordinary vector calculus, and singular/topological sources in complex analysis.</strong></p>
 </blockquote>
 
     </article>
@@ -1525,7 +1609,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" >Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
         </li>
     
     
@@ -1535,7 +1619,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" >Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</a>
         </li>
     
     
@@ -1923,16 +2007,6 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
-    
-        <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
-    
-        <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
-    
-        <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
-    
         <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
     
         <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
@@ -1941,21 +2015,31 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
     
+        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
+    
         <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
     
         <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
     
-        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
-    
-        <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
+        <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
     
         <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
     
+        <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
+    
         <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
     
-        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
+        <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
     
         <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
+    
+        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
     
         <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
     
@@ -1967,7 +2051,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
     
-        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Device Physics"><span class="iconfont-archer">&#xe606;</span>Device Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
     
         <span class="sidebar-tag-name" data-tags="Dark Channel Prior"><span class="iconfont-archer">&#xe606;</span>Dark Channel Prior</span>
     
@@ -1979,19 +2071,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Edge Perception"><span class="iconfont-archer">&#xe606;</span>Edge Perception</span>
     
-        <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
+        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
     
-        <span class="sidebar-tag-name" data-tags="Device Physics"><span class="iconfont-archer">&#xe606;</span>Device Physics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
-    
-        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
-    
-        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
-    
-        <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
-    
-        <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
     
         <span class="sidebar-tag-name" data-tags="complex analysis"><span class="iconfont-archer">&#xe606;</span>complex analysis</span>
     
@@ -2001,23 +2083,25 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="field theory"><span class="iconfont-archer">&#xe606;</span>field theory</span>
     
-        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+        <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
+    
+        <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
     
         <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
     
         <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
-        <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
-    
         <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
     
-        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+        <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
     
-        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
+        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
     
         <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
     
         <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
     
         <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
     
@@ -2025,13 +2109,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
-    
         <span class="sidebar-tag-name" data-tags="Topological Data Analysis"><span class="iconfont-archer">&#xe606;</span>Topological Data Analysis</span>
     
         <span class="sidebar-tag-name" data-tags="Persistent Homology"><span class="iconfont-archer">&#xe606;</span>Persistent Homology</span>
     
         <span class="sidebar-tag-name" data-tags="Data Science"><span class="iconfont-archer">&#xe606;</span>Data Science</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
     
         <span class="sidebar-tag-name" data-tags="AI-Assisted Research"><span class="iconfont-archer">&#xe606;</span>AI-Assisted Research</span>
     
@@ -2041,17 +2125,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
     
+        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
+    
         <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
     
         <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
     
-        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
-    
-        <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
+        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
     
-        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
+        <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
     
@@ -2088,17 +2172,17 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
         <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
-    
         <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Computer-Vision"><span class="iconfont-archer">&#xe60a;</span>Scientific/Computer-Vision</span>
-    
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Computer-Vision"><span class="iconfont-archer">&#xe60a;</span>Scientific/Computer-Vision</span>
     
         <span class="sidebar-category-name" data-categories="Mathematical-Physics"><span class="iconfont-archer">&#xe60a;</span>Mathematical-Physics</span>
     
@@ -2106,33 +2190,33 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
-    
         <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
-        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
-        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
+        <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
     
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Scientific/Artificial-Intelligence</span>
+        <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
+        <span class="sidebar-category-name" data-categories="Scientific/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Scientific/Artificial-Intelligence</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Chemistry/Energy"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry/Energy</span>
     
