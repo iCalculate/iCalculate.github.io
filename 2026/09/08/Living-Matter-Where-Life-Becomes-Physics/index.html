@@ -1,0 +1,2453 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNMSN3C9M8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MNMSN3C9M8');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="Du Xinchuan">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Du Xinchuan">
+    
+    <meta name="keywords" content="Xinchuan Du,Du Xinchuan,2D materials,optoelectronic devices,spectroscopy,semiconductor physics,photodetectors,quantum sensing">
+    
+    <meta name="description" content="Dr. Xinchuan Du's research notes and project documentation. 
+Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sensing.
+">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Living Matter: Where Life Becomes Physics · Xinchuan Du | Researcher in 2D Materials &amp; Optoelectronics</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("../../../../font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "../../../../css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "../../../../css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "../../../../assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="../../../../scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="../../../../font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', '[object Object]', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="../../../../index.html" >iCalculate’s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Living Matter: Where Life Becomes Physics</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>iCalculate’s Studio</a>
+    <a class="knowledge-atlas-link" href="../../../../knowledge/">Knowledge Atlas</a>
+</header>
+<style>
+  .knowledge-atlas-link {
+    position: absolute; left: 4.5rem; right: auto; top: 1.55rem; z-index: 2;
+    color: rgba(255,255,255,.82); font-size: .72rem; letter-spacing: .13em;
+    text-transform: uppercase; border-bottom: 1px solid rgba(247,83,87,.85);
+    padding-bottom: .22rem; transition: color .2s ease, border-color .2s ease;
+  }
+  .knowledge-atlas-link:hover { color: #fff; border-color: #fff; }
+  @media (max-width: 680px) { .knowledge-atlas-link { left: 3.8rem; right: auto; top: 1.35rem; font-size: .62rem; } }
+</style>
+
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(../../../../intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Living Matter: Where Life Becomes Physics
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Scientific Visualization">Scientific Visualization</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Living Matter">Living Matter</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Active Matter">Active Matter</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Biophysics">Biophysics</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Non-equilibrium Physics">Non-equilibrium Physics</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Collective Behavior">Collective Behavior</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">4.9k</span>Reading time: <span class="post-count reading-time">21 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2026/09/08</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "../../../../lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="../../../../assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <link rel="stylesheet" href="/css/living-matter.css">
+<script defer src="/js/living-matter.js"></script>
+
+<link rel="stylesheet" href="/css/bilingual-post.css">
+<script defer src="/js/bilingual-post.js"></script>
+<nav class="language-switcher" aria-label="Article language">
+  <span class="language-switcher__label">Read in</span>
+  <button type="button" data-language="en" aria-pressed="true">English</button>
+  <button type="button" data-language="zh" aria-pressed="false">中文</button>
+</nav>
+<section class="lang-panel lang-en" lang="en">
+<div class="lm-page">
+
+<p class="lm-kicker">Non-equilibrium physics · information · evolution</p>
+
+<h1 id="Living-matter-where-life-becomes-physics"><a href="#Living-matter-where-life-becomes-physics" class="headerlink" title="Living matter: where life becomes physics"></a>Living matter: where life becomes physics</h1><p>Living matter is not simply soft matter with cells added. Its constituents consume energy, sense their surroundings, store information, repair themselves, reproduce, and have been selected for function. That combination forces physics to confront a distinctive kind of many-body system: one whose microscopic rules can change while the system is running.</p>
+<!--more-->
+
+<div class="lm-observatory" data-lm-observatory aria-label="Interactive observatory across the scales of living matter">
+  <div class="lm-observatory__head"><span>THE LIVING MATTER OBSERVATORY</span><output data-lm-observe-out>Move across a scale to inspect its organizing rule.</output></div>
+  <div class="lm-observatory__scales">
+    <button type="button" data-scale="molecule" data-detail="Molecular motors turn chemical free energy into directed stress."><i></i><b>10⁻⁹ m</b><span>motors</span><em>energy → force</em></button>
+    <button type="button" data-scale="cell" data-detail="Cells close the loop: sense, decide, push, and update their own state."><i></i><b>10⁻⁵ m</b><span>cells</span><em>signal ↔ motion</em></button>
+    <button type="button" data-scale="tissue" data-detail="Crowding, adhesion and growth let tissues flow, jam, buckle and remember."><i></i><b>10⁻³ m</b><span>tissues</span><em>stress → form</em></button>
+    <button type="button" data-scale="collective" data-detail="Local communication becomes trails, swarms and distributed decisions."><i></i><b>10³ m</b><span>collectives</span><em>rules → strategy</em></button>
+  </div>
+  <p>Point, click, or use the arrow keys. The same three ingredients—drive, feedback and history—reappear with different effective variables.</p>
+</div>
+
+<p class="lm-lede">The frontier has shifted from asking whether physical law applies to life—it does—to asking which new organizing principles appear when matter can spend energy, process information and inherit strategies.</p>
+
+<div class="lm-thesis">
+  <article><small>01 · Drive</small><strong>Energy is injected locally</strong><p>Each unit can do work. Detailed balance breaks at the scale of motors, membranes, cells or organisms.</p></article>
+  <article><small>02 · Feedback</small><strong>Rules depend on state</strong><p>Forces alter signalling; signalling alters forces. The material can rewrite its own constitutive response.</p></article>
+  <article><small>03 · History</small><strong>Function has an evolutionary past</strong><p>Parameters are not arbitrary samples: selection has tuned them toward survival, control and reproduction.</p></article>
+</div>
+
+<h2 id="A-first-intuition-intelligence-without-a-map"><a href="#A-first-intuition-intelligence-without-a-map" class="headerlink" title="A first intuition: intelligence without a map"></a>A first intuition: intelligence without a map</h2><p>A colony can solve a routing problem without any ant seeing the whole landscape. Individuals deposit and follow pheromone; successful paths are reinforced because they are traversed more often. The resulting trail is both a physical field and a shared, evaporating memory—a clean example of stigmergy.</p>
+<div class="lm-sim lm-sim--ants" data-lm-sim="ants" role="group" aria-label="Interactive ant colony trail simulation">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>01 · STIGMERGY</span><i data-lm-state>standby</i></div><h2>Let a trail become collective memory</h2><p>Place food, then paint an obstacle. Ants explore noisily; returning ants strengthen useful routes while pheromone evaporates.</p><div class="lm-sim__controls"><button type="button" data-action="food" class="is-active">Place food</button><button type="button" data-action="barrier">Paint barrier</button><button type="button" data-action="reset">Reset</button></div><output data-lm-status>click the field to relocate food</output></div>
+  <canvas data-lm-canvas width="760" height="420">Ants search between a nest and food using an evaporating pheromone field.</canvas>
+</div>
+
+<p>This is not a claim that ants execute a literal optimization package. It is a physical sketch of how externalized memory can turn repeated local decisions into a robust collective route.</p>
+<h2 id="The-scale-ladder—and-why-reduction-is-not-enough"><a href="#The-scale-ladder—and-why-reduction-is-not-enough" class="headerlink" title="The scale ladder—and why reduction is not enough"></a>The scale ladder—and why reduction is not enough</h2><div class="lm-scale" aria-label="Length scales in living matter">
+  <div><b>nm</b><span>motors & proteins</span></div><div><b>μm</b><span>cytoskeleton & bacteria</span></div><div><b>10 μm</b><span>single cells</span></div><div><b>mm</b><span>organoids & tissues</span></div><div><b>m</b><span>organisms</span></div><div><b>km</b><span>swarms & ecologies</span></div>
+</div>
+
+<p>At each rung, coarse-graining hides details but creates new variables: motor activity becomes active stress; cell shape becomes a nematic director; junctional forces become tissue viscosity; individual choices become a polarization field. The research challenge is not to select one “correct” scale, but to discover which variables close the dynamics at each scale—and how information passes between them.</p>
+<div class="lm-sim lm-sim--jamming" data-lm-sim="jamming" role="group" aria-label="Interactive jamming transition">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>02 · JAMMING</span><i data-lm-state>standby</i></div><h2>Compress a crowd until it becomes a solid</h2><p>Raise packing density. Below the transition, the probe slips through rearrangements; above it, force chains span the material and motion arrests.</p><label class="lm-slider">packing fraction <output data-density-out>72%</output><input data-density type="range" min="54" max="90" value="72"></label><output data-lm-status>fluid-like · drag the coral probe</output></div>
+  <canvas data-lm-canvas width="760" height="420">Soft particles compacted by a movable piston with a draggable probe.</canvas>
+</div>
+
+<h2 id="Six-frontier-directions"><a href="#Six-frontier-directions" class="headerlink" title="Six frontier directions"></a>Six frontier directions</h2><section class="lm-direction">
+<h3>1. Active turbulence and topological defects</h3>
+<div class="lm-direction__meta"><span>active nematics</span><span>topology</span><span>hydrodynamics</span></div>
+
+<p>Dense elongated units—microtubule bundles, bacteria or cells—can align like a liquid crystal while continuously generating internal stress. The resulting flows look turbulent even at scales where inertia is negligible. Singularities in orientation, especially ±1&#x2F;2 defects, are not merely mathematical blemishes: in tissues they correlate with extrusion, accumulation, morphogenesis and regeneration.</p>
+<p>The frontier is moving from flat, homogeneous layers to curved and heterogeneous living surfaces. A <a href="https://www.nature.com/articles/s41467-025-62694-x" target="_blank" rel="noopener">2025 method for arbitrary tissue geometries</a> preserves orientation information on 3D aggregates and zebrafish hearts; another study used deliberately patterned integer defects to expose <a href="https://www.nature.com/articles/s41467-025-57783-w" target="_blank" rel="noopener">nonlinear active forces missed by the usual extensile&#x2F;contractile classification</a>.</p>
+<p class="lm-question"><strong>Open question:</strong> Are defects causes, sensors or by-products of biological function—and can we steer them without destroying the tissue’s own control loops?</p>
+</section>
+
+<div class="lm-sim lm-sim--defect" data-lm-sim="defect" role="group" aria-label="Interactive active nematic">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>03 · TOPOLOGY</span><i data-lm-state>standby</i></div><h2>Hold a topological defect</h2><p>A director has no head: θ and θ + π are equivalent. Drag the core and switch its charge to reorganize the entire orientation field.</p><div class="lm-sim__controls"><button class="is-active" type="button" data-charge="0.5">+½ comet</button><button type="button" data-charge="-0.5">−½ trefoil</button><button type="button" data-action="stir">Inject activity</button></div><output data-lm-status>charge +½ · drag the core</output></div>
+  <canvas data-lm-canvas width="760" height="420">Interactive nematic director field around a movable topological defect.</canvas>
+</div>
+
+<section class="lm-direction">
+<h3>2. Tissue mechanics as morphogenetic computation</h3>
+<div class="lm-direction__meta"><span>mechanobiology</span><span>geometry</span><span>organoids</span></div>
+
+<p>Genes specify components, but force and geometry decide how those components fit. Cells pull, divide and exchange neighbours; tissues buckle, flow and jam. Curvature itself is a multiscale cue: <a href="https://www.nature.com/articles/s42254-024-00700-9" target="_blank" rel="noopener">cellular forces and geometric constraints are coupled across membranes, cells and tissues</a>.</p>
+<p>The emerging picture treats development as computation performed by a material. In embryonic organoids, <a href="https://www.nature.com/articles/s41567-025-02802-2" target="_blank" rel="noopener">Marangoni-like recirculating tissue flows can enhance symmetry breaking</a>. In fly gastrulation, evolution has produced distinct mechanical “sinks” that prevent expanding tissues from colliding, linking fitness directly to stress management.</p>
+<p class="lm-question"><strong>Open question:</strong> Which tissue-scale variables predict fate better than gene expression alone—stress, curvature, flow history, topology, or some combination?</p>
+</section>
+
+<div class="lm-sim lm-sim--morph" data-lm-sim="morph" role="group" aria-label="Interactive morphogenesis simulation">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>04 · MORPHOGENESIS</span><i data-lm-state>standby</i></div><h2>Paint growth; geometry computes the fold</h2><p>Drag across the tissue to prescribe local growth. Incompatible expansion cannot stay flat, so a three-dimensional-looking fold emerges from a two-dimensional rule.</p><div class="lm-sim__controls"><button class="is-active" type="button" data-action="grow">Paint growth</button><button type="button" data-action="contract">Paint contraction</button><button type="button" data-action="reset">Flatten</button></div><output data-lm-status>drag across the mesh</output></div>
+  <canvas data-lm-canvas width="760" height="420">A deformable tissue mesh responds to painted growth and contraction.</canvas>
+</div>
+
+<section class="lm-direction">
+<h3>3. Biological information beyond neurons</h3>
+<div class="lm-direction__meta"><span>bioelectricity</span><span>collective intelligence</span><span>control theory</span></div>
+
+<p>Cells exchange chemical, mechanical and electrical signals. A tissue therefore has distributed state, feedback and memory long before it has a nervous system. The provocative question is whether morphology should be understood partly as a controlled target—not only a trajectory generated by molecular reactions.</p>
+<p>This idea is becoming experimentally addressable. Physiological-strength electric fields can drive ion and water transport in organoids, producing <a href="https://www.nature.com/articles/s41467-024-47079-w" target="_blank" rel="noopener">electro-inflation and controlled changes in tissue shape and size</a>. The physics problem is to connect voltages and ion fluxes to decision-making across scales without smuggling agency into the equations.</p>
+<p class="lm-question"><strong>Open question:</strong> What is the minimal physical definition of memory, error correction and goal-directed control in a non-neural tissue?</p>
+</section>
+
+<div class="lm-sim lm-sim--waves" data-lm-sim="waves" role="group" aria-label="Interactive bioelectric tissue waves">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>05 · BIOELECTRICITY</span><i data-lm-state>standby</i></div><h2>Send a decision through a tissue</h2><p>Click a cell to excite it. Voltage spreads locally, but recently active cells become refractory. Repeated clicks can launch waves, collisions and spirals.</p><div class="lm-sim__controls"><button type="button" data-action="pulse">Central pulse</button><button type="button" data-action="obstacle">Toggle scar</button><button type="button" data-action="reset">Reset</button></div><output data-lm-status>click any cell to stimulate</output></div>
+  <canvas data-lm-canvas width="760" height="420">Excitable tissue cells carry and block bioelectric waves.</canvas>
+</div>
+
+<section class="lm-direction">
+<h3>4. Growth, death and evolving material laws</h3>
+<div class="lm-direction__meta"><span>proliferation</span><span>homeostasis</span><span>evolution</span></div>
+
+<p>Ordinary materials conserve their constituents over an experiment. Living materials create and remove them. Growth changes density, stress and topology; stress feeds back onto growth. In proliferating spheroids, motility and expansion can compete to produce a <a href="https://www.nature.com/articles/s42005-025-02090-5" target="_blank" rel="noopener">mixing transition</a>.</p>
+<p>Evolution adds an even deeper complication. A constitutive law—how stress depends on strain, activity or history—may itself be plastic and heritable. The next statistical physics of life will need ensembles constrained not only by energy and conservation laws, but also by resource allocation, control architecture and selection history.</p>
+<p class="lm-question"><strong>Open question:</strong> Can we derive universal classes for matter whose particles reproduce, die and adapt their interactions?</p>
+</section>
+
+<section class="lm-direction">
+<h3>5. Minimal and synthetic living systems</h3>
+<div class="lm-direction__meta"><span>bottom-up biology</span><span>synthetic cells</span><span>origins of life</span></div>
+
+<p>The best way to test whether a proposed principle is sufficient is to build a system containing nothing else. Reconstituted cytoskeletons, droplets, protocells and DNA-programmed compartments let researchers add motility, communication and replication one module at a time. A recent review frames the ambition clearly: <a href="https://www.nature.com/articles/s41570-024-00606-1" target="_blank" rel="noopener">synthetic cells that communicate with one another and with living cells</a>.</p>
+<p>Minimal systems also sharpen the origins-of-life question. Which package of non-equilibrium chemistry, compartmentalization, heredity and selection first becomes evolvable? “Alive” may not mark one sharp boundary, but a sequence of physical transitions in autonomy.</p>
+<p class="lm-question"><strong>Open question:</strong> What is the smallest construction that can maintain itself, learn from perturbations and undergo open-ended evolution?</p>
+</section>
+
+<div class="lm-sim lm-sim--drops" data-lm-sim="drops" role="group" aria-label="Interactive biomolecular condensates">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>06 · CONDENSATES</span><i data-lm-state>standby</i></div><h2>Make compartments without membranes</h2><p>Move the pointer to attract droplets. Collisions fuse them; activity can split them again. Phase separation becomes a dynamic way to organize chemistry.</p><label class="lm-slider">molecular affinity <output data-affinity-out>64%</output><input data-affinity type="range" min="10" max="95" value="64"></label><div class="lm-sim__controls"><button type="button" data-action="seed">Seed droplets</button><button type="button" data-action="split">Active split</button></div><output data-lm-status>move to bias condensation</output></div>
+  <canvas data-lm-canvas width="760" height="420">Biomolecular condensate droplets diffuse, merge and split.</canvas>
+</div>
+
+<section class="lm-direction">
+<h3>6. Programmable living and active materials</h3>
+<div class="lm-direction__meta"><span>self-repair</span><span>biohybrids</span><span>material robotics</span></div>
+
+<p>Engineering asks for matter that senses, computes and acts. Cells embedded in matrices can secrete structure, repair damage or respond to chemical cues; active solids can coordinate shape change and locomotion without a central controller. In one striking route, human cells themselves act as metabolic crosslinkers to form <a href="https://www.nature.com/articles/s44222-024-00244-8" target="_blank" rel="noopener">programmable, self-reinforcing “Cellgels”</a>.</p>
+<p>The design problem is not “make a material more alive.” It is to decide which living capabilities are useful, controllable and safe—and what happens when engineered function conflicts with cellular fitness.</p>
+<p class="lm-question"><strong>Open question:</strong> How do we program function while retaining the adaptability that makes living materials valuable?</p>
+</section>
+
+<div class="lm-sim lm-sim--repair" data-lm-sim="repair" role="group" aria-label="Interactive self-repairing living material">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>07 · SELF-REPAIR</span><i data-lm-state>standby</i></div><h2>Cut the material. Watch it close the wound.</h2><p>Drag a cut through the living lattice. Damaged links release a local signal; nearby nodes migrate, reconnect and slowly rebuild load-bearing paths.</p><div class="lm-sim__controls"><button class="is-active" type="button" data-action="cut">Cut material</button><button type="button" data-action="stress">Pull edges</button><button type="button" data-action="reset">Regrow</button></div><output data-lm-status>drag through the lattice to cut</output></div>
+  <canvas data-lm-canvas width="760" height="420">A living lattice repairs severed bonds.</canvas>
+</div>
+
+<h2 id="One-field-a-cycle-of-questions"><a href="#One-field-a-cycle-of-questions" class="headerlink" title="One field, a cycle of questions"></a>One field, a cycle of questions</h2><p>The field is less a catalogue than a research loop. Select a step to follow how observation becomes explanation, intervention and—eventually—a better question.</p>
+<div class="lm-genealogy" data-lm-genealogy>
+  <div class="lm-genealogy__rail" role="group" aria-label="Living matter research cycle">
+    <button class="is-active" type="button" data-step="drive"><b>01</b><span>Find the drive</span></button><button type="button" data-step="pattern"><b>02</b><span>Measure the pattern</span></button><button type="button" data-step="feedback"><b>03</b><span>Close the feedback</span></button><button type="button" data-step="history"><b>04</b><span>Ask about history</span></button><button type="button" data-step="build"><b>05</b><span>Build and perturb</span></button>
+  </div>
+  <div class="lm-genealogy__detail" aria-live="polite"><small data-step-count>STEP 01 / 05</small><strong data-step-title>Where is free energy consumed?</strong><p data-step-text>Locate the microscopic engine and the channel through which its work reaches collective motion.</p><i></i></div>
+</div>
+
+<h2 id="A-practical-research-compass"><a href="#A-practical-research-compass" class="headerlink" title="A practical research compass"></a>A practical research compass</h2><div class="lm-frontier-grid">
+  <details class="lm-frontier"><summary>What is the unit?</summary><p>A protein, cell, tissue patch or organism? A good coarse-grained unit preserves the feedback relevant to the question.</p></details>
+  <details class="lm-frontier"><summary>Where is energy spent?</summary><p>Identify the local drive and dissipation. “Active” should name a measurable violation of equilibrium, not merely visible motion.</p></details>
+  <details class="lm-frontier"><summary>What is sensed?</summary><p>Separate passive response from feedback. Ask what signal is available locally, with what delay and noise.</p></details>
+  <details class="lm-frontier"><summary>What is conserved?</summary><p>Cells divide and die, but momentum, mass or charge may still constrain particular scales and times.</p></details>
+  <details class="lm-frontier"><summary>What is the function?</summary><p>State the hypothesized task and compare viable alternatives. Avoid explaining every observed pattern as optimized.</p></details>
+  <details class="lm-frontier"><summary>What would falsify the model?</summary><p>Intervene on energy, geometry or information flow. Prediction under perturbation is stronger than fitting a movie.</p></details>
+</div>
+
+<h2 id="Where-to-enter-the-field"><a href="#Where-to-enter-the-field" class="headerlink" title="Where to enter the field"></a>Where to enter the field</h2><div class="lm-reading">
+
+<ul>
+<li>For the conceptual foundation: the open review <a href="https://www.nature.com/articles/s41467-018-05666-8" target="_blank" rel="noopener">Active nematics</a> and the review <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-conmatphys-031218-013231" target="_blank" rel="noopener">The actin cytoskeleton as an active adaptive material</a>.</li>
+<li>For current research communities: the <a href="https://web.sas.upenn.edu/slm/" target="_blank" rel="noopener">Center for Soft and Living Matter</a>, Penn’s <a href="https://web.sas.upenn.edu/physics-of-living-systems/" target="_blank" rel="noopener">Physics of Living Systems</a>, and the NSF <a href="https://www.nsf.gov/funding/opportunities/pols-physics-living-systems" target="_blank" rel="noopener">Physics of Living Systems</a> program.</li>
+<li>For a broad 2025 research agenda: <a href="https://www.physicsoflife.org.uk/uploads/8/4/0/8/84082644/physics_of_life_roadmap_2025_draft.pdf" target="_blank" rel="noopener">Physics of Life Roadmap</a>.</li>
+</ul>
+</div>
+
+<p class="lm-coda">The most interesting possibility is not that life escapes physics. It is that life expands physics: from matter that follows fixed rules to matter that senses, remembers, repairs—and sometimes changes the effective rules by which it moves.</p>
+
+</div>
+</section>
+
+<!-- bilingual:zh -->
+<section class="lang-panel lang-zh" lang="zh-CN" hidden>
+<div class="lm-page">
+
+<p class="lm-kicker">非平衡物理 · 信息 · 进化</p>
+
+<div class="zh-heading zh-h1" role="heading" aria-level="1" id="生命物质：当前沿物理开始追问“活着”"><a href="#生命物质：当前沿物理开始追问“活着”" class="headerlink" title="生命物质：当前沿物理开始追问“活着”"></a>生命物质：当前沿物理开始追问“活着”</div><p>生命物质不只是“加入了细胞的软物质”。它的组成单元会消耗能量、感知环境、储存信息、修复自身、繁殖，并且经过功能性的进化选择。这迫使物理学面对一种特殊的多体系统：系统运行时，它的微观相互作用规则本身也可能改变。</p>
+<div class="lm-observatory" data-lm-observatory aria-label="跨尺度生命物质交互观测台">
+  <div class="lm-observatory__head"><span>生命物质观测台</span><output data-lm-observe-out>移动鼠标，检查每个尺度上的组织规则。</output></div>
+  <div class="lm-observatory__scales">
+    <button type="button" data-scale="molecule" data-detail="分子马达把化学自由能变成有方向的主动应力。"><i></i><b>10⁻⁹ m</b><span>分子马达</span><em>能量 → 力</em></button>
+    <button type="button" data-scale="cell" data-detail="细胞闭合反馈回路：感知、决策、推动，并更新自身状态。"><i></i><b>10⁻⁵ m</b><span>细胞</span><em>信号 ↔ 运动</em></button>
+    <button type="button" data-scale="tissue" data-detail="拥挤、黏附与生长使组织流动、拥塞、弯曲并留下记忆。"><i></i><b>10⁻³ m</b><span>组织</span><em>应力 → 形态</em></button>
+    <button type="button" data-scale="collective" data-detail="局域沟通最终成为路径、群体行为与分布式决策。"><i></i><b>10³ m</b><span>群体</span><em>规则 → 策略</em></button>
+  </div>
+  <p>可用鼠标、点击或方向键探索。驱动、反馈与历史这三种成分，会在不同尺度上换一套有效变量重新出现。</p>
+</div>
+
+<p class="lm-lede">今天的前沿已不再是“物理定律是否适用于生命”——当然适用——而是：当物质能够消耗能量、处理信息并继承策略时，会出现哪些新的组织原理？</p>
+
+<div class="lm-thesis">
+  <article><small>01 · 驱动</small><strong>能量在局部持续注入</strong><p>每个单元都能做功；详细平衡在分子马达、膜、细胞或个体尺度上被打破。</p></article>
+  <article><small>02 · 反馈</small><strong>规则依赖系统状态</strong><p>力改变信号，信号又改变力。材料能够重写自己的响应关系。</p></article>
+  <article><small>03 · 历史</small><strong>功能拥有进化的过去</strong><p>参数并非任意抽样；选择压力已将它们调节到有利于生存、控制和繁殖的区域。</p></article>
+</div>
+
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="第一个直觉：没有地图也能产生智能"><a href="#第一个直觉：没有地图也能产生智能" class="headerlink" title="第一个直觉：没有地图也能产生智能"></a>第一个直觉：没有地图也能产生智能</div><p>蚁群无需任何一只蚂蚁看见全局，就能解决路径问题。个体释放并跟随信息素；较短、较成功的路线因为通过频率更高而得到强化。路径既是物理场，也是一种写在环境里、会逐渐蒸发的共享记忆——这就是痕迹协作。</p>
+<div class="lm-sim lm-sim--ants" data-lm-sim="ants" role="group" aria-label="交互式蚁群路径模拟">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>01 · 痕迹协作</span><i data-lm-state>待机</i></div><div class="zh-heading zh-h2" role="heading" aria-level="2">让路径成为集体记忆</div><p>放置食物，再绘制障碍。蚂蚁随机探索；返巢的个体强化有效路线，而信息素持续蒸发。</p><div class="lm-sim__controls"><button type="button" data-action="food" class="is-active">放置食物</button><button type="button" data-action="barrier">绘制障碍</button><button type="button" data-action="reset">重置</button></div><output data-lm-status>点击场地移动食物</output></div>
+  <canvas data-lm-canvas width="760" height="420">蚂蚁利用可蒸发的信息素在巢穴与食物之间搜索路径。</canvas>
+</div>
+
+<p>这并不意味着蚂蚁真的在运行某个优化软件。它展示的是：写在环境里的外部记忆，如何把反复发生的局域决策变成稳健的集体路线。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="尺度阶梯：为什么“还原”并不等于“理解”"><a href="#尺度阶梯：为什么“还原”并不等于“理解”" class="headerlink" title="尺度阶梯：为什么“还原”并不等于“理解”"></a>尺度阶梯：为什么“还原”并不等于“理解”</div><div class="lm-scale" aria-label="生命物质的长度尺度">
+  <div><b>nm</b><span>马达与蛋白质</span></div><div><b>μm</b><span>细胞骨架与细菌</span></div><div><b>10 μm</b><span>单细胞</span></div><div><b>mm</b><span>类器官与组织</span></div><div><b>m</b><span>生物个体</span></div><div><b>km</b><span>群体与生态</span></div>
+</div>
+
+<p>每上升一个尺度，粗粒化都会隐藏细节，却也会创造新变量：分子马达的活动成为主动应力，细胞形状成为向列指向场，细胞连接力成为组织黏度，个体选择成为极化场。研究难点不是选出唯一“正确”的尺度，而是找出在哪个尺度上，哪些变量足以封闭动力学，以及信息如何在尺度之间传递。</p>
+<div class="lm-sim lm-sim--jamming" data-lm-sim="jamming" role="group" aria-label="交互式拥塞转变">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>02 · 拥塞转变</span><i data-lm-state>待机</i></div><div class="zh-heading zh-h2" role="heading" aria-level="2">压缩群体，直到流体变成固体</div><p>提高堆积密度。转变之前，探针可借由粒子重排穿过；转变之后，跨越材料的力链形成，运动被锁死。</p><label class="lm-slider">堆积分数 <output data-density-out>72%</output><input data-density type="range" min="54" max="90" value="72"></label><output data-lm-status>类流体 · 拖动珊瑚色探针</output></div>
+  <canvas data-lm-canvas width="760" height="420">由可移动活塞压缩的软粒子与可拖动探针。</canvas>
+</div>
+
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="六条前沿研究方向"><a href="#六条前沿研究方向" class="headerlink" title="六条前沿研究方向"></a>六条前沿研究方向</div><section class="lm-direction">
+<div class="zh-heading zh-h3" role="heading" aria-level="3">1. 活性湍流与拓扑缺陷</div>
+<div class="lm-direction__meta"><span>活性向列</span><span>拓扑</span><span>流体动力学</span></div>
+
+<p>密集的细长单元——微管束、细菌或细胞——可以像液晶一样取向，同时持续产生内应力。由此形成的流动在惯性几乎可以忽略的尺度上仍呈现“湍流”外观。取向场中的 ±1&#x2F;2 拓扑缺陷也不只是数学瑕疵；在组织里，它们与细胞挤出、聚集、形态发生和再生相关。</p>
+<p>前沿正从平坦、均匀的细胞层走向弯曲且异质的生命表面。2025 年的一种方法能够在<a href="https://www.nature.com/articles/s41467-025-62694-x" target="_blank" rel="noopener">任意三维组织几何上保留向列取向信息</a>；另一项实验通过人为构造整数缺陷，发现<a href="https://www.nature.com/articles/s41467-025-57783-w" target="_blank" rel="noopener">经典“伸展型&#x2F;收缩型”分类遗漏的非线性主动作用力</a>。</p>
+<p class="lm-question"><strong>开放问题：</strong>拓扑缺陷究竟是生物功能的原因、传感器，还是副产物？我们能否操控它，又不破坏组织自身的控制回路？</p>
+</section>
+
+<div class="lm-sim lm-sim--defect" data-lm-sim="defect" role="group" aria-label="交互式活性向列场">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>03 · 拓扑</span><i data-lm-state>待机</i></div><div class="zh-heading zh-h2" role="heading" aria-level="2">亲手抓住一个拓扑缺陷</div><p>向列指向场只有取向而没有箭头：θ 与 θ + π 等价。拖动核心、切换拓扑荷，整个取向场都会重排。</p><div class="lm-sim__controls"><button class="is-active" type="button" data-charge="0.5">+½ 彗星</button><button type="button" data-charge="-0.5">−½ 三叶</button><button type="button" data-action="stir">注入活性</button></div><output data-lm-status>拓扑荷 +½ · 拖动核心</output></div>
+  <canvas data-lm-canvas width="760" height="420">围绕可移动拓扑缺陷的交互式向列指向场。</canvas>
+</div>
+
+<section class="lm-direction">
+<div class="zh-heading zh-h3" role="heading" aria-level="3">2. 组织力学作为形态发生计算</div>
+<div class="lm-direction__meta"><span>力学生物学</span><span>几何</span><span>类器官</span></div>
+
+<p>基因指定部件，但力与几何决定部件怎样装配。细胞牵拉、分裂、交换邻居；组织弯曲、流动、拥塞。曲率本身也是跨尺度线索：<a href="https://www.nature.com/articles/s42254-024-00700-9" target="_blank" rel="noopener">细胞力与几何约束在膜、细胞、组织之间相互耦合</a>。</p>
+<p>越来越多研究把发育理解为一种“由材料执行的计算”。胚胎类器官中的<a href="https://www.nature.com/articles/s41567-025-02802-2" target="_blank" rel="noopener">类 Marangoni 再循环组织流可以增强对称性破缺</a>；果蝇原肠形成则展示了进化如何创造不同的力学“泄压结构”，避免生长中的组织彼此碰撞。</p>
+<p class="lm-question"><strong>开放问题：</strong>哪些组织尺度变量比单独的基因表达更能预测细胞命运——应力、曲率、流动历史、拓扑，还是它们的组合？</p>
+</section>
+
+<div class="lm-sim lm-sim--morph" data-lm-sim="morph" role="group" aria-label="交互式形态发生模拟">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>04 · 形态发生</span><i data-lm-state>待机</i></div><div class="zh-heading zh-h2" role="heading" aria-level="2">涂出生长，让几何计算褶皱</div><p>在组织上拖动，指定局部生长。互不相容的扩张无法继续保持平面，于是三维感的褶皱从二维规则中涌现。</p><div class="lm-sim__controls"><button class="is-active" type="button" data-action="grow">涂抹生长</button><button type="button" data-action="contract">涂抹收缩</button><button type="button" data-action="reset">展平</button></div><output data-lm-status>在网格上拖动</output></div>
+  <canvas data-lm-canvas width="760" height="420">可变形组织网格响应局部生长与收缩。</canvas>
+</div>
+
+<section class="lm-direction">
+<div class="zh-heading zh-h3" role="heading" aria-level="3">3. 神经系统之外的生物信息</div>
+<div class="lm-direction__meta"><span>生物电</span><span>集体智能</span><span>控制理论</span></div>
+
+<p>细胞会交换化学、机械与电信号。因此，组织在拥有神经系统之前，就已经具备分布式状态、反馈和记忆。一个有挑战性的问题是：形态能否部分地被视为受控目标，而不仅是分子反应生成的一条轨迹？</p>
+<p>这个问题已经可以实验检验。生理强度的电场能够驱动类器官中的离子与水输运，产生<a href="https://www.nature.com/articles/s41467-024-47079-w" target="_blank" rel="noopener">“电膨胀”并控制组织形状和大小</a>。物理学要做的是把电势、离子流与跨尺度决策连接起来，同时避免把“意图”偷偷塞进方程。</p>
+<p class="lm-question"><strong>开放问题：</strong>在没有神经元的组织里，记忆、纠错和目标导向控制的最小物理定义是什么？</p>
+</section>
+
+<div class="lm-sim lm-sim--waves" data-lm-sim="waves" role="group" aria-label="交互式组织生物电波">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>05 · 生物电</span><i data-lm-state>待机</i></div><div class="zh-heading zh-h2" role="heading" aria-level="2">让一个决定穿过组织</div><p>点击细胞使其兴奋。电位向邻近单元传播，但刚刚活跃的细胞进入不应期。连续点击可以制造波、碰撞与旋涡。</p><div class="lm-sim__controls"><button type="button" data-action="pulse">中心脉冲</button><button type="button" data-action="obstacle">切换瘢痕</button><button type="button" data-action="reset">重置</button></div><output data-lm-status>点击任意细胞进行刺激</output></div>
+  <canvas data-lm-canvas width="760" height="420">可兴奋组织传递或阻断生物电波。</canvas>
+</div>
+
+<section class="lm-direction">
+<div class="zh-heading zh-h3" role="heading" aria-level="3">4. 生长、死亡与会进化的材料定律</div>
+<div class="lm-direction__meta"><span>增殖</span><span>稳态</span><span>进化</span></div>
+
+<p>普通材料在一次实验中通常保持组成单元数目；生命材料却会创造和移除它们。生长改变密度、应力和拓扑，应力又反过来调节生长。在增殖球状组织中，运动性与整体膨胀的竞争可以产生<a href="https://www.nature.com/articles/s42005-025-02090-5" target="_blank" rel="noopener">混合转变</a>。</p>
+<p>进化带来更深一层复杂性：描述应力如何依赖形变、活性或历史的“本构关系”，本身也可能可塑并可遗传。下一代生命统计物理需要处理的不只是能量和守恒约束，还有资源分配、控制结构与选择历史。</p>
+<p class="lm-question"><strong>开放问题：</strong>对于组成单元会繁殖、死亡并改变相互作用的物质，我们能否建立普适类别？</p>
+</section>
+
+<section class="lm-direction">
+<div class="zh-heading zh-h3" role="heading" aria-level="3">5. 最小生命与合成生命系统</div>
+<div class="lm-direction__meta"><span>自下而上生物学</span><span>合成细胞</span><span>生命起源</span></div>
+
+<p>要检验某个原理是否“足够”，最有力的方法是构造一个除此之外什么都没有的系统。重构细胞骨架、液滴、原始细胞与 DNA 编程隔室，让研究者逐一添加运动、通信和复制模块。近期综述明确提出下一目标：<a href="https://www.nature.com/articles/s41570-024-00606-1" target="_blank" rel="noopener">让合成细胞彼此通信，并与真实细胞交流</a>。</p>
+<p>最小系统也让生命起源问题更尖锐：非平衡化学、隔室化、遗传与选择要以何种最小组合出现，系统才真正具备可进化性？“活着”也许不是一道边界，而是一连串关于自主性的物理转变。</p>
+<p class="lm-question"><strong>开放问题：</strong>能够维持自身、从扰动中学习并进行开放式进化的最小构造是什么？</p>
+</section>
+
+<div class="lm-sim lm-sim--drops" data-lm-sim="drops" role="group" aria-label="交互式生物分子凝聚体">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>06 · 凝聚体</span><i data-lm-state>待机</i></div><div class="zh-heading zh-h2" role="heading" aria-level="2">不用膜，也能制造隔室</div><p>移动鼠标吸引液滴。碰撞会让它们融合，活性过程又能把它们分裂。相分离成为动态组织化学反应的方式。</p><label class="lm-slider">分子亲和力 <output data-affinity-out>64%</output><input data-affinity type="range" min="10" max="95" value="64"></label><div class="lm-sim__controls"><button type="button" data-action="seed">播种液滴</button><button type="button" data-action="split">主动分裂</button></div><output data-lm-status>移动鼠标偏置凝聚位置</output></div>
+  <canvas data-lm-canvas width="760" height="420">生物分子凝聚体液滴扩散、融合与分裂。</canvas>
+</div>
+
+<section class="lm-direction">
+<div class="zh-heading zh-h3" role="heading" aria-level="3">6. 可编程生命材料与活性材料</div>
+<div class="lm-direction__meta"><span>自修复</span><span>生物混合</span><span>材料机器人</span></div>
+
+<p>工程目标是让物质能够感知、计算并行动。嵌入基质的细胞可以分泌结构、修复损伤或响应化学信号；活性固体无需中央控制器也能协调变形与运动。一条引人注目的路线是让人类细胞本身充当代谢交联剂，形成<a href="https://www.nature.com/articles/s44222-024-00244-8" target="_blank" rel="noopener">可编程并能自我增强的 Cellgel</a>。</p>
+<p>真正的设计问题不是“让材料更像生命”，而是决定哪些生命能力有用、可控且安全，以及工程目标与细胞自身适应度冲突时会发生什么。</p>
+<p class="lm-question"><strong>开放问题：</strong>如何在保留适应性的同时编程功能？而适应性恰恰是生命材料最有价值也最难控制的部分。</p>
+</section>
+
+<div class="lm-sim lm-sim--repair" data-lm-sim="repair" role="group" aria-label="交互式生命材料自修复">
+  <div class="lm-sim__copy"><div class="lm-sim__label"><span>07 · 自修复</span><i data-lm-state>待机</i></div><div class="zh-heading zh-h2" role="heading" aria-level="2">切开材料，看它闭合伤口</div><p>拖动一条切口穿过生命晶格。断裂键释放局部信号；邻近节点迁移、重连，并逐渐重建承载路径。</p><div class="lm-sim__controls"><button class="is-active" type="button" data-action="cut">切开材料</button><button type="button" data-action="stress">拉伸边界</button><button type="button" data-action="reset">重新生长</button></div><output data-lm-status>拖过晶格以切断连接</output></div>
+  <canvas data-lm-canvas width="760" height="420">生命晶格修复被切断的连接。</canvas>
+</div>
+
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="同一个领域，一轮不断回返的问题"><a href="#同一个领域，一轮不断回返的问题" class="headerlink" title="同一个领域，一轮不断回返的问题"></a>同一个领域，一轮不断回返的问题</div><p>这个领域更像研究循环，而不是名词目录。选择一个步骤，看观察如何变成解释、干预，并最终导向一个更好的问题。</p>
+<div class="lm-genealogy" data-lm-genealogy>
+  <div class="lm-genealogy__rail" role="group" aria-label="生命物质研究循环">
+    <button class="is-active" type="button" data-step="drive"><b>01</b><span>寻找驱动</span></button><button type="button" data-step="pattern"><b>02</b><span>测量图样</span></button><button type="button" data-step="feedback"><b>03</b><span>闭合反馈</span></button><button type="button" data-step="history"><b>04</b><span>追问历史</span></button><button type="button" data-step="build"><b>05</b><span>构造并扰动</span></button>
+  </div>
+  <div class="lm-genealogy__detail" aria-live="polite"><small data-step-count>步骤 01 / 05</small><strong data-step-title>自由能在哪里被消耗？</strong><p data-step-text>找到微观引擎，以及它的功如何传递到集体运动。</p><i></i></div>
+</div>
+
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="一个实用的研究罗盘"><a href="#一个实用的研究罗盘" class="headerlink" title="一个实用的研究罗盘"></a>一个实用的研究罗盘</div><div class="lm-frontier-grid">
+  <details class="lm-frontier"><summary>系统单元是什么？</summary><p>是蛋白质、细胞、组织块还是个体？好的粗粒化单元必须保留当前问题真正依赖的反馈。</p></details>
+  <details class="lm-frontier"><summary>能量在哪里消耗？</summary><p>找到局域驱动与耗散。“活性”应指向可测的平衡破缺，而不只是看起来在运动。</p></details>
+  <details class="lm-frontier"><summary>什么东西被感知？</summary><p>区分被动响应与反馈。局部可获得什么信号？延迟和噪声有多大？</p></details>
+  <details class="lm-frontier"><summary>什么量仍然守恒？</summary><p>细胞会分裂和死亡，但在特定时空尺度上，质量、动量或电荷仍可能强烈约束动力学。</p></details>
+  <details class="lm-frontier"><summary>所谓功能是什么？</summary><p>明确假设中的任务，并比较可行的替代解释。不要把每一种图样都解释成进化最优。</p></details>
+  <details class="lm-frontier"><summary>怎样证伪模型？</summary><p>干预能量、几何或信息流。能预测扰动后的行为，比拟合一段漂亮影像更有说服力。</p></details>
+</div>
+
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="从哪里进入这个领域"><a href="#从哪里进入这个领域" class="headerlink" title="从哪里进入这个领域"></a>从哪里进入这个领域</div><div class="lm-reading">
+
+<ul>
+<li>概念基础：开放综述 <a href="https://www.nature.com/articles/s41467-018-05666-8" target="_blank" rel="noopener">Active nematics</a>，以及 <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-conmatphys-031218-013231" target="_blank" rel="noopener">The actin cytoskeleton as an active adaptive material</a>。</li>
+<li>研究共同体：<a href="https://web.sas.upenn.edu/slm/" target="_blank" rel="noopener">Center for Soft and Living Matter</a>、宾大的 <a href="https://web.sas.upenn.edu/physics-of-living-systems/" target="_blank" rel="noopener">Physics of Living Systems</a>，以及 NSF <a href="https://www.nsf.gov/funding/opportunities/pols-physics-living-systems" target="_blank" rel="noopener">Physics of Living Systems</a> 项目。</li>
+<li>2025 年的宏观研究议程：<a href="https://www.physicsoflife.org.uk/uploads/8/4/0/8/84082644/physics_of_life_roadmap_2025_draft.pdf" target="_blank" rel="noopener">Physics of Life Roadmap</a>。</li>
+</ul>
+</div>
+
+<p class="lm-coda">最有趣的可能性不是生命逃逸了物理，而是生命扩展了物理：从遵循固定规则的物质，走向能够感知、记忆、修复——甚至改变自身有效运动规则的物质。</p>
+
+</div>
+</section>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="http://www.iCalculate.website">Du Xinchuan</a>
+            <p>原文链接：<a href="http://www.icalculate.website/2026/09/08/Living-Matter-Where-Life-Becomes-Physics/">http://www.icalculate.website/2026/09/08/Living-Matter-Where-Life-Becomes-Physics/</a>
+            <p>发表日期：<a href="http://www.icalculate.website/2026/09/08/Living-Matter-Where-Life-Becomes-Physics/">September 8th 2026, 2:00:00 pm</a>
+            <p>更新日期：<a href="http://www.icalculate.website/2026/09/08/Living-Matter-Where-Life-Becomes-Physics/">September 9th 2026, 1:21:19 am</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "../../04/Dark-Channel-Prior-Research-Taste-and-Perception-Hardware/" title= "Dark Channel Prior: From Research Taste to Perception Hardware">
+                    <div class="prevTitle">Dark Channel Prior: From Research Taste to Perception Hardware</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:549174176@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/iCalculate" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/WeChat_QR.jpg" />
+                </span>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title=qq>
+                  
+                  <img class="profile-qr" src="/assets/QQ_QR.jpg" />
+                </span>
+            
+        
+    
+        
+            
+                <a href="https://t.me/chauncy_du" class="iconfont-archer telegram" target="_blank" title=telegram></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+            
+                <a href="https://www.linkedin.com/in/xinchuan-du-a4b0b51bb/" class="iconfont-archer linkedin" target="_blank" title=linkedin></a>
+            
+        
+    
+        
+            
+                <a href="https://steamcommunity.com/id/icalculate97/" class="iconfont-archer steam" target="_blank" title=steam></a>
+            
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+        
+            
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-first-intuition-intelligence-without-a-map"><span class="toc-text">A first intuition: intelligence without a map</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Let a trail become collective memory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-scale-ladder—and-why-reduction-is-not-enough"><span class="toc-text">The scale ladder—and why reduction is not enough</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Compress a crowd until it becomes a solid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Six-frontier-directions"><span class="toc-text">Six frontier directions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">1. Active turbulence and topological defects</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Hold a topological defect</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">2. Tissue mechanics as morphogenetic computation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Paint growth; geometry computes the fold</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">3. Biological information beyond neurons</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Send a decision through a tissue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">4. Growth, death and evolving material laws</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">5. Minimal and synthetic living systems</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Make compartments without membranes</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">6. Programmable living and active materials</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Cut the material. Watch it close the wound.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#One-field-a-cycle-of-questions"><span class="toc-text">One field, a cycle of questions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-practical-research-compass"><span class="toc-text">A practical research compass</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Where-to-enter-the-field"><span class="toc-text">Where to enter the field</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 74
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2026 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "2026/09/08/Living-Matter-Where-Life-Becomes-Physics/" >Living Matter: Where Life Becomes Physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "2026/09/04/Dark-Channel-Prior-Research-Taste-and-Perception-Hardware/" >Dark Channel Prior: From Research Taste to Perception Hardware</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "2026/09/04/From-Greens-Theorem-to-the-Residue-Theorem/" >From Green's Theorem to the Residue Theorem: Boundary Integrals, Singularities, and Sources</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "2026/09/03/Persistent-Homology-From-Point-Clouds-to-Topological-Signatures/" >Persistent Homology: Watching Shape Emerge from a Point Cloud</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" >Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/" >Optoelectronic Devices: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory/" >Semiconductor Devices & Quantum Physics: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Landau-Fermi-Liquid-Theory/" >From an Electron Sea to Quasiparticles: Landau Fermi-Liquid Theory (Part II)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Landau-Theory-From-Symmetry-to-Phase-Transitions/" >From Symmetry to Phase Transitions: Landau's Art of Ignoring Details (Part I)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/" >From Ballistic Transport to Hopping in FETs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/" >From Capacitors to FETs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href= "2026/05/17/What-Top-Journals-Really-Look-For/" >What Top Journals Really Look For</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/16</span><a class="archive-post-title" href= "2026/05/16/Research-Taste-in-the-Age-of-Vibe-Coding/" >Research Taste in the Age of Vibe Coding</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2025 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2025/08/18/Introducing-2D-material-based-devices-in-the-logic-scaling-roadmap/" >Introducing 2D-material based devices in the logic scaling roadmap</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "2025/07/16/Vortex-Avalanche/" >Vortex Avalanche</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "2025/07/16/The-RTS-Waveform-Evolution/" >The RTS Waveform Evolution</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET Quantum Transport Simulation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/" >Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/EBE-Deposition-Operation-Notes/" >EBE Deposition Operation Notes</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/01</span><a class="archive-post-title" href= "2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/" >Phase Transitions in Electronic Materials and Devices</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/28</span><a class="archive-post-title" href= "2025/06/28/When-a-Stranger-Becomes-Both-Guest-and-Enemy-Enantiosemy/" >When a Stranger Becomes Both Guest and Enemy: Enantiosemy</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/" >From Classical Mechanics to Quantum Theory</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2024 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "2024/11/17/Deck-of-Doctoral-Dissertation/" >Deck of Doctoral Dissertation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/Science-Communication/" >Science Communication</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/How-to-give-a-talk/" >How to give a talk</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2023 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2023/03/27/SR400-photon-counter-delay-scan-demo/" >SR400 photon counter delay scan demo</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/23</span><a class="archive-post-title" href= "2023/03/23/Python-library-for-SR400-Photon-counter/" >Python library for SR400 Photon counter</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href= "2023/03/21/COMSOL-script-for-random-object-generation/" >COMSOL script for random object generation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "2023/03/18/LakeShore-Model-335-Python-Script/" >LakeShore Model 335 Python控制脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2023/03/17/Python-script-for-Keithley-2400-current-sweep/" >Keithley2400源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "2023/03/16/Python-script-for-Keithley-2450-current-sweep/" >Keithley2450源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "2023/03/15/Frontiers-in-condensed-matter-physics/" >Frontiers in condensed matter physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2023/03/13/HER-auto-test-script/" >HER auto test script</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2021/02/15/Cmd%20Markdown%20Editor/" >Cmd Markdown Editor</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "2020/11/24/Introduction-for-CHI660e-Macro-Generator/" >Introduction for CHI660e Macro Generator</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/15</span><a class="archive-post-title" href= "2020/11/15/hello-world/" >Hello World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "2020/09/29/Why-movies-appeal-to-me/" >Why movies appeal to me</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/15</span><a class="archive-post-title" href= "2020/09/15/A-letter-from-the-middle-of-September/" >七月流火 春日迟迟</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2020/08/18/Understanding-of-Pseudocapacitance/" >Understanding of Pseudocapacitance</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "2020/06/18/Perspective-Blaming-China-is-Illegimate-and-Irresponsible/" >Blaming China is Illegimate and Irresponsible</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span><a class="archive-post-title" href= "2020/05/19/Side-by-Side-Battery-Technologies-with-Lithium%E2%80%90Ion-Based-Batteries/" >Side-by-Side-Battery-Technologies-with-Lithium‐Ion-Based-Batteries</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href= "2020/05/01/WHAT-IS-ATR-SEIRAS/" >WHAT IS ATR-SEIRAS?</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "2020/04/30/Microcell-Electrochemistry-Literature-Review/" >Microcell Electrochemistry Literature Review</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "2020/04/28/Mass-Transfer-in-Electrochemistry/" >Mass Transfer in Electrochemistry</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "2020/04/17/Drude-Model-in-Soild-State-Physics/" >Drude Model in Soild State Physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "2020/04/03/Is-the-World-Virtual/" >Is the World Virtual</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2020/03/27/Topological-two-dimensional-polymers/" >Topological two-dimensional polymers</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href= "2020/03/26/The-Configuration-to-the-Deep-Network/" >The Configuration to the Deep Network</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Artical-Dynamic-stability-of-active-sites-in-hydr(oxy)-oxides-for-the-oxygen-evolution-reaction/" >顶刊精读：动态平衡视角下的OER反应位点</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Literature-research-website/" >Literature research website</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2020/03/13/Advantages-of-microelectrode-system-in-electrochemical-science/" >Advantages of microelectrode system in electrochemical science</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "2020/03/11/Hertz-Knudsen-Equation-for-Evaporation-and-Condensation/" >Hertz-Knudsen Equation for Evaporation and Condensation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/How-to-measure-ECSA/" >How to measure ECSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/Li-Battery-Foundation/" >Li Battery Foundation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "2020/03/03/CDW-and-SDW/" >CDW and SDW</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "2020/02/27/3Dmax-Draw-Graphene-Grain-Boundaries/" >使用3Dmax绘制石墨烯晶格缺陷</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "2020/02/26/Anacoda-Introductory-Tutorail/" >Anaconda详细安装及使用教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Plugins-Density-Filter/" >Origin插件之：散点密度热图（Density Filter）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Python-Environment-Build-up/" >Origin+Python环境搭建</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "2020/02/24/Origin-Plugins-Graph-Maker/" >Origin插件之：快速作图（Graph Maker）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Venn-Diagram/" >Origin插件之：韦恩图生成插件（Venn Diagram）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Layer-Stack-Manager/" >Origin插件之：堆叠图小工具（Layer Stack Manager）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "2020/02/22/Origin-Plugins-Color-Editor/" >Origin插件之：配色编辑器(Color Editor)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "2020/02/21/Origin-Plugins-Tafel-Extrapolation/" >Origin插件之：LSV数据处理插件(Tafel Extrapolation)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/P5-js-new-journal/" >P5.js new journal</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/Katex-Test/" >Katex Test</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Artical-Current-and-future-role-of-Haber-Bosch-ammonia-in-a-carbon-free-energy-landscape/" >催化合成氨未来何去何从</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/4thYearAnniversary/" >写在第四年的Anniversary</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Group-Meeting/" >Group Meeting Backup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "2020/02/16/Artical-Precise-Anionic-Regulation-Assisted-by-Electrochemical-Reactions/" >张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/" >原子轨道耦合帮你分析固氮催化位点活性！</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "2020/02/14/Some-Useful-website/" >Some Useful website</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
+    
+        <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
+    
+        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
+    
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
+    
+        <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
+    
+        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
+    
+        <span class="sidebar-tag-name" data-tags="Dark Channel Prior"><span class="iconfont-archer">&#xe606;</span>Dark Channel Prior</span>
+    
+        <span class="sidebar-tag-name" data-tags="Image Dehazing"><span class="iconfont-archer">&#xe606;</span>Image Dehazing</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Taste"><span class="iconfont-archer">&#xe606;</span>Research Taste</span>
+    
+        <span class="sidebar-tag-name" data-tags="FPGA"><span class="iconfont-archer">&#xe606;</span>FPGA</span>
+    
+        <span class="sidebar-tag-name" data-tags="Edge Perception"><span class="iconfont-archer">&#xe606;</span>Edge Perception</span>
+    
+        <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Optical Properties"><span class="iconfont-archer">&#xe606;</span>Optical Properties</span>
+    
+        <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
+    
+        <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Device Physics"><span class="iconfont-archer">&#xe606;</span>Device Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
+    
+        <span class="sidebar-tag-name" data-tags="complex analysis"><span class="iconfont-archer">&#xe606;</span>complex analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="differential forms"><span class="iconfont-archer">&#xe606;</span>differential forms</span>
+    
+        <span class="sidebar-tag-name" data-tags="topology"><span class="iconfont-archer">&#xe606;</span>topology</span>
+    
+        <span class="sidebar-tag-name" data-tags="field theory"><span class="iconfont-archer">&#xe606;</span>field theory</span>
+    
+        <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
+    
+        <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+    
+        <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
+    
+        <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
+        <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Living Matter"><span class="iconfont-archer">&#xe606;</span>Living Matter</span>
+    
+        <span class="sidebar-tag-name" data-tags="Active Matter"><span class="iconfont-archer">&#xe606;</span>Active Matter</span>
+    
+        <span class="sidebar-tag-name" data-tags="Biophysics"><span class="iconfont-archer">&#xe606;</span>Biophysics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Non-equilibrium Physics"><span class="iconfont-archer">&#xe606;</span>Non-equilibrium Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Collective Behavior"><span class="iconfont-archer">&#xe606;</span>Collective Behavior</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
+    
+        <span class="sidebar-tag-name" data-tags="Topological Data Analysis"><span class="iconfont-archer">&#xe606;</span>Topological Data Analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Persistent Homology"><span class="iconfont-archer">&#xe606;</span>Persistent Homology</span>
+    
+        <span class="sidebar-tag-name" data-tags="Data Science"><span class="iconfont-archer">&#xe606;</span>Data Science</span>
+    
+        <span class="sidebar-tag-name" data-tags="AI-Assisted Research"><span class="iconfont-archer">&#xe606;</span>AI-Assisted Research</span>
+    
+        <span class="sidebar-tag-name" data-tags="Network Privacy"><span class="iconfont-archer">&#xe606;</span>Network Privacy</span>
+    
+        <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
+    
+        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
+    
+        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+    
+        <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
+    
+        <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Computer-Vision"><span class="iconfont-archer">&#xe60a;</span>Scientific/Computer-Vision</span>
+    
+        <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Mathematical-Physics"><span class="iconfont-archer">&#xe60a;</span>Mathematical-Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Scientific/Artificial-Intelligence</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Chemistry/Energy"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry/Energy</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Du Xinchuan"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="../../../../lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="../../../../scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="../../../../scripts/share.js" async></script>    
+     
+    <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['
+</html>
+
+
+, '
+</html>
+
+
+], ['\\(', '\\)']],
+    displayMath: [['$', '$'], ['\\[', '\\]']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
+
+
