@@ -8,36 +8,29 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Artificial Synapses and Neuromorphic Dynamics</span><span data-lang="zh" hidden>人工突触与神经形态动力学</span></h1><p class="node-deck"><span data-lang="en">A physical synapse maps pulse history to conductance, while dynamical memristors can use relaxation, thresholds and volatility to emulate short- and long-term plasticity or neuronal dynamics.</span><span data-lang="zh" hidden>物理突触把脉冲历史映射为电导，动态忆阻器还可利用弛豫、阈值与易失性模拟长短时可塑性或神经元动力学。</span></p><div class="node-tags"><span>Neuromorphic Hardware</span><span>Device Physics</span><span>2D Materials</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> A physical synapse maps pulse history to conductance, while dynamical memristors can use relaxation, thresholds and volatility to emulate short- and long-term plasticity or neuronal dynamics.</p>
 </blockquote>
-<h2 id="Physical-Picture">Physical Picture</h2>
-<p>A physical synapse maps pulse history to conductance, while dynamical memristors can use relaxation, thresholds and volatility to emulate short- and long-term plasticity or neuronal dynamics. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
-<h3 id="Pulse-history-dependent-plasticity">Pulse-history-dependent plasticity</h3>
-<p>A conductance synapse has update law</p>
+<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>A physical synapse maps pulse history to conductance, while dynamical memristors can use relaxation, thresholds and volatility to emulate short- and long-term plasticity or neuronal dynamics. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="Pulse-history-dependent-plasticity"><a href="#Pulse-history-dependent-plasticity" class="headerlink" title="Pulse-history-dependent plasticity"></a>Pulse-history-dependent plasticity</h3><p>A conductance synapse has update law</p>
 <div class="math-display">\[G_{n+1}=G_n+\Delta G_\pm(G_n,V_n,t_n)+\eta_n.\]</div>
+
 <p>State-dependent \(\Delta G\) causes saturation and update asymmetry; noise \(\eta_n\) produces weight uncertainty.  Pair-based STDP is often summarized as \(\Delta G\propto\pm e^{-|\Delta t|/\tau_\pm}\), but a device must generate this timing dependence from an explicit overlap circuit or internal relaxation.</p>
-<h3 id="Volatile-dynamics-as-computation">Volatile dynamics as computation</h3>
-<p>Short-term plasticity can arise from a decaying state \(\dot x=-x/\tau+S(t)\), giving paired-pulse facilitation or depression.  Networks exploit a distribution of \(\tau\) values to encode temporal context.  Calling every relaxing current a “biological synapse” obscures whether the dynamics are reproducible and computationally useful.</p>
-<h3 id="Metrics-tied-to-learning">Metrics tied to learning</h3>
-<p>Measure dynamic range, number of distinguishable states, potentiation/depression symmetry, nonlinearity, cycle noise, retention and update energy.  Then train with the measured model.  Open-loop pulse plots over a few cycles do not establish learnability; closed-loop verification may improve accuracy but its sensing overhead must be counted.</p>
-<h2 id="Minimal-Model">Minimal Model</h2>
-<div class="math-display">\[ΔG=F(V_pulse,t_pulse,G,history)\]</div>
+<h3 id="Volatile-dynamics-as-computation"><a href="#Volatile-dynamics-as-computation" class="headerlink" title="Volatile dynamics as computation"></a>Volatile dynamics as computation</h3><p>Short-term plasticity can arise from a decaying state \(\dot x=-x/\tau+S(t)\), giving paired-pulse facilitation or depression.  Networks exploit a distribution of \(\tau\) values to encode temporal context.  Calling every relaxing current a “biological synapse” obscures whether the dynamics are reproducible and computationally useful.</p>
+<h3 id="Metrics-tied-to-learning"><a href="#Metrics-tied-to-learning" class="headerlink" title="Metrics tied to learning"></a>Metrics tied to learning</h3><p>Measure dynamic range, number of distinguishable states, potentiation&#x2F;depression symmetry, nonlinearity, cycle noise, retention and update energy.  Then train with the measured model.  Open-loop pulse plots over a few cycles do not establish learnability; closed-loop verification may improve accuracy but its sensing overhead must be counted.</p>
+<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[ΔG=F(V_pulse,t_pulse,G,history)\]</div>
+
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences">Device Consequences</h2>
-<p>FeFET, RRAM, PCM, floating-gate and sliding-ferroelectric devices provide different update mechanisms.</p>
+<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>FeFET, RRAM, PCM, floating-gate and sliding-ferroelectric devices provide different update mechanisms.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
-<p>Biological resemblance is not a sufficient metric; update symmetry, linearity, noise, endurance and peripheral cost determine utility. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
-<p><strong>Maturity:</strong> Prototype. Connected concepts:</p>
+
+<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>Biological resemblance is not a sufficient metric; update symmetry, linearity, noise, endurance and peripheral cost determine utility. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Prototype. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/functional-and-neuromorphic-devices/">functional-and-neuromorphic-devices</a></li>
 <li><a href="/knowledge/nodes/memristive-systems-and-resistive-switching/">memristive-systems-and-resistive-switching</a></li>
 <li><a href="/knowledge/nodes/sliding-ferroelectric-memory-devices/">sliding-ferroelectric-memory-devices</a></li>
 <li><a href="/knowledge/nodes/compute-in-memory/">compute-in-memory</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
-<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41563-019-0291-x" target="_blank" rel="noopener">Xia &amp; Yang, Memristive crossbar arrays for brain-inspired computing</a></li>
 <li><a href="https://www.nature.com/articles/s41467-019-11411-6" target="_blank" rel="noopener">Yang et al., Understanding memristive switching</a></li>
@@ -45,36 +38,29 @@
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**物理突触把脉冲历史映射为电导，动态忆阻器还可利用弛豫、阈值与易失性模拟长短时可塑性或神经元动力学。</p>
 </blockquote>
-<h2 id="物理图像">物理图像</h2>
-<p>物理突触把脉冲历史映射为电导，动态忆阻器还可利用弛豫、阈值与易失性模拟长短时可塑性或神经元动力学。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
-<h3 id="依赖脉冲历史的可塑性">依赖脉冲历史的可塑性</h3>
-<p>电导突触更新律为</p>
+<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>物理突触把脉冲历史映射为电导，动态忆阻器还可利用弛豫、阈值与易失性模拟长短时可塑性或神经元动力学。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="依赖脉冲历史的可塑性"><a href="#依赖脉冲历史的可塑性" class="headerlink" title="依赖脉冲历史的可塑性"></a>依赖脉冲历史的可塑性</h3><p>电导突触更新律为</p>
 <div class="math-display">\[G_{n+1}=G_n+\Delta G_\pm(G_n,V_n,t_n)+\eta_n.\]</div>
+
 <p>状态依赖的 \(\Delta G\) 导致饱和和更新不对称，噪声 \(\eta_n\) 造成权重不确定。成对 STDP 常写成 \(\Delta G\propto\pm e^{-|\Delta t|/\tau_\pm}\)，但器件必须通过明确的脉冲重叠电路或内部弛豫产生这一时序关系。</p>
-<h3 id="把易失动力学用于计算">把易失动力学用于计算</h3>
-<p>短时可塑性可来自衰减状态 \(\dot x=-x/\tau+S(t)\)，产生双脉冲易化或抑制。网络利用一组不同 \(\tau\) 编码时间上下文。把所有弛豫电流称作“生物突触”会掩盖其是否可重复、是否真的有计算价值。</p>
-<h3 id="与学习直接相关的指标">与学习直接相关的指标</h3>
-<p>应测动态范围、可分辨状态数、增强/抑制对称性、非线性、循环噪声、保持与更新能量，再用实测模型训练。少量循环的开环脉冲图不能证明可学习性；闭环验证虽能提高精度，却必须计入感测开销。</p>
-<h2 id="最小模型">最小模型</h2>
-<div class="math-display">\[ΔG=F(V_pulse,t_pulse,G,history)\]</div>
+<h3 id="把易失动力学用于计算"><a href="#把易失动力学用于计算" class="headerlink" title="把易失动力学用于计算"></a>把易失动力学用于计算</h3><p>短时可塑性可来自衰减状态 \(\dot x=-x/\tau+S(t)\)，产生双脉冲易化或抑制。网络利用一组不同 \(\tau\) 编码时间上下文。把所有弛豫电流称作“生物突触”会掩盖其是否可重复、是否真的有计算价值。</p>
+<h3 id="与学习直接相关的指标"><a href="#与学习直接相关的指标" class="headerlink" title="与学习直接相关的指标"></a>与学习直接相关的指标</h3><p>应测动态范围、可分辨状态数、增强&#x2F;抑制对称性、非线性、循环噪声、保持与更新能量，再用实测模型训练。少量循环的开环脉冲图不能证明可学习性；闭环验证虽能提高精度，却必须计入感测开销。</p>
+<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[ΔG=F(V_pulse,t_pulse,G,history)\]</div>
+
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义">器件意义</h2>
-<p>FeFET、RRAM、PCM、浮栅和滑移铁电器件提供不同的权重更新机制。</p>
+<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>FeFET、RRAM、PCM、浮栅和滑移铁电器件提供不同的权重更新机制。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-<h2 id="限制与判据">限制与判据</h2>
-<p>外观类似生物突触并非充分指标，更新对称性、线性、噪声、耐久及外围成本才决定实用性。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
-<p>**成熟度：**Prototype。关联节点：</p>
+
+<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>外观类似生物突触并非充分指标，更新对称性、线性、噪声、耐久及外围成本才决定实用性。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Prototype。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/functional-and-neuromorphic-devices/">functional-and-neuromorphic-devices</a></li>
 <li><a href="/knowledge/nodes/memristive-systems-and-resistive-switching/">memristive-systems-and-resistive-switching</a></li>
 <li><a href="/knowledge/nodes/sliding-ferroelectric-memory-devices/">sliding-ferroelectric-memory-devices</a></li>
 <li><a href="/knowledge/nodes/compute-in-memory/">compute-in-memory</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
-<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41563-019-0291-x" target="_blank" rel="noopener">Xia &amp; Yang, Memristive crossbar arrays for brain-inspired computing</a></li>
 <li><a href="https://www.nature.com/articles/s41467-019-11411-6" target="_blank" rel="noopener">Yang et al., Understanding memristive switching</a></li>
