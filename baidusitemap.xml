@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.iCalculate.website/2026/09/22/Light-Field-Detection-in-the-Age-of-AI/</loc>
+    <lastmod>2026-09-22</lastmod>
+  </url>
+  <url>
     <loc>http://www.iCalculate.website/2026/09/19/Two-Dimensional-Materials-for-Advanced-BEOL-and-Backside-Chips/</loc>
     <lastmod>2026-09-19</lastmod>
   </url>
@@ -61,6 +65,10 @@
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
+    <loc>http://www.iCalculate.website/2025/06/28/When-a-Stranger-Becomes-Both-Guest-and-Enemy-Enantiosemy/</loc>
+    <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
     <loc>http://www.iCalculate.website/2020/05/01/WHAT-IS-ATR-SEIRAS/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
@@ -69,15 +77,11 @@
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2020/11/15/hello-world/</loc>
-    <lastmod>2026-08-31</lastmod>
-  </url>
-  <url>
-    <loc>http://www.iCalculate.website/2025/06/28/When-a-Stranger-Becomes-Both-Guest-and-Enemy-Enantiosemy/</loc>
-    <lastmod>2026-08-31</lastmod>
-  </url>
-  <url>
     <loc>http://www.iCalculate.website/2026/05/17/What-Top-Journals-Really-Look-For/</loc>
+    <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
+    <loc>http://www.iCalculate.website/2020/11/15/hello-world/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
@@ -105,19 +109,19 @@
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2024/04/11/Science-Communication/</loc>
-    <lastmod>2026-08-31</lastmod>
-  </url>
-  <url>
     <loc>http://www.iCalculate.website/2023/03/27/SR400-photon-counter-delay-scan-demo/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2023/03/23/Python-library-for-SR400-Photon-counter/</loc>
+    <loc>http://www.iCalculate.website/2024/04/11/Science-Communication/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
     <loc>http://www.iCalculate.website/2020/06/18/Perspective-Blaming-China-is-Illegimate-and-Irresponsible/</loc>
+    <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
+    <loc>http://www.iCalculate.website/2023/03/23/Python-library-for-SR400-Photon-counter/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
@@ -141,11 +145,11 @@
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2020/02/25/Origin-Python-Environment-Build-up/</loc>
+    <loc>http://www.iCalculate.website/2020/02/23/Origin-Plugins-Venn-Diagram/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2020/02/23/Origin-Plugins-Venn-Diagram/</loc>
+    <loc>http://www.iCalculate.website/2020/02/25/Origin-Python-Environment-Build-up/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
@@ -165,11 +169,11 @@
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2020/04/28/Mass-Transfer-in-Electrochemistry/</loc>
+    <loc>http://www.iCalculate.website/2025/07/03/MOSFET-Quantum-Transport-Simulation/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2025/07/03/MOSFET-Quantum-Transport-Simulation/</loc>
+    <loc>http://www.iCalculate.website/2020/04/28/Mass-Transfer-in-Electrochemistry/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
@@ -193,10 +197,6 @@
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2020/03/09/How-to-measure-ECSA/</loc>
-    <lastmod>2026-08-31</lastmod>
-  </url>
-  <url>
     <loc>http://www.iCalculate.website/2020/04/03/Is-the-World-Virtual/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
@@ -206,6 +206,10 @@
   </url>
   <url>
     <loc>http://www.iCalculate.website/2020/11/24/Introduction-for-CHI660e-Macro-Generator/</loc>
+    <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
+    <loc>http://www.iCalculate.website/2020/03/09/How-to-measure-ECSA/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
@@ -229,7 +233,7 @@
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/</loc>
+    <loc>http://www.iCalculate.website/2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
@@ -237,15 +241,7 @@
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/</loc>
-    <lastmod>2026-08-31</lastmod>
-  </url>
-  <url>
-    <loc>http://www.iCalculate.website/2021/02/15/Cmd%20Markdown%20Editor/</loc>
-    <lastmod>2026-08-31</lastmod>
-  </url>
-  <url>
-    <loc>http://www.iCalculate.website/2024/11/17/Deck-of-Doctoral-Dissertation/</loc>
+    <loc>http://www.iCalculate.website/2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
@@ -253,15 +249,23 @@
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
+    <loc>http://www.iCalculate.website/2024/11/17/Deck-of-Doctoral-Dissertation/</loc>
+    <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
+    <loc>http://www.iCalculate.website/2021/02/15/Cmd%20Markdown%20Editor/</loc>
+    <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
     <loc>http://www.iCalculate.website/2025/07/02/EBE-Deposition-Operation-Notes/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/</loc>
+    <loc>http://www.iCalculate.website/2020/03/03/CDW-and-SDW/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2020/03/03/CDW-and-SDW/</loc>
+    <loc>http://www.iCalculate.website/2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
@@ -273,11 +277,11 @@
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2020/02/19/Artical-Current-and-future-role-of-Haber-Bosch-ammonia-in-a-carbon-free-energy-landscape/</loc>
+    <loc>http://www.iCalculate.website/2020/02/16/Artical-Precise-Anionic-Regulation-Assisted-by-Electrochemical-Reactions/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>
-    <loc>http://www.iCalculate.website/2020/02/16/Artical-Precise-Anionic-Regulation-Assisted-by-Electrochemical-Reactions/</loc>
+    <loc>http://www.iCalculate.website/2020/02/19/Artical-Current-and-future-role-of-Haber-Bosch-ammonia-in-a-carbon-free-energy-landscape/</loc>
     <lastmod>2026-08-31</lastmod>
   </url>
   <url>

@@ -8,39 +8,44 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Berry Curvature and Topological Transport</span><span data-lang="zh" hidden>贝里曲率与拓扑输运</span></h1><p class="node-deck"><span data-lang="en">Berry curvature acts as a momentum-space magnetic field, producing anomalous transverse velocity and connecting local band geometry to global topological invariants.</span><span data-lang="zh" hidden>贝里曲率类似动量空间中的磁场，产生反常横向速度，并把局域能带几何与整体拓扑不变量联系起来。</span></p><div class="node-tags"><span>Spin Valley Topology</span><span>Device Physics</span><span>Fundamental Models</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Berry curvature acts as a momentum-space magnetic field, producing anomalous transverse velocity and connecting local band geometry to global topological invariants.</p>
 </blockquote>
-<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>Berry curvature acts as a momentum-space magnetic field, producing anomalous transverse velocity and connecting local band geometry to global topological invariants. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="Geometry-of-a-Bloch-band"><a href="#Geometry-of-a-Bloch-band" class="headerlink" title="Geometry of a Bloch band"></a>Geometry of a Bloch band</h3><p>For cell-periodic Bloch states \(|u_{n\mathbf k}\rangle\), the Berry connection and curvature are</p>
+<h2 id="Physical-Picture">Physical Picture</h2>
+<p>Berry curvature acts as a momentum-space magnetic field, producing anomalous transverse velocity and connecting local band geometry to global topological invariants. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
+<h3 id="Geometry-of-a-Bloch-band">Geometry of a Bloch band</h3>
+<p>For cell-periodic Bloch states \(|u_{n\mathbf k}\rangle\), the Berry connection and curvature are</p>
 <div class="math-display">\[\mathbf A_n=i\langle u_{n\mathbf k}|\nabla_{\mathbf k}u_{n\mathbf k}\rangle,
 \qquad
 \mathbf\Omega_n=\nabla_{\mathbf k}\times\mathbf A_n.\]</div>
-
 <p>Although \(\mathbf A_n\) depends on phase convention, \(\mathbf\Omega_n\) and its Brillouin-zone integral are gauge invariant.  Semiclassical wave-packet dynamics contains</p>
 <div class="math-display">\[\dot{\mathbf r}=\frac{1}{\hbar}\nabla_{\mathbf k}\varepsilon_n
 -\dot{\mathbf k}\times\mathbf\Omega_n,
 \qquad \hbar\dot{\mathbf k}=-q\mathbf E.\]</div>
-
 <p>The second term is the anomalous transverse velocity.</p>
-<h3 id="Local-curvature-versus-a-topological-invariant"><a href="#Local-curvature-versus-a-topological-invariant" class="headerlink" title="Local curvature versus a topological invariant"></a>Local curvature versus a topological invariant</h3><p>The intrinsic Hall conductivity integrates occupied curvature,</p>
+<h3 id="Local-curvature-versus-a-topological-invariant">Local curvature versus a topological invariant</h3>
+<p>The intrinsic Hall conductivity integrates occupied curvature,</p>
 <div class="math-display">\[\sigma_{xy}=-\frac{q^2}{\hbar}\sum_n\int\frac{d^2k}{(2\pi)^2}f_{n\mathbf k}\Omega_{n,z}.\]</div>
-
 <p>Only when an isolated set of bands is completely occupied and gapped does the integral become \(Cq^2/h\) with integer Chern number \(C\).  A large Berry-curvature hotspot near a band edge can generate anomalous or valley Hall response without quantization.</p>
-<h3 id="Experimental-cautions"><a href="#Experimental-cautions" class="headerlink" title="Experimental cautions"></a>Experimental cautions</h3><p>Hall signals combine intrinsic curvature, skew scattering, side jump and multiband ordinary Hall terms.  Demonstrating a topological phase needs a bulk gap, quantized plateau with appropriate longitudinal response, and boundary-state evidence or a controlled invariant—not simply a calculated curvature map.</p>
-<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[v_a=-(q/ħ)E×Ω_n(k), C=(1/2π)∫Ω d²k\]</div>
-
+<h3 id="Experimental-cautions">Experimental cautions</h3>
+<p>Hall signals combine intrinsic curvature, skew scattering, side jump and multiband ordinary Hall terms.  Demonstrating a topological phase needs a bulk gap, quantized plateau with appropriate longitudinal response, and boundary-state evidence or a controlled invariant—not simply a calculated curvature map.</p>
+<h2 id="Minimal-Model">Minimal Model</h2>
+<div class="math-display">\[v_a=-(q/ħ)E×Ω_n(k), C=(1/2π)∫Ω d²k\]</div>
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>It underlies anomalous Hall, valley Hall and Chern transport, and links ferroelectric switching to reversible band geometry in some vdW systems.</p>
+<h2 id="Device-Consequences">Device Consequences</h2>
+<p>It underlies anomalous Hall, valley Hall and Chern transport, and links ferroelectric switching to reversible band geometry in some vdW systems.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-
-<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>A large calculated Berry curvature does not guarantee a quantized edge device; the Fermi level and disorder are decisive. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Foundation. Connected concepts:</p>
+<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
+<p>A large calculated Berry curvature does not guarantee a quantized edge device; the Fermi level and disorder are decisive. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
+<p><strong>Maturity:</strong> Foundation. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/spin-valley-physics/">spin-valley-physics</a></li>
 <li><a href="/knowledge/nodes/quantum-hall-and-topological-edge-states/">quantum-hall-and-topological-edge-states</a></li>
 <li><a href="/knowledge/nodes/moire-quantum-matter/">moire-quantum-matter</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-ferroelectricity/">two-dimensional-ferroelectricity</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
+<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://doi.org/10.1103/RevModPhys.82.3045" target="_blank" rel="noopener">Hasan &amp; Kane, Colloquium: Topological insulators</a></li>
 <li><a href="https://www.nature.com/articles/natrevmats201655" target="_blank" rel="noopener">Schaibley et al., Valleytronics in 2D materials</a></li>
@@ -48,39 +53,44 @@
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**贝里曲率类似动量空间中的磁场，产生反常横向速度，并把局域能带几何与整体拓扑不变量联系起来。</p>
 </blockquote>
-<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>贝里曲率类似动量空间中的磁场，产生反常横向速度，并把局域能带几何与整体拓扑不变量联系起来。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="Bloch-能带的几何结构"><a href="#Bloch-能带的几何结构" class="headerlink" title="Bloch 能带的几何结构"></a>Bloch 能带的几何结构</h3><p>对周期部分 \(|u_{n\mathbf k}\rangle\)，Berry 联络与曲率为</p>
+<h2 id="物理图像">物理图像</h2>
+<p>贝里曲率类似动量空间中的磁场，产生反常横向速度，并把局域能带几何与整体拓扑不变量联系起来。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
+<h3 id="Bloch-能带的几何结构">Bloch 能带的几何结构</h3>
+<p>对周期部分 \(|u_{n\mathbf k}\rangle\)，Berry 联络与曲率为</p>
 <div class="math-display">\[\mathbf A_n=i\langle u_{n\mathbf k}|\nabla_{\mathbf k}u_{n\mathbf k}\rangle,
 \qquad
 \mathbf\Omega_n=\nabla_{\mathbf k}\times\mathbf A_n.\]</div>
-
 <p>\(\mathbf A_n\) 依赖相位规范，但 \(\mathbf\Omega_n\) 及其布里渊区积分规范不变。半经典波包动力学包含</p>
 <div class="math-display">\[\dot{\mathbf r}=\frac{1}{\hbar}\nabla_{\mathbf k}\varepsilon_n
 -\dot{\mathbf k}\times\mathbf\Omega_n,
 \qquad \hbar\dot{\mathbf k}=-q\mathbf E.\]</div>
-
 <p>第二项就是反常横向速度。</p>
-<h3 id="局域曲率与拓扑不变量并不等价"><a href="#局域曲率与拓扑不变量并不等价" class="headerlink" title="局域曲率与拓扑不变量并不等价"></a>局域曲率与拓扑不变量并不等价</h3><p>本征霍尔电导积分所有占据态的 Berry 曲率：</p>
+<h3 id="局域曲率与拓扑不变量并不等价">局域曲率与拓扑不变量并不等价</h3>
+<p>本征霍尔电导积分所有占据态的 Berry 曲率：</p>
 <div class="math-display">\[\sigma_{xy}=-\frac{q^2}{\hbar}\sum_n\int\frac{d^2k}{(2\pi)^2}f_{n\mathbf k}\Omega_{n,z}.\]</div>
-
 <p>只有一组孤立能带被完全填充且存在体能隙时，积分才成为整数 Chern 数 \(C\) 对应的 \(Cq^2/h\)。带边附近很大的 Berry 曲率热点可以产生反常或谷霍尔响应，却不必量子化。</p>
-<h3 id="实验注意事项"><a href="#实验注意事项" class="headerlink" title="实验注意事项"></a>实验注意事项</h3><p>霍尔信号可能同时包含本征曲率、偏斜散射、侧跳和多带普通霍尔项。证明拓扑相需要体能隙、与纵向响应相容的量子化平台，以及边界态证据或受控不变量；一张计算曲率图远远不够。</p>
-<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[v_a=-(q/ħ)E×Ω_n(k), C=(1/2π)∫Ω d²k\]</div>
-
+<h3 id="实验注意事项">实验注意事项</h3>
+<p>霍尔信号可能同时包含本征曲率、偏斜散射、侧跳和多带普通霍尔项。证明拓扑相需要体能隙、与纵向响应相容的量子化平台，以及边界态证据或受控不变量；一张计算曲率图远远不够。</p>
+<h2 id="最小模型">最小模型</h2>
+<div class="math-display">\[v_a=-(q/ħ)E×Ω_n(k), C=(1/2π)∫Ω d²k\]</div>
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>它是反常霍尔、谷霍尔和陈输运的基础，并可在某些 vdW 体系中把铁电翻转与可逆能带几何联系起来。</p>
+<h2 id="器件意义">器件意义</h2>
+<p>它是反常霍尔、谷霍尔和陈输运的基础，并可在某些 vdW 体系中把铁电翻转与可逆能带几何联系起来。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-
-<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>计算得到较大贝里曲率并不保证出现量子化边缘器件，费米能级和无序至关重要。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Foundation。关联节点：</p>
+<h2 id="限制与判据">限制与判据</h2>
+<p>计算得到较大贝里曲率并不保证出现量子化边缘器件，费米能级和无序至关重要。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
+<p>**成熟度：**Foundation。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/spin-valley-physics/">spin-valley-physics</a></li>
 <li><a href="/knowledge/nodes/quantum-hall-and-topological-edge-states/">quantum-hall-and-topological-edge-states</a></li>
 <li><a href="/knowledge/nodes/moire-quantum-matter/">moire-quantum-matter</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-ferroelectricity/">two-dimensional-ferroelectricity</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
+<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://doi.org/10.1103/RevModPhys.82.3045" target="_blank" rel="noopener">Hasan &amp; Kane, Colloquium: Topological insulators</a></li>
 <li><a href="https://www.nature.com/articles/natrevmats201655" target="_blank" rel="noopener">Schaibley et al., Valleytronics in 2D materials</a></li>
