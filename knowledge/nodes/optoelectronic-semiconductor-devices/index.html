@@ -8,68 +8,66 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Optoelectronic Devices: LEDs, Photodiodes, and Solar Cells</span><span data-lang="zh" hidden>光电子器件：LED、光电二极管与太阳电池</span></h1><p class="node-deck"><span data-lang="en">A unified account of light emission, detection, and photovoltaics through absorption, generation–recombination, junction separation, and quasi-Fermi-level splitting.</span><span data-lang="zh" hidden>以光吸收、载流子产生复合、结区分离和准费米能级分裂统一理解发光、探测与光伏器件。</span></p><div class="node-tags"><span>Optoelectronic Devices</span><span>Photodetection</span><span>Optical Properties</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Optoelectronic devices revolve around inverse processes: photon absorption generates electron–hole pairs, while electron–hole recombination emits photons. Junction fields separate carriers, and quasi-Fermi-level splitting measures the nonequilibrium drive.</p>
 </blockquote>
-<h2 id="Optical-Absorption">Optical Absorption</h2>
-<p>For \(h\nu\ge E_g\), interband absorption can generate carriers. In a uniform absorber,</p>
+<h2 id="Optical-Absorption"><a href="#Optical-Absorption" class="headerlink" title="Optical Absorption"></a>Optical Absorption</h2><p>For \(h\nu\ge E_g\), interband absorption can generate carriers. In a uniform absorber,</p>
 <div class="math-display">\[\Phi(x)=\Phi_0e^{-\alpha x},\qquad G(x)=\alpha\Phi(x).\]</div>
+
 <p>Direct-gap materials allow radiative transitions without a phonon and are efficient emitters. Indirect-gap silicon requires phonon participation and is usually better for detection and photovoltaics than LEDs.</p>
-<h2 id="LEDs-and-Semiconductor-Lasers">LEDs and Semiconductor Lasers</h2>
-<p>A forward-biased junction injects electrons and holes into an active region, with radiative rate \(R_{rad}=Bnp\). Internal efficiency is the radiative fraction of total recombination; extraction adds reflection, absorption, and electrode losses. A laser additionally requires stimulated-emission gain above cavity loss and population inversion. Quantum wells improve carrier and optical confinement.</p>
-<h2 id="Photodiodes">Photodiodes</h2>
-<p>Reverse bias widens the depletion region and strengthens collection field. Carriers generated inside it are collected rapidly by drift; those generated in neutral material must diffuse to the junction. Ideal responsivity is</p>
+<h2 id="LEDs-and-Semiconductor-Lasers"><a href="#LEDs-and-Semiconductor-Lasers" class="headerlink" title="LEDs and Semiconductor Lasers"></a>LEDs and Semiconductor Lasers</h2><p>A forward-biased junction injects electrons and holes into an active region, with radiative rate \(R_{rad}=Bnp\). Internal efficiency is the radiative fraction of total recombination; extraction adds reflection, absorption, and electrode losses. A laser additionally requires stimulated-emission gain above cavity loss and population inversion. Quantum wells improve carrier and optical confinement.</p>
+<h2 id="Photodiodes"><a href="#Photodiodes" class="headerlink" title="Photodiodes"></a>Photodiodes</h2><p>Reverse bias widens the depletion region and strengthens collection field. Carriers generated inside it are collected rapidly by drift; those generated in neutral material must diffuse to the junction. Ideal responsivity is</p>
 <div class="math-display">\[\mathcal R=\eta\frac{q}{h\nu}.\]</div>
+
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Photodiode_operation-en.svg" alt="Photodiode I–V under illumination"></p>
 <p><em>Figure 1 | Photocurrent shifts the diode I–V curve; its intersection with the load line sets the operating point. Д.Ильин, CC0; <a href="https://commons.wikimedia.org/wiki/File:Photodiode_operation-en.svg" target="_blank" rel="noopener">source</a>.</em></p>
 <p>An avalanche photodiode adds impact-ionization gain but also excess noise, high bias, and avalanche build-up time.</p>
-<h2 id="Solar-Cells">Solar Cells</h2>
-<p>At zero external reverse bias, the built-in field separates photocarriers. A simple illuminated-diode model is</p>
+<h2 id="Solar-Cells"><a href="#Solar-Cells" class="headerlink" title="Solar Cells"></a>Solar Cells</h2><p>At zero external reverse bias, the built-in field separates photocarriers. A simple illuminated-diode model is</p>
 <div class="math-display">\[J(V)=J_0(e^{qV/nkT}-1)-J_{ph}.\]</div>
-<p>Short-circuit current follows absorption and collection; open-circuit voltage depends logarithmically on \(J_{ph}/J_0\). Band gap trades voltage against spectral absorption, while recombination and series/shunt resistance reduce fill factor.</p>
-<h2 id="Detection-Limits">Detection Limits</h2>
-<p>Shot, thermal, generation–recombination, and trap noise set NEP and detectivity. Response time is limited by the largest of transit, diffusion, and RC times. The measurement chain connects to <a href="/2023/03/23/Python-library-for-SR400-Photon-counter/">photon-counting instrumentation</a>.</p>
+
+<p>Short-circuit current follows absorption and collection; open-circuit voltage depends logarithmically on \(J_{ph}/J_0\). Band gap trades voltage against spectral absorption, while recombination and series&#x2F;shunt resistance reduce fill factor.</p>
+<h2 id="Detection-Limits"><a href="#Detection-Limits" class="headerlink" title="Detection Limits"></a>Detection Limits</h2><p>Shot, thermal, generation–recombination, and trap noise set NEP and detectivity. Response time is limited by the largest of transit, diffusion, and RC times. The measurement chain connects to <a href="/2023/03/23/Python-library-for-SR400-Photon-counter/">photon-counting instrumentation</a>.</p>
 <!--deep-classical:en-->
-<h2 id="Absorption-collection-and-radiative-balance">Absorption, collection and radiative balance</h2>
-<p>Optical generation follows \(G(x)=\alpha\Phi_0e^{-\alpha x}\); external quantum efficiency factors into absorption, carrier collection and extraction.  Photodiode responsivity is</p>
+
+<h2 id="Absorption-collection-and-radiative-balance"><a href="#Absorption-collection-and-radiative-balance" class="headerlink" title="Absorption, collection and radiative balance"></a>Absorption, collection and radiative balance</h2><p>Optical generation follows \(G(x)=\alpha\Phi_0e^{-\alpha x}\); external quantum efficiency factors into absorption, carrier collection and extraction.  Photodiode responsivity is</p>
 <div class="math-display">\[\mathcal R=\eta_{ext}\frac{q}{h\nu},\]</div>
+
 <p>while bandwidth is limited by transit time and RC.  Internal gain raises responsivity but usually increases noise or slows response.</p>
 <p>For emission, injected electron–hole pairs compete through \(R=A n+B n^2+C n^3\).  The \(A\), \(B\), \(C\) terms represent defect-assisted, radiative and Auger channels in a simplified uniform model.  LED efficiency droop and laser threshold require optical confinement and cavity loss in addition to material radiative rate.  Spectral response, impulse response, dark noise and temperature dependence should be analyzed together rather than quoting peak responsivity or brightness alone.</p>
 <!--/deep-classical:en-->
-<h2 id="References">References</h2>
-<ol>
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapters 12–13.</li>
 <li>P. Würfel and U. Würfel, <em>Physics of Solar Cells</em>.</li>
 </ol>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p><strong>核心结论</strong>：光电子器件围绕同一对逆过程展开：光子吸收产生电子–空穴对，电子–空穴复合发射光子。PN 结电场负责分离载流子，准费米能级分裂描述非平衡驱动力。</p>
 </blockquote>
-<h2 id="1-光吸收">1. 光吸收</h2>
-<p>光子满足 \(h\nu\ge E_g\) 时可产生带间跃迁。光强在均匀材料中近似遵循 Beer–Lambert 定律</p>
+<h2 id="1-光吸收"><a href="#1-光吸收" class="headerlink" title="1. 光吸收"></a>1. 光吸收</h2><p>光子满足 \(h\nu\ge E_g\) 时可产生带间跃迁。光强在均匀材料中近似遵循 Beer–Lambert 定律</p>
 <div class="math-display">\[\Phi(x)=\Phi_0e^{-\alpha x},\qquad G(x)=\alpha\Phi(x).\]</div>
+
 <p>直接带隙材料可在近乎相同晶格动量下完成跃迁，辐射复合效率高；Si 等间接带隙材料还需声子参与，因此更适合探测和光伏而非高效 LED。</p>
-<h2 id="2-LED与半导体激光器">2. LED与半导体激光器</h2>
-<p>正向偏置 PN 结向有源区注入电子和空穴，辐射复合率近似 \(R_{rad}=Bnp\)。内量子效率取决于辐射复合占总复合的比例；外量子效率还受全反射、吸收和电极遮挡限制。</p>
+<h2 id="2-LED与半导体激光器"><a href="#2-LED与半导体激光器" class="headerlink" title="2. LED与半导体激光器"></a>2. LED与半导体激光器</h2><p>正向偏置 PN 结向有源区注入电子和空穴，辐射复合率近似 \(R_{rad}=Bnp\)。内量子效率取决于辐射复合占总复合的比例；外量子效率还受全反射、吸收和电极遮挡限制。</p>
 <p>激光器进一步要求受激辐射增益超过腔损耗，并在有源区建立粒子数反转。量子阱通过限制载流子和光场降低阈值；异质结同时提供载流子与光学限制。</p>
-<h2 id="3-光电二极管">3. 光电二极管</h2>
-<p>反偏扩大耗尽区并增强电场。耗尽区内产生的载流子主要靠漂移快速收集，准中性区内产生的载流子必须先扩散到结区，收集概率受扩散长度限制。理想响应度</p>
+<h2 id="3-光电二极管"><a href="#3-光电二极管" class="headerlink" title="3. 光电二极管"></a>3. 光电二极管</h2><p>反偏扩大耗尽区并增强电场。耗尽区内产生的载流子主要靠漂移快速收集，准中性区内产生的载流子必须先扩散到结区，收集概率受扩散长度限制。理想响应度</p>
 <div class="math-display">\[\mathcal R=\eta\frac{q}{h\nu}\]</div>
+
 <p>由量子效率 \(\eta\) 决定。</p>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Photodiode_operation-en.svg" alt="光电二极管在不同光照下的I-V与等效电路"></p>
 <p><em>图 1｜光生电流使二极管 I–V 曲线向下平移；与负载线交点决定工作点。原图：Д.Ильин，CC0；<a href="https://commons.wikimedia.org/wiki/File:Photodiode_operation-en.svg" target="_blank" rel="noopener">文件页</a>。</em></p>
 <p>APD 在高反偏下用碰撞电离获得内部增益，但增益伴随额外噪声、较高偏压和雪崩建立时间。</p>
-<h2 id="4-太阳电池">4. 太阳电池</h2>
-<p>太阳电池在无外加反偏时利用内建场分离光生载流子。简化电流关系</p>
+<h2 id="4-太阳电池"><a href="#4-太阳电池" class="headerlink" title="4. 太阳电池"></a>4. 太阳电池</h2><p>太阳电池在无外加反偏时利用内建场分离光生载流子。简化电流关系</p>
 <div class="math-display">\[J(V)=J_0\left(e^{qV/nkT}-1\right)-J_{ph}.\]</div>
+
 <p>短路电流由吸收与收集决定；开路电压满足 \(J(V_{oc})=0\)，与 \(J_{ph}/J_0\) 的对数相关。输出功率还取决于填充因子、串并联电阻和复合。带隙存在双重权衡：较宽带隙提高电压但损失低能光子，较窄带隙吸收更多却增加热化损失与暗电流。</p>
-<h2 id="5-探测极限">5. 探测极限</h2>
-<p>暗电流的散粒噪声、热噪声、产生复合噪声和低频陷阱噪声共同决定 NEP 与探测率。器件响应速度则由渡越时间、扩散时间和 RC 常数中的最大者限制。实际光子计数链还连接<a href="/2023/03/23/Python-library-for-SR400-Photon-counter/">光子计数仪器与数据采集</a>。</p>
+<h2 id="5-探测极限"><a href="#5-探测极限" class="headerlink" title="5. 探测极限"></a>5. 探测极限</h2><p>暗电流的散粒噪声、热噪声、产生复合噪声和低频陷阱噪声共同决定 NEP 与探测率。器件响应速度则由渡越时间、扩散时间和 RC 常数中的最大者限制。实际光子计数链还连接<a href="/2023/03/23/Python-library-for-SR400-Photon-counter/">光子计数仪器与数据采集</a>。</p>
 <!--deep-classical:zh-->
-<h2 id="吸收、收集与辐射平衡">吸收、收集与辐射平衡</h2>
-<p>光生率满足 \(G(x)=\alpha\Phi_0e^{-\alpha x}\)，外量子效率可分解为吸收、载流子收集与光提取。光二极管响应率为</p>
+
+<h2 id="吸收、收集与辐射平衡"><a href="#吸收、收集与辐射平衡" class="headerlink" title="吸收、收集与辐射平衡"></a>吸收、收集与辐射平衡</h2><p>光生率满足 \(G(x)=\alpha\Phi_0e^{-\alpha x}\)，外量子效率可分解为吸收、载流子收集与光提取。光二极管响应率为</p>
 <div class="math-display">\[\mathcal R=\eta_{ext}\frac{q}{h\nu},\]</div>
+
 <p>带宽由渡越时间和 RC 限制；内部增益提高响应率，却通常增加噪声或减慢响应。</p>
 <p>发光器件中的注入电子—空穴对按 \(R=A n+B n^2+C n^3\) 竞争，简化均匀模型中三项分别代表缺陷辅助、辐射与 Auger 过程。LED 效率下降和激光阈值还取决于光学限域及腔损耗，不能只看材料辐射率。应联合分析光谱、冲激响应、暗噪声与温度，而不是只给峰值响应率或亮度。</p>
 <!--/deep-classical:zh-->
-<h2 id="参考">参考</h2>
-<ol>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapters 12–13.</li>
 <li>P. Würfel and U. Würfel, <em>Physics of Solar Cells</em>.</li>
 </ol>

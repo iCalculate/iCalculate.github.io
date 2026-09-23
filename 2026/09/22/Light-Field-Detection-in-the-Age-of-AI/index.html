@@ -465,70 +465,60 @@ height:50vh;
 <section class="lang-panel lang-en" lang="en">
 <p>A photodiode can measure light power very well. But light also has wavelength, phase, polarization, position and time structure. If all of those dimensions are mixed into one current, much of the information disappears. Cai and colleagues’ 2026 Review, <em>Light field detection in the age of artificial intelligence</em>, asks how a compact detector can preserve enough distinguishing information to recover more of the field computationally.</p>
 <!--more-->
+
 <p>The useful shift is to treat the optical element, detector and reconstruction algorithm as <strong>one measurement system</strong>. AI can help design the encoder and solve the inverse problem; its most interesting role may be to optimize both together. The Review also makes clear that a plausible reconstruction is not automatically a trustworthy measurement.</p>
 <p><img src="/images/ai-light-field-detection/review-figure-1.webp" alt="Figure 1 from Cai et al. showing multidimensional light encoding and computational decoding"></p>
 <p><em>Figure 1 from <a href="https://doi.org/10.1038/s44287-026-00328-0" target="_blank" rel="noopener">Cai et al. (2026)</a>. Physical responses encode several light dimensions into detector signals; an algorithm then estimates the original field. The drawing is a system concept, not evidence that every dimension can be recovered from any one current.</em></p>
-<h2 id="What-must-the-detector-preserve">What must the detector preserve?</h2>
-<p>In a simplified, discretized picture, let $x$ describe the optical properties we want, $s$ the measured electrical signals, and $A$ the response of the optical encoder plus detector:</p>
-<p>$$s=Ax+n.$$</p>
+<h2 id="What-must-the-detector-preserve"><a href="#What-must-the-detector-preserve" class="headerlink" title="What must the detector preserve?"></a>What must the detector preserve?</h2><p>In a simplified, discretized picture, let $x$ describe the optical properties we want, $s$ the measured electrical signals, and $A$ the response of the optical encoder plus detector:</p>
+<p>$$s&#x3D;Ax+n.$$</p>
 <p>Here $n$ represents noise. A device might turn different wavelengths into different spatial patterns, or make its response vary with polarization or time. These variations give the decoder clues about $x$. If two possible inputs produce almost the same $s$, no algorithm can reliably distinguish them. More measurements help only when they bring <strong>different information</strong>; signal-to-noise ratio, dynamic range, calibration and the conditioning of the response matter too.</p>
 <p>The Review uses “light field” broadly for multidimensional optical information, including phase, spectrum and polarization. This is broader than the narrower camera usage in which “light field” often refers mainly to spatial and angular rays. It also separates <strong>single-point sensing</strong>, which retrieves properties without a spatial image, from imaging systems that reconstruct those properties at many positions.</p>
 <p>Computational sensing moves some complexity from a collection of separate spectrometers, interferometers or polarimeters into a designed encoder and a decoder. It does not make information free: compression works because the hardware preserves useful differences and the reconstruction uses justified assumptions about possible inputs.</p>
-<h2 id="AI-at-the-front-end-making-useful-optical-codes">AI at the front end: making useful optical codes</h2>
-<p>An encoder might be a metasurface, a dispersive structure, a waveguide, or a tunable device. Designing one conventionally means repeatedly calculating electromagnetic responses while searching over shapes, materials and operating conditions. A <strong>surrogate model</strong> learns to approximate that expensive forward calculation, making candidate screening faster. A <strong>generative or inverse-design model</strong> searches structures that produce a desired response, including shapes a human might not propose directly.</p>
+<h2 id="AI-at-the-front-end-making-useful-optical-codes"><a href="#AI-at-the-front-end-making-useful-optical-codes" class="headerlink" title="AI at the front end: making useful optical codes"></a>AI at the front end: making useful optical codes</h2><p>An encoder might be a metasurface, a dispersive structure, a waveguide, or a tunable device. Designing one conventionally means repeatedly calculating electromagnetic responses while searching over shapes, materials and operating conditions. A <strong>surrogate model</strong> learns to approximate that expensive forward calculation, making candidate screening faster. A <strong>generative or inverse-design model</strong> searches structures that produce a desired response, including shapes a human might not propose directly.</p>
 <p>The goal is not simply an exotic pattern. A good encoder should separate the optical properties relevant to its task while transmitting enough light and tolerating fabrication errors. The Review therefore emphasizes physical constraints and manufacturability alongside learned optimization. A surrogate that predicts simulated spectra quickly still needs validation against both accurate electromagnetic calculations and fabricated devices; speed does not guarantee a correct physical response.</p>
 <p><img src="/images/ai-light-field-detection/review-figure-2.webp" alt="Figure 2 from Cai et al. showing AI-assisted optical encoder design"></p>
 <p><em>Figure 2 from <a href="https://doi.org/10.1038/s44287-026-00328-0" target="_blank" rel="noopener">Cai et al. (2026)</a>. Candidate geometries lead, through Maxwell solvers or AI-assisted approximations, to responses in space, polarization, spectrum and chirality. The design loop then works backwards from a desired response to a feasible structure.</em></p>
-<h2 id="AI-at-the-back-end-choosing-a-decoder-for-the-measurement">AI at the back end: choosing a decoder for the measurement</h2>
-<p>Decoding is an inverse problem: several light fields can fit the same compressed signal, especially after noise or calibration drift. Classical iterative methods use a calibrated forward model and explicit priors such as sparsity or smoothness. They remain attractive when paired training data are scarce, but repeated iterations can be slow. A trained CNN or U-Net can be fast at inference when enough representative examples exist. Transformers, generative models and physics-informed or unfolded networks offer different trade-offs in capacity, data needs, latency and interpretability. The Review does not nominate one universal winner.</p>
+<h2 id="AI-at-the-back-end-choosing-a-decoder-for-the-measurement"><a href="#AI-at-the-back-end-choosing-a-decoder-for-the-measurement" class="headerlink" title="AI at the back end: choosing a decoder for the measurement"></a>AI at the back end: choosing a decoder for the measurement</h2><p>Decoding is an inverse problem: several light fields can fit the same compressed signal, especially after noise or calibration drift. Classical iterative methods use a calibrated forward model and explicit priors such as sparsity or smoothness. They remain attractive when paired training data are scarce, but repeated iterations can be slow. A trained CNN or U-Net can be fast at inference when enough representative examples exist. Transformers, generative models and physics-informed or unfolded networks offer different trade-offs in capacity, data needs, latency and interpretability. The Review does not nominate one universal winner.</p>
 <p>The four reconstruction areas are at different stages. <strong>Spectral</strong> methods recover wavelength channels from encoded measurements; snapshot spectral imaging is a prominent example. <strong>Phase</strong> retrieval infers information that an intensity sensor does not record directly. <strong>Polarization</strong> reconstruction can estimate Stokes-related quantities from limited polarization samples, with calibration remaining critical. <strong>Temporal</strong> reconstruction seeks fast dynamics from compressed or coded observations. The Review judges spectral and temporal AI applications more mature than phase and polarization retrieval; that is a statement about research progress, not a guarantee that any individual device is ready for deployment.</p>
 <p><img src="/images/ai-light-field-detection/review-figure-3.webp" alt="Figure 3 from Cai et al. illustrating coded measurement and high-dimensional reconstruction"></p>
 <p><em>Figure 3 from <a href="https://doi.org/10.1038/s44287-026-00328-0" target="_blank" rel="noopener">Cai et al. (2026)</a>. Encoding mixes phase, wavelength and polarization into measured signals across space and time; decoding estimates the desired dimensions. The inverse mapping depends on the known encoder response and the assumptions built into the algorithm.</em></p>
-<h2 id="The-bigger-move-co-design-with-a-digital-twin">The bigger move: co-design with a digital twin</h2>
-<p>If hardware is designed for a convenient optical response while software is later trained on a fixed sensor, neither stage necessarily minimizes the final reconstruction error. The Review’s <strong>differentiable digital twin</strong> represents the optical encoder, detector response and decoder in a computational chain. Gradients of a task loss can then update decoder weights and physical design parameters together. Optical efficiency, fabrication tolerance and other practical limits can enter the same optimization.</p>
+<h2 id="The-bigger-move-co-design-with-a-digital-twin"><a href="#The-bigger-move-co-design-with-a-digital-twin" class="headerlink" title="The bigger move: co-design with a digital twin"></a>The bigger move: co-design with a digital twin</h2><p>If hardware is designed for a convenient optical response while software is later trained on a fixed sensor, neither stage necessarily minimizes the final reconstruction error. The Review’s <strong>differentiable digital twin</strong> represents the optical encoder, detector response and decoder in a computational chain. Gradients of a task loss can then update decoder weights and physical design parameters together. Optical efficiency, fabrication tolerance and other practical limits can enter the same optimization.</p>
 <p>The distinction between a digital twin and the instrument matters. A low error on simulated examples shows that the <em>simulation pipeline</em> works under its own assumptions. It does not show that the model accurately represents a fabricated sensor. A physics-based forward model can keep parameters such as aberration, illumination drift and alignment meaningful; calibration and <strong>hardware-in-the-loop</strong> measurements are needed to bridge model and device. Such a model could also estimate uncertainty in a reconstructed pixel or parameter, which is essential when the output is used as a measurement rather than an attractive image.</p>
 <p><img src="/images/ai-light-field-detection/review-figure-4.webp" alt="Figure 4 from Cai et al. showing the proposed differentiable digital twin"></p>
 <p><em>Figure 4 from <a href="https://doi.org/10.1038/s44287-026-00328-0" target="_blank" rel="noopener">Cai et al. (2026)</a>. The physical instrument produces real measurements; the digital model produces simulated ones and carries gradients back through the design. Guidance must be checked against the real hardware.</em></p>
-<h2 id="What-would-count-as-progress">What would count as progress?</h2>
-<p>The Review identifies four linked reliability questions: <strong>generalization</strong> beyond training examples, <strong>physical consistency</strong> of reconstructed outputs, <strong>interpretability</strong> of the model and <strong>uncertainty</strong> attached to its estimates. An AI decoder can fill missing detail with a plausible-looking answer that the detector never measured. That risk is especially serious for scientific or medical uses. Useful tests should therefore include new scenes and operating conditions, perturbations in alignment and fabrication, noise, calibration drift, and comparison with independent instruments.</p>
+<h2 id="What-would-count-as-progress"><a href="#What-would-count-as-progress" class="headerlink" title="What would count as progress?"></a>What would count as progress?</h2><p>The Review identifies four linked reliability questions: <strong>generalization</strong> beyond training examples, <strong>physical consistency</strong> of reconstructed outputs, <strong>interpretability</strong> of the model and <strong>uncertainty</strong> attached to its estimates. An AI decoder can fill missing detail with a plausible-looking answer that the detector never measured. That risk is especially serious for scientific or medical uses. Useful tests should therefore include new scenes and operating conditions, perturbations in alignment and fabrication, noise, calibration drift, and comparison with independent instruments.</p>
 <p>There is also a pragmatic alternative to reconstructing every optical dimension. If the real task is material identification or environmental monitoring, the sensor can be optimized for the final decision rather than for a full spectral or polarization cube. That may reduce data and latency, provided the resulting decision is validated across the conditions where it will be used.</p>
 <p>The lasting idea is a measurement-design question: <strong>which optical distinctions must the hardware preserve so the downstream answer is both useful and defensible?</strong> AI expands the search for encoders and decoders. Physics, calibration and real-device testing determine whether that search produces a reliable detector.</p>
-<h3 id="Source-and-reading-note">Source and reading note</h3>
-<p>This article interprets Weiwei Cai <em>et al.</em>, “<a href="https://www.nature.com/articles/s44287-026-00328-0" target="_blank" rel="noopener">Light field detection in the age of artificial intelligence</a>,” <em>Nature Reviews Electrical Engineering</em> (published 15 September 2026), DOI: <a href="https://doi.org/10.1038/s44287-026-00328-0" target="_blank" rel="noopener">10.1038/s44287-026-00328-0</a>. Figures 1–4 are cropped from the paper PDF and remain the authors’ original figures. A <a href="https://mp.weixin.qq.com/s/b8-cCrRleyYnOi4h7ZMgHA" target="_blank" rel="noopener">related Chinese news account</a> offers a shorter introduction; technical claims here were checked against the Review. The digital-twin discussion describes a research direction, not a benchmark achieved by one completed universal device.</p>
+<h3 id="Source-and-reading-note"><a href="#Source-and-reading-note" class="headerlink" title="Source and reading note"></a>Source and reading note</h3><p>This article interprets Weiwei Cai <em>et al.</em>, “<a href="https://www.nature.com/articles/s44287-026-00328-0" target="_blank" rel="noopener">Light field detection in the age of artificial intelligence</a>,” <em>Nature Reviews Electrical Engineering</em> (published 15 September 2026), DOI: <a href="https://doi.org/10.1038/s44287-026-00328-0" target="_blank" rel="noopener">10.1038&#x2F;s44287-026-00328-0</a>. Figures 1–4 are cropped from the paper PDF and remain the authors’ original figures. A <a href="https://mp.weixin.qq.com/s/b8-cCrRleyYnOi4h7ZMgHA" target="_blank" rel="noopener">related Chinese news account</a> offers a shorter introduction; technical claims here were checked against the Review. The digital-twin discussion describes a research direction, not a benchmark achieved by one completed universal device.</p>
 
 </section>
+
 <!-- bilingual:zh -->
 <section class="lang-panel lang-zh" lang="zh-CN" hidden>
 <p>一只光电二极管可以很好地测光功率。但光还携带波长、相位、偏振、空间位置和时间变化。若这些维度最后全都混进同一个电流值，许多信息就消失了。蔡伟伟等人发表于 2026 年的综述《人工智能时代的光场探测》讨论的核心问题是：<strong>能否让小型探测器在测量时保留足够多的区别，再用计算方法恢复更多光信息？</strong></p>
 <p><img src="/images/ai-light-field-detection/review-figure-1.webp" alt="原论文图1：多维光信息经物理编码与计算解码"></p>
 <p><em>原论文图 1，出自 <a href="https://doi.org/10.1038/s44287-026-00328-0" target="_blank" rel="noopener">Cai 等（2026）</a>。不同的物理响应把光的多个维度编码进探测信号，算法随后估计原始光场。这是一幅系统示意图，并不意味着任何单个电流都能恢复全部维度。</em></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="探测器究竟要保留什么？">探测器究竟要保留什么？</div>
-<p>先用一个离散化的简式理解问题：$x$ 是想知道的光学性质，$s$ 是实际测到的电信号，$A$ 概括光学编码器与探测器的响应：</p>
-<p>$$s=Ax+n.$$</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="探测器究竟要保留什么？"><a href="#探测器究竟要保留什么？" class="headerlink" title="探测器究竟要保留什么？"></a>探测器究竟要保留什么？</div><p>先用一个离散化的简式理解问题：$x$ 是想知道的光学性质，$s$ 是实际测到的电信号，$A$ 概括光学编码器与探测器的响应：</p>
+<p>$$s&#x3D;Ax+n.$$</p>
 <p>$n$ 表示噪声。编码器可以让不同波长形成不同空间图案，也可以让响应随偏振或时间发生变化。解码算法正是利用这些差异推断 $x$。如果两种入射光几乎产生相同的 $s$，再强的算法也无法可靠区分它们。因此，<strong>测量次数之外，还要看每次测量提供的信息是否不同</strong>；信噪比、动态范围、标定质量和响应矩阵的可区分性同样重要。</p>
 <p>这里的“光场”取广义用法，涵盖相位、光谱、偏振等多维信息，比相机领域常说的空间与角度光线分布更宽。论文也区分了两类任务：<strong>单点探测</strong>恢复非空间性质，<strong>成像探测</strong>则在许多空间位置上恢复这些性质。</p>
 <p>计算探测把一部分复杂性，从多个分立的光谱仪、干涉仪和偏振仪，转移到专门设计的编码器与解码器。但压缩不会凭空创造信息：硬件必须保留有用差别，算法也必须依赖合理的输入先验。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="前端：AI-怎样帮助设计光学编码器？">前端：AI 怎样帮助设计光学编码器？</div>
-<p>编码器可以是超表面、色散结构、波导，也可以是可调器件。传统设计需要反复计算电磁响应，并在几何、材料与工作条件组成的庞大空间中搜索。<strong>代理模型</strong>学习近似这种昂贵的正向计算，让候选结构筛选更快；<strong>生成模型与逆向设计</strong>则从目标光响应出发，寻找包括非直观形状在内的器件结构。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="前端：AI-怎样帮助设计光学编码器？"><a href="#前端：AI-怎样帮助设计光学编码器？" class="headerlink" title="前端：AI 怎样帮助设计光学编码器？"></a>前端：AI 怎样帮助设计光学编码器？</div><p>编码器可以是超表面、色散结构、波导，也可以是可调器件。传统设计需要反复计算电磁响应，并在几何、材料与工作条件组成的庞大空间中搜索。<strong>代理模型</strong>学习近似这种昂贵的正向计算，让候选结构筛选更快；<strong>生成模型与逆向设计</strong>则从目标光响应出发，寻找包括非直观形状在内的器件结构。</p>
 <p>设计目标并非得到一幅奇特图案，而是在相关光学性质之间形成足够可辨的响应，同时保留光通量，并能容忍制造偏差。因此论文把物理约束、工艺可行性和学习优化放在一起。代理模型即使能快速预测仿真光谱，仍要接受精确电磁计算与实际样品的检验；预测快不等于器件真的会按预测工作。</p>
 <p><img src="/images/ai-light-field-detection/review-figure-2.webp" alt="原论文图2：AI辅助光学编码器设计"></p>
 <p><em>原论文图 2，出自 <a href="https://doi.org/10.1038/s44287-026-00328-0" target="_blank" rel="noopener">Cai 等（2026）</a>。候选几何结构经麦克斯韦方程求解器或 AI 辅助模型，产生空间、偏振、光谱与手性响应；设计循环再从目标响应反推可制造结构。</em></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="后端：没有一种解码模型适合所有测量">后端：没有一种解码模型适合所有测量</div>
-<p>从压缩信号回推光场是一个逆问题。尤其存在噪声或标定漂移时，多种光场都可能解释同一组数据。经典迭代方法依赖已经标定的正向模型，并使用稀疏性、平滑性等明确先验；成对训练数据少时仍有价值，但反复迭代可能较慢。CNN 或 U-Net 在有足够代表性样本时可实现快速推断。Transformer、生成模型、物理信息模型与深度展开网络，则在模型容量、训练数据、延迟和可解释性之间做不同取舍。原综述没有宣布某一种架构通吃所有场景。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="后端：没有一种解码模型适合所有测量"><a href="#后端：没有一种解码模型适合所有测量" class="headerlink" title="后端：没有一种解码模型适合所有测量"></a>后端：没有一种解码模型适合所有测量</div><p>从压缩信号回推光场是一个逆问题。尤其存在噪声或标定漂移时，多种光场都可能解释同一组数据。经典迭代方法依赖已经标定的正向模型，并使用稀疏性、平滑性等明确先验；成对训练数据少时仍有价值，但反复迭代可能较慢。CNN 或 U-Net 在有足够代表性样本时可实现快速推断。Transformer、生成模型、物理信息模型与深度展开网络，则在模型容量、训练数据、延迟和可解释性之间做不同取舍。原综述没有宣布某一种架构通吃所有场景。</p>
 <p>论文讨论的四类重建也处于不同阶段。<strong>光谱</strong>重建从编码后的测量恢复各波长通道，快照式光谱成像是典型例子；<strong>相位</strong>重建要推断强度传感器不能直接记录的信息；<strong>偏振</strong>重建可从有限采样估计与 Stokes 参数相关的量，但标定很关键；<strong>时间</strong>重建则针对快速变化的过程。综述认为光谱和时间方向的 AI 应用相对成熟，相位与偏振仍在快速发展。这是对研究现状的判断，不代表相关单个器件已经具备实际部署条件。</p>
 <p><img src="/images/ai-light-field-detection/review-figure-3.webp" alt="原论文图3：编码测量与多维光信息重建"></p>
 <p><em>原论文图 3，出自 <a href="https://doi.org/10.1038/s44287-026-00328-0" target="_blank" rel="noopener">Cai 等（2026）</a>。编码把相位、波长和偏振等信息混入跨空间与时间的测量信号，解码再估计目标维度；逆映射依赖已知的编码器响应与算法先验。</em></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="更关键的一步：让硬件与算法一起设计">更关键的一步：让硬件与算法一起设计</div>
-<p>如果先按某个光学指标做好硬件，再把它固定下来训练软件，两阶段各自最优并不等于最终重建最好。综述提出的<strong>可微分数字孪生</strong>，把光学编码器、探测器响应和解码器放进同一条计算链。最终任务误差的梯度，可以同时更新解码模型参数与可设计的硬件参数；光效率、加工容差等实际限制，也可纳入同一个优化目标。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="更关键的一步：让硬件与算法一起设计"><a href="#更关键的一步：让硬件与算法一起设计" class="headerlink" title="更关键的一步：让硬件与算法一起设计"></a>更关键的一步：让硬件与算法一起设计</div><p>如果先按某个光学指标做好硬件，再把它固定下来训练软件，两阶段各自最优并不等于最终重建最好。综述提出的<strong>可微分数字孪生</strong>，把光学编码器、探测器响应和解码器放进同一条计算链。最终任务误差的梯度，可以同时更新解码模型参数与可设计的硬件参数；光效率、加工容差等实际限制，也可纳入同一个优化目标。</p>
 <p>但数字孪生与真实仪器必须分清。仿真数据上的低误差，只说明<strong>仿真链条在自身假设下</strong>表现好，不能证明它精确代表已制造的器件。基于物理的正向模型可把像差、照明漂移和位置失准保留为有意义的参数；标定与<strong>硬件在环</strong>测量，才能帮助模型跨过从数字到实物的落差。这类模型还有望为重建的像素或参数附上不确定度。用于计量时，一幅漂亮图像不能代替带可信误差估计的测量值。</p>
 <p><img src="/images/ai-light-field-detection/review-figure-4.webp" alt="原论文图4：可微分数字孪生的概念框架"></p>
 <p><em>原论文图 4，出自 <a href="https://doi.org/10.1038/s44287-026-00328-0" target="_blank" rel="noopener">Cai 等（2026）</a>。真实仪器给出真实测量，数字模型产生模拟测量，并把梯度反传到设计参数；数字优化的建议还需在实物上检验。</em></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="怎样判断它真的向前走了一步？">怎样判断它真的向前走了一步？</div>
-<p>综述指出四个彼此相关的可靠性问题：训练集之外能否<strong>泛化</strong>，重建结果是否<strong>符合物理</strong>，模型行为是否<strong>可解释</strong>，以及估计值有没有可信的<strong>不确定度</strong>。AI 解码器可能把传感器根本没测到的细节，补成一幅看似合理的图像。若结果用于科学研究或医学场景，这类错误尤其危险。因而评价应包含新样本和新工况、对准及制造扰动、噪声与标定漂移，并与独立仪器交叉核对。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="怎样判断它真的向前走了一步？"><a href="#怎样判断它真的向前走了一步？" class="headerlink" title="怎样判断它真的向前走了一步？"></a>怎样判断它真的向前走了一步？</div><p>综述指出四个彼此相关的可靠性问题：训练集之外能否<strong>泛化</strong>，重建结果是否<strong>符合物理</strong>，模型行为是否<strong>可解释</strong>，以及估计值有没有可信的<strong>不确定度</strong>。AI 解码器可能把传感器根本没测到的细节，补成一幅看似合理的图像。若结果用于科学研究或医学场景，这类错误尤其危险。因而评价应包含新样本和新工况、对准及制造扰动、噪声与标定漂移，并与独立仪器交叉核对。</p>
 <p>还有一条务实的路径：不必总是重建完整的光谱或偏振数据立方体。如果目标只是材料识别或环境监测，可以直接围绕最终判断来设计传感器，以减少数据量与延迟；前提是这种判断经过目标使用环境的验证。</p>
 <p>这篇综述留下的核心问题是：<strong>硬件需要保留哪些光学差异，后端答案才既有用又可信？</strong> AI 扩大了编码器与解码器的搜索空间；物理模型、标定和真实器件测试，则决定搜索结果能否成为可靠的探测系统。</p>
-<div class="zh-heading zh-h3" role="heading" aria-level="3" id="原文与阅读说明">原文与阅读说明</div>
-<p>本文解读 Weiwei Cai 等人的综述“<a href="https://www.nature.com/articles/s44287-026-00328-0" target="_blank" rel="noopener">Light field detection in the age of artificial intelligence</a>”，发表于 <em>Nature Reviews Electrical Engineering</em>（2026 年 9 月 15 日），DOI：<a href="https://doi.org/10.1038/s44287-026-00328-0" target="_blank" rel="noopener">10.1038/s44287-026-00328-0</a>。图 1–4 截自论文 PDF，保留作者原图。<a href="https://mp.weixin.qq.com/s/b8-cCrRleyYnOi4h7ZMgHA" target="_blank" rel="noopener">相关中文报道</a>可供快速了解；文中的技术判断以论文原文为准。数字孪生部分讨论的是研究方向，不是某个通用成品系统已经达到的性能指标。</p>
+<div class="zh-heading zh-h3" role="heading" aria-level="3" id="原文与阅读说明"><a href="#原文与阅读说明" class="headerlink" title="原文与阅读说明"></a>原文与阅读说明</div><p>本文解读 Weiwei Cai 等人的综述“<a href="https://www.nature.com/articles/s44287-026-00328-0" target="_blank" rel="noopener">Light field detection in the age of artificial intelligence</a>”，发表于 <em>Nature Reviews Electrical Engineering</em>（2026 年 9 月 15 日），DOI：<a href="https://doi.org/10.1038/s44287-026-00328-0" target="_blank" rel="noopener">10.1038&#x2F;s44287-026-00328-0</a>。图 1–4 截自论文 PDF，保留作者原图。<a href="https://mp.weixin.qq.com/s/b8-cCrRleyYnOi4h7ZMgHA" target="_blank" rel="noopener">相关中文报道</a>可供快速了解；文中的技术判断以论文原文为准。数字孪生部分讨论的是研究方向，不是某个通用成品系统已经达到的性能指标。</p>
 
 </section>
 
@@ -1564,12 +1554,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
         </li>
     
     
@@ -1973,10 +1963,6 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
     
-        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
-    
         <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
@@ -1985,21 +1971,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
     
-        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
     
-        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
         <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
     
-        <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
+        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
     
-        <span class="sidebar-tag-name" data-tags="Optical Properties"><span class="iconfont-archer">&#xe606;</span>Optical Properties</span>
-    
-        <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
-    
-        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
-    
-        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
     
         <span class="sidebar-tag-name" data-tags="Dark Channel Prior"><span class="iconfont-archer">&#xe606;</span>Dark Channel Prior</span>
     
@@ -2015,6 +1995,16 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
     
+        <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Optical Properties"><span class="iconfont-archer">&#xe606;</span>Optical Properties</span>
+    
+        <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+    
         <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
@@ -2022,6 +2012,8 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="Device Physics"><span class="iconfont-archer">&#xe606;</span>Device Physics</span>
     
         <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
     
         <span class="sidebar-tag-name" data-tags="complex analysis"><span class="iconfont-archer">&#xe606;</span>complex analysis</span>
     
@@ -2031,27 +2023,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="field theory"><span class="iconfont-archer">&#xe606;</span>field theory</span>
     
-        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
-    
         <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
     
         <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
     
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+    
         <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
-    
-        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
-    
-        <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
     
         <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+        <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
     
         <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
     
         <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
     
         <span class="sidebar-tag-name" data-tags="Computational Optics"><span class="iconfont-archer">&#xe606;</span>Computational Optics</span>
     
@@ -2060,6 +2048,10 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="Inverse Problems"><span class="iconfont-archer">&#xe606;</span>Inverse Problems</span>
     
         <span class="sidebar-tag-name" data-tags="Artificial Intelligence"><span class="iconfont-archer">&#xe606;</span>Artificial Intelligence</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
     
         <span class="sidebar-tag-name" data-tags="Living Matter"><span class="iconfont-archer">&#xe606;</span>Living Matter</span>
     
@@ -2074,8 +2066,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
         <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
-    
-        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
     
         <span class="sidebar-tag-name" data-tags="Topological Data Analysis"><span class="iconfont-archer">&#xe606;</span>Topological Data Analysis</span>
     
@@ -2107,9 +2097,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
     
-        <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
-    
         <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
     
@@ -2160,21 +2150,21 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Mathematical-Physics"><span class="iconfont-archer">&#xe60a;</span>Mathematical-Physics</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
-    
-        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
-    
         <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+    
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
-    
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
     
