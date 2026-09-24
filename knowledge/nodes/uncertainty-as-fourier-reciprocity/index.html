@@ -5,53 +5,46 @@
 <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
 <body class="knowledge-node-page"><header class="node-header"><a class="wordmark" href="/">iCalculate’s Studio</a><nav><a href="/archives/">Archive</a><a href="/knowledge/">Knowledge Atlas</a></nav></header>
-<main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Uncertainty as Fourier Reciprocity: From Position–Momentum to Time–Frequency</span><span data-lang="zh" hidden>不确定性是傅里叶互易性：从位置—动量到时间—频率</span></h1><p class="node-deck"><span data-lang="en">Position–momentum and time–frequency uncertainty are two expressions of the same Fourier reciprocity between localization and spectral width.</span><span data-lang="zh" hidden>位置—动量与时间—频率的不确定性并非两个巧合，而是同一条傅里叶互易原则在量子态与信号中的两种表现。</span></p><div class="node-tags"><span>Quantum Mechanics</span><span>Fundamental Models</span><span>Optical Properties</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><h1 id="Uncertainty-Is-Fourier-Reciprocity"><a href="#Uncertainty-Is-Fourier-Reciprocity" class="headerlink" title="Uncertainty Is Fourier Reciprocity"></a>Uncertainty Is Fourier Reciprocity</h1><p>Heisenberg’s uncertainty principle is often paraphrased as: “A particle’s position and momentum cannot both be measured exactly.” That is not wrong, but it can suggest that uncertainty is merely a disturbance caused by an imperfect instrument.</p>
+<main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Uncertainty as Fourier Reciprocity: From Position–Momentum to Time–Frequency</span><span data-lang="zh" hidden>不确定性是傅里叶互易性：从位置—动量到时间—频率</span></h1><p class="node-deck"><span data-lang="en">Position–momentum and time–frequency uncertainty are two expressions of the same Fourier reciprocity between localization and spectral width.</span><span data-lang="zh" hidden>位置—动量与时间—频率的不确定性并非两个巧合，而是同一条傅里叶互易原则在量子态与信号中的两种表现。</span></p><div class="node-tags"><span>Quantum Mechanics</span><span>Fundamental Models</span><span>Optical Properties</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><h1>Uncertainty Is Fourier Reciprocity</h1>
+<p>Heisenberg’s uncertainty principle is often paraphrased as: “A particle’s position and momentum cannot both be measured exactly.” That is not wrong, but it can suggest that uncertainty is merely a disturbance caused by an imperfect instrument.</p>
 <p>The deeper statement is structural: <strong>the position-space and momentum-space wavefunctions are Fourier transforms of one another. Whenever a function is sharply localized in one variable, it must spread across its Fourier-conjugate variable.</strong> Position–momentum uncertainty and time–frequency uncertainty are therefore two appearances of the same Fourier reciprocity.</p>
-<h2 id="One-Wave-Two-Representations"><a href="#One-Wave-Two-Representations" class="headerlink" title="One Wave, Two Representations"></a>One Wave, Two Representations</h2><p>Let the one-dimensional wavefunction in position space be \(\psi(x)\). Its amplitude in wave-number space is</p>
+<h2 id="One-Wave-Two-Representations">One Wave, Two Representations</h2>
+<p>Let the one-dimensional wavefunction in position space be \(\psi(x)\). Its amplitude in wave-number space is</p>
 <div class="math-display">\[\tilde{\psi}(k)=\frac{1}{\sqrt{2\pi}}
 \int_{-\infty}^{\infty}\psi(x)e^{-ikx}\,dx.\]</div>
-
 <p>The variables \(x\) and \(k\) are Fourier conjugates. Quantum mechanics then turns wave number into momentum through the de Broglie relation</p>
 <div class="math-display">\[p=\hbar k.\]</div>
-
 <p>Consequently,</p>
 <div class="math-display">\[\tilde{\psi}(p)=\frac{1}{\sqrt{2\pi\hbar}}
 \int_{-\infty}^{\infty}\psi(x)e^{-ipx/\hbar}\,dx.\]</div>
-
 <p>The functions \(\psi(x)\) and \(\tilde\psi(p)\) are not two independent descriptions with independently chosen widths. They are <strong>two reciprocal representations of the same quantum state</strong>. Fixing either one already constrains the other.</p>
 <p>When width is measured by the standard deviation, Fourier analysis gives</p>
 <div class="math-display">\[\Delta x\,\Delta k\geq \frac{1}{2}.\]</div>
-
 <p>Using \(p=\hbar k\) produces</p>
 <div class="math-display">\[\boxed{\Delta x\,\Delta p\geq \frac{\hbar}{2}}.\]</div>
-
 <p>In this sense, \(\hbar\) converts the mathematical \(x\)–\(k\) reciprocity into the physical \(x\)–\(p\) relation.</p>
-<h2 id="Why-Narrower-Means-Broader"><a href="#Why-Narrower-Means-Broader" class="headerlink" title="Why Narrower Means Broader"></a>Why Narrower Means Broader</h2><p>An infinitely extended monochromatic plane wave \(e^{ik_0x}\) has one exact wave number and therefore one exact momentum. Yet it fills all space, so its position is completely delocalized.</p>
+<h2 id="Why-Narrower-Means-Broader">Why Narrower Means Broader</h2>
+<p>An infinitely extended monochromatic plane wave \(e^{ik_0x}\) has one exact wave number and therefore one exact momentum. Yet it fills all space, so its position is completely delocalized.</p>
 <p>Conversely, a localized wave packet must be assembled from many plane waves:</p>
 <div class="math-display">\[\psi(x)=\frac{1}{\sqrt{2\pi}}
 \int \tilde\psi(k)e^{ikx}\,dk.\]</div>
-
 <p>The more tightly the packet is compressed, the wider the required range of wave numbers and momenta becomes. Uncertainty here is not missing knowledge: <strong>localization itself costs bandwidth</strong>.</p>
 <p>A Gaussian packet reaches the limiting case. If</p>
 <div class="math-display">\[\psi(x)\propto
 \exp\left[-\frac{(x-x_0)^2}{4\sigma_x^2}\right]e^{ik_0x},\]</div>
-
 <p>its Fourier transform is also Gaussian and</p>
 <div class="math-display">\[\Delta x\,\Delta k=\frac{1}{2},
 \qquad
 \Delta x\,\Delta p=\frac{\hbar}{2}.\]</div>
-
 <p>Gaussian states are therefore minimum-uncertainty states: the Fourier bound can be reached, but never crossed.</p>
-<h2 id="Time–Frequency-The-Same-Geometry"><a href="#Time–Frequency-The-Same-Geometry" class="headerlink" title="Time–Frequency: The Same Geometry"></a>Time–Frequency: The Same Geometry</h2><p>For a time-dependent signal \(s(t)\), the spectrum is</p>
+<h2 id="Time–Frequency-The-Same-Geometry">Time–Frequency: The Same Geometry</h2>
+<p>For a time-dependent signal \(s(t)\), the spectrum is</p>
 <div class="math-display">\[\tilde{s}(\omega)=\frac{1}{\sqrt{2\pi}}
 \int_{-\infty}^{\infty}s(t)e^{-i\omega t}\,dt.\]</div>
-
 <p>Time \(t\) and angular frequency \(\omega\) are Fourier conjugates, so</p>
 <div class="math-display">\[\boxed{\Delta t\,\Delta\omega\geq \frac{1}{2}}.\]</div>
-
 <p>With ordinary frequency \(\nu=\omega/(2\pi)\), the same standard-deviation convention gives</p>
 <div class="math-display">\[\Delta t\,\Delta\nu\geq \frac{1}{4\pi}.\]</div>
-
 <p>This single relation explains several familiar facts:</p>
 <ul>
 <li>A long, nearly monochromatic wave has a narrow spectrum.</li>
@@ -60,16 +53,15 @@
 <li>A long observation resolves nearby frequencies but blurs rapid temporal changes.</li>
 </ul>
 <p>Time and frequency resolution are not independent specifications that can both be improved without limit. They are projections of the same information onto reciprocal coordinates.</p>
-<h2 id="Why-the-Two-Pairs-Look-Alike"><a href="#Why-the-Two-Pairs-Look-Alike" class="headerlink" title="Why the Two Pairs Look Alike"></a>Why the Two Pairs Look Alike</h2><p>Place the two Fourier kernels side by side:</p>
+<h2 id="Why-the-Two-Pairs-Look-Alike">Why the Two Pairs Look Alike</h2>
+<p>Place the two Fourier kernels side by side:</p>
 <div class="math-display">\[e^{-ikx}=e^{-ipx/\hbar},
 \qquad
 e^{-i\omega t}=e^{-iEt/\hbar},\]</div>
-
 <p>where</p>
 <div class="math-display">\[p=\hbar k,
 \qquad
 E=\hbar\omega.\]</div>
-
 <p>The correspondence is then transparent:</p>
 <table>
 <thead>
@@ -79,7 +71,8 @@ E=\hbar\omega.\]</div>
 <th>Quantum conversion</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Position \(x\)</td>
 <td>Wave number \(k\)</td>
 <td>\(p=\hbar k\)</td>
@@ -89,28 +82,27 @@ E=\hbar\omega.\]</div>
 <td>Angular frequency \(\omega\)</td>
 <td>\(E=\hbar\omega\)</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
 <p>A state cannot be infinitely localized in both members of a Fourier-conjugate pair. Sharpness in one representation must be paid for by spread in the other.</p>
 </blockquote>
-<h2 id="A-Deeper-Layer-Generators-of-Translation"><a href="#A-Deeper-Layer-Generators-of-Translation" class="headerlink" title="A Deeper Layer: Generators of Translation"></a>A Deeper Layer: Generators of Translation</h2><p>Fourier structure enters physics for a reason deeper than wave-like appearance. Momentum generates spatial translations:</p>
+<h2 id="A-Deeper-Layer-Generators-of-Translation">A Deeper Layer: Generators of Translation</h2>
+<p>Fourier structure enters physics for a reason deeper than wave-like appearance. Momentum generates spatial translations:</p>
 <div class="math-display">\[\psi(x-a)=e^{-ia\hat p/\hbar}\psi(x),
 \qquad
 \hat p=-i\hbar\frac{\partial}{\partial x}.\]</div>
-
 <p>Energy—the Hamiltonian—generates time evolution:</p>
 <div class="math-display">\[|\psi(t)\rangle=e^{-it\hat H/\hbar}|\psi(0)\rangle.\]</div>
-
 <p>Fourier modes are eigenmodes of translation: a plane wave gains only a phase under a spatial shift, just as a single-frequency oscillation gains only a phase under a time shift. Momentum is therefore naturally conjugate to position, while energy is naturally tied to the frequency of time evolution.</p>
 <p>For position and momentum, the same structure appears as noncommutativity:</p>
 <div class="math-display">\[[\hat x,\hat p]=i\hbar.\]</div>
-
 <p>The Robertson inequality</p>
 <div class="math-display">\[\Delta A\,\Delta B\geq
 \frac{1}{2}\left|\langle[\hat A,\hat B]\rangle\right|\]</div>
-
 <p>immediately yields \(\Delta x\Delta p\geq\hbar/2\). Fourier reciprocity and operator noncommutativity are not competing explanations; they are two languages for the same mathematical structure.</p>
-<h2 id="A-Crucial-Distinction"><a href="#A-Crucial-Distinction" class="headerlink" title="A Crucial Distinction"></a>A Crucial Distinction</h2><p>Position–momentum and time–frequency are strongly analogous, but they should not be declared identical without qualification.</p>
+<h2 id="A-Crucial-Distinction">A Crucial Distinction</h2>
+<p>Position–momentum and time–frequency are strongly analogous, but they should not be declared identical without qualification.</p>
 <p>In ordinary nonrelativistic quantum mechanics, \(x\) and \(p\) are both observable operators. Time is normally a parameter describing evolution, not a universal operator satisfying \([\hat t,\hat H]=i\hbar\). Therefore:</p>
 <ul>
 <li>\(\Delta x\Delta p\geq\hbar/2\) is a standard operator uncertainty relation.</li>
@@ -118,65 +110,59 @@ E=\hbar\omega.\]</div>
 <li>The often-written \(\Delta E\Delta t\gtrsim\hbar/2\) requires a definition of \(\Delta t\), such as a lifetime, measurement duration, or the time required for a state to change appreciably.</li>
 </ul>
 <p>Their safest common core is not that two perfectly identical operator pairs exist, but that <strong>spatial localization requires momentum bandwidth, while temporal localization requires frequency—and therefore energy—bandwidth</strong>.</p>
-<h2 id="Conclusion-Uncertainty-Is-the-Price-of-Representation"><a href="#Conclusion-Uncertainty-Is-the-Price-of-Representation" class="headerlink" title="Conclusion: Uncertainty Is the Price of Representation"></a>Conclusion: Uncertainty Is the Price of Representation</h2><p>The apparent conflict between position and momentum, or between time and frequency, is more precisely a reciprocal trade-off:</p>
+<h2 id="Conclusion-Uncertainty-Is-the-Price-of-Representation">Conclusion: Uncertainty Is the Price of Representation</h2>
+<p>The apparent conflict between position and momentum, or between time and frequency, is more precisely a reciprocal trade-off:</p>
 <div class="math-display">\[\text{greater concentration in one domain}
 \quad\Longleftrightarrow\quad
 \text{greater spread in the conjugate domain}.\]</div>
-
 <p>This is neither a temporary failure of instrumentation nor nature deliberately hiding an answer. It is a geometric constraint built into Fourier representation. Through \(p=\hbar k\) and \(E=\hbar\omega\), quantum mechanics writes this universal wave principle into physical quantities.</p>
 <p>Seen this way, Heisenberg uncertainty is not an isolated quantum prohibition. It is the physical form of a broader rule: <strong>precise localization must be purchased with a broad spectrum</strong>.</p>
-<h2 id="Related-Notes"><a href="#Related-Notes" class="headerlink" title="Related Notes"></a>Related Notes</h2><ul>
+<h2 id="Related-Notes">Related Notes</h2>
+<ul>
 <li><a href="/2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/">From Classical Mechanics to Quantum Theory</a></li>
 <li><a href="/2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/">Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</a></li>
 <li><a href="/knowledge/nodes/knowledge-atlas/">Knowledge Atlas</a></li>
 </ul>
-</div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><h1 id="不确定性是傅里叶互易性"><a href="#不确定性是傅里叶互易性" class="headerlink" title="不确定性是傅里叶互易性"></a>不确定性是傅里叶互易性</h1><p>海森堡不确定性原理常被表述为：“粒子的位置和动量不能同时被精确测量。”这句话没有错，却容易让人误以为不确定性只是测量仪器对粒子的扰动。</p>
+</div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><h1>不确定性是傅里叶互易性</h1>
+<p>海森堡不确定性原理常被表述为：“粒子的位置和动量不能同时被精确测量。”这句话没有错，却容易让人误以为不确定性只是测量仪器对粒子的扰动。</p>
 <p>更深刻的图景是：<strong>位置波函数与动量波函数互为傅里叶变换。一个函数若在某个变量上高度集中，它在傅里叶共轭变量上就必然铺展。</strong> 因此，位置—动量不确定性与时间—频率不确定性，本质上是同一种“傅里叶互易性”。</p>
-<h2 id="同一个波，可以用两种坐标描述"><a href="#同一个波，可以用两种坐标描述" class="headerlink" title="同一个波，可以用两种坐标描述"></a>同一个波，可以用两种坐标描述</h2><p>设一维波函数在位置表象中为 \(\psi(x)\)。它在波数表象中的振幅为</p>
+<h2 id="同一个波，可以用两种坐标描述">同一个波，可以用两种坐标描述</h2>
+<p>设一维波函数在位置表象中为 \(\psi(x)\)。它在波数表象中的振幅为</p>
 <div class="math-display">\[\tilde{\psi}(k)=\frac{1}{\sqrt{2\pi}}
 \int_{-\infty}^{\infty}\psi(x)e^{-ikx}\,dx.\]</div>
-
 <p>\(x\) 与 \(k\) 是一对傅里叶共轭变量。量子力学又通过德布罗意关系</p>
 <div class="math-display">\[p=\hbar k\]</div>
-
 <p>把波数变成动量，于是</p>
 <div class="math-display">\[\tilde{\psi}(p)=\frac{1}{\sqrt{2\pi\hbar}}
 \int_{-\infty}^{\infty}\psi(x)e^{-ipx/\hbar}\,dx.\]</div>
-
 <p>这并不是从“位置的不精确”推测“动量也许不精确”，而是在说：\(\psi(x)\) 与 \(\tilde\psi(p)\) 是<strong>同一个量子态的两种互易表示</strong>。你不能任意指定它们的宽度，因为指定其中一个，就已经通过傅里叶变换约束了另一个。</p>
 <p>若以标准差衡量宽度，傅里叶分析给出</p>
 <div class="math-display">\[\Delta x\,\Delta k\geq \frac{1}{2},\]</div>
-
 <p>代入 \(p=\hbar k\)，便得到</p>
 <div class="math-display">\[\boxed{\Delta x\,\Delta p\geq \frac{\hbar}{2}}.\]</div>
-
 <p>所以 \(\hbar\) 的作用，是把纯数学的 \(x\)—\(k\) 互易关系换算成物理的 \(x\)—\(p\) 关系。</p>
-<h2 id="为什么“越窄，就越宽”"><a href="#为什么“越窄，就越宽”" class="headerlink" title="为什么“越窄，就越宽”"></a>为什么“越窄，就越宽”</h2><p>一个无限延伸的单色平面波 \(e^{ik_0x}\) 只有唯一波数 \(k_0\)，因此动量完全确定；但它遍布整个空间，位置完全不确定。</p>
+<h2 id="为什么“越窄，就越宽”">为什么“越窄，就越宽”</h2>
+<p>一个无限延伸的单色平面波 \(e^{ik_0x}\) 只有唯一波数 \(k_0\)，因此动量完全确定；但它遍布整个空间，位置完全不确定。</p>
 <p>反过来，要制造一个局域的波包，就必须叠加许多不同波数的平面波：</p>
 <div class="math-display">\[\psi(x)=\frac{1}{\sqrt{2\pi}}
 \int \tilde\psi(k)e^{ikx}\,dk.\]</div>
-
 <p>波包压得越窄，参与叠加的波数范围就必须越广，动量分布也就越宽。这里的“不确定”不是知识不足，而是<strong>局域化本身需要带宽</strong>。</p>
 <p>高斯波包把这种权衡推到极限。若</p>
 <div class="math-display">\[\psi(x)\propto
 \exp\left[-\frac{(x-x_0)^2}{4\sigma_x^2}\right]e^{ik_0x},\]</div>
-
 <p>它的傅里叶变换仍为高斯函数，并满足</p>
 <div class="math-display">\[\Delta x\,\Delta k=\frac{1}{2},
 \qquad
 \Delta x\,\Delta p=\frac{\hbar}{2}.\]</div>
-
 <p>高斯态因此是最小不确定态：傅里叶互易性的边界可以达到，却不能越过。</p>
-<h2 id="时间—频率：同一几何结构"><a href="#时间—频率：同一几何结构" class="headerlink" title="时间—频率：同一几何结构"></a>时间—频率：同一几何结构</h2><p>对随时间变化的信号 \(s(t)\)，频谱为</p>
+<h2 id="时间—频率：同一几何结构">时间—频率：同一几何结构</h2>
+<p>对随时间变化的信号 \(s(t)\)，频谱为</p>
 <div class="math-display">\[\tilde{s}(\omega)=\frac{1}{\sqrt{2\pi}}
 \int_{-\infty}^{\infty}s(t)e^{-i\omega t}\,dt.\]</div>
-
 <p>\(t\) 与角频率 \(\omega\) 同样互为傅里叶共轭变量，因此</p>
 <div class="math-display">\[\boxed{\Delta t\,\Delta\omega\geq \frac{1}{2}}.\]</div>
-
 <p>若使用普通频率 \(\nu=\omega/(2\pi)\)，则在相同的标准差定义下</p>
 <div class="math-display">\[\Delta t\,\Delta\nu\geq \frac{1}{4\pi}.\]</div>
-
 <p>这解释了许多看似不同的现象：</p>
 <ul>
 <li>持续很久的近单色波具有很窄的频谱；</li>
@@ -185,16 +171,15 @@ E=\hbar\omega.\]</div>
 <li>延长观测时间可以分辨更接近的频率，却会模糊快速变化发生的时刻。</li>
 </ul>
 <p>因此，时间分辨率与频率分辨率并不是两个可以独立提高的指标。它们是同一份信息在两种互易坐标中的投影。</p>
-<h2 id="两组关系为什么如此相像"><a href="#两组关系为什么如此相像" class="headerlink" title="两组关系为什么如此相像"></a>两组关系为什么如此相像</h2><p>把两种傅里叶核并排写出：</p>
+<h2 id="两组关系为什么如此相像">两组关系为什么如此相像</h2>
+<p>把两种傅里叶核并排写出：</p>
 <div class="math-display">\[e^{-ikx}=e^{-ipx/\hbar},
 \qquad
 e^{-i\omega t}=e^{-iEt/\hbar},\]</div>
-
 <p>其中使用了</p>
 <div class="math-display">\[p=\hbar k,
 \qquad
 E=\hbar\omega.\]</div>
-
 <p>于是得到一组清晰的互易对应：</p>
 <table>
 <thead>
@@ -204,7 +189,8 @@ E=\hbar\omega.\]</div>
 <th>量子力学换算</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>位置 \(x\)</td>
 <td>波数 \(k\)</td>
 <td>\(p=\hbar k\)</td>
@@ -214,29 +200,28 @@ E=\hbar\omega.\]</div>
 <td>角频率 \(\omega\)</td>
 <td>\(E=\hbar\omega\)</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>这揭示了“不确定性”的共同来源：</p>
 <blockquote>
 <p>一个状态无法在一对傅里叶共轭变量中同时无限局域化。一个表象中的尖锐，必然以另一个表象中的弥散为代价。</p>
 </blockquote>
-<h2 id="更深一层：动量与能量是平移的生成元"><a href="#更深一层：动量与能量是平移的生成元" class="headerlink" title="更深一层：动量与能量是平移的生成元"></a>更深一层：动量与能量是平移的生成元</h2><p>傅里叶关系之所以进入物理，不只是因为波函数“看起来像波”。空间平移由动量生成：</p>
+<h2 id="更深一层：动量与能量是平移的生成元">更深一层：动量与能量是平移的生成元</h2>
+<p>傅里叶关系之所以进入物理，不只是因为波函数“看起来像波”。空间平移由动量生成：</p>
 <div class="math-display">\[\psi(x-a)=e^{-ia\hat p/\hbar}\psi(x),
 \qquad
 \hat p=-i\hbar\frac{\partial}{\partial x}.\]</div>
-
 <p>时间演化则由能量（哈密顿量）生成：</p>
 <div class="math-display">\[|\psi(t)\rangle=e^{-it\hat H/\hbar}|\psi(0)\rangle.\]</div>
-
 <p>傅里叶基底正是平移操作的本征模式：平面波在空间平移下只获得一个相位，单频振荡在时间平移下也只获得一个相位。因此，动量自然成为位置的共轭量，能量自然与时间演化的频率相联系。</p>
 <p>对位置与动量，这种结构也可以写成算符不对易：</p>
 <div class="math-display">\[[\hat x,\hat p]=i\hbar.\]</div>
-
 <p>由 Robertson 不等式</p>
 <div class="math-display">\[\Delta A\,\Delta B\geq
 \frac{1}{2}\left|\langle[\hat A,\hat B]\rangle\right|\]</div>
-
 <p>立刻得到 \(\Delta x\Delta p\geq\hbar/2\)。傅里叶互易与算符不对易不是两套互不相关的解释，而是同一数学结构的两种语言。</p>
-<h2 id="一个重要但常被忽略的区别"><a href="#一个重要但常被忽略的区别" class="headerlink" title="一个重要但常被忽略的区别"></a>一个重要但常被忽略的区别</h2><p>位置—动量与时间—频率高度同构，却不能未经说明就把它们完全等同。</p>
+<h2 id="一个重要但常被忽略的区别">一个重要但常被忽略的区别</h2>
+<p>位置—动量与时间—频率高度同构，却不能未经说明就把它们完全等同。</p>
 <p>在通常的非相对论量子力学中，\(x\) 和 \(p\) 都是可观测量算符；时间 \(t\) 通常是描述演化的参数，而不是一个与哈密顿量普遍满足 \([\hat t,\hat H]=i\hbar\) 的算符。因此：</p>
 <ul>
 <li>\(\Delta x\Delta p\geq\hbar/2\) 是标准的算符不确定关系；</li>
@@ -244,14 +229,15 @@ E=\hbar\omega.\]</div>
 <li>常写的 \(\Delta E\Delta t\gtrsim\hbar/2\) 需要先说明 \(\Delta t\) 的含义，例如态发生显著变化的时间、寿命或测量持续时间，不能简单照搬位置—动量的算符推导。</li>
 </ul>
 <p>它们最可靠的共同核心不是“存在两对完全一样的算符”，而是：<strong>空间局域化需要动量带宽，时间局域化需要频率（因而能量）带宽。</strong></p>
-<h2 id="结论：不确定性不是缺陷，而是表示之间的代价"><a href="#结论：不确定性不是缺陷，而是表示之间的代价" class="headerlink" title="结论：不确定性不是缺陷，而是表示之间的代价"></a>结论：不确定性不是缺陷，而是表示之间的代价</h2><p>位置与动量、时间与频率的“冲突”，更准确地说是一种互易权衡：</p>
+<h2 id="结论：不确定性不是缺陷，而是表示之间的代价">结论：不确定性不是缺陷，而是表示之间的代价</h2>
+<p>位置与动量、时间与频率的“冲突”，更准确地说是一种互易权衡：</p>
 <div class="math-display">\[\text{一个域中越集中}
 \quad\Longleftrightarrow\quad
 \text{共轭域中越分散}.\]</div>
-
 <p>这不是仪器暂时不够精密，也不是自然界故意隐藏答案，而是傅里叶表示本身的几何约束。量子力学借助 \(p=\hbar k\) 与 \(E=\hbar\omega\)，把这条普遍的波动规律写进了物理量之间。</p>
 <p>从这个角度看，海森堡不确定性原理不是一条孤立的量子禁令，而是一条更广泛原则的物理版本：<strong>精确的局域性必须由广阔的谱来支付。</strong></p>
-<h2 id="Related-notes"><a href="#Related-notes" class="headerlink" title="Related notes"></a>Related notes</h2><ul>
+<h2 id="Related-notes">Related notes</h2>
+<ul>
 <li><a href="/2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/">From Classical Mechanics to Quantum Theory</a></li>
 <li><a href="/2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/">Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</a></li>
 <li><a href="/knowledge/nodes/knowledge-atlas/">Knowledge Atlas</a></li>

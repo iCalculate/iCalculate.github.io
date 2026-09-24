@@ -8,29 +8,36 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Compute-in-Memory</span><span data-lang="zh" hidden>存内计算</span></h1><p class="node-deck"><span data-lang="en">Compute-in-memory performs operations where data are stored, commonly using Kirchhoff current summation and Ohm conductance multiplication in crossbars.</span><span data-lang="zh" hidden>存内计算在数据存储位置直接运算，常利用交叉阵列中的欧姆电导乘法和基尔霍夫电流求和。</span></p><div class="node-tags"><span>Neuromorphic Hardware</span><span>Device Physics</span><span>2D Materials</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Compute-in-memory performs operations where data are stored, commonly using Kirchhoff current summation and Ohm conductance multiplication in crossbars.</p>
 </blockquote>
-<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>Compute-in-memory performs operations where data are stored, commonly using Kirchhoff current summation and Ohm conductance multiplication in crossbars. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="Mapping-signed-weights-to-conductance"><a href="#Mapping-signed-weights-to-conductance" class="headerlink" title="Mapping signed weights to conductance"></a>Mapping signed weights to conductance</h3><p>Because physical conductance is nonnegative, a signed weight is often represented differentially, \(w_{ij}=\alpha(G^+_{ij}-G^-_{ij})\).  The computed column output is</p>
+<h2 id="Physical-Picture">Physical Picture</h2>
+<p>Compute-in-memory performs operations where data are stored, commonly using Kirchhoff current summation and Ohm conductance multiplication in crossbars. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
+<h3 id="Mapping-signed-weights-to-conductance">Mapping signed weights to conductance</h3>
+<p>Because physical conductance is nonnegative, a signed weight is often represented differentially, \(w_{ij}=\alpha(G^+_{ij}-G^-_{ij})\).  The computed column output is</p>
 <div class="math-display">\[\hat y_j=\mathcal Q\!\left[\sum_i V_i(G^+_{ij}-G^-_{ij})+\epsilon_j\right],\]</div>
-
 <p>where \(\mathcal Q\) represents ADC quantization and \(\epsilon_j\) collects line drop, device noise and nonlinearity.</p>
-<h3 id="Precision-and-energy-are-coupled"><a href="#Precision-and-energy-are-coupled" class="headerlink" title="Precision and energy are coupled"></a>Precision and energy are coupled</h3><p>More ADC bits reduce quantization error but rapidly increase converter energy and area.  Partitioning a large matrix into tiles limits IR drop but adds partial-sum conversion and communication.  The claimed cell-level multiply energy can therefore be a small fraction of system energy.</p>
-<h3 id="Training-versus-inference"><a href="#Training-versus-inference" class="headerlink" title="Training versus inference"></a>Training versus inference</h3><p>Inference tolerates one-time write-and-verify; on-chip training requires symmetric, linear and low-noise updates over many pulses.  Device update \(\Delta G(G,V,t)\) should be inserted into algorithm simulation using measured distributions.  Accuracy on one small dataset is weak evidence unless compared at equal bit precision, sparsity, calibration and peripheral cost.</p>
-<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[I_j=Σ_i G_ij V_i implements analogue matrix–vector multiplication\]</div>
-
+<h3 id="Precision-and-energy-are-coupled">Precision and energy are coupled</h3>
+<p>More ADC bits reduce quantization error but rapidly increase converter energy and area.  Partitioning a large matrix into tiles limits IR drop but adds partial-sum conversion and communication.  The claimed cell-level multiply energy can therefore be a small fraction of system energy.</p>
+<h3 id="Training-versus-inference">Training versus inference</h3>
+<p>Inference tolerates one-time write-and-verify; on-chip training requires symmetric, linear and low-noise updates over many pulses.  Device update \(\Delta G(G,V,t)\) should be inserted into algorithm simulation using measured distributions.  Accuracy on one small dataset is weak evidence unless compared at equal bit precision, sparsity, calibration and peripheral cost.</p>
+<h2 id="Minimal-Model">Minimal Model</h2>
+<div class="math-display">\[I_j=Σ_i G_ij V_i implements analogue matrix–vector multiplication\]</div>
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>RRAM, PCM, FeFET and flash arrays can act as digital logic or analogue accelerators.</p>
+<h2 id="Device-Consequences">Device Consequences</h2>
+<p>RRAM, PCM, FeFET and flash arrays can act as digital logic or analogue accelerators.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-
-<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>ADC&#x2F;DAC energy, limited precision, drift, nonlinearity and training updates often dominate end-to-end accuracy and efficiency. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Prototype. Connected concepts:</p>
+<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
+<p>ADC/DAC energy, limited precision, drift, nonlinearity and training updates often dominate end-to-end accuracy and efficiency. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
+<p><strong>Maturity:</strong> Prototype. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/functional-and-neuromorphic-devices/">functional-and-neuromorphic-devices</a></li>
 <li><a href="/knowledge/nodes/crossbar-arrays-selectors-and-sneak-paths/">crossbar-arrays-selectors-and-sneak-paths</a></li>
 <li><a href="/knowledge/nodes/memristive-systems-and-resistive-switching/">memristive-systems-and-resistive-switching</a></li>
 <li><a href="/knowledge/nodes/artificial-synapses-and-neuromorphic-dynamics/">artificial-synapses-and-neuromorphic-dynamics</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
+<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41928-018-0092-2" target="_blank" rel="noopener">Ielmini &amp; Wong, In-memory computing with resistive switching devices</a></li>
 <li><a href="https://www.nature.com/articles/s41563-019-0291-x" target="_blank" rel="noopener">Xia &amp; Yang, Memristive crossbar arrays for brain-inspired computing</a></li>
@@ -38,29 +45,36 @@
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**存内计算在数据存储位置直接运算，常利用交叉阵列中的欧姆电导乘法和基尔霍夫电流求和。</p>
 </blockquote>
-<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>存内计算在数据存储位置直接运算，常利用交叉阵列中的欧姆电导乘法和基尔霍夫电流求和。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="把有符号权重映射到电导"><a href="#把有符号权重映射到电导" class="headerlink" title="把有符号权重映射到电导"></a>把有符号权重映射到电导</h3><p>物理电导非负，因此有符号权重常用差分对表示：\(w_{ij}=\alpha(G^+_{ij}-G^-_{ij})\)。列输出为</p>
+<h2 id="物理图像">物理图像</h2>
+<p>存内计算在数据存储位置直接运算，常利用交叉阵列中的欧姆电导乘法和基尔霍夫电流求和。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
+<h3 id="把有符号权重映射到电导">把有符号权重映射到电导</h3>
+<p>物理电导非负，因此有符号权重常用差分对表示：\(w_{ij}=\alpha(G^+_{ij}-G^-_{ij})\)。列输出为</p>
 <div class="math-display">\[\hat y_j=\mathcal Q\!\left[\sum_i V_i(G^+_{ij}-G^-_{ij})+\epsilon_j\right],\]</div>
-
 <p>其中 \(\mathcal Q\) 表示 ADC 量化，\(\epsilon_j\) 汇总线压降、器件噪声和非线性。</p>
-<h3 id="精度与能量耦合"><a href="#精度与能量耦合" class="headerlink" title="精度与能量耦合"></a>精度与能量耦合</h3><p>增加 ADC 位数降低量化误差，却迅速增加转换器能量与面积。把大矩阵分块可限制 IR 压降，但增加部分和转换与通信。因此所谓单元乘法能量往往只占系统能量的一小部分。</p>
-<h3 id="训练与推理不同"><a href="#训练与推理不同" class="headerlink" title="训练与推理不同"></a>训练与推理不同</h3><p>推理可接受一次性写入—验证；片上训练则要求大量脉冲下更新对称、线性且低噪。应把实测 \(\Delta G(G,V,t)\) 分布直接代入算法仿真。若不在相同位精度、稀疏度、校准和外围成本下比较，只在小数据集上报告准确率证据很弱。</p>
-<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[I_j=Σ_i G_ij V_i implements analogue matrix–vector multiplication\]</div>
-
+<h3 id="精度与能量耦合">精度与能量耦合</h3>
+<p>增加 ADC 位数降低量化误差，却迅速增加转换器能量与面积。把大矩阵分块可限制 IR 压降，但增加部分和转换与通信。因此所谓单元乘法能量往往只占系统能量的一小部分。</p>
+<h3 id="训练与推理不同">训练与推理不同</h3>
+<p>推理可接受一次性写入—验证；片上训练则要求大量脉冲下更新对称、线性且低噪。应把实测 \(\Delta G(G,V,t)\) 分布直接代入算法仿真。若不在相同位精度、稀疏度、校准和外围成本下比较，只在小数据集上报告准确率证据很弱。</p>
+<h2 id="最小模型">最小模型</h2>
+<div class="math-display">\[I_j=Σ_i G_ij V_i implements analogue matrix–vector multiplication\]</div>
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>RRAM、PCM、FeFET 和 Flash 阵列可实现数字逻辑或模拟加速器。</p>
+<h2 id="器件意义">器件意义</h2>
+<p>RRAM、PCM、FeFET 和 Flash 阵列可实现数字逻辑或模拟加速器。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-
-<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>ADC&#x2F;DAC 能耗、有限精度、漂移、非线性及训练更新常主导端到端精度和效率。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Prototype。关联节点：</p>
+<h2 id="限制与判据">限制与判据</h2>
+<p>ADC/DAC 能耗、有限精度、漂移、非线性及训练更新常主导端到端精度和效率。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
+<p>**成熟度：**Prototype。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/functional-and-neuromorphic-devices/">functional-and-neuromorphic-devices</a></li>
 <li><a href="/knowledge/nodes/crossbar-arrays-selectors-and-sneak-paths/">crossbar-arrays-selectors-and-sneak-paths</a></li>
 <li><a href="/knowledge/nodes/memristive-systems-and-resistive-switching/">memristive-systems-and-resistive-switching</a></li>
 <li><a href="/knowledge/nodes/artificial-synapses-and-neuromorphic-dynamics/">artificial-synapses-and-neuromorphic-dynamics</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
+<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41928-018-0092-2" target="_blank" rel="noopener">Ielmini &amp; Wong, In-memory computing with resistive switching devices</a></li>
 <li><a href="https://www.nature.com/articles/s41563-019-0291-x" target="_blank" rel="noopener">Xia &amp; Yang, Memristive crossbar arrays for brain-inspired computing</a></li>

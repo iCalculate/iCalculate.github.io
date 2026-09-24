@@ -10,58 +10,53 @@
 </blockquote>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandgap_in_semiconductor.svg" alt="Valence band, band gap, and conduction band"></p>
 <p><em>Figure 1 | Conceptual band-gap diagram. Pieter Kuiper, public domain; <a href="https://commons.wikimedia.org/wiki/File:Bandgap_in_semiconductor.svg" target="_blank" rel="noopener">source and license</a>. It is not a quantitative \(E(k)\) dispersion.</em></p>
-<h2 id="From-a-Crystal-to-Energy-Bands"><a href="#From-a-Crystal-to-Energy-Bands" class="headerlink" title="From a Crystal to Energy Bands"></a>From a Crystal to Energy Bands</h2><p>Atomic levels broaden into bands when many atoms form a periodic lattice. Bloch’s theorem writes the eigenstates as</p>
+<h2 id="From-a-Crystal-to-Energy-Bands">From a Crystal to Energy Bands</h2>
+<p>Atomic levels broaden into bands when many atoms form a periodic lattice. Bloch’s theorem writes the eigenstates as</p>
 <div class="math-display">\[\psi_{n\mathbf{k}}(\mathbf r)=u_{n\mathbf{k}}(\mathbf r)e^{i\mathbf{k}\cdot\mathbf r}.\]</div>
-
 <p>Near a band edge, the dispersion is often approximated by</p>
 <div class="math-display">\[E_c(\mathbf k)\approx E_c+\frac{\hbar^2k^2}{2m_n^*},\qquad
 E_v(\mathbf k)\approx E_v-\frac{\hbar^2k^2}{2m_p^*}.\]</div>
-
 <p>The effective mass compresses the influence of the periodic crystal potential into a measurable parameter. It controls density of states, mobility, tunneling probability, and quantum-confinement scales.</p>
-<h2 id="Density-of-States-and-Occupation"><a href="#Density-of-States-and-Occupation" class="headerlink" title="Density of States and Occupation"></a>Density of States and Occupation</h2><p>For a three-dimensional parabolic band,</p>
+<h2 id="Density-of-States-and-Occupation">Density of States and Occupation</h2>
+<p>For a three-dimensional parabolic band,</p>
 <div class="math-display">\[N_C=2\left(\frac{2\pi m_n^*kT}{h^2}\right)^{3/2},\qquad
 N_V=2\left(\frac{2\pi m_p^*kT}{h^2}\right)^{3/2}.\]</div>
-
 <p>Fermions occupy these states according to</p>
 <div class="math-display">\[f(E)=\frac{1}{1+\exp[(E-E_F)/kT]}.\]</div>
-
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fermi-Verteilung_%28Temperatur%29.svg" alt="Fermi–Dirac distributions at several temperatures"></p>
 <p><em>Figure 2 | Temperature broadens the occupation within a few \(kT\) of \(E_F\), while \(f(E_F)=1/2\). Cepheiden, public domain; <a href="https://commons.wikimedia.org/wiki/File:Fermi-Verteilung_(Temperatur).svg" target="_blank" rel="noopener">source</a>.</em></p>
 <p>For a nondegenerate semiconductor,</p>
 <div class="math-display">\[n=N_Ce^{-(E_C-E_F)/kT},\qquad
 p=N_Ve^{-(E_F-E_V)/kT},\]</div>
-
 <p>and therefore</p>
 <div class="math-display">\[np=n_i^2,\qquad n_i=\sqrt{N_CN_V}e^{-E_g/(2kT)}.\]</div>
-
 <p>The mass-action law applies directly only in thermal equilibrium. Under nonequilibrium conditions, electron and hole quasi-Fermi levels replace the single \(E_F\).</p>
-<h2 id="Doping-and-Charge-Neutrality"><a href="#Doping-and-Charge-Neutrality" class="headerlink" title="Doping and Charge Neutrality"></a>Doping and Charge Neutrality</h2><p>Donors and acceptors introduce levels near the band edges. The general neutrality condition is</p>
+<h2 id="Doping-and-Charge-Neutrality">Doping and Charge Neutrality</h2>
+<p>Donors and acceptors introduce levels near the band edges. The general neutrality condition is</p>
 <div class="math-display">\[p+N_D^+=n+N_A^-.\]</div>
-
 <p>For shallow, fully ionized dopants with \(N_D\gg n_i\), an n-type sample has \(n\approx N_D-N_A\) and \(p=n_i^2/n\). Doping does not itself “create current”; it moves the Fermi level and changes the carrier reservoir. A field or electrochemical-potential gradient is still required for current.</p>
-<h2 id="The-Grammar-of-Band-Diagrams"><a href="#The-Grammar-of-Band-Diagrams" class="headerlink" title="The Grammar of Band Diagrams"></a>The Grammar of Band Diagrams</h2><p>Band edges follow the electrostatic potential:</p>
+<h2 id="The-Grammar-of-Band-Diagrams">The Grammar of Band Diagrams</h2>
+<p>Band edges follow the electrostatic potential:</p>
 <div class="math-display">\[E_C(x),E_V(x),E_i(x)=\text{constant}-q\psi(x),\qquad
 \mathcal E=\frac{1}{q}\frac{dE_i}{dx}.\]</div>
-
 <p>Band slope therefore encodes electric field, while a flat equilibrium Fermi level encodes zero net current. These two rules underlie the <a href="/knowledge/nodes/pn-junction-physics/">PN junction</a>, <a href="/knowledge/nodes/metal-semiconductor-contact/">Schottky contact</a>, and MOS analysis.</p>
-<h2 id="Common-Pitfalls"><a href="#Common-Pitfalls" class="headerlink" title="Common Pitfalls"></a>Common Pitfalls</h2><ul>
+<h2 id="Common-Pitfalls">Common Pitfalls</h2>
+<ul>
 <li>A hole is an effective degree of freedom associated with a missing valence electron, not a fundamental positive particle.</li>
 <li>\(E_F\) is not generally the highest occupied electron energy; that simplified interpretation holds at \(T=0\).</li>
 <li>Band gap alone does not determine conductivity; carrier density, mobility, defects, and contacts also matter.</li>
 <li>Degenerate doping requires Fermi integrals and may require band-gap narrowing and many-body corrections.</li>
 </ul>
 <!--deep-classical:en-->
-
-<h2 id="From-dispersion-to-charge-density"><a href="#From-dispersion-to-charge-density" class="headerlink" title="From dispersion to charge density"></a>From dispersion to charge density</h2><p>For a 3D parabolic conduction band, counting \(k\) states inside a sphere gives</p>
+<h2 id="From-dispersion-to-charge-density">From dispersion to charge density</h2>
+<p>For a 3D parabolic conduction band, counting \(k\) states inside a sphere gives</p>
 <div class="math-display">\[D_c(E)=\frac{g_vm_d^{3/2}}{\sqrt2\pi^2\hbar^3}\sqrt{E-E_c}.\]</div>
-
 <p>Carrier density is an occupation integral, \(n=\int D_c(E)f(E)dE=N_CF_{1/2}(\eta_n)\).  Only in the nondegenerate limit \(\eta_n=(E_F-E_C)/k_BT\ll-1\) does this reduce to \(n=N_Ce^{\eta_n}\).  Charge neutrality,</p>
 <div class="math-display">\[n+N_A^-=p+N_D^+,\]</div>
-
 <p>then determines \(E_F\); incomplete ionization and band-gap narrowing must be added at low temperature or heavy doping.  In 2D a parabolic band has step-like DOS, while a Dirac band has \(D(E)\propto|E|\), so dimensionality changes both quantum capacitance and how rapidly charge appears at a band edge.</p>
 <!--/deep-classical:en-->
-
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<h2 id="References">References</h2>
+<ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapter 1.</li>
 <li>C. Hu, <em>Modern Semiconductor Devices for Integrated Circuits</em>, Chapters 1–2.</li>
 </ol>
@@ -70,59 +65,54 @@ p=N_Ve^{-(E_F-E_V)/kT},\]</div>
 </blockquote>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandgap_in_semiconductor.svg" alt="半导体价带、禁带与导带示意图"></p>
 <p><em>图 1｜价带、禁带和导带。原图：Pieter Kuiper，公有领域；<a href="https://commons.wikimedia.org/wiki/File:Bandgap_in_semiconductor.svg" target="_blank" rel="noopener">文件页与许可</a>。这是概念图，不表达真实材料的 \(E(k)\) 色散。</em></p>
-<h2 id="1-从晶体到能带"><a href="#1-从晶体到能带" class="headerlink" title="1. 从晶体到能带"></a>1. 从晶体到能带</h2><p>孤立原子的能级离散；大量原子形成周期晶格后，外层轨道耦合，原子能级展宽成能带。布洛赫定理给出周期势中的波函数</p>
+<h2 id="1-从晶体到能带">1. 从晶体到能带</h2>
+<p>孤立原子的能级离散；大量原子形成周期晶格后，外层轨道耦合，原子能级展宽成能带。布洛赫定理给出周期势中的波函数</p>
 <div class="math-display">\[\psi_{n\mathbf{k}}(\mathbf r)=u_{n\mathbf{k}}(\mathbf r)e^{i\mathbf{k}\cdot\mathbf r}.\]</div>
-
 <p>在带边附近常用抛物线近似</p>
 <div class="math-display">\[E_c(\mathbf k)\approx E_c+\frac{\hbar^2 k^2}{2m_n^*},\qquad
 E_v(\mathbf k)\approx E_v-\frac{\hbar^2 k^2}{2m_p^*}.\]</div>
-
 <p>有效质量 \(m^*\) 把晶格周期势的影响压缩进一个实验可测的参数。它控制态密度、迁移率、隧穿概率和量子限域尺度。</p>
-<h2 id="2-态密度与占据概率"><a href="#2-态密度与占据概率" class="headerlink" title="2. 态密度与占据概率"></a>2. 态密度与占据概率</h2><p>三维抛物线能带的有效态密度为</p>
+<h2 id="2-态密度与占据概率">2. 态密度与占据概率</h2>
+<p>三维抛物线能带的有效态密度为</p>
 <div class="math-display">\[N_C=2\left(\frac{2\pi m_n^*kT}{h^2}\right)^{3/2},\qquad
 N_V=2\left(\frac{2\pi m_p^*kT}{h^2}\right)^{3/2}.\]</div>
-
 <p>费米–狄拉克分布为</p>
 <div class="math-display">\[f(E)=\frac{1}{1+\exp[(E-E_F)/kT]}.\]</div>
-
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fermi-Verteilung_%28Temperatur%29.svg" alt="不同温度下的费米–狄拉克分布"></p>
 <p><em>图 2｜温度使费米面附近约数个 \(kT\) 的占据发生展宽；始终有 \(f(E_F)=1/2\)。原图：Cepheiden，公有领域；<a href="https://commons.wikimedia.org/wiki/File:Fermi-Verteilung_(Temperatur).svg" target="_blank" rel="noopener">文件页</a>。</em></p>
 <p>非简并半导体满足 \(E_C-E_F\gtrsim3kT\)、\(E_F-E_V\gtrsim3kT\) 时，可用 Maxwell–Boltzmann 近似：</p>
 <div class="math-display">\[n=N_Ce^{-(E_C-E_F)/kT},\qquad
 p=N_Ve^{-(E_F-E_V)/kT}.\]</div>
-
 <p>于是</p>
 <div class="math-display">\[np=n_i^2,\qquad
 n_i=\sqrt{N_CN_V}\,e^{-E_g/(2kT)}.\]</div>
-
 <p>质量作用定律只对<strong>热平衡、同一温度</strong>的非简并半导体直接成立；非平衡时要改用准费米能级。</p>
-<h2 id="3-掺杂与电中性"><a href="#3-掺杂与电中性" class="headerlink" title="3. 掺杂与电中性"></a>3. 掺杂与电中性</h2><p>施主和受主引入靠近带边的杂质能级。一般电中性条件是</p>
+<h2 id="3-掺杂与电中性">3. 掺杂与电中性</h2>
+<p>施主和受主引入靠近带边的杂质能级。一般电中性条件是</p>
 <div class="math-display">\[p+N_D^+=n+N_A^-.\]</div>
-
 <p>在室温、浅能级近似完全电离且 \(N_D\gg n_i\) 时，n 型材料有 \(n\approx N_D-N_A\)、\(p=n_i^2/n\)。这不是“掺杂直接提供电流”，而是掺杂移动 \(E_F\)、改变平衡载流子库；电流仍需电场或电化学势梯度驱动。</p>
-<h2 id="4-能带图的物理语法"><a href="#4-能带图的物理语法" class="headerlink" title="4. 能带图的物理语法"></a>4. 能带图的物理语法</h2><p>带边随静电势移动：</p>
+<h2 id="4-能带图的物理语法">4. 能带图的物理语法</h2>
+<p>带边随静电势移动：</p>
 <div class="math-display">\[E_C(x),E_V(x),E_i(x)=\text{常数}-q\psi(x),\qquad
 \mathcal E(x)=-\frac{d\psi}{dx}=\frac{1}{q}\frac{dE_i}{dx}.\]</div>
-
 <p>因此能带斜率编码电场；平衡费米能级水平则编码“无净电流”。<a href="/knowledge/nodes/pn-junction-physics/">PN结：空间电荷、能带与整流</a>、<a href="/knowledge/nodes/metal-semiconductor-contact/">金属-半导体接触与肖特基势垒</a>及 MOS 结构的分析都从这两条规则开始。</p>
-<h2 id="5-常见误区"><a href="#5-常见误区" class="headerlink" title="5. 常见误区"></a>5. 常见误区</h2><ul>
+<h2 id="5-常见误区">5. 常见误区</h2>
+<ul>
 <li>空穴不是一个真实正粒子，而是近满价带中缺失电子的有效自由度。</li>
 <li>\(E_F\) 不是“电子实际占据的最高能量”；只有 \(T=0\) 时才有这种简化解释。</li>
 <li>禁带宽度不等于唯一的导电性指标；载流子浓度、迁移率、缺陷和接触同样关键。</li>
 <li>简并掺杂下不能继续使用指数形式，必须计算费米积分并考虑带隙变窄等效应。</li>
 </ul>
 <!--deep-classical:zh-->
-
-<h2 id="从色散关系到电荷密度"><a href="#从色散关系到电荷密度" class="headerlink" title="从色散关系到电荷密度"></a>从色散关系到电荷密度</h2><p>对三维抛物型导带，在 \(k\) 空间球内计数得到</p>
+<h2 id="从色散关系到电荷密度">从色散关系到电荷密度</h2>
+<p>对三维抛物型导带，在 \(k\) 空间球内计数得到</p>
 <div class="math-display">\[D_c(E)=\frac{g_vm_d^{3/2}}{\sqrt2\pi^2\hbar^3}\sqrt{E-E_c}.\]</div>
-
 <p>载流子密度是占据积分 \(n=\int D_c(E)f(E)dE=N_CF_{1/2}(\eta_n)\)。只有非简并极限 \(\eta_n=(E_F-E_C)/k_BT\ll-1\) 才化为 \(n=N_Ce^{\eta_n}\)。再由电中性条件</p>
 <div class="math-display">\[n+N_A^-=p+N_D^+\]</div>
-
 <p>确定 \(E_F\)；低温或重掺杂时还需加入不完全电离与带隙收窄。二维抛物带具有阶梯态密度，Dirac 带则满足 \(D(E)\propto|E|\)，因此维度会改变量子电容以及带边出现电荷的速度。</p>
 <!--/deep-classical:zh-->
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<h2 id="参考">参考</h2>
+<ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapter 1.</li>
 <li>C. Hu, <em>Modern Semiconductor Devices for Integrated Circuits</em>, Chapters 1–2.</li>
 </ol>
