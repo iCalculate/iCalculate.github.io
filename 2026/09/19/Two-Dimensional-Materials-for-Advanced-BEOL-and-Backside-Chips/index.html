@@ -465,87 +465,69 @@ height:50vh;
 <section class="lang-panel lang-en" lang="en">
 <p>The transistor is only one part of a chip. Once billions of transistors must communicate and receive power, the metal and insulating layers around them become a performance limit of their own. A 2026 <em>Nature Nanotechnology</em> Review by Wang and colleagues asks a useful question: where can atomically thin materials help the entire chip stack, from interconnect wires to the wafer backside?</p>
 <!--more-->
+
 <p><img src="/images/2d-beol-backside/review-figure-1.webp" alt="Figure 1 from Wang et al showing two-dimensional material applications across the chip stack"></p>
 <p><em>Figure 1 from <a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">Wang et al., Nature Nanotechnology (2026)</a>. Read downward from BEOL interconnects and transistors through FEOL devices to backside transistors and power delivery. The three callouts on the right are also the Review’s three main themes.</em></p>
-<h2 id="First-locate-the-bottleneck">First, locate the bottleneck</h2>
-<p><strong>Front-end-of-line (FEOL)</strong> fabrication makes transistors. <strong>Back-end-of-line (BEOL)</strong> fabrication connects them with repeated layers of metal wires, vias and insulating dielectrics. A <strong>backside power-delivery network (BSPDN)</strong> moves some power-routing infrastructure below the active devices, leaving more frontside routing space for signals. “Backside” describes a physical location, not another top metal layer.</p>
-<p>Shrinking a wire narrows its conducting cross-section, while neighboring wires move closer together. To first order, a wire of length $L$, width $w$ and height $h$ has resistance $R\approx\rho L/(wh)$; simplified sidewall capacitance between wires separated by $s$ scales as $C\propto\varepsilon_0 kLh/s$. Real layouts add fringing fields, vias and geometry effects, but the direction is clear: smaller wires raise $R$, tighter spacing raises $C$, and the delay scale $RC$ worsens. Joule heating and electromigration add reliability costs. Crucially, copper’s resistivity $\rho$ itself rises in very narrow wires because electrons scatter more at surfaces and grain boundaries. The Review cites a more than threefold increase when Cu linewidth falls from 40 to 10 nm.</p>
+<h2 id="First-locate-the-bottleneck"><a href="#First-locate-the-bottleneck" class="headerlink" title="First, locate the bottleneck"></a>First, locate the bottleneck</h2><p><strong>Front-end-of-line (FEOL)</strong> fabrication makes transistors. <strong>Back-end-of-line (BEOL)</strong> fabrication connects them with repeated layers of metal wires, vias and insulating dielectrics. A <strong>backside power-delivery network (BSPDN)</strong> moves some power-routing infrastructure below the active devices, leaving more frontside routing space for signals. “Backside” describes a physical location, not another top metal layer.</p>
+<p>Shrinking a wire narrows its conducting cross-section, while neighboring wires move closer together. To first order, a wire of length $L$, width $w$ and height $h$ has resistance $R\approx\rho L&#x2F;(wh)$; simplified sidewall capacitance between wires separated by $s$ scales as $C\propto\varepsilon_0 kLh&#x2F;s$. Real layouts add fringing fields, vias and geometry effects, but the direction is clear: smaller wires raise $R$, tighter spacing raises $C$, and the delay scale $RC$ worsens. Joule heating and electromigration add reliability costs. Crucially, copper’s resistivity $\rho$ itself rises in very narrow wires because electrons scatter more at surfaces and grain boundaries. The Review cites a more than threefold increase when Cu linewidth falls from 40 to 10 nm.</p>
 <p><img src="/images/2d-beol-backside/review-figure-2.webp" alt="Figure 2 from Wang et al comparing copper interconnect scaling and two-dimensional material options"></p>
 <p><em>Figure 2 from <a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">Wang et al. (2026)</a>. Panels a–b explain scattering and the $R$–$C$ geometry; c–d compare data from different materials and conditions; e shows three graphene integration concepts. In c, doped-graphene points are experimental, while the Cu curves are simulated.</em></p>
-<h2 id="Interconnect-materials-wire-cap-liner-and-barrier">Interconnect materials: wire, cap, liner and barrier</h2>
-<p>The Review first treats the conducting wire itself, then the layers protecting it. These are related but distinct interventions: a thin liner can improve a Cu wire even if Cu remains the conductor.</p>
-<h3 id="Interconnect-wires">Interconnect wires</h3>
-<p><strong>Doped multilayer graphene</strong> is a candidate for extremely narrow local wires. In Figure 2c, measured FeCl₃-doped graphene is compared with simulated Cu references at specified thicknesses and aspect ratios. Below roughly 40 nm, the graphene trend is encouraging, but this comparison does <strong>not</strong> establish that every graphene wire beats every production Cu wire. Graphene conducts best along its layers, so their orientation must match the current path: horizontal for a lateral wire, potentially vertical for a via. Film continuity in deep trenches, metal-to-graphene contact resistance and defect-controlled low-temperature growth all affect a complete route. High-temperature direct growth conflicts with the BEOL thermal budget; transfer adds cost and damage risk. Figure 2d places graphene beside metallic 2D compounds, delafossite oxides and topological semimetals, which remain at different stages of process development.</p>
-<h3 id="Capping-liner-and-diffusion-barrier">Capping, liner and diffusion barrier</h3>
-<p>A <strong>capping layer</strong> sits above a Cu wire. Graphene caps can reduce Cu surface scattering and impede electromigration, while amorphous BN offers low permittivity, low leakage and Cu-diffusion resistance. The cap still has to survive oxidation and later processing; the Review discusses hybrid graphene/oxide or nitride caps as one response.</p>
-<p>A <strong>liner</strong> improves adhesion to the surrounding dielectric, while a <strong>barrier</strong> suppresses Cu-ion diffusion. As the trench shrinks, a conventional 3–4 nm Ta/TaN-type liner/barrier occupies a growing fraction of it. For a 20 nm-wide example, the Review estimates that an atomically thin substitute could raise Cu’s cross-sectional occupation from about 65% to about 90%. Graphene and hexagonal BN can block diffusion but face Cu adhesion or process-temperature issues. MoS₂, WS₂ and layered TaSₓ offer different wetting, adhesion and conformality trade-offs: the Review cites 1.5 nm TaSₓ as a replacement for a 4 nm TaN/Ta stack, and a 0.7 nm WS₂ monolayer with good high-aspect-ratio coverage. Its Table 1 compares deposition temperature, thickness, resistivity, adhesion and stress lifetime. Results measured under different stresses cannot simply be ranked by one lifetime number. A useful barrier must also survive deposition, patterning, polishing and electrical stress.</p>
-<h2 id="Filling-dielectrics-local-low-k-versus-global-heat-flow">Filling dielectrics: local low-k versus global heat flow</h2>
-<p>An ideal filling dielectric has low relative permittivity $k$ (small parasitic $C$), strong mechanics and high thermal conductivity. Porosity lowers $k$ but tends to weaken the material, impair heat flow and complicate polishing. Figure 3a–c therefore compares $k$ with density, Young’s modulus and thermal conductivity, rather than choosing a material on $k$ alone. The Review highlights PECVD amorphous boron nitride (<strong>a-BN</strong>) as a promising <strong>local-interconnect</strong> compromise: reported $k$ values span 1.78–3.30 with comparatively robust density and modulus. 2D covalent organic frameworks can reach even lower $k$, but their low density raises mechanical questions.</p>
+<h2 id="Interconnect-materials-wire-cap-liner-and-barrier"><a href="#Interconnect-materials-wire-cap-liner-and-barrier" class="headerlink" title="Interconnect materials: wire, cap, liner and barrier"></a>Interconnect materials: wire, cap, liner and barrier</h2><p>The Review first treats the conducting wire itself, then the layers protecting it. These are related but distinct interventions: a thin liner can improve a Cu wire even if Cu remains the conductor.</p>
+<h3 id="Interconnect-wires"><a href="#Interconnect-wires" class="headerlink" title="Interconnect wires"></a>Interconnect wires</h3><p><strong>Doped multilayer graphene</strong> is a candidate for extremely narrow local wires. In Figure 2c, measured FeCl₃-doped graphene is compared with simulated Cu references at specified thicknesses and aspect ratios. Below roughly 40 nm, the graphene trend is encouraging, but this comparison does <strong>not</strong> establish that every graphene wire beats every production Cu wire. Graphene conducts best along its layers, so their orientation must match the current path: horizontal for a lateral wire, potentially vertical for a via. Film continuity in deep trenches, metal-to-graphene contact resistance and defect-controlled low-temperature growth all affect a complete route. High-temperature direct growth conflicts with the BEOL thermal budget; transfer adds cost and damage risk. Figure 2d places graphene beside metallic 2D compounds, delafossite oxides and topological semimetals, which remain at different stages of process development.</p>
+<h3 id="Capping-liner-and-diffusion-barrier"><a href="#Capping-liner-and-diffusion-barrier" class="headerlink" title="Capping, liner and diffusion barrier"></a>Capping, liner and diffusion barrier</h3><p>A <strong>capping layer</strong> sits above a Cu wire. Graphene caps can reduce Cu surface scattering and impede electromigration, while amorphous BN offers low permittivity, low leakage and Cu-diffusion resistance. The cap still has to survive oxidation and later processing; the Review discusses hybrid graphene&#x2F;oxide or nitride caps as one response.</p>
+<p>A <strong>liner</strong> improves adhesion to the surrounding dielectric, while a <strong>barrier</strong> suppresses Cu-ion diffusion. As the trench shrinks, a conventional 3–4 nm Ta&#x2F;TaN-type liner&#x2F;barrier occupies a growing fraction of it. For a 20 nm-wide example, the Review estimates that an atomically thin substitute could raise Cu’s cross-sectional occupation from about 65% to about 90%. Graphene and hexagonal BN can block diffusion but face Cu adhesion or process-temperature issues. MoS₂, WS₂ and layered TaSₓ offer different wetting, adhesion and conformality trade-offs: the Review cites 1.5 nm TaSₓ as a replacement for a 4 nm TaN&#x2F;Ta stack, and a 0.7 nm WS₂ monolayer with good high-aspect-ratio coverage. Its Table 1 compares deposition temperature, thickness, resistivity, adhesion and stress lifetime. Results measured under different stresses cannot simply be ranked by one lifetime number. A useful barrier must also survive deposition, patterning, polishing and electrical stress.</p>
+<h2 id="Filling-dielectrics-local-low-k-versus-global-heat-flow"><a href="#Filling-dielectrics-local-low-k-versus-global-heat-flow" class="headerlink" title="Filling dielectrics: local low-k versus global heat flow"></a>Filling dielectrics: local low-k versus global heat flow</h2><p>An ideal filling dielectric has low relative permittivity $k$ (small parasitic $C$), strong mechanics and high thermal conductivity. Porosity lowers $k$ but tends to weaken the material, impair heat flow and complicate polishing. Figure 3a–c therefore compares $k$ with density, Young’s modulus and thermal conductivity, rather than choosing a material on $k$ alone. The Review highlights PECVD amorphous boron nitride (<strong>a-BN</strong>) as a promising <strong>local-interconnect</strong> compromise: reported $k$ values span 1.78–3.30 with comparatively robust density and modulus. 2D covalent organic frameworks can reach even lower $k$, but their low density raises mechanical questions.</p>
 <p>For more widely spaced <strong>global interconnects</strong>, the paper gives thermal conduction greater weight. Polycrystalline BN and AlN become attractive under compatible thermal budgets. A cited PECVD BN film reached 5.5 W m⁻¹ K⁻¹; the paper also reports cross-plane thermal conductivity up to 90 W m⁻¹ K⁻¹ for low-temperature polycrystalline AlN. Figure 3d plots thermal conductivity against growth temperature, reminding us that a high-conductivity crystal synthesized too hot may be unusable above finished CMOS. These numbers belong to particular films and conditions, not constants for every process.</p>
 <p><img src="/images/2d-beol-backside/review-figure-3.webp" alt="Figure 3 from Wang et al comparing dielectric constant density modulus thermal conductivity and growth temperature"></p>
 <p><em>Figure 3 from <a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">Wang et al. (2026)</a>. Panels a–c show the local-interconnect trade-off; panel d adds deposition temperature for global-interconnect heat-spreading candidates.</em></p>
-<h2 id="Two-dimensional-devices-above-and-below-silicon">Two-dimensional devices above and below silicon</h2>
-<p>Two-dimensional transition-metal dichalcogenides (TMDs) such as MoS₂, WS₂ and WSe₂ have thin channels with strong electrostatic control. They are candidates for <strong>monolithic 3D integration</strong>: making useful devices above an already fabricated transistor layer so logic and memory sit closer together. The constraint is the BEOL thermal budget, described by the Review as roughly below 450 °C; growth, transfer and later processing must avoid damaging existing circuitry. Some wafer-scale monolayer MoS₂ devices have been deposited below 300 °C. That is a meaningful process result, not proof that a complete memory stack is production ready.</p>
-<p>Figure 4a compares field-effect mobility and on/off ratio for 2D and oxide channels. The n-type groups overlap substantially, but p-type WSe₂ and MoTe₂ occupy a more promising region than many p-type oxides. Figure 4b shifts attention to <strong>contact resistance</strong>: a thin channel cannot deliver high drive current if carriers encounter a poor metal contact. Doping and contact engineering therefore matter alongside the intrinsic channel. The dotted quantum-limit line is a benchmark, not a claim that every measured device has reached it.</p>
+<h2 id="Two-dimensional-devices-above-and-below-silicon"><a href="#Two-dimensional-devices-above-and-below-silicon" class="headerlink" title="Two-dimensional devices above and below silicon"></a>Two-dimensional devices above and below silicon</h2><p>Two-dimensional transition-metal dichalcogenides (TMDs) such as MoS₂, WS₂ and WSe₂ have thin channels with strong electrostatic control. They are candidates for <strong>monolithic 3D integration</strong>: making useful devices above an already fabricated transistor layer so logic and memory sit closer together. The constraint is the BEOL thermal budget, described by the Review as roughly below 450 °C; growth, transfer and later processing must avoid damaging existing circuitry. Some wafer-scale monolayer MoS₂ devices have been deposited below 300 °C. That is a meaningful process result, not proof that a complete memory stack is production ready.</p>
+<p>Figure 4a compares field-effect mobility and on&#x2F;off ratio for 2D and oxide channels. The n-type groups overlap substantially, but p-type WSe₂ and MoTe₂ occupy a more promising region than many p-type oxides. Figure 4b shifts attention to <strong>contact resistance</strong>: a thin channel cannot deliver high drive current if carriers encounter a poor metal contact. Doping and contact engineering therefore matter alongside the intrinsic channel. The dotted quantum-limit line is a benchmark, not a claim that every measured device has reached it.</p>
 <p><img src="/images/2d-beol-backside/review-figure-4.webp" alt="Figure 4 from Wang et al comparing two-dimensional transistor mobility switching and contact resistance"></p>
 <p><em>Figure 4 from <a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">Wang et al. (2026)</a>. Panel a compares channel switching and mobility; panel b compares contact resistance across different contact schemes.</em></p>
-<h3 id="Memory-in-the-BEOL">Memory in the BEOL</h3>
-<p>The Review distinguishes three memory roles. In <strong>SRAM</strong>, stacked 2D FETs could reduce cell footprint; it cites a two-tier MoS₂ demonstration with a 40% area reduction, while further three-tier savings are projected. In <strong>2T0C embedded DRAM</strong>, a low-leakage 2D write transistor can help charge retention without a separate capacitor, although insufficient read current can hurt sensing margin. In <strong>non-volatile memory</strong>, a 2D transistor can act as a selector, or a 2D material can be the switching medium itself. Each use needs repeatable threshold voltage, contacts, interfaces and array yield, not just one strong device curve.</p>
+<h3 id="Memory-in-the-BEOL"><a href="#Memory-in-the-BEOL" class="headerlink" title="Memory in the BEOL"></a>Memory in the BEOL</h3><p>The Review distinguishes three memory roles. In <strong>SRAM</strong>, stacked 2D FETs could reduce cell footprint; it cites a two-tier MoS₂ demonstration with a 40% area reduction, while further three-tier savings are projected. In <strong>2T0C embedded DRAM</strong>, a low-leakage 2D write transistor can help charge retention without a separate capacitor, although insufficient read current can hurt sensing margin. In <strong>non-volatile memory</strong>, a 2D transistor can act as a selector, or a 2D material can be the switching medium itself. Each use needs repeatable threshold voltage, contacts, interfaces and array yield, not just one strong device curve.</p>
 <p><img src="/images/2d-beol-backside/review-figure-5.webp" alt="Figure 5 from Wang et al showing stacked SRAM 2T0C embedded DRAM selectors and backside power switches"></p>
 <p><em>Figure 5 from <a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">Wang et al. (2026)</a>. Panels a–c cover SRAM, gain-cell eDRAM and selector-based memory; panel d connects backside power delivery to a header switch. The radar plots combine data and modeling from the cited studies and should be read by axis, not as a universal score.</em></p>
-<h3 id="Backside-power-switches">Backside power switches</h3>
-<p>A power-gating switch disconnects an idle logic block from the supply, reducing standby leakage. With BSPDN, moving power rails to the backside reduces competition between power and signal routes. A thin 2D transistor could become a backside <strong>header switch</strong> between $V_{DD}$ and the logic block. The Review points especially to p-type channels such as WSe₂ and MoTe₂, whose reported mobility and switching combinations are more promising than several p-type oxide candidates. Backside processing is even more temperature constrained, typically below 300 °C in the scenarios discussed.</p>
+<h3 id="Backside-power-switches"><a href="#Backside-power-switches" class="headerlink" title="Backside power switches"></a>Backside power switches</h3><p>A power-gating switch disconnects an idle logic block from the supply, reducing standby leakage. With BSPDN, moving power rails to the backside reduces competition between power and signal routes. A thin 2D transistor could become a backside <strong>header switch</strong> between $V_{DD}$ and the logic block. The Review points especially to p-type channels such as WSe₂ and MoTe₂, whose reported mobility and switching combinations are more promising than several p-type oxide candidates. Backside processing is even more temperature constrained, typically below 300 °C in the scenarios discussed.</p>
 <p>The Review also discusses a <strong>simulation</strong> of a monolayer WS₂ backside switch. Compared with a frontside Si power-delivery reference, it projects over 18 times lower off-state current and over ten times lower power consumption. These are architecture- and benchmark-specific model results, <strong>not</strong> measured gains in a manufactured processor. Stable p-type doping, low-resistance contacts, wafer-scale uniformity and integration with the power network remain open engineering problems.</p>
 <p>The paper looks one step beyond power rails to <strong>“Backside 2.0”</strong>: putting more active functions and possibly some signal routing on the back. That could shorten routes and free standard-cell area, but it also complicates vias, thermal paths and double-sided processing. Its value has to be demonstrated in a full circuit layout rather than inferred from the channel mobility of one transistor.</p>
-<h2 id="What-would-make-the-idea-manufacturable">What would make the idea manufacturable?</h2>
-<p>The persuasive path is selective. An ultrathin liner can extend Cu before full wire replacement is justified. Local dielectrics should be judged by $k$, modulus, reliability and heat flow together; global dielectrics need a different weighting. A 2D memory or backside switch must be evaluated at <strong>array and circuit level</strong>, where variability, yield, contacts and thermal paths determine the outcome. The Review calls for low-temperature large-area growth or clean transfer, better characterization, process design kits, compact device models and shared test standards. Those steps turn a materials result into a designable technology.</p>
-<p>The channel is not the only device layer to engineer: emerging 2D <strong>gate dielectrics</strong> could help reduce equivalent oxide thickness without excessive leakage, but the dielectric/semiconductor interface must remain clean and stable. Likewise, vertically stacking devices raises thermal resistance even when each individual 2D sheet can spread heat well. These coupled constraints explain why the Review ends with manufacturing and system integration rather than a single “winning” material.</p>
+<h2 id="What-would-make-the-idea-manufacturable"><a href="#What-would-make-the-idea-manufacturable" class="headerlink" title="What would make the idea manufacturable?"></a>What would make the idea manufacturable?</h2><p>The persuasive path is selective. An ultrathin liner can extend Cu before full wire replacement is justified. Local dielectrics should be judged by $k$, modulus, reliability and heat flow together; global dielectrics need a different weighting. A 2D memory or backside switch must be evaluated at <strong>array and circuit level</strong>, where variability, yield, contacts and thermal paths determine the outcome. The Review calls for low-temperature large-area growth or clean transfer, better characterization, process design kits, compact device models and shared test standards. Those steps turn a materials result into a designable technology.</p>
+<p>The channel is not the only device layer to engineer: emerging 2D <strong>gate dielectrics</strong> could help reduce equivalent oxide thickness without excessive leakage, but the dielectric&#x2F;semiconductor interface must remain clean and stable. Likewise, vertically stacking devices raises thermal resistance even when each individual 2D sheet can spread heat well. These coupled constraints explain why the Review ends with manufacturing and system integration rather than a single “winning” material.</p>
 <p>The useful takeaway is a system view: atomically thin materials can solve <em>different</em> constraints at different heights of a chip, but no single attractive property guarantees a faster finished chip. The real benchmark combines total resistance and capacitance, heat removal, reliability, fabrication compatibility and circuit-level benefit.</p>
-<h3 id="Source-and-reading-note">Source and reading note</h3>
-<p>This bilingual guide follows the order and main figures of Zhengpeng Wang <em>et al.</em>, “<a href="https://www.nature.com/articles/s41565-026-02274-2" target="_blank" rel="noopener">Two-dimensional materials for advanced back-end-of-line and wafer backside technologies</a>,” <em>Nature Nanotechnology</em> (published 17 September 2026), DOI: <a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">10.1038/s41565-026-02274-2</a>. Figures 1–5 above are cropped from the supplied paper and remain the authors’ original figures; the prose translates and condenses its concepts, with experimental and simulated claims distinguished.</p>
+<h3 id="Source-and-reading-note"><a href="#Source-and-reading-note" class="headerlink" title="Source and reading note"></a>Source and reading note</h3><p>This bilingual guide follows the order and main figures of Zhengpeng Wang <em>et al.</em>, “<a href="https://www.nature.com/articles/s41565-026-02274-2" target="_blank" rel="noopener">Two-dimensional materials for advanced back-end-of-line and wafer backside technologies</a>,” <em>Nature Nanotechnology</em> (published 17 September 2026), DOI: <a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">10.1038&#x2F;s41565-026-02274-2</a>. Figures 1–5 above are cropped from the supplied paper and remain the authors’ original figures; the prose translates and condenses its concepts, with experimental and simulated claims distinguished.</p>
 
 </section>
+
 <!-- bilingual:zh -->
 <section class="lang-panel lang-zh" lang="zh-CN" hidden>
 <p>晶体管不是芯片的全部。当数十亿个晶体管需要彼此通信、接收电源时，周围的金属线和绝缘层也会成为独立的性能瓶颈。Wang 等人在 2026 年发表于《自然·纳米技术》的一篇综述提出了一个很好的观察角度：从互连导线一直到晶圆背面，原子级薄的材料究竟能在整片芯片的哪些位置发挥作用？</p>
 <p><img src="/images/2d-beol-backside/review-figure-1.webp" alt="原论文图1展示芯片不同层级中二维材料的用途"></p>
 <p><em>原论文图 1，出自 <a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">Wang 等，《自然·纳米技术》（2026）</a>。从上到下依次看后道互连与晶体管、前道器件、背面晶体管和供电网；右侧三个放大区域也对应综述的三条主线。</em></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="先看清瓶颈在哪里">先看清瓶颈在哪里</div>
-<p>**前道工艺（FEOL）**主要制造晶体管；**后道工艺（BEOL）**通过一层层金属线、通孔和层间介质把晶体管连接起来；**背面供电网络（BSPDN）**则把部分电源布线移到有源器件下方，为正面的信号线腾出空间。这里的“背面”有明确的几何含义，不只是再加一层顶部金属。</p>
-<p>导线变窄，导电截面就会缩小；相邻导线靠近，寄生电容又会上升。对长度 $L$、宽度 $w$、高度 $h$ 的理想化导线，$R\approx\rho L/(wh)$；对间距 $s$ 的相邻线，简化的侧壁电容约满足 $C\propto\varepsilon_0 kLh/s$。真实芯片还要考虑边缘电场、通孔和复杂布局，但趋势足够明确：<strong>缩线宽推高电阻，缩线距推高电容，$RC$ 延迟随之恶化</strong>。焦耳热与电迁移又把问题从速度扩展到可靠性。更棘手的是，铜线极窄时，表面与晶界散射还会使电阻率 $\rho$ 本身升高；综述引用的例子中，线宽从 40 nm 缩到 10 nm，铜电阻率可增加三倍以上。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="先看清瓶颈在哪里"><a href="#先看清瓶颈在哪里" class="headerlink" title="先看清瓶颈在哪里"></a>先看清瓶颈在哪里</div><p>**前道工艺（FEOL）**主要制造晶体管；**后道工艺（BEOL）**通过一层层金属线、通孔和层间介质把晶体管连接起来；**背面供电网络（BSPDN）**则把部分电源布线移到有源器件下方，为正面的信号线腾出空间。这里的“背面”有明确的几何含义，不只是再加一层顶部金属。</p>
+<p>导线变窄，导电截面就会缩小；相邻导线靠近，寄生电容又会上升。对长度 $L$、宽度 $w$、高度 $h$ 的理想化导线，$R\approx\rho L&#x2F;(wh)$；对间距 $s$ 的相邻线，简化的侧壁电容约满足 $C\propto\varepsilon_0 kLh&#x2F;s$。真实芯片还要考虑边缘电场、通孔和复杂布局，但趋势足够明确：<strong>缩线宽推高电阻，缩线距推高电容，$RC$ 延迟随之恶化</strong>。焦耳热与电迁移又把问题从速度扩展到可靠性。更棘手的是，铜线极窄时，表面与晶界散射还会使电阻率 $\rho$ 本身升高；综述引用的例子中，线宽从 40 nm 缩到 10 nm，铜电阻率可增加三倍以上。</p>
 <p><img src="/images/2d-beol-backside/review-figure-2.webp" alt="原论文图2比较铜互连的缩放问题与二维材料方案"></p>
 <p><em>原论文图 2，出自 <a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">Wang 等（2026）</a>。a–b 解释散射和 $R$–$C$ 几何关系；c–d 汇集不同条件下的材料数据；e 展示石墨烯作为覆盖层、阻挡层和导线的三种构想。注意 c 中掺杂石墨烯的数据来自实验，而铜的曲线来自仿真。</em></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="互连材料：导线、覆盖层、衬层与阻挡层">互连材料：导线、覆盖层、衬层与阻挡层</div>
-<p>原综述首先讨论导线本身，再讨论保护它的薄层。二者是不同的改进路径：即使继续使用铜，换上更薄的衬层也可能改善互连。</p>
-<div class="zh-heading zh-h3" role="heading" aria-level="3" id="互连导线">互连导线</div>
-<p><strong>掺杂多层石墨烯</strong>是极窄局部互连的候选材料。论文图 2c 将实测的 FeCl₃ 掺杂石墨烯与在指定厚度、纵横比条件下模拟的铜线比较；低于约 40 nm 时，石墨烯呈现令人关注的缩放趋势。但这<strong>不能</strong>推出“任何石墨烯导线都优于量产铜线”。石墨烯沿层内方向导电最好，因此横向连线与纵向通孔所需的晶层取向并不相同。深沟槽中的连续覆盖、与其他金属的接触电阻，以及低温生长后的缺陷，都会影响整条链路。直接高温生长不适合既有后道热预算，转移又带来成本和损伤风险。图 2d 还把石墨烯与金属型二维化合物、铜铁矿型氧化物、拓扑半金属等放在一起比较；它们的工艺成熟度并不相同。</p>
-<div class="zh-heading zh-h3" role="heading" aria-level="3" id="覆盖层、衬层与扩散阻挡层">覆盖层、衬层与扩散阻挡层</div>
-<p><strong>顶部覆盖层</strong>位于铜线上方。石墨烯覆盖层既可能减少铜表面散射，也能抑制电迁移；非晶 BN 则兼具低介电常数、低漏电与抗铜扩散特性。但覆盖层仍须经受氧化和后续加工，因此综述也讨论了把石墨烯与氧化物、氮化物叠加的复合覆盖结构。</p>
-<p><strong>衬层</strong>改善铜与周围介质的黏附，<strong>阻挡层</strong>抑制铜离子扩散。当沟槽越来越窄，常见的 3–4 nm Ta/TaN 类结构会吃掉越来越多的截面积。综述估算：在一个 20 nm 宽的例子里，若换成原子级薄的替代层，铜在截面中的占比有机会从约 65% 增加到约 90%。石墨烯和六方氮化硼（h-BN）可以阻挡扩散，却要面对铜黏附或生长温度问题。MoS₂、WS₂ 与层状 TaSₓ 则提供了不同的润湿、黏附和共形覆盖取舍；综述举出 1.5 nm TaSₓ 取代 4 nm TaN/Ta 组合，以及 0.7 nm WS₂ 单层实现较好高深宽比覆盖的研究。论文表 1 把沉积温度、厚度、电阻率、黏附性及电应力寿命放到一起比较。不同电场和温度下测得的寿命，不能只凭一个数字直接排名。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="填充介质：局部互连要低-k，全局互连要散热">填充介质：局部互连要低 k，全局互连要散热</div>
-<p>理想的填充介质要同时具有低介电常数 $k$（降低寄生电容）、足够的机械强度和高热导率。单靠增加孔隙降低 $k$，往往会牺牲强度与导热，还可能给抛光工艺带来麻烦。因此图 3a–c 不只比较 $k$，还把密度、杨氏模量和热导率并列考察。综述重点讨论了 PECVD 生长的非晶氮化硼 <strong>a-BN</strong>：所汇集的薄膜结果给出 1.78–3.30 的 $k$ 值，同时保留较好的密度和模量，因此可能适合间距很小的<strong>局部互连</strong>。二维共价有机框架虽能得到更低的 $k$，但低密度也提示机械强度可能不足。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="互连材料：导线、覆盖层、衬层与阻挡层"><a href="#互连材料：导线、覆盖层、衬层与阻挡层" class="headerlink" title="互连材料：导线、覆盖层、衬层与阻挡层"></a>互连材料：导线、覆盖层、衬层与阻挡层</div><p>原综述首先讨论导线本身，再讨论保护它的薄层。二者是不同的改进路径：即使继续使用铜，换上更薄的衬层也可能改善互连。</p>
+<div class="zh-heading zh-h3" role="heading" aria-level="3" id="互连导线"><a href="#互连导线" class="headerlink" title="互连导线"></a>互连导线</div><p><strong>掺杂多层石墨烯</strong>是极窄局部互连的候选材料。论文图 2c 将实测的 FeCl₃ 掺杂石墨烯与在指定厚度、纵横比条件下模拟的铜线比较；低于约 40 nm 时，石墨烯呈现令人关注的缩放趋势。但这<strong>不能</strong>推出“任何石墨烯导线都优于量产铜线”。石墨烯沿层内方向导电最好，因此横向连线与纵向通孔所需的晶层取向并不相同。深沟槽中的连续覆盖、与其他金属的接触电阻，以及低温生长后的缺陷，都会影响整条链路。直接高温生长不适合既有后道热预算，转移又带来成本和损伤风险。图 2d 还把石墨烯与金属型二维化合物、铜铁矿型氧化物、拓扑半金属等放在一起比较；它们的工艺成熟度并不相同。</p>
+<div class="zh-heading zh-h3" role="heading" aria-level="3" id="覆盖层、衬层与扩散阻挡层"><a href="#覆盖层、衬层与扩散阻挡层" class="headerlink" title="覆盖层、衬层与扩散阻挡层"></a>覆盖层、衬层与扩散阻挡层</div><p><strong>顶部覆盖层</strong>位于铜线上方。石墨烯覆盖层既可能减少铜表面散射，也能抑制电迁移；非晶 BN 则兼具低介电常数、低漏电与抗铜扩散特性。但覆盖层仍须经受氧化和后续加工，因此综述也讨论了把石墨烯与氧化物、氮化物叠加的复合覆盖结构。</p>
+<p><strong>衬层</strong>改善铜与周围介质的黏附，<strong>阻挡层</strong>抑制铜离子扩散。当沟槽越来越窄，常见的 3–4 nm Ta&#x2F;TaN 类结构会吃掉越来越多的截面积。综述估算：在一个 20 nm 宽的例子里，若换成原子级薄的替代层，铜在截面中的占比有机会从约 65% 增加到约 90%。石墨烯和六方氮化硼（h-BN）可以阻挡扩散，却要面对铜黏附或生长温度问题。MoS₂、WS₂ 与层状 TaSₓ 则提供了不同的润湿、黏附和共形覆盖取舍；综述举出 1.5 nm TaSₓ 取代 4 nm TaN&#x2F;Ta 组合，以及 0.7 nm WS₂ 单层实现较好高深宽比覆盖的研究。论文表 1 把沉积温度、厚度、电阻率、黏附性及电应力寿命放到一起比较。不同电场和温度下测得的寿命，不能只凭一个数字直接排名。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="填充介质：局部互连要低-k，全局互连要散热"><a href="#填充介质：局部互连要低-k，全局互连要散热" class="headerlink" title="填充介质：局部互连要低 k，全局互连要散热"></a>填充介质：局部互连要低 k，全局互连要散热</div><p>理想的填充介质要同时具有低介电常数 $k$（降低寄生电容）、足够的机械强度和高热导率。单靠增加孔隙降低 $k$，往往会牺牲强度与导热，还可能给抛光工艺带来麻烦。因此图 3a–c 不只比较 $k$，还把密度、杨氏模量和热导率并列考察。综述重点讨论了 PECVD 生长的非晶氮化硼 <strong>a-BN</strong>：所汇集的薄膜结果给出 1.78–3.30 的 $k$ 值，同时保留较好的密度和模量，因此可能适合间距很小的<strong>局部互连</strong>。二维共价有机框架虽能得到更低的 $k$，但低密度也提示机械强度可能不足。</p>
 <p>对间距较大的<strong>全局互连</strong>，论文更重视散热。符合热预算的多晶 BN 和 AlN 因而有吸引力：文中列举一项 PECVD BN 薄膜热导率达 5.5 W m⁻¹ K⁻¹，另一项低温多晶 AlN 薄膜的垂直方向热导率最高达到 90 W m⁻¹ K⁻¹。图 3d 把热导率与生长温度放在同一坐标系：即使某种晶体导热极佳，若制备温度会破坏已完成的 CMOS，它也无法直接放进后道。这些数字是<strong>特定薄膜与测量条件的结果</strong>，并非所有工艺下都成立的材料常数。</p>
 <p><img src="/images/2d-beol-backside/review-figure-3.webp" alt="原论文图3比较填充介质的介电常数密度模量热导率及生长温度"></p>
 <p><em>原论文图 3，出自 <a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">Wang 等（2026）</a>。a–c 呈现局部互连对低 $k$、强度和导热的多重要求；d 在全局互连候选材料中增加了生长温度这一工艺约束。</em></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="二维器件：从后道走向晶圆背面">二维器件：从后道走向晶圆背面</div>
-<p>MoS₂、WS₂、WSe₂ 等二维过渡金属硫族化合物（TMD）的沟道非常薄，栅极仍能较好地控制电流。这让它们适合探索<strong>单片三维集成（M3D）</strong>：在已有器件层之上再制造功能器件，使逻辑与存储更靠近。关键约束是后道热预算；综述讨论的 BEOL 工艺通常要求低于约 450 °C，材料生长、转移和后续加工都不能伤到既有电路。已有低于 300 °C 沉积晶圆级单层 MoS₂ 器件的成果，这是重要的工艺进展，但还不能等同于完整存储堆栈已经可量产。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="二维器件：从后道走向晶圆背面"><a href="#二维器件：从后道走向晶圆背面" class="headerlink" title="二维器件：从后道走向晶圆背面"></a>二维器件：从后道走向晶圆背面</div><p>MoS₂、WS₂、WSe₂ 等二维过渡金属硫族化合物（TMD）的沟道非常薄，栅极仍能较好地控制电流。这让它们适合探索<strong>单片三维集成（M3D）</strong>：在已有器件层之上再制造功能器件，使逻辑与存储更靠近。关键约束是后道热预算；综述讨论的 BEOL 工艺通常要求低于约 450 °C，材料生长、转移和后续加工都不能伤到既有电路。已有低于 300 °C 沉积晶圆级单层 MoS₂ 器件的成果，这是重要的工艺进展，但还不能等同于完整存储堆栈已经可量产。</p>
 <p>图 4a 比较二维沟道与氧化物沟道的场效应迁移率、开关比。n 型候选的分布有不少重叠；p 型 WSe₂ 和 MoTe₂ 则比许多 p 型氧化物处在更有吸引力的区域。图 4b 转而看<strong>接触电阻</strong>：沟道再薄，如果金属接触处的载流子注入困难，也得不到高驱动电流。因此掺杂和接触工程与沟道本身同样关键。图中的量子极限虚线是一条比较基准，不能理解成所有实测器件都已经达到。</p>
 <p><img src="/images/2d-beol-backside/review-figure-4.webp" alt="原论文图4比较二维晶体管的迁移率开关比与接触电阻"></p>
 <p><em>原论文图 4，出自 <a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">Wang 等（2026）</a>。a 比较沟道开关性能与迁移率；b 比较不同接触方案的接触电阻。</em></p>
-<div class="zh-heading zh-h3" role="heading" aria-level="3" id="后道存储">后道存储</div>
-<p>论文区分了三类存储用途。<strong>SRAM</strong> 可以借由堆叠二维 FET 减少单元占地；综述引用一项双层 MoS₂ 实验，其 SRAM 单元面积减少 40%，而三层结构的进一步收益仍属预测。<strong>2T0C 嵌入式 DRAM</strong> 不另设独立电容，利用低漏电的二维写入晶体管改善保持能力，但二维读出晶体管的导通电流不足又可能压缩感测裕量。<strong>非易失存储</strong> 中，二维晶体管可充当选通器件，二维材料也可能直接成为电阻切换介质。无论哪条路线，量产要求的都是阈值电压、接触、界面和阵列良率的可重复性，而非单个器件的一条漂亮曲线。</p>
+<div class="zh-heading zh-h3" role="heading" aria-level="3" id="后道存储"><a href="#后道存储" class="headerlink" title="后道存储"></a>后道存储</div><p>论文区分了三类存储用途。<strong>SRAM</strong> 可以借由堆叠二维 FET 减少单元占地；综述引用一项双层 MoS₂ 实验，其 SRAM 单元面积减少 40%，而三层结构的进一步收益仍属预测。<strong>2T0C 嵌入式 DRAM</strong> 不另设独立电容，利用低漏电的二维写入晶体管改善保持能力，但二维读出晶体管的导通电流不足又可能压缩感测裕量。<strong>非易失存储</strong> 中，二维晶体管可充当选通器件，二维材料也可能直接成为电阻切换介质。无论哪条路线，量产要求的都是阈值电压、接触、界面和阵列良率的可重复性，而非单个器件的一条漂亮曲线。</p>
 <p><img src="/images/2d-beol-backside/review-figure-5.webp" alt="原论文图5展示堆叠SRAM零电容嵌入式DRAM选通器件与背面电源开关"></p>
 <p><em>原论文图 5，出自 <a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">Wang 等（2026）</a>。a–c 分别讨论 SRAM、增益单元 eDRAM 和选通型存储；d 把背面供电与 header 开关连接起来。雷达图整合了所引研究的数据与建模结果，须按各坐标轴理解，而不是当成材料总分。</em></p>
-<div class="zh-heading zh-h3" role="heading" aria-level="3" id="背面电源开关">背面电源开关</div>
-<p>电源门控开关可以暂时切断空闲逻辑模块的供电，降低待机漏电。BSPDN 把电源轨移到背面后，电源和信号不必在正面争夺同一批布线资源。超薄二维晶体管有机会成为位于 $V_{DD}$ 与逻辑模块之间的背面 <strong>header 开关</strong>。综述尤其关注 WSe₂、MoTe₂ 等 p 型沟道：与若干 p 型氧化物候选相比，它们展示了更有吸引力的迁移率与开关比组合。背面工艺的温度限制通常比普通后道更严格，文中相关方案一般低于 300 °C。</p>
+<div class="zh-heading zh-h3" role="heading" aria-level="3" id="背面电源开关"><a href="#背面电源开关" class="headerlink" title="背面电源开关"></a>背面电源开关</div><p>电源门控开关可以暂时切断空闲逻辑模块的供电，降低待机漏电。BSPDN 把电源轨移到背面后，电源和信号不必在正面争夺同一批布线资源。超薄二维晶体管有机会成为位于 $V_{DD}$ 与逻辑模块之间的背面 <strong>header 开关</strong>。综述尤其关注 WSe₂、MoTe₂ 等 p 型沟道：与若干 p 型氧化物候选相比，它们展示了更有吸引力的迁移率与开关比组合。背面工艺的温度限制通常比普通后道更严格，文中相关方案一般低于 300 °C。</p>
 <p>论文还讨论了一项<strong>仿真研究</strong>：以单层 WS₂ 背面开关对比正面硅供电参考方案，模型预测其关态电流可低 18 倍以上、功耗可低 10 倍以上。这个结果依赖具体架构和比较基准，<strong>不是</strong>已经在量产处理器上测到的收益。稳定的 p 型掺杂、低接触电阻、晶圆级均匀性，以及与背面电源网的协同集成，仍是必须解决的工程问题。</p>
 <p>综述进一步谈到 <strong>“Backside 2.0”</strong>：晶圆背面除了供电，还可能容纳更多有源功能，甚至一部分信号布线。这有望缩短路径、释放标准单元面积，但也让通孔、散热和双面加工更加复杂。它的价值必须在完整电路布局中验证，不能仅由某个晶体管的沟道迁移率推断。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="距离可制造技术，还有什么工作？">距离可制造技术，还有什么工作？</div>
-<p>更可信的路径可能是按位置逐步采用。超薄衬层可以先延长铜互连的寿命，再判断是否值得整体换线；局部介质要同时比较 $k$、模量、可靠性与导热，全局介质则需要另一套权重；二维存储和背面开关必须在<strong>阵列与电路层面</strong>检验，因为器件离散性、良率、接触和热路径会左右最终收益。综述强调低温大面积生长或洁净转移、快速材料表征、工艺设计套件、紧凑模型与统一测试标准。这些步骤才能把“好材料”变成设计者真正可以使用的技术。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="距离可制造技术，还有什么工作？"><a href="#距离可制造技术，还有什么工作？" class="headerlink" title="距离可制造技术，还有什么工作？"></a>距离可制造技术，还有什么工作？</div><p>更可信的路径可能是按位置逐步采用。超薄衬层可以先延长铜互连的寿命，再判断是否值得整体换线；局部介质要同时比较 $k$、模量、可靠性与导热，全局介质则需要另一套权重；二维存储和背面开关必须在<strong>阵列与电路层面</strong>检验，因为器件离散性、良率、接触和热路径会左右最终收益。综述强调低温大面积生长或洁净转移、快速材料表征、工艺设计套件、紧凑模型与统一测试标准。这些步骤才能把“好材料”变成设计者真正可以使用的技术。</p>
 <p>器件工程也不能只盯着沟道：新兴的二维<strong>栅介质</strong>有望在控制漏电的同时降低等效氧化层厚度，但介质／半导体界面必须足够洁净、稳定。另一方面，器件层层堆叠会增加热阻，即使单独的二维薄层具备良好的面内导热能力也不能忽略。这些相互牵连的约束，正是综述最后把重点放在制造和系统集成，而非宣布某种材料“获胜”的原因。</p>
 <p>这篇论文最值得带走的是一种<strong>系统视角</strong>：同一类原子级薄材料，可以在芯片的不同高度解决不同约束；但任何一项漂亮的材料指标，都无法单独保证整片芯片更快。最终仍须把总电阻与电容、散热、可靠性、工艺兼容性和电路级收益放在同一张账本上。</p>
-<div class="zh-heading zh-h3" role="heading" aria-level="3" id="原文与阅读说明">原文与阅读说明</div>
-<p>本文按 Zhengpeng Wang 等人的综述“<a href="https://www.nature.com/articles/s41565-026-02274-2" target="_blank" rel="noopener">Two-dimensional materials for advanced back-end-of-line and wafer backside technologies</a>”的顺序与主图展开，发表于 <em>Nature Nanotechnology</em>（2026 年 9 月 17 日），DOI：<a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">10.1038/s41565-026-02274-2</a>。上方图 1–5 均从你提供的论文 PDF 截取，保留作者原图；正文以翻译和梳理为主，并区分实验与仿真结果。</p>
+<div class="zh-heading zh-h3" role="heading" aria-level="3" id="原文与阅读说明"><a href="#原文与阅读说明" class="headerlink" title="原文与阅读说明"></a>原文与阅读说明</div><p>本文按 Zhengpeng Wang 等人的综述“<a href="https://www.nature.com/articles/s41565-026-02274-2" target="_blank" rel="noopener">Two-dimensional materials for advanced back-end-of-line and wafer backside technologies</a>”的顺序与主图展开，发表于 <em>Nature Nanotechnology</em>（2026 年 9 月 17 日），DOI：<a href="https://doi.org/10.1038/s41565-026-02274-2" target="_blank" rel="noopener">10.1038&#x2F;s41565-026-02274-2</a>。上方图 1–5 均从你提供的论文 PDF 截取，保留作者原图；正文以翻译和梳理为主，并区分实验与仿真结果。</p>
 
 </section>
 
@@ -1586,12 +1568,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
         </li>
     
     
@@ -1987,6 +1969,10 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
     
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
+    
         <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
     
         <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
@@ -1997,19 +1983,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
     
-        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
-    
         <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
     
-        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
     
-        <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
+        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
     
         <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
     
-        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
+        <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
     
         <span class="sidebar-tag-name" data-tags="Dark Channel Prior"><span class="iconfont-archer">&#xe606;</span>Dark Channel Prior</span>
     
@@ -2021,33 +2005,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Edge Perception"><span class="iconfont-archer">&#xe606;</span>Edge Perception</span>
     
-        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
-    
-        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
-    
-        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
-    
-        <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
-    
-        <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
-    
         <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
     
         <span class="sidebar-tag-name" data-tags="Optical Properties"><span class="iconfont-archer">&#xe606;</span>Optical Properties</span>
     
         <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
     
+        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+    
         <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
     
         <span class="sidebar-tag-name" data-tags="Device Physics"><span class="iconfont-archer">&#xe606;</span>Device Physics</span>
     
         <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
-    
-        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
-    
-        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
     
         <span class="sidebar-tag-name" data-tags="complex analysis"><span class="iconfont-archer">&#xe606;</span>complex analysis</span>
     
@@ -2057,21 +2031,31 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="field theory"><span class="iconfont-archer">&#xe606;</span>field theory</span>
     
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+    
         <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
     
         <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
     
+        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
+    
         <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
-        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
     
         <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+        <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
     
         <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
     
         <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
     
         <span class="sidebar-tag-name" data-tags="Computational Optics"><span class="iconfont-archer">&#xe606;</span>Computational Optics</span>
     
@@ -2081,7 +2065,7 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Artificial Intelligence"><span class="iconfont-archer">&#xe606;</span>Artificial Intelligence</span>
     
-        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
         <span class="sidebar-tag-name" data-tags="Living Matter"><span class="iconfont-archer">&#xe606;</span>Living Matter</span>
     
@@ -2093,9 +2077,7 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Collective Behavior"><span class="iconfont-archer">&#xe606;</span>Collective Behavior</span>
     
-        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
-    
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
     
         <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
     
@@ -2119,9 +2101,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
     
-        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
-    
         <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
+    
+        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
     
         <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
     
@@ -2129,9 +2111,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
     
-        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
-    
         <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
     
         <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
     
@@ -2176,27 +2158,27 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Scientific/Computer-Vision"><span class="iconfont-archer">&#xe60a;</span>Scientific/Computer-Vision</span>
     
-        <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
-    
         <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
     
         <span class="sidebar-category-name" data-categories="Mathematical-Physics"><span class="iconfont-archer">&#xe60a;</span>Mathematical-Physics</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
     
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+    
+        <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+    
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
     
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
-    
-        <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
-    
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     

@@ -6,37 +6,34 @@
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
 <body class="knowledge-node-page"><header class="node-header"><a class="wordmark" href="/">iCalculate’s Studio</a><nav><a href="/archives/">Archive</a><a href="/knowledge/">Knowledge Atlas</a></nav></header>
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Subthreshold Swing and the Thermal Limit</span><span data-lang="zh" hidden>亚阈值摆幅与热力学极限</span></h1><p class="node-deck"><span data-lang="en">A conventional MOSFET changes current by electrostatically moving a barrier through a thermally broadened Fermi distribution, producing the familiar room-temperature 60 mV/dec lower bound under ideal quasistatic conditions.</span><span data-lang="zh" hidden>传统 MOSFET 通过静电移动势垒并采样热展宽的费米分布，因此在理想准静态条件下出现室温约 60 mV/dec 的下限。</span></p><div class="node-tags"><span>Steep-Slope Devices</span><span>Device Physics</span><span>Fundamental Models</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
-<p><strong>Core idea:</strong> A conventional MOSFET changes current by electrostatically moving a barrier through a thermally broadened Fermi distribution, producing the familiar room-temperature 60 mV/dec lower bound under ideal quasistatic conditions.</p>
+<p><strong>Core idea:</strong> A conventional MOSFET changes current by electrostatically moving a barrier through a thermally broadened Fermi distribution, producing the familiar room-temperature 60 mV&#x2F;dec lower bound under ideal quasistatic conditions.</p>
 </blockquote>
-<h2 id="Physical-Picture">Physical Picture</h2>
-<p>A conventional MOSFET changes current by electrostatically moving a barrier through a thermally broadened Fermi distribution, producing the familiar room-temperature 60 mV/dec lower bound under ideal quasistatic conditions. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
-<h3 id="Where-60-mV-per-decade-comes-from">Where 60 mV per decade comes from</h3>
-<p>For a long-channel MOSFET in weak inversion, the source injects over a barrier whose height is moved by the surface potential \(\psi_s\).  The mobile charge and diffusion current scale as</p>
+<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>A conventional MOSFET changes current by electrostatically moving a barrier through a thermally broadened Fermi distribution, producing the familiar room-temperature 60 mV&#x2F;dec lower bound under ideal quasistatic conditions. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="Where-60-mV-per-decade-comes-from"><a href="#Where-60-mV-per-decade-comes-from" class="headerlink" title="Where 60 mV per decade comes from"></a>Where 60 mV per decade comes from</h3><p>For a long-channel MOSFET in weak inversion, the source injects over a barrier whose height is moved by the surface potential \(\psi_s\).  The mobile charge and diffusion current scale as</p>
 <div class="math-display">\[I_D\propto n_s\propto \exp\!\left(\frac{q\psi_s}{k_BT}\right).\]</div>
+
 <p>The gate voltage is divided between oxide and semiconductor.  Small-signal charge balance gives</p>
 <div class="math-display">\[\frac{dV_G}{d\psi_s}=m=1+\frac{C_{\rm dep}+C_{\rm it}}{C_{\rm ox}},\]</div>
+
 <p>and therefore</p>
 <div class="math-display">\[SS\equiv\frac{dV_G}{d\log_{10}I_D}
 =(\ln10)\frac{k_BT}{q}m.\]</div>
-<p>At 300 K, \((\ln10)k_BT/q=59.6\) mV/dec.  The limit contains two assumptions: the injected distribution has a thermal Boltzmann tail and the internal barrier cannot move faster than the applied gate (\(m\ge1\) for passive positive capacitances).</p>
-<h3 id="How-steep-slope-concepts-change-the-premises">How steep-slope concepts change the premises</h3>
-<p>TFETs replace thermionic injection with a gate-controlled tunnelling window; cold-source FETs truncate the source spectral tail; NCFETs seek \(d\psi_s/dV_G&gt;1\) through a stabilized ferroelectric response.  These are distinct mechanisms and should not be compared by the minimum local slope alone.</p>
-<h3 id="Useful-device-level-integral">Useful device-level integral</h3>
-<p>For a required on/off ratio \(R\), an average swing \(SS_{\rm avg}\) sets the gate-voltage budget</p>
+
+<p>At 300 K, \((\ln10)k_BT/q=59.6\) mV&#x2F;dec.  The limit contains two assumptions: the injected distribution has a thermal Boltzmann tail and the internal barrier cannot move faster than the applied gate (\(m\ge1\) for passive positive capacitances).</p>
+<h3 id="How-steep-slope-concepts-change-the-premises"><a href="#How-steep-slope-concepts-change-the-premises" class="headerlink" title="How steep-slope concepts change the premises"></a>How steep-slope concepts change the premises</h3><p>TFETs replace thermionic injection with a gate-controlled tunnelling window; cold-source FETs truncate the source spectral tail; NCFETs seek \(d\psi_s/dV_G&gt;1\) through a stabilized ferroelectric response.  These are distinct mechanisms and should not be compared by the minimum local slope alone.</p>
+<h3 id="Useful-device-level-integral"><a href="#Useful-device-level-integral" class="headerlink" title="Useful device-level integral"></a>Useful device-level integral</h3><p>For a required on&#x2F;off ratio \(R\), an average swing \(SS_{\rm avg}\) sets the gate-voltage budget</p>
 <div class="math-display">\[\Delta V_G=SS_{\rm avg}\log_{10}R.\]</div>
-<p>A 20 mV/dec minimum over half a decade is irrelevant if six decades require 400 mV.  Report the current interval, temperature scaling, forward/reverse sweeps, capacitance, on-current at fixed \(V_{DD}\), delay \(CV/I\), and device statistics.</p>
-<h2 id="Minimal-Model">Minimal Model</h2>
-<div class="math-display">\[SS=(ln10)kT/q · (1+C_dep/C_ox)\]</div>
+
+<p>A 20 mV&#x2F;dec minimum over half a decade is irrelevant if six decades require 400 mV.  Report the current interval, temperature scaling, forward&#x2F;reverse sweeps, capacitance, on-current at fixed \(V_{DD}\), delay \(CV/I\), and device statistics.</p>
+<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[SS=(ln10)kT/q · (1+C_dep/C_ox)\]</div>
+
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences">Device Consequences</h2>
-<p>TFETs change injection, NCFETs amplify surface potential and cold-source FETs filter the injected energy distribution.</p>
+<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>TFETs change injection, NCFETs amplify surface potential and cold-source FETs filter the injected energy distribution.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
-<p>Sub-60 mV/dec over a narrow current interval does not alone establish useful low-voltage logic; hysteresis, current, capacitance and delay must be reported. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
-<p><strong>Maturity:</strong> Foundation. Connected concepts:</p>
+
+<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>Sub-60 mV&#x2F;dec over a narrow current interval does not alone establish useful low-voltage logic; hysteresis, current, capacitance and delay must be reported. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Foundation. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/mosfet-physics/">mosfet-physics</a></li>
 <li><a href="/knowledge/nodes/emerging-steep-slope-transistors/">emerging-steep-slope-transistors</a></li>
@@ -44,45 +41,41 @@
 <li><a href="/knowledge/nodes/negative-capacitance-field-effect-transistor/">negative-capacitance-field-effect-transistor</a></li>
 <li><a href="/knowledge/nodes/cold-source-field-effect-transistor/">cold-source-field-effect-transistor</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
-<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://onlinelibrary.wiley.com/doi/book/10.1002/0470068329" target="_blank" rel="noopener">Sze &amp; Ng, Physics of Semiconductor Devices, 3rd ed.</a></li>
 <li><a href="https://doi.org/10.1021/nl071804g" target="_blank" rel="noopener">Salahuddin &amp; Datta, Use of negative capacitance for voltage amplification</a></li>
 <li><a href="https://arxiv.org/abs/2010.15702" target="_blank" rel="noopener">Logoteta et al., A cold-source paradigm for steep-slope transistors</a></li>
 </ol>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
-<p>**核心结论：**传统 MOSFET 通过静电移动势垒并采样热展宽的费米分布，因此在理想准静态条件下出现室温约 60 mV/dec 的下限。</p>
+<p>**核心结论：**传统 MOSFET 通过静电移动势垒并采样热展宽的费米分布，因此在理想准静态条件下出现室温约 60 mV&#x2F;dec 的下限。</p>
 </blockquote>
-<h2 id="物理图像">物理图像</h2>
-<p>传统 MOSFET 通过静电移动势垒并采样热展宽的费米分布，因此在理想准静态条件下出现室温约 60 mV/dec 的下限。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
-<h3 id="60-mV-dec-从哪里来">60 mV/dec 从哪里来</h3>
-<p>长沟道 MOSFET 在弱反型区由源端载流子越过势垒注入，势垒高度由表面势 \(\psi_s\) 调节。面载流子密度与扩散电流满足</p>
+<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>传统 MOSFET 通过静电移动势垒并采样热展宽的费米分布，因此在理想准静态条件下出现室温约 60 mV&#x2F;dec 的下限。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="60-mV-dec-从哪里来"><a href="#60-mV-dec-从哪里来" class="headerlink" title="60 mV&#x2F;dec 从哪里来"></a>60 mV&#x2F;dec 从哪里来</h3><p>长沟道 MOSFET 在弱反型区由源端载流子越过势垒注入，势垒高度由表面势 \(\psi_s\) 调节。面载流子密度与扩散电流满足</p>
 <div class="math-display">\[I_D\propto n_s\propto \exp\!\left(\frac{q\psi_s}{k_BT}\right).\]</div>
+
 <p>栅压分配在氧化层和半导体上。小信号电荷平衡给出</p>
 <div class="math-display">\[\frac{dV_G}{d\psi_s}=m=1+\frac{C_{\rm dep}+C_{\rm it}}{C_{\rm ox}},\]</div>
+
 <p>于是</p>
 <div class="math-display">\[SS\equiv\frac{dV_G}{d\log_{10}I_D}
 =(\ln10)\frac{k_BT}{q}m.\]</div>
-<p>300 K 时 \((\ln10)k_BT/q=59.6\) mV/dec。这个极限包含两项前提：注入分布具有热 Boltzmann 高能尾，同时由正电容组成的被动栅堆叠不能使内部势垒移动得比外加栅压更快，即 \(m\ge1\)。</p>
-<h3 id="陡峭亚阈值器件改变了哪条前提">陡峭亚阈值器件改变了哪条前提</h3>
-<p>TFET 用栅控隧穿窗口替代热发射；冷源 FET 截断源端能谱高能尾；NCFET 则试图用稳定化铁电响应实现 \(d\psi_s/dV_G&gt;1\)。三者机制不同，不能只比较一个最小局域斜率。</p>
-<h3 id="从局域斜率回到器件指标">从局域斜率回到器件指标</h3>
-<p>若要求开关比 \(R\)，平均摆幅决定所需栅压范围：</p>
+
+<p>300 K 时 \((\ln10)k_BT/q=59.6\) mV&#x2F;dec。这个极限包含两项前提：注入分布具有热 Boltzmann 高能尾，同时由正电容组成的被动栅堆叠不能使内部势垒移动得比外加栅压更快，即 \(m\ge1\)。</p>
+<h3 id="陡峭亚阈值器件改变了哪条前提"><a href="#陡峭亚阈值器件改变了哪条前提" class="headerlink" title="陡峭亚阈值器件改变了哪条前提"></a>陡峭亚阈值器件改变了哪条前提</h3><p>TFET 用栅控隧穿窗口替代热发射；冷源 FET 截断源端能谱高能尾；NCFET 则试图用稳定化铁电响应实现 \(d\psi_s/dV_G&gt;1\)。三者机制不同，不能只比较一个最小局域斜率。</p>
+<h3 id="从局域斜率回到器件指标"><a href="#从局域斜率回到器件指标" class="headerlink" title="从局域斜率回到器件指标"></a>从局域斜率回到器件指标</h3><p>若要求开关比 \(R\)，平均摆幅决定所需栅压范围：</p>
 <div class="math-display">\[\Delta V_G=SS_{\rm avg}\log_{10}R.\]</div>
-<p>若六个数量级仍需 400 mV，那么只在半个数量级内出现 20 mV/dec 没有系统意义。应同时报告电流区间、温度标度、正反扫描、栅电容、固定 \(V_{DD}\) 下的开态电流、\(CV/I\) 延迟及器件统计。</p>
-<h2 id="最小模型">最小模型</h2>
-<div class="math-display">\[SS=(ln10)kT/q · (1+C_dep/C_ox)\]</div>
+
+<p>若六个数量级仍需 400 mV，那么只在半个数量级内出现 20 mV&#x2F;dec 没有系统意义。应同时报告电流区间、温度标度、正反扫描、栅电容、固定 \(V_{DD}\) 下的开态电流、\(CV/I\) 延迟及器件统计。</p>
+<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[SS=(ln10)kT/q · (1+C_dep/C_ox)\]</div>
+
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义">器件意义</h2>
-<p>TFET 改变注入机制，NCFET 放大表面势，冷源 FET 则过滤注入能量分布。</p>
+<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>TFET 改变注入机制，NCFET 放大表面势，冷源 FET 则过滤注入能量分布。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-<h2 id="限制与判据">限制与判据</h2>
-<p>窄电流区间出现亚 60 mV/dec 并不等于具备实用低压逻辑性能，还必须报告滞回、电流、电容和延迟。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
-<p>**成熟度：**Foundation。关联节点：</p>
+
+<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>窄电流区间出现亚 60 mV&#x2F;dec 并不等于具备实用低压逻辑性能，还必须报告滞回、电流、电容和延迟。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Foundation。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/mosfet-physics/">mosfet-physics</a></li>
 <li><a href="/knowledge/nodes/emerging-steep-slope-transistors/">emerging-steep-slope-transistors</a></li>
@@ -90,8 +83,7 @@
 <li><a href="/knowledge/nodes/negative-capacitance-field-effect-transistor/">negative-capacitance-field-effect-transistor</a></li>
 <li><a href="/knowledge/nodes/cold-source-field-effect-transistor/">cold-source-field-effect-transistor</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
-<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://onlinelibrary.wiley.com/doi/book/10.1002/0470068329" target="_blank" rel="noopener">Sze &amp; Ng, Physics of Semiconductor Devices, 3rd ed.</a></li>
 <li><a href="https://doi.org/10.1021/nl071804g" target="_blank" rel="noopener">Salahuddin &amp; Datta, Use of negative capacitance for voltage amplification</a></li>

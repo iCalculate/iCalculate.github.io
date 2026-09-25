@@ -8,36 +8,29 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Ferroelectric Field-Effect Transistor Memory</span><span data-lang="zh" hidden>铁电场效应晶体管存储器</span></h1><p class="node-deck"><span data-lang="en">A FeFET stores remanent polarization in its gate stack; the polarization charge shifts channel threshold and can be read nondestructively as conductance.</span><span data-lang="zh" hidden>FeFET 在栅堆栈中保存剩余极化，极化电荷移动沟道阈值，并可通过电导进行非破坏读取。</span></p><div class="node-tags"><span>Memory Physics</span><span>Device Physics</span><span>2D Materials</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> A FeFET stores remanent polarization in its gate stack; the polarization charge shifts channel threshold and can be read nondestructively as conductance.</p>
 </blockquote>
-<h2 id="Physical-Picture">Physical Picture</h2>
-<p>A FeFET stores remanent polarization in its gate stack; the polarization charge shifts channel threshold and can be read nondestructively as conductance. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
-<h3 id="Polarization-to-threshold-transduction">Polarization-to-threshold transduction</h3>
-<p>Remanent polarization changes channel electrostatics.  In an ideal stack the two states create a memory-window scale</p>
+<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>A FeFET stores remanent polarization in its gate stack; the polarization charge shifts channel threshold and can be read nondestructively as conductance. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="Polarization-to-threshold-transduction"><a href="#Polarization-to-threshold-transduction" class="headerlink" title="Polarization-to-threshold transduction"></a>Polarization-to-threshold transduction</h3><p>Remanent polarization changes channel electrostatics.  In an ideal stack the two states create a memory-window scale</p>
 <div class="math-display">\[\Delta V_T\sim\frac{2P_r}{C_{stack}},\]</div>
+
 <p>but depolarization, interface charge and semiconductor screening reduce it.  The ferroelectric and interfacial dielectric fields must satisfy displacement continuity \(D=\epsilon E+P\).</p>
-<h3 id="Switching-distribution">Switching distribution</h3>
-<p>Real films switch through nucleation and domain-wall growth rather than coherent rotation.  A distribution of activation fields gives gradual pulse-number-dependent polarization, useful for analogue weights but harmful to binary uniformity.  Merz-type kinetics often obey \(t_{sw}\sim t_0\exp(E_a/E)\) over a limited regime.</p>
-<h3 id="Retention-endurance-and-read-disturb">Retention, endurance and read disturb</h3>
-<p>Depolarization favours back-switching; charge trapping can temporarily compensate polarization but later drift; cycling can create wake-up and fatigue.  Separate polarization switching from trapping using pulse schemes, switching-current integration and retention after removing read bias.  A threshold loop alone cannot identify which state variable is stored.</p>
-<h2 id="Minimal-Model">Minimal Model</h2>
-<div class="math-display">\[ΔV_T≈2P_r/C_stack, modified by depolarization and traps\]</div>
+<h3 id="Switching-distribution"><a href="#Switching-distribution" class="headerlink" title="Switching distribution"></a>Switching distribution</h3><p>Real films switch through nucleation and domain-wall growth rather than coherent rotation.  A distribution of activation fields gives gradual pulse-number-dependent polarization, useful for analogue weights but harmful to binary uniformity.  Merz-type kinetics often obey \(t_{sw}\sim t_0\exp(E_a/E)\) over a limited regime.</p>
+<h3 id="Retention-endurance-and-read-disturb"><a href="#Retention-endurance-and-read-disturb" class="headerlink" title="Retention, endurance and read disturb"></a>Retention, endurance and read disturb</h3><p>Depolarization favours back-switching; charge trapping can temporarily compensate polarization but later drift; cycling can create wake-up and fatigue.  Separate polarization switching from trapping using pulse schemes, switching-current integration and retention after removing read bias.  A threshold loop alone cannot identify which state variable is stored.</p>
+<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[ΔV_T≈2P_r/C_stack, modified by depolarization and traps\]</div>
+
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences">Device Consequences</h2>
-<p>HfO2-based and 2D FeFETs offer compact nonvolatile memory and analogue synaptic weights.</p>
+<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>HfO2-based and 2D FeFETs offer compact nonvolatile memory and analogue synaptic weights.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
-<p>Wake-up, fatigue, imprint, depolarization, interfacial trapping and device-to-device variability must be separated. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
-<p><strong>Maturity:</strong> Prototype. Connected concepts:</p>
+
+<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>Wake-up, fatigue, imprint, depolarization, interfacial trapping and device-to-device variability must be separated. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Prototype. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/two-dimensional-ferroelectricity/">two-dimensional-ferroelectricity</a></li>
 <li><a href="/knowledge/nodes/negative-capacitance-field-effect-transistor/">negative-capacitance-field-effect-transistor</a></li>
 <li><a href="/knowledge/nodes/sliding-ferroelectric-memory-devices/">sliding-ferroelectric-memory-devices</a></li>
 <li><a href="/knowledge/nodes/memory-reliability-and-scaling/">memory-reliability-and-scaling</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
-<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41467-021-21320-2" target="_blank" rel="noopener">Van der Waals engineering of ferroelectric heterostructures for memory</a></li>
 <li><a href="https://www.nature.com/articles/s41467-024-55333-4" target="_blank" rel="noopener">Sliding ferroelectric memories and synapses based on bilayer MoS2</a></li>
@@ -45,36 +38,29 @@
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**FeFET 在栅堆栈中保存剩余极化，极化电荷移动沟道阈值，并可通过电导进行非破坏读取。</p>
 </blockquote>
-<h2 id="物理图像">物理图像</h2>
-<p>FeFET 在栅堆栈中保存剩余极化，极化电荷移动沟道阈值，并可通过电导进行非破坏读取。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
-<h3 id="从极化到阈值位移">从极化到阈值位移</h3>
-<p>剩余极化改变沟道静电。理想堆叠的两种状态产生近似存储窗口</p>
+<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>FeFET 在栅堆栈中保存剩余极化，极化电荷移动沟道阈值，并可通过电导进行非破坏读取。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="从极化到阈值位移"><a href="#从极化到阈值位移" class="headerlink" title="从极化到阈值位移"></a>从极化到阈值位移</h3><p>剩余极化改变沟道静电。理想堆叠的两种状态产生近似存储窗口</p>
 <div class="math-display">\[\Delta V_T\sim\frac{2P_r}{C_{stack}},\]</div>
+
 <p>但退极化、界面电荷与半导体屏蔽会减小它。铁电层和界面介质必须满足位移场连续 \(D=\epsilon E+P\)。</p>
-<h3 id="翻转分布">翻转分布</h3>
-<p>真实薄膜通过成核和畴壁生长而非一致转动翻转。激活场分布使极化随脉冲数逐步变化，这对模拟权重有利，却损害二值均匀性。有限区间内常见 Merz 动力学 \(t_{sw}\sim t_0\exp(E_a/E)\)。</p>
-<h3 id="保持、耐久与读扰动">保持、耐久与读扰动</h3>
-<p>退极化促进回翻；电荷俘获可暂时补偿极化却随后漂移；循环还会产生唤醒与疲劳。应通过脉冲协议、开关电流积分和去除读偏压后的保持测试区分极化翻转与俘获。只有阈值回线不能确定真正存储的状态变量。</p>
-<h2 id="最小模型">最小模型</h2>
-<div class="math-display">\[ΔV_T≈2P_r/C_stack, modified by depolarization and traps\]</div>
+<h3 id="翻转分布"><a href="#翻转分布" class="headerlink" title="翻转分布"></a>翻转分布</h3><p>真实薄膜通过成核和畴壁生长而非一致转动翻转。激活场分布使极化随脉冲数逐步变化，这对模拟权重有利，却损害二值均匀性。有限区间内常见 Merz 动力学 \(t_{sw}\sim t_0\exp(E_a/E)\)。</p>
+<h3 id="保持、耐久与读扰动"><a href="#保持、耐久与读扰动" class="headerlink" title="保持、耐久与读扰动"></a>保持、耐久与读扰动</h3><p>退极化促进回翻；电荷俘获可暂时补偿极化却随后漂移；循环还会产生唤醒与疲劳。应通过脉冲协议、开关电流积分和去除读偏压后的保持测试区分极化翻转与俘获。只有阈值回线不能确定真正存储的状态变量。</p>
+<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[ΔV_T≈2P_r/C_stack, modified by depolarization and traps\]</div>
+
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义">器件意义</h2>
-<p>HfO₂ 基与二维 FeFET 可实现紧凑非易失存储及模拟突触权重。</p>
+<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>HfO₂ 基与二维 FeFET 可实现紧凑非易失存储及模拟突触权重。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-<h2 id="限制与判据">限制与判据</h2>
-<p>必须区分唤醒、疲劳、印记、退极化、界面俘获及器件间变异。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
-<p>**成熟度：**Prototype。关联节点：</p>
+
+<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>必须区分唤醒、疲劳、印记、退极化、界面俘获及器件间变异。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Prototype。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/two-dimensional-ferroelectricity/">two-dimensional-ferroelectricity</a></li>
 <li><a href="/knowledge/nodes/negative-capacitance-field-effect-transistor/">negative-capacitance-field-effect-transistor</a></li>
 <li><a href="/knowledge/nodes/sliding-ferroelectric-memory-devices/">sliding-ferroelectric-memory-devices</a></li>
 <li><a href="/knowledge/nodes/memory-reliability-and-scaling/">memory-reliability-and-scaling</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
-<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41467-021-21320-2" target="_blank" rel="noopener">Van der Waals engineering of ferroelectric heterostructures for memory</a></li>
 <li><a href="https://www.nature.com/articles/s41467-024-55333-4" target="_blank" rel="noopener">Sliding ferroelectric memories and synapses based on bilayer MoS2</a></li>
