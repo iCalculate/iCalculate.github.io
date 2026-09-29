@@ -1,0 +1,2416 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNMSN3C9M8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MNMSN3C9M8');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="Du Xinchuan">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Du Xinchuan">
+    
+    <meta name="keywords" content="Xinchuan Du,Du Xinchuan,2D materials,optoelectronic devices,spectroscopy,semiconductor physics,photodetectors,quantum sensing">
+    
+    <meta name="description" content="Dr. Xinchuan Du's research notes and project documentation. 
+Focused on semiconductor devices, 2D materials, optoelectronics, and quantum sensing.
+">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>How to Measure a Two-Dimensional Photodetector Without Fooling Yourself · Xinchuan Du | Researcher in 2D Materials &amp; Optoelectronics</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("../../../../font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "../../../../css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "../../../../css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "../../../../assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="../../../../scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="../../../../font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', '[object Object]', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="../../../../index.html" >iCalculate’s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">How to Measure a Two-Dimensional Photodetector Without Fooling Yourself</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>iCalculate’s Studio</a>
+    <a class="knowledge-atlas-link" href="../../../../knowledge/">Knowledge Atlas</a>
+</header>
+<style>
+  .knowledge-atlas-link {
+    position: absolute; left: 4.5rem; right: auto; top: 1.55rem; z-index: 2;
+    color: rgba(255,255,255,.82); font-size: .72rem; letter-spacing: .13em;
+    text-transform: uppercase; border-bottom: 1px solid rgba(247,83,87,.85);
+    padding-bottom: .22rem; transition: color .2s ease, border-color .2s ease;
+  }
+  .knowledge-atlas-link:hover { color: #fff; border-color: #fff; }
+  @media (max-width: 680px) { .knowledge-atlas-link { left: 3.8rem; right: auto; top: 1.35rem; font-size: .62rem; } }
+</style>
+
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(../../../../intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            How to Measure a Two-Dimensional Photodetector Without Fooling Yourself
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "2D Materials">2D Materials</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Photodetectors">Photodetectors</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Device Characterization">Device Characterization</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Noise">Noise</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Metrology">Metrology</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">6.1k</span>Reading time: <span class="post-count reading-time">28 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2026/09/29</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "../../../../lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="../../../../assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <link rel="stylesheet" href="/css/bilingual-post.css">
+<script defer src="/js/bilingual-post.js"></script>
+<nav class="language-switcher" aria-label="Article language">
+  <span class="language-switcher__label">Read in</span>
+  <button type="button" data-language="en" aria-pressed="true">English</button>
+  <button type="button" data-language="zh" aria-pressed="false">中文</button>
+</nav>
+<section class="lang-panel lang-en" lang="en">
+<p>A photodetector paper can report an enormous responsivity, an extraordinary specific detectivity and a very short response time. Yet all three numbers can be inflated without changing the device itself. A smaller assumed active area raises the reported responsivity; a noise formula can miss the low-frequency fluctuations actually present; a short pulse can make a slow transient look fast before it reaches equilibrium.</p>
+<!--more-->
+
+<p>The 2023 <em>Nature Communications</em> Review by Wang and colleagues is therefore less about finding another record device than about making records comparable. Its central lesson is simple: a figure of merit is meaningful only together with the geometry, optical calibration, noise spectrum, frequency and time protocol that produced it.</p>
+<h2 id="Begin-with-the-conversion-mechanism"><a href="#Begin-with-the-conversion-mechanism" class="headerlink" title="Begin with the conversion mechanism"></a>Begin with the conversion mechanism</h2><p>Every performance number sits downstream of a microscopic mechanism. If incident power is $P$ and photon energy is $h\nu&#x3D;hc&#x2F;\lambda$, the incident photon rate is</p>
+<p>$$\Phi_{\mathrm{ph}}&#x3D;\frac{P}{h\nu}&#x3D;\frac{P\lambda}{hc}.$$</p>
+<p>For a photovoltaic detector with external quantum efficiency $\eta_{\mathrm{ext}}$ and no internal gain, the collected photocurrent is</p>
+<p>$$I_{\mathrm{ph}}&#x3D;q\eta_{\mathrm{ext}}\Phi_{\mathrm{ph}}, \qquad R_{\mathrm{PV}}&#x3D;\eta_{\mathrm{ext}}\frac{q}{h\nu}&#x3D;\eta_{\mathrm{ext}}\frac{q\lambda}{hc}.$$</p>
+<p>This relation gives a useful scale. At $532,\mathrm{nm}$, one collected electron per incident photon corresponds to about $0.43,\mathrm{A&#x2F;W}$; at $1550,\mathrm{nm}$ it is about $1.25,\mathrm{A&#x2F;W}$. A larger value requires gain or a different response definition.</p>
+<p>In a photoconductor, one photocarrier can circulate before recombination. With carrier lifetime $\tau_{\mathrm{life}}$ and transit time $\tau_{\mathrm{tr}}$, the gain is approximately</p>
+<p>$$G\simeq\frac{\tau_{\mathrm{life}}}{\tau_{\mathrm{tr}}}, \qquad \tau_{\mathrm{tr}}\simeq\frac{L^2}{\mu V_{\mathrm{DS}}},$$</p>
+<p>and</p>
+<p>$$R_{\mathrm{PC}}\simeq\eta_{\mathrm{ext}}\frac{q\lambda}{hc}G.$$</p>
+<p>Large photogating gain is therefore physically possible, but the long lifetime that raises $G$ also slows the response and often strengthens trapping noise. Responsivity, bandwidth and noise are coupled outputs of one carrier-dynamics problem.</p>
+<p>Thermal mechanisms obey different equations. A photothermoelectric junction produces</p>
+<p>$$V_{\mathrm{PTE}}\simeq(S_1-S_2)\Delta T,$$</p>
+<p>where $S_1-S_2$ is the Seebeck-coefficient contrast. A bolometer converts a light-induced temperature change into a resistance change,</p>
+<p>$$\Delta I\simeq-\frac{V}{R_{ \mathrm{ch}}^2}\frac{dR_{\mathrm{ch}}}{dT}\Delta T.$$</p>
+<p>These mechanisms can respond beyond a semiconductor bandgap and have different bias and spatial signatures. Current-voltage curves and scanning photocurrent maps are therefore part of identifying the detector, not decorative characterization.</p>
+<h2 id="The-metric-chain"><a href="#The-metric-chain" class="headerlink" title="The metric chain"></a>The metric chain</h2><p>Let the net photocurrent be $I_s&#x3D;I_{\mathrm{light}}-I_{\mathrm{dark}}$, the incident optical power density be $p$, and the optical effective area be $A_d$. The power assigned to the device is</p>
+<p>$$P_\lambda&#x3D;pA_d,$$</p>
+<p>so the current responsivity is</p>
+<p>$$R&#x3D;\frac{I_s}{P_\lambda}&#x3D;\frac{I_s}{pA_d}.$$</p>
+<p>If the measured RMS noise current integrated over bandwidth $\Delta f$ is $i_{n,\mathrm{rms}}$, then a common form is</p>
+<p>$$\mathrm{NEP}&#x3D;\frac{i_{n,\mathrm{rms}}}{R}, \qquad D^{\ast}&#x3D;\frac{\sqrt{A_d\Delta f}}{\mathrm{NEP}}&#x3D;\frac{R\sqrt{A_d\Delta f}}{i_{n,\mathrm{rms}}}.$$</p>
+<p>Equivalent conventions use a noise amplitude spectral density $S_i^{1&#x2F;2}$ in $\mathrm{A}&#x2F;\sqrt{\mathrm{Hz}}$, giving $\mathrm{NEP}_{f}&#x3D;S_i^{1&#x2F;2}&#x2F;R$ and $D^{\ast}&#x3D;R\sqrt{A_d}&#x2F;S_i^{1&#x2F;2}$ at the stated frequency. This is exactly why symbols, units and bandwidth must be stated. The equations also reveal a dependency chain: an error in $A_d$ changes the assigned power and $R$, then propagates into NEP and $D^{\ast}$; underestimated noise makes both metrics look better.</p>
+<p>Specific detectivity has units $\mathrm{cm,Hz^{1&#x2F;2}&#x2F;W}$, commonly called Jones. The normalization removes first-order area and bandwidth scaling. It does not make detectors comparable when their area definitions, modulation frequencies or noise processes differ.</p>
+<p>Responsivity itself is often power dependent. Traps, screening and recombination commonly give</p>
+<p>$$I_{\mathrm{ph}}\propto P^{\alpha}, \qquad R&#x3D;\frac{I_{\mathrm{ph}}}{P}\propto P^{\alpha-1},$$</p>
+<p>with $0&lt;\alpha&lt;1$ in many trap-influenced devices. A very high responsivity measured only at tiny $P$ should not be extrapolated to a larger dynamic range.</p>
+<h2 id="Effective-area-is-a-physical-question"><a href="#Effective-area-is-a-physical-question" class="headerlink" title="Effective area is a physical question"></a>Effective area is a physical question</h2><p>The outline visible in a microscope is not automatically the area that generates collected signal. Carrier drift, junction fields, diffraction, antennas and near-field enhancement can extend or reshape the response. The Review gives device-dependent guidance:</p>
+<ul>
+<li>For a photoconductor or an in-plane junction, use the photoactive material between the electrodes rather than an arbitrarily narrow visual region.</li>
+<li>For a vertical junction at zero bias, the overlap junction can represent the active area when mapping shows that the response is confined there.</li>
+<li>Under reverse bias, fields outside that overlap can collect carriers, so the broader material area between electrodes may be appropriate.</li>
+<li>For a focal-plane array, the full tiled pixel area is relevant to responsivity.</li>
+</ul>
+<p>These are operational definitions, not universal geometric truths. When edges, antennas or local fields dominate, scanning photocurrent microscopy can map the response and define an effective area from the measured spatial sensitivity.</p>
+<p>The Review proposes a map-based definition at wavelength $\lambda$:</p>
+<p>$$A_{\mathrm{eff}}(\lambda)&#x3D; \frac{\displaystyle\iint I_s(x,y,\lambda),dx,dy} {\displaystyle\max_{x,y} I_s(x,y,\lambda)}.$$</p>
+<p>The numerator integrates spatial sensitivity; the denominator normalizes it to the peak. This makes $A_{\mathrm{eff}}$ a property of the optical mode, device and collection physics at a stated wavelength.</p>
+<p><img src="/images/2d-photodetector-metrics/review-figure-1.webp" alt="Figure 1 from Wang et al. comparing effective areas for several two-dimensional photodetectors"></p>
+<p><em>Figure 1 from <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang et al., Nature Communications (2023)</a>. Blue dashed outlines indicate the authors’ recommended effective areas for different device geometries; orange outlines illustrate potentially inaccurate choices. Panels f–h show why diffraction and antenna effects can make the response differ from the drawn channel.</em></p>
+<h2 id="Responsivity-begins-with-calibrated-light"><a href="#Responsivity-begins-with-calibrated-light" class="headerlink" title="Responsivity begins with calibrated light"></a>Responsivity begins with calibrated light</h2><p>A laser spot is usually Gaussian rather than uniformly bright. Estimating its diameter by eye creates a moving threshold: the apparent edge changes with screen contrast, room lighting, wavelength and total intensity. Since power density is obtained by dividing power by the assumed spot area, a casual diameter estimate directly changes $R$.</p>
+<p>At the beam waist, an ideal circular Gaussian beam has</p>
+<p>$$I(r)&#x3D;\frac{2P}{\pi w_0^2}\exp!\left(-\frac{2r^2}{w_0^2}\right).$$</p>
+<p>The power actually incident on the active region $A_d$ is the overlap integral</p>
+<p>$$P_{\mathrm{dev}}&#x3D;\iint_{A_d} I(x,y),dx,dy,$$</p>
+<p>not total laser power multiplied by a visually estimated area fraction. Near-field absorption adds a position-dependent absorption factor to this integral.</p>
+<p>The Review recommends measuring the power density at the sample plane with a calibrated commercial photodetector of known area. A camera or beam profiler can document the spatial profile, but the optical path used for calibration must represent the path used for the device. For a device much smaller than the beam, illumination becomes approximately uniform only when the beam waist is sufficiently larger than the device. In the paper’s simplified bound, keeping the device circumradius below $w_0&#x2F;14.18$ limits the nonuniformity error to below about 1%.</p>
+<p>The source also has to match the claimed application. A monochromatic laser measures spectral responsivity at a chosen wavelength. Infrared detector evaluation for practical radiometric use may require a calibrated blackbody, apertures, distance, modulation and background temperature. An FTIR system can map spectral response. These measurements answer related but different questions and should not be merged into one unlabeled “responsivity.”</p>
+<p><img src="/images/2d-photodetector-metrics/review-figure-3.webp" alt="Figure 3 from Wang et al. showing laser calibration, blackbody and FTIR measurements"></p>
+<p><em>Figure 3 from <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang et al. (2023)</a>. Panel b shows how a visually selected Gaussian-spot edge changes the derived responsivity. Panel c uses a monitor detector and camera for laser calibration; d–f distinguish blackbody and spectral measurements.</em></p>
+<h2 id="Dark-current-is-not-the-noise-spectrum"><a href="#Dark-current-is-not-the-noise-spectrum" class="headerlink" title="Dark current is not the noise spectrum"></a>Dark current is not the noise spectrum</h2><p>Dark current is measured without the intended signal light, but an infrared detector can still receive room-temperature background radiation. A cold shield is therefore part of a meaningful dark-current measurement, especially for narrow-bandgap devices. Temperature, bias, shielding and settling time belong in the report.</p>
+<p>More importantly, substituting dark current into a shot-noise formula does not measure the device’s total noise. A real two-dimensional detector may contain:</p>
+<ul>
+<li>Johnson noise from resistance;</li>
+<li>shot noise from discrete charge flow;</li>
+<li>generation-recombination noise from trapping and release;</li>
+<li>low-frequency $1&#x2F;f$ noise linked to carrier-number or mobility fluctuations.</li>
+</ul>
+<p>In power-spectral-density form, a useful decomposition is</p>
+<p>$$S_I(f)&#x3D;\underbrace{\frac{4k_{\mathrm B}T}{R_d}}<em>{\text{Johnson}} +\underbrace{2qI_d}</em>{\text{shot}} +\underbrace{\frac{C}{f^{\gamma}}}<em>{1&#x2F;f} +\underbrace{\sum_j\frac{4A_j\tau_j}{1+(2\pi f\tau_j)^2}}</em>{\text{g-r}}.$$</p>
+<p>The last term is a sum of Lorentzian generation-recombination spectra from traps with time constants $\tau_j$. The measured RMS current is set by the entire readout transfer function $H(f)$:</p>
+<p>$$i_{n,\mathrm{rms}}^2&#x3D; \int_{f_1}^{f_2}S_I(f)\lvert H(f)\rvert^2,df.$$</p>
+<p>Thus “noise in a 1-Hz bandwidth” is incomplete unless its centre frequency is stated. A 1-Hz band near $1,\mathrm{Hz}$ can contain far more flicker noise than a 1-Hz band near $10,\mathrm{kHz}$.</p>
+<p>Shot and Johnson terms may dominate at sufficiently high frequency. Photogating and photoconductive gain, however, often accompany long carrier lifetimes and generation-recombination noise. At low frequency, $1&#x2F;f$ noise can be large. Calculating only white noise can therefore place a claimed $D^{\ast}$ above a physically relevant background-limited value.</p>
+<p>The defensible route is to measure the noise spectral density under the same bias, temperature, shielding and readout conditions used for responsivity. The response and noise must also refer to the <strong>same frequency</strong> and compatible bandwidth. Combining a low-frequency responsivity with a high-frequency noise floor builds a number that describes no actual operating point.</p>
+<p>For an imager, the readout integration time acts as a filter. Pixel-to-pixel nonuniformity and frame-to-frame fluctuation both affect image quality. A single-pixel noise density cannot by itself describe the entire focal-plane-array result.</p>
+<p><img src="/images/2d-photodetector-metrics/review-figure-5.webp" alt="Figure 5 from Wang et al. showing how noise assumptions inflate specific detectivity"></p>
+<p><em>Figure 5 from <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang et al. (2023)</a>. The dashed detectivity curves use estimated white-noise terms while omitting $1&#x2F;f$ and generation-recombination noise; the difference from the solid curves visualizes the resulting overestimate. Panels c–d adapt the argument to imaging detection.</em></p>
+<h2 id="Speed-requires-a-complete-transient-and-a-bandwidth"><a href="#Speed-requires-a-complete-transient-and-a-bandwidth" class="headerlink" title="Speed requires a complete transient and a bandwidth"></a>Speed requires a complete transient and a bandwidth</h2><p>Rise time is normally measured from 10% to 90% of the settled response; fall time runs from 90% to 10%. If a light pulse ends before the current reaches its plateau, the apparent rise or fall interval can be much shorter than the device’s true settling time. A valid time trace therefore needs a complete periodic response with both illuminated and dark states stabilized.</p>
+<p>A frequency-domain measurement provides a second description. The $-3,\mathrm{dB}$ cutoff $f_c$ is where the responsivity falls to $0.707R_0$. For a single-pole response,</p>
+<p>$$R(f)&#x3D;\frac{R_0}{\sqrt{1+4\pi^2f^2\tau^2}},$$</p>
+<p>which links bandwidth and time constant. The modulation source, amplifier, cables and oscilloscope must all be faster than the detector, or the setup becomes the measured bottleneck.</p>
+<p>For the same single-pole response,</p>
+<p>$$f_c&#x3D;\frac{1}{2\pi\tau}, \qquad t_{10-90}\simeq2.2\tau\simeq\frac{0.35}{f_c}.$$</p>
+<p>Measured rise time also contains the source and electronics. For approximately Gaussian temporal responses, a common de-embedding estimate is</p>
+<p>$$t_{\mathrm{meas}}^2\simeq t_{\mathrm{det}}^2+t_{\mathrm{source}}^2+t_{\mathrm{elec}}^2.$$</p>
+<p>High gain and high speed are also coupled. Photoconductive gain grows when carrier lifetime exceeds transit time, while bandwidth generally falls as lifetime grows. Reporting only the largest low-power gain or only the fastest edge hides this trade-off. Responsivity versus optical power density, frequency response and gain-bandwidth product make the device easier to compare.</p>
+<p>Combining $G\simeq\tau_{\mathrm{life}}&#x2F;\tau_{\mathrm{tr}}$ with $f_c\simeq1&#x2F;(2\pi\tau_{\mathrm{life}})$ gives</p>
+<p>$$Gf_c\simeq\frac{1}{2\pi\tau_{\mathrm{tr}}} \simeq\frac{\mu V_{\mathrm{DS}}}{2\pi L^2}.$$</p>
+<p>This simplified gain-bandwidth product shows why mobility, channel length and electric field matter. A claimed improvement in both gain and speed should identify which transit or trapping process changed.</p>
+<p><img src="/images/2d-photodetector-metrics/review-figure-6.webp" alt="Figure 6 from Wang et al. explaining response-time errors and gain-bandwidth trade-offs"></p>
+<p><em>Figure 6 from <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang et al. (2023)</a>. Panels a–b show incomplete transients that underestimate response time; d gives the complete-cycle 10–90% definition; e defines the $-3,\mathrm{dB}$ bandwidth; f places gain and frequency on the same comparison.</em></p>
+<h2 id="A-compact-reporting-checklist"><a href="#A-compact-reporting-checklist" class="headerlink" title="A compact reporting checklist"></a>A compact reporting checklist</h2><p>A comparable photodetector result should make the following reconstructible from the paper:</p>
+<ol>
+<li><strong>Device and mechanism:</strong> geometry, material stack, bias and the evidence for photoconductive, photovoltaic, thermoelectric or bolometric response.</li>
+<li><strong>Optical input:</strong> wavelength or source spectrum, calibrated power at the sample, beam profile, spot size and modulation frequency.</li>
+<li><strong>Effective area:</strong> the exact area used, why that definition fits the operating condition, and spatial photocurrent mapping when local enhancement matters.</li>
+<li><strong>Signal:</strong> raw light and dark currents or voltages, power dependence, responsivity and any transimpedance conversion.</li>
+<li><strong>Noise:</strong> measured spectrum, temperature, bias, shielding, readout chain, integration bandwidth and frequency used for NEP or $D^{\ast}$.</li>
+<li><strong>Speed:</strong> complete rise and fall traces, modulation waveform, $-3,\mathrm{dB}$ bandwidth and instrument limits.</li>
+</ol>
+<p>The paper’s deeper contribution is methodological: a detector figure of merit is not a material constant. It describes a device, optical field, bias, frequency, bandwidth, temperature and readout protocol together. Once those conditions are visible, a modest number can be more useful than a spectacular but irreproducible record.</p>
+<h3 id="Source-and-reading-note"><a href="#Source-and-reading-note" class="headerlink" title="Source and reading note"></a>Source and reading note</h3><p>This guide follows Fang Wang <em>et al.</em>, “<a href="https://www.nature.com/articles/s41467-023-37635-1" target="_blank" rel="noopener">How to characterize figures of merit of two-dimensional photodetectors</a>,” <em>Nature Communications</em> <strong>14</strong>, 2224 (published 19 April 2023), DOI: <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">10.1038&#x2F;s41467-023-37635-1</a>. The article is <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10115793/" target="_blank" rel="noopener">open access through PubMed Central</a>. Figures 1, 3, 5 and 6 above are the authors’ original figures. Equations use the paper’s integrated-noise convention; when comparing another source, check whether its $i_n$ denotes total RMS noise or an amplitude spectral density.</p>
+
+</section>
+
+<!-- bilingual:zh -->
+<section class="lang-panel lang-zh" lang="zh-CN" hidden>
+<p>一篇光电探测器论文可以同时给出极高响应度、惊人的比探测率和很短的响应时间，但器件本身不变，仅仅换一种计算或截取方式，这三个数字就可能一起变漂亮：把有效面积取得更小，响应度就会升高；用暗电流公式估算噪声，可能漏掉实际存在的低频涨落；脉冲太短时，慢器件还没达到稳态，截取其中一段就会显得很快。</p>
+<p>Wang 等人 2023 年发表于《自然·通讯》的这篇综述，重点不是再找一个纪录器件，而是让不同纪录可以比较。它的核心结论是：<strong>性能指标必须和产生它的几何定义、光学标定、噪声谱、频率与时间协议一起报告，单独一个数字没有完整含义。</strong></p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="先确定光到电的转换机制"><a href="#先确定光到电的转换机制" class="headerlink" title="先确定光到电的转换机制"></a>先确定光到电的转换机制</div><p>每个性能指标都来自某种微观过程。若入射功率为 $P$，单个光子能量为 $h\nu&#x3D;hc&#x2F;\lambda$，单位时间到达的光子数是</p>
+<p>$$\Phi_{\mathrm{ph}}&#x3D;\frac{P}{h\nu}&#x3D;\frac{P\lambda}{hc}.$$</p>
+<p>对无内部增益、外量子效率为 $\eta_{\mathrm{ext}}$ 的光伏型探测器，收集到的光电流满足</p>
+<p>$$I_{\mathrm{ph}}&#x3D;q\eta_{\mathrm{ext}}\Phi_{\mathrm{ph}}, \qquad R_{\mathrm{PV}}&#x3D;\eta_{\mathrm{ext}}\frac{q}{h\nu}&#x3D;\eta_{\mathrm{ext}}\frac{q\lambda}{hc}.$$</p>
+<p>这个关系给出判断数量级的尺子。$532,\mathrm{nm}$ 下每个入射光子收集一个电子，对应约 $0.43,\mathrm{A&#x2F;W}$；$1550,\mathrm{nm}$ 下约为 $1.25,\mathrm{A&#x2F;W}$。更高数值需要内部增益，或采用了另一种响应定义。</p>
+<p>在光电导器件中，一个光生载流子可在复合前多次参与导电。若载流子寿命为 $\tau_{\mathrm{life}}$，渡越时间为 $\tau_{\mathrm{tr}}$，近似有</p>
+<p>$$G\simeq\frac{\tau_{\mathrm{life}}}{\tau_{\mathrm{tr}}}, \qquad \tau_{\mathrm{tr}}\simeq\frac{L^2}{\mu V_{\mathrm{DS}}},$$</p>
+<p>因此</p>
+<p>$$R_{\mathrm{PC}}\simeq\eta_{\mathrm{ext}}\frac{q\lambda}{hc}G.$$</p>
+<p>所以极高光栅控增益并不违反物理，但提高 $G$ 的长寿命也会降低响应速度，并常常增强陷阱相关噪声。响应度、带宽与噪声，本质上是同一组载流子动力学的耦合输出。</p>
+<p>热机制遵循另一套关系。光热电结产生</p>
+<p>$$V_{\mathrm{PTE}}\simeq(S_1-S_2)\Delta T,$$</p>
+<p>其中 $S_1-S_2$ 是两侧 Seebeck 系数之差。测辐射热器件则把光致温升转成电阻变化：</p>
+<p>$$\Delta I\simeq-\frac{V}{R_{\mathrm{ch}}^2} \frac{dR_{\mathrm{ch}}}{dT}\Delta T.$$</p>
+<p>这些机制可在半导体带隙之外产生响应，并具有不同的偏压与空间特征。因此，电流-电压曲线和扫描光电流图不是装饰性表征，而是确认器件身份的一部分。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="一条会逐级传递误差的指标链"><a href="#一条会逐级传递误差的指标链" class="headerlink" title="一条会逐级传递误差的指标链"></a>一条会逐级传递误差的指标链</div><p>设净光电流为 $I_s&#x3D;I_{\mathrm{light}}-I_{\mathrm{dark}}$，入射功率密度为 $p$，光学有效面积为 $A_d$。分配给器件的入射功率是</p>
+<p>$$P_\lambda&#x3D;pA_d,$$</p>
+<p>电流响应度为</p>
+<p>$$R&#x3D;\frac{I_s}{P_\lambda}&#x3D;\frac{I_s}{pA_d}.$$</p>
+<p>若在带宽 $\Delta f$ 内积分得到的均方根噪声电流为 $i_{n,\mathrm{rms}}$，一种常见写法是</p>
+<p>$$\mathrm{NEP}&#x3D;\frac{i_{n,\mathrm{rms}}}{R}, \qquad D^{\ast}&#x3D;\frac{\sqrt{A_d\Delta f}}{\mathrm{NEP}}&#x3D;\frac{R\sqrt{A_d\Delta f}}{i_{n,\mathrm{rms}}}.$$</p>
+<p>也有文献直接使用单位为 $\mathrm{A}&#x2F;\sqrt{\mathrm{Hz}}$ 的噪声幅度谱密度 $S_i^{1&#x2F;2}$，此时在指定频率下有 $\mathrm{NEP}_{f}&#x3D;S_i^{1&#x2F;2}&#x2F;R$ 和 $D^{\ast}&#x3D;R\sqrt{A_d}&#x2F;S_i^{1&#x2F;2}$。这正说明必须写清符号、单位与带宽。公式还展示了一条误差链：$A_d$ 定错会先改变入射功率与 $R$，再传入 NEP 和 $D^{\ast}$；噪声被低估，则两项指标都会显得更优。</p>
+<p>比探测率的单位是 $\mathrm{cm,Hz^{1&#x2F;2}&#x2F;W}$，通常称为 Jones。面积与带宽归一化只消除了一级尺度效应；若有效面积、调制频率和噪声机制不同，$D^{\ast}$ 仍不能直接横向比较。</p>
+<p>响应度本身也常随光功率变化。陷阱、屏蔽和复合会产生</p>
+<p>$$I_{\mathrm{ph}}\propto P^{\alpha}, \qquad R&#x3D;\frac{I_{\mathrm{ph}}}{P}\propto P^{\alpha-1},$$</p>
+<p>许多受陷阱影响的器件满足 $0&lt;\alpha&lt;1$。只在极低 $P$ 下测得的高响应度，不能外推到更大的动态范围。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="有效面积首先是一个物理问题"><a href="#有效面积首先是一个物理问题" class="headerlink" title="有效面积首先是一个物理问题"></a>有效面积首先是一个物理问题</div><p>显微镜里看到的材料轮廓，不一定就是产生可收集信号的面积。载流子漂移、结区电场、衍射、天线与近场增强，都可能扩大或重新分布光响应。综述按器件给出不同建议：</p>
+<ul>
+<li>光电导器件与面内结通常应采用两电极之间的光敏材料面积，而不是任意圈出一条很窄的区域；</li>
+<li>零偏压垂直结若光电流映射表明响应局限于重叠结区，可用结区面积；</li>
+<li>施加反向偏压后，结区外的电场也可能收集载流子，此时应考虑两电极之间更大的材料范围；</li>
+<li>焦平面阵列计算响应度时，应采用完整的像元铺设面积。</li>
+</ul>
+<p>这些是与工作状态相关的操作性定义，并非不变的几何真理。当电极尖端、天线或局域场主导响应时，可以用扫描光电流显微镜测出空间灵敏度，再由实测分布定义有效面积。</p>
+<p>综述给出一个与波长有关的映射定义：</p>
+<p>$$A_{\mathrm{eff}}(\lambda)&#x3D; \frac{\displaystyle\iint I_s(x,y,\lambda),dx,dy} {\displaystyle\max_{x,y} I_s(x,y,\lambda)}.$$</p>
+<p>分子积分整个空间灵敏度，分母用峰值归一化。因此 $A_{\mathrm{eff}}$ 同时取决于指定波长下的光学模式、器件结构和载流子收集过程。</p>
+<p><img src="/images/2d-photodetector-metrics/review-figure-1.webp" alt="原论文图1：不同二维光电探测器的有效面积"></p>
+<p><em>原论文图 1，出自 <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang 等，《自然·通讯》（2023）</a>。蓝色虚线表示作者对不同器件结构建议的有效面积，橙色虚线展示可能不准确的选择；f–h 说明衍射和天线效应为何会使真实响应区偏离画出的沟道。</em></p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="响应度要从光功率标定开始"><a href="#响应度要从光功率标定开始" class="headerlink" title="响应度要从光功率标定开始"></a>响应度要从光功率标定开始</div><p>激光光斑通常服从高斯分布，而不是均匀照明。凭肉眼判断光斑直径，相当于采用一个不断变化的强度阈值：屏幕对比度、环境亮度、波长和总光强都会改变人眼看到的边缘。功率密度又等于功率除以假定的光斑面积，因此直径估计会直接改变 $R$。</p>
+<p>在束腰处，理想圆对称高斯光束满足</p>
+<p>$$I(r)&#x3D;\frac{2P}{\pi w_0^2}\exp!\left(-\frac{2r^2}{w_0^2}\right).$$</p>
+<p>真正落在有效区 $A_d$ 上的功率，应由重叠积分得到：</p>
+<p>$$P_{\mathrm{dev}}&#x3D;\iint_{A_d} I(x,y),dx,dy,$$</p>
+<p>而不是用总激光功率乘上肉眼估计的面积比例。若近场吸收明显，积分中还要加入随位置变化的吸收因子。</p>
+<p>综述建议在样品平面使用有效面积已知、经过标定的商用探测器测量功率密度。相机或光束分析仪可以记录空间分布，但标定光路必须代表器件实际测量光路。若器件远小于光斑，只有光束腰明显大于器件时才能近似均匀照明。在论文给出的简化上界中，器件外接圆半径小于 $w_0&#x2F;14.18$ 时，非均匀性误差上界约低于 1%。</p>
+<p>光源还要匹配所声称的应用。单色激光得到某一波长的光谱响应度；面向实际辐射测量的红外探测器，可能还需要标定黑体、光阑、距离、调制与背景温度；FTIR 可测光谱响应。这些实验彼此相关，却回答不同问题，不应都混成一个没有限定条件的“响应度”。</p>
+<p><img src="/images/2d-photodetector-metrics/review-figure-3.webp" alt="原论文图3：激光标定、黑体与FTIR测量"></p>
+<p><em>原论文图 3，出自 <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang 等（2023）</a>。b 展示肉眼选择高斯光斑边缘如何改变推导出的响应度；c 用监测探测器与相机标定激光；d–f 区分黑体与光谱测量。</em></p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="暗电流不等于噪声谱"><a href="#暗电流不等于噪声谱" class="headerlink" title="暗电流不等于噪声谱"></a>暗电流不等于噪声谱</div><p>暗电流是在没有目标信号光时测得的，但红外探测器仍可能接收到室温背景辐射。因此有意义的暗电流测量需要冷屏，窄带隙器件尤其如此。温度、偏压、屏蔽方式与稳定时间都应报告。</p>
+<p>更关键的是，把暗电流代入散粒噪声公式，并不等于测量了器件总噪声。二维探测器可能同时含有：</p>
+<ul>
+<li>电阻引起的 Johnson 噪声；</li>
+<li>电荷离散输运产生的散粒噪声；</li>
+<li>陷阱俘获和释放造成的产生-复合噪声；</li>
+<li>载流子数或迁移率涨落相关的低频 $1&#x2F;f$ 噪声。</li>
+</ul>
+<p>用功率谱密度表示，可以写成一组有物理来源的项：</p>
+<p>$$S_I(f)&#x3D;\underbrace{\frac{4k_{\mathrm B}T}{R_d}}<em>{\text{Johnson}} +\underbrace{2qI_d}</em>{\text{shot}} +\underbrace{\frac{C}{f^{\gamma}}}<em>{1&#x2F;f} +\underbrace{\sum_j\frac{4A_j\tau_j}{1+(2\pi f\tau_j)^2}}</em>{\text{g-r}}.$$</p>
+<p>最后一项是不同陷阱时间常数 $\tau_j$ 对应的 Lorentzian 产生-复合噪声之和。实际读出的均方根噪声还取决于整条测量链的传递函数 $H(f)$：</p>
+<p>$$i_{n,\mathrm{rms}}^2&#x3D; \int_{f_1}^{f_2}S_I(f)\lvert H(f)\rvert^2,df.$$</p>
+<p>所以“1 Hz 带宽内的噪声”仍不完整，还必须说明中心频率。靠近 $1,\mathrm{Hz}$ 的 1 Hz 频带，可能比靠近 $10,\mathrm{kHz}$ 的同宽频带包含多得多的闪烁噪声。</p>
+<p>频率足够高时，散粒噪声与 Johnson 噪声可能占主导。但光栅控或光电导增益往往伴随较长载流子寿命以及产生-复合噪声；低频处 $1&#x2F;f$ 噪声也可能很强。只计算白噪声，会让宣称的 $D^{\ast}$ 高于实际有关的背景限制。</p>
+<p>更可信的做法，是在与响应度相同的偏压、温度、屏蔽和读出条件下实测噪声谱。响应度和噪声还必须对应<strong>同一个频率</strong>与兼容的带宽。把低频下的高响应度和高频处的低噪声底拼在一起，会得到一个不对应任何真实工作点的数字。</p>
+<p>对成像器件，读出积分时间本身就是滤波器；像素间不均匀性和同一像素的帧间涨落都会降低成像质量。单像素噪声谱密度无法单独代表整个焦平面阵列。</p>
+<p><img src="/images/2d-photodetector-metrics/review-figure-5.webp" alt="原论文图5：噪声假设如何抬高比探测率"></p>
+<p><em>原论文图 5，出自 <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang 等（2023）</a>。虚线探测率只采用估算的白噪声并忽略 $1&#x2F;f$ 与产生-复合噪声；它与实线的差别直观展示由此产生的高估。c–d 把同一问题扩展到成像探测。</em></p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="测速度要有完整瞬态和带宽"><a href="#测速度要有完整瞬态和带宽" class="headerlink" title="测速度要有完整瞬态和带宽"></a>测速度要有完整瞬态和带宽</div><p>上升时间通常定义为稳态响应从 10% 到 90% 所需时间，下降时间则从 90% 到 10%。如果光脉冲在电流达到平台之前就结束，截得的上升或下降区间会远短于器件真实稳定时间。因此时间曲线应覆盖完整周期，让照明态与暗态都达到稳态。</p>
+<p>频域测量提供另一种描述。响应度降到 $0.707R_0$ 时的频率，是 $-3,\mathrm{dB}$ 截止频率 $f_c$。对单极点响应，</p>
+<p>$$R(f)&#x3D;\frac{R_0}{\sqrt{1+4\pi^2f^2\tau^2}},$$</p>
+<p>它把带宽和时间常数联系起来。调制光源、放大器、电缆与示波器都必须比被测器件更快，否则测到的是仪器瓶颈。</p>
+<p>对同一个单极点响应，</p>
+<p>$$f_c&#x3D;\frac{1}{2\pi\tau}, \qquad t_{10-90}\simeq2.2\tau\simeq\frac{0.35}{f_c}.$$</p>
+<p>实测上升时间还包含光源和电子学响应。若各部分可近似为高斯时间响应，常用去嵌入关系为</p>
+<p>$$t_{\mathrm{meas}}^2\simeq t_{\mathrm{det}}^2+t_{\mathrm{source}}^2+t_{\mathrm{elec}}^2.$$</p>
+<p>高增益与高速也相互耦合。载流子寿命远长于渡越时间时，光电导增益会上升；但寿命增加通常使带宽下降。只报告低功率下的最大增益，或只展示最快边沿，都会遮蔽这种取舍。补充响应度随光功率密度的变化、频率响应与增益-带宽积，才更便于比较器件。</p>
+<p>把 $G\simeq\tau_{\mathrm{life}}&#x2F;\tau_{\mathrm{tr}}$ 与 $f_c\simeq1&#x2F;(2\pi\tau_{\mathrm{life}})$ 合并，得到</p>
+<p>$$Gf_c\simeq\frac{1}{2\pi\tau_{\mathrm{tr}}} \simeq\frac{\mu V_{\mathrm{DS}}}{2\pi L^2}.$$</p>
+<p>这个简化的增益-带宽积解释了迁移率、沟道长度和电场为何重要。如果一项工作同时宣称增益和速度提升，就应说明究竟改变了哪一种渡越或俘获过程。</p>
+<p><img src="/images/2d-photodetector-metrics/review-figure-6.webp" alt="原论文图6：响应时间误差与增益带宽取舍"></p>
+<p><em>原论文图 6，出自 <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang 等（2023）</a>。a–b 展示会低估响应时间的不完整瞬态；d 给出完整周期中的 10–90% 定义；e 定义 $-3,\mathrm{dB}$ 带宽；f 把增益和频率放进同一幅比较图。</em></p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="一份简洁的报告清单"><a href="#一份简洁的报告清单" class="headerlink" title="一份简洁的报告清单"></a>一份简洁的报告清单</div><p>一项可比较的光电探测器结果，应让读者从论文中还原以下条件：</p>
+<ol>
+<li>**器件与机制：**结构、材料堆栈、偏压，以及判定光电导、光伏、热电或测辐射热机制的证据；</li>
+<li>**光学输入：**波长或光源光谱、样品处标定功率、光束分布、光斑尺寸与调制频率；</li>
+<li>**有效面积：**实际使用的面积、它为何适合该工作状态，以及局域增强显著时的空间光电流映射；</li>
+<li>**信号：**原始明暗电流或电压、功率依赖、响应度与跨阻换算；</li>
+<li>**噪声：**实测频谱、温度、偏压、屏蔽、读出链路、积分带宽，以及计算 NEP 或 $D^{\ast}$ 使用的频率；</li>
+<li>**速度：**完整上升与下降曲线、调制波形、$-3,\mathrm{dB}$ 带宽和仪器限制。</li>
+</ol>
+<p>这篇论文更深层的贡献是一种方法论：**探测器性能指标不是材料常数，而是器件、光场、偏压、频率、带宽、温度和读出协议共同构成的测量结果。**条件完整可见时，一个不夸张的数字，往往比无法复现的纪录更有价值。</p>
+<div class="zh-heading zh-h3" role="heading" aria-level="3" id="原文与阅读说明"><a href="#原文与阅读说明" class="headerlink" title="原文与阅读说明"></a>原文与阅读说明</div><p>本文按 Fang Wang 等人的综述“<a href="https://www.nature.com/articles/s41467-023-37635-1" target="_blank" rel="noopener">How to characterize figures of merit of two-dimensional photodetectors</a>”展开，发表于 <em>Nature Communications</em> <strong>14</strong>, 2224（2023 年 4 月 19 日），DOI：<a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">10.1038&#x2F;s41467-023-37635-1</a>。论文可通过 <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10115793/" target="_blank" rel="noopener">PubMed Central</a> 开放获取。上方图 1、3、5、6 均为作者原图。公式采用带宽内总均方根噪声与噪声幅度谱密度两种常见写法；与其他文献比较时，要先确认符号所代表的约定。</p>
+
+</section>
+
+
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="http://www.iCalculate.website">Du Xinchuan</a>
+            <p>原文链接：<a href="http://www.icalculate.website/2026/09/29/How-to-Measure-a-Two-Dimensional-Photodetector/">http://www.icalculate.website/2026/09/29/How-to-Measure-a-Two-Dimensional-Photodetector/</a>
+            <p>发表日期：<a href="http://www.icalculate.website/2026/09/29/How-to-Measure-a-Two-Dimensional-Photodetector/">September 29th 2026, 12:00:00 pm</a>
+            <p>更新日期：<a href="http://www.icalculate.website/2026/09/29/How-to-Measure-a-Two-Dimensional-Photodetector/">September 29th 2026, 1:20:57 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "../../22/Light-Field-Detection-in-the-Age-of-AI/" title= "Light Field Detection in the Age of AI: Designing the Measurement, Not Just the Model">
+                    <div class="prevTitle">Light Field Detection in the Age of AI: Designing the Measurement, Not Just the Model</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:549174176@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/iCalculate" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/WeChat_QR.jpg" />
+                </span>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title=qq>
+                  
+                  <img class="profile-qr" src="/assets/QQ_QR.jpg" />
+                </span>
+            
+        
+    
+        
+            
+                <a href="https://t.me/chauncy_du" class="iconfont-archer telegram" target="_blank" title=telegram></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.facebook.com/xinchuan.du" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://space.bilibili.com/39572688" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+            
+                <a href="https://www.linkedin.com/in/xinchuan-du-a4b0b51bb/" class="iconfont-archer linkedin" target="_blank" title=linkedin></a>
+            
+        
+    
+        
+            
+                <a href="https://steamcommunity.com/id/icalculate97/" class="iconfont-archer steam" target="_blank" title=steam></a>
+            
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+        
+            
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Begin-with-the-conversion-mechanism"><span class="toc-text">Begin with the conversion mechanism</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-metric-chain"><span class="toc-text">The metric chain</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Effective-area-is-a-physical-question"><span class="toc-text">Effective area is a physical question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Responsivity-begins-with-calibrated-light"><span class="toc-text">Responsivity begins with calibrated light</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dark-current-is-not-the-noise-spectrum"><span class="toc-text">Dark current is not the noise spectrum</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Speed-requires-a-complete-transient-and-a-bandwidth"><span class="toc-text">Speed requires a complete transient and a bandwidth</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-compact-reporting-checklist"><span class="toc-text">A compact reporting checklist</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Source-and-reading-note"><span class="toc-text">Source and reading note</span></a></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 77
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2026 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "2026/09/29/How-to-Measure-a-Two-Dimensional-Photodetector/" >How to Measure a Two-Dimensional Photodetector Without Fooling Yourself</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/22</span><a class="archive-post-title" href= "2026/09/22/Light-Field-Detection-in-the-Age-of-AI/" >Light Field Detection in the Age of AI: Designing the Measurement, Not Just the Model</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/19</span><a class="archive-post-title" href= "2026/09/19/Two-Dimensional-Materials-for-Advanced-BEOL-and-Backside-Chips/" >Two-Dimensional Materials Beyond the Transistor: BEOL and Backside Chips</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "2026/09/08/Living-Matter-Where-Life-Becomes-Physics/" >Living Matter: Where Life Becomes Physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "2026/09/04/Dark-Channel-Prior-Research-Taste-and-Perception-Hardware/" >Dark Channel Prior: From Research Taste to Perception Hardware</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "2026/09/04/From-Greens-Theorem-to-the-Residue-Theorem/" >From Green's Theorem to the Residue Theorem: Boundary Integrals, Singularities, and Sources</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "2026/09/03/Persistent-Homology-From-Point-Clouds-to-Topological-Signatures/" >Persistent Homology: Watching Shape Emerge from a Point Cloud</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" >Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/" >Optoelectronic Devices: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory/" >Semiconductor Devices & Quantum Physics: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Landau-Fermi-Liquid-Theory/" >From an Electron Sea to Quasiparticles: Landau Fermi-Liquid Theory (Part II)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "2026/09/01/Landau-Theory-From-Symmetry-to-Phase-Transitions/" >From Symmetry to Phase Transitions: Landau's Art of Ignoring Details (Part I)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/" >From Ballistic Transport to Hopping in FETs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "2026/08/24/From-a-Parallel-Plate-Capacitor-to-MOSFETs-2D-FETs-Ambipolar-FETs-and-HEMTs/" >From Capacitors to FETs</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/17</span><a class="archive-post-title" href= "2026/05/17/What-Top-Journals-Really-Look-For/" >What Top Journals Really Look For</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/16</span><a class="archive-post-title" href= "2026/05/16/Research-Taste-in-the-Age-of-Vibe-Coding/" >Research Taste in the Age of Vibe Coding</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2025 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2025/08/18/Introducing-2D-material-based-devices-in-the-logic-scaling-roadmap/" >Introducing 2D-material based devices in the logic scaling roadmap</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "2025/07/16/Vortex-Avalanche/" >Vortex Avalanche</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/16</span><a class="archive-post-title" href= "2025/07/16/The-RTS-Waveform-Evolution/" >The RTS Waveform Evolution</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "2025/07/03/MOSFET-Quantum-Transport-Simulation/" >MOSFET Quantum Transport Simulation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/Quantum-of-Conductance-Deriving-and-Visualizing-the-Limits-of-Electronic-Transport/" >Quantum of Conductance: Deriving and Visualizing the Limits of Electronic Transport</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "2025/07/02/EBE-Deposition-Operation-Notes/" >EBE Deposition Operation Notes</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/01</span><a class="archive-post-title" href= "2025/07/01/Phase-Transitions-in-Electronic-Materials-and-Devices/" >Phase Transitions in Electronic Materials and Devices</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/28</span><a class="archive-post-title" href= "2025/06/28/When-a-Stranger-Becomes-Both-Guest-and-Enemy-Enantiosemy/" >When a Stranger Becomes Both Guest and Enemy: Enantiosemy</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/25</span><a class="archive-post-title" href= "2025/06/25/From-Classical-Mechanics-to-Quantum-Theory/" >From Classical Mechanics to Quantum Theory</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2024 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "2024/11/17/Deck-of-Doctoral-Dissertation/" >Deck of Doctoral Dissertation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/Science-Communication/" >Science Communication</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2024/04/11/How-to-give-a-talk/" >How to give a talk</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2023 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2023/03/27/SR400-photon-counter-delay-scan-demo/" >SR400 photon counter delay scan demo</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/23</span><a class="archive-post-title" href= "2023/03/23/Python-library-for-SR400-Photon-counter/" >Python library for SR400 Photon counter</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href= "2023/03/21/COMSOL-script-for-random-object-generation/" >COMSOL script for random object generation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "2023/03/18/LakeShore-Model-335-Python-Script/" >LakeShore Model 335 Python控制脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2023/03/17/Python-script-for-Keithley-2400-current-sweep/" >Keithley2400源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href= "2023/03/16/Python-script-for-Keithley-2450-current-sweep/" >Keithley2450源表电流扫描Python程序</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "2023/03/15/Frontiers-in-condensed-matter-physics/" >Frontiers in condensed matter physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2023/03/13/HER-auto-test-script/" >HER auto test script</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2021/02/15/Cmd%20Markdown%20Editor/" >Cmd Markdown Editor</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href= "2020/11/24/Introduction-for-CHI660e-Macro-Generator/" >Introduction for CHI660e Macro Generator</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/15</span><a class="archive-post-title" href= "2020/11/15/hello-world/" >Hello World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "2020/09/29/Why-movies-appeal-to-me/" >Why movies appeal to me</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/15</span><a class="archive-post-title" href= "2020/09/15/A-letter-from-the-middle-of-September/" >七月流火 春日迟迟</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "2020/08/18/Understanding-of-Pseudocapacitance/" >Understanding of Pseudocapacitance</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "2020/06/18/Perspective-Blaming-China-is-Illegimate-and-Irresponsible/" >Blaming China is Illegimate and Irresponsible</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span><a class="archive-post-title" href= "2020/05/19/Side-by-Side-Battery-Technologies-with-Lithium%E2%80%90Ion-Based-Batteries/" >Side-by-Side-Battery-Technologies-with-Lithium‐Ion-Based-Batteries</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href= "2020/05/01/WHAT-IS-ATR-SEIRAS/" >WHAT IS ATR-SEIRAS?</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "2020/04/30/Microcell-Electrochemistry-Literature-Review/" >Microcell Electrochemistry Literature Review</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "2020/04/28/Mass-Transfer-in-Electrochemistry/" >Mass Transfer in Electrochemistry</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "2020/04/17/Drude-Model-in-Soild-State-Physics/" >Drude Model in Soild State Physics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/03</span><a class="archive-post-title" href= "2020/04/03/Is-the-World-Virtual/" >Is the World Virtual</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "2020/03/27/Topological-two-dimensional-polymers/" >Topological two-dimensional polymers</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href= "2020/03/26/The-Configuration-to-the-Deep-Network/" >The Configuration to the Deep Network</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Artical-Dynamic-stability-of-active-sites-in-hydr(oxy)-oxides-for-the-oxygen-evolution-reaction/" >顶刊精读：动态平衡视角下的OER反应位点</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href= "2020/03/17/Literature-research-website/" >Literature research website</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2020/03/13/Advantages-of-microelectrode-system-in-electrochemical-science/" >Advantages of microelectrode system in electrochemical science</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "2020/03/11/Hertz-Knudsen-Equation-for-Evaporation-and-Condensation/" >Hertz-Knudsen Equation for Evaporation and Condensation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/How-to-measure-ECSA/" >How to measure ECSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2020/03/09/Li-Battery-Foundation/" >Li Battery Foundation</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span><a class="archive-post-title" href= "2020/03/03/CDW-and-SDW/" >CDW and SDW</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "2020/02/27/3Dmax-Draw-Graphene-Grain-Boundaries/" >使用3Dmax绘制石墨烯晶格缺陷</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "2020/02/26/Anacoda-Introductory-Tutorail/" >Anaconda详细安装及使用教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Plugins-Density-Filter/" >Origin插件之：散点密度热图（Density Filter）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span><a class="archive-post-title" href= "2020/02/25/Origin-Python-Environment-Build-up/" >Origin+Python环境搭建</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span><a class="archive-post-title" href= "2020/02/24/Origin-Plugins-Graph-Maker/" >Origin插件之：快速作图（Graph Maker）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Venn-Diagram/" >Origin插件之：韦恩图生成插件（Venn Diagram）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "2020/02/23/Origin-Plugins-Layer-Stack-Manager/" >Origin插件之：堆叠图小工具（Layer Stack Manager）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "2020/02/22/Origin-Plugins-Color-Editor/" >Origin插件之：配色编辑器(Color Editor)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "2020/02/21/Origin-Plugins-Tafel-Extrapolation/" >Origin插件之：LSV数据处理插件(Tafel Extrapolation)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/P5-js-new-journal/" >P5.js new journal</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2020/02/20/Katex-Test/" >Katex Test</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Artical-Current-and-future-role-of-Haber-Bosch-ammonia-in-a-carbon-free-energy-landscape/" >催化合成氨未来何去何从</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/4thYearAnniversary/" >写在第四年的Anniversary</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2020/02/19/Group-Meeting/" >Group Meeting Backup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "2020/02/16/Artical-Precise-Anionic-Regulation-Assisted-by-Electrochemical-Reactions/" >张强组EES：电化学辅助可控合成异质阴离子结构催化剂实现高效OER</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "2020/02/15/Artical-The-identification-of-optimal-active-boron-sites-for-N2-reduction/" >原子轨道耦合帮你分析固氮催化位点活性！</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "2020/02/14/Some-Useful-website/" >Some Useful website</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
+    
+        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
+    
+        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
+    
+        <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
+    
+        <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
+    
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
+    
+        <span class="sidebar-tag-name" data-tags="Dark Channel Prior"><span class="iconfont-archer">&#xe606;</span>Dark Channel Prior</span>
+    
+        <span class="sidebar-tag-name" data-tags="Image Dehazing"><span class="iconfont-archer">&#xe606;</span>Image Dehazing</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Taste"><span class="iconfont-archer">&#xe606;</span>Research Taste</span>
+    
+        <span class="sidebar-tag-name" data-tags="FPGA"><span class="iconfont-archer">&#xe606;</span>FPGA</span>
+    
+        <span class="sidebar-tag-name" data-tags="Edge Perception"><span class="iconfont-archer">&#xe606;</span>Edge Perception</span>
+    
+        <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
+    
+        <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
+    
+        <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Optical Properties"><span class="iconfont-archer">&#xe606;</span>Optical Properties</span>
+    
+        <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
+    
+        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Device Physics"><span class="iconfont-archer">&#xe606;</span>Device Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
+    
+        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+    
+        <span class="sidebar-tag-name" data-tags="complex analysis"><span class="iconfont-archer">&#xe606;</span>complex analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="differential forms"><span class="iconfont-archer">&#xe606;</span>differential forms</span>
+    
+        <span class="sidebar-tag-name" data-tags="topology"><span class="iconfont-archer">&#xe606;</span>topology</span>
+    
+        <span class="sidebar-tag-name" data-tags="field theory"><span class="iconfont-archer">&#xe606;</span>field theory</span>
+    
+        <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
+    
+        <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
+    
+        <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetectors"><span class="iconfont-archer">&#xe606;</span>Photodetectors</span>
+    
+        <span class="sidebar-tag-name" data-tags="Device Characterization"><span class="iconfont-archer">&#xe606;</span>Device Characterization</span>
+    
+        <span class="sidebar-tag-name" data-tags="Noise"><span class="iconfont-archer">&#xe606;</span>Noise</span>
+    
+        <span class="sidebar-tag-name" data-tags="Metrology"><span class="iconfont-archer">&#xe606;</span>Metrology</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
+        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
+    
+        <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
+    
+        <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
+    
+        <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Computational Optics"><span class="iconfont-archer">&#xe606;</span>Computational Optics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Inverse Problems"><span class="iconfont-archer">&#xe606;</span>Inverse Problems</span>
+    
+        <span class="sidebar-tag-name" data-tags="Artificial Intelligence"><span class="iconfont-archer">&#xe606;</span>Artificial Intelligence</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
+    
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
+    
+        <span class="sidebar-tag-name" data-tags="Living Matter"><span class="iconfont-archer">&#xe606;</span>Living Matter</span>
+    
+        <span class="sidebar-tag-name" data-tags="Active Matter"><span class="iconfont-archer">&#xe606;</span>Active Matter</span>
+    
+        <span class="sidebar-tag-name" data-tags="Biophysics"><span class="iconfont-archer">&#xe606;</span>Biophysics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Non-equilibrium Physics"><span class="iconfont-archer">&#xe606;</span>Non-equilibrium Physics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Collective Behavior"><span class="iconfont-archer">&#xe606;</span>Collective Behavior</span>
+    
+        <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
+    
+        <span class="sidebar-tag-name" data-tags="Topological Data Analysis"><span class="iconfont-archer">&#xe606;</span>Topological Data Analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Persistent Homology"><span class="iconfont-archer">&#xe606;</span>Persistent Homology</span>
+    
+        <span class="sidebar-tag-name" data-tags="Data Science"><span class="iconfont-archer">&#xe606;</span>Data Science</span>
+    
+        <span class="sidebar-tag-name" data-tags="Network Privacy"><span class="iconfont-archer">&#xe606;</span>Network Privacy</span>
+    
+        <span class="sidebar-tag-name" data-tags="AI-Assisted Research"><span class="iconfont-archer">&#xe606;</span>AI-Assisted Research</span>
+    
+        <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
+    
+        <span class="sidebar-tag-name" data-tags="BEOL"><span class="iconfont-archer">&#xe606;</span>BEOL</span>
+    
+        <span class="sidebar-tag-name" data-tags="Interconnects"><span class="iconfont-archer">&#xe606;</span>Interconnects</span>
+    
+        <span class="sidebar-tag-name" data-tags="Backside Power Delivery"><span class="iconfont-archer">&#xe606;</span>Backside Power Delivery</span>
+    
+        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+    
+        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
+    
+        <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
+    
+        <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics"><span class="iconfont-archer">&#xe60a;</span>Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Computer-Vision"><span class="iconfont-archer">&#xe60a;</span>Scientific/Computer-Vision</span>
+    
+        <span class="sidebar-category-name" data-categories="Mathematical-Physics"><span class="iconfont-archer">&#xe60a;</span>Mathematical-Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Lab-Notes"><span class="iconfont-archer">&#xe60a;</span>Lab-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Scientific/Semiconductor-Devices</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
+    
+        <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+    
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
+    
+        <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Scientific/Artificial-Intelligence</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Chemistry/Energy"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry/Energy</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Du Xinchuan"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="../../../../lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="../../../../scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="../../../../scripts/share.js" async></script>    
+     
+    <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['
+</html>
+
+
+, '
+</html>
+
+
+], ['\\(', '\\)']],
+    displayMath: [['$', '$'], ['\\[', '\\]']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
+
+
