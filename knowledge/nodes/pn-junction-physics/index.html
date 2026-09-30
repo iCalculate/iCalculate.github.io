@@ -10,54 +10,51 @@
 </blockquote>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pn_Junction_Diffusion_and_Drift.svg" alt="Diffusion, space charge, field, and drift in a PN junction"></p>
 <p><em>Figure 1 | Formation of the depletion region and opposing drift currents. Inductiveload, public domain; <a href="https://commons.wikimedia.org/wiki/File:Pn_Junction_Diffusion_and_Drift.svg" target="_blank" rel="noopener">source</a>.</em></p>
-<h2 id="Equilibrium-and-Built-In-Potential"><a href="#Equilibrium-and-Built-In-Potential" class="headerlink" title="Equilibrium and Built-In Potential"></a>Equilibrium and Built-In Potential</h2><p>For an abrupt, nondegenerate homojunction with fully ionized dopants,</p>
+<h2 id="Equilibrium-and-Built-In-Potential">Equilibrium and Built-In Potential</h2>
+<p>For an abrupt, nondegenerate homojunction with fully ionized dopants,</p>
 <div class="math-display">\[V_{bi}=\frac{kT}{q}\ln\frac{N_AN_D}{n_i^2}.\]</div>
-
 <p>The depletion approximation gives \(N_Ax_p=N_Dx_n\) and</p>
 <div class="math-display">\[W=x_p+x_n=\sqrt{\frac{2\varepsilon_s}{q}
 \left(\frac{1}{N_A}+\frac{1}{N_D}\right)(V_{bi}-V_A)}.\]</div>
-
 <p>Forward bias lowers the barrier and narrows the depletion region; reverse bias does the opposite.</p>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Un-Biased_pn_Junction_Bands.svg" alt="Equilibrium PN-junction band diagram"></p>
 <p><em>Figure 2 | A flat Fermi level at equilibrium and band bending across the built-in potential. Inductiveload, public domain; <a href="https://commons.wikimedia.org/wiki/File:Un-Biased_pn_Junction_Bands.svg" target="_blank" rel="noopener">source</a>.</em></p>
-<h2 id="Why-Forward-Current-Is-Exponential"><a href="#Why-Forward-Current-Is-Exponential" class="headerlink" title="Why Forward Current Is Exponential"></a>Why Forward Current Is Exponential</h2><p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Forward-Biased_pn_Junction_Bands.svg" alt="Forward-biased PN-junction bands"></p>
+<h2 id="Why-Forward-Current-Is-Exponential">Why Forward Current Is Exponential</h2>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Forward-Biased_pn_Junction_Bands.svg" alt="Forward-biased PN-junction bands"></p>
 <p><em>Figure 3 | Forward bias lowers the majority-carrier barrier. Inductiveload, public domain; <a href="https://commons.wikimedia.org/wiki/File:Forward-Biased_pn_Junction_Bands.svg" target="_blank" rel="noopener">source</a>.</em></p>
 <p>An ideal diode assumes low injection, negligible depletion-region recombination, negligible field in the neutral regions, and sufficiently distant contacts. Minority-carrier densities at the depletion edges become</p>
 <div class="math-display">\[p_n(0)=p_{n0}e^{qV_A/kT},\qquad n_p(0)=n_{p0}e^{qV_A/kT}.\]</div>
-
 <p>Solving the minority-carrier diffusion equations yields</p>
 <div class="math-display">\[J=J_S(e^{qV_A/kT}-1),\]</div>
-
 <div class="math-display">\[J_S=q\left(\frac{D_pp_{n0}}{L_p}+\frac{D_nn_{p0}}{L_n}\right).\]</div>
-
 <p>The exponential is a Boltzmann response of the junction-edge concentration to barrier lowering, not an empirical fit.</p>
-<h2 id="Capacitance-Transients-and-Breakdown"><a href="#Capacitance-Transients-and-Breakdown" class="headerlink" title="Capacitance, Transients, and Breakdown"></a>Capacitance, Transients, and Breakdown</h2><p>Reverse bias stores depletion charge, producing</p>
+<h2 id="Capacitance-Transients-and-Breakdown">Capacitance, Transients, and Breakdown</h2>
+<p>Reverse bias stores depletion charge, producing</p>
 <div class="math-display">\[C_j&#39;=\frac{\varepsilon_s}{W}.\]</div>
-
 <p>Forward bias stores excess minority carriers in the neutral regions, producing diffusion capacitance and reverse-recovery delay. Strong reverse fields lead either to band-to-band tunneling in narrow, heavily doped junctions or to impact-ionization avalanche in wider, more lightly doped junctions.</p>
-<h2 id="From-One-Junction-to-Many-Devices"><a href="#From-One-Junction-to-Many-Devices" class="headerlink" title="From One Junction to Many Devices"></a>From One Junction to Many Devices</h2><ul>
+<h2 id="From-One-Junction-to-Many-Devices">From One Junction to Many Devices</h2>
+<ul>
 <li>Two coupled junctions form the <a href="/knowledge/nodes/bipolar-junction-transistor-physics/">BJT</a>.</li>
 <li>Junction fields separate photocarriers in <a href="/knowledge/nodes/optoelectronic-semiconductor-devices/">photodiodes and solar cells</a>.</li>
 <li>A lightly doped drift region supports voltage in power devices at the cost of resistance.</li>
-<li>MOSFET source&#x2F;body and drain&#x2F;body junctions create the body diode and junction capacitances.</li>
+<li>MOSFET source/body and drain/body junctions create the body diode and junction capacitances.</li>
 </ul>
-<h2 id="Common-Pitfalls"><a href="#Common-Pitfalls" class="headerlink" title="Common Pitfalls"></a>Common Pitfalls</h2><ul>
+<h2 id="Common-Pitfalls">Common Pitfalls</h2>
+<ul>
 <li>A depletion region is not charge-free: it lacks mobile carriers but contains ionized dopant charge.</li>
 <li>Reverse saturation current is supplied mainly by thermally generated minority carriers.</li>
 <li>“0.7 V turn-on” is not a law; voltage depends on current density, temperature, material, area, and resistance.</li>
 </ul>
 <!--deep-classical:en-->
-
-<h2 id="From-equilibrium-field-to-diode-current"><a href="#From-equilibrium-field-to-diode-current" class="headerlink" title="From equilibrium field to diode current"></a>From equilibrium field to diode current</h2><p>Equating Fermi levels across uniformly doped material gives</p>
+<h2 id="From-equilibrium-field-to-diode-current">From equilibrium field to diode current</h2>
+<p>Equating Fermi levels across uniformly doped material gives</p>
 <div class="math-display">\[V_{bi}=\frac{k_BT}{q}\ln\frac{N_AN_D}{n_i^2}.\]</div>
-
 <p>In the depletion approximation, charge neutrality \(N_Ax_p=N_Dx_n\) and Poisson integration give</p>
 <div class="math-display">\[W=\sqrt{\frac{2\epsilon_s}{q}\left(\frac1{N_A}+\frac1{N_D}\right)(V_{bi}-V)}.\]</div>
-
 <p>Forward bias injects minority carriers whose diffusion–recombination solution yields \(I=I_S(e^{qV/k_BT}-1)\).  The ideality factor changes when depletion-region recombination, high injection or series resistance dominates.  Junction capacitance \(C_j=\epsilon A/W\) probes doping, while diffusion capacitance measures stored minority charge.  Reverse breakdown must distinguish tunnelling from impact ionization rather than treating breakdown voltage as a single empirical limit.</p>
 <!--/deep-classical:en-->
-
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<h2 id="References">References</h2>
+<ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapter 2.</li>
 <li><a href="https://www.cnblogs.com/TE4BR3K/p/19122001" target="_blank" rel="noopener">TE4BR3K: PN-junction diode notes</a> for review, not as the authority for definitions.</li>
 </ol>
@@ -66,59 +63,55 @@
 </blockquote>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pn_Junction_Diffusion_and_Drift.svg" alt="PN结形成中的扩散、空间电荷、电场与漂移"></p>
 <p><em>图 1｜耗尽区由扩散留下的离化施主与受主形成，内建电场驱动反向漂移。原图：Inductiveload，公有领域；<a href="https://commons.wikimedia.org/wiki/File:Pn_Junction_Diffusion_and_Drift.svg" target="_blank" rel="noopener">文件页</a>。</em></p>
-<h2 id="1-热平衡与内建电势"><a href="#1-热平衡与内建电势" class="headerlink" title="1. 热平衡与内建电势"></a>1. 热平衡与内建电势</h2><p>对突变同质结、完全电离、非简并近似，远离结区有 \(n_n\approx N_D\)、\(p_p\approx N_A\)。平衡费米能级对齐给出</p>
+<h2 id="1-热平衡与内建电势">1. 热平衡与内建电势</h2>
+<p>对突变同质结、完全电离、非简并近似，远离结区有 \(n_n\approx N_D\)、\(p_p\approx N_A\)。平衡费米能级对齐给出</p>
 <div class="math-display">\[V_{bi}=\frac{kT}{q}\ln\frac{N_AN_D}{n_i^2}.\]</div>
-
 <p>耗尽近似下电荷密度分段为 \(-qN_A\) 与 \(+qN_D\)，电中性要求</p>
 <div class="math-display">\[N_Ax_p=N_Dx_n.\]</div>
-
 <p>总耗尽宽度</p>
 <div class="math-display">\[W=x_p+x_n=
 \sqrt{\frac{2\varepsilon_s}{q}
 \left(\frac{1}{N_A}+\frac{1}{N_D}\right)(V_{bi}-V_A)}.\]</div>
-
 <p>正偏 \(V_A&gt;0\) 降低势垒并缩窄耗尽区；反偏增大势垒与耗尽区。</p>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Un-Biased_pn_Junction_Bands.svg" alt="平衡PN结的能带图"></p>
 <p><em>图 2｜平衡时费米能级水平，能带弯曲对应内建电势。原图：Inductiveload，公有领域；<a href="https://commons.wikimedia.org/wiki/File:Un-Biased_pn_Junction_Bands.svg" target="_blank" rel="noopener">文件页</a>。</em></p>
-<h2 id="2-正向偏置为何产生指数电流"><a href="#2-正向偏置为何产生指数电流" class="headerlink" title="2. 正向偏置为何产生指数电流"></a>2. 正向偏置为何产生指数电流</h2><p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Forward-Biased_pn_Junction_Bands.svg" alt="正向偏置下PN结能带"></p>
+<h2 id="2-正向偏置为何产生指数电流">2. 正向偏置为何产生指数电流</h2>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Forward-Biased_pn_Junction_Bands.svg" alt="正向偏置下PN结能带"></p>
 <p><em>图 3｜正向偏置降低多数载流子跨结势垒。原图：Inductiveload，公有领域；<a href="https://commons.wikimedia.org/wiki/File:Forward-Biased_pn_Junction_Bands.svg" target="_blank" rel="noopener">文件页</a>。</em></p>
 <p>理想二极管采用四个关键假设：耗尽区内无净产生复合、低注入、准中性区电场可忽略、接触足够远。结边少子由玻尔兹曼因子提升：</p>
 <div class="math-display">\[p_n(0)=p_{n0}e^{qV_A/kT},\qquad
 n_p(0)=n_{p0}e^{qV_A/kT}.\]</div>
-
 <p>解准中性区少子扩散方程得到</p>
 <div class="math-display">\[J=J_S\left(e^{qV_A/kT}-1\right),\]</div>
-
 <div class="math-display">\[J_S=q\left(\frac{D_pp_{n0}}{L_p}+\frac{D_nn_{p0}}{L_n}\right).\]</div>
-
 <p>指数项来自“偏压改变势垒后，结边热平衡载流子按玻尔兹曼因子改变”，而不是来自经验拟合。</p>
-<h2 id="3-电容、瞬态与击穿"><a href="#3-电容、瞬态与击穿" class="headerlink" title="3. 电容、瞬态与击穿"></a>3. 电容、瞬态与击穿</h2><p>反偏下耗尽层存储空间电荷，单位面积结电容</p>
+<h2 id="3-电容、瞬态与击穿">3. 电容、瞬态与击穿</h2>
+<p>反偏下耗尽层存储空间电荷，单位面积结电容</p>
 <div class="math-display">\[C_j&#39;=\frac{\varepsilon_s}{W}.\]</div>
-
 <p>正偏下准中性区存储过剩少子，形成扩散电容；它常主导二极管反向恢复时间。反向高场下有两类极限：重掺杂、窄耗尽区的带间隧穿（Zener）和较轻掺杂、宽耗尽区的碰撞电离（雪崩）。详见<a href="/knowledge/nodes/device-breakdown-and-scaling/">击穿、缩放与器件非理想效应</a>。</p>
-<h2 id="4-从一个结到其他器件"><a href="#4-从一个结到其他器件" class="headerlink" title="4. 从一个结到其他器件"></a>4. 从一个结到其他器件</h2><ul>
+<h2 id="4-从一个结到其他器件">4. 从一个结到其他器件</h2>
+<ul>
 <li>两个耦合 PN 结构成<a href="/knowledge/nodes/bipolar-junction-transistor-physics/">双极晶体管：少子注入与电流放大</a>；</li>
 <li>光生电子空穴对被结区电场分离，形成<a href="/knowledge/nodes/optoelectronic-semiconductor-devices/">光电二极管与太阳电池</a>；</li>
 <li>功率器件通过轻掺杂漂移区承担高压，但付出导通电阻代价；</li>
-<li>MOSFET 的源&#x2F;体和漏&#x2F;体同样是 PN 结，决定体二极管与结电容。</li>
+<li>MOSFET 的源/体和漏/体同样是 PN 结，决定体二极管与结电容。</li>
 </ul>
-<h2 id="5-常见误区"><a href="#5-常见误区" class="headerlink" title="5. 常见误区"></a>5. 常见误区</h2><ul>
+<h2 id="5-常见误区">5. 常见误区</h2>
+<ul>
 <li>耗尽区不是完全“没有电荷”，而是缺少自由载流子、保留离化杂质空间电荷。</li>
 <li>反向饱和电流不来自多数载流子越过更高势垒，而主要由热生少子供应。</li>
 <li>“0.7 V 导通”不是基本定律；电压取决于电流密度、温度、材料、面积和串联电阻。</li>
 </ul>
 <!--deep-classical:zh-->
-
-<h2 id="从平衡内建场到二极管电流"><a href="#从平衡内建场到二极管电流" class="headerlink" title="从平衡内建场到二极管电流"></a>从平衡内建场到二极管电流</h2><p>均匀掺杂材料接触后费米能级对齐，得到</p>
+<h2 id="从平衡内建场到二极管电流">从平衡内建场到二极管电流</h2>
+<p>均匀掺杂材料接触后费米能级对齐，得到</p>
 <div class="math-display">\[V_{bi}=\frac{k_BT}{q}\ln\frac{N_AN_D}{n_i^2}.\]</div>
-
 <p>耗尽近似下由 \(N_Ax_p=N_Dx_n\) 与泊松积分得到</p>
 <div class="math-display">\[W=\sqrt{\frac{2\epsilon_s}{q}\left(\frac1{N_A}+\frac1{N_D}\right)(V_{bi}-V)}.\]</div>
-
 <p>正向偏压注入少数载流子，扩散—复合方程给出 \(I=I_S(e^{qV/k_BT}-1)\)。耗尽区复合、高注入或串联电阻占主导时理想因子会改变。结电容 \(C_j=\epsilon A/W\) 探测掺杂，扩散电容则测量少子存储。反向击穿必须区分隧穿与碰撞电离，不能把击穿电压视为一个纯经验极限。</p>
 <!--/deep-classical:zh-->
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<h2 id="参考">参考</h2>
+<ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapter 2.</li>
 <li><a href="https://www.cnblogs.com/TE4BR3K/p/19122001" target="_blank" rel="noopener">TE4BR3K：PN结二极管笔记</a>（用于交叉复习，不作为公式权威来源）。</li>
 </ol>

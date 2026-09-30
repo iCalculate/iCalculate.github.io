@@ -10,16 +10,17 @@
 </blockquote>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Elektron-Loch-Paar_im_Halbleiterkristall.svg" alt="Generation, motion, and recombination of an electron–hole pair in silicon"></p>
 <p><em>Figure 1 | Electron–hole generation, motion, and recombination in real-space and band representations. Cepheiden, CC BY-SA 3.0; <a href="https://commons.wikimedia.org/wiki/File:Elektron-Loch-Paar_im_Halbleiterkristall.svg" target="_blank" rel="noopener">source and license</a>.</em></p>
-<h2 id="Excess-Carriers-and-Low-Injection"><a href="#Excess-Carriers-and-Low-Injection" class="headerlink" title="Excess Carriers and Low Injection"></a>Excess Carriers and Low Injection</h2><p>Optical generation normally creates \(\Delta n=\Delta p\). In p-type material, \(\Delta n\ll p_0\approx N_A\) defines low injection. The majority-carrier density then changes little and minority-carrier dynamics can be linearized. Under high injection, conductivity, electric field, recombination, and neutrality must all be solved self-consistently.</p>
-<h2 id="Quasi-Fermi-Levels"><a href="#Quasi-Fermi-Levels" class="headerlink" title="Quasi-Fermi Levels"></a>Quasi-Fermi Levels</h2><p>If intraband thermalization is much faster than interband generation and recombination, each carrier population remains approximately thermal:</p>
+<h2 id="Excess-Carriers-and-Low-Injection">Excess Carriers and Low Injection</h2>
+<p>Optical generation normally creates \(\Delta n=\Delta p\). In p-type material, \(\Delta n\ll p_0\approx N_A\) defines low injection. The majority-carrier density then changes little and minority-carrier dynamics can be linearized. Under high injection, conductivity, electric field, recombination, and neutrality must all be solved self-consistently.</p>
+<h2 id="Quasi-Fermi-Levels">Quasi-Fermi Levels</h2>
+<p>If intraband thermalization is much faster than interband generation and recombination, each carrier population remains approximately thermal:</p>
 <div class="math-display">\[n=N_Ce^{-(E_C-E_{Fn})/kT},\qquad
 p=N_Ve^{-(E_{Fp}-E_V)/kT}.\]</div>
-
 <p>Therefore</p>
 <div class="math-display">\[np=n_i^2\exp\left(\frac{E_{Fn}-E_{Fp}}{kT}\right).\]</div>
-
 <p>The splitting \(E_{Fn}-E_{Fp}\) is the nonequilibrium chemical-potential difference. In an open-circuit solar cell it is closely related to the maximum obtainable terminal voltage.</p>
-<h2 id="Generation-and-Recombination-Mechanisms"><a href="#Generation-and-Recombination-Mechanisms" class="headerlink" title="Generation and Recombination Mechanisms"></a>Generation and Recombination Mechanisms</h2><table>
+<h2 id="Generation-and-Recombination-Mechanisms">Generation and Recombination Mechanisms</h2>
+<table>
 <thead>
 <tr>
 <th>Mechanism</th>
@@ -27,7 +28,8 @@ p=N_Ve^{-(E_{Fp}-E_V)/kT}.\]</div>
 <th>Typical regime</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Radiative</td>
 <td>\(R_{rad}=B(np-n_i^2)\)</td>
 <td>direct-gap emitters</td>
@@ -47,32 +49,31 @@ p=N_Ve^{-(E_{Fp}-E_V)/kT}.\]</div>
 <td>\(G(x)=\alpha\Phi_0e^{-\alpha x}\)</td>
 <td>absorption coefficient \(\alpha\)</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>Midgap traps are especially efficient SRH centers because they can successively capture both carrier types.</p>
-<h2 id="Lifetime-and-Diffusion-Length"><a href="#Lifetime-and-Diffusion-Length" class="headerlink" title="Lifetime and Diffusion Length"></a>Lifetime and Diffusion Length</h2><p>Under uniform low injection after generation is removed,</p>
+<h2 id="Lifetime-and-Diffusion-Length">Lifetime and Diffusion Length</h2>
+<p>Under uniform low injection after generation is removed,</p>
 <div class="math-display">\[\Delta n(t)=\Delta n(0)e^{-t/\tau_n}.\]</div>
-
 <p>The characteristic travel distances before recombination are</p>
 <div class="math-display">\[L_n=\sqrt{D_n\tau_n},\qquad L_p=\sqrt{D_p\tau_p}.\]</div>
-
 <p>They enter PN-diode saturation current, BJT base transport, and photocarrier collection.</p>
-<h2 id="Common-Pitfalls"><a href="#Common-Pitfalls" class="headerlink" title="Common Pitfalls"></a>Common Pitfalls</h2><ul>
+<h2 id="Common-Pitfalls">Common Pitfalls</h2>
+<ul>
 <li>Lifetime is not an immutable property of an individual electron; it depends on injection, defects, temperature, and competing channels.</li>
 <li>A quasi-Fermi level is not an additional band. It parameterizes a nonequilibrium occupation.</li>
 <li>Strong light emission requires radiative recombination to dominate nonradiative loss, not merely a large total recombination rate.</li>
 </ul>
 <!--deep-classical:en-->
-
-<h2 id="Quasi-Fermi-levels-and-recombination-balance"><a href="#Quasi-Fermi-levels-and-recombination-balance" class="headerlink" title="Quasi-Fermi levels and recombination balance"></a>Quasi-Fermi levels and recombination balance</h2><p>When scattering thermalizes each carrier population faster than generation&#x2F;recombination, electrons and holes have separate quasi-Fermi levels:</p>
+<h2 id="Quasi-Fermi-levels-and-recombination-balance">Quasi-Fermi levels and recombination balance</h2>
+<p>When scattering thermalizes each carrier population faster than generation/recombination, electrons and holes have separate quasi-Fermi levels:</p>
 <div class="math-display">\[n=N_Ce^{-(E_C-E_{Fn})/k_BT},\qquad p=N_Ve^{-(E_{Fp}-E_V)/k_BT}.\]</div>
-
 <p>Their separation measures departure from equilibrium and sets the maximum electrochemical energy of a photovoltaic or LED.  Shockley–Read–Hall recombination through a trap is</p>
 <div class="math-display">\[R_{SRH}=\frac{np-n_i^2}{\tau_p(n+n_1)+\tau_n(p+p_1)}.\]</div>
-
 <p>Low-level lifetime is not transferable to high injection, where radiative \(Bnp\) and Auger \(C_nn^2p+C_pnp^2\) terms grow differently.  Transient photoconductance, time-resolved luminescence and frequency response probe different weighted combinations of lifetime, diffusion and surface recombination.</p>
 <!--/deep-classical:en-->
-
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<h2 id="References">References</h2>
+<ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapters 1, 2, 12, and 13.</li>
 <li>W. Shockley and W. T. Read, “Statistics of the Recombinations of Holes and Electrons,” <em>Physical Review</em> <strong>87</strong>, 835 (1952).</li>
 </ol>
@@ -81,19 +82,19 @@ p=N_Ve^{-(E_{Fp}-E_V)/kT}.\]</div>
 </blockquote>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Elektron-Loch-Paar_im_Halbleiterkristall.svg" alt="硅晶体中电子-空穴对的产生、运动与复合"></p>
 <p><em>图 1｜电子–空穴对的产生、运动与复合及其能带表示。原图：Cepheiden，CC BY-SA 3.0；<a href="https://commons.wikimedia.org/wiki/File:Elektron-Loch-Paar_im_Halbleiterkristall.svg" target="_blank" rel="noopener">文件页与许可</a>。</em></p>
-<h2 id="1-过剩载流子与小注入"><a href="#1-过剩载流子与小注入" class="headerlink" title="1. 过剩载流子与小注入"></a>1. 过剩载流子与小注入</h2><p>光生一对电子和空穴时通常有 \(\Delta n=\Delta p\)。在 p 型材料中若</p>
+<h2 id="1-过剩载流子与小注入">1. 过剩载流子与小注入</h2>
+<p>光生一对电子和空穴时通常有 \(\Delta n=\Delta p\)。在 p 型材料中若</p>
 <div class="math-display">\[\Delta n\ll p_0\approx N_A,\]</div>
-
 <p>称为小注入。此时多数载流子浓度几乎不变，少数载流子的复合动力学可线性化；大注入时电场、电导率、复合率和电中性条件都必须自洽求解。</p>
-<h2 id="2-准费米能级"><a href="#2-准费米能级" class="headerlink" title="2. 准费米能级"></a>2. 准费米能级</h2><p>若带内热化远快于带间产生复合，电子和空穴各自仍近似服从费米分布：</p>
+<h2 id="2-准费米能级">2. 准费米能级</h2>
+<p>若带内热化远快于带间产生复合，电子和空穴各自仍近似服从费米分布：</p>
 <div class="math-display">\[n=N_Ce^{-(E_C-E_{Fn})/kT},\qquad
 p=N_Ve^{-(E_{Fp}-E_V)/kT}.\]</div>
-
 <p>由此</p>
 <div class="math-display">\[np=n_i^2\exp\left(\frac{E_{Fn}-E_{Fp}}{kT}\right).\]</div>
-
 <p>准费米能级分裂 \(E_{Fn}-E_{Fp}\) 是非平衡“化学势差”；在太阳电池开路状态下，它给出可实现端电压的热力学上限之一。</p>
-<h2 id="3-产生与复合机制"><a href="#3-产生与复合机制" class="headerlink" title="3. 产生与复合机制"></a>3. 产生与复合机制</h2><table>
+<h2 id="3-产生与复合机制">3. 产生与复合机制</h2>
+<table>
 <thead>
 <tr>
 <th>机制</th>
@@ -101,10 +102,11 @@ p=N_Ve^{-(E_{Fp}-E_V)/kT}.\]</div>
 <th>主导情形</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>辐射复合</td>
 <td>\(R_{rad}=B(np-n_i^2)\)</td>
-<td>直接带隙材料、LED&#x2F;激光器</td>
+<td>直接带隙材料、LED/激光器</td>
 </tr>
 <tr>
 <td>Shockley–Read–Hall</td>
@@ -121,32 +123,31 @@ p=N_Ve^{-(E_{Fp}-E_V)/kT}.\]</div>
 <td>\(G(x)=\alpha\Phi_0e^{-\alpha x}\)</td>
 <td>吸收系数为 \(\alpha\) 的均匀材料</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>SRH 公式说明：位于禁带中部附近的陷阱通常最有效，因为它能依次俘获电子和空穴。</p>
-<h2 id="4-寿命与扩散长度"><a href="#4-寿命与扩散长度" class="headerlink" title="4. 寿命与扩散长度"></a>4. 寿命与扩散长度</h2><p>均匀小注入、关断外部产生后，过剩少子近似满足</p>
+<h2 id="4-寿命与扩散长度">4. 寿命与扩散长度</h2>
+<p>均匀小注入、关断外部产生后，过剩少子近似满足</p>
 <div class="math-display">\[\Delta n(t)=\Delta n(0)e^{-t/\tau_n}.\]</div>
-
 <p>在空间输运问题中，扩散长度</p>
 <div class="math-display">\[L_n=\sqrt{D_n\tau_n},\qquad L_p=\sqrt{D_p\tau_p}\]</div>
-
 <p>给出少子在复合前扩散的典型距离。PN 二极管饱和电流、BJT 基区输运因子、光电探测器收集效率都依赖它。</p>
-<h2 id="5-常见误区"><a href="#5-常见误区" class="headerlink" title="5. 常见误区"></a>5. 常见误区</h2><ul>
+<h2 id="5-常见误区">5. 常见误区</h2>
+<ul>
 <li>“寿命”不是单个电子固有且固定的寿命；它取决于注入水平、陷阱、温度和复合通道。</li>
 <li>准费米能级不是新增能带，而是描述非平衡占据的热力学参数。</li>
 <li>发光强不等于总复合少；LED 需要让辐射复合相对非辐射复合占优。</li>
 </ul>
 <!--deep-classical:zh-->
-
-<h2 id="准费米能级与复合平衡"><a href="#准费米能级与复合平衡" class="headerlink" title="准费米能级与复合平衡"></a>准费米能级与复合平衡</h2><p>当载流子内部热化快于产生&#x2F;复合时，电子和空穴分别具有准费米能级：</p>
+<h2 id="准费米能级与复合平衡">准费米能级与复合平衡</h2>
+<p>当载流子内部热化快于产生/复合时，电子和空穴分别具有准费米能级：</p>
 <div class="math-display">\[n=N_Ce^{-(E_C-E_{Fn})/k_BT},\qquad p=N_Ve^{-(E_{Fp}-E_V)/k_BT}.\]</div>
-
 <p>两者分裂衡量非平衡程度，也决定光伏或 LED 可输出的最大电化学能。陷阱辅助 Shockley–Read–Hall 复合为</p>
 <div class="math-display">\[R_{SRH}=\frac{np-n_i^2}{\tau_p(n+n_1)+\tau_n(p+p_1)}.\]</div>
-
 <p>低注入寿命不能直接迁移到高注入，因为辐射 \(Bnp\) 与 Auger \(C_nn^2p+C_pnp^2\) 项的增长规律不同。瞬态光电导、时间分辨发光与频率响应分别测到寿命、扩散和表面复合的不同加权组合。</p>
 <!--/deep-classical:zh-->
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<h2 id="参考">参考</h2>
+<ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, Chapters 1, 2, 12 and 13.</li>
 <li>W. Shockley and W. T. Read, “Statistics of the Recombinations of Holes and Electrons,” <em>Physical Review</em> <strong>87</strong>, 835 (1952).</li>
 </ol>
