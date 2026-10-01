@@ -8,34 +8,34 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">The Governing Equations of Semiconductor Devices</span><span data-lang="zh" hidden>半导体器件的基本方程</span></h1><p class="node-deck"><span data-lang="en">The self-consistent Poisson, carrier-statistics, drift–diffusion, and continuity system underlying classical semiconductor-device simulation.</span><span data-lang="zh" hidden>将泊松方程、载流子统计、漂移扩散电流与连续性方程闭合成经典器件模拟的自洽方程组。</span></p><div class="node-tags"><span>Fundamental Models</span><span>Transport Physics</span><span>Simulation</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Classical device physics closes four loops: charge produces potential; potential and statistics determine carrier density; carrier motion produces current; and current divergence changes the carrier population.</p>
 </blockquote>
-<h2 id="Poisson’s-Equation-Charge-to-Potential">Poisson’s Equation: Charge to Potential</h2>
-<div class="math-display">\[\nabla\cdot(\varepsilon\nabla\psi)=-\rho,\]</div>
+<h2 id="Poisson’s-Equation-Charge-to-Potential"><a href="#Poisson’s-Equation-Charge-to-Potential" class="headerlink" title="Poisson’s Equation: Charge to Potential"></a>Poisson’s Equation: Charge to Potential</h2><div class="math-display">\[\nabla\cdot(\varepsilon\nabla\psi)=-\rho,\]</div>
+
 <p>with</p>
 <div class="math-display">\[\rho=q(p-n+N_D^+-N_A^-)+\rho_{trap}+\rho_{fixed}.\]</div>
+
 <p>The depletion approximation neglects mobile charge in a specified region, reducing Poisson’s equation to a piecewise fixed-charge problem.</p>
-<h2 id="State-Relations-Potential-to-Carrier-Density">State Relations: Potential to Carrier Density</h2>
-<p>For nondegenerate carriers,</p>
+<h2 id="State-Relations-Potential-to-Carrier-Density"><a href="#State-Relations-Potential-to-Carrier-Density" class="headerlink" title="State Relations: Potential to Carrier Density"></a>State Relations: Potential to Carrier Density</h2><p>For nondegenerate carriers,</p>
 <div class="math-display">\[n=n_i\exp\frac{E_{Fn}-E_i}{kT},\qquad
 p=n_i\exp\frac{E_i-E_{Fp}}{kT},\]</div>
+
 <p>where \(E_i=E_{i0}-q\psi\). Equilibrium uses one constant \(E_F\); nonequilibrium requires separate quasi-Fermi levels.</p>
-<h2 id="Constitutive-Relations-Carriers-to-Current">Constitutive Relations: Carriers to Current</h2>
-<div class="math-display">\[\mathbf J_n=q\mu_n n\mathbf E+qD_n\nabla n,
+<h2 id="Constitutive-Relations-Carriers-to-Current"><a href="#Constitutive-Relations-Carriers-to-Current" class="headerlink" title="Constitutive Relations: Carriers to Current"></a>Constitutive Relations: Carriers to Current</h2><div class="math-display">\[\mathbf J_n=q\mu_n n\mathbf E+qD_n\nabla n,
 \qquad
 \mathbf J_p=q\mu_p p\mathbf E-qD_p\nabla p.\]</div>
+
 <p>Mobility, recombination, band gap, and dielectric constant may depend on position, temperature, field, and density. TCAD is therefore not merely a fixed-coefficient PDE solve.</p>
-<h2 id="Continuity-Local-Conservation">Continuity: Local Conservation</h2>
-<div class="math-display">\[\frac{\partial n}{\partial t}=\frac{1}{q}\nabla\cdot\mathbf J_n+G_n-R_n,\]</div>
+<h2 id="Continuity-Local-Conservation"><a href="#Continuity-Local-Conservation" class="headerlink" title="Continuity: Local Conservation"></a>Continuity: Local Conservation</h2><div class="math-display">\[\frac{\partial n}{\partial t}=\frac{1}{q}\nabla\cdot\mathbf J_n+G_n-R_n,\]</div>
+
 <div class="math-display">\[\frac{\partial p}{\partial t}=-\frac{1}{q}\nabla\cdot\mathbf J_p+G_p-R_p.\]</div>
+
 <p>Steady state does not always imply \(\nabla\cdot J=0\): current may vary spatially when net generation or recombination is present.</p>
-<h2 id="Boundary-Conditions-Create-the-Device">Boundary Conditions Create the Device</h2>
-<ul>
+<h2 id="Boundary-Conditions-Create-the-Device"><a href="#Boundary-Conditions-Create-the-Device" class="headerlink" title="Boundary Conditions Create the Device"></a>Boundary Conditions Create the Device</h2><ul>
 <li>Ohmic contacts fix carrier densities or quasi-Fermi potentials.</li>
 <li>Schottky contacts add thermionic emission and tunneling across a barrier.</li>
 <li>Insulating boundaries suppress normal particle flux but may contain fixed charge and interface states.</li>
 <li>Optical and thermal boundaries set photon flux and electrothermal feedback.</li>
 </ul>
-<h2 id="Hierarchy-of-Approximations">Hierarchy of Approximations</h2>
-<table>
+<h2 id="Hierarchy-of-Approximations"><a href="#Hierarchy-of-Approximations" class="headerlink" title="Hierarchy of Approximations"></a>Hierarchy of Approximations</h2><table>
 <thead>
 <tr>
 <th>Model</th>
@@ -43,8 +43,7 @@ p=n_i\exp\frac{E_i-E_{Fp}}{kT},\]</div>
 <th>Failure signal</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Depletion approximation</td>
 <td>Poisson plus ionized dopants</td>
 <td>mobile charge cannot be neglected</td>
@@ -55,63 +54,63 @@ p=n_i\exp\frac{E_i-E_{Fp}}{kT},\]</div>
 <td>length approaches mean free path</td>
 </tr>
 <tr>
-<td>Energy-balance/hydrodynamic</td>
+<td>Energy-balance&#x2F;hydrodynamic</td>
 <td>carrier temperature and high field</td>
 <td>strong coherence or tunneling</td>
 </tr>
 <tr>
-<td>NEGF/quantum transport</td>
+<td>NEGF&#x2F;quantum transport</td>
 <td>open-boundary quantum states and scattering</td>
 <td>high computational and model cost</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>Analytical models reveal scaling; numerical models retain geometry and nonlinear coupling. They should cross-check rather than replace one another.</p>
 <!--deep-classical:en-->
-<h2 id="A-coupled-nonlinear-boundary-value-problem">A coupled nonlinear boundary-value problem</h2>
-<p>Drift–diffusion device simulation solves Poisson and two continuity equations with constitutive currents</p>
+
+<h2 id="A-coupled-nonlinear-boundary-value-problem"><a href="#A-coupled-nonlinear-boundary-value-problem" class="headerlink" title="A coupled nonlinear boundary-value problem"></a>A coupled nonlinear boundary-value problem</h2><p>Drift–diffusion device simulation solves Poisson and two continuity equations with constitutive currents</p>
 <div class="math-display">\[\mathbf J_n=q\mu_nn\nabla\varphi_n,\qquad
 \mathbf J_p=q\mu_pp\nabla\varphi_p,\]</div>
+
 <p>where \(\varphi_n,\varphi_p\) are quasi-Fermi potentials.  This form makes electrochemical driving forces explicit and is numerically more stable than separating drift and diffusion near equilibrium.</p>
-<p>Ohmic contacts impose carrier populations; Schottky contacts impose thermionic/tunnelling flux; insulating boundaries impose zero normal particle current.  Scaling by thermal voltage and Debye length reveals stiffness when depletion widths, oxide thickness and mean free paths differ by orders of magnitude.  Convergence of Newton iteration does not prove physical validity: mesh, boundary conditions, mobility/recombination models and current conservation require independent tests.</p>
+<p>Ohmic contacts impose carrier populations; Schottky contacts impose thermionic&#x2F;tunnelling flux; insulating boundaries impose zero normal particle current.  Scaling by thermal voltage and Debye length reveals stiffness when depletion widths, oxide thickness and mean free paths differ by orders of magnitude.  Convergence of Newton iteration does not prove physical validity: mesh, boundary conditions, mobility&#x2F;recombination models and current conservation require independent tests.</p>
 <!--/deep-classical:en-->
-<h2 id="References">References</h2>
-<ol>
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., §1.8.</li>
 <li>S. Selberherr, <em>Analysis and Simulation of Semiconductor Devices</em>.</li>
 </ol>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p><strong>核心结论</strong>：经典器件物理的最小闭合系统由“电荷产生电势、电势与统计决定载流子、载流子运动产生电流、电流散度改变载流子数”四个环节组成。</p>
 </blockquote>
-<h2 id="1-泊松方程：电荷与势">1. 泊松方程：电荷与势</h2>
-<div class="math-display">\[\nabla\cdot(\varepsilon\nabla\psi)=-\rho,\]</div>
+<h2 id="1-泊松方程：电荷与势"><a href="#1-泊松方程：电荷与势" class="headerlink" title="1. 泊松方程：电荷与势"></a>1. 泊松方程：电荷与势</h2><div class="math-display">\[\nabla\cdot(\varepsilon\nabla\psi)=-\rho,\]</div>
+
 <p>其中</p>
 <div class="math-display">\[\rho=q(p-n+N_D^+-N_A^-)+\rho_{trap}+\rho_{fixed}.\]</div>
+
 <p>在均匀介电常数的一维区域，\(d^2\psi/dx^2=-\rho/\varepsilon\)。耗尽近似通过把耗尽区内自由载流子忽略，将它化为分段常数电荷问题。</p>
-<h2 id="2-状态方程：势与载流子">2. 状态方程：势与载流子</h2>
-<p>非简并条件下</p>
+<h2 id="2-状态方程：势与载流子"><a href="#2-状态方程：势与载流子" class="headerlink" title="2. 状态方程：势与载流子"></a>2. 状态方程：势与载流子</h2><p>非简并条件下</p>
 <div class="math-display">\[n=n_i\exp\frac{E_{Fn}-E_i}{kT},\qquad
 p=n_i\exp\frac{E_i-E_{Fp}}{kT},\]</div>
+
 <p>而 \(E_i=E_{i0}-q\psi\)。平衡时 \(E_{Fn}=E_{Fp}=E_F\)；非平衡时两者必须分别求解。</p>
-<h2 id="3-本构关系：载流子与电流">3. 本构关系：载流子与电流</h2>
-<div class="math-display">\[\mathbf J_n=q\mu_n n\mathbf E+qD_n\nabla n,
+<h2 id="3-本构关系：载流子与电流"><a href="#3-本构关系：载流子与电流" class="headerlink" title="3. 本构关系：载流子与电流"></a>3. 本构关系：载流子与电流</h2><div class="math-display">\[\mathbf J_n=q\mu_n n\mathbf E+qD_n\nabla n,
 \qquad
 \mathbf J_p=q\mu_p p\mathbf E-qD_p\nabla p.\]</div>
+
 <p>迁移率、复合率、带隙和介电常数可以依赖位置、温度、场强及载流子浓度，因此真实 TCAD 并非只求一个固定系数的偏微分方程。</p>
-<h2 id="4-连续性方程：局域守恒">4. 连续性方程：局域守恒</h2>
-<div class="math-display">\[\frac{\partial n}{\partial t}=\frac{1}{q}\nabla\cdot\mathbf J_n+G_n-R_n,\]</div>
+<h2 id="4-连续性方程：局域守恒"><a href="#4-连续性方程：局域守恒" class="headerlink" title="4. 连续性方程：局域守恒"></a>4. 连续性方程：局域守恒</h2><div class="math-display">\[\frac{\partial n}{\partial t}=\frac{1}{q}\nabla\cdot\mathbf J_n+G_n-R_n,\]</div>
+
 <div class="math-display">\[\frac{\partial p}{\partial t}=-\frac{1}{q}\nabla\cdot\mathbf J_p+G_p-R_p.\]</div>
+
 <p>符号差来自电子和空穴电荷相反。稳态不意味着 \(\nabla\cdot J=0\) 总是成立；存在净产生复合时，电流可沿位置变化。</p>
-<h2 id="5-边界条件决定器件">5. 边界条件决定器件</h2>
-<p>同一组体方程配上不同边界条件会生成不同器件行为：</p>
+<h2 id="5-边界条件决定器件"><a href="#5-边界条件决定器件" class="headerlink" title="5. 边界条件决定器件"></a>5. 边界条件决定器件</h2><p>同一组体方程配上不同边界条件会生成不同器件行为：</p>
 <ul>
 <li>欧姆接触固定载流子浓度或准费米势；</li>
-<li>肖特基接触允许热发射/隧穿并形成势垒；</li>
+<li>肖特基接触允许热发射&#x2F;隧穿并形成势垒；</li>
 <li>绝缘边界通常要求法向粒子流为零，但可含固定电荷和界面态；</li>
 <li>光学边界决定入射光子通量；热边界决定自热和热失控。</li>
 </ul>
-<h2 id="6-近似的层级">6. 近似的层级</h2>
-<table>
+<h2 id="6-近似的层级"><a href="#6-近似的层级" class="headerlink" title="6. 近似的层级"></a>6. 近似的层级</h2><table>
 <thead>
 <tr>
 <th>模型</th>
@@ -119,8 +118,7 @@ p=n_i\exp\frac{E_i-E_{Fp}}{kT},\]</div>
 <th>失效信号</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>耗尽近似</td>
 <td>泊松方程、离化杂质</td>
 <td>载流子不可忽略或强反型</td>
@@ -131,28 +129,28 @@ p=n_i\exp\frac{E_i-E_{Fp}}{kT},\]</div>
 <td>长度接近平均自由程</td>
 </tr>
 <tr>
-<td>能量平衡/流体模型</td>
+<td>能量平衡&#x2F;流体模型</td>
 <td>载流子温度与高场效应</td>
 <td>强量子相干或隧穿</td>
 </tr>
 <tr>
-<td>NEGF/量子输运</td>
+<td>NEGF&#x2F;量子输运</td>
 <td>开放边界量子态与散射</td>
 <td>计算量大、需可靠自能模型</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>理想解析公式的价值在于揭示尺度关系；数值求解的价值在于保留几何、材料和非线性耦合。两者应相互校验，而不是相互替代。</p>
 <!--deep-classical:zh-->
-<h2 id="耦合非线性边值问题">耦合非线性边值问题</h2>
-<p>漂移—扩散仿真联立泊松方程和电子、空穴连续性方程，并使用</p>
+
+<h2 id="耦合非线性边值问题"><a href="#耦合非线性边值问题" class="headerlink" title="耦合非线性边值问题"></a>耦合非线性边值问题</h2><p>漂移—扩散仿真联立泊松方程和电子、空穴连续性方程，并使用</p>
 <div class="math-display">\[\mathbf J_n=q\mu_nn\nabla\varphi_n,\qquad
 \mathbf J_p=q\mu_pp\nabla\varphi_p,\]</div>
+
 <p>其中 \(\varphi_n,\varphi_p\) 为准费米势。该形式直接呈现电化学驱动力，在近平衡区比把漂移与扩散分开更稳定。</p>
-<p>欧姆接触规定载流子占据，Schottky 接触规定热发射/隧穿通量，绝缘边界规定法向粒子电流为零。用热电压和 Debye 长度无量纲化可看出：耗尽宽度、氧化层厚度与平均自由程跨越多个数量级时方程非常刚性。Newton 迭代收敛并不代表物理正确，还必须独立检验网格、边界条件、迁移率/复合模型与全局电流守恒。</p>
+<p>欧姆接触规定载流子占据，Schottky 接触规定热发射&#x2F;隧穿通量，绝缘边界规定法向粒子电流为零。用热电压和 Debye 长度无量纲化可看出：耗尽宽度、氧化层厚度与平均自由程跨越多个数量级时方程非常刚性。Newton 迭代收敛并不代表物理正确，还必须独立检验网格、边界条件、迁移率&#x2F;复合模型与全局电流守恒。</p>
 <!--/deep-classical:zh-->
-<h2 id="参考">参考</h2>
-<ol>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., §1.8.</li>
 <li>S. Selberherr, <em>Analysis and Simulation of Semiconductor Devices</em>.</li>
 </ol>
