@@ -8,26 +8,31 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Functional and Neuromorphic Devices</span><span data-lang="zh" hidden>功能与神经形态器件</span></h1><p class="node-deck"><span data-lang="en">Functional devices exploit internal dynamics, nonvolatility, optical response or stochasticity so that one physical element performs memory, sensing or computation rather than only binary switching.</span><span data-lang="zh" hidden>功能器件利用内部动力学、非易失性、光响应或随机性，使单个物理元件承担存储、传感或计算，而非只做二值开关。</span></p><div class="node-tags"><span>Neuromorphic Hardware</span><span>Device Physics</span><span>2D Materials</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Functional devices exploit internal dynamics, nonvolatility, optical response or stochasticity so that one physical element performs memory, sensing or computation rather than only binary switching.</p>
 </blockquote>
-<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>Functional devices exploit internal dynamics, nonvolatility, optical response or stochasticity so that one physical element performs memory, sensing or computation rather than only binary switching. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="Computation-in-a-physical-state-space"><a href="#Computation-in-a-physical-state-space" class="headerlink" title="Computation in a physical state space"></a>Computation in a physical state space</h3><p>A functional device is defined by its internal dynamics, not by a material label.  With state vector \(\mathbf x\), input \(\mathbf u\) and measured output \(\mathbf y\),</p>
+<h2 id="Physical-Picture">Physical Picture</h2>
+<p>Functional devices exploit internal dynamics, nonvolatility, optical response or stochasticity so that one physical element performs memory, sensing or computation rather than only binary switching. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
+<h3 id="Computation-in-a-physical-state-space">Computation in a physical state space</h3>
+<p>A functional device is defined by its internal dynamics, not by a material label.  With state vector \(\mathbf x\), input \(\mathbf u\) and measured output \(\mathbf y\),</p>
 <div class="math-display">\[\dot{\mathbf x}=\mathbf F(\mathbf x,\mathbf u)+\boldsymbol\xi(t),
 \qquad
 \mathbf y=\mathbf G(\mathbf x,\mathbf u).\]</div>
-
 <p>Nonvolatility corresponds to multiple stable fixed points; fading memory to relaxation times comparable with the input sequence; stochastic computing to controlled noise \(\boldsymbol\xi\).  The same physical volatility that is a failure for storage can be useful for reservoir computing or neuron leakage.</p>
-<h3 id="Matching-time-and-energy-scales"><a href="#Matching-time-and-energy-scales" class="headerlink" title="Matching time and energy scales"></a>Matching time and energy scales</h3><p>Useful dynamics require \(\tau_{device}\) to match the algorithmic timestep.  If much shorter, state vanishes before readout; if much longer, training becomes slow.  End-to-end energy includes write pulses, sensing, conversion, routing and refresh:</p>
+<h3 id="Matching-time-and-energy-scales">Matching time and energy scales</h3>
+<p>Useful dynamics require \(\tau_{device}\) to match the algorithmic timestep.  If much shorter, state vanishes before readout; if much longer, training becomes slow.  End-to-end energy includes write pulses, sensing, conversion, routing and refresh:</p>
 <div class="math-display">\[E_{system}=E_{cell}+E_{drivers}+E_{ADC/DAC}+E_{data}.\]</div>
-
-<h3 id="Evidence-of-function"><a href="#Evidence-of-function" class="headerlink" title="Evidence of function"></a>Evidence of function</h3><p>A device demonstration should compare against a baseline using identical precision and workload.  Material-level hysteresis is not yet computation.  Report state dimensionality, update law, noise, drift, calibration frequency, peripheral area and accuracy under held-out data.</p>
-<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[Device state x(t) becomes part of the computation\]</div>
-
+<h3 id="Evidence-of-function">Evidence of function</h3>
+<p>A device demonstration should compare against a baseline using identical precision and workload.  Material-level hysteresis is not yet computation.  Report state dimensionality, update law, noise, drift, calibration frequency, peripheral area and accuracy under held-out data.</p>
+<h2 id="Minimal-Model">Minimal Model</h2>
+<div class="math-display">\[Device state x(t) becomes part of the computation\]</div>
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>This hub connects arrays, selectors, compute-in-memory, artificial synapses, photomemristors and reconfigurable logic–memory devices.</p>
+<h2 id="Device-Consequences">Device Consequences</h2>
+<p>This hub connects arrays, selectors, compute-in-memory, artificial synapses, photomemristors and reconfigurable logic–memory devices.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-
-<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>Device novelty does not automatically translate to system benefit; peripheral circuits, calibration and data movement dominate many demonstrations. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Prototype. Connected concepts:</p>
+<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
+<p>Device novelty does not automatically translate to system benefit; peripheral circuits, calibration and data movement dominate many demonstrations. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
+<p><strong>Maturity:</strong> Prototype. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/memristive-systems-and-resistive-switching/">memristive-systems-and-resistive-switching</a></li>
 <li><a href="/knowledge/nodes/crossbar-arrays-selectors-and-sneak-paths/">crossbar-arrays-selectors-and-sneak-paths</a></li>
@@ -35,7 +40,8 @@
 <li><a href="/knowledge/nodes/artificial-synapses-and-neuromorphic-dynamics/">artificial-synapses-and-neuromorphic-dynamics</a></li>
 <li><a href="/knowledge/nodes/optoelectronic-memory-and-reconfigurable-devices/">optoelectronic-memory-and-reconfigurable-devices</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
+<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41928-018-0092-2" target="_blank" rel="noopener">Ielmini &amp; Wong, In-memory computing with resistive switching devices</a></li>
 <li><a href="https://www.nature.com/articles/s41563-019-0291-x" target="_blank" rel="noopener">Xia &amp; Yang, Memristive crossbar arrays for brain-inspired computing</a></li>
@@ -43,26 +49,31 @@
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**功能器件利用内部动力学、非易失性、光响应或随机性，使单个物理元件承担存储、传感或计算，而非只做二值开关。</p>
 </blockquote>
-<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>功能器件利用内部动力学、非易失性、光响应或随机性，使单个物理元件承担存储、传感或计算，而非只做二值开关。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="在物理状态空间中计算"><a href="#在物理状态空间中计算" class="headerlink" title="在物理状态空间中计算"></a>在物理状态空间中计算</h3><p>功能器件由内部动力学而非材料标签定义。设状态向量 \(\mathbf x\)、输入 \(\mathbf u\)、输出 \(\mathbf y\)：</p>
+<h2 id="物理图像">物理图像</h2>
+<p>功能器件利用内部动力学、非易失性、光响应或随机性，使单个物理元件承担存储、传感或计算，而非只做二值开关。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
+<h3 id="在物理状态空间中计算">在物理状态空间中计算</h3>
+<p>功能器件由内部动力学而非材料标签定义。设状态向量 \(\mathbf x\)、输入 \(\mathbf u\)、输出 \(\mathbf y\)：</p>
 <div class="math-display">\[\dot{\mathbf x}=\mathbf F(\mathbf x,\mathbf u)+\boldsymbol\xi(t),
 \qquad
 \mathbf y=\mathbf G(\mathbf x,\mathbf u).\]</div>
-
 <p>非易失对应多个稳定不动点；衰减记忆要求弛豫时间与输入序列相当；随机计算则利用受控噪声 \(\boldsymbol\xi\)。同一种易失性对存储是缺陷，对储备池计算或神经元漏积分却可能是功能。</p>
-<h3 id="匹配时间与能量尺度"><a href="#匹配时间与能量尺度" class="headerlink" title="匹配时间与能量尺度"></a>匹配时间与能量尺度</h3><p>器件时间常数 \(\tau_{device}\) 必须匹配算法时间步：过短则读出前消失，过长则训练缓慢。端到端能量包含单元、驱动、转换、互连和刷新：</p>
+<h3 id="匹配时间与能量尺度">匹配时间与能量尺度</h3>
+<p>器件时间常数 \(\tau_{device}\) 必须匹配算法时间步：过短则读出前消失，过长则训练缓慢。端到端能量包含单元、驱动、转换、互连和刷新：</p>
 <div class="math-display">\[E_{system}=E_{cell}+E_{drivers}+E_{ADC/DAC}+E_{data}.\]</div>
-
-<h3 id="功能证据"><a href="#功能证据" class="headerlink" title="功能证据"></a>功能证据</h3><p>器件演示应在相同精度和工作负载下与基线比较。材料滞回本身还不是计算；需要报告状态维度、更新律、噪声、漂移、校准频率、外围面积以及留出数据上的准确率。</p>
-<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[Device state x(t) becomes part of the computation\]</div>
-
+<h3 id="功能证据">功能证据</h3>
+<p>器件演示应在相同精度和工作负载下与基线比较。材料滞回本身还不是计算；需要报告状态维度、更新律、噪声、漂移、校准频率、外围面积以及留出数据上的准确率。</p>
+<h2 id="最小模型">最小模型</h2>
+<div class="math-display">\[Device state x(t) becomes part of the computation\]</div>
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>本节点连接阵列、选通器、存内计算、人工突触、光忆阻及可重构逻辑–存储器件。</p>
+<h2 id="器件意义">器件意义</h2>
+<p>本节点连接阵列、选通器、存内计算、人工突触、光忆阻及可重构逻辑–存储器件。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-
-<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>器件新颖性不会自动转化为系统收益，外围电路、校准和数据搬运常主导真实演示。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Prototype。关联节点：</p>
+<h2 id="限制与判据">限制与判据</h2>
+<p>器件新颖性不会自动转化为系统收益，外围电路、校准和数据搬运常主导真实演示。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
+<p>**成熟度：**Prototype。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/memristive-systems-and-resistive-switching/">memristive-systems-and-resistive-switching</a></li>
 <li><a href="/knowledge/nodes/crossbar-arrays-selectors-and-sneak-paths/">crossbar-arrays-selectors-and-sneak-paths</a></li>
@@ -70,7 +81,8 @@
 <li><a href="/knowledge/nodes/artificial-synapses-and-neuromorphic-dynamics/">artificial-synapses-and-neuromorphic-dynamics</a></li>
 <li><a href="/knowledge/nodes/optoelectronic-memory-and-reconfigurable-devices/">optoelectronic-memory-and-reconfigurable-devices</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
+<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41928-018-0092-2" target="_blank" rel="noopener">Ielmini &amp; Wong, In-memory computing with resistive switching devices</a></li>
 <li><a href="https://www.nature.com/articles/s41563-019-0291-x" target="_blank" rel="noopener">Xia &amp; Yang, Memristive crossbar arrays for brain-inspired computing</a></li>

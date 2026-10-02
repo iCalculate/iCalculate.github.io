@@ -327,7 +327,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">6.1k</span>Reading time: <span class="post-count reading-time">28 min</span></span>
+                        <span>Word count: <span class="post-count word-count">6k</span>Reading time: <span class="post-count reading-time">28 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -467,13 +467,13 @@ height:50vh;
 <section class="lang-panel lang-en" lang="en">
 <p>A photodetector paper can report an enormous responsivity, an extraordinary specific detectivity and a very short response time. Yet all three numbers can be inflated without changing the device itself. A smaller assumed active area raises the reported responsivity; a noise formula can miss the low-frequency fluctuations actually present; a short pulse can make a slow transient look fast before it reaches equilibrium.</p>
 <!--more-->
-
 <p>The 2023 <em>Nature Communications</em> Review by Wang and colleagues is therefore less about finding another record device than about making records comparable. Its central lesson is simple: a figure of merit is meaningful only together with the geometry, optical calibration, noise spectrum, frequency and time protocol that produced it.</p>
-<h2 id="Begin-with-the-conversion-mechanism"><a href="#Begin-with-the-conversion-mechanism" class="headerlink" title="Begin with the conversion mechanism"></a>Begin with the conversion mechanism</h2><p>Every performance number sits downstream of a microscopic mechanism. If incident power is $P$ and photon energy is $h\nu&#x3D;hc&#x2F;\lambda$, the incident photon rate is</p>
-<p>$$\Phi_{\mathrm{ph}}&#x3D;\frac{P}{h\nu}&#x3D;\frac{P\lambda}{hc}.$$</p>
+<h2 id="Begin-with-the-conversion-mechanism">Begin with the conversion mechanism</h2>
+<p>Every performance number sits downstream of a microscopic mechanism. If incident power is $P$ and photon energy is $h\nu=hc/\lambda$, the incident photon rate is</p>
+<p>$$\Phi_{\mathrm{ph}}=\frac{P}{h\nu}=\frac{P\lambda}{hc}.$$</p>
 <p>For a photovoltaic detector with external quantum efficiency $\eta_{\mathrm{ext}}$ and no internal gain, the collected photocurrent is</p>
-<p>$$I_{\mathrm{ph}}&#x3D;q\eta_{\mathrm{ext}}\Phi_{\mathrm{ph}}, \qquad R_{\mathrm{PV}}&#x3D;\eta_{\mathrm{ext}}\frac{q}{h\nu}&#x3D;\eta_{\mathrm{ext}}\frac{q\lambda}{hc}.$$</p>
-<p>This relation gives a useful scale. At $532,\mathrm{nm}$, one collected electron per incident photon corresponds to about $0.43,\mathrm{A&#x2F;W}$; at $1550,\mathrm{nm}$ it is about $1.25,\mathrm{A&#x2F;W}$. A larger value requires gain or a different response definition.</p>
+<p>$$I_{\mathrm{ph}}=q\eta_{\mathrm{ext}}\Phi_{\mathrm{ph}}, \qquad R_{\mathrm{PV}}=\eta_{\mathrm{ext}}\frac{q}{h\nu}=\eta_{\mathrm{ext}}\frac{q\lambda}{hc}.$$</p>
+<p>This relation gives a useful scale. At $532,\mathrm{nm}$, one collected electron per incident photon corresponds to about $0.43,\mathrm{A/W}$; at $1550,\mathrm{nm}$ it is about $1.25,\mathrm{A/W}$. A larger value requires gain or a different response definition.</p>
 <p>In a photoconductor, one photocarrier can circulate before recombination. With carrier lifetime $\tau_{\mathrm{life}}$ and transit time $\tau_{\mathrm{tr}}$, the gain is approximately</p>
 <p>$$G\simeq\frac{\tau_{\mathrm{life}}}{\tau_{\mathrm{tr}}}, \qquad \tau_{\mathrm{tr}}\simeq\frac{L^2}{\mu V_{\mathrm{DS}}},$$</p>
 <p>and</p>
@@ -484,18 +484,20 @@ height:50vh;
 <p>where $S_1-S_2$ is the Seebeck-coefficient contrast. A bolometer converts a light-induced temperature change into a resistance change,</p>
 <p>$$\Delta I\simeq-\frac{V}{R_{ \mathrm{ch}}^2}\frac{dR_{\mathrm{ch}}}{dT}\Delta T.$$</p>
 <p>These mechanisms can respond beyond a semiconductor bandgap and have different bias and spatial signatures. Current-voltage curves and scanning photocurrent maps are therefore part of identifying the detector, not decorative characterization.</p>
-<h2 id="The-metric-chain"><a href="#The-metric-chain" class="headerlink" title="The metric chain"></a>The metric chain</h2><p>Let the net photocurrent be $I_s&#x3D;I_{\mathrm{light}}-I_{\mathrm{dark}}$, the incident optical power density be $p$, and the optical effective area be $A_d$. The power assigned to the device is</p>
-<p>$$P_\lambda&#x3D;pA_d,$$</p>
+<h2 id="The-metric-chain">The metric chain</h2>
+<p>Let the net photocurrent be $I_s=I_{\mathrm{light}}-I_{\mathrm{dark}}$, the incident optical power density be $p$, and the optical effective area be $A_d$. The power assigned to the device is</p>
+<p>$$P_\lambda=pA_d,$$</p>
 <p>so the current responsivity is</p>
-<p>$$R&#x3D;\frac{I_s}{P_\lambda}&#x3D;\frac{I_s}{pA_d}.$$</p>
+<p>$$R=\frac{I_s}{P_\lambda}=\frac{I_s}{pA_d}.$$</p>
 <p>If the measured RMS noise current integrated over bandwidth $\Delta f$ is $i_{n,\mathrm{rms}}$, then a common form is</p>
-<p>$$\mathrm{NEP}&#x3D;\frac{i_{n,\mathrm{rms}}}{R}, \qquad D^{\ast}&#x3D;\frac{\sqrt{A_d\Delta f}}{\mathrm{NEP}}&#x3D;\frac{R\sqrt{A_d\Delta f}}{i_{n,\mathrm{rms}}}.$$</p>
-<p>Equivalent conventions use a noise amplitude spectral density $S_i^{1&#x2F;2}$ in $\mathrm{A}&#x2F;\sqrt{\mathrm{Hz}}$, giving $\mathrm{NEP}_{f}&#x3D;S_i^{1&#x2F;2}&#x2F;R$ and $D^{\ast}&#x3D;R\sqrt{A_d}&#x2F;S_i^{1&#x2F;2}$ at the stated frequency. This is exactly why symbols, units and bandwidth must be stated. The equations also reveal a dependency chain: an error in $A_d$ changes the assigned power and $R$, then propagates into NEP and $D^{\ast}$; underestimated noise makes both metrics look better.</p>
-<p>Specific detectivity has units $\mathrm{cm,Hz^{1&#x2F;2}&#x2F;W}$, commonly called Jones. The normalization removes first-order area and bandwidth scaling. It does not make detectors comparable when their area definitions, modulation frequencies or noise processes differ.</p>
+<p>$$\mathrm{NEP}=\frac{i_{n,\mathrm{rms}}}{R}, \qquad D^{\ast}=\frac{\sqrt{A_d\Delta f}}{\mathrm{NEP}}=\frac{R\sqrt{A_d\Delta f}}{i_{n,\mathrm{rms}}}.$$</p>
+<p>Equivalent conventions use a noise amplitude spectral density $S_i^{1/2}$ in $\mathrm{A}/\sqrt{\mathrm{Hz}}$, giving $\mathrm{NEP}_{f}=S_i^{1/2}/R$ and $D^{\ast}=R\sqrt{A_d}/S_i^{1/2}$ at the stated frequency. This is exactly why symbols, units and bandwidth must be stated. The equations also reveal a dependency chain: an error in $A_d$ changes the assigned power and $R$, then propagates into NEP and $D^{\ast}$; underestimated noise makes both metrics look better.</p>
+<p>Specific detectivity has units $\mathrm{cm,Hz^{1/2}/W}$, commonly called Jones. The normalization removes first-order area and bandwidth scaling. It does not make detectors comparable when their area definitions, modulation frequencies or noise processes differ.</p>
 <p>Responsivity itself is often power dependent. Traps, screening and recombination commonly give</p>
-<p>$$I_{\mathrm{ph}}\propto P^{\alpha}, \qquad R&#x3D;\frac{I_{\mathrm{ph}}}{P}\propto P^{\alpha-1},$$</p>
+<p>$$I_{\mathrm{ph}}\propto P^{\alpha}, \qquad R=\frac{I_{\mathrm{ph}}}{P}\propto P^{\alpha-1},$$</p>
 <p>with $0&lt;\alpha&lt;1$ in many trap-influenced devices. A very high responsivity measured only at tiny $P$ should not be extrapolated to a larger dynamic range.</p>
-<h2 id="Effective-area-is-a-physical-question"><a href="#Effective-area-is-a-physical-question" class="headerlink" title="Effective area is a physical question"></a>Effective area is a physical question</h2><p>The outline visible in a microscope is not automatically the area that generates collected signal. Carrier drift, junction fields, diffraction, antennas and near-field enhancement can extend or reshape the response. The Review gives device-dependent guidance:</p>
+<h2 id="Effective-area-is-a-physical-question">Effective area is a physical question</h2>
+<p>The outline visible in a microscope is not automatically the area that generates collected signal. Carrier drift, junction fields, diffraction, antennas and near-field enhancement can extend or reshape the response. The Review gives device-dependent guidance:</p>
 <ul>
 <li>For a photoconductor or an in-plane junction, use the photoactive material between the electrodes rather than an arbitrarily narrow visual region.</li>
 <li>For a vertical junction at zero bias, the overlap junction can represent the active area when mapping shows that the response is confined there.</li>
@@ -504,53 +506,57 @@ height:50vh;
 </ul>
 <p>These are operational definitions, not universal geometric truths. When edges, antennas or local fields dominate, scanning photocurrent microscopy can map the response and define an effective area from the measured spatial sensitivity.</p>
 <p>The Review proposes a map-based definition at wavelength $\lambda$:</p>
-<p>$$A_{\mathrm{eff}}(\lambda)&#x3D; \frac{\displaystyle\iint I_s(x,y,\lambda),dx,dy} {\displaystyle\max_{x,y} I_s(x,y,\lambda)}.$$</p>
+<p>$$A_{\mathrm{eff}}(\lambda)= \frac{\displaystyle\iint I_s(x,y,\lambda),dx,dy} {\displaystyle\max_{x,y} I_s(x,y,\lambda)}.$$</p>
 <p>The numerator integrates spatial sensitivity; the denominator normalizes it to the peak. This makes $A_{\mathrm{eff}}$ a property of the optical mode, device and collection physics at a stated wavelength.</p>
 <p><img src="/images/2d-photodetector-metrics/review-figure-1.webp" alt="Figure 1 from Wang et al. comparing effective areas for several two-dimensional photodetectors"></p>
 <p><em>Figure 1 from <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang et al., Nature Communications (2023)</a>. Blue dashed outlines indicate the authors’ recommended effective areas for different device geometries; orange outlines illustrate potentially inaccurate choices. Panels f–h show why diffraction and antenna effects can make the response differ from the drawn channel.</em></p>
-<h2 id="Responsivity-begins-with-calibrated-light"><a href="#Responsivity-begins-with-calibrated-light" class="headerlink" title="Responsivity begins with calibrated light"></a>Responsivity begins with calibrated light</h2><p>A laser spot is usually Gaussian rather than uniformly bright. Estimating its diameter by eye creates a moving threshold: the apparent edge changes with screen contrast, room lighting, wavelength and total intensity. Since power density is obtained by dividing power by the assumed spot area, a casual diameter estimate directly changes $R$.</p>
+<h2 id="Responsivity-begins-with-calibrated-light">Responsivity begins with calibrated light</h2>
+<p>A laser spot is usually Gaussian rather than uniformly bright. Estimating its diameter by eye creates a moving threshold: the apparent edge changes with screen contrast, room lighting, wavelength and total intensity. Since power density is obtained by dividing power by the assumed spot area, a casual diameter estimate directly changes $R$.</p>
 <p>At the beam waist, an ideal circular Gaussian beam has</p>
-<p>$$I(r)&#x3D;\frac{2P}{\pi w_0^2}\exp!\left(-\frac{2r^2}{w_0^2}\right).$$</p>
+<p>$$I®=\frac{2P}{\pi w_0^2}\exp!\left(-\frac{2r^2}{w_0^2}\right).$$</p>
 <p>The power actually incident on the active region $A_d$ is the overlap integral</p>
-<p>$$P_{\mathrm{dev}}&#x3D;\iint_{A_d} I(x,y),dx,dy,$$</p>
+<p>$$P_{\mathrm{dev}}=\iint_{A_d} I(x,y),dx,dy,$$</p>
 <p>not total laser power multiplied by a visually estimated area fraction. Near-field absorption adds a position-dependent absorption factor to this integral.</p>
-<p>The Review recommends measuring the power density at the sample plane with a calibrated commercial photodetector of known area. A camera or beam profiler can document the spatial profile, but the optical path used for calibration must represent the path used for the device. For a device much smaller than the beam, illumination becomes approximately uniform only when the beam waist is sufficiently larger than the device. In the paper’s simplified bound, keeping the device circumradius below $w_0&#x2F;14.18$ limits the nonuniformity error to below about 1%.</p>
+<p>The Review recommends measuring the power density at the sample plane with a calibrated commercial photodetector of known area. A camera or beam profiler can document the spatial profile, but the optical path used for calibration must represent the path used for the device. For a device much smaller than the beam, illumination becomes approximately uniform only when the beam waist is sufficiently larger than the device. In the paper’s simplified bound, keeping the device circumradius below $w_0/14.18$ limits the nonuniformity error to below about 1%.</p>
 <p>The source also has to match the claimed application. A monochromatic laser measures spectral responsivity at a chosen wavelength. Infrared detector evaluation for practical radiometric use may require a calibrated blackbody, apertures, distance, modulation and background temperature. An FTIR system can map spectral response. These measurements answer related but different questions and should not be merged into one unlabeled “responsivity.”</p>
 <p><img src="/images/2d-photodetector-metrics/review-figure-3.webp" alt="Figure 3 from Wang et al. showing laser calibration, blackbody and FTIR measurements"></p>
 <p><em>Figure 3 from <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang et al. (2023)</a>. Panel b shows how a visually selected Gaussian-spot edge changes the derived responsivity. Panel c uses a monitor detector and camera for laser calibration; d–f distinguish blackbody and spectral measurements.</em></p>
-<h2 id="Dark-current-is-not-the-noise-spectrum"><a href="#Dark-current-is-not-the-noise-spectrum" class="headerlink" title="Dark current is not the noise spectrum"></a>Dark current is not the noise spectrum</h2><p>Dark current is measured without the intended signal light, but an infrared detector can still receive room-temperature background radiation. A cold shield is therefore part of a meaningful dark-current measurement, especially for narrow-bandgap devices. Temperature, bias, shielding and settling time belong in the report.</p>
+<h2 id="Dark-current-is-not-the-noise-spectrum">Dark current is not the noise spectrum</h2>
+<p>Dark current is measured without the intended signal light, but an infrared detector can still receive room-temperature background radiation. A cold shield is therefore part of a meaningful dark-current measurement, especially for narrow-bandgap devices. Temperature, bias, shielding and settling time belong in the report.</p>
 <p>More importantly, substituting dark current into a shot-noise formula does not measure the device’s total noise. A real two-dimensional detector may contain:</p>
 <ul>
 <li>Johnson noise from resistance;</li>
 <li>shot noise from discrete charge flow;</li>
 <li>generation-recombination noise from trapping and release;</li>
-<li>low-frequency $1&#x2F;f$ noise linked to carrier-number or mobility fluctuations.</li>
+<li>low-frequency $1/f$ noise linked to carrier-number or mobility fluctuations.</li>
 </ul>
 <p>In power-spectral-density form, a useful decomposition is</p>
-<p>$$S_I(f)&#x3D;\underbrace{\frac{4k_{\mathrm B}T}{R_d}}<em>{\text{Johnson}} +\underbrace{2qI_d}</em>{\text{shot}} +\underbrace{\frac{C}{f^{\gamma}}}<em>{1&#x2F;f} +\underbrace{\sum_j\frac{4A_j\tau_j}{1+(2\pi f\tau_j)^2}}</em>{\text{g-r}}.$$</p>
+<p>$$S_I(f)=\underbrace{\frac{4k_{\mathrm B}T}{R_d}}<em>{\text{Johnson}} +\underbrace{2qI_d}</em>{\text{shot}} +\underbrace{\frac{C}{f^{\gamma}}}<em>{1/f} +\underbrace{\sum_j\frac{4A_j\tau_j}{1+(2\pi f\tau_j)^2}}</em>{\text{g-r}}.$$</p>
 <p>The last term is a sum of Lorentzian generation-recombination spectra from traps with time constants $\tau_j$. The measured RMS current is set by the entire readout transfer function $H(f)$:</p>
-<p>$$i_{n,\mathrm{rms}}^2&#x3D; \int_{f_1}^{f_2}S_I(f)\lvert H(f)\rvert^2,df.$$</p>
+<p>$$i_{n,\mathrm{rms}}^2= \int_{f_1}^{f_2}S_I(f)\lvert H(f)\rvert^2,df.$$</p>
 <p>Thus “noise in a 1-Hz bandwidth” is incomplete unless its centre frequency is stated. A 1-Hz band near $1,\mathrm{Hz}$ can contain far more flicker noise than a 1-Hz band near $10,\mathrm{kHz}$.</p>
-<p>Shot and Johnson terms may dominate at sufficiently high frequency. Photogating and photoconductive gain, however, often accompany long carrier lifetimes and generation-recombination noise. At low frequency, $1&#x2F;f$ noise can be large. Calculating only white noise can therefore place a claimed $D^{\ast}$ above a physically relevant background-limited value.</p>
+<p>Shot and Johnson terms may dominate at sufficiently high frequency. Photogating and photoconductive gain, however, often accompany long carrier lifetimes and generation-recombination noise. At low frequency, $1/f$ noise can be large. Calculating only white noise can therefore place a claimed $D^{\ast}$ above a physically relevant background-limited value.</p>
 <p>The defensible route is to measure the noise spectral density under the same bias, temperature, shielding and readout conditions used for responsivity. The response and noise must also refer to the <strong>same frequency</strong> and compatible bandwidth. Combining a low-frequency responsivity with a high-frequency noise floor builds a number that describes no actual operating point.</p>
 <p>For an imager, the readout integration time acts as a filter. Pixel-to-pixel nonuniformity and frame-to-frame fluctuation both affect image quality. A single-pixel noise density cannot by itself describe the entire focal-plane-array result.</p>
 <p><img src="/images/2d-photodetector-metrics/review-figure-5.webp" alt="Figure 5 from Wang et al. showing how noise assumptions inflate specific detectivity"></p>
-<p><em>Figure 5 from <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang et al. (2023)</a>. The dashed detectivity curves use estimated white-noise terms while omitting $1&#x2F;f$ and generation-recombination noise; the difference from the solid curves visualizes the resulting overestimate. Panels c–d adapt the argument to imaging detection.</em></p>
-<h2 id="Speed-requires-a-complete-transient-and-a-bandwidth"><a href="#Speed-requires-a-complete-transient-and-a-bandwidth" class="headerlink" title="Speed requires a complete transient and a bandwidth"></a>Speed requires a complete transient and a bandwidth</h2><p>Rise time is normally measured from 10% to 90% of the settled response; fall time runs from 90% to 10%. If a light pulse ends before the current reaches its plateau, the apparent rise or fall interval can be much shorter than the device’s true settling time. A valid time trace therefore needs a complete periodic response with both illuminated and dark states stabilized.</p>
+<p><em>Figure 5 from <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang et al. (2023)</a>. The dashed detectivity curves use estimated white-noise terms while omitting $1/f$ and generation-recombination noise; the difference from the solid curves visualizes the resulting overestimate. Panels c–d adapt the argument to imaging detection.</em></p>
+<h2 id="Speed-requires-a-complete-transient-and-a-bandwidth">Speed requires a complete transient and a bandwidth</h2>
+<p>Rise time is normally measured from 10% to 90% of the settled response; fall time runs from 90% to 10%. If a light pulse ends before the current reaches its plateau, the apparent rise or fall interval can be much shorter than the device’s true settling time. A valid time trace therefore needs a complete periodic response with both illuminated and dark states stabilized.</p>
 <p>A frequency-domain measurement provides a second description. The $-3,\mathrm{dB}$ cutoff $f_c$ is where the responsivity falls to $0.707R_0$. For a single-pole response,</p>
-<p>$$R(f)&#x3D;\frac{R_0}{\sqrt{1+4\pi^2f^2\tau^2}},$$</p>
+<p>$$R(f)=\frac{R_0}{\sqrt{1+4\pi^2f^2\tau^2}},$$</p>
 <p>which links bandwidth and time constant. The modulation source, amplifier, cables and oscilloscope must all be faster than the detector, or the setup becomes the measured bottleneck.</p>
 <p>For the same single-pole response,</p>
-<p>$$f_c&#x3D;\frac{1}{2\pi\tau}, \qquad t_{10-90}\simeq2.2\tau\simeq\frac{0.35}{f_c}.$$</p>
+<p>$$f_c=\frac{1}{2\pi\tau}, \qquad t_{10-90}\simeq2.2\tau\simeq\frac{0.35}{f_c}.$$</p>
 <p>Measured rise time also contains the source and electronics. For approximately Gaussian temporal responses, a common de-embedding estimate is</p>
 <p>$$t_{\mathrm{meas}}^2\simeq t_{\mathrm{det}}^2+t_{\mathrm{source}}^2+t_{\mathrm{elec}}^2.$$</p>
 <p>High gain and high speed are also coupled. Photoconductive gain grows when carrier lifetime exceeds transit time, while bandwidth generally falls as lifetime grows. Reporting only the largest low-power gain or only the fastest edge hides this trade-off. Responsivity versus optical power density, frequency response and gain-bandwidth product make the device easier to compare.</p>
-<p>Combining $G\simeq\tau_{\mathrm{life}}&#x2F;\tau_{\mathrm{tr}}$ with $f_c\simeq1&#x2F;(2\pi\tau_{\mathrm{life}})$ gives</p>
+<p>Combining $G\simeq\tau_{\mathrm{life}}/\tau_{\mathrm{tr}}$ with $f_c\simeq1/(2\pi\tau_{\mathrm{life}})$ gives</p>
 <p>$$Gf_c\simeq\frac{1}{2\pi\tau_{\mathrm{tr}}} \simeq\frac{\mu V_{\mathrm{DS}}}{2\pi L^2}.$$</p>
 <p>This simplified gain-bandwidth product shows why mobility, channel length and electric field matter. A claimed improvement in both gain and speed should identify which transit or trapping process changed.</p>
 <p><img src="/images/2d-photodetector-metrics/review-figure-6.webp" alt="Figure 6 from Wang et al. explaining response-time errors and gain-bandwidth trade-offs"></p>
 <p><em>Figure 6 from <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang et al. (2023)</a>. Panels a–b show incomplete transients that underestimate response time; d gives the complete-cycle 10–90% definition; e defines the $-3,\mathrm{dB}$ bandwidth; f places gain and frequency on the same comparison.</em></p>
-<h2 id="A-compact-reporting-checklist"><a href="#A-compact-reporting-checklist" class="headerlink" title="A compact reporting checklist"></a>A compact reporting checklist</h2><p>A comparable photodetector result should make the following reconstructible from the paper:</p>
+<h2 id="A-compact-reporting-checklist">A compact reporting checklist</h2>
+<p>A comparable photodetector result should make the following reconstructible from the paper:</p>
 <ol>
 <li><strong>Device and mechanism:</strong> geometry, material stack, bias and the evidence for photoconductive, photovoltaic, thermoelectric or bolometric response.</li>
 <li><strong>Optical input:</strong> wavelength or source spectrum, calibrated power at the sample, beam profile, spot size and modulation frequency.</li>
@@ -560,19 +566,20 @@ height:50vh;
 <li><strong>Speed:</strong> complete rise and fall traces, modulation waveform, $-3,\mathrm{dB}$ bandwidth and instrument limits.</li>
 </ol>
 <p>The paper’s deeper contribution is methodological: a detector figure of merit is not a material constant. It describes a device, optical field, bias, frequency, bandwidth, temperature and readout protocol together. Once those conditions are visible, a modest number can be more useful than a spectacular but irreproducible record.</p>
-<h3 id="Source-and-reading-note"><a href="#Source-and-reading-note" class="headerlink" title="Source and reading note"></a>Source and reading note</h3><p>This guide follows Fang Wang <em>et al.</em>, “<a href="https://www.nature.com/articles/s41467-023-37635-1" target="_blank" rel="noopener">How to characterize figures of merit of two-dimensional photodetectors</a>,” <em>Nature Communications</em> <strong>14</strong>, 2224 (published 19 April 2023), DOI: <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">10.1038&#x2F;s41467-023-37635-1</a>. The article is <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10115793/" target="_blank" rel="noopener">open access through PubMed Central</a>. Figures 1, 3, 5 and 6 above are the authors’ original figures. Equations use the paper’s integrated-noise convention; when comparing another source, check whether its $i_n$ denotes total RMS noise or an amplitude spectral density.</p>
+<h3 id="Source-and-reading-note">Source and reading note</h3>
+<p>This guide follows Fang Wang <em>et al.</em>, “<a href="https://www.nature.com/articles/s41467-023-37635-1" target="_blank" rel="noopener">How to characterize figures of merit of two-dimensional photodetectors</a>,” <em>Nature Communications</em> <strong>14</strong>, 2224 (published 19 April 2023), DOI: <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">10.1038/s41467-023-37635-1</a>. The article is <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10115793/" target="_blank" rel="noopener">open access through PubMed Central</a>. Figures 1, 3, 5 and 6 above are the authors’ original figures. Equations use the paper’s integrated-noise convention; when comparing another source, check whether its $i_n$ denotes total RMS noise or an amplitude spectral density.</p>
 
 </section>
-
 <!-- bilingual:zh -->
 <section class="lang-panel lang-zh" lang="zh-CN" hidden>
 <p>一篇光电探测器论文可以同时给出极高响应度、惊人的比探测率和很短的响应时间，但器件本身不变，仅仅换一种计算或截取方式，这三个数字就可能一起变漂亮：把有效面积取得更小，响应度就会升高；用暗电流公式估算噪声，可能漏掉实际存在的低频涨落；脉冲太短时，慢器件还没达到稳态，截取其中一段就会显得很快。</p>
 <p>Wang 等人 2023 年发表于《自然·通讯》的这篇综述，重点不是再找一个纪录器件，而是让不同纪录可以比较。它的核心结论是：<strong>性能指标必须和产生它的几何定义、光学标定、噪声谱、频率与时间协议一起报告，单独一个数字没有完整含义。</strong></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="先确定光到电的转换机制"><a href="#先确定光到电的转换机制" class="headerlink" title="先确定光到电的转换机制"></a>先确定光到电的转换机制</div><p>每个性能指标都来自某种微观过程。若入射功率为 $P$，单个光子能量为 $h\nu&#x3D;hc&#x2F;\lambda$，单位时间到达的光子数是</p>
-<p>$$\Phi_{\mathrm{ph}}&#x3D;\frac{P}{h\nu}&#x3D;\frac{P\lambda}{hc}.$$</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="先确定光到电的转换机制">先确定光到电的转换机制</div>
+<p>每个性能指标都来自某种微观过程。若入射功率为 $P$，单个光子能量为 $h\nu=hc/\lambda$，单位时间到达的光子数是</p>
+<p>$$\Phi_{\mathrm{ph}}=\frac{P}{h\nu}=\frac{P\lambda}{hc}.$$</p>
 <p>对无内部增益、外量子效率为 $\eta_{\mathrm{ext}}$ 的光伏型探测器，收集到的光电流满足</p>
-<p>$$I_{\mathrm{ph}}&#x3D;q\eta_{\mathrm{ext}}\Phi_{\mathrm{ph}}, \qquad R_{\mathrm{PV}}&#x3D;\eta_{\mathrm{ext}}\frac{q}{h\nu}&#x3D;\eta_{\mathrm{ext}}\frac{q\lambda}{hc}.$$</p>
-<p>这个关系给出判断数量级的尺子。$532,\mathrm{nm}$ 下每个入射光子收集一个电子，对应约 $0.43,\mathrm{A&#x2F;W}$；$1550,\mathrm{nm}$ 下约为 $1.25,\mathrm{A&#x2F;W}$。更高数值需要内部增益，或采用了另一种响应定义。</p>
+<p>$$I_{\mathrm{ph}}=q\eta_{\mathrm{ext}}\Phi_{\mathrm{ph}}, \qquad R_{\mathrm{PV}}=\eta_{\mathrm{ext}}\frac{q}{h\nu}=\eta_{\mathrm{ext}}\frac{q\lambda}{hc}.$$</p>
+<p>这个关系给出判断数量级的尺子。$532,\mathrm{nm}$ 下每个入射光子收集一个电子，对应约 $0.43,\mathrm{A/W}$；$1550,\mathrm{nm}$ 下约为 $1.25,\mathrm{A/W}$。更高数值需要内部增益，或采用了另一种响应定义。</p>
 <p>在光电导器件中，一个光生载流子可在复合前多次参与导电。若载流子寿命为 $\tau_{\mathrm{life}}$，渡越时间为 $\tau_{\mathrm{tr}}$，近似有</p>
 <p>$$G\simeq\frac{\tau_{\mathrm{life}}}{\tau_{\mathrm{tr}}}, \qquad \tau_{\mathrm{tr}}\simeq\frac{L^2}{\mu V_{\mathrm{DS}}},$$</p>
 <p>因此</p>
@@ -583,18 +590,20 @@ height:50vh;
 <p>其中 $S_1-S_2$ 是两侧 Seebeck 系数之差。测辐射热器件则把光致温升转成电阻变化：</p>
 <p>$$\Delta I\simeq-\frac{V}{R_{\mathrm{ch}}^2} \frac{dR_{\mathrm{ch}}}{dT}\Delta T.$$</p>
 <p>这些机制可在半导体带隙之外产生响应，并具有不同的偏压与空间特征。因此，电流-电压曲线和扫描光电流图不是装饰性表征，而是确认器件身份的一部分。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="一条会逐级传递误差的指标链"><a href="#一条会逐级传递误差的指标链" class="headerlink" title="一条会逐级传递误差的指标链"></a>一条会逐级传递误差的指标链</div><p>设净光电流为 $I_s&#x3D;I_{\mathrm{light}}-I_{\mathrm{dark}}$，入射功率密度为 $p$，光学有效面积为 $A_d$。分配给器件的入射功率是</p>
-<p>$$P_\lambda&#x3D;pA_d,$$</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="一条会逐级传递误差的指标链">一条会逐级传递误差的指标链</div>
+<p>设净光电流为 $I_s=I_{\mathrm{light}}-I_{\mathrm{dark}}$，入射功率密度为 $p$，光学有效面积为 $A_d$。分配给器件的入射功率是</p>
+<p>$$P_\lambda=pA_d,$$</p>
 <p>电流响应度为</p>
-<p>$$R&#x3D;\frac{I_s}{P_\lambda}&#x3D;\frac{I_s}{pA_d}.$$</p>
+<p>$$R=\frac{I_s}{P_\lambda}=\frac{I_s}{pA_d}.$$</p>
 <p>若在带宽 $\Delta f$ 内积分得到的均方根噪声电流为 $i_{n,\mathrm{rms}}$，一种常见写法是</p>
-<p>$$\mathrm{NEP}&#x3D;\frac{i_{n,\mathrm{rms}}}{R}, \qquad D^{\ast}&#x3D;\frac{\sqrt{A_d\Delta f}}{\mathrm{NEP}}&#x3D;\frac{R\sqrt{A_d\Delta f}}{i_{n,\mathrm{rms}}}.$$</p>
-<p>也有文献直接使用单位为 $\mathrm{A}&#x2F;\sqrt{\mathrm{Hz}}$ 的噪声幅度谱密度 $S_i^{1&#x2F;2}$，此时在指定频率下有 $\mathrm{NEP}_{f}&#x3D;S_i^{1&#x2F;2}&#x2F;R$ 和 $D^{\ast}&#x3D;R\sqrt{A_d}&#x2F;S_i^{1&#x2F;2}$。这正说明必须写清符号、单位与带宽。公式还展示了一条误差链：$A_d$ 定错会先改变入射功率与 $R$，再传入 NEP 和 $D^{\ast}$；噪声被低估，则两项指标都会显得更优。</p>
-<p>比探测率的单位是 $\mathrm{cm,Hz^{1&#x2F;2}&#x2F;W}$，通常称为 Jones。面积与带宽归一化只消除了一级尺度效应；若有效面积、调制频率和噪声机制不同，$D^{\ast}$ 仍不能直接横向比较。</p>
+<p>$$\mathrm{NEP}=\frac{i_{n,\mathrm{rms}}}{R}, \qquad D^{\ast}=\frac{\sqrt{A_d\Delta f}}{\mathrm{NEP}}=\frac{R\sqrt{A_d\Delta f}}{i_{n,\mathrm{rms}}}.$$</p>
+<p>也有文献直接使用单位为 $\mathrm{A}/\sqrt{\mathrm{Hz}}$ 的噪声幅度谱密度 $S_i^{1/2}$，此时在指定频率下有 $\mathrm{NEP}_{f}=S_i^{1/2}/R$ 和 $D^{\ast}=R\sqrt{A_d}/S_i^{1/2}$。这正说明必须写清符号、单位与带宽。公式还展示了一条误差链：$A_d$ 定错会先改变入射功率与 $R$，再传入 NEP 和 $D^{\ast}$；噪声被低估，则两项指标都会显得更优。</p>
+<p>比探测率的单位是 $\mathrm{cm,Hz^{1/2}/W}$，通常称为 Jones。面积与带宽归一化只消除了一级尺度效应；若有效面积、调制频率和噪声机制不同，$D^{\ast}$ 仍不能直接横向比较。</p>
 <p>响应度本身也常随光功率变化。陷阱、屏蔽和复合会产生</p>
-<p>$$I_{\mathrm{ph}}\propto P^{\alpha}, \qquad R&#x3D;\frac{I_{\mathrm{ph}}}{P}\propto P^{\alpha-1},$$</p>
+<p>$$I_{\mathrm{ph}}\propto P^{\alpha}, \qquad R=\frac{I_{\mathrm{ph}}}{P}\propto P^{\alpha-1},$$</p>
 <p>许多受陷阱影响的器件满足 $0&lt;\alpha&lt;1$。只在极低 $P$ 下测得的高响应度，不能外推到更大的动态范围。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="有效面积首先是一个物理问题"><a href="#有效面积首先是一个物理问题" class="headerlink" title="有效面积首先是一个物理问题"></a>有效面积首先是一个物理问题</div><p>显微镜里看到的材料轮廓，不一定就是产生可收集信号的面积。载流子漂移、结区电场、衍射、天线与近场增强，都可能扩大或重新分布光响应。综述按器件给出不同建议：</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="有效面积首先是一个物理问题">有效面积首先是一个物理问题</div>
+<p>显微镜里看到的材料轮廓，不一定就是产生可收集信号的面积。载流子漂移、结区电场、衍射、天线与近场增强，都可能扩大或重新分布光响应。综述按器件给出不同建议：</p>
 <ul>
 <li>光电导器件与面内结通常应采用两电极之间的光敏材料面积，而不是任意圈出一条很窄的区域；</li>
 <li>零偏压垂直结若光电流映射表明响应局限于重叠结区，可用结区面积；</li>
@@ -603,53 +612,57 @@ height:50vh;
 </ul>
 <p>这些是与工作状态相关的操作性定义，并非不变的几何真理。当电极尖端、天线或局域场主导响应时，可以用扫描光电流显微镜测出空间灵敏度，再由实测分布定义有效面积。</p>
 <p>综述给出一个与波长有关的映射定义：</p>
-<p>$$A_{\mathrm{eff}}(\lambda)&#x3D; \frac{\displaystyle\iint I_s(x,y,\lambda),dx,dy} {\displaystyle\max_{x,y} I_s(x,y,\lambda)}.$$</p>
+<p>$$A_{\mathrm{eff}}(\lambda)= \frac{\displaystyle\iint I_s(x,y,\lambda),dx,dy} {\displaystyle\max_{x,y} I_s(x,y,\lambda)}.$$</p>
 <p>分子积分整个空间灵敏度，分母用峰值归一化。因此 $A_{\mathrm{eff}}$ 同时取决于指定波长下的光学模式、器件结构和载流子收集过程。</p>
 <p><img src="/images/2d-photodetector-metrics/review-figure-1.webp" alt="原论文图1：不同二维光电探测器的有效面积"></p>
 <p><em>原论文图 1，出自 <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang 等，《自然·通讯》（2023）</a>。蓝色虚线表示作者对不同器件结构建议的有效面积，橙色虚线展示可能不准确的选择；f–h 说明衍射和天线效应为何会使真实响应区偏离画出的沟道。</em></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="响应度要从光功率标定开始"><a href="#响应度要从光功率标定开始" class="headerlink" title="响应度要从光功率标定开始"></a>响应度要从光功率标定开始</div><p>激光光斑通常服从高斯分布，而不是均匀照明。凭肉眼判断光斑直径，相当于采用一个不断变化的强度阈值：屏幕对比度、环境亮度、波长和总光强都会改变人眼看到的边缘。功率密度又等于功率除以假定的光斑面积，因此直径估计会直接改变 $R$。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="响应度要从光功率标定开始">响应度要从光功率标定开始</div>
+<p>激光光斑通常服从高斯分布，而不是均匀照明。凭肉眼判断光斑直径，相当于采用一个不断变化的强度阈值：屏幕对比度、环境亮度、波长和总光强都会改变人眼看到的边缘。功率密度又等于功率除以假定的光斑面积，因此直径估计会直接改变 $R$。</p>
 <p>在束腰处，理想圆对称高斯光束满足</p>
-<p>$$I(r)&#x3D;\frac{2P}{\pi w_0^2}\exp!\left(-\frac{2r^2}{w_0^2}\right).$$</p>
+<p>$$I®=\frac{2P}{\pi w_0^2}\exp!\left(-\frac{2r^2}{w_0^2}\right).$$</p>
 <p>真正落在有效区 $A_d$ 上的功率，应由重叠积分得到：</p>
-<p>$$P_{\mathrm{dev}}&#x3D;\iint_{A_d} I(x,y),dx,dy,$$</p>
+<p>$$P_{\mathrm{dev}}=\iint_{A_d} I(x,y),dx,dy,$$</p>
 <p>而不是用总激光功率乘上肉眼估计的面积比例。若近场吸收明显，积分中还要加入随位置变化的吸收因子。</p>
-<p>综述建议在样品平面使用有效面积已知、经过标定的商用探测器测量功率密度。相机或光束分析仪可以记录空间分布，但标定光路必须代表器件实际测量光路。若器件远小于光斑，只有光束腰明显大于器件时才能近似均匀照明。在论文给出的简化上界中，器件外接圆半径小于 $w_0&#x2F;14.18$ 时，非均匀性误差上界约低于 1%。</p>
+<p>综述建议在样品平面使用有效面积已知、经过标定的商用探测器测量功率密度。相机或光束分析仪可以记录空间分布，但标定光路必须代表器件实际测量光路。若器件远小于光斑，只有光束腰明显大于器件时才能近似均匀照明。在论文给出的简化上界中，器件外接圆半径小于 $w_0/14.18$ 时，非均匀性误差上界约低于 1%。</p>
 <p>光源还要匹配所声称的应用。单色激光得到某一波长的光谱响应度；面向实际辐射测量的红外探测器，可能还需要标定黑体、光阑、距离、调制与背景温度；FTIR 可测光谱响应。这些实验彼此相关，却回答不同问题，不应都混成一个没有限定条件的“响应度”。</p>
 <p><img src="/images/2d-photodetector-metrics/review-figure-3.webp" alt="原论文图3：激光标定、黑体与FTIR测量"></p>
 <p><em>原论文图 3，出自 <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang 等（2023）</a>。b 展示肉眼选择高斯光斑边缘如何改变推导出的响应度；c 用监测探测器与相机标定激光；d–f 区分黑体与光谱测量。</em></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="暗电流不等于噪声谱"><a href="#暗电流不等于噪声谱" class="headerlink" title="暗电流不等于噪声谱"></a>暗电流不等于噪声谱</div><p>暗电流是在没有目标信号光时测得的，但红外探测器仍可能接收到室温背景辐射。因此有意义的暗电流测量需要冷屏，窄带隙器件尤其如此。温度、偏压、屏蔽方式与稳定时间都应报告。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="暗电流不等于噪声谱">暗电流不等于噪声谱</div>
+<p>暗电流是在没有目标信号光时测得的，但红外探测器仍可能接收到室温背景辐射。因此有意义的暗电流测量需要冷屏，窄带隙器件尤其如此。温度、偏压、屏蔽方式与稳定时间都应报告。</p>
 <p>更关键的是，把暗电流代入散粒噪声公式，并不等于测量了器件总噪声。二维探测器可能同时含有：</p>
 <ul>
 <li>电阻引起的 Johnson 噪声；</li>
 <li>电荷离散输运产生的散粒噪声；</li>
 <li>陷阱俘获和释放造成的产生-复合噪声；</li>
-<li>载流子数或迁移率涨落相关的低频 $1&#x2F;f$ 噪声。</li>
+<li>载流子数或迁移率涨落相关的低频 $1/f$ 噪声。</li>
 </ul>
 <p>用功率谱密度表示，可以写成一组有物理来源的项：</p>
-<p>$$S_I(f)&#x3D;\underbrace{\frac{4k_{\mathrm B}T}{R_d}}<em>{\text{Johnson}} +\underbrace{2qI_d}</em>{\text{shot}} +\underbrace{\frac{C}{f^{\gamma}}}<em>{1&#x2F;f} +\underbrace{\sum_j\frac{4A_j\tau_j}{1+(2\pi f\tau_j)^2}}</em>{\text{g-r}}.$$</p>
+<p>$$S_I(f)=\underbrace{\frac{4k_{\mathrm B}T}{R_d}}<em>{\text{Johnson}} +\underbrace{2qI_d}</em>{\text{shot}} +\underbrace{\frac{C}{f^{\gamma}}}<em>{1/f} +\underbrace{\sum_j\frac{4A_j\tau_j}{1+(2\pi f\tau_j)^2}}</em>{\text{g-r}}.$$</p>
 <p>最后一项是不同陷阱时间常数 $\tau_j$ 对应的 Lorentzian 产生-复合噪声之和。实际读出的均方根噪声还取决于整条测量链的传递函数 $H(f)$：</p>
-<p>$$i_{n,\mathrm{rms}}^2&#x3D; \int_{f_1}^{f_2}S_I(f)\lvert H(f)\rvert^2,df.$$</p>
+<p>$$i_{n,\mathrm{rms}}^2= \int_{f_1}^{f_2}S_I(f)\lvert H(f)\rvert^2,df.$$</p>
 <p>所以“1 Hz 带宽内的噪声”仍不完整，还必须说明中心频率。靠近 $1,\mathrm{Hz}$ 的 1 Hz 频带，可能比靠近 $10,\mathrm{kHz}$ 的同宽频带包含多得多的闪烁噪声。</p>
-<p>频率足够高时，散粒噪声与 Johnson 噪声可能占主导。但光栅控或光电导增益往往伴随较长载流子寿命以及产生-复合噪声；低频处 $1&#x2F;f$ 噪声也可能很强。只计算白噪声，会让宣称的 $D^{\ast}$ 高于实际有关的背景限制。</p>
+<p>频率足够高时，散粒噪声与 Johnson 噪声可能占主导。但光栅控或光电导增益往往伴随较长载流子寿命以及产生-复合噪声；低频处 $1/f$ 噪声也可能很强。只计算白噪声，会让宣称的 $D^{\ast}$ 高于实际有关的背景限制。</p>
 <p>更可信的做法，是在与响应度相同的偏压、温度、屏蔽和读出条件下实测噪声谱。响应度和噪声还必须对应<strong>同一个频率</strong>与兼容的带宽。把低频下的高响应度和高频处的低噪声底拼在一起，会得到一个不对应任何真实工作点的数字。</p>
 <p>对成像器件，读出积分时间本身就是滤波器；像素间不均匀性和同一像素的帧间涨落都会降低成像质量。单像素噪声谱密度无法单独代表整个焦平面阵列。</p>
 <p><img src="/images/2d-photodetector-metrics/review-figure-5.webp" alt="原论文图5：噪声假设如何抬高比探测率"></p>
-<p><em>原论文图 5，出自 <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang 等（2023）</a>。虚线探测率只采用估算的白噪声并忽略 $1&#x2F;f$ 与产生-复合噪声；它与实线的差别直观展示由此产生的高估。c–d 把同一问题扩展到成像探测。</em></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="测速度要有完整瞬态和带宽"><a href="#测速度要有完整瞬态和带宽" class="headerlink" title="测速度要有完整瞬态和带宽"></a>测速度要有完整瞬态和带宽</div><p>上升时间通常定义为稳态响应从 10% 到 90% 所需时间，下降时间则从 90% 到 10%。如果光脉冲在电流达到平台之前就结束，截得的上升或下降区间会远短于器件真实稳定时间。因此时间曲线应覆盖完整周期，让照明态与暗态都达到稳态。</p>
+<p><em>原论文图 5，出自 <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang 等（2023）</a>。虚线探测率只采用估算的白噪声并忽略 $1/f$ 与产生-复合噪声；它与实线的差别直观展示由此产生的高估。c–d 把同一问题扩展到成像探测。</em></p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="测速度要有完整瞬态和带宽">测速度要有完整瞬态和带宽</div>
+<p>上升时间通常定义为稳态响应从 10% 到 90% 所需时间，下降时间则从 90% 到 10%。如果光脉冲在电流达到平台之前就结束，截得的上升或下降区间会远短于器件真实稳定时间。因此时间曲线应覆盖完整周期，让照明态与暗态都达到稳态。</p>
 <p>频域测量提供另一种描述。响应度降到 $0.707R_0$ 时的频率，是 $-3,\mathrm{dB}$ 截止频率 $f_c$。对单极点响应，</p>
-<p>$$R(f)&#x3D;\frac{R_0}{\sqrt{1+4\pi^2f^2\tau^2}},$$</p>
+<p>$$R(f)=\frac{R_0}{\sqrt{1+4\pi^2f^2\tau^2}},$$</p>
 <p>它把带宽和时间常数联系起来。调制光源、放大器、电缆与示波器都必须比被测器件更快，否则测到的是仪器瓶颈。</p>
 <p>对同一个单极点响应，</p>
-<p>$$f_c&#x3D;\frac{1}{2\pi\tau}, \qquad t_{10-90}\simeq2.2\tau\simeq\frac{0.35}{f_c}.$$</p>
+<p>$$f_c=\frac{1}{2\pi\tau}, \qquad t_{10-90}\simeq2.2\tau\simeq\frac{0.35}{f_c}.$$</p>
 <p>实测上升时间还包含光源和电子学响应。若各部分可近似为高斯时间响应，常用去嵌入关系为</p>
 <p>$$t_{\mathrm{meas}}^2\simeq t_{\mathrm{det}}^2+t_{\mathrm{source}}^2+t_{\mathrm{elec}}^2.$$</p>
 <p>高增益与高速也相互耦合。载流子寿命远长于渡越时间时，光电导增益会上升；但寿命增加通常使带宽下降。只报告低功率下的最大增益，或只展示最快边沿，都会遮蔽这种取舍。补充响应度随光功率密度的变化、频率响应与增益-带宽积，才更便于比较器件。</p>
-<p>把 $G\simeq\tau_{\mathrm{life}}&#x2F;\tau_{\mathrm{tr}}$ 与 $f_c\simeq1&#x2F;(2\pi\tau_{\mathrm{life}})$ 合并，得到</p>
+<p>把 $G\simeq\tau_{\mathrm{life}}/\tau_{\mathrm{tr}}$ 与 $f_c\simeq1/(2\pi\tau_{\mathrm{life}})$ 合并，得到</p>
 <p>$$Gf_c\simeq\frac{1}{2\pi\tau_{\mathrm{tr}}} \simeq\frac{\mu V_{\mathrm{DS}}}{2\pi L^2}.$$</p>
 <p>这个简化的增益-带宽积解释了迁移率、沟道长度和电场为何重要。如果一项工作同时宣称增益和速度提升，就应说明究竟改变了哪一种渡越或俘获过程。</p>
 <p><img src="/images/2d-photodetector-metrics/review-figure-6.webp" alt="原论文图6：响应时间误差与增益带宽取舍"></p>
 <p><em>原论文图 6，出自 <a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">Wang 等（2023）</a>。a–b 展示会低估响应时间的不完整瞬态；d 给出完整周期中的 10–90% 定义；e 定义 $-3,\mathrm{dB}$ 带宽；f 把增益和频率放进同一幅比较图。</em></p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="一份简洁的报告清单"><a href="#一份简洁的报告清单" class="headerlink" title="一份简洁的报告清单"></a>一份简洁的报告清单</div><p>一项可比较的光电探测器结果，应让读者从论文中还原以下条件：</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="一份简洁的报告清单">一份简洁的报告清单</div>
+<p>一项可比较的光电探测器结果，应让读者从论文中还原以下条件：</p>
 <ol>
 <li>**器件与机制：**结构、材料堆栈、偏压，以及判定光电导、光伏、热电或测辐射热机制的证据；</li>
 <li>**光学输入：**波长或光源光谱、样品处标定功率、光束分布、光斑尺寸与调制频率；</li>
@@ -659,11 +672,10 @@ height:50vh;
 <li>**速度：**完整上升与下降曲线、调制波形、$-3,\mathrm{dB}$ 带宽和仪器限制。</li>
 </ol>
 <p>这篇论文更深层的贡献是一种方法论：**探测器性能指标不是材料常数，而是器件、光场、偏压、频率、带宽、温度和读出协议共同构成的测量结果。**条件完整可见时，一个不夸张的数字，往往比无法复现的纪录更有价值。</p>
-<div class="zh-heading zh-h3" role="heading" aria-level="3" id="原文与阅读说明"><a href="#原文与阅读说明" class="headerlink" title="原文与阅读说明"></a>原文与阅读说明</div><p>本文按 Fang Wang 等人的综述“<a href="https://www.nature.com/articles/s41467-023-37635-1" target="_blank" rel="noopener">How to characterize figures of merit of two-dimensional photodetectors</a>”展开，发表于 <em>Nature Communications</em> <strong>14</strong>, 2224（2023 年 4 月 19 日），DOI：<a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">10.1038&#x2F;s41467-023-37635-1</a>。论文可通过 <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10115793/" target="_blank" rel="noopener">PubMed Central</a> 开放获取。上方图 1、3、5、6 均为作者原图。公式采用带宽内总均方根噪声与噪声幅度谱密度两种常见写法；与其他文献比较时，要先确认符号所代表的约定。</p>
+<div class="zh-heading zh-h3" role="heading" aria-level="3" id="原文与阅读说明">原文与阅读说明</div>
+<p>本文按 Fang Wang 等人的综述“<a href="https://www.nature.com/articles/s41467-023-37635-1" target="_blank" rel="noopener">How to characterize figures of merit of two-dimensional photodetectors</a>”展开，发表于 <em>Nature Communications</em> <strong>14</strong>, 2224（2023 年 4 月 19 日），DOI：<a href="https://doi.org/10.1038/s41467-023-37635-1" target="_blank" rel="noopener">10.1038/s41467-023-37635-1</a>。论文可通过 <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10115793/" target="_blank" rel="noopener">PubMed Central</a> 开放获取。上方图 1、3、5、6 均为作者原图。公式采用带宽内总均方根噪声与噪声幅度谱密度两种常见写法；与其他文献比较时，要先确认符号所代表的约定。</p>
 
 </section>
-
-
 
     </article>
     <!-- license  -->
@@ -2110,13 +2122,13 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
-    
-        <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
-    
         <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
     
         <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
+    
+        <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
+    
+        <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
     
         <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
     
@@ -2124,21 +2136,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
     
+        <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
+    
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
     
-        <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
+        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
     
         <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
     
+        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
+    
         <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
-        <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
-    
-        <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
-    
-        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
+        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
     
         <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
     
@@ -2160,8 +2174,6 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
     
-        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
-    
         <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
     
         <span class="sidebar-tag-name" data-tags="Optical Properties"><span class="iconfont-archer">&#xe606;</span>Optical Properties</span>
@@ -2169,8 +2181,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
     
@@ -2186,17 +2196,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="field theory"><span class="iconfont-archer">&#xe606;</span>field theory</span>
     
+        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
+    
         <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
     
         <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
     
-        <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
     
         <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
     
-        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
-    
         <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
     
         <span class="sidebar-tag-name" data-tags="Photodetectors"><span class="iconfont-archer">&#xe606;</span>Photodetectors</span>
     
@@ -2206,11 +2218,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Metrology"><span class="iconfont-archer">&#xe606;</span>Metrology</span>
     
-        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
-    
         <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
     
         <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
     
         <span class="sidebar-tag-name" data-tags="Computational Optics"><span class="iconfont-archer">&#xe606;</span>Computational Optics</span>
     
@@ -2219,6 +2231,8 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="Artificial Intelligence"><span class="iconfont-archer">&#xe606;</span>Artificial Intelligence</span>
     
         <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
     
         <span class="sidebar-tag-name" data-tags="Living Matter"><span class="iconfont-archer">&#xe606;</span>Living Matter</span>
     
@@ -2229,8 +2243,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="Non-equilibrium Physics"><span class="iconfont-archer">&#xe606;</span>Non-equilibrium Physics</span>
     
         <span class="sidebar-tag-name" data-tags="Collective Behavior"><span class="iconfont-archer">&#xe606;</span>Collective Behavior</span>
-    
-        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
     
         <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
     
@@ -2250,19 +2262,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Spectroelectrochemistry"><span class="iconfont-archer">&#xe606;</span>Spectroelectrochemistry</span>
     
+        <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
+    
+        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
+    
+        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
+    
         <span class="sidebar-tag-name" data-tags="BEOL"><span class="iconfont-archer">&#xe606;</span>BEOL</span>
     
         <span class="sidebar-tag-name" data-tags="Interconnects"><span class="iconfont-archer">&#xe606;</span>Interconnects</span>
     
         <span class="sidebar-tag-name" data-tags="Backside Power Delivery"><span class="iconfont-archer">&#xe606;</span>Backside Power Delivery</span>
-    
-        <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
-    
-        <span class="sidebar-tag-name" data-tags="Vortex Dynamics"><span class="iconfont-archer">&#xe606;</span>Vortex Dynamics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
-    
-        <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
     
         <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
     
@@ -2305,9 +2317,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
-    
         <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
+    
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
     
@@ -2323,9 +2335,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Scientific/Semiconductor-Devices</span>
-    
         <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Scientific/Semiconductor-Devices</span>
     
         <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
@@ -2333,9 +2345,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
-    
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
     

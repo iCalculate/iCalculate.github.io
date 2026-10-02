@@ -8,59 +8,68 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Breakdown, Scaling, and Device Nonidealities</span><span data-lang="zh" hidden>击穿、缩放与器件非理想效应</span></h1><p class="node-deck"><span data-lang="en">Tunneling, avalanche, short-channel electrostatics, high-field transport, parasitics, self-heating, and reliability across PN junctions, BJTs, and MOSFETs.</span><span data-lang="zh" hidden>横向连接PN结、BJT和MOSFET中的隧穿、雪崩、短沟道、高场、寄生电阻、自热与可靠性问题。</span></p><div class="node-tags"><span>Scaling Effects</span><span>Device Physics</span><span>Technology Roadmap</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Nonideal effects mark the scale boundaries of ideal models. Shrinking dimensions, raising field, or increasing density progressively breaks low-field response, local equilibrium, depletion approximations, and classical statistics.</p>
 </blockquote>
-<h2 id="Two-Microscopic-Breakdown-Mechanisms"><a href="#Two-Microscopic-Breakdown-Mechanisms" class="headerlink" title="Two Microscopic Breakdown Mechanisms"></a>Two Microscopic Breakdown Mechanisms</h2><p><strong>Zener or band-to-band tunneling</strong> occurs in heavily doped, narrow depletion regions where strong field makes valence-to-conduction tunneling probable. <strong>Avalanche</strong> occurs when carriers gain enough energy over a wider depletion region to generate new electron–hole pairs by impact ionization.</p>
+<h2 id="Two-Microscopic-Breakdown-Mechanisms">Two Microscopic Breakdown Mechanisms</h2>
+<p><strong>Zener or band-to-band tunneling</strong> occurs in heavily doped, narrow depletion regions where strong field makes valence-to-conduction tunneling probable. <strong>Avalanche</strong> occurs when carriers gain enough energy over a wider depletion region to generate new electron–hole pairs by impact ionization.</p>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/I-V_curve_for_a_Zener_Diode.svg" alt="Zener and avalanche breakdown in I–V"></p>
 <p><em>Figure 1 | Schematic reverse breakdown at different doping levels. See the <a href="https://commons.wikimedia.org/wiki/File:I-V_curve_for_a_Zener_Diode.svg" target="_blank" rel="noopener">source and license</a>.</em></p>
-<h2 id="MOSFET-Short-Channel-Effects"><a href="#MOSFET-Short-Channel-Effects" class="headerlink" title="MOSFET Short-Channel Effects"></a>MOSFET Short-Channel Effects</h2><p>As gate length approaches the electrostatic control length, source and drain depletion fields share control with the gate. Threshold roll-off, DIBL, punch-through, subthreshold leakage, and gate-induced drain leakage increase. Thinner oxides, thinner bodies, and multigate geometry reduce the control length; FinFET and GAAFET gains are fundamentally electrostatic.</p>
-<h2 id="High-Field-Transport-and-Reliability"><a href="#High-Field-Transport-and-Reliability" class="headerlink" title="High-Field Transport and Reliability"></a>High-Field Transport and Reliability</h2><p>Velocity saturation changes square-law behavior. Hot carriers damage interfaces and oxides. Thin dielectrics show direct, defect-assisted, and Fowler–Nordheim tunneling followed by time-dependent breakdown. High current density causes electromigration; heating reduces mobility and raises leakage, producing electrothermal feedback.</p>
-<h2 id="Parasitics-and-Scaling"><a href="#Parasitics-and-Scaling" class="headerlink" title="Parasitics and Scaling"></a>Parasitics and Scaling</h2><p>Contacts, extensions, junction capacitances, gate resistance, interconnect capacitance, and substrate coupling become a larger fraction of the total as intrinsic channels improve. Classical constant-field scaling would shrink voltage with dimensions, but supply voltage has not scaled proportionally, creating power-density and reliability pressure. Device innovation therefore shifts toward multigate electrostatics, backside delivery, new channels, contact engineering, and 3D integration.</p>
+<h2 id="MOSFET-Short-Channel-Effects">MOSFET Short-Channel Effects</h2>
+<p>As gate length approaches the electrostatic control length, source and drain depletion fields share control with the gate. Threshold roll-off, DIBL, punch-through, subthreshold leakage, and gate-induced drain leakage increase. Thinner oxides, thinner bodies, and multigate geometry reduce the control length; FinFET and GAAFET gains are fundamentally electrostatic.</p>
+<h2 id="High-Field-Transport-and-Reliability">High-Field Transport and Reliability</h2>
+<p>Velocity saturation changes square-law behavior. Hot carriers damage interfaces and oxides. Thin dielectrics show direct, defect-assisted, and Fowler–Nordheim tunneling followed by time-dependent breakdown. High current density causes electromigration; heating reduces mobility and raises leakage, producing electrothermal feedback.</p>
+<h2 id="Parasitics-and-Scaling">Parasitics and Scaling</h2>
+<p>Contacts, extensions, junction capacitances, gate resistance, interconnect capacitance, and substrate coupling become a larger fraction of the total as intrinsic channels improve. Classical constant-field scaling would shrink voltage with dimensions, but supply voltage has not scaled proportionally, creating power-density and reliability pressure. Device innovation therefore shifts toward multigate electrostatics, backside delivery, new channels, contact engineering, and 3D integration.</p>
 <!--deep-classical:en-->
-
-<h2 id="Field-geometry-and-positive-feedback"><a href="#Field-geometry-and-positive-feedback" class="headerlink" title="Field, geometry and positive feedback"></a>Field, geometry and positive feedback</h2><p>Avalanche becomes self-sustaining when electron and hole ionization coefficients satisfy a multiplication integral of order unity, for example</p>
+<h2 id="Field-geometry-and-positive-feedback">Field, geometry and positive feedback</h2>
+<p>Avalanche becomes self-sustaining when electron and hole ionization coefficients satisfy a multiplication integral of order unity, for example</p>
 <div class="math-display">\[\int_0^W\alpha_n(x)\exp\!\left[-\int_0^x(\alpha_n-\alpha_p)dx&#39;\right]dx\approx1.\]</div>
-
 <p>Short-channel electrostatic integrity is organized by a natural length \(\lambda\); for a thin-body double gate, \(\lambda\) scales roughly as \(\sqrt{(\epsilon_s/\epsilon_{ox})t_st_{ox}}\).  Robust control needs \(L_G\) several times \(\lambda\).</p>
 <p>Electrical and thermal failure are coupled through \(T=T_0+R_{th}IV\).  Mobility reduction may stabilize current, while leakage or impact ionization can create positive feedback and runaway.  Breakdown qualification must therefore specify pulse width, thermal boundary, area and failure criterion; a single terminal voltage is not an intrinsic material constant.</p>
 <!--/deep-classical:en-->
-
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<h2 id="References">References</h2>
+<ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapters 2, 5, 6, and 11.</li>
 <li>R. H. Dennard et al., <em>IEEE JSSC</em> <strong>9</strong>, 256 (1974).</li>
 </ol>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p><strong>核心结论</strong>：非理想效应不是独立的附录，而是理想模型的尺度边界。减小长度、增加电场或提高载流子密度，会依次破坏低场、局域平衡、耗尽近似与经典统计。</p>
 </blockquote>
-<h2 id="1-击穿的两个微观机制"><a href="#1-击穿的两个微观机制" class="headerlink" title="1. 击穿的两个微观机制"></a>1. 击穿的两个微观机制</h2><h3 id="Zener-带间隧穿"><a href="#Zener-带间隧穿" class="headerlink" title="Zener&#x2F;带间隧穿"></a>Zener&#x2F;带间隧穿</h3><p>重掺杂使耗尽层很窄，强电场使价带电子量子隧穿到导带。隧穿概率对带隙、有效质量和场强呈强指数依赖，因此窄禁带、重掺杂结更易发生。</p>
-<h3 id="雪崩"><a href="#雪崩" class="headerlink" title="雪崩"></a>雪崩</h3><p>较宽耗尽区内的载流子从电场获得能量，通过碰撞电离产生新的电子–空穴对；倍增若超过损失便出现雪崩。其条件常写为电离系数沿耗尽区积分达到自持值，而不是“电场超过一个普适常数”。</p>
+<h2 id="1-击穿的两个微观机制">1. 击穿的两个微观机制</h2>
+<h3 id="Zener-带间隧穿">Zener/带间隧穿</h3>
+<p>重掺杂使耗尽层很窄，强电场使价带电子量子隧穿到导带。隧穿概率对带隙、有效质量和场强呈强指数依赖，因此窄禁带、重掺杂结更易发生。</p>
+<h3 id="雪崩">雪崩</h3>
+<p>较宽耗尽区内的载流子从电场获得能量，通过碰撞电离产生新的电子–空穴对；倍增若超过损失便出现雪崩。其条件常写为电离系数沿耗尽区积分达到自持值，而不是“电场超过一个普适常数”。</p>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/I-V_curve_for_a_Zener_Diode.svg" alt="齐纳与雪崩击穿的I-V示意"></p>
 <p><em>图 1｜不同掺杂下反向击穿电压及温度趋势的示意。原图文件页列出许可与版本；<a href="https://commons.wikimedia.org/wiki/File:I-V_curve_for_a_Zener_Diode.svg" target="_blank" rel="noopener">文件页</a>。</em></p>
-<h2 id="2-MOSFET短沟道效应"><a href="#2-MOSFET短沟道效应" class="headerlink" title="2. MOSFET短沟道效应"></a>2. MOSFET短沟道效应</h2><p>长沟道中势垒主要由栅控制；沟道缩短后源漏耗尽区参与控制：</p>
+<h2 id="2-MOSFET短沟道效应">2. MOSFET短沟道效应</h2>
+<p>长沟道中势垒主要由栅控制；沟道缩短后源漏耗尽区参与控制：</p>
 <ul>
 <li>阈值电压随沟道长度下降；</li>
 <li>漏致势垒降低（DIBL）；</li>
 <li>穿通与亚阈值漏电增加；</li>
 <li>栅诱导漏极泄漏（GIDL）和带间隧穿增强。</li>
 </ul>
-<p>核心指标不是绝对栅长，而是栅长相对于电静控制长度 \(\lambda\)。减薄栅介质、减薄沟道或采用多栅结构可降低 \(\lambda\)，因此 FinFET&#x2F;GAAFET 改善的是电静完整性。</p>
-<h2 id="3-高场输运与可靠性"><a href="#3-高场输运与可靠性" class="headerlink" title="3. 高场输运与可靠性"></a>3. 高场输运与可靠性</h2><ul>
+<p>核心指标不是绝对栅长，而是栅长相对于电静控制长度 \(\lambda\)。减薄栅介质、减薄沟道或采用多栅结构可降低 \(\lambda\)，因此 FinFET/GAAFET 改善的是电静完整性。</p>
+<h2 id="3-高场输运与可靠性">3. 高场输运与可靠性</h2>
+<ul>
 <li>速度饱和降低平方律指数；</li>
 <li>热载流子注入氧化层，改变阈值和跨导；</li>
 <li>极薄介质发生直接隧穿、缺陷辅助隧穿与时变介质击穿；</li>
 <li>高电流密度造成电迁移；</li>
 <li>功耗通过晶格温升降低迁移率、增大漏电，形成电热反馈。</li>
 </ul>
-<h2 id="4-寄生元件"><a href="#4-寄生元件" class="headerlink" title="4. 寄生元件"></a>4. 寄生元件</h2><p>真实器件还包含接触电阻、源漏延伸电阻、结电容、栅电阻、互连电容和衬底耦合。当内在沟道性能持续提高时，外部寄生量占总延迟和总电阻的比例反而上升。</p>
-<h2 id="5-缩放的守恒关系"><a href="#5-缩放的守恒关系" class="headerlink" title="5. 缩放的守恒关系"></a>5. 缩放的守恒关系</h2><p>经典恒场缩放希望尺寸与电压同比例缩小，使电场保持不变；实际电源电压无法长期同比例降低，导致功率密度与可靠性压力。由此器件创新从平面缩放转向：多栅、环栅、背面供电、新沟道材料、接触工程与三维集成。相关路线见<a href="/2025/08/18/Introducing-2D-material-based-devices-in-the-logic-scaling-roadmap/">Introducing 2D-material based devices in the logic scaling roadmap</a>。</p>
+<h2 id="4-寄生元件">4. 寄生元件</h2>
+<p>真实器件还包含接触电阻、源漏延伸电阻、结电容、栅电阻、互连电容和衬底耦合。当内在沟道性能持续提高时，外部寄生量占总延迟和总电阻的比例反而上升。</p>
+<h2 id="5-缩放的守恒关系">5. 缩放的守恒关系</h2>
+<p>经典恒场缩放希望尺寸与电压同比例缩小，使电场保持不变；实际电源电压无法长期同比例降低，导致功率密度与可靠性压力。由此器件创新从平面缩放转向：多栅、环栅、背面供电、新沟道材料、接触工程与三维集成。相关路线见<a href="/2025/08/18/Introducing-2D-material-based-devices-in-the-logic-scaling-roadmap/">Introducing 2D-material based devices in the logic scaling roadmap</a>。</p>
 <!--deep-classical:zh-->
-
-<h2 id="电场、几何与正反馈"><a href="#电场、几何与正反馈" class="headerlink" title="电场、几何与正反馈"></a>电场、几何与正反馈</h2><p>当电子和空穴碰撞电离系数的倍增积分达到自持条件时出现雪崩，例如</p>
+<h2 id="电场、几何与正反馈">电场、几何与正反馈</h2>
+<p>当电子和空穴碰撞电离系数的倍增积分达到自持条件时出现雪崩，例如</p>
 <div class="math-display">\[\int_0^W\alpha_n(x)\exp\!\left[-\int_0^x(\alpha_n-\alpha_p)dx&#39;\right]dx\approx1.\]</div>
-
 <p>短沟道静电完整性由自然长度 \(\lambda\) 组织；对薄体双栅，\(\lambda\) 近似按 \(\sqrt{(\epsilon_s/\epsilon_{ox})t_st_{ox}}\) 缩放。可靠栅控通常要求 \(L_G\) 为数倍 \(\lambda\)。</p>
 <p>电失效与热失效通过 \(T=T_0+R_{th}IV\) 耦合。迁移率下降可能稳定电流，而泄漏或碰撞电离会产生正反馈和热失控。因此击穿表征必须注明脉宽、热边界、面积与失效判据；单一端口电压不是本征材料常数。</p>
 <!--/deep-classical:zh-->
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<h2 id="参考">参考</h2>
+<ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., Chapters 2, 5, 6 and 11.</li>
 <li>R. H. Dennard et al., “Design of Ion-Implanted MOSFET’s with Very Small Physical Dimensions,” <em>IEEE JSSC</em> <strong>9</strong>, 256 (1974).</li>
 </ol>
