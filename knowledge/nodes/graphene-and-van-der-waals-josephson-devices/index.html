@@ -8,70 +8,56 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Graphene and van der Waals Josephson Devices</span><span data-lang="zh" hidden>石墨烯与范德华约瑟夫森器件</span></h1><p class="node-deck"><span data-lang="en">Superconducting electrodes induce pair correlations in a 2D weak link; gates tune carrier density, transmission and the current–phase relation.</span><span data-lang="zh" hidden>超导电极在二维弱连接中诱导配对关联，栅极可调载流子密度、透射率和电流–相位关系。</span></p><div class="node-tags"><span>Quantum Devices</span><span>Device Physics</span><span>2D Materials</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Superconducting electrodes induce pair correlations in a 2D weak link; gates tune carrier density, transmission and the current–phase relation.</p>
 </blockquote>
-<h2 id="Physical-Picture">Physical Picture</h2>
-<p>Superconducting electrodes induce pair correlations in a 2D weak link; gates tune carrier density, transmission and the current–phase relation. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
-<h3 id="Andreev-bound-states-carry-supercurrent">Andreev bound states carry supercurrent</h3>
-<p>For a short weak link with channel transmission \(\tau_n\), Andreev levels are</p>
+<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>Superconducting electrodes induce pair correlations in a 2D weak link; gates tune carrier density, transmission and the current–phase relation. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="Andreev-bound-states-carry-supercurrent"><a href="#Andreev-bound-states-carry-supercurrent" class="headerlink" title="Andreev bound states carry supercurrent"></a>Andreev bound states carry supercurrent</h3><p>For a short weak link with channel transmission \(\tau_n\), Andreev levels are</p>
 <div class="math-display">\[E_{n,\pm}(\phi)=\pm\Delta\sqrt{1-\tau_n\sin^2(\phi/2)}.\]</div>
+
 <p>Their phase derivative gives current \(I=(2e/\hbar)\sum_n\partial E_n/\partial\phi\) weighted by occupation.  Highly transparent graphene channels produce a nonsinusoidal current–phase relation; gates tune both mode number and \(\tau_n\).</p>
-<h3 id="Junction-energy-scales">Junction energy scales</h3>
-<p>Compare junction length with coherence length and Thouless energy \(E_{Th}=\hbar D/L^2\) (diffusive) or \(\hbar v_F/L\) (ballistic).  Interface resistance can dominate the induced gap.  Microwave response, multiple Andreev reflection and Fraunhofer interference probe complementary aspects.</p>
-<h3 id="Circuit-interpretation">Circuit interpretation</h3>
-<p>Measured switching current is below thermodynamic \(I_c\) when phase escapes a tilted washboard potential; capacitance and damping determine hysteresis.  Claims of unusual current–phase relations or topological modes require controls for trapped flux, nonuniform current density and ordinary high-transmission Andreev states.</p>
-<h2 id="Minimal-Model">Minimal Model</h2>
-<div class="math-display">\[I(φ)=Σ_n I_n(τ_n,φ), reducing to I_c sinφ in the tunnel limit\]</div>
+<h3 id="Junction-energy-scales"><a href="#Junction-energy-scales" class="headerlink" title="Junction energy scales"></a>Junction energy scales</h3><p>Compare junction length with coherence length and Thouless energy \(E_{Th}=\hbar D/L^2\) (diffusive) or \(\hbar v_F/L\) (ballistic).  Interface resistance can dominate the induced gap.  Microwave response, multiple Andreev reflection and Fraunhofer interference probe complementary aspects.</p>
+<h3 id="Circuit-interpretation"><a href="#Circuit-interpretation" class="headerlink" title="Circuit interpretation"></a>Circuit interpretation</h3><p>Measured switching current is below thermodynamic \(I_c\) when phase escapes a tilted washboard potential; capacitance and damping determine hysteresis.  Claims of unusual current–phase relations or topological modes require controls for trapped flux, nonuniform current density and ordinary high-transmission Andreev states.</p>
+<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[I(φ)=Σ_n I_n(τ_n,φ), reducing to I_c sinφ in the tunnel limit\]</div>
+
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences">Device Consequences</h2>
-<p>Gate-tunable junctions enable SQUIDs, bolometers, Andreev devices and hybrid qubit elements.</p>
+<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>Gate-tunable junctions enable SQUIDs, bolometers, Andreev devices and hybrid qubit elements.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
-<p>Interface transparency, quasiparticle poisoning, hysteresis and cryogenic integration determine performance. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
-<p><strong>Maturity:</strong> Frontier. Connected concepts:</p>
+
+<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>Interface transparency, quasiparticle poisoning, hysteresis and cryogenic integration determine performance. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Frontier. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/two-dimensional-superconductivity/">two-dimensional-superconductivity</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-quantum-devices/">two-dimensional-quantum-devices</a></li>
 <li><a href="/knowledge/nodes/quantum-dots-spin-valley-qubits-and-topological-candidates/">quantum-dots-spin-valley-qubits-and-topological-candidates</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
-<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41578-019-0136-x" target="_blank" rel="noopener">Liu &amp; Hersam, 2D materials for quantum information science</a></li>
 </ol>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**超导电极在二维弱连接中诱导配对关联，栅极可调载流子密度、透射率和电流–相位关系。</p>
 </blockquote>
-<h2 id="物理图像">物理图像</h2>
-<p>超导电极在二维弱连接中诱导配对关联，栅极可调载流子密度、透射率和电流–相位关系。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
-<h3 id="Andreev-束缚态承载超流">Andreev 束缚态承载超流</h3>
-<p>对通道透射率为 \(\tau_n\) 的短弱连接，Andreev 能级为</p>
+<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>超导电极在二维弱连接中诱导配对关联，栅极可调载流子密度、透射率和电流–相位关系。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="Andreev-束缚态承载超流"><a href="#Andreev-束缚态承载超流" class="headerlink" title="Andreev 束缚态承载超流"></a>Andreev 束缚态承载超流</h3><p>对通道透射率为 \(\tau_n\) 的短弱连接，Andreev 能级为</p>
 <div class="math-display">\[E_{n,\pm}(\phi)=\pm\Delta\sqrt{1-\tau_n\sin^2(\phi/2)}.\]</div>
+
 <p>其相位导数给出电流 \(I=(2e/\hbar)\sum_n\partial E_n/\partial\phi\)，并由占据加权。高透明石墨烯通道产生非正弦电流—相位关系，栅极同时调节模式数和 \(\tau_n\)。</p>
-<h3 id="结区能标">结区能标</h3>
-<p>应把结长与相干长度、Thouless 能 \(E_{Th}=\hbar D/L^2\)（扩散）或 \(\hbar v_F/L\)（弹道）比较。界面电阻可能主导诱导能隙。微波响应、多重 Andreev 反射与 Fraunhofer 干涉提供互补信息。</p>
-<h3 id="电路解释">电路解释</h3>
-<p>当相位从倾斜洗衣板势中逃逸时，实测开关电流低于热力学 \(I_c\)；电容和阻尼决定滞回。异常电流—相位关系或拓扑模的结论必须排除俘获磁通、非均匀电流密度和普通高透射 Andreev 态。</p>
-<h2 id="最小模型">最小模型</h2>
-<div class="math-display">\[I(φ)=Σ_n I_n(τ_n,φ), reducing to I_c sinφ in the tunnel limit\]</div>
+<h3 id="结区能标"><a href="#结区能标" class="headerlink" title="结区能标"></a>结区能标</h3><p>应把结长与相干长度、Thouless 能 \(E_{Th}=\hbar D/L^2\)（扩散）或 \(\hbar v_F/L\)（弹道）比较。界面电阻可能主导诱导能隙。微波响应、多重 Andreev 反射与 Fraunhofer 干涉提供互补信息。</p>
+<h3 id="电路解释"><a href="#电路解释" class="headerlink" title="电路解释"></a>电路解释</h3><p>当相位从倾斜洗衣板势中逃逸时，实测开关电流低于热力学 \(I_c\)；电容和阻尼决定滞回。异常电流—相位关系或拓扑模的结论必须排除俘获磁通、非均匀电流密度和普通高透射 Andreev 态。</p>
+<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[I(φ)=Σ_n I_n(τ_n,φ), reducing to I_c sinφ in the tunnel limit\]</div>
+
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义">器件意义</h2>
-<p>栅控结可用于 SQUID、热辐射计、Andreev 器件及混合量子比特元件。</p>
+<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>栅控结可用于 SQUID、热辐射计、Andreev 器件及混合量子比特元件。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-<h2 id="限制与判据">限制与判据</h2>
-<p>界面透明度、准粒子中毒、滞回及低温集成决定性能。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
-<p>**成熟度：**Frontier。关联节点：</p>
+
+<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>界面透明度、准粒子中毒、滞回及低温集成决定性能。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Frontier。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/two-dimensional-superconductivity/">two-dimensional-superconductivity</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-quantum-devices/">two-dimensional-quantum-devices</a></li>
 <li><a href="/knowledge/nodes/quantum-dots-spin-valley-qubits-and-topological-candidates/">quantum-dots-spin-valley-qubits-and-topological-candidates</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
-<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41578-019-0136-x" target="_blank" rel="noopener">Liu &amp; Hersam, 2D materials for quantum information science</a></li>
 </ol>

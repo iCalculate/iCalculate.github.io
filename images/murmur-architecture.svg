@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="440" viewBox="0 0 1120 440" role="img" aria-labelledby="title desc">
+<title id="title">MurMur 语音输入架构</title>
+<desc id="desc">快捷键进入会话控制器，录音送往本地或云端识别，原始文本送往独立文字处理服务，最后检查 Windows 目标并上屏或预览。历史保存原文与结果。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#aab9d6"/></marker></defs>
+<rect width="1120" height="440" rx="20" fill="#101726"/>
+<g font-family="Segoe UI,Microsoft YaHei,sans-serif"><text x="40" y="48" fill="#eef3ff" font-size="23" font-weight="600">MurMur · 从声音到桌面文字</text><text x="40" y="77" fill="#9aaac8" font-size="14">ASR 与 LLM 独立配置；每次操作由带 ID 的 Session 管理</text>
+<g stroke="#aab9d6" stroke-width="2" fill="none" marker-end="url(#arrow)"><path d="M210 162H247"/><path d="M435 162H472"/><path d="M660 162H697"/><path d="M885 162H922"/></g>
+<g fill="#1e2b43" stroke="#3b506e"><rect x="40" y="112" width="170" height="106" rx="12"/><rect x="250" y="112" width="185" height="106" rx="12"/><rect x="475" y="112" width="185" height="106" rx="12"/><rect x="700" y="112" width="185" height="106" rx="12"/><rect x="925" y="112" width="155" height="106" rx="12"/></g>
+<g fill="#edf2ff" text-anchor="middle" font-size="18" font-weight="600"><text x="125" y="145">快捷键 / 会话</text><text x="342" y="145">麦克风采集</text><text x="567" y="145">语音识别 ASR</text><text x="792" y="145">文字处理 LLM</text><text x="1002" y="145">结果交付</text></g>
+<g fill="#b8c7e1" text-anchor="middle" font-size="14"><text x="125" y="175">pynput + Qt</text><text x="125" y="197">ID · 取消 · 配置快照</text><text x="342" y="175">sounddevice · PCM</text><text x="342" y="197">16 kHz / mono / int16</text><text x="567" y="175">本地推理 / 云端识别</text><text x="567" y="197">输出原始转写 raw</text><text x="792" y="175">Ollama / 外部接口</text><text x="792" y="197">整理 · 翻译 · Ask</text><text x="1002" y="175">核验目标再粘贴</text><text x="1002" y="197">或保留在预览</text></g>
+<g fill="#172235" stroke="#3b506e"><rect x="475" y="250" width="410" height="74" rx="10"/><rect x="40" y="350" width="1040" height="56" rx="10"/></g>
+<text x="493" y="280" fill="#afc3ff" font-size="16">本地 ASR：CPU sherpa / 隔离 ONNX + GGUF 子进程</text><text x="493" y="306" fill="#9aaac8" font-size="14">VAD 在 CPU · GPU 为 DirectML / Vulkan · 不自动回退云端</text>
+<text x="62" y="384" fill="#dbe6ff" font-size="16">SQLite：raw + final + context / 词典 / 用量</text><text x="660" y="384" fill="#9aaac8" font-size="14">JSON 偏好 · Windows Credential Manager 凭据</text>
+</g></svg>
