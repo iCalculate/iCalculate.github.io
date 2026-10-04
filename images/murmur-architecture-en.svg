@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="440" viewBox="0 0 1120 440" role="img" aria-labelledby="title desc">
+<title id="title">MurMur voice input architecture</title>
+<desc id="desc">Keys start a session. Audio goes to local or cloud ASR, then an independent text service. Results reach a checked Windows target or preview. History keeps raw and final text.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#aab9d6"/></marker></defs>
+<rect width="1120" height="440" rx="20" fill="#101726"/>
+<g font-family="Segoe UI,Microsoft YaHei,sans-serif"><text x="40" y="48" fill="#eef3ff" font-size="23" font-weight="600">MurMur · From voice to desktop text</text><text x="40" y="77" fill="#9aaac8" font-size="14">Separate ASR and LLM settings. Every operation belongs to a Session.</text>
+<g stroke="#aab9d6" stroke-width="2" fill="none" marker-end="url(#arrow)"><path d="M210 162H247"/><path d="M435 162H472"/><path d="M660 162H697"/><path d="M885 162H922"/></g>
+<g fill="#1e2b43" stroke="#3b506e"><rect x="40" y="112" width="170" height="106" rx="12"/><rect x="250" y="112" width="185" height="106" rx="12"/><rect x="475" y="112" width="185" height="106" rx="12"/><rect x="700" y="112" width="185" height="106" rx="12"/><rect x="925" y="112" width="155" height="106" rx="12"/></g>
+<g fill="#edf2ff" text-anchor="middle" font-size="18" font-weight="600"><text x="125" y="145">Keys / Session</text><text x="342" y="145">Capture</text><text x="567" y="145">Speech / ASR</text><text x="792" y="145">Text / LLM</text><text x="1002" y="145">Delivery</text></g>
+<g fill="#b8c7e1" text-anchor="middle" font-size="14"><text x="125" y="175">pynput + Qt</text><text x="125" y="197">ID · cancel · config</text><text x="342" y="175">sounddevice · PCM</text><text x="342" y="197">16 kHz / mono / int16</text><text x="567" y="175">Local / cloud</text><text x="567" y="197">Raw transcript</text><text x="792" y="175">Ollama / external</text><text x="792" y="197">Refine · translate · Ask</text><text x="1002" y="175">Check, then paste</text><text x="1002" y="197">Or show preview</text></g>
+<g fill="#172235" stroke="#3b506e"><rect x="475" y="250" width="410" height="74" rx="10"/><rect x="40" y="350" width="1040" height="56" rx="10"/></g>
+<text x="493" y="280" fill="#afc3ff" font-size="14">Local ASR: sherpa CPU / isolated ONNX + GGUF worker</text><text x="493" y="306" fill="#9aaac8" font-size="12">CPU VAD · DirectML / Vulkan GPU · No automatic cloud fallback</text>
+<text x="62" y="384" fill="#dbe6ff" font-size="16">SQLite: raw + final + context / dictionary / usage</text><text x="660" y="384" fill="#9aaac8" font-size="14">JSON settings · Windows credentials</text>
+</g></svg>
