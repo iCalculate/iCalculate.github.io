@@ -469,13 +469,12 @@ height:50vh;
 <section class="lang-panel lang-en" lang="en">
 <p>MurMur turns a hotkey and a microphone into a small Windows voice assistant. Under the floating capsule are Python, Qt, local speech models, optional cloud APIs, and quite a bit of code devoted to getting text into the right window. Here is a tour of the interesting bits: ONNX and GGUF inference, GPU workers, prompts that distinguish dictation from commands, and clipboard races. It follows the v0.4.0 source snapshot, including the rough edges that still need work.</p>
 <!--more-->
-
 <p>The fun part of a voice tool is watching your words appear on screen. The awkward part is realizing that, while the model was thinking, you switched windows, moved the cursor, copied a link, and started another recording. Now the app has a perfectly good sentence and several opportunities to put it somewhere ridiculous.</p>
 <p><a href="https://github.com/iCalculate/MurMur" target="_blank" rel="noopener">MurMur</a> is my Windows voice assistant for dictation, translation, selected-text editing, and spoken requests through Ask Anything. Its visible footprint is a floating capsule; the main window holds history, a dictionary, settings, and activity stats. Press a key, talk, finish the recording, and get a draft you can use.</p>
 <p>This post opens the box. The code we’re looking at is <strong>v0.4.0, commit <code>524c2a8</code>, from October 4, 2026</strong>. The project is still moving, so this is a snapshot of what that code actually does.</p>
-<h2 id="The-stack-Python-Qt-and-a-pipeline-you-can-take-apart"><a href="#The-stack-Python-Qt-and-a-pipeline-you-can-take-apart" class="headerlink" title="The stack: Python, Qt, and a pipeline you can take apart"></a>The stack: Python, Qt, and a pipeline you can take apart</h2><p>The desktop app uses <strong>Python 3.12+ and PySide6</strong>, with Qt Widgets for the dashboard, capsule, result bubble, editor, and tray. The product website lives separately in <code>website/</code>. The basic route is easy to sketch:</p>
+<h2 id="The-stack-Python-Qt-and-a-pipeline-you-can-take-apart">The stack: Python, Qt, and a pipeline you can take apart</h2>
+<p>The desktop app uses <strong>Python 3.12+ and PySide6</strong>, with Qt Widgets for the dashboard, capsule, result bubble, editor, and tray. The product website lives separately in <code>website/</code>. The basic route is easy to sketch:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hotkey → microphone → speech recognition → text processing → paste or preview</span><br><span class="line">                         ↓ raw                ↓ final</span><br><span class="line">                                local history</span><br></pre></td></tr></table></figure>
-
 <p>Speech recognition and text processing have separate settings. One figures out what you said; the other cleans it up, translates it, or handles an editing request. You can run local recognition with Ollama, pair it with an external text model, or turn dictation refinement off.</p>
 <table>
 <thead>
@@ -484,9 +483,10 @@ height:50vh;
 <th>What’s doing it</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Windows and widgets</td>
-<td>PySide6 &#x2F; Qt Widgets</td>
+<td>PySide6 / Qt Widgets</td>
 </tr>
 <tr>
 <td>Microphone and samples</td>
@@ -520,13 +520,16 @@ height:50vh;
 <td>Development tools</td>
 <td>uv, Hatchling, pytest, PyInstaller configuration</td>
 </tr>
-</tbody></table>
-<p><img src="/images/murmur-architecture-en.svg" alt="MurMur&#39;s speech and desktop delivery pipeline"></p>
+</tbody>
+</table>
+<p><img src="/images/murmur-architecture-en.svg" alt="MurMur's speech and desktop delivery pipeline"></p>
 <p>The code follows that route. <code>app.py</code> runs sessions; <code>providers.py</code> selects recorders and calls text models; <code>offline.py</code> and <code>gguf_asr.py</code> handle local recognition. <code>windows.py</code> and <code>clipboard.py</code> do desktop delivery, while <code>storage.py</code> keeps the evidence. UI code lives mostly in <code>dashboard.py</code>, <code>settings_page.py</code>, and <code>ui.py</code>. You can work on a speech backend without rebuilding the result bubble. Start with <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/pyproject.toml" target="_blank" rel="noopener">the dependency list</a> and <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/app.py" target="_blank" rel="noopener">the controller</a>.</p>
-<h2 id="Audio-keep-the-microphone-callback-boring"><a href="#Audio-keep-the-microphone-callback-boring" class="headerlink" title="Audio: keep the microphone callback boring"></a>Audio: keep the microphone callback boring</h2><p>Audio enters as <strong>16 kHz, mono, 16-bit PCM</strong>. In the DashScope path, <code>sounddevice.RawInputStream</code> supplies 1,600 samples per frame—about 100 ms. The callback checks the frame, computes a display level, and drops bytes into a queue. A separate thread sends them to the service. Network delays don’t belong inside a microphone callback.</p>
+<h2 id="Audio-keep-the-microphone-callback-boring">Audio: keep the microphone callback boring</h2>
+<p>Audio enters as <strong>16 kHz, mono, 16-bit PCM</strong>. In the DashScope path, <code>sounddevice.RawInputStream</code> supplies 1,600 samples per frame—about 100 ms. The callback checks the frame, computes a display level, and drops bytes into a queue. A separate thread sends them to the service. Network delays don’t belong inside a microphone callback.</p>
 <p>Both the app’s audio queue and the adapted DashScope sending queue have a 50-item limit. If a queue fills up, recording stops with an error instead of hoarding audio indefinitely. The slightly spicy detail: the adapter touches a private SDK field. That is why <code>dashscope==1.27.7</code> is pinned, with a runtime compatibility check. An SDK upgrade means revisiting that adapter.</p>
 <p>The waveform comes from actual PCM RMS levels, converted to dBFS and mapped to a fixed display range. It shows volume; it doesn’t measure recognition confidence or decide where speech ends. Offline recognition starts <strong>after recording stops</strong>: NumPy converts samples, Silero VAD splits around pauses, and the selected model decodes segments. VAD targets segments up to roughly 20 seconds, with padding around boundaries; a recording is capped at 10 minutes. A lively capsule doesn’t mean the local model is decoding every word live. See <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/providers.py" target="_blank" rel="noopener">providers.py</a>, <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/offline.py" target="_blank" rel="noopener">offline.py</a>, and <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/audio_levels.py" target="_blank" rel="noopener">audio_levels.py</a>.</p>
-<h2 id="Four-speech-models-and-the-DLL-rabbit-hole"><a href="#Four-speech-models-and-the-DLL-rabbit-hole" class="headerlink" title="Four speech models, and the DLL rabbit hole"></a>Four speech models, and the DLL rabbit hole</h2><p>The local model menu hides several different inference setups:</p>
+<h2 id="Four-speech-models-and-the-DLL-rabbit-hole">Four speech models, and the DLL rabbit hole</h2>
+<p>The local model menu hides several different inference setups:</p>
 <table>
 <thead>
 <tr>
@@ -535,7 +538,8 @@ height:50vh;
 <th>GPU route</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>SenseVoice Small</td>
 <td>INT8 ONNX through sherpa-onnx</td>
 <td>Split FP16 ONNX through DirectML</td>
@@ -555,54 +559,55 @@ height:50vh;
 <td>Split ONNX + quantized GGUF decoder</td>
 <td>DirectML encoder + Vulkan decoder</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>These are specific converted models with expected file layouts. Dropping an arbitrary GGUF into the folder won’t make it work. SenseVoice CPU and GPU use different files; Paraformer currently has no separate punctuation model, so text refinement can supply punctuation afterward.</p>
 <p>Then comes Windows DLL loading. The sherpa environment and ONNX Runtime DirectML can ship different libraries with the same name. Loading them all into the UI process is an excellent way to make model switching more exciting than intended.</p>
 <p>MurMur puts the extended engines in a <strong>spawned worker process</strong>. PCM and result messages travel through a local Pipe; the worker owns its native libraries. VAD stays on the CPU. The recognizer cache tracks the engine, acceleration, files, language, and thread settings, while a single decode slot prevents a model switch from closing a worker during inference. Cancelling an isolated native job can terminate its worker so the next load starts cleanly.</p>
 <p>GPU here means <strong>DirectML and Vulkan</strong>, with no claimed CUDA path or universal speedup. Missing files or unavailable acceleration produce a local error; they don’t silently upload a recording to the cloud. Downloads are explicit and checked against pinned sizes and SHA256 hashes. Some inference helpers are adapted from CapsWriter-Offline, with attribution and licenses retained. See <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/gguf_asr.py" target="_blank" rel="noopener">gguf_asr.py</a>, <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/native_runtime.py" target="_blank" rel="noopener">native_runtime.py</a>, and <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/THIRD_PARTY_NOTICES.md" target="_blank" rel="noopener">third-party notes</a>.</p>
-<h2 id="“Translate-this”-can-be-a-sentence-or-a-command"><a href="#“Translate-this”-can-be-a-sentence-or-a-command" class="headerlink" title="“Translate this” can be a sentence or a command"></a>“Translate this” can be a sentence or a command</h2><p>Text processing uses <code>httpx</code> to call <code>/chat/completions</code>. Ollama and external compatible services share that transport. Local Auto discovers existing models; it doesn’t install one or fall back to cloud. Recognized Ollama servers get a parameter to disable thinking; unknown servers keep the generic request format.</p>
+<h2 id="“Translate-this”-can-be-a-sentence-or-a-command">“Translate this” can be a sentence or a command</h2>
+<p>Text processing uses <code>httpx</code> to call <code>/chat/completions</code>. Ollama and external compatible services share that transport. Local Auto discovers existing models; it doesn’t install one or fall back to cloud. Recognized Ollama servers get a parameter to disable thinking; unknown servers keep the generic request format.</p>
 <p>Now imagine dictating “Please translate this sentence into Chinese.” In dictation mode, those words should appear in your document. The model shouldn’t become a translator just because the sentence sounds like a request. MurMur wraps dictation as data, adds language-preservation rules, and supplies editing examples. A simplified input looks like this:</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"dictation"</span>:<span class="string">"Um, please update the Settings page."</span>&#125;</span><br></pre></td></tr></table></figure>
-
 <p>The expected result is “Please update the Settings page.” Chinese stays Chinese, English stays English, and mixed-language terms stay mixed. Existing quotes should survive. Checks also catch obvious language changes, such as Chinese content becoming a result with no Chinese. They aren’t a proof that every detail survived.</p>
 <p><strong>Ask Anything gives the spoken request a different role.</strong> It sends <code>instruction</code> and <code>selected_text</code> to its own external HTTPS profile and asks for a tiny JSON response:</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"action"</span>:<span class="string">"replace"</span>,<span class="attr">"text"</span>:<span class="string">"The complete replacement goes here."</span>&#125;</span><br></pre></td></tr></table></figure>
-
 <p>Allowed actions are <code>replace</code>, <code>insert</code>, and <code>answer</code>. Editing a selection can replace it; drafting can insert text; questions show an answer. Summarizing defaults to an answer unless you explicitly request replacement. The parser checks exact fields, a valid action, and nonempty text; replacement requires a selection. Desktop checks still happen afterward.</p>
 <p>This is one request with a small routing contract. No browsing, ongoing conversation, or external tool execution is implemented here. Ordinary dictation also remains conservative: filler cleanup is implemented, while turning a rambling monologue into a well-structured document still needs more prompt work and examples. That split lives in <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/providers.py" target="_blank" rel="noopener">providers.py</a>, <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/local_llm.py" target="_blank" rel="noopener">local_llm.py</a>, and <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/assistant.py" target="_blank" rel="noopener">assistant.py</a>.</p>
-<h2 id="Cancel-means-the-old-result-doesn’t-get-a-comeback"><a href="#Cancel-means-the-old-result-doesn’t-get-a-comeback" class="headerlink" title="Cancel means the old result doesn’t get a comeback"></a>Cancel means the old result doesn’t get a comeback</h2><p>Python threads handle recording startup, recognition, model loading, and network work. Qt signals bring messages back to the controller, keeping widget updates in the UI event loop. Each operation gets a <code>Session</code>: an ID, a deep copy of settings, a cancellation event, the original target, raw text, and a phase. Changing a preference halfway through a recording doesn’t change that recording’s rules.</p>
+<h2 id="Cancel-means-the-old-result-doesn’t-get-a-comeback">Cancel means the old result doesn’t get a comeback</h2>
+<p>Python threads handle recording startup, recognition, model loading, and network work. Qt signals bring messages back to the controller, keeping widget updates in the UI event loop. Each operation gets a <code>Session</code>: an ID, a deep copy of settings, a cancellation event, the original target, raw text, and a phase. Changing a preference halfway through a recording doesn’t change that recording’s rules.</p>
 <p>The ID handles a classic asynchronous nuisance: cancel A, start B, then receive A’s late result. The controller’s first check is wonderfully unglamorous:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">receive</span><span class="params">(self, ident, event, payload)</span>:</span></span><br><span class="line">    s = self.session</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> s <span class="keyword">or</span> s.id != ident <span class="keyword">or</span> (s.cancel.is_set() <span class="keyword">and</span> event != <span class="string">'error'</span>):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="comment"># Handle events belonging to the current session.</span></span><br></pre></td></tr></table></figure>
-
 <p>Old callbacks don’t get to announce that a new session is finished. Cancellation reaches resource cleanup and requests, and semaphores bound concurrent requests while old ones unwind. Hiding the capsule alone wouldn’t do that.</p>
 <p>Progress follows session state, too. Dictation with refinement runs <code>Transcribe → Polish</code>; translation runs <code>Transcribe → Translate</code>. A two-stage job moves through 0%, 50%, and 100% as stages finish. The app knows which step completed, so that’s what it displays. It has no model-internal percentage or ETA to report. See <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/app.py" target="_blank" rel="noopener">app.py</a>.</p>
-<h2 id="Pasting-is-where-the-desktop-gets-involved"><a href="#Pasting-is-where-the-desktop-gets-involved" class="headerlink" title="Pasting is where the desktop gets involved"></a>Pasting is where the desktop gets involved</h2><p>By the time a result arrives, the cursor may have moved. MurMur captures window, focused-control, and process information, then watches focus and physical input. Win32 and UI Automation help decide whether the target is still editable. For Ask edits, selection or caret bookmarks recheck the text range before writing.</p>
+<h2 id="Pasting-is-where-the-desktop-gets-involved">Pasting is where the desktop gets involved</h2>
+<p>By the time a result arrives, the cursor may have moved. MurMur captures window, focused-control, and process information, then watches focus and physical input. Win32 and UI Automation help decide whether the target is still editable. For Ask edits, selection or caret bookmarks recheck the text range before writing.</p>
 <p>COM text ranges stay on a dedicated MTA thread; other threads carry bookmark tokens. Selection checks compare endpoints and text. Caret checks use a local fingerprint of surrounding text. A changed target, password field, uncertain control, or unavailable input monitor sends the result to preview. Regular selection editing starts in preview and checks again when you click Replace. Ask can write automatically when its action and captured context match and the checks pass. “Paste sent” means dispatched; real-app testing still matters.</p>
 <p>The clipboard has its own race. The app temporarily saves its contents, then you copy something else. Blindly restoring the snapshot would erase your new copy. Native transactions compare revisions, ownership, and content before restoring supported plain-text formats. Rich content that can’t be safely preserved falls back to preview.</p>
-<p>Successful real dictation and translation <strong>do copy the final result by default</strong>. Transaction machinery protects temporary capture&#x2F;paste work and newer clipboard changes; it doesn’t promise an untouched clipboard after dictation. This part lives in <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/windows.py" target="_blank" rel="noopener">windows.py</a> and <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/clipboard.py" target="_blank" rel="noopener">clipboard.py</a>.</p>
-<h2 id="Keep-the-raw-transcript—it-makes-debugging-less-mysterious"><a href="#Keep-the-raw-transcript—it-makes-debugging-less-mysterious" class="headerlink" title="Keep the raw transcript—it makes debugging less mysterious"></a>Keep the raw transcript—it makes debugging less mysterious</h2><p>SQLite stores <code>raw</code> and <code>final</code>, plus mode, duration, latency, errors, and an optional audio path. Ask also keeps selected-text <code>context</code>. You can separate “the recognizer misheard the word” from “the text model edited it away.” Keeping only the pretty final paragraph loses that clue.</p>
+<p>Successful real dictation and translation <strong>do copy the final result by default</strong>. Transaction machinery protects temporary capture/paste work and newer clipboard changes; it doesn’t promise an untouched clipboard after dictation. This part lives in <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/windows.py" target="_blank" rel="noopener">windows.py</a> and <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/clipboard.py" target="_blank" rel="noopener">clipboard.py</a>.</p>
+<h2 id="Keep-the-raw-transcript—it-makes-debugging-less-mysterious">Keep the raw transcript—it makes debugging less mysterious</h2>
+<p>SQLite stores <code>raw</code> and <code>final</code>, plus mode, duration, latency, errors, and an optional audio path. Ask also keeps selected-text <code>context</code>. You can separate “the recognizer misheard the word” from “the text model edited it away.” Keeping only the pretty final paragraph loses that clue.</p>
 <p>A failed model call leaves recovered text available. A failed history write doesn’t throw away the current result. Deletion commits the database change before removing recordings; locked audio files enter a persistent retry queue. Exports finish a new file before replacing the old one. The SQLite dictionary supports individually confirmed suggestions from real history and literal replacement rules. Some online models accept vocabulary context; that doesn’t make every offline engine a hotword-aware decoder. Demo samples stay out of vocabulary analysis.</p>
 <p>Settings are JSON; secrets use Windows Credential Manager. Audio saving is off by default, and history defaults to 90 days. Token counts come from service responses, with estimated costs kept separate from actual billing.</p>
-<p>One development-machine wrinkle: this snapshot hardcodes its default project root. <code>--data-dir</code> overrides app data, but portable model&#x2F;runtime locations need work. Also, local ASR says where audio is recognized. Cloud refinement still sends text out; loopback Ollama keeps that step on the machine, while LAN servers, remote servers, and the current Ask profile have their own destinations. See <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/storage.py" target="_blank" rel="noopener">storage.py</a> and <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/README.zh-CN.md" target="_blank" rel="noopener">the README</a>.</p>
-<h2 id="Want-to-poke-around"><a href="#Want-to-poke-around" class="headerlink" title="Want to poke around?"></a>Want to poke around?</h2><p>The source is on GitHub. To inspect the same snapshot:</p>
+<p>One development-machine wrinkle: this snapshot hardcodes its default project root. <code>--data-dir</code> overrides app data, but portable model/runtime locations need work. Also, local ASR says where audio is recognized. Cloud refinement still sends text out; loopback Ollama keeps that step on the machine, while LAN servers, remote servers, and the current Ask profile have their own destinations. See <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/storage.py" target="_blank" rel="noopener">storage.py</a> and <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/README.zh-CN.md" target="_blank" rel="noopener">the README</a>.</p>
+<h2 id="Want-to-poke-around">Want to poke around?</h2>
+<p>The source is on GitHub. To inspect the same snapshot:</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iCalculate/MurMur.git</span><br><span class="line">cd MurMur</span><br><span class="line">git checkout <span class="number">524</span>c2a8dda0998512a797d395a7d2604ed20122a</span><br><span class="line">uv sync -<span class="literal">-group</span> dev -<span class="literal">-locked</span></span><br><span class="line">uv run murmur</span><br><span class="line">uv run pytest <span class="literal">-q</span></span><br></pre></td></tr></table></figure>
-
 <p>You’ll need Windows, a microphone for real recording, matching speech-model files, and either a configured text service or refinement switched off. Check the default storage paths on a different machine.</p>
-<p>Release notes record <strong>927 regression tests</strong> for the v0.3.1 application snapshot, reused in v0.4.0, plus <strong>37 version&#x2F;storage&#x2F;session&#x2F;configuration checks</strong> for that milestone. Those are recorded results; this post doesn’t rerun them. Synthetic and offscreen checks help, but live microphones, physical shortcuts, AltGr&#x2F;IME, mixed-DPI screens, and full cross-app insertion still need hands-on coverage.</p>
+<p>Release notes record <strong>927 regression tests</strong> for the v0.3.1 application snapshot, reused in v0.4.0, plus <strong>37 version/storage/session/configuration checks</strong> for that milestone. Those are recorded results; this post doesn’t rerun them. Synthetic and offscreen checks help, but live microphones, physical shortcuts, AltGr/IME, mixed-DPI screens, and full cross-app insertion still need hands-on coverage.</p>
 <p>There is no delivered Windows installer for this snapshot. Executable packaging remains blocked by the development environment’s organization security system. PyInstaller configuration exists, but installation, upgrades, and uninstallation remain work ahead. Application code is MIT; dependencies and model weights keep their own licenses. Details are in <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/docs/RELEASE_0.4.0.md" target="_blank" rel="noopener">the release notes</a> and <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/docs/VALIDATION.md" target="_blank" rel="noopener">validation log</a>.</p>
 <p>I’d like to keep hacking on longer spoken drafts, better editing examples, and more real-app testing. Getting the model to return a sentence is satisfying. Getting that sentence into the right place—while letting you change your mind halfway through—is what makes this little desktop tool interesting.</p>
 
 </section>
-
 <!-- bilingual:zh -->
 <section class="lang-panel lang-zh" lang="zh-CN" hidden>
-<p>MurMur 把一个快捷键和一支麦克风变成了小小的 Windows 语音助手。悬浮胶囊下面，是 Python、Qt、本地语音模型、可选的云端接口，还有不少专门负责把文字贴进正确窗口的代码。这篇文章拆开几个有意思的部分：ONNX&#x2F;GGUF 推理、GPU 子进程、区分听写与命令的提示词，以及剪贴板竞态。以 v0.4.0 的源码快照为准，也聊聊还没磨好的地方。</p>
+<p>MurMur 把一个快捷键和一支麦克风变成了小小的 Windows 语音助手。悬浮胶囊下面，是 Python、Qt、本地语音模型、可选的云端接口，还有不少专门负责把文字贴进正确窗口的代码。这篇文章拆开几个有意思的部分：ONNX/GGUF 推理、GPU 子进程、区分听写与命令的提示词，以及剪贴板竞态。以 v0.4.0 的源码快照为准，也聊聊还没磨好的地方。</p>
 <p>语音工具最爽的瞬间，是你刚说完，屏幕上就有了文字。麻烦在于，模型思考的那几秒，你可能已经切了窗口、挪了光标、复制了链接，还开始了下一次录音。于是，软件拿着一句完全正确的话，面对好几个能把它贴错地方的机会。</p>
 <p><a href="https://github.com/iCalculate/MurMur" target="_blank" rel="noopener">MurMur</a> 是我做的 Windows 语音助手，支持听写、翻译、选中文字编辑，以及通过 Ask Anything 口述请求。平时陪着你的是一个悬浮胶囊，主窗口里放着历史、词典、设置和活动统计。按键、说话、结束录音，拿到一段能用的文字。</p>
 <p>这篇就来拆开看看。本文对应 <strong>2026 年 10 月 4 日的 v0.4.0，提交 <code>524c2a8</code></strong>。项目还在改，这里讲的是这个快照里已经写出来的东西。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="技术栈：Python、Qt，还有一条能拆开的流水线"><a href="#技术栈：Python、Qt，还有一条能拆开的流水线" class="headerlink" title="技术栈：Python、Qt，还有一条能拆开的流水线"></a>技术栈：Python、Qt，还有一条能拆开的流水线</div><p>桌面端用 <strong>Python 3.12+ 和 PySide6</strong>，主窗口、胶囊、结果气泡、编辑器与托盘都走 Qt Widgets。仓库里的 <code>website/</code> 是单独的产品官网。核心流程很直白：</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="技术栈：Python、Qt，还有一条能拆开的流水线">技术栈：Python、Qt，还有一条能拆开的流水线</div>
+<p>桌面端用 <strong>Python 3.12+ 和 PySide6</strong>，主窗口、胶囊、结果气泡、编辑器与托盘都走 Qt Widgets。仓库里的 <code>website/</code> 是单独的产品官网。核心流程很直白：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">快捷键 → 麦克风 → 语音识别 → 文字处理 → 上屏或预览</span><br><span class="line">                   ↓ raw      ↓ final</span><br><span class="line">                       本地历史</span><br></pre></td></tr></table></figure>
-
 <p>语音识别和文字处理分别配置。一个负责听出你说了什么，一个负责整理、翻译或处理编辑请求。可以本地识别配 Ollama，也可以配外部文字模型，听写整理还能直接关闭。</p>
 <table>
 <thead>
@@ -611,9 +616,10 @@ height:50vh;
 <th>主要工具</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>窗口和控件</td>
-<td>PySide6 &#x2F; Qt Widgets</td>
+<td>PySide6 / Qt Widgets</td>
 </tr>
 <tr>
 <td>麦克风与采样</td>
@@ -647,13 +653,16 @@ height:50vh;
 <td>开发工具</td>
 <td>uv、Hatchling、pytest、PyInstaller 配置</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p><img src="/images/murmur-architecture.svg" alt="MurMur 的语音与桌面交付流程"></p>
 <p>代码大致沿着这条路线分工：<code>app.py</code> 管会话，<code>providers.py</code> 选录音器、调用文字模型，<code>offline.py</code> 和 <code>gguf_asr.py</code> 做本地识别。<code>windows.py</code>、<code>clipboard.py</code> 负责交付文字，<code>storage.py</code> 留下记录。界面主要在 <code>dashboard.py</code>、<code>settings_page.py</code> 和 <code>ui.py</code>。折腾识别后端时，不必顺手把结果气泡也重写一遍。想跟着看源码，可以从 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/pyproject.toml" target="_blank" rel="noopener">依赖清单</a> 和 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/app.py" target="_blank" rel="noopener">控制器</a> 开始。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="录音回调，越无聊越好"><a href="#录音回调，越无聊越好" class="headerlink" title="录音回调，越无聊越好"></a>录音回调，越无聊越好</div><p>输入是 <strong>16 kHz、单声道、16-bit PCM</strong>。百炼路径使用 <code>sounddevice.RawInputStream</code>，每帧 1,600 个采样点，也就是约 100 ms。回调检查音频、计算显示音量，然后把字节塞进队列；另一个线程负责发送。网络卡一下，不应该拖住麦克风回调。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="录音回调，越无聊越好">录音回调，越无聊越好</div>
+<p>输入是 <strong>16 kHz、单声道、16-bit PCM</strong>。百炼路径使用 <code>sounddevice.RawInputStream</code>，每帧 1,600 个采样点，也就是约 100 ms。回调检查音频、计算显示音量，然后把字节塞进队列；另一个线程负责发送。网络卡一下，不应该拖住麦克风回调。</p>
 <p>应用侧和适配后的百炼发送队列都限为 50 项。队列填满，就结束录音并提示错误，避免无限囤积音频。这里有个需要留心的细节：适配器碰了 SDK 的私有字段，所以固定 <code>dashscope==1.27.7</code>，运行时检查兼容性。以后升级 SDK，这块得重新看。</p>
 <p>胶囊波形来自真实 PCM 的 RMS 音量，转成 dBFS 后映射到固定显示范围。它显示声音强弱，不承担识别置信度或判断语音起止的工作。离线模型在<strong>录音结束后</strong>开始识别：NumPy 转换采样，Silero VAD 按停顿切段，再交给模型。VAD 单段最多约 20 秒，边界前后留一点余量，整次录音最多 10 分钟。胶囊跳得欢，不等于本地模型正在实时逐字解码。细节在 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/providers.py" target="_blank" rel="noopener">providers.py</a>、<a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/offline.py" target="_blank" rel="noopener">offline.py</a> 和 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/audio_levels.py" target="_blank" rel="noopener">audio_levels.py</a>。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="四个模型，以及-DLL-的坑"><a href="#四个模型，以及-DLL-的坑" class="headerlink" title="四个模型，以及 DLL 的坑"></a>四个模型，以及 DLL 的坑</div><p>本地模型下拉菜单背后，其实是几套不同的推理方式：</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="四个模型，以及-DLL-的坑">四个模型，以及 DLL 的坑</div>
+<p>本地模型下拉菜单背后，其实是几套不同的推理方式：</p>
 <table>
 <thead>
 <tr>
@@ -662,7 +671,8 @@ height:50vh;
 <th>GPU 路径</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>SenseVoice Small</td>
 <td>sherpa-onnx 跑 INT8 ONNX</td>
 <td>DirectML 跑分拆 FP16 ONNX</td>
@@ -682,40 +692,42 @@ height:50vh;
 <td>分拆 ONNX + 量化 GGUF 解码器</td>
 <td>DirectML 编码器 + Vulkan 解码器</td>
 </tr>
-</tbody></table>
-<p>这里用的是指定转换模型，要匹配文件结构。随手丢进一个 GGUF，并不会自动识别。SenseVoice 的 CPU&#x2F;GPU 使用不同文件；Paraformer 没有独立标点模型，标点可以交给后面的文字整理。</p>
+</tbody>
+</table>
+<p>这里用的是指定转换模型，要匹配文件结构。随手丢进一个 GGUF，并不会自动识别。SenseVoice 的 CPU/GPU 使用不同文件；Paraformer 没有独立标点模型，标点可以交给后面的文字整理。</p>
 <p>接着碰到 Windows 动态库问题：sherpa 环境和 ONNX Runtime DirectML 可能带着不同版本的同名 DLL。全塞进界面进程，模型切换就容易变得比预期刺激得多。</p>
 <p>MurMur 把扩展引擎放进 <strong>spawn 子进程</strong>，通过本地 Pipe 传 PCM 和结果，让子进程自己管理原生库。VAD 继续走 CPU。识别器按引擎、加速方式、文件、语言和线程设置缓存；单个解码槽避免切模型时关掉正在计算的工作进程。取消独立原生任务时，可以终止它的子进程，让下一次加载重新开始。</p>
 <p>GPU 指的是 <strong>DirectML 和 Vulkan</strong>，没有宣称 CUDA 路径，也不能看到 GPU 选项就假定一定更快。缺文件或显卡不支持时，会报本地错误，不会悄悄把录音传到云端。下载要主动触发，安装时检查固定大小与 SHA256。部分推理辅助代码改编自 CapsWriter-Offline，并保留来源与许可。对应 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/gguf_asr.py" target="_blank" rel="noopener">gguf_asr.py</a>、<a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/native_runtime.py" target="_blank" rel="noopener">native_runtime.py</a> 和 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/THIRD_PARTY_NOTICES.md" target="_blank" rel="noopener">第三方说明</a>。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="“翻译这句话”，到底是一句话还是一个命令？"><a href="#“翻译这句话”，到底是一句话还是一个命令？" class="headerlink" title="“翻译这句话”，到底是一句话还是一个命令？"></a>“翻译这句话”，到底是一句话还是一个命令？</div><p>文字处理用 <code>httpx</code> 调 <code>/chat/completions</code>，Ollama 与外部兼容服务复用传输层。本地 Auto 只找已安装的模型，不安装模型，也不在失败时改用云端。确认是 Ollama 时会加关闭思考的参数，未知服务保留通用格式。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="“翻译这句话”，到底是一句话还是一个命令？">“翻译这句话”，到底是一句话还是一个命令？</div>
+<p>文字处理用 <code>httpx</code> 调 <code>/chat/completions</code>，Ollama 与外部兼容服务复用传输层。本地 Auto 只找已安装的模型，不安装模型，也不在失败时改用云端。确认是 Ollama 时会加关闭思考的参数，未知服务保留通用格式。</p>
 <p>假设你在听写模式说：“请把这句话翻译成英文。”文档里应该出现这句话，而不是让模型立刻开翻译。MurMur 把听写包成数据，再加上保留语言的规则与编辑示例。简化后的输入是：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"dictation"</span>:<span class="string">"嗯，我们先检查 API，然后跑 benchmark。"</span>&#125;</span><br></pre></td></tr></table></figure>
-
 <p>期望得到“我们先检查 API，然后跑 benchmark。”中文、英文、中英夹杂的术语都按原语言保留，引号也应该留下。结果还有明显语言变化检查，比如中文内容变成完全没有中文的输出，会被拒绝。但这些检查只能拦住部分明显错误，不能证明所有细节都保住了。</p>
 <p><strong>Ask Anything 明确把口述内容当作指令。</strong> 它用独立外部 HTTPS 配置，把 <code>instruction</code> 和 <code>selected_text</code> 发给模型，要求返回很小的 JSON：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"action"</span>:<span class="string">"replace"</span>,<span class="attr">"text"</span>:<span class="string">"需要替换到原选区的完整文字"</span>&#125;</span><br></pre></td></tr></table></figure>
-
 <p>动作只有 <code>replace</code>、<code>insert</code>、<code>answer</code>。改选区可以替换，起草可以插入，提问则显示答案。总结默认也只是回答，除非明确要求替换原文。解析器检查精确字段、有效动作与非空正文，没有选区不能替换，之后还要过桌面检查。</p>
 <p>这是单轮请求加动作路由，没有联网检索、连续对话或外部工具执行。普通听写仍偏保守：去填充词有了，但把绕来绕去的口语变成层次清晰的书面稿，提示词和例子还得继续磨。相关代码在 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/providers.py" target="_blank" rel="noopener">providers.py</a>、<a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/local_llm.py" target="_blank" rel="noopener">local_llm.py</a> 和 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/assistant.py" target="_blank" rel="noopener">assistant.py</a>。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="取消了，就别让旧结果诈尸"><a href="#取消了，就别让旧结果诈尸" class="headerlink" title="取消了，就别让旧结果诈尸"></a>取消了，就别让旧结果诈尸</div><p>录音启动、识别、模型加载和网络请求由后台 Python 线程处理，通过 Qt 信号交回控制器，让控件更新留在界面事件循环。每次操作有一个 <code>Session</code>，带 ID、设置深拷贝、取消事件、原始目标、原文和处理阶段。中途改偏好，不会改变这次录音的规则。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="取消了，就别让旧结果诈尸">取消了，就别让旧结果诈尸</div>
+<p>录音启动、识别、模型加载和网络请求由后台 Python 线程处理，通过 Qt 信号交回控制器，让控件更新留在界面事件循环。每次操作有一个 <code>Session</code>，带 ID、设置深拷贝、取消事件、原始目标、原文和处理阶段。中途改偏好，不会改变这次录音的规则。</p>
 <p>ID 处理一个经典异步问题：取消 A，开始 B，A 的结果才姗姗来迟。控制器的第一道检查很朴素：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">receive</span><span class="params">(self, ident, event, payload)</span>:</span></span><br><span class="line">    s = self.session</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> s <span class="keyword">or</span> s.id != ident <span class="keyword">or</span> (s.cancel.is_set() <span class="keyword">and</span> event != <span class="string">'error'</span>):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="comment"># 处理属于当前会话的事件。</span></span><br></pre></td></tr></table></figure>
-
 <p>旧回调不能把新会话宣布为“完成”。取消还传给资源清理与模型请求，信号量限制尚未收尾的请求数量。光把胶囊藏起来，没有真正取消这些工作。</p>
 <p>进度也使用会话状态：听写整理是 <code>Transcribe → Polish</code>，翻译是 <code>Transcribe → Translate</code>；两阶段任务按完成步骤显示 0%、50%、100%。知道哪一步做完，就显示哪一步。模型内部进度和预计剩余时间，接口没有给出来。实现见 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/app.py" target="_blank" rel="noopener">app.py</a>。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="粘贴这一步，才轮到桌面出场"><a href="#粘贴这一步，才轮到桌面出场" class="headerlink" title="粘贴这一步，才轮到桌面出场"></a>粘贴这一步，才轮到桌面出场</div><p>结果回来时，光标可能早就挪了。MurMur 记录窗口、焦点控件和进程信息，观察焦点与物理输入，再通过 Win32 和 UI Automation 判断目标是否仍可编辑。Ask 保存选区或光标书签，写入前核对文字范围。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="粘贴这一步，才轮到桌面出场">粘贴这一步，才轮到桌面出场</div>
+<p>结果回来时，光标可能早就挪了。MurMur 记录窗口、焦点控件和进程信息，观察焦点与物理输入，再通过 Win32 和 UI Automation 判断目标是否仍可编辑。Ask 保存选区或光标书签，写入前核对文字范围。</p>
 <p>COM 范围留在专用 MTA 线程，其他线程拿书签令牌引用。选区检查端点与文字，光标检查邻近文字的局部指纹。目标改变、密码框、无法确认的控件或监听不可用时，结果留在预览。传统选区编辑先预览，点击 Replace 再查；Ask 的动作与上下文匹配、检查通过时可以自动写入。“Paste sent”只表示已发出粘贴，真实应用还得测试。</p>
 <p>剪贴板也有竞态。软件临时保存了旧内容，这时你复制了别的东西。无条件恢复快照，会把新复制的内容抹掉。原生事务比较版本、所有者和内容，再决定能否恢复支持的纯文本格式；复杂富文本无法可靠保全，就回退预览。</p>
 <p>真实听写与翻译成功后，<strong>默认会把最终结果写入剪贴板</strong>。事务保护临时捕获、粘贴过程与期间产生的新内容，并不承诺听写后剪贴板完全不变。实现见 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/windows.py" target="_blank" rel="noopener">windows.py</a> 和 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/clipboard.py" target="_blank" rel="noopener">clipboard.py</a>。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="原始转写别扔，调试时真的好用"><a href="#原始转写别扔，调试时真的好用" class="headerlink" title="原始转写别扔，调试时真的好用"></a>原始转写别扔，调试时真的好用</div><p>SQLite 分别保存 <code>raw</code>、<code>final</code>，还有模式、时长、延迟、错误与可选音频路径，Ask 另外保存选中文字 <code>context</code>。看到怪话，可以分清是识别器听错了，还是文字模型改没了。只存最后漂亮的段落，会丢掉这个线索。</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="原始转写别扔，调试时真的好用">原始转写别扔，调试时真的好用</div>
+<p>SQLite 分别保存 <code>raw</code>、<code>final</code>，还有模式、时长、延迟、错误与可选音频路径，Ask 另外保存选中文字 <code>context</code>。看到怪话，可以分清是识别器听错了，还是文字模型改没了。只存最后漂亮的段落，会丢掉这个线索。</p>
 <p>模型失败，已有原文还能用；历史写入失败，也不会丢掉当前结果。删除先提交数据库，再清理录音，被占用的文件进入持久重试队列。导出先写完整新文件，再替换旧文件。SQLite 词典支持真实历史建议、逐条确认与字面替换。部分在线模型支持词汇上下文，但不等于每个离线引擎都支持热词解码。Demo 样本不参与词汇分析。</p>
 <p>偏好是 JSON，密钥交给 Windows Credential Manager。录音默认不保存，历史默认保留 90 天。Token 来自服务返回值，估算费用与实际账单分开。</p>
 <p>一个开发阶段的小尾巴：默认项目根目录仍写死在本地路径里。<code>--data-dir</code> 能覆盖应用数据，但可移植的模型、运行库位置还要做。另外，本地 ASR 只说明音频在哪里识别；云端整理仍发出文字，回环 Ollama 留在本机，局域网、远程服务与当前 Ask 则各有数据出口。对应 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/murmur/storage.py" target="_blank" rel="noopener">storage.py</a> 和 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/README.zh-CN.md" target="_blank" rel="noopener">README</a>。</p>
-<div class="zh-heading zh-h2" role="heading" aria-level="2" id="想自己拆开玩？"><a href="#想自己拆开玩？" class="headerlink" title="想自己拆开玩？"></a>想自己拆开玩？</div><p>源码在 GitHub，复现本文快照可以这样开始：</p>
+<div class="zh-heading zh-h2" role="heading" aria-level="2" id="想自己拆开玩？">想自己拆开玩？</div>
+<p>源码在 GitHub，复现本文快照可以这样开始：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iCalculate/MurMur.git</span><br><span class="line">cd MurMur</span><br><span class="line">git checkout <span class="number">524</span>c2a8dda0998512a797d395a7d2604ed20122a</span><br><span class="line">uv sync -<span class="literal">-group</span> dev -<span class="literal">-locked</span></span><br><span class="line">uv run murmur</span><br><span class="line">uv run pytest <span class="literal">-q</span></span><br></pre></td></tr></table></figure>
-
 <p>实际录音需要 Windows、麦克风与匹配的模型；文字服务需要配置，或者关闭整理。换机器前也要检查默认存储路径。</p>
-<p>发布记录里，v0.3.1 应用快照有 <strong>927 项回归测试</strong>通过，v0.4.0 沿用该实现，并额外通过 <strong>37 项版本、存储、会话与配置检查</strong>。这是项目记录，本文没有重跑。模拟与离屏检查有帮助，但真实麦克风、物理快捷键、AltGr&#x2F;输入法、混合 DPI 多屏和跨应用上屏，仍需现场折腾。</p>
+<p>发布记录里，v0.3.1 应用快照有 <strong>927 项回归测试</strong>通过，v0.4.0 沿用该实现，并额外通过 <strong>37 项版本、存储、会话与配置检查</strong>。这是项目记录，本文没有重跑。模拟与离屏检查有帮助，但真实麦克风、物理快捷键、AltGr/输入法、混合 DPI 多屏和跨应用上屏，仍需现场折腾。</p>
 <p>当前没有交付 Windows 安装器：开发环境的组织安全系统仍阻挡可执行文件打包。PyInstaller 配置已有，安装、升级与卸载流程还没做完。应用源码是 MIT，依赖与模型各按自己的许可。详情见 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/docs/RELEASE_0.4.0.md" target="_blank" rel="noopener">发布记录</a> 和 <a href="https://github.com/iCalculate/MurMur/blob/524c2a8dda0998512a797d395a7d2604ed20122a/docs/VALIDATION.md" target="_blank" rel="noopener">验证日志</a>。</p>
 <p>接下来想继续折腾长段口语、更多编辑示例，以及真实应用里的表现。让模型吐出一句话，已经挺有成就感；把它放进正确位置，还允许你半路改变主意，才是这个小桌面工具最有意思的部分。</p>
 
@@ -1780,22 +1792,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" >Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Energy-Chemistry-Interactive-Knowledge-Directory/" >Energy and Chemistry: An Interactive Knowledge Directory</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/" >Optoelectronic Devices: An Interactive Knowledge Directory</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Electronic-Quantum-Condensed-Matter-Interactive-Knowledge-Directory/" >Electronic Quantum Condensed Matter: An Interactive Knowledge Directory</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Artificial-Intelligence-Machine-Learning-Interactive-Knowledge-Directory/" >Artificial Intelligence and Machine Learning: An Interactive Knowledge Directory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "2026/09/02/Optoelectronic-Devices-Interactive-Knowledge-Directory/" >Optoelectronic Devices: An Interactive Knowledge Directory</a>
         </li>
     
     
@@ -2178,33 +2190,39 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
-    
-        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
-    
-        <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
-    
-        <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
-    
-        <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
-    
         <span class="sidebar-tag-name" data-tags="2D Materials"><span class="iconfont-archer">&#xe606;</span>2D Materials</span>
     
         <span class="sidebar-tag-name" data-tags="Scientific Visualization"><span class="iconfont-archer">&#xe606;</span>Scientific Visualization</span>
+    
+        <span class="sidebar-tag-name" data-tags="Personal Essays"><span class="iconfont-archer">&#xe606;</span>Personal Essays</span>
+    
+        <span class="sidebar-tag-name" data-tags="Relationships"><span class="iconfont-archer">&#xe606;</span>Relationships</span>
     
         <span class="sidebar-tag-name" data-tags="Microelectrodes"><span class="iconfont-archer">&#xe606;</span>Microelectrodes</span>
     
         <span class="sidebar-tag-name" data-tags="Electrochemical Fundamentals"><span class="iconfont-archer">&#xe606;</span>Electrochemical Fundamentals</span>
     
+        <span class="sidebar-tag-name" data-tags="Literature Review"><span class="iconfont-archer">&#xe606;</span>Literature Review</span>
+    
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="Research Software"><span class="iconfont-archer">&#xe606;</span>Research Software</span>
     
+        <span class="sidebar-tag-name" data-tags="Electrocatalysis"><span class="iconfont-archer">&#xe606;</span>Electrocatalysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
+    
+        <span class="sidebar-tag-name" data-tags="Energy Systems"><span class="iconfont-archer">&#xe606;</span>Energy Systems</span>
+    
         <span class="sidebar-tag-name" data-tags="Materials Design"><span class="iconfont-archer">&#xe606;</span>Materials Design</span>
+    
+        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
     
         <span class="sidebar-tag-name" data-tags="Phase Transitions"><span class="iconfont-archer">&#xe606;</span>Phase Transitions</span>
     
-        <span class="sidebar-tag-name" data-tags="Electronic Structure"><span class="iconfont-archer">&#xe606;</span>Electronic Structure</span>
+        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
+    
+        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
     
         <span class="sidebar-tag-name" data-tags="Dark Channel Prior"><span class="iconfont-archer">&#xe606;</span>Dark Channel Prior</span>
     
@@ -2216,25 +2234,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Edge Perception"><span class="iconfont-archer">&#xe606;</span>Edge Perception</span>
     
-        <span class="sidebar-tag-name" data-tags="Simulation"><span class="iconfont-archer">&#xe606;</span>Simulation</span>
-    
-        <span class="sidebar-tag-name" data-tags="Active Sites"><span class="iconfont-archer">&#xe606;</span>Active Sites</span>
-    
         <span class="sidebar-tag-name" data-tags="Transport Physics"><span class="iconfont-archer">&#xe606;</span>Transport Physics</span>
     
         <span class="sidebar-tag-name" data-tags="Optical Properties"><span class="iconfont-archer">&#xe606;</span>Optical Properties</span>
     
         <span class="sidebar-tag-name" data-tags="Fundamental Models"><span class="iconfont-archer">&#xe606;</span>Fundamental Models</span>
     
-        <span class="sidebar-tag-name" data-tags="Research Workflow"><span class="iconfont-archer">&#xe606;</span>Research Workflow</span>
-    
         <span class="sidebar-tag-name" data-tags="Thin-Film Deposition"><span class="iconfont-archer">&#xe606;</span>Thin-Film Deposition</span>
     
         <span class="sidebar-tag-name" data-tags="Lab Protocols"><span class="iconfont-archer">&#xe606;</span>Lab Protocols</span>
     
-        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
-    
-        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
+        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
     
         <span class="sidebar-tag-name" data-tags="Quantum Transport"><span class="iconfont-archer">&#xe606;</span>Quantum Transport</span>
     
@@ -2242,7 +2252,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Field-Effect Transistors"><span class="iconfont-archer">&#xe606;</span>Field-Effect Transistors</span>
     
-        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+        <span class="sidebar-tag-name" data-tags="Scientific Communication"><span class="iconfont-archer">&#xe606;</span>Scientific Communication</span>
+    
+        <span class="sidebar-tag-name" data-tags="Photodetection"><span class="iconfont-archer">&#xe606;</span>Photodetection</span>
     
         <span class="sidebar-tag-name" data-tags="complex analysis"><span class="iconfont-archer">&#xe606;</span>complex analysis</span>
     
@@ -2252,21 +2264,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="field theory"><span class="iconfont-archer">&#xe606;</span>field theory</span>
     
-        <span class="sidebar-tag-name" data-tags="Quantum Mechanics"><span class="iconfont-archer">&#xe606;</span>Quantum Mechanics</span>
-    
         <span class="sidebar-tag-name" data-tags="Superconductivity"><span class="iconfont-archer">&#xe606;</span>Superconductivity</span>
     
         <span class="sidebar-tag-name" data-tags="Topological Matter"><span class="iconfont-archer">&#xe606;</span>Topological Matter</span>
     
+        <span class="sidebar-tag-name" data-tags="Research Resources"><span class="iconfont-archer">&#xe606;</span>Research Resources</span>
+    
         <span class="sidebar-tag-name" data-tags="Measurement Automation"><span class="iconfont-archer">&#xe606;</span>Measurement Automation</span>
-    
-        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
-    
-        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
-    
-        <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
-    
-        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
     
         <span class="sidebar-tag-name" data-tags="Photodetectors"><span class="iconfont-archer">&#xe606;</span>Photodetectors</span>
     
@@ -2276,17 +2280,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Metrology"><span class="iconfont-archer">&#xe606;</span>Metrology</span>
     
+        <span class="sidebar-tag-name" data-tags="Measurement Methods"><span class="iconfont-archer">&#xe606;</span>Measurement Methods</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology Roadmap"><span class="iconfont-archer">&#xe606;</span>Technology Roadmap</span>
+    
+        <span class="sidebar-tag-name" data-tags="Philosophy of Science"><span class="iconfont-archer">&#xe606;</span>Philosophy of Science</span>
+    
+        <span class="sidebar-tag-name" data-tags="Web Development"><span class="iconfont-archer">&#xe606;</span>Web Development</span>
+    
         <span class="sidebar-tag-name" data-tags="Instrument Control"><span class="iconfont-archer">&#xe606;</span>Instrument Control</span>
     
         <span class="sidebar-tag-name" data-tags="Cryogenics"><span class="iconfont-archer">&#xe606;</span>Cryogenics</span>
     
-        <span class="sidebar-tag-name" data-tags="Computational Optics"><span class="iconfont-archer">&#xe606;</span>Computational Optics</span>
-    
-        <span class="sidebar-tag-name" data-tags="Inverse Problems"><span class="iconfont-archer">&#xe606;</span>Inverse Problems</span>
-    
-        <span class="sidebar-tag-name" data-tags="Artificial Intelligence"><span class="iconfont-archer">&#xe606;</span>Artificial Intelligence</span>
-    
         <span class="sidebar-tag-name" data-tags="Energy Storage"><span class="iconfont-archer">&#xe606;</span>Energy Storage</span>
+    
+        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
     
         <span class="sidebar-tag-name" data-tags="Living Matter"><span class="iconfont-archer">&#xe606;</span>Living Matter</span>
     
@@ -2298,7 +2306,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Collective Behavior"><span class="iconfont-archer">&#xe606;</span>Collective Behavior</span>
     
-        <span class="sidebar-tag-name" data-tags="Mass Transport"><span class="iconfont-archer">&#xe606;</span>Mass Transport</span>
+        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
+    
+        <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="Computational Optics"><span class="iconfont-archer">&#xe606;</span>Computational Optics</span>
+    
+        <span class="sidebar-tag-name" data-tags="Inverse Problems"><span class="iconfont-archer">&#xe606;</span>Inverse Problems</span>
+    
+        <span class="sidebar-tag-name" data-tags="Artificial Intelligence"><span class="iconfont-archer">&#xe606;</span>Artificial Intelligence</span>
     
         <span class="sidebar-tag-name" data-tags="PySide6"><span class="iconfont-archer">&#xe606;</span>PySide6</span>
     
@@ -2310,17 +2326,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Software Architecture"><span class="iconfont-archer">&#xe606;</span>Software Architecture</span>
     
-        <span class="sidebar-tag-name" data-tags="Origin"><span class="iconfont-archer">&#xe606;</span>Origin</span>
-    
-        <span class="sidebar-tag-name" data-tags="Data Analysis"><span class="iconfont-archer">&#xe606;</span>Data Analysis</span>
-    
-        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
-    
         <span class="sidebar-tag-name" data-tags="Topological Data Analysis"><span class="iconfont-archer">&#xe606;</span>Topological Data Analysis</span>
     
         <span class="sidebar-tag-name" data-tags="Persistent Homology"><span class="iconfont-archer">&#xe606;</span>Persistent Homology</span>
     
         <span class="sidebar-tag-name" data-tags="Data Science"><span class="iconfont-archer">&#xe606;</span>Data Science</span>
+    
+        <span class="sidebar-tag-name" data-tags="Technology & Society"><span class="iconfont-archer">&#xe606;</span>Technology & Society</span>
     
         <span class="sidebar-tag-name" data-tags="AI-Assisted Research"><span class="iconfont-archer">&#xe606;</span>AI-Assisted Research</span>
     
@@ -2338,17 +2350,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Academic Publishing"><span class="iconfont-archer">&#xe606;</span>Academic Publishing</span>
     
-        <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
-    
         <span class="sidebar-tag-name" data-tags="Language & Culture"><span class="iconfont-archer">&#xe606;</span>Language & Culture</span>
     
-        <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
+        <span class="sidebar-tag-name" data-tags="Film & Media"><span class="iconfont-archer">&#xe606;</span>Film & Media</span>
     
         <span class="sidebar-tag-name" data-tags="Energy & Chemistry Foundations"><span class="iconfont-archer">&#xe606;</span>Energy & Chemistry Foundations</span>
     
-        <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
-    
         <span class="sidebar-tag-name" data-tags="Condensed Matter Foundations"><span class="iconfont-archer">&#xe606;</span>Condensed Matter Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="AI Foundations"><span class="iconfont-archer">&#xe606;</span>AI Foundations</span>
+    
+        <span class="sidebar-tag-name" data-tags="Optoelectronic Systems"><span class="iconfont-archer">&#xe606;</span>Optoelectronic Systems</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -2383,11 +2395,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
+    
         <span class="sidebar-category-name" data-categories="Causerie"><span class="iconfont-archer">&#xe60a;</span>Causerie</span>
     
         <span class="sidebar-category-name" data-categories="Scientific"><span class="iconfont-archer">&#xe60a;</span>Scientific</span>
-    
-        <span class="sidebar-category-name" data-categories="Tutorials"><span class="iconfont-archer">&#xe60a;</span>Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Computer-Vision"><span class="iconfont-archer">&#xe60a;</span>Scientific/Computer-Vision</span>
     
@@ -2397,41 +2409,41 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Mathematical-Physics"><span class="iconfont-archer">&#xe60a;</span>Mathematical-Physics</span>
     
+        <span class="sidebar-category-name" data-categories="Scientific/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Scientific/Semiconductor-Devices</span>
+    
         <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices</span>
+    
+        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
     
         <span class="sidebar-category-name" data-categories="Scientific-Blog"><span class="iconfont-archer">&#xe60a;</span>Scientific-Blog</span>
     
         <span class="sidebar-category-name" data-categories="Katex"><span class="iconfont-archer">&#xe60a;</span>Katex</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Semiconductor-Devices"><span class="iconfont-archer">&#xe60a;</span>Scientific/Semiconductor-Devices</span>
-    
-        <span class="sidebar-category-name" data-categories="Coding"><span class="iconfont-archer">&#xe60a;</span>Coding</span>
-    
-        <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
+        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Scientific"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific</span>
     
-        <span class="sidebar-category-name" data-categories="Physics/Semiconductor-Devices/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Semiconductor-Devices/Quantum-Transport</span>
-    
-        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
+        <span class="sidebar-category-name" data-categories="Scientific/Physics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Physics</span>
     
         <span class="sidebar-category-name" data-categories="Coding/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Coding/Artificial-Intelligence</span>
     
-        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
-    
-        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+        <span class="sidebar-category-name" data-categories="Coding/Scientific/Tutorials"><span class="iconfont-archer">&#xe60a;</span>Coding/Scientific/Tutorials</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Mathematics"><span class="iconfont-archer">&#xe60a;</span>Scientific/Mathematics</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+        <span class="sidebar-category-name" data-categories="Perspective"><span class="iconfont-archer">&#xe60a;</span>Perspective</span>
+    
+        <span class="sidebar-category-name" data-categories="Research-Notes"><span class="iconfont-archer">&#xe60a;</span>Research-Notes</span>
     
         <span class="sidebar-category-name" data-categories="Physics/Quantum-Transport"><span class="iconfont-archer">&#xe60a;</span>Physics/Quantum-Transport</span>
     
+        <span class="sidebar-category-name" data-categories="Scientific/Perspective"><span class="iconfont-archer">&#xe60a;</span>Scientific/Perspective</span>
+    
         <span class="sidebar-category-name" data-categories="Language"><span class="iconfont-archer">&#xe60a;</span>Language</span>
     
-        <span class="sidebar-category-name" data-categories="Scientific/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Scientific/Artificial-Intelligence</span>
-    
         <span class="sidebar-category-name" data-categories="Scientific/Chemistry"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry</span>
+    
+        <span class="sidebar-category-name" data-categories="Scientific/Artificial-Intelligence"><span class="iconfont-archer">&#xe60a;</span>Scientific/Artificial-Intelligence</span>
     
         <span class="sidebar-category-name" data-categories="Scientific/Chemistry/Energy"><span class="iconfont-archer">&#xe60a;</span>Scientific/Chemistry/Energy</span>
     

@@ -8,25 +8,30 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Advanced Nonvolatile Memory Physics</span><span data-lang="zh" hidden>先进非易失存储器物理</span></h1><p class="node-deck"><span data-lang="en">Nonvolatile memories differ by the state variable that crosses an energy barrier during write and remains trapped during retention: charge, polarization, atomic configuration, phase or magnetization.</span><span data-lang="zh" hidden>非易失存储器的差别在于写入时跨越能垒、保持时被困住的状态变量：电荷、极化、原子构型、物相或磁化。</span></p><div class="node-tags"><span>Memory Physics</span><span>Device Physics</span><span>Technology Roadmap</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Nonvolatile memories differ by the state variable that crosses an energy barrier during write and remains trapped during retention: charge, polarization, atomic configuration, phase or magnetization.</p>
 </blockquote>
-<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>Nonvolatile memories differ by the state variable that crosses an energy barrier during write and remains trapped during retention: charge, polarization, atomic configuration, phase or magnetization. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="Memory-as-a-metastable-state-variable"><a href="#Memory-as-a-metastable-state-variable" class="headerlink" title="Memory as a metastable state variable"></a>Memory as a metastable state variable</h3><p>A nonvolatile cell stores information in an internal coordinate \(x\): charge, polarization, ion configuration, phase fraction or magnetization.  Retention requires two or more metastable minima separated by barrier \(E_b\).  Thermal escape follows</p>
+<h2 id="Physical-Picture">Physical Picture</h2>
+<p>Nonvolatile memories differ by the state variable that crosses an energy barrier during write and remains trapped during retention: charge, polarization, atomic configuration, phase or magnetization. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
+<h3 id="Memory-as-a-metastable-state-variable">Memory as a metastable state variable</h3>
+<p>A nonvolatile cell stores information in an internal coordinate \(x\): charge, polarization, ion configuration, phase fraction or magnetization.  Retention requires two or more metastable minima separated by barrier \(E_b\).  Thermal escape follows</p>
 <div class="math-display">\[\tau_{ret}\approx\tau_0\exp(E_b/k_BT).\]</div>
-
 <p>Writing lowers or tilts this barrier; reading must couple to \(x\) without appreciably moving it.  This creates the universal write–retention–disturb triangle.</p>
-<h3 id="State-equation-and-readout"><a href="#State-equation-and-readout" class="headerlink" title="State equation and readout"></a>State equation and readout</h3><p>The compact structure is</p>
+<h3 id="State-equation-and-readout">State equation and readout</h3>
+<p>The compact structure is</p>
 <div class="math-display">\[\dot x=F(x,V,T),\qquad I=G(x,V,T)V.\]</div>
-
 <p>Different memory families differ in the physical meaning and spatial dimensionality of \(x\).  A single lumped variable may fail when domains, filaments or crystallization fronts evolve spatially.</p>
-<h3 id="Meaningful-comparison"><a href="#Meaningful-comparison" class="headerlink" title="Meaningful comparison"></a>Meaningful comparison</h3><p>Compare write energy, latency, retention at specified temperature, endurance under verified state criteria, read margin, cell area and peripheral overhead.  Extrapolated ten-year retention needs a validated acceleration law; a resistance window measured immediately after programming is not nonvolatility.</p>
-<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[Γ_write≈Γ0 exp[-ΔE_write/kT], retention requires Γ_hold≪Γ_write\]</div>
-
+<h3 id="Meaningful-comparison">Meaningful comparison</h3>
+<p>Compare write energy, latency, retention at specified temperature, endurance under verified state criteria, read margin, cell area and peripheral overhead.  Extrapolated ten-year retention needs a validated acceleration law; a resistance window measured immediately after programming is not nonvolatility.</p>
+<h2 id="Minimal-Model">Minimal Model</h2>
+<div class="math-display">\[Γ_write≈Γ0 exp[-ΔE_write/kT], retention requires Γ_hold≪Γ_write\]</div>
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>This hub compares floating-gate flash, charge-trap flash, FeFET, RRAM, PCM and MRAM using the same physical metrics.</p>
+<h2 id="Device-Consequences">Device Consequences</h2>
+<p>This hub compares floating-gate flash, charge-trap flash, FeFET, RRAM, PCM and MRAM using the same physical metrics.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-
-<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>No technology maximizes speed, density, endurance, retention, analogue linearity and process compatibility simultaneously. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Engineering. Connected concepts:</p>
+<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
+<p>No technology maximizes speed, density, endurance, retention, analogue linearity and process compatibility simultaneously. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
+<p><strong>Maturity:</strong> Engineering. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/nonvolatile-memory-device-physics/">nonvolatile-memory-device-physics</a></li>
 <li><a href="/knowledge/nodes/floating-gate-mos-memory/">floating-gate-mos-memory</a></li>
@@ -37,7 +42,8 @@
 <li><a href="/knowledge/nodes/magnetic-random-access-memory/">magnetic-random-access-memory</a></li>
 <li><a href="/knowledge/nodes/memory-reliability-and-scaling/">memory-reliability-and-scaling</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
+<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5455833/" target="_blank" rel="noopener">Review on non-volatile memory with high-k dielectrics</a></li>
 <li><a href="https://www.nature.com/articles/s41578-019-0159-3" target="_blank" rel="noopener">Zhang et al., Resistive switching materials for information processing</a></li>
@@ -45,25 +51,30 @@
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**非易失存储器的差别在于写入时跨越能垒、保持时被困住的状态变量：电荷、极化、原子构型、物相或磁化。</p>
 </blockquote>
-<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>非易失存储器的差别在于写入时跨越能垒、保持时被困住的状态变量：电荷、极化、原子构型、物相或磁化。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="存储就是亚稳内部状态变量"><a href="#存储就是亚稳内部状态变量" class="headerlink" title="存储就是亚稳内部状态变量"></a>存储就是亚稳内部状态变量</h3><p>非易失单元把信息保存在内部坐标 \(x\) 中：电荷、极化、离子构型、相分数或磁化。保持需要两个或更多亚稳极小值，其间能垒为 \(E_b\)。热逃逸满足</p>
+<h2 id="物理图像">物理图像</h2>
+<p>非易失存储器的差别在于写入时跨越能垒、保持时被困住的状态变量：电荷、极化、原子构型、物相或磁化。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
+<h3 id="存储就是亚稳内部状态变量">存储就是亚稳内部状态变量</h3>
+<p>非易失单元把信息保存在内部坐标 \(x\) 中：电荷、极化、离子构型、相分数或磁化。保持需要两个或更多亚稳极小值，其间能垒为 \(E_b\)。热逃逸满足</p>
 <div class="math-display">\[\tau_{ret}\approx\tau_0\exp(E_b/k_BT).\]</div>
-
 <p>写入通过降低或倾斜能垒改变状态；读出必须耦合到 \(x\) 却尽量不移动它，形成普遍的“写入—保持—扰动”三角。</p>
-<h3 id="状态方程与读出"><a href="#状态方程与读出" class="headerlink" title="状态方程与读出"></a>状态方程与读出</h3><p>紧凑结构为</p>
+<h3 id="状态方程与读出">状态方程与读出</h3>
+<p>紧凑结构为</p>
 <div class="math-display">\[\dot x=F(x,V,T),\qquad I=G(x,V,T)V.\]</div>
-
 <p>不同存储家族的区别在于 \(x\) 的物理含义及空间维度。若畴、导电细丝或晶化前沿发生空间演化，单一集总变量就会失效。</p>
-<h3 id="有意义的比较"><a href="#有意义的比较" class="headerlink" title="有意义的比较"></a>有意义的比较</h3><p>应比较写能、延迟、指定温度下保持、按明确状态判据测得的耐久、读裕量、单元面积与外围开销。十年保持外推需要经验证的加速律；编程后立即测到电阻窗口并不等于非易失。</p>
-<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[Γ_write≈Γ0 exp[-ΔE_write/kT], retention requires Γ_hold≪Γ_write\]</div>
-
+<h3 id="有意义的比较">有意义的比较</h3>
+<p>应比较写能、延迟、指定温度下保持、按明确状态判据测得的耐久、读裕量、单元面积与外围开销。十年保持外推需要经验证的加速律；编程后立即测到电阻窗口并不等于非易失。</p>
+<h2 id="最小模型">最小模型</h2>
+<div class="math-display">\[Γ_write≈Γ0 exp[-ΔE_write/kT], retention requires Γ_hold≪Γ_write\]</div>
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>本节点用统一物理指标比较浮栅、俘获型 Flash、FeFET、RRAM、PCM 和 MRAM。</p>
+<h2 id="器件意义">器件意义</h2>
+<p>本节点用统一物理指标比较浮栅、俘获型 Flash、FeFET、RRAM、PCM 和 MRAM。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-
-<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>不存在同时最大化速度、密度、耐久、保持、模拟线性和工艺兼容性的存储技术。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Engineering。关联节点：</p>
+<h2 id="限制与判据">限制与判据</h2>
+<p>不存在同时最大化速度、密度、耐久、保持、模拟线性和工艺兼容性的存储技术。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
+<p>**成熟度：**Engineering。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/nonvolatile-memory-device-physics/">nonvolatile-memory-device-physics</a></li>
 <li><a href="/knowledge/nodes/floating-gate-mos-memory/">floating-gate-mos-memory</a></li>
@@ -74,7 +85,8 @@
 <li><a href="/knowledge/nodes/magnetic-random-access-memory/">magnetic-random-access-memory</a></li>
 <li><a href="/knowledge/nodes/memory-reliability-and-scaling/">memory-reliability-and-scaling</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
+<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5455833/" target="_blank" rel="noopener">Review on non-volatile memory with high-k dielectrics</a></li>
 <li><a href="https://www.nature.com/articles/s41578-019-0159-3" target="_blank" rel="noopener">Zhang et al., Resistive switching materials for information processing</a></li>
