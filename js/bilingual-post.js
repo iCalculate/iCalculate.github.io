@@ -36,6 +36,12 @@
     var buttons = switcher.querySelectorAll('[data-language]');
     var panels = article.querySelectorAll('.lang-panel');
     var currentLanguage = 'en';
+    var title = document.querySelector('.intro-title[data-title-en]');
+    var originalDocumentTitle = document.title;
+    var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
+    var englishHeadings = article.querySelectorAll('.lang-en h2, .lang-en h3');
+    var chineseHeadings = article.querySelectorAll('.lang-zh .zh-h2, .lang-zh .zh-h3');
+    var originalTocLabels = tocLinks.map(function (link) { return link.textContent; });
 
     function setLanguage(language) {
       currentLanguage = language === 'zh' ? 'zh' : 'en';
@@ -49,6 +55,22 @@
         panel.hidden = !panel.classList.contains('lang-' + currentLanguage);
       });
       document.documentElement.setAttribute('lang', currentLanguage === 'zh' ? 'zh-CN' : 'en');
+      if (title) {
+        var translatedTitle = title.getAttribute('data-title-' + currentLanguage);
+        title.textContent = translatedTitle;
+        var bannerTitle = document.querySelector('.post-name');
+        if (bannerTitle) bannerTitle.textContent = translatedTitle;
+        document.title = currentLanguage === 'en' ? originalDocumentTitle : originalDocumentTitle.replace(title.getAttribute('data-title-en'), translatedTitle);
+      }
+      document.querySelectorAll('[data-reading-en]').forEach(function (element) {
+        element.textContent = element.getAttribute('data-reading-' + currentLanguage);
+      });
+      tocLinks.forEach(function (link, index) {
+        var id;
+        try { id = decodeURIComponent(link.getAttribute('href').slice(1)); } catch (_) { return; }
+        var headingIndex = Array.prototype.findIndex.call(englishHeadings, function (heading) { return heading.id === id; });
+        link.textContent = currentLanguage === 'zh' && chineseHeadings[headingIndex] ? chineseHeadings[headingIndex].textContent : originalTocLabels[index];
+      });
       window.dispatchEvent(new Event('resize'));
     }
 

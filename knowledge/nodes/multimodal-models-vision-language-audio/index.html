@@ -8,40 +8,34 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Multimodal Models for Vision, Language and Audio</span><span data-lang="zh" hidden>视觉、语言与音频多模态模型</span></h1><p class="node-deck"><span data-lang="en">Multimodal models align heterogeneous signals in shared or coupled representations so one modality can retrieve, condition or generate another.</span><span data-lang="zh" hidden>多模态模型在共享或耦合表征中对齐异构信号，使一种模态能够检索、条件化或生成另一模态。</span></p><div class="node-tags"><span>Multimodal AI</span><span>Foundation Models</span><span>AI-Assisted Research</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Multimodal models align heterogeneous signals in shared or coupled representations so one modality can retrieve, condition or generate another.</p>
 </blockquote>
-<h2 id="Statistical-and-Computational-Picture">Statistical and Computational Picture</h2>
-<p>Contrastive pretraining aligns paired embeddings, cross-attention lets tokens query modality-specific features, and generative objectives model joint or conditional distributions.</p>
+<h2 id="Statistical-and-Computational-Picture"><a href="#Statistical-and-Computational-Picture" class="headerlink" title="Statistical and Computational Picture"></a>Statistical and Computational Picture</h2><p>Contrastive pretraining aligns paired embeddings, cross-attention lets tokens query modality-specific features, and generative objectives model joint or conditional distributions.</p>
 <p>A useful AI description separates the task distribution, data-generating process, model family, learning algorithm and deployed decision rule. Data, compute budget, feedback and tools are controls; parameters, representations, optimizer state, retrieved context and recurrent memory are internal state. A benchmark score is informative only when the route from sampling and training to inference and evaluation is explicit. This prevents leakage, prompt adaptation, retrieval quality or post-processing from being mislabelled as intrinsic model capability.</p>
 <p>The relevant scales include sample size, parameter count, context length, effective rank, gradient noise, training FLOPs, inference tokens, memory traffic and latency. Their hierarchy determines whether approximation error, optimization error, estimation error or deployment shift dominates. The same architecture can therefore behave as an interpolator, calibrated predictor, memorizer or unstable agent under different data and inference protocols.</p>
-<h2 id="Deep-Derivation-and-Algorithmic-Interpretation">Deep Derivation and Algorithmic Interpretation</h2>
-<h3 id="Governing-relations">Governing relations</h3>
-<p>The first organizing objective or probabilistic relation is</p>
+<h2 id="Deep-Derivation-and-Algorithmic-Interpretation"><a href="#Deep-Derivation-and-Algorithmic-Interpretation" class="headerlink" title="Deep Derivation and Algorithmic Interpretation"></a>Deep Derivation and Algorithmic Interpretation</h2><h3 id="Governing-relations"><a href="#Governing-relations" class="headerlink" title="Governing relations"></a>Governing relations</h3><p>The first organizing objective or probabilistic relation is</p>
 <div class="math-display">\[\mathcal L=-\log\frac{e^{z_i^\top t_i/\tau}}{\sum_je^{z_i^\top t_j/\tau}}\]</div>
+
 <p>A complementary generalization, scaling or inference relation is</p>
 <div class="math-display">\[p(y|x_{text},x_{image},x_{audio})=\prod_tp(y_t|y_{&lt;t},H_{multi})\]</div>
+
 <p>Contrastive alignment makes true pairs distinguishable within a batch but does not require complete semantic grounding. Generative fusion conditions each output token on a compressed multimodal state.</p>
 <p>The variables in these equations must be tied to a concrete sampling protocol and unit of analysis. Training loss, held-out loss, task utility and human preference are not interchangeable. Report optimizer, data mixture, random seeds, decoding policy, context construction, tool permissions and compute accounting whenever they can change the measured result.</p>
-<h3 id="Causal-and-systems-view">Causal and systems view</h3>
-<p>The auditable chain is</p>
+<h3 id="Causal-and-systems-view"><a href="#Causal-and-systems-view" class="headerlink" title="Causal and systems view"></a>Causal and systems view</h3><p>The auditable chain is</p>
 <div class="math-display">\[\text{data and objective}\rightarrow\text{learned representation}\rightarrow\text{inference or action}\rightarrow\text{evaluation and feedback}.\]</div>
+
 <p>Following this chain separates an intrinsic mechanism or learned capability from losses introduced by transport, sampling, interfaces, readout or orchestration. It also enables consistency tests: parameters inferred at one stage should predict independent observations downstream without being silently refitted.</p>
-<h2 id="Evaluation-Diagnostics-and-Falsification">Evaluation, Diagnostics and Falsification</h2>
-<p>Use counterfactual pairs, spatial and temporal grounding, modality ablations, OCR controls and tests where language priors conflict with sensory evidence.</p>
+<h2 id="Evaluation-Diagnostics-and-Falsification"><a href="#Evaluation-Diagnostics-and-Falsification" class="headerlink" title="Evaluation, Diagnostics and Falsification"></a>Evaluation, Diagnostics and Falsification</h2><p>Use counterfactual pairs, spatial and temporal grounding, modality ablations, OCR controls and tests where language priors conflict with sensory evidence.</p>
 <p>A convincing evaluation uses contamination-resistant splits, task-relevant baselines, uncertainty intervals and ablations that isolate data, model, retrieval, tools and inference budget. Robustness should be tested across seeds, paraphrases, subgroups and distribution shifts. For agents, the evaluated object is the complete stateful system, including environment, permissions, stopping rule and recovery behaviour.</p>
-<h2 id="System-and-Research-Consequences">System and Research Consequences</h2>
-<p>Multimodal systems support scientific figures, robotics, accessibility, document understanding and richer human–computer interaction.</p>
+<h2 id="System-and-Research-Consequences"><a href="#System-and-Research-Consequences" class="headerlink" title="System and Research Consequences"></a>System and Research Consequences</h2><p>Multimodal systems support scientific figures, robotics, accessibility, document understanding and richer human–computer interaction.</p>
 <p>Deployment quality couples accuracy with calibration, latency, throughput, energy, privacy, maintainability and human oversight. A larger benchmark number is not automatically a better system. Scientific use further requires provenance, unit consistency, conservation constraints and a route for domain experts to inspect or reject generated hypotheses.</p>
-<h2 id="Limits-Failure-Modes-and-Open-Questions">Limits, Failure Modes and Open Questions</h2>
-<p>Paired web data carries bias, apparent visual reasoning may reduce to text priors, and high-resolution evidence is expensive to preserve.</p>
+<h2 id="Limits-Failure-Modes-and-Open-Questions"><a href="#Limits-Failure-Modes-and-Open-Questions" class="headerlink" title="Limits, Failure Modes and Open Questions"></a>Limits, Failure Modes and Open Questions</h2><p>Paired web data carries bias, apparent visual reasoning may reduce to text priors, and high-resolution evidence is expensive to preserve.</p>
 <p>Common failure modes include shortcut learning, dataset shift, feedback loops, hallucinated evidence, reward hacking, brittle tool use and hidden correlations between benchmark and training data. Frontier claims must distinguish demonstrated performance on a bounded protocol from general reasoning, autonomous reliability or social acceptability.</p>
-<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
-<p><strong>Maturity:</strong> Frontier. Connected concepts:</p>
+<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Frontier. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/convolutional-neural-networks-computer-vision/">convolutional-neural-networks-computer-vision</a></li>
 <li><a href="/knowledge/nodes/transformer-attention-architecture/">transformer-attention-architecture</a></li>
 <li><a href="/knowledge/nodes/generative-models-vae-gan-diffusion/">generative-models-vae-gan-diffusion</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
-<p>The linked sources provide derivations, benchmark protocols, conceptual diagrams or representative experiments. Reusing a particular figure still requires checking the author or publisher licence.</p>
+<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked sources provide derivations, benchmark protocols, conceptual diagrams or representative experiments. Reusing a particular figure still requires checking the author or publisher licence.</p>
 <ol>
 <li><a href="https://arxiv.org/abs/2103.00020" target="_blank" rel="noopener">Radford et al., Learning Transferable Visual Models from Natural Language Supervision</a></li>
 <li><a href="https://arxiv.org/abs/2204.14198" target="_blank" rel="noopener">Alayrac et al., Flamingo: a Visual Language Model for Few-Shot Learning</a></li>
@@ -49,40 +43,34 @@
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**多模态模型在共享或耦合表征中对齐异构信号，使一种模态能够检索、条件化或生成另一模态。</p>
 </blockquote>
-<h2 id="统计与计算图像">统计与计算图像</h2>
-<p>对比预训练对齐配对嵌入，交叉注意力让 token 查询模态特征，生成目标则建模联合或条件分布。</p>
+<h2 id="统计与计算图像"><a href="#统计与计算图像" class="headerlink" title="统计与计算图像"></a>统计与计算图像</h2><p>对比预训练对齐配对嵌入，交叉注意力让 token 查询模态特征，生成目标则建模联合或条件分布。</p>
 <p>可靠的 AI 描述必须区分任务分布、数据生成过程、模型族、学习算法和部署决策规则。数据、算力预算、反馈与工具是控制量；参数、表征、优化器状态、检索上下文和循环记忆是内部状态。只有明确采样与训练如何通向推理和评估，基准分数才有意义，也才能避免把数据泄漏、提示适配、检索质量或后处理误称为模型本征能力。</p>
 <p>相关尺度包括样本量、参数量、上下文长度、有效秩、梯度噪声、训练 FLOPs、推理 token、存储带宽和延迟。它们的层级决定逼近误差、优化误差、估计误差还是部署漂移占主导。同一架构在不同数据与推理协议下可能表现为插值器、校准预测器、记忆器或不稳定智能体。</p>
-<h2 id="深入推导与算法解释">深入推导与算法解释</h2>
-<h3 id="控制方程">控制方程</h3>
-<p>第一条组织目标或概率关系为</p>
+<h2 id="深入推导与算法解释"><a href="#深入推导与算法解释" class="headerlink" title="深入推导与算法解释"></a>深入推导与算法解释</h2><h3 id="控制方程"><a href="#控制方程" class="headerlink" title="控制方程"></a>控制方程</h3><p>第一条组织目标或概率关系为</p>
 <div class="math-display">\[\mathcal L=-\log\frac{e^{z_i^\top t_i/\tau}}{\sum_je^{z_i^\top t_j/\tau}}\]</div>
+
 <p>与之互补的泛化、缩放或推理关系为</p>
 <div class="math-display">\[p(y|x_{text},x_{image},x_{audio})=\prod_tp(y_t|y_{&lt;t},H_{multi})\]</div>
+
 <p>对比对齐使真实配对在批内可区分，但不要求完整语义锚定；生成融合让每个输出 token 以压缩的多模态状态为条件。</p>
 <p>这些方程中的变量必须对应明确的采样协议和分析单位。训练损失、留出损失、任务效用与人类偏好不可互换；凡优化器、数据混合、随机种子、解码策略、上下文构造、工具权限和算力核算能够改变结果，都应被报告。</p>
-<h3 id="因果链与系统视角">因果链与系统视角</h3>
-<p>可审计的因果链为</p>
+<h3 id="因果链与系统视角"><a href="#因果链与系统视角" class="headerlink" title="因果链与系统视角"></a>因果链与系统视角</h3><p>可审计的因果链为</p>
 <div class="math-display">\[\text{数据与目标}\rightarrow\text{学习到的表征}\rightarrow\text{推理或行动}\rightarrow\text{评估与反馈}.\]</div>
+
 <p>沿这条链可以把本征机理或学习能力与传质、采样、界面、读出或编排引入的损失区分开，也能建立一致性检验：在一个环节推断出的参数，应在不暗中重新拟合的前提下预测下游独立观测。</p>
-<h2 id="评估、诊断与证伪">评估、诊断与证伪</h2>
-<p>应使用反事实配对、时空锚定、模态消融、OCR 控制，以及语言先验与感知证据冲突的测试。</p>
+<h2 id="评估、诊断与证伪"><a href="#评估、诊断与证伪" class="headerlink" title="评估、诊断与证伪"></a>评估、诊断与证伪</h2><p>应使用反事实配对、时空锚定、模态消融、OCR 控制，以及语言先验与感知证据冲突的测试。</p>
 <p>有说服力的评估需要抗污染划分、任务相关基线、不确定区间，以及分别隔离数据、模型、检索、工具和推理预算的消融。稳健性还应跨随机种子、改写、子群体和分布漂移检验。对智能体而言，被评估对象是包含环境、权限、停止规则和恢复行为的完整有状态系统。</p>
-<h2 id="系统与科研意义">系统与科研意义</h2>
-<p>多模态系统支持科学图像、机器人、无障碍、文档理解与更丰富的人机交互。</p>
+<h2 id="系统与科研意义"><a href="#系统与科研意义" class="headerlink" title="系统与科研意义"></a>系统与科研意义</h2><p>多模态系统支持科学图像、机器人、无障碍、文档理解与更丰富的人机交互。</p>
 <p>部署质量把准确率与校准、延迟、吞吐、能耗、隐私、可维护性和人工监督耦合在一起，更高的基准数字并不自动意味着更好的系统。科研使用还要求来源可追溯、单位一致、守恒约束明确，并允许领域专家检查或否决生成假设。</p>
-<h2 id="限制、失效模式与开放问题">限制、失效模式与开放问题</h2>
-<p>网络配对数据携带偏差，表观视觉推理可能退化为文本先验，高分辨证据的保留成本也很高。</p>
+<h2 id="限制、失效模式与开放问题"><a href="#限制、失效模式与开放问题" class="headerlink" title="限制、失效模式与开放问题"></a>限制、失效模式与开放问题</h2><p>网络配对数据携带偏差，表观视觉推理可能退化为文本先验，高分辨证据的保留成本也很高。</p>
 <p>常见失效模式包括捷径学习、数据集漂移、反馈回路、虚构证据、奖励投机、脆弱工具调用，以及基准与训练数据之间的隐藏相关。前沿结论必须区分受限协议中的性能演示、通用推理能力、自主可靠性与社会可接受性。</p>
-<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
-<p>**成熟度：**Frontier。关联节点：</p>
+<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Frontier。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/convolutional-neural-networks-computer-vision/">convolutional-neural-networks-computer-vision</a></li>
 <li><a href="/knowledge/nodes/transformer-attention-architecture/">transformer-attention-architecture</a></li>
 <li><a href="/knowledge/nodes/generative-models-vae-gan-diffusion/">generative-models-vae-gan-diffusion</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
-<p>下列来源包含推导、基准协议、概念示意或代表性实验；转载具体图片前仍需核对作者或出版方许可。</p>
+<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列来源包含推导、基准协议、概念示意或代表性实验；转载具体图片前仍需核对作者或出版方许可。</p>
 <ol>
 <li><a href="https://arxiv.org/abs/2103.00020" target="_blank" rel="noopener">Radford et al., Learning Transferable Visual Models from Natural Language Supervision</a></li>
 <li><a href="https://arxiv.org/abs/2204.14198" target="_blank" rel="noopener">Alayrac et al., Flamingo: a Visual Language Model for Few-Shot Learning</a></li>
