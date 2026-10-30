@@ -8,30 +8,37 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Resistive RAM and Conductive-Filament Dynamics</span><span data-lang="zh" hidden>阻变存储器与导电细丝动力学</span></h1><p class="node-deck"><span data-lang="en">RRAM switches resistance by redistributing ions and defects, often forming or rupturing a nanoscale metallic or oxygen-vacancy-rich conduction path.</span><span data-lang="zh" hidden>RRAM 通过重新分布离子和缺陷改变电阻，常表现为纳米金属细丝或富氧空位导电通道的形成与断裂。</span></p><div class="node-tags"><span>Memristive Devices</span><span>Device Physics</span><span>Technology Roadmap</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> RRAM switches resistance by redistributing ions and defects, often forming or rupturing a nanoscale metallic or oxygen-vacancy-rich conduction path.</p>
 </blockquote>
-<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>RRAM switches resistance by redistributing ions and defects, often forming or rupturing a nanoscale metallic or oxygen-vacancy-rich conduction path. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="Filamentary-switching"><a href="#Filamentary-switching" class="headerlink" title="Filamentary switching"></a>Filamentary switching</h3><p>In many oxide RRAM cells, electric field and Joule heating drive vacancies or metal ions to form a conductive filament.  Ionic flux can be organized as</p>
+<h2 id="Physical-Picture">Physical Picture</h2>
+<p>RRAM switches resistance by redistributing ions and defects, often forming or rupturing a nanoscale metallic or oxygen-vacancy-rich conduction path. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
+<h3 id="Filamentary-switching">Filamentary switching</h3>
+<p>In many oxide RRAM cells, electric field and Joule heating drive vacancies or metal ions to form a conductive filament.  Ionic flux can be organized as</p>
 <div class="math-display">\[\mathbf J_i=-D_i\nabla c_i+\mu_i c_i\mathbf E,
 \qquad
 \frac{\partial c_i}{\partial t}=-\nabla\cdot\mathbf J_i+R_i.\]</div>
-
 <p>SET closes a nanoscale gap or completes a filament; RESET dissolves or thermally ruptures its narrowest region.  Because conductance depends exponentially on the final gap, atomic fluctuations become macroscopic resistance variability.</p>
-<h3 id="Forming-and-compliance"><a href="#Forming-and-compliance" class="headerlink" title="Forming and compliance"></a>Forming and compliance</h3><p>Initial electroforming creates a defect pathway and changes subsequent physics.  Current compliance prevents runaway hard breakdown and sets filament diameter, so it is part of the programming condition.  “Forming-free” must mean the pristine and cycled mechanisms are demonstrably the same, not merely that the first sweep used a lower voltage.</p>
-<h3 id="Readout-and-scaling"><a href="#Readout-and-scaling" class="headerlink" title="Readout and scaling"></a>Readout and scaling</h3><p>Low-resistance state may be metallic, hopping or barrier-limited depending on temperature and filament composition; high-resistance state often reflects tunnelling across a gap.  Area independence supports one&#x2F;few filaments but is not unique.  Endurance, retention, analogue update and variability must be measured with identical verify conditions and realistic selector&#x2F;series resistance.</p>
-<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[J_ion∝cE exp(-E_a/kT); local Joule heating couples back to motion\]</div>
-
+<h3 id="Forming-and-compliance">Forming and compliance</h3>
+<p>Initial electroforming creates a defect pathway and changes subsequent physics.  Current compliance prevents runaway hard breakdown and sets filament diameter, so it is part of the programming condition.  “Forming-free” must mean the pristine and cycled mechanisms are demonstrably the same, not merely that the first sweep used a lower voltage.</p>
+<h3 id="Readout-and-scaling">Readout and scaling</h3>
+<p>Low-resistance state may be metallic, hopping or barrier-limited depending on temperature and filament composition; high-resistance state often reflects tunnelling across a gap.  Area independence supports one/few filaments but is not unique.  Endurance, retention, analogue update and variability must be measured with identical verify conditions and realistic selector/series resistance.</p>
+<h2 id="Minimal-Model">Minimal Model</h2>
+<div class="math-display">\[J_ion∝cE exp(-E_a/kT); local Joule heating couples back to motion\]</div>
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>Valence-change, electrochemical-metallization and thermochemical cells provide dense two-terminal memory and analogue conductance states.</p>
+<h2 id="Device-Consequences">Device Consequences</h2>
+<p>Valence-change, electrochemical-metallization and thermochemical cells provide dense two-terminal memory and analogue conductance states.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-
-<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>Atomic stochasticity produces forming variation, cycle variability, random telegraph noise and endurance failure. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Engineering. Connected concepts:</p>
+<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
+<p>Atomic stochasticity produces forming variation, cycle variability, random telegraph noise and endurance failure. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
+<p><strong>Maturity:</strong> Engineering. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/memristive-systems-and-resistive-switching/">memristive-systems-and-resistive-switching</a></li>
 <li><a href="/knowledge/nodes/memory-reliability-and-scaling/">memory-reliability-and-scaling</a></li>
 <li><a href="/knowledge/nodes/crossbar-arrays-selectors-and-sneak-paths/">crossbar-arrays-selectors-and-sneak-paths</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
+<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41578-019-0159-3" target="_blank" rel="noopener">Zhang et al., Resistive switching materials for information processing</a></li>
 <li><a href="https://www.nature.com/articles/s41467-019-11411-6" target="_blank" rel="noopener">Yang et al., Understanding memristive switching</a></li>
@@ -39,30 +46,37 @@
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**RRAM 通过重新分布离子和缺陷改变电阻，常表现为纳米金属细丝或富氧空位导电通道的形成与断裂。</p>
 </blockquote>
-<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>RRAM 通过重新分布离子和缺陷改变电阻，常表现为纳米金属细丝或富氧空位导电通道的形成与断裂。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="细丝型阻变"><a href="#细丝型阻变" class="headerlink" title="细丝型阻变"></a>细丝型阻变</h3><p>许多氧化物 RRAM 中，电场与 Joule 热驱动空位或金属离子形成导电细丝。离子通量可写成</p>
+<h2 id="物理图像">物理图像</h2>
+<p>RRAM 通过重新分布离子和缺陷改变电阻，常表现为纳米金属细丝或富氧空位导电通道的形成与断裂。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
+<h3 id="细丝型阻变">细丝型阻变</h3>
+<p>许多氧化物 RRAM 中，电场与 Joule 热驱动空位或金属离子形成导电细丝。离子通量可写成</p>
 <div class="math-display">\[\mathbf J_i=-D_i\nabla c_i+\mu_i c_i\mathbf E,
 \qquad
 \frac{\partial c_i}{\partial t}=-\nabla\cdot\mathbf J_i+R_i.\]</div>
-
 <p>SET 关闭纳米间隙或连通细丝，RESET 则溶解或热断裂最窄区域。电导对最终间隙呈指数敏感，因此原子级涨落会放大为宏观电阻变异。</p>
-<h3 id="Forming-与电流限制"><a href="#Forming-与电流限制" class="headerlink" title="Forming 与电流限制"></a>Forming 与电流限制</h3><p>初始电成形建立缺陷通路并改变后续物理。电流限制阻止失控硬击穿并决定细丝直径，因此本身就是编程条件的一部分。“免成形”应证明原始与循环后机制相同，而不能只因第一次扫描电压较低就下结论。</p>
-<h3 id="读出与缩放"><a href="#读出与缩放" class="headerlink" title="读出与缩放"></a>读出与缩放</h3><p>低阻态可能是金属性、跳跃或势垒受限，取决于温度和细丝成分；高阻态常由间隙隧穿决定。面积无关支持少数细丝，却不是唯一证据。耐久、保持、模拟更新与变异必须在相同验证条件和真实选通&#x2F;串联电阻下测量。</p>
-<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[J_ion∝cE exp(-E_a/kT); local Joule heating couples back to motion\]</div>
-
+<h3 id="Forming-与电流限制">Forming 与电流限制</h3>
+<p>初始电成形建立缺陷通路并改变后续物理。电流限制阻止失控硬击穿并决定细丝直径，因此本身就是编程条件的一部分。“免成形”应证明原始与循环后机制相同，而不能只因第一次扫描电压较低就下结论。</p>
+<h3 id="读出与缩放">读出与缩放</h3>
+<p>低阻态可能是金属性、跳跃或势垒受限，取决于温度和细丝成分；高阻态常由间隙隧穿决定。面积无关支持少数细丝，却不是唯一证据。耐久、保持、模拟更新与变异必须在相同验证条件和真实选通/串联电阻下测量。</p>
+<h2 id="最小模型">最小模型</h2>
+<div class="math-display">\[J_ion∝cE exp(-E_a/kT); local Joule heating couples back to motion\]</div>
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>价态变化、电化学金属化及热化学单元提供高密度二端存储和模拟电导态。</p>
+<h2 id="器件意义">器件意义</h2>
+<p>价态变化、电化学金属化及热化学单元提供高密度二端存储和模拟电导态。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-
-<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>原子尺度随机性会导致形成电压差异、循环变异、随机电报噪声和耐久失效。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Engineering。关联节点：</p>
+<h2 id="限制与判据">限制与判据</h2>
+<p>原子尺度随机性会导致形成电压差异、循环变异、随机电报噪声和耐久失效。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
+<p>**成熟度：**Engineering。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/memristive-systems-and-resistive-switching/">memristive-systems-and-resistive-switching</a></li>
 <li><a href="/knowledge/nodes/memory-reliability-and-scaling/">memory-reliability-and-scaling</a></li>
 <li><a href="/knowledge/nodes/crossbar-arrays-selectors-and-sneak-paths/">crossbar-arrays-selectors-and-sneak-paths</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
+<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://www.nature.com/articles/s41578-019-0159-3" target="_blank" rel="noopener">Zhang et al., Resistive switching materials for information processing</a></li>
 <li><a href="https://www.nature.com/articles/s41467-019-11411-6" target="_blank" rel="noopener">Yang et al., Understanding memristive switching</a></li>
