@@ -8,35 +8,31 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Two-Dimensional Quantum Foundations</span><span data-lang="zh" hidden>二维量子物理基础</span></h1><p class="node-deck"><span data-lang="en">Reducing a crystal to one or a few atomic layers changes screening, density of states, symmetry and available internal degrees of freedom; it does more than merely shrink a bulk semiconductor.</span><span data-lang="zh" hidden>把晶体减薄到单层或少层会同时改变屏蔽、态密度、对称性和内部自由度，并非只是把体材料缩小。</span></p><div class="node-tags"><span>2D Quantum Foundations</span><span>Device Physics</span><span>Fundamental Models</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Reducing a crystal to one or a few atomic layers changes screening, density of states, symmetry and available internal degrees of freedom; it does more than merely shrink a bulk semiconductor.</p>
 </blockquote>
-<h2 id="Physical-Picture">Physical Picture</h2>
-<p>Reducing a crystal to one or a few atomic layers changes screening, density of states, symmetry and available internal degrees of freedom; it does more than merely shrink a bulk semiconductor. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
-<h3 id="From-dimensional-reduction-to-a-new-energy-hierarchy">From dimensional reduction to a new energy hierarchy</h3>
-<p>For a layer of thickness \(t\) smaller than the electronic de Broglie wavelength and the electrostatic screening length, motion normal to the plane is quantized.  Separating an envelope function as \(\Psi(\mathbf r,z)=\psi(\mathbf r)\varphi_n(z)\) gives subband energies</p>
+<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>Reducing a crystal to one or a few atomic layers changes screening, density of states, symmetry and available internal degrees of freedom; it does more than merely shrink a bulk semiconductor. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="From-dimensional-reduction-to-a-new-energy-hierarchy"><a href="#From-dimensional-reduction-to-a-new-energy-hierarchy" class="headerlink" title="From dimensional reduction to a new energy hierarchy"></a>From dimensional reduction to a new energy hierarchy</h3><p>For a layer of thickness \(t\) smaller than the electronic de Broglie wavelength and the electrostatic screening length, motion normal to the plane is quantized.  Separating an envelope function as \(\Psi(\mathbf r,z)=\psi(\mathbf r)\varphi_n(z)\) gives subband energies</p>
 <div class="math-display">\[E_n(\mathbf k)=E_n^\perp+\varepsilon_n(\mathbf k),\qquad
 E_n^\perp\sim \frac{\hbar^2\pi^2n^2}{2m_z t^2}.\]</div>
+
 <p>The important change is not simply the \(1/t^2\) spacing.  The two-dimensional density of states, exposed surfaces, reduced dielectric screening and altered point-group symmetry all enter at the same energy scale.  A useful hierarchy is therefore</p>
 <div class="math-display">\[W,\;E_C,\;\Delta_{\rm SOC},\;\Delta_{\rm ex},\;\hbar\omega_{\rm ph},\;k_BT,\;\Gamma,\]</div>
-<p>where \(W\) is bandwidth, \(E_C\sim e^2/(4\pi\epsilon_0\epsilon_{\rm env}\ell)\) is Coulomb energy, and \(\Gamma\) is disorder/contact broadening.  The dominant physics is decided by ratios such as \(E_C/W\), \(\Delta_{\rm SOC}/k_BT\) and \(\Gamma/\Delta\), not by the material label alone.</p>
-<h3 id="Physical-image-and-self-consistency">Physical image and self-consistency</h3>
-<p>Think of a 2D crystal as an electronic membrane whose wavefunctions are confined to the sheet but whose electric field lines live in three dimensions.  Gates change charge density and displacement field; the dielectric environment changes interactions; twist and strain change the kinetic energy; proximity layers change symmetry.  These controls are coupled through Poisson and quantum mechanics:</p>
+
+<p>where \(W\) is bandwidth, \(E_C\sim e^2/(4\pi\epsilon_0\epsilon_{\rm env}\ell)\) is Coulomb energy, and \(\Gamma\) is disorder&#x2F;contact broadening.  The dominant physics is decided by ratios such as \(E_C/W\), \(\Delta_{\rm SOC}/k_BT\) and \(\Gamma/\Delta\), not by the material label alone.</p>
+<h3 id="Physical-image-and-self-consistency"><a href="#Physical-image-and-self-consistency" class="headerlink" title="Physical image and self-consistency"></a>Physical image and self-consistency</h3><p>Think of a 2D crystal as an electronic membrane whose wavefunctions are confined to the sheet but whose electric field lines live in three dimensions.  Gates change charge density and displacement field; the dielectric environment changes interactions; twist and strain change the kinetic energy; proximity layers change symmetry.  These controls are coupled through Poisson and quantum mechanics:</p>
 <div class="math-display">\[\nabla\!\cdot\![\epsilon(\mathbf r)\nabla\phi(\mathbf r)]=-\rho[\phi],
 \qquad
 \bigl(H_0-e\phi+\Sigma_{\rm contact}+\Sigma_{\rm int}\bigr)\psi=E\psi.\]</div>
+
 <p>Solving only the clean Hamiltonian predicts available states; it does not predict which states a contacted device fills, transmits or resolves.</p>
-<h3 id="Experimental-discriminants">Experimental discriminants</h3>
-<p>Band structure is tested by ARPES or tunnelling spectroscopy; compressibility by capacitance; interactions by exciton/Raman spectra and gap renormalization; transport by four-terminal and nonlocal geometries.  A claimed quantum phase should survive a consistency triangle: the same energy gap or density scale should appear in spectroscopy, thermodynamics and transport within known broadening.</p>
-<h2 id="Minimal-Model">Minimal Model</h2>
-<div class="math-display">\[H=H_band+H_SOC+H_Coulomb+H_disorder\]</div>
+<h3 id="Experimental-discriminants"><a href="#Experimental-discriminants" class="headerlink" title="Experimental discriminants"></a>Experimental discriminants</h3><p>Band structure is tested by ARPES or tunnelling spectroscopy; compressibility by capacitance; interactions by exciton&#x2F;Raman spectra and gap renormalization; transport by four-terminal and nonlocal geometries.  A claimed quantum phase should survive a consistency triangle: the same energy gap or density scale should appear in spectroscopy, thermodynamics and transport within known broadening.</p>
+<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[H=H_band+H_SOC+H_Coulomb+H_disorder\]</div>
+
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences">Device Consequences</h2>
-<p>This hub connects electronic structure, mesoscopic transport, excitons, topology, moiré matter and ordered phases to device concepts.</p>
+<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>This hub connects electronic structure, mesoscopic transport, excitons, topology, moiré matter and ordered phases to device concepts.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
-<p>A clean intrinsic Hamiltonian is insufficient unless contacts, disorder, dielectric environment and temperature are included. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
-<p><strong>Maturity:</strong> Foundation. Connected concepts:</p>
+
+<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>A clean intrinsic Hamiltonian is insufficient unless contacts, disorder, dielectric environment and temperature are included. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Foundation. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/semiconductor-band-carrier-statistics/">semiconductor-band-carrier-statistics</a></li>
 <li><a href="/knowledge/nodes/semiconductor-carrier-transport/">semiconductor-carrier-transport</a></li>
@@ -51,8 +47,7 @@ E_n^\perp\sim \frac{\hbar^2\pi^2n^2}{2m_z t^2}.\]</div>
 <li><a href="/knowledge/nodes/two-dimensional-superconductivity/">two-dimensional-superconductivity</a></li>
 <li><a href="/2026/09/01/Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory/">Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
-<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://www.nature.com/articles/nmat1849" target="_blank" rel="noopener">Geim &amp; Novoselov, The rise of graphene</a></li>
 <li><a href="https://www.nature.com/articles/s41578-019-0136-x" target="_blank" rel="noopener">Liu &amp; Hersam, 2D materials for quantum information science</a></li>
@@ -60,35 +55,31 @@ E_n^\perp\sim \frac{\hbar^2\pi^2n^2}{2m_z t^2}.\]</div>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**把晶体减薄到单层或少层会同时改变屏蔽、态密度、对称性和内部自由度，并非只是把体材料缩小。</p>
 </blockquote>
-<h2 id="物理图像">物理图像</h2>
-<p>把晶体减薄到单层或少层会同时改变屏蔽、态密度、对称性和内部自由度，并非只是把体材料缩小。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
-<h3 id="从降维到新的能量层级">从降维到新的能量层级</h3>
-<p>当层厚 \(t\) 小于电子德布罗意波长及静电屏蔽长度时，垂直层面的运动被量子化。把包络波函数写成 \(\Psi(\mathbf r,z)=\psi(\mathbf r)\varphi_n(z)\)，得到</p>
+<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>把晶体减薄到单层或少层会同时改变屏蔽、态密度、对称性和内部自由度，并非只是把体材料缩小。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="从降维到新的能量层级"><a href="#从降维到新的能量层级" class="headerlink" title="从降维到新的能量层级"></a>从降维到新的能量层级</h3><p>当层厚 \(t\) 小于电子德布罗意波长及静电屏蔽长度时，垂直层面的运动被量子化。把包络波函数写成 \(\Psi(\mathbf r,z)=\psi(\mathbf r)\varphi_n(z)\)，得到</p>
 <div class="math-display">\[E_n(\mathbf k)=E_n^\perp+\varepsilon_n(\mathbf k),\qquad
 E_n^\perp\sim \frac{\hbar^2\pi^2n^2}{2m_z t^2}.\]</div>
+
 <p>真正关键的不只是 \(1/t^2\) 能级间距。二维态密度、完全暴露的表面、减弱的介电屏蔽以及点群对称性的改变会同时进入低能物理。应比较</p>
 <div class="math-display">\[W,\;E_C,\;\Delta_{\rm SOC},\;\Delta_{\rm ex},\;\hbar\omega_{\rm ph},\;k_BT,\;\Gamma,\]</div>
+
 <p>其中 \(W\) 为带宽，\(E_C\sim e^2/(4\pi\epsilon_0\epsilon_{\rm env}\ell)\) 为库仑能，\(\Gamma\) 为无序或接触展宽。决定物理机制的是 \(E_C/W\)、\(\Delta_{\rm SOC}/k_BT\)、\(\Gamma/\Delta\) 等无量纲比值，而不是材料名称本身。</p>
-<h3 id="物理图像与自洽关系">物理图像与自洽关系</h3>
-<p>可把二维晶体想成一张“电子膜”：波函数被限制在膜内，但电场线仍在三维空间展开。栅极调节载流子密度和位移场，介电环境调节相互作用，扭角和应变调节动能，邻近层则改变对称性。这些控制量必须通过泊松方程与量子方程自洽：</p>
+<h3 id="物理图像与自洽关系"><a href="#物理图像与自洽关系" class="headerlink" title="物理图像与自洽关系"></a>物理图像与自洽关系</h3><p>可把二维晶体想成一张“电子膜”：波函数被限制在膜内，但电场线仍在三维空间展开。栅极调节载流子密度和位移场，介电环境调节相互作用，扭角和应变调节动能，邻近层则改变对称性。这些控制量必须通过泊松方程与量子方程自洽：</p>
 <div class="math-display">\[\nabla\!\cdot\![\epsilon(\mathbf r)\nabla\phi(\mathbf r)]=-\rho[\phi],
 \qquad
 \bigl(H_0-e\phi+\Sigma_{\rm contact}+\Sigma_{\rm int}\bigr)\psi=E\psi.\]</div>
+
 <p>只求洁净体系哈密顿量只能告诉我们“有哪些态”，不能告诉我们接触器件会填充、传输或分辨哪些态。</p>
-<h3 id="实验判据">实验判据</h3>
-<p>能带可由 ARPES 或隧穿谱检验，可压缩性由电容测量，相互作用由激子、拉曼谱和带隙重整化判断，输运则需要四端及非局域几何。一个可信的量子相应满足“谱学—热力学—输运”一致性：相同能隙或密度标度应在考虑展宽后彼此吻合。</p>
-<h2 id="最小模型">最小模型</h2>
-<div class="math-display">\[H=H_band+H_SOC+H_Coulomb+H_disorder\]</div>
+<h3 id="实验判据"><a href="#实验判据" class="headerlink" title="实验判据"></a>实验判据</h3><p>能带可由 ARPES 或隧穿谱检验，可压缩性由电容测量，相互作用由激子、拉曼谱和带隙重整化判断，输运则需要四端及非局域几何。一个可信的量子相应满足“谱学—热力学—输运”一致性：相同能隙或密度标度应在考虑展宽后彼此吻合。</p>
+<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[H=H_band+H_SOC+H_Coulomb+H_disorder\]</div>
+
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义">器件意义</h2>
-<p>本节点把电子结构、介观输运、激子、拓扑、莫尔物质及有序态连接到器件概念。</p>
+<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>本节点把电子结构、介观输运、激子、拓扑、莫尔物质及有序态连接到器件概念。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-<h2 id="限制与判据">限制与判据</h2>
-<p>只讨论理想哈密顿量而忽略接触、无序、介电环境和温度，会高估量子效应的器件可见性。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
-<p>**成熟度：**Foundation。关联节点：</p>
+
+<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>只讨论理想哈密顿量而忽略接触、无序、介电环境和温度，会高估量子效应的器件可见性。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Foundation。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/semiconductor-band-carrier-statistics/">semiconductor-band-carrier-statistics</a></li>
 <li><a href="/knowledge/nodes/semiconductor-carrier-transport/">semiconductor-carrier-transport</a></li>
@@ -103,8 +94,7 @@ E_n^\perp\sim \frac{\hbar^2\pi^2n^2}{2m_z t^2}.\]</div>
 <li><a href="/knowledge/nodes/two-dimensional-superconductivity/">two-dimensional-superconductivity</a></li>
 <li><a href="/2026/09/01/Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory/">Semiconductor-Devices-and-Quantum-Physics-Interactive-Directory</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
-<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://www.nature.com/articles/nmat1849" target="_blank" rel="noopener">Geim &amp; Novoselov, The rise of graphene</a></li>
 <li><a href="https://www.nature.com/articles/s41578-019-0136-x" target="_blank" rel="noopener">Liu &amp; Hersam, 2D materials for quantum information science</a></li>
