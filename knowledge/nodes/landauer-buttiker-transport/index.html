@@ -8,28 +8,32 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Landauer–Büttiker Quantum Transport</span><span data-lang="zh" hidden>Landauer–Büttiker 量子输运</span></h1><p class="node-deck"><span data-lang="en">Mesoscopic current is carried by quantum modes whose occupations are fixed by reservoirs and whose contribution is weighted by transmission.</span><span data-lang="zh" hidden>介观电流由量子传输模式承载，模式占据由电极库决定，贡献由透射率加权。</span></p><div class="node-tags"><span>Mesoscopic Transport</span><span>Device Physics</span><span>Fundamental Models</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Mesoscopic current is carried by quantum modes whose occupations are fixed by reservoirs and whose contribution is weighted by transmission.</p>
 </blockquote>
-<h2 id="Physical-Picture"><a href="#Physical-Picture" class="headerlink" title="Physical Picture"></a>Physical Picture</h2><p>Mesoscopic current is carried by quantum modes whose occupations are fixed by reservoirs and whose contribution is weighted by transmission. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
-<h2 id="Deep-Derivation-and-Physical-Interpretation"><a href="#Deep-Derivation-and-Physical-Interpretation" class="headerlink" title="Deep Derivation and Physical Interpretation"></a>Deep Derivation and Physical Interpretation</h2><h3 id="Current-from-reservoir-imbalance"><a href="#Current-from-reservoir-imbalance" class="headerlink" title="Current from reservoir imbalance"></a>Current from reservoir imbalance</h3><p>A coherent conductor does not possess a local drift velocity in the classical sense.  Right-moving states are populated by the source and left-moving states by the drain.  For one spin-degenerate mode, state flux and one-dimensional density of states cancel to give</p>
+<h2 id="Physical-Picture">Physical Picture</h2>
+<p>Mesoscopic current is carried by quantum modes whose occupations are fixed by reservoirs and whose contribution is weighted by transmission. The useful state variables and conserved quantities must be identified before selecting a transport model. In a real device the intrinsic material response is coupled self-consistently to electrostatics, contacts, disorder and the external circuit.</p>
+<h2 id="Deep-Derivation-and-Physical-Interpretation">Deep Derivation and Physical Interpretation</h2>
+<h3 id="Current-from-reservoir-imbalance">Current from reservoir imbalance</h3>
+<p>A coherent conductor does not possess a local drift velocity in the classical sense.  Right-moving states are populated by the source and left-moving states by the drain.  For one spin-degenerate mode, state flux and one-dimensional density of states cancel to give</p>
 <div class="math-display">\[I=\frac{2q}{h}\int T(E)[f_S(E)-f_D(E)]\,dE.\]</div>
-
 <p>Linearizing in small bias gives</p>
 <div class="math-display">\[G=\frac{2q^2}{h}\sum_n T_n(E_F),\]</div>
-
 <p>so an ideal transmitted mode contributes \(G_0=2q^2/h\).  The corresponding resistance is a contact resistance: entropy is generated when non-equilibrium outgoing carriers relax in reservoirs, even if the channel itself is elastic.</p>
-<h3 id="Multi-terminal-physics"><a href="#Multi-terminal-physics" class="headerlink" title="Multi-terminal physics"></a>Multi-terminal physics</h3><p>For terminals \(p\) and \(q\),</p>
+<h3 id="Multi-terminal-physics">Multi-terminal physics</h3>
+<p>For terminals \(p\) and \(q\),</p>
 <div class="math-display">\[I_p=\frac{q^2}{h}\sum_q\left(T_{qp}V_p-T_{pq}V_q\right).\]</div>
-
 <p>This form keeps track of which reservoir sets each incoming occupation and is essential for Hall, nonlocal and edge-state measurements.  Gauge invariance and current conservation require the transmission matrix to satisfy sum rules; violating them usually signals an incomplete contact model.</p>
-<h3 id="Connection-to-NEGF-and-scattering"><a href="#Connection-to-NEGF-and-scattering" class="headerlink" title="Connection to NEGF and scattering"></a>Connection to NEGF and scattering</h3><p>In NEGF, \(T(E)=\operatorname{Tr}[\Gamma_SG^r\Gamma_DG^a]\).  Contact self-energies create broadening and injection, while additional self-energies describe phonons or disorder.  Replacing all scattering by a fitted mean free path may reproduce conductance but loses energy relaxation and local heating.  The correct question is not “ballistic or diffusive?” but which modes lose phase, momentum and energy on which length scales.</p>
-<h2 id="Minimal-Model"><a href="#Minimal-Model" class="headerlink" title="Minimal Model"></a>Minimal Model</h2><div class="math-display">\[I=(2q/h)∫T(E)[f_S(E)-f_D(E)]dE\]</div>
-
+<h3 id="Connection-to-NEGF-and-scattering">Connection to NEGF and scattering</h3>
+<p>In NEGF, \(T(E)=\operatorname{Tr}[\Gamma_SG^r\Gamma_DG^a]\).  Contact self-energies create broadening and injection, while additional self-energies describe phonons or disorder.  Replacing all scattering by a fitted mean free path may reproduce conductance but loses energy relaxation and local heating.  The correct question is not “ballistic or diffusive?” but which modes lose phase, momentum and energy on which length scales.</p>
+<h2 id="Minimal-Model">Minimal Model</h2>
+<div class="math-display">\[I=(2q/h)∫T(E)[f_S(E)-f_D(E)]dE\]</div>
 <p>This expression is a compact organizing relation, not a universal fitting law. Its assumptions, dimensionality and boundary conditions must be checked before quantitative use.</p>
-<h2 id="Device-Consequences"><a href="#Device-Consequences" class="headerlink" title="Device Consequences"></a>Device Consequences</h2><p>The framework unifies ballistic MOSFETs, tunnel devices, quantum point contacts and NEGF simulation.</p>
+<h2 id="Device-Consequences">Device Consequences</h2>
+<p>The framework unifies ballistic MOSFETs, tunnel devices, quantum point contacts and NEGF simulation.</p>
 <p>The correct comparison therefore follows the causal chain</p>
 <div class="math-display">\[\text{material and geometry}\rightarrow\text{states and barriers}\rightarrow\text{transport or switching}\rightarrow\text{terminal response}.\]</div>
-
-<h2 id="Limits-and-Diagnostic-Tests"><a href="#Limits-and-Diagnostic-Tests" class="headerlink" title="Limits and Diagnostic Tests"></a>Limits and Diagnostic Tests</h2><p>Elastic transmission alone omits self-consistent electrostatics and inelastic scattering; both must be restored for predictive devices. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
-<h2 id="Position-in-the-Atlas"><a href="#Position-in-the-Atlas" class="headerlink" title="Position in the Atlas"></a>Position in the Atlas</h2><p><strong>Maturity:</strong> Foundation. Connected concepts:</p>
+<h2 id="Limits-and-Diagnostic-Tests">Limits and Diagnostic Tests</h2>
+<p>Elastic transmission alone omits self-consistent electrostatics and inelastic scattering; both must be restored for predictive devices. A credible experiment should report geometry, temperature, bias protocol, contact configuration and device-to-device statistics whenever they can change the interpretation.</p>
+<h2 id="Position-in-the-Atlas">Position in the Atlas</h2>
+<p><strong>Maturity:</strong> Foundation. Connected concepts:</p>
 <ul>
 <li><a href="/knowledge/nodes/semiconductor-carrier-transport/">semiconductor-carrier-transport</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-quantum-foundations/">two-dimensional-quantum-foundations</a></li>
@@ -37,35 +41,40 @@
 <li><a href="/knowledge/nodes/quantum-tunneling-in-semiconductor-devices/">quantum-tunneling-in-semiconductor-devices</a></li>
 <li><a href="/2025/07/03/MOSFET-Quantum-Transport-Simulation/">MOSFET-Quantum-Transport-Simulation</a></li>
 </ul>
-<h2 id="Figure-and-Reading-Sources"><a href="#Figure-and-Reading-Sources" class="headerlink" title="Figure and Reading Sources"></a>Figure and Reading Sources</h2><p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
+<h2 id="Figure-and-Reading-Sources">Figure and Reading Sources</h2>
+<p>The linked papers contain reusable conceptual schematics and experimental figures; check the publisher or author license before republishing an image.</p>
 <ol>
 <li><a href="https://doi.org/10.1017/CBO9780511805776" target="_blank" rel="noopener">Datta, Electronic Transport in Mesoscopic Systems</a></li>
 </ol>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p>**核心结论：**介观电流由量子传输模式承载，模式占据由电极库决定，贡献由透射率加权。</p>
 </blockquote>
-<h2 id="物理图像"><a href="#物理图像" class="headerlink" title="物理图像"></a>物理图像</h2><p>介观电流由量子传输模式承载，模式占据由电极库决定，贡献由透射率加权。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
-<h2 id="深入推导与物理解释"><a href="#深入推导与物理解释" class="headerlink" title="深入推导与物理解释"></a>深入推导与物理解释</h2><h3 id="电极库占据不平衡产生电流"><a href="#电极库占据不平衡产生电流" class="headerlink" title="电极库占据不平衡产生电流"></a>电极库占据不平衡产生电流</h3><p>相干导体中并不存在经典意义上的局域漂移速度。右行态由源极填充，左行态由漏极填充；对一个自旋简并模式，一维态密度与态流速相消，得到</p>
+<h2 id="物理图像">物理图像</h2>
+<p>介观电流由量子传输模式承载，模式占据由电极库决定，贡献由透射率加权。 建模前必须先确定有效状态变量和守恒量。真实器件中的本征材料响应还会与静电势、接触、无序及外部电路自洽耦合。</p>
+<h2 id="深入推导与物理解释">深入推导与物理解释</h2>
+<h3 id="电极库占据不平衡产生电流">电极库占据不平衡产生电流</h3>
+<p>相干导体中并不存在经典意义上的局域漂移速度。右行态由源极填充，左行态由漏极填充；对一个自旋简并模式，一维态密度与态流速相消，得到</p>
 <div class="math-display">\[I=\frac{2q}{h}\int T(E)[f_S(E)-f_D(E)]\,dE.\]</div>
-
 <p>在小偏压下线性展开：</p>
 <div class="math-display">\[G=\frac{2q^2}{h}\sum_n T_n(E_F).\]</div>
-
 <p>一个完全透射模式贡献 \(G_0=2q^2/h\)。对应电阻是接触电阻：即使沟道完全弹性，非平衡出射载流子在电极库内弛豫时仍会产生熵。</p>
-<h3 id="多端输运"><a href="#多端输运" class="headerlink" title="多端输运"></a>多端输运</h3><p>对端口 \(p\) 与 \(q\)，</p>
+<h3 id="多端输运">多端输运</h3>
+<p>对端口 \(p\) 与 \(q\)，</p>
 <div class="math-display">\[I_p=\frac{q^2}{h}\sum_q\left(T_{qp}V_p-T_{pq}V_q\right).\]</div>
-
 <p>该形式明确记录每一入射占据由哪个电极库决定，是霍尔、非局域与边缘态测量的基础。规范不变性和电流守恒要求透射矩阵满足求和规则；若不满足，通常意味着接触模型不完整。</p>
-<h3 id="与-NEGF-和散射的连接"><a href="#与-NEGF-和散射的连接" class="headerlink" title="与 NEGF 和散射的连接"></a>与 NEGF 和散射的连接</h3><p>在 NEGF 中 \(T(E)=\operatorname{Tr}[\Gamma_SG^r\Gamma_DG^a]\)。接触自能产生展宽与注入，声子或无序由额外自能描述。把所有散射压缩为拟合平均自由程也许能复现电导，却会丢失能量弛豫和局域发热。真正的问题不是简单判断“弹道还是扩散”，而是哪些模式在哪些长度尺度上失去相位、动量与能量。</p>
-<h2 id="最小模型"><a href="#最小模型" class="headerlink" title="最小模型"></a>最小模型</h2><div class="math-display">\[I=(2q/h)∫T(E)[f_S(E)-f_D(E)]dE\]</div>
-
+<h3 id="与-NEGF-和散射的连接">与 NEGF 和散射的连接</h3>
+<p>在 NEGF 中 \(T(E)=\operatorname{Tr}[\Gamma_SG^r\Gamma_DG^a]\)。接触自能产生展宽与注入，声子或无序由额外自能描述。把所有散射压缩为拟合平均自由程也许能复现电导，却会丢失能量弛豫和局域发热。真正的问题不是简单判断“弹道还是扩散”，而是哪些模式在哪些长度尺度上失去相位、动量与能量。</p>
+<h2 id="最小模型">最小模型</h2>
+<div class="math-display">\[I=(2q/h)∫T(E)[f_S(E)-f_D(E)]dE\]</div>
 <p>这个式子用于组织物理关系，而不是在任何条件下都成立的拟合公式。定量使用前必须检查其近似、维度和边界条件。</p>
-<h2 id="器件意义"><a href="#器件意义" class="headerlink" title="器件意义"></a>器件意义</h2><p>该框架统一描述弹道 MOSFET、隧穿器件、量子点接触及 NEGF 模拟。</p>
+<h2 id="器件意义">器件意义</h2>
+<p>该框架统一描述弹道 MOSFET、隧穿器件、量子点接触及 NEGF 模拟。</p>
 <p>合理的分析顺序是</p>
 <div class="math-display">\[\text{材料与几何}\rightarrow\text{状态与势垒}\rightarrow\text{输运或翻转}\rightarrow\text{端口响应}.\]</div>
-
-<h2 id="限制与判据"><a href="#限制与判据" class="headerlink" title="限制与判据"></a>限制与判据</h2><p>仅有弹性透射会遗漏自洽静电和非弹性散射，预测器件时必须补回。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
-<h2 id="在知识图谱中的位置"><a href="#在知识图谱中的位置" class="headerlink" title="在知识图谱中的位置"></a>在知识图谱中的位置</h2><p>**成熟度：**Foundation。关联节点：</p>
+<h2 id="限制与判据">限制与判据</h2>
+<p>仅有弹性透射会遗漏自洽静电和非弹性散射，预测器件时必须补回。 当几何、温度、偏压流程、接触方式或器件间统计会影响结论时，可信实验必须完整报告这些条件。</p>
+<h2 id="在知识图谱中的位置">在知识图谱中的位置</h2>
+<p>**成熟度：**Foundation。关联节点：</p>
 <ul>
 <li><a href="/knowledge/nodes/semiconductor-carrier-transport/">semiconductor-carrier-transport</a></li>
 <li><a href="/knowledge/nodes/two-dimensional-quantum-foundations/">two-dimensional-quantum-foundations</a></li>
@@ -73,7 +82,8 @@
 <li><a href="/knowledge/nodes/quantum-tunneling-in-semiconductor-devices/">quantum-tunneling-in-semiconductor-devices</a></li>
 <li><a href="/2025/07/03/MOSFET-Quantum-Transport-Simulation/">MOSFET-Quantum-Transport-Simulation</a></li>
 </ul>
-<h2 id="图片与延伸阅读来源"><a href="#图片与延伸阅读来源" class="headerlink" title="图片与延伸阅读来源"></a>图片与延伸阅读来源</h2><p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
+<h2 id="图片与延伸阅读来源">图片与延伸阅读来源</h2>
+<p>下列论文页面包含适合本节点的概念示意图和实验图；转载具体图片前仍需核对出版方或作者给出的许可。</p>
 <ol>
 <li><a href="https://doi.org/10.1017/CBO9780511805776" target="_blank" rel="noopener">Datta, Electronic Transport in Mesoscopic Systems</a></li>
 </ol>
