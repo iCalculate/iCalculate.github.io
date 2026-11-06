@@ -8,98 +8,106 @@
 <main class="node-shell node-shell-bilingual"><a class="node-back" href="/knowledge/"><span data-lang="en">← Back to the atlas</span><span data-lang="zh" hidden>← 返回知识图谱</span></a><article class="node-article"><div class="node-kicker"><span data-lang="en">KNOWLEDGE NOTE</span><span data-lang="zh" hidden>知识节点</span></div><h1><span data-lang="en">Drift, Diffusion, and Current in Semiconductors</span><span data-lang="zh" hidden>半导体中的漂移、扩散与电流</span></h1><p class="node-deck"><span data-lang="en">A unified account of drift and diffusion through electric fields, concentration gradients, and electrochemical potentials, including their high-field limits.</span><span data-lang="zh" hidden>用电场、浓度梯度和电化学势统一理解漂移扩散电流，并说明迁移率、扩散系数和速度饱和的边界。</span></p><div class="node-tags"><span>Transport Physics</span><span>Device Physics</span><span>Fundamental Models</span></div><div class="node-language" role="group" aria-label="Article language"><span data-lang="en">Read in</span><span data-lang="zh" hidden>阅读语言</span><button type="button" data-lang-option="en" aria-pressed="true">English</button><button type="button" data-lang-option="zh" aria-pressed="false">中文</button></div><div class="node-reading-grid"><div class="node-languages"><div class="node-content" data-lang="en" lang="en"><blockquote>
 <p><strong>Core idea:</strong> Drift and diffusion are not unrelated current sources. They are two representations of a gradient in electrochemical potential. At equilibrium they cancel exactly, leaving a spatially constant Fermi level.</p>
 </blockquote>
-<h2 id="Drift">Drift</h2>
-<p>At low field,</p>
+<h2 id="Drift"><a href="#Drift" class="headerlink" title="Drift"></a>Drift</h2><p>At low field,</p>
 <div class="math-display">\[v_n=-\mu_n\mathcal E,\qquad v_p=\mu_p\mathcal E,\]</div>
+
 <p>so conventional drift currents are</p>
 <div class="math-display">\[J_{n,\mathrm{drift}}=q\mu_n n\mathcal E,\qquad
 J_{p,\mathrm{drift}}=q\mu_p p\mathcal E.\]</div>
+
 <p>Mobility is not a universal material constant. It depends on temperature, doping, transverse field, orientation, and scattering from phonons, ionized impurities, interfaces, and roughness. Matthiessen’s rule is only an independent-scattering approximation.</p>
-<h2 id="Diffusion">Diffusion</h2>
-<p>Concentration gradients drive particle diffusion. Including charge signs,</p>
+<h2 id="Diffusion"><a href="#Diffusion" class="headerlink" title="Diffusion"></a>Diffusion</h2><p>Concentration gradients drive particle diffusion. Including charge signs,</p>
 <div class="math-display">\[J_{n,\mathrm{diff}}=qD_n\nabla n,\qquad
 J_{p,\mathrm{diff}}=-qD_p\nabla p.\]</div>
+
 <p>For a nondegenerate system near thermal equilibrium,</p>
 <div class="math-display">\[\frac{D_n}{\mu_n}=\frac{D_p}{\mu_p}=\frac{kT}{q}.\]</div>
+
 <p>The Einstein relation shows that diffusion is not an extra empirical current; it is linked to dissipative transport by thermal statistics.</p>
-<h2 id="Total-Current-and-Quasi-Fermi-Levels">Total Current and Quasi-Fermi Levels</h2>
-<p>In one dimension,</p>
+<h2 id="Total-Current-and-Quasi-Fermi-Levels"><a href="#Total-Current-and-Quasi-Fermi-Levels" class="headerlink" title="Total Current and Quasi-Fermi Levels"></a>Total Current and Quasi-Fermi Levels</h2><p>In one dimension,</p>
 <div class="math-display">\[J_n=q\mu_n n\mathcal E+qD_n\frac{dn}{dx},\qquad
 J_p=q\mu_p p\mathcal E-qD_p\frac{dp}{dx}.\]</div>
+
 <p>For nondegenerate carriers this becomes</p>
 <div class="math-display">\[J_n=\mu_n n\frac{dE_{Fn}}{dx},\qquad
 J_p=\mu_p p\frac{dE_{Fp}}{dx}.\]</div>
+
 <p>Thus quasi-Fermi-level gradients are the true current drivers. A PN junction may contain a strong built-in electric field at equilibrium, yet carry no net current because drift and diffusion cancel.</p>
-<h2 id="High-Field-and-Short-Length-Scales">High Field and Short Length Scales</h2>
-<p>Once \(\mu\mathcal E\) approaches the saturation velocity, linear drift fails. A common interpolation is</p>
+<h2 id="High-Field-and-Short-Length-Scales"><a href="#High-Field-and-Short-Length-Scales" class="headerlink" title="High Field and Short Length Scales"></a>High Field and Short Length Scales</h2><p>Once \(\mu\mathcal E\) approaches the saturation velocity, linear drift fails. A common interpolation is</p>
 <div class="math-display">\[v(\mathcal E)\approx\frac{\mu_0\mathcal E}{[1+(\mu_0\mathcal E/v_{sat})^\beta]^{1/\beta}}.\]</div>
+
 <p>When device length approaches the mean free path, local drift–diffusion also fails. Ballistic or quasiballistic Landauer transport becomes appropriate; strong disorder may instead produce hopping. See <a href="/2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/">From Ballistic Transport to Hopping in FETs</a>.</p>
-<h2 id="Physical-Checks">Physical Checks</h2>
-<ul>
+<h2 id="Physical-Checks"><a href="#Physical-Checks" class="headerlink" title="Physical Checks"></a>Physical Checks</h2><ul>
 <li>Electron velocity and conventional electron current point in opposite directions.</li>
 <li>Zero electric field does not imply zero current; diffusion can remain.</li>
 <li>Equilibrium means zero <strong>net</strong> current, not that microscopic carrier motion stops.</li>
 <li>\(\sigma=q(n\mu_n+p\mu_p)\) is a local, low-field, homogeneous-response formula.</li>
 </ul>
 <!--deep-classical:en-->
-<h2 id="From-the-Boltzmann-equation-to-drift–diffusion">From the Boltzmann equation to drift–diffusion</h2>
-<p>Taking the first velocity moment of the relaxation-time Boltzmann equation gives low-field mobility \(\mu=q\langle\tau/m^*\rangle\).  Local nondegenerate equilibrium plus electrochemical-potential gradients yields</p>
+
+<h2 id="From-the-Boltzmann-equation-to-drift–diffusion"><a href="#From-the-Boltzmann-equation-to-drift–diffusion" class="headerlink" title="From the Boltzmann equation to drift–diffusion"></a>From the Boltzmann equation to drift–diffusion</h2><p>Taking the first velocity moment of the relaxation-time Boltzmann equation gives low-field mobility \(\mu=q\langle\tau/m^*\rangle\).  Local nondegenerate equilibrium plus electrochemical-potential gradients yields</p>
 <div class="math-display">\[\mathbf J_n=qn\mu_n\mathbf E+qD_n\nabla n,qquad D_n/\mu_n=k_BT/q.\]</div>
+
 <p>The Einstein relation changes under degeneracy because \(dn/d\mu\) replaces \(n/k_BT\).  At high field, the distribution is no longer a displaced equilibrium; optical-phonon emission limits velocity, often represented by</p>
 <div class="math-display">\[v(F)\approx\frac{\mu_0F}{[1+(\mu_0F/v_{sat})^\beta]^{1/\beta}}.\]</div>
+
 <p>Mobility is therefore a regime-dependent response coefficient, not an immutable material number.  Contact resistance, carrier heating and nonlocal transport must be separated before assigning a measured conductance change to channel scattering.</p>
 <!--/deep-classical:en-->
-<h2 id="References">References</h2>
-<ol>
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., §§1.5 and 1.8.</li>
 <li>C. Hu, <em>Modern Semiconductor Devices for Integrated Circuits</em>, Chapter 2.</li>
 </ol>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
 <p><strong>核心结论</strong>：漂移和扩散不是两个互不相关的“电流来源”，而是同一电化学势梯度的两种表达。热平衡时二者精确抵消，准费米能级在空间上为常数。</p>
 </blockquote>
-<h2 id="1-漂移">1. 漂移</h2>
-<p>弱场下平均漂移速度与电场成正比：</p>
+<h2 id="1-漂移"><a href="#1-漂移" class="headerlink" title="1. 漂移"></a>1. 漂移</h2><p>弱场下平均漂移速度与电场成正比：</p>
 <div class="math-display">\[v_{n}= -\mu_n\mathcal E,\qquad v_p=\mu_p\mathcal E.\]</div>
+
 <p>按常规电流方向定义，电子和空穴的漂移电流密度均沿电场方向：</p>
 <div class="math-display">\[J_{n,\mathrm{drift}}=q\mu_n n\mathcal E,\qquad
 J_{p,\mathrm{drift}}=q\mu_p p\mathcal E.\]</div>
+
 <p>迁移率不是材料常数：它依赖温度、掺杂、垂直场和晶向，并由晶格、离化杂质、界面粗糙等散射机制共同决定。Matthiessen 规则 \(1/\mu\approx\sum_i1/\mu_i\) 只是独立散射近似。</p>
-<h2 id="2-扩散">2. 扩散</h2>
-<p>浓度梯度产生粒子扩散。计入电荷符号后：</p>
+<h2 id="2-扩散"><a href="#2-扩散" class="headerlink" title="2. 扩散"></a>2. 扩散</h2><p>浓度梯度产生粒子扩散。计入电荷符号后：</p>
 <div class="math-display">\[J_{n,\mathrm{diff}}=qD_n\nabla n,\qquad
 J_{p,\mathrm{diff}}=-qD_p\nabla p.\]</div>
+
 <p>非简并、近热平衡条件下，漂移与扩散由爱因斯坦关系连接：</p>
 <div class="math-display">\[\frac{D_n}{\mu_n}=\frac{D_p}{\mu_p}=\frac{kT}{q}.\]</div>
+
 <p>这意味着扩散并非额外添加的经验过程，而是热运动与耗散满足涨落—耗散关系的结果。</p>
-<h2 id="3-总电流与准费米势">3. 总电流与准费米势</h2>
-<p>一维漂移—扩散电流为</p>
+<h2 id="3-总电流与准费米势"><a href="#3-总电流与准费米势" class="headerlink" title="3. 总电流与准费米势"></a>3. 总电流与准费米势</h2><p>一维漂移—扩散电流为</p>
 <div class="math-display">\[J_n=q\mu_n n\mathcal E+qD_n\frac{dn}{dx},\qquad
 J_p=q\mu_p p\mathcal E-qD_p\frac{dp}{dx}.\]</div>
+
 <p>在非简并条件下可改写成</p>
 <div class="math-display">\[J_n=\mu_n n\frac{dE_{Fn}}{dx},\qquad
 J_p=\mu_p p\frac{dE_{Fp}}{dx}.\]</div>
+
 <p>因此真正驱动电流的是准费米能级梯度。平衡时 \(E_{Fn}=E_{Fp}=E_F\) 且空间恒定，所以即使 PN 结内存在很强的内建电场，也没有净电流。</p>
-<h2 id="4-高场、短尺度与输运区制">4. 高场、短尺度与输运区制</h2>
-<p>当 \(\mu\mathcal E\) 接近饱和速度时，线性关系失效，常用经验式</p>
+<h2 id="4-高场、短尺度与输运区制"><a href="#4-高场、短尺度与输运区制" class="headerlink" title="4. 高场、短尺度与输运区制"></a>4. 高场、短尺度与输运区制</h2><p>当 \(\mu\mathcal E\) 接近饱和速度时，线性关系失效，常用经验式</p>
 <div class="math-display">\[v(\mathcal E)\approx\frac{\mu_0\mathcal E}{[1+(\mu_0\mathcal E/v_{sat})^\beta]^{1/\beta}}.\]</div>
+
 <p>当器件长度接近平均自由程时，局域漂移—扩散模型也失效，需要<a href="/2026/08/24/From-Ballistic-Transport-to-Hopping-in-FETs/">弹道或准弹道输运</a>与 Landauer 图像。无序、局域态主导时还可能转入跳跃输运。区分这些模型的关键尺度是：器件长度 \(L\)、平均自由程 \(\ell\)、相干长度及非弹性散射长度。</p>
-<h2 id="5-物理检查">5. 物理检查</h2>
-<ul>
+<h2 id="5-物理检查"><a href="#5-物理检查" class="headerlink" title="5. 物理检查"></a>5. 物理检查</h2><ul>
 <li>电子速度与电子电流方向相反；不要把粒子流和常规电流混淆。</li>
 <li>电场不一定是唯一驱动力；零电场下仍可有扩散电流。</li>
 <li>平衡 PN 结“没有电流”是漂移与扩散抵消，而不是载流子停止运动。</li>
 <li>电导率 \(\sigma=q(n\mu_n+p\mu_p)\) 只给局域、低场、均匀条件下的欧姆响应。</li>
 </ul>
 <!--deep-classical:zh-->
-<h2 id="从-Boltzmann-方程到漂移—扩散">从 Boltzmann 方程到漂移—扩散</h2>
-<p>对弛豫时间近似 Boltzmann 方程取第一速度矩，可得低场迁移率 \(\mu=q\langle\tau/m^*\rangle\)。局域非简并平衡及电化学势梯度给出</p>
+
+<h2 id="从-Boltzmann-方程到漂移—扩散"><a href="#从-Boltzmann-方程到漂移—扩散" class="headerlink" title="从 Boltzmann 方程到漂移—扩散"></a>从 Boltzmann 方程到漂移—扩散</h2><p>对弛豫时间近似 Boltzmann 方程取第一速度矩，可得低场迁移率 \(\mu=q\langle\tau/m^*\rangle\)。局域非简并平衡及电化学势梯度给出</p>
 <div class="math-display">\[\mathbf J_n=qn\mu_n\mathbf E+qD_n\nabla n,qquad D_n/\mu_n=k_BT/q.\]</div>
+
 <p>简并体系中 Einstein 关系需要用 \(dn/d\mu\) 替代 \(n/k_BT\)。高场下分布不再是平移平衡分布，光学声子发射限制速度，常写成</p>
 <div class="math-display">\[v(F)\approx\frac{\mu_0F}{[1+(\mu_0F/v_{sat})^\beta]^{1/\beta}}.\]</div>
+
 <p>因此迁移率是特定输运区间的响应系数，不是不可改变的材料常数。只有先分离接触电阻、载流子加热与非局域输运，才能把电导变化归因于沟道散射。</p>
 <!--/deep-classical:zh-->
-<h2 id="参考">参考</h2>
-<ol>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., §1.5 and §1.8.</li>
 <li>C. Hu, <em>Modern Semiconductor Devices for Integrated Circuits</em>, Chapter 2.</li>
 </ol>

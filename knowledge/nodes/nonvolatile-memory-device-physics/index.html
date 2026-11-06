@@ -10,79 +10,75 @@
 </blockquote>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Floating_gate_transistor-en.svg" alt="Floating-gate transistor cross-section"></p>
 <p><em>Figure 1 | The insulated floating gate changes the effective control-gate voltage seen by the channel. Cyferz et al., CC BY-SA 4.0; <a href="https://commons.wikimedia.org/wiki/File:Floating_gate_transistor-en.svg" target="_blank" rel="noopener">source</a>.</em></p>
-<h2 id="Threshold-Shift-Stores-Information">Threshold Shift Stores Information</h2>
-<p>With floating-gate charge \(Q_{FG}\),</p>
+<h2 id="Threshold-Shift-Stores-Information"><a href="#Threshold-Shift-Stores-Information" class="headerlink" title="Threshold Shift Stores Information"></a>Threshold Shift Stores Information</h2><p>With floating-gate charge \(Q_{FG}\),</p>
 <div class="math-display">\[\Delta V_T\approx-\frac{Q_{FG}}{C_{eff}},\]</div>
+
 <p>where \(C_{eff}\) belongs to the capacitance network coupling the floating gate to control gate, channel, source, drain, and body. Reading only tests channel conduction at a selected gate voltage; it need not remove stored charge.</p>
-<h2 id="Program-and-Erase">Program and Erase</h2>
-<p><strong>Hot-electron injection</strong> uses a high drain field to give a small fraction of channel electrons enough energy to cross the Si/SiO\(_2\) barrier. It is fast but power-hungry and spatially nonuniform.</p>
+<h2 id="Program-and-Erase"><a href="#Program-and-Erase" class="headerlink" title="Program and Erase"></a>Program and Erase</h2><p><strong>Hot-electron injection</strong> uses a high drain field to give a small fraction of channel electrons enough energy to cross the Si&#x2F;SiO\(_2\) barrier. It is fast but power-hungry and spatially nonuniform.</p>
 <p><strong>Fowler–Nordheim tunneling</strong> uses a strong oxide field to triangularize the barrier:</p>
 <div class="math-display">\[J_{FN}\propto E_{ox}^2\exp\left(-\frac{B}{E_{ox}}\right).\]</div>
+
 <p>Changing field direction allows programming or erasing. Very thin dielectrics can enter direct tunneling.</p>
-<h2 id="Retention-Endurance-and-Read-Window">Retention, Endurance, and Read Window</h2>
-<ul>
+<h2 id="Retention-Endurance-and-Read-Window"><a href="#Retention-Endurance-and-Read-Window" class="headerlink" title="Retention, Endurance, and Read Window"></a>Retention, Endurance, and Read Window</h2><ul>
 <li>Retention demands negligible tunneling and trap-assisted leakage.</li>
 <li>Repeated high-field cycling creates oxide and interface traps, degrading endurance.</li>
 <li>Read and neighbor-cell operations must not disturb the stored state.</li>
-<li>MLC/TLC/QLC pack more threshold windows into one cell, increasing density while shrinking noise margin.</li>
+<li>MLC&#x2F;TLC&#x2F;QLC pack more threshold windows into one cell, increasing density while shrinking noise margin.</li>
 </ul>
 <p>Fast writing and decade-long retention ask for opposite tunneling probabilities, balanced through pulse algorithms, barrier design, voltage, and error correction.</p>
-<h2 id="Beyond-Floating-Gates">Beyond Floating Gates</h2>
-<p>Charge-trap memories localize charge in dielectric defects; FeFETs store ferroelectric polarization; RRAM stores conductive-filament or valence states; PCM stores amorphous/crystalline phase; MRAM stores magnetic configuration. They can be compared using the same questions: state variable, write barrier, read disturb, retention, endurance, and variability.</p>
+<h2 id="Beyond-Floating-Gates"><a href="#Beyond-Floating-Gates" class="headerlink" title="Beyond Floating Gates"></a>Beyond Floating Gates</h2><p>Charge-trap memories localize charge in dielectric defects; FeFETs store ferroelectric polarization; RRAM stores conductive-filament or valence states; PCM stores amorphous&#x2F;crystalline phase; MRAM stores magnetic configuration. They can be compared using the same questions: state variable, write barrier, read disturb, retention, endurance, and variability.</p>
 <!--deep-classical:en-->
-<h2 id="A-common-energy-landscape-language">A common energy-landscape language</h2>
-<p>Charge, polarization, filament geometry, phase and magnetization are different state variables, but all memories require a write path between metastable basins and a non-destructive read observable.  Thermally activated retention is organized by</p>
+
+<h2 id="A-common-energy-landscape-language"><a href="#A-common-energy-landscape-language" class="headerlink" title="A common energy-landscape language"></a>A common energy-landscape language</h2><p>Charge, polarization, filament geometry, phase and magnetization are different state variables, but all memories require a write path between metastable basins and a non-destructive read observable.  Thermally activated retention is organized by</p>
 <div class="math-display">\[\Gamma=\Gamma_0e^{-E_b/k_BT},\qquad P_{fail}(t)=1-e^{-\Gamma t}.\]</div>
-<p>Write voltage lowers \(E_b\) or supplies heat; scaling generally reduces the number of atoms/charges defining a state and increases stochastic spread.  Memory window must be compared with noise and drift distributions, not as two mean values.</p>
-<p>The universal specification is a coupled surface over write energy and latency, retention temperature/time, endurance, read disturb and error rate.  Different technologies occupy different regions of this surface; no single on/off ratio captures their utility.</p>
+
+<p>Write voltage lowers \(E_b\) or supplies heat; scaling generally reduces the number of atoms&#x2F;charges defining a state and increases stochastic spread.  Memory window must be compared with noise and drift distributions, not as two mean values.</p>
+<p>The universal specification is a coupled surface over write energy and latency, retention temperature&#x2F;time, endurance, read disturb and error rate.  Different technologies occupy different regions of this surface; no single on&#x2F;off ratio captures their utility.</p>
 <!--/deep-classical:en-->
-<h2 id="References">References</h2>
-<ol>
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., §6.7.</li>
 <li>Device literature on floating-gate and charge-trap nonvolatile memories.</li>
 </ol>
 </div><div class="node-content" data-lang="zh" lang="zh-CN" hidden><blockquote>
-<p><strong>核心结论</strong>：浮栅存储器把电荷困在与外界绝缘的节点上，使 MOSFET 阈值电压长期偏移。写入/擦除要求载流子穿过势垒，保持又要求穿越概率极低，两者构成根本矛盾。</p>
+<p><strong>核心结论</strong>：浮栅存储器把电荷困在与外界绝缘的节点上，使 MOSFET 阈值电压长期偏移。写入&#x2F;擦除要求载流子穿过势垒，保持又要求穿越概率极低，两者构成根本矛盾。</p>
 </blockquote>
 <p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Floating_gate_transistor-en.svg" alt="浮栅晶体管剖面"></p>
 <p><em>图 1｜控制栅与沟道之间的浮栅被绝缘层包围，存储电荷改变沟道所感受到的有效栅压。原图：Cyferz 等，CC BY-SA 4.0；<a href="https://commons.wikimedia.org/wiki/File:Floating_gate_transistor-en.svg" target="_blank" rel="noopener">文件页与许可</a>。</em></p>
-<h2 id="1-阈值漂移就是信息">1. 阈值漂移就是信息</h2>
-<p>浮栅存储电荷 \(Q_{FG}\) 后，控制栅到沟道的电势耦合发生改变。第一近似下</p>
+<h2 id="1-阈值漂移就是信息"><a href="#1-阈值漂移就是信息" class="headerlink" title="1. 阈值漂移就是信息"></a>1. 阈值漂移就是信息</h2><p>浮栅存储电荷 \(Q_{FG}\) 后，控制栅到沟道的电势耦合发生改变。第一近似下</p>
 <div class="math-display">\[\Delta V_T\approx-\frac{Q_{FG}}{C_{eff}},\]</div>
+
 <p>其中 \(C_{eff}\) 由浮栅与控制栅、沟道、源漏及衬底的电容网络决定。读取时只需在选定栅压下判断沟道是否导通，无需移走存储电荷。</p>
-<h2 id="2-写入与擦除">2. 写入与擦除</h2>
-<h3 id="热电子注入">热电子注入</h3>
-<p>漏端高场使沟道电子获得能量，少部分跨越 Si/SiO\(_2\) 势垒进入浮栅。它速度快，但耗电较大且空间分布不均。</p>
-<h3 id="Fowler–Nordheim隧穿">Fowler–Nordheim隧穿</h3>
-<p>强氧化层电场使势垒近似三角形，电子隧穿电流常呈</p>
+<h2 id="2-写入与擦除"><a href="#2-写入与擦除" class="headerlink" title="2. 写入与擦除"></a>2. 写入与擦除</h2><h3 id="热电子注入"><a href="#热电子注入" class="headerlink" title="热电子注入"></a>热电子注入</h3><p>漏端高场使沟道电子获得能量，少部分跨越 Si&#x2F;SiO\(_2\) 势垒进入浮栅。它速度快，但耗电较大且空间分布不均。</p>
+<h3 id="Fowler–Nordheim隧穿"><a href="#Fowler–Nordheim隧穿" class="headerlink" title="Fowler–Nordheim隧穿"></a>Fowler–Nordheim隧穿</h3><p>强氧化层电场使势垒近似三角形，电子隧穿电流常呈</p>
 <div class="math-display">\[J_{FN}\propto E_{ox}^2\exp\left(-\frac{B}{E_{ox}}\right).\]</div>
+
 <p>它可用于写入或擦除，方向由电场决定。极薄介质中还可能转为直接隧穿。</p>
-<h2 id="3-保持、耐久与读取窗口">3. 保持、耐久与读取窗口</h2>
-<ul>
+<h2 id="3-保持、耐久与读取窗口"><a href="#3-保持、耐久与读取窗口" class="headerlink" title="3. 保持、耐久与读取窗口"></a>3. 保持、耐久与读取窗口</h2><ul>
 <li><strong>保持性</strong>：浮栅电荷不应经隧穿、陷阱辅助通道或缺陷泄漏；</li>
 <li><strong>耐久性</strong>：反复高场注入会生成氧化层和界面陷阱，移动阈值并增加漏电；</li>
 <li><strong>读取干扰</strong>：反复读取或邻近单元操作不应改变存储态；</li>
-<li><strong>多级存储</strong>：MLC/TLC/QLC 把多个阈值窗口塞进一个单元，提高密度但缩小噪声裕量。</li>
+<li><strong>多级存储</strong>：MLC&#x2F;TLC&#x2F;QLC 把多个阈值窗口塞进一个单元，提高密度但缩小噪声裕量。</li>
 </ul>
 <p>写入速度需要高穿隧概率，十年保持需要低穿隧概率；工程上通过脉冲、势垒厚度、电压和纠错码共同平衡。</p>
-<h2 id="4-从浮栅到其他非易失机制">4. 从浮栅到其他非易失机制</h2>
-<ul>
+<h2 id="4-从浮栅到其他非易失机制"><a href="#4-从浮栅到其他非易失机制" class="headerlink" title="4. 从浮栅到其他非易失机制"></a>4. 从浮栅到其他非易失机制</h2><ul>
 <li>电荷俘获存储器把电荷保存在离散介质陷阱中，降低单一泄漏通道的灾难性影响；</li>
 <li>FeFET 用铁电极化移动阈值，但受退极化、陷阱和循环疲劳影响；</li>
-<li>RRAM 用导电细丝/价态变化改变电阻；</li>
-<li>PCM 用非晶/晶态电阻差保存信息；</li>
+<li>RRAM 用导电细丝&#x2F;价态变化改变电阻；</li>
+<li>PCM 用非晶&#x2F;晶态电阻差保存信息；</li>
 <li>MRAM 用磁隧道结的磁化构型保存信息。</li>
 </ul>
 <p>它们不都属于传统施敏课程的 MOS 主线，但可以用同一分析模板比较：状态变量、写入能垒、读取扰动、保持、耐久和变异性。</p>
 <!--deep-classical:zh-->
-<h2 id="统一的能量景观语言">统一的能量景观语言</h2>
-<p>电荷、极化、细丝几何、物相和磁化是不同状态变量，但所有存储都需要亚稳盆地之间的写入路径及非破坏读出量。热激活保持可写成</p>
+
+<h2 id="统一的能量景观语言"><a href="#统一的能量景观语言" class="headerlink" title="统一的能量景观语言"></a>统一的能量景观语言</h2><p>电荷、极化、细丝几何、物相和磁化是不同状态变量，但所有存储都需要亚稳盆地之间的写入路径及非破坏读出量。热激活保持可写成</p>
 <div class="math-display">\[\Gamma=\Gamma_0e^{-E_b/k_BT},\qquad P_{fail}(t)=1-e^{-\Gamma t}.\]</div>
-<p>写电压通过降低 \(E_b\) 或供热改变状态；缩放通常减少定义状态的原子/电荷数并增加随机展宽。存储窗口必须与噪声、漂移分布比较，而不能只看两个均值。</p>
-<p>普适规格是一张耦合曲面：写能与延迟、保持温度/时间、耐久、读扰动和错误率。不同技术占据曲面的不同区域，单一开关比无法概括实用性。</p>
+
+<p>写电压通过降低 \(E_b\) 或供热改变状态；缩放通常减少定义状态的原子&#x2F;电荷数并增加随机展宽。存储窗口必须与噪声、漂移分布比较，而不能只看两个均值。</p>
+<p>普适规格是一张耦合曲面：写能与延迟、保持温度&#x2F;时间、耐久、读扰动和错误率。不同技术占据曲面的不同区域，单一开关比无法概括实用性。</p>
 <!--/deep-classical:zh-->
-<h2 id="参考">参考</h2>
-<ol>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li>S. M. Sze and K. K. Ng, <em>Physics of Semiconductor Devices</em>, 3rd ed., §6.7.</li>
 <li>S. M. Sze and K. K. Ng, “Physics of Semiconductor Devices—Nonvolatile Memory,” related device literature.</li>
 </ol>
